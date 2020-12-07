@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
+  border: 1px solid blue;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,6 +30,12 @@ export const StyledHeader = styled.header`
     a {
       color: ${props => props.theme.colors.text};
       margin-right: 30px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
+  margin-bottom: 100px;
 `

@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import Container from '../components/Container/index'
 import Header from '../components/Header/index'
+import Main from '../components/Main/index'
 
 interface Props {
   avatarUrl: string
@@ -18,6 +19,9 @@ const Projects: React.FC<Props> = props => {
 
       <Container>
         <Header imageUrl={props.avatarUrl} title="Projects" />
+        <Main>
+          <h1>Projects</h1>
+        </Main>
       </Container>
     </div>
   )
