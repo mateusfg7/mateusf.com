@@ -9,21 +9,21 @@ interface Props {
   avatarUrl: string
 }
 
-const Home: React.FC<Props> = props => {
+const Posts: React.FC<Props> = props => {
   return (
     <div>
       <Head>
-        <title>My Blog</title>
+        <title>Posts</title>
       </Head>
 
       <Container>
-        <Header imageUrl={props.avatarUrl} title="Home" />
+        <Header imageUrl={props.avatarUrl} title="Posts" />
       </Container>
     </div>
   )
 }
 
-export default Home
+export default Posts
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {

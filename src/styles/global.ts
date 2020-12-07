@@ -8,13 +8,6 @@ export default createGlobalStyle`
   }
 
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    height: 100vh;
-
     background: ${props => props.theme.colors.background};
 
     font-family: 'Inter', sans-serif;
