@@ -35,7 +35,7 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
         <Main>
           {allPostData.map((post, key) => {
             return (
-              <Link key={key} href={`/posts/${post.id}`}>
+              <Link key={key} href={`/post/${post.id}`}>
                 <a>
                   <Post>
                     <h2>{post.title}</h2>
