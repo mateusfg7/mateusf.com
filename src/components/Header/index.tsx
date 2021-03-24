@@ -20,13 +20,13 @@ const Header: React.FC<Props> = ({ imageUrl, title }) => {
           <a>Posts</a>
         </Link>
 
-        <Link href="/about">
+        {/* <Link href="/about">
           <a>About</a>
-        </Link>
+        </Link> */}
 
-        <Link href="/projects">
+        {/* <Link href="/projects">
           <a>Projects</a>
-        </Link>
+        </Link> */}
       </nav>
     </StyledHeader>
   )
