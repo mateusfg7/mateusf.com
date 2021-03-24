@@ -2,9 +2,9 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import Container from '../components/Container/index'
-import Header from '../components/Header/index'
-import Main from '../components/Main/index'
+import Container from '../../components/Container/index'
+import Header from '../../components/Header/index'
+import Main from '../../components/Main/index'
 
 interface Props {
   avatarUrl: string
