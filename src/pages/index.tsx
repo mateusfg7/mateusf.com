@@ -32,7 +32,7 @@ export default Home
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      avatarUrl: 'https://avatars1.githubusercontent.com/u/40613276?v=4'
+      avatarUrl: 'https://github.com/mateusfg7.png'
     }
   }
 }
