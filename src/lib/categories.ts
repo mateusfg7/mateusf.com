@@ -1,3 +1,5 @@
+import { getFrequencyOfValue } from './utils'
+
 interface Post {
   date: string
   title: string
@@ -6,7 +8,14 @@ interface Post {
   id: string
 }
 
-export function getCategoriesFromPosts(posts: Post[]): string[] {
+export interface CategoriesAndNumberOfPosts {
+  category: string
+  numberOfPosts: number
+}
+
+export function getCategoriesFromPosts(
+  posts: Post[]
+): CategoriesAndNumberOfPosts[] {
   const allCategories = posts.map(post => {
     return post.category
   })
@@ -17,5 +26,14 @@ export function getCategoriesFromPosts(posts: Post[]): string[] {
     }
   )
 
-  return uniqueCategories
+  const categoriesAndNumberOfPosts = uniqueCategories.map(category => {
+    const numberOfPosts = getFrequencyOfValue(allCategories, category)
+
+    return {
+      category,
+      numberOfPosts
+    }
+  })
+
+  return categoriesAndNumberOfPosts
 }
