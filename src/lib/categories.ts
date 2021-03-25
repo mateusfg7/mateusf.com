@@ -1,4 +1,4 @@
-import { getFrequencyOfValue } from './utils'
+import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
 
 interface Post {
   date: string
@@ -13,31 +13,23 @@ export interface CategoriesAndNumberOfPosts {
   numberOfPosts: number
 }
 
-export type GetAllCategories = (posts: Post[]) => string[]
-export type GetUniqueCategoryList = (posts: Post[]) => string[]
-
-export const getAllCategories: GetAllCategories = posts =>
+export const getRawCategoryListFromPosts = (posts: Post[]): string[] =>
   posts.map(post => post.category)
 
-export const getUniqueCategoryList: GetUniqueCategoryList = posts => {
-  const allCategories = getAllCategories(posts)
+export const getCategoryListFromPosts = (posts: Post[]): string[] => {
+  const rawCategoryList = getRawCategoryListFromPosts(posts)
 
-  const uniqueCategories = allCategories.filter(
-    (category, index, originalArray) => {
-      return originalArray.indexOf(category) === index
-    }
-  )
-
-  return uniqueCategories
+  return removeRepeatedValuesFromArray(rawCategoryList)
 }
 
-export function getCategoriesFromPosts(
+export function getCategoriesAndNumberOfPosts(
   posts: Post[]
 ): CategoriesAndNumberOfPosts[] {
-  const categoryList = getUniqueCategoryList(posts)
+  const rawCategoryList = getRawCategoryListFromPosts(posts)
+  const categoryList = getCategoryListFromPosts(posts)
 
   const categoriesAndNumberOfPosts = categoryList.map(category => {
-    const numberOfPosts = getFrequencyOfValue(categoryList, category)
+    const numberOfPosts = getFrequencyOfValue(rawCategoryList, category)
 
     return {
       category,
