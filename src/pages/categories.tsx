@@ -11,7 +11,7 @@ import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
 import { getSortedPostsData } from '../lib/posts'
 import {
-  getCategoriesFromPosts,
+  getCategoriesAndNumberOfPosts,
   CategoriesAndNumberOfPosts
 } from '../lib/categories'
 
@@ -53,7 +53,7 @@ export default Categories
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const allPostData = getSortedPostsData()
 
-  const categories = getCategoriesFromPosts(allPostData)
+  const categories = getCategoriesAndNumberOfPosts(allPostData)
 
   return {
     props: {
