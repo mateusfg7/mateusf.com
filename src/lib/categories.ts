@@ -39,3 +39,6 @@ export function getCategoriesAndNumberOfPosts(
 
   return categoriesAndNumberOfPosts
 }
+
+export const getPostsOfCategory = (posts: Post[], category: string): Post[] =>
+  posts.filter(post => post.category === category)
