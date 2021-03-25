@@ -20,13 +20,7 @@ import { Post } from '../../styles/pages/category'
 
 interface Props {
   category: string
-  posts: {
-    date: string
-    title: string
-    category: string
-    tags: string
-    id: string
-  }[]
+  posts: PostData[]
 }
 
 const Category: React.FC<Props> = ({ category, posts }) => {
