@@ -14,13 +14,7 @@ import { getSortedPostsData } from '../lib/posts'
 
 interface Props {
   avatarUrl: string
-  allPostData: {
-    date: string
-    title: string
-    category: string
-    tags: string
-    id: string
-  }[]
+  allPostData: PostData[]
 }
 
 const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
