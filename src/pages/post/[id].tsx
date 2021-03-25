@@ -12,15 +12,11 @@ import { PostHeader } from '../../styles/pages/post'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
+interface PostDataWithContent extends PostData {
+  contentHtml: string
+}
 interface Props {
-  postData: {
-    date: string
-    title: string
-    category: string
-    tags: string
-    id: any
-    contentHtml: string
-  }
+  postData: PostDataWithContent
 }
 
 const Post: React.FC<Props> = ({ postData }) => {
