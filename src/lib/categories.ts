@@ -1,29 +1,21 @@
 import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
 
-interface Post {
-  date: string
-  title: string
-  category: string
-  tags: string
-  id: string
-}
-
 export interface CategoriesAndNumberOfPosts {
   category: string
   numberOfPosts: number
 }
 
-export const getRawCategoryListFromPosts = (posts: Post[]): string[] =>
+export const getRawCategoryListFromPosts = (posts: PostData[]): string[] =>
   posts.map(post => post.category)
 
-export const getCategoryListFromPosts = (posts: Post[]): string[] => {
+export const getCategoryListFromPosts = (posts: PostData[]): string[] => {
   const rawCategoryList = getRawCategoryListFromPosts(posts)
 
   return removeRepeatedValuesFromArray(rawCategoryList)
 }
 
 export function getCategoriesAndNumberOfPosts(
-  posts: Post[]
+  posts: PostData[]
 ): CategoriesAndNumberOfPosts[] {
   const rawCategoryList = getRawCategoryListFromPosts(posts)
   const categoryList = getCategoryListFromPosts(posts)
@@ -40,5 +32,7 @@ export function getCategoriesAndNumberOfPosts(
   return categoriesAndNumberOfPosts
 }
 
-export const getPostsOfCategory = (posts: Post[], category: string): Post[] =>
-  posts.filter(post => post.category === category)
+export const getPostsOfCategory = (
+  posts: PostData[],
+  category: string
+): PostData[] => posts.filter(post => post.category === category)
