@@ -13,12 +13,14 @@ export interface CategoriesAndNumberOfPosts {
   numberOfPosts: number
 }
 
-export function getCategoriesFromPosts(
-  posts: Post[]
-): CategoriesAndNumberOfPosts[] {
-  const allCategories = posts.map(post => {
-    return post.category
-  })
+export type GetAllCategories = (posts: Post[]) => string[]
+export type GetUniqueCategoryList = (posts: Post[]) => string[]
+
+export const getAllCategories: GetAllCategories = posts =>
+  posts.map(post => post.category)
+
+export const getUniqueCategoryList: GetUniqueCategoryList = posts => {
+  const allCategories = getAllCategories(posts)
 
   const uniqueCategories = allCategories.filter(
     (category, index, originalArray) => {
@@ -26,8 +28,16 @@ export function getCategoriesFromPosts(
     }
   )
 
-  const categoriesAndNumberOfPosts = uniqueCategories.map(category => {
-    const numberOfPosts = getFrequencyOfValue(allCategories, category)
+  return uniqueCategories
+}
+
+export function getCategoriesFromPosts(
+  posts: Post[]
+): CategoriesAndNumberOfPosts[] {
+  const categoryList = getUniqueCategoryList(posts)
+
+  const categoriesAndNumberOfPosts = categoryList.map(category => {
+    const numberOfPosts = getFrequencyOfValue(categoryList, category)
 
     return {
       category,
