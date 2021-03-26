@@ -3,6 +3,7 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -36,7 +37,12 @@ const Post: React.FC<Props> = ({ postData }) => {
               <h2>{postData.title}</h2>
               <div>
                 <p>date: {postData.date}</p>
-                <p>category: {postData.category}</p>
+                <p>
+                  category:{' '}
+                  <Link href={`/category/${postData.category}`}>
+                    {postData.category}
+                  </Link>
+                </p>
                 <p>tags: {postData.tags}</p>
               </div>
             </PostHeader>
