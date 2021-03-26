@@ -9,7 +9,7 @@ import Container from '../../components/Container'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
 
-import { PostHeader } from '../../styles/pages/post'
+import { PostHeader, PostContent } from '../../styles/pages/post'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
@@ -46,7 +46,9 @@ const Post: React.FC<Props> = ({ postData }) => {
                 <p>tags: {postData.tags}</p>
               </div>
             </PostHeader>
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            <PostContent>
+              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            </PostContent>
           </article>
         </Main>
       </Container>

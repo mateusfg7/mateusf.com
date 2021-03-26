@@ -5,3 +5,35 @@ export const PostHeader = styled.div`
   border-bottom: 1px solid ${props => props.theme.colors.unselected.secondText};
   margin-bottom: 2rem;
 `
+
+export const PostContent = styled.div`
+  line-height: 1.5rem;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 1rem 0;
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  code {
+    padding: 0.5rem;
+    background: rgba(100, 100, 100, 0.05);
+  }
+
+  pre {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(100, 100, 100, 0.05);
+
+    code {
+      background: none;
+      padding: 0;
+    }
+  }
+`
