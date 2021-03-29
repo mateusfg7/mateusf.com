@@ -8,13 +8,15 @@ import Link from 'next/link'
 import Container from '../../components/Container'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
+import Date from '../../components/Date'
+
+import hljs from 'highlight.js/lib/core'
+import 'highlight.js/styles/github-gist.css'
 
 import { PostHeader, PostContent } from '../../styles/pages/post'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
-import hljs from 'highlight.js/lib/core'
-import 'highlight.js/styles/github-gist.css'
 interface PostDataWithContent extends PostData {
   contentHtml: string
 }
@@ -23,6 +25,8 @@ interface Props {
 }
 
 const Post: React.FC<Props> = ({ postData }) => {
+  const tags = postData.tags.split(',')
+
   return (
     <div>
       <Head>
@@ -38,14 +42,19 @@ const Post: React.FC<Props> = ({ postData }) => {
             <PostHeader>
               <h2>{postData.title}</h2>
               <div>
-                <p>date: {postData.date}</p>
                 <p>
-                  category:{' '}
+                  <Date dateString={postData.date} /> &#8226;{' '}
                   <Link href={`/category/${postData.category}`}>
                     {postData.category}
                   </Link>
                 </p>
-                <p>tags: {postData.tags}</p>
+                <p className="tags">
+                  {tags.map((tag, index) => (
+                    <span key={index} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </p>
               </div>
             </PostHeader>
             <PostContent>

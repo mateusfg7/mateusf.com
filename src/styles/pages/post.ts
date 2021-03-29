@@ -2,8 +2,32 @@ import styled from 'styled-components'
 
 export const PostHeader = styled.div`
   padding: 1rem 0;
+
+  line-height: 1.5rem;
+
   border-bottom: 1px solid ${props => props.theme.colors.unselected.secondText};
   margin-bottom: 2rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .tag {
+      color: ${props => props.theme.colors.unselected.secondText};
+
+      transition: color 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        color: ${props => props.theme.colors.text};
+      }
+    }
+  }
 `
 
 export const PostContent = styled.div`
