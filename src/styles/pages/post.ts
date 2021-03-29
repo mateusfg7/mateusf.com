@@ -23,17 +23,16 @@ export const PostContent = styled.div`
 
   code {
     padding: 0.5rem;
-    background: rgba(100, 100, 100, 0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
 
   pre {
     margin: 1rem 0;
-    padding: 1rem;
-    background: rgba(100, 100, 100, 0.05);
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.05);
 
     code {
       background: none;
-      padding: 0;
     }
   }
 `
