@@ -7,4 +7,5 @@ interface PostData {
   category: string
   tags: string
   id: string
+  description: string
 }
