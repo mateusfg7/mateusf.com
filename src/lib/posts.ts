@@ -31,6 +31,7 @@ export function getSortedPostsData() {
         title: string
         category: string
         tags: string
+        description: string
       })
     }
   })
@@ -93,6 +94,7 @@ export async function getPostData(id) {
       title: string
       category: string
       tags: string
+      description: string
     })
   }
 }
