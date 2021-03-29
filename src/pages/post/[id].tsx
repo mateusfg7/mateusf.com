@@ -13,6 +13,8 @@ import { PostHeader, PostContent } from '../../styles/pages/post'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
+import hljs from 'highlight.js/lib/core'
+import 'highlight.js/styles/github-gist.css'
 interface PostDataWithContent extends PostData {
   contentHtml: string
 }
