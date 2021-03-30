@@ -68,11 +68,33 @@ const y = bar(1);
 
 tables
 
-| | A | B |
+| A | B | C |
 |---|---|---|
-| a | Aa | Ba |
-| b | Ab | Bb |
+| a1 | b1 | c1 |
+| a2 | b1 | c2 |
 
+<table>
+  <tr>
+    <td>Test 1</td>
+    <td>Test 2</td>
+  </tr>
+  <tr>
+    <td>Test 3</td>
+    <td>Test 4</td>
+  </tr>
+</table>
+
+
+- [x] task 1
+- [x] task 2
+- [ ] task 3
+- [ ] task 4
+
+<br/>
+
+- item 1
+- item 2
+- item 3
 
 separation
 

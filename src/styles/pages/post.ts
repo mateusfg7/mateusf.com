@@ -50,6 +50,21 @@ export const PostContent = styled.div`
     max-width: 100%;
   }
 
+  table {
+    th,
+    td {
+      padding: 0.3rem;
+    }
+  }
+
+  ul {
+    list-style: inside;
+
+    &.contains-task-list {
+      list-style: none;
+    }
+  }
+
   code {
     padding: 0.4rem;
     background: rgba(0, 0, 0, 0.05);
