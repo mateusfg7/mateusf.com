@@ -31,7 +31,7 @@ export const PostHeader = styled.div`
 `
 
 export const PostContent = styled.div`
-  line-height: 1.5rem;
+  line-height: 2rem;
 
   h1,
   h2,
@@ -46,7 +46,7 @@ export const PostContent = styled.div`
   }
 
   code {
-    padding: 0.5rem;
+    padding: 0.4rem;
     background: rgba(0, 0, 0, 0.05);
   }
 
