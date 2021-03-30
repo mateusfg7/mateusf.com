@@ -1,7 +1,7 @@
 ---
 title: 'Draft Post'
 date: '0001-01-01'
-description: 'Well, my first real blog, with Hugo.'
+description: 'Post made for test markdown render'
 category: 'Draft'
 tags: 'title4test, content4test, code4test'
 ---
