@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-  /* border: 1px solid blue; */
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +10,7 @@ export const StyledHeader = styled.header`
     align-items: center;
     gap: 20px;
 
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 
     img {
       width: 50px;
