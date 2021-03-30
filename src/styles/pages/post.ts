@@ -57,8 +57,12 @@ export const PostContent = styled.div`
     }
   }
 
-  ul.contains-task-list {
-    list-style: none;
+  ul {
+    list-style: inside;
+
+    &.contains-task-list {
+      list-style: none;
+    }
   }
 
   code {
