@@ -59,15 +59,6 @@ export const PostContent = styled.div`
 
   ul.contains-task-list {
     list-style: none;
-
-    li {
-      input {
-        border: none;
-        background: black;
-
-        padding: 100px;
-      }
-    }
   }
 
   code {
