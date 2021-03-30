@@ -1,4 +1,4 @@
-export const getFrequencyOfValue = (array: [], value: unknown): number => {
+export const getFrequencyOfValue = (array: any[], value: unknown): number => {
   let frequency = 0
 
   array.forEach(element => (element === value ? frequency++ : null))
@@ -6,7 +6,7 @@ export const getFrequencyOfValue = (array: [], value: unknown): number => {
   return frequency
 }
 
-export const removeRepeatedValuesFromArray = (array: unknown[]): unknown[] => {
+export const removeRepeatedValuesFromArray = (array: any[]): any[] => {
   return array.filter((item, index, originalArray) => {
     return originalArray.indexOf(item) === index
   })

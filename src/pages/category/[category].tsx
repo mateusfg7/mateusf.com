@@ -73,12 +73,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params.category
 
   const allPostsData = getSortedPostsData()
-  const posts = getPostsOfCategory(allPostsData, category)
+
+  if (typeof category == 'string') {
+    const posts = getPostsOfCategory(allPostsData, category)
+
+    return {
+      props: {
+        category,
+        posts
+      }
+    }
+  }
 
   return {
-    props: {
-      category,
-      posts
-    }
+    props: {}
   }
 }
