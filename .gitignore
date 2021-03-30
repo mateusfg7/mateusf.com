@@ -34,9 +34,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-
-# posts
-_posts/*
-!_posts/ssg-ssr.md
-!_posts/pre-rendering.md
