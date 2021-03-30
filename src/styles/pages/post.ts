@@ -32,6 +32,7 @@ export const PostHeader = styled.div`
 
 export const PostContent = styled.div`
   line-height: 2rem;
+  word-wrap: break-word;
 
   h1,
   h2,
@@ -43,6 +44,10 @@ export const PostContent = styled.div`
 
   strong {
     font-weight: 500;
+  }
+
+  img {
+    width: 100%;
   }
 
   code {
