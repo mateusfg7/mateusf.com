@@ -12,17 +12,21 @@ interface Props {
 
 const Home: React.FC<Props> = props => {
   return (
-    <div>
-      <Head>
-        <title>My Blog</title>
-      </Head>
+    <div className="type">
+      <div className="white-filter">
+        <Head>
+          <title>My Blog</title>
+        </Head>
 
-      <Container>
-        <Header imageUrl={props.avatarUrl} title="Home" />
-        <Main>
-          <h1>Home</h1>
-        </Main>
-      </Container>
+        <Container>
+          <Header imageUrl={props.avatarUrl} title="Home" />
+          <Main>
+            <div className="center">
+              <img src="/assets/typing.gif" alt="" />
+            </div>
+          </Main>
+        </Container>
+      </div>
     </div>
   )
 }
