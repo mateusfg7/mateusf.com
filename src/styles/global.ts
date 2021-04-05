@@ -18,4 +18,29 @@ export default createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
   }
+
+  div.type {
+    width: 100vw;
+    height: 100vh;
+
+    background: url("/assets/typing.gif") no-repeat fixed center;
+    background-size: cover;
+
+    div.black-filter {
+      width: 100vw;
+      height: 100vh;
+
+      background-color: rgba(0,0,0,0.3);
+      backdrop-filter: blur(7px);
+    }
+  }
+
+  div.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+  }
 `
