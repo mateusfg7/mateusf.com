@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({ imageUrl, title, isHome }) => {
             <span>x</span>
           </header>
           <main>
-            <span className="shell">~$</span>
+            <span className="shell">~#</span>
             <span className="typewrite">
               ./mateus-brain --show{' '}
               <Link href="/posts">
