@@ -17,11 +17,9 @@ const Home: React.FC<Props> = props => {
         <title>My Blog</title>
       </Head>
 
-      <Container>
-        <Main>
-          <Header imageUrl={props.avatarUrl} title="Home" isHome />
-        </Main>
-      </Container>
+      <div className="center">
+        <Header imageUrl={props.avatarUrl} title="Home" isHome />
+      </div>
     </div>
   )
 }
