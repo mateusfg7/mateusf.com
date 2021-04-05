@@ -66,12 +66,16 @@ export const StyledHeader = styled.header`
     }
 
     div {
+      --border-radius: 1.5rem;
+
       flex-direction: column;
 
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(7px);
 
       font-size: 1.4rem;
+
+      border-radius: var(--border-radius);
 
       header {
         display: flex;
@@ -83,6 +87,8 @@ export const StyledHeader = styled.header`
 
         background: black;
         color: white;
+
+        border-radius: var(--border-radius);
       }
 
       main {
@@ -92,6 +98,8 @@ export const StyledHeader = styled.header`
 
         display: flex;
         gap: 0.4rem;
+
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
 
         a {
           color: white;
