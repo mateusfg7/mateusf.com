@@ -1,20 +1,13 @@
 import styled, { keyframes } from 'styled-components'
 
 const blink = keyframes`
-  0% {
-    opacity: 1;
-  }
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+`
 
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-
-
+const typing = keyframes`
+  from { width: 0; }
+  to { width: 100%; }
 `
 
 export const StyledHeader = styled.header`
@@ -84,7 +77,7 @@ export const StyledHeader = styled.header`
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: 1rem 2rem;
 
         text-align: end;
 
@@ -93,9 +86,12 @@ export const StyledHeader = styled.header`
       }
 
       main {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1.6rem;
         padding: 4rem 2rem;
+
+        display: flex;
+        gap: 0.4rem;
 
         a {
           color: white;
@@ -107,11 +103,15 @@ export const StyledHeader = styled.header`
       }
 
       span.shell {
-        color: white;
+        color: rgba(255, 255, 255, 0.8);
       }
-      span.blink {
-        color: white;
-        animation: ${blink} 1s linear infinite;
+      span.typewrite {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 0.15em solid white;
+        animation: ${typing} 3.5s steps(40, end),
+          ${blink} 0.75s step-end infinite;
       }
     }
   }
