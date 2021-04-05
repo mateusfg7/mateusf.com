@@ -14,7 +14,7 @@ const Home: React.FC<Props> = props => {
   return (
     <div className="type">
       <Head>
-        <title>My Blog</title>
+        <title>mateus-brain.bak</title>
       </Head>
 
       <div className="black-filter">
