@@ -26,11 +26,11 @@ export default createGlobalStyle`
     background: url("/assets/typing.gif") no-repeat fixed center;
     background-size: cover;
 
-    div.white-filter {
+    div.black-filter {
       width: 100vw;
       height: 100vh;
 
-      background-color: rgba(255,255,255,0.4);
+      background-color: rgba(0,0,0,0.3);
       backdrop-filter: blur(7px);
     }
   }

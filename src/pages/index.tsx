@@ -17,8 +17,10 @@ const Home: React.FC<Props> = props => {
         <title>My Blog</title>
       </Head>
 
-      <div className="center">
-        <Header imageUrl={props.avatarUrl} title="Home" isHome />
+      <div className="black-filter">
+        <div className="center">
+          <Header imageUrl={props.avatarUrl} title="Home" isHome />
+        </div>
       </div>
     </div>
   )
