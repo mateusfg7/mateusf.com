@@ -1,6 +1,6 @@
 #!/bin/bash
 
-current_date=$(date '+%d-%m-%Y')
+current_date=$(date '+%Y-%m-%d')
 file="_posts/$1.md"
 metadata="
 ---
