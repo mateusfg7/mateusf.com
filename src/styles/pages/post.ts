@@ -42,6 +42,18 @@ export const PostContent = styled.div`
     font-weight: 500;
   }
 
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
   strong {
     font-weight: 500;
   }
