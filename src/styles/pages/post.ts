@@ -50,6 +50,10 @@ export const PostContent = styled.div`
     max-width: 100%;
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
   table {
     th,
     td {
