@@ -3,7 +3,7 @@ title: 'NLW#5 - Elixir Notes'
 date: '2021-04-26'
 description: 'Elixir notes write during NextLevelWeek #5 of the Rocketseat'
 category: Elixir
-tags: 'nlw5, rocketseat, tasks, genserver, phoenix, ecto'
+tags: 'nlw5, rocketseat, server, tasks, genserver, phoenix, ecto, tips'
 ---
 
 # Notes
