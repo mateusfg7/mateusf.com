@@ -3,7 +3,7 @@ title: 'NLW#5 - React Notes'
 date: '2021-05-04'
 description: 'React notes write during NextLevelWeek #5 of the Rocketseat'
 category: 'Next.js'
-tags: 'nlw5, rocketseat, web, ssr, ssg, js-tips, css-tips'
+tags: 'nlw5, rocketseat, web, ssr, ssg, tips'
 ---
 
 # CSS
