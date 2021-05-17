@@ -10,20 +10,10 @@ const typing = keyframes`
   to { width: 100%; }
 `
 
-export const StyledHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+export const Container = styled.header`
   margin-bottom: 100px;
 
-  span.shell {
-    color: rgba(255, 255, 255, 0.8);
-  }
-  span.blink {
-    color: black;
-    animation: ${blink} 1s linear infinite;
-  }
+  min-width: 37rem;
 
   div {
     --border-radius: 1.5rem;
@@ -39,6 +29,11 @@ export const StyledHeader = styled.header`
     backdrop-filter: blur(7px);
 
     border-radius: var(--border-radius);
+
+    &.disabled {
+      background: none;
+      backdrop-filter: none;
+    }
 
     img {
       width: 50px;
@@ -75,12 +70,22 @@ export const StyledHeader = styled.header`
 
       border-radius: 0 0 var(--border-radius) var(--border-radius);
 
+      transition: 0.5s;
+
+      span.shell {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
       a {
         color: white;
 
         &:hover {
           text-decoration: underline;
         }
+      }
+
+      &.disabled {
+        padding: 0;
       }
     }
 

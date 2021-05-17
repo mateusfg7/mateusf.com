@@ -1,31 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 
-import { StyledHeader } from './styles'
+import { Container } from './styles'
 
 const Terminal: React.FC = () => {
+  const [isActive, setIsActive] = useState(true)
+
   return (
-    <StyledHeader className="home">
-      <div>
+    <Container className="home">
+      <div className={isActive ? 'active' : 'disabled'}>
         <header>
           <span className="tile">Terminal</span>
-          <span>x</span>
-        </header>
-        <main>
-          <span className="shell">~#</span>
-          <span className="typewrite">
-            ./mateus-brain --show{' '}
-            <Link href="/posts">
-              <a>posts</a>
-            </Link>
-            /
-            <Link href="/categories">
-              <a>categories</a>
-            </Link>
+          <span>
+            <button type="button" onClick={() => setIsActive(!isActive)}>
+              x
+            </button>
           </span>
+        </header>
+
+        <main className={isActive ? 'active' : 'disabled'}>
+          {isActive && (
+            <>
+              <span className="shell">~#</span>
+              <span className="typewrite">
+                ./mateus-brain --show{' '}
+                <Link href="/posts">
+                  <a>posts</a>
+                </Link>
+                /
+                <Link href="/categories">
+                  <a>categories</a>
+                </Link>
+              </span>
+            </>
+          )}
         </main>
       </div>
-    </StyledHeader>
+    </Container>
   )
 }
 
