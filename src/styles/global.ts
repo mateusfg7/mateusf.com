@@ -31,7 +31,6 @@ export default createGlobalStyle`
       height: 100vh;
 
       background-color: rgba(0,0,0,0.3);
-      backdrop-filter: blur(7px);
     }
   }
 
