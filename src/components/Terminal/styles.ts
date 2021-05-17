@@ -58,6 +58,21 @@ export const Container = styled.header`
       color: white;
 
       border-radius: var(--border-radius);
+
+      button {
+        padding: 0 0.5rem;
+
+        background: none;
+        border: none;
+        border-radius: var(--border-radius);
+
+        font-size: 1.4rem;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     main {

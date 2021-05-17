@@ -11,11 +11,9 @@ const Terminal: React.FC = () => {
       <div className={isActive ? 'active' : 'disabled'}>
         <header>
           <span className="tile">Terminal</span>
-          <span>
-            <button type="button" onClick={() => setIsActive(!isActive)}>
-              x
-            </button>
-          </span>
+          <button type="button" onClick={() => setIsActive(!isActive)}>
+            {isActive ? 'x' : '-'}
+          </button>
         </header>
 
         <main className={isActive ? 'active' : 'disabled'}>
