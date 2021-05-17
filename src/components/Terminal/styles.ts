@@ -60,10 +60,15 @@ export const Container = styled.header`
       border-radius: var(--border-radius);
 
       button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         padding: 0 0.5rem;
 
         background: none;
         border: none;
+        /* border: 1px solid red; */
         border-radius: var(--border-radius);
 
         font-size: 1.4rem;

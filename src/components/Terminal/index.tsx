@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
+import { AiOutlineClose } from 'react-icons/ai'
+import { BiBrain } from 'react-icons/bi'
+
 import { Container } from './styles'
 
 const Terminal: React.FC = () => {
@@ -12,7 +15,7 @@ const Terminal: React.FC = () => {
         <header>
           <span className="tile">Terminal</span>
           <button type="button" onClick={() => setIsActive(!isActive)}>
-            {isActive ? 'x' : '-'}
+            {isActive ? <AiOutlineClose /> : <BiBrain />}
           </button>
         </header>
 
