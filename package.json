@@ -28,7 +28,7 @@
     "styled-components": "^5.2.2"
   },
   "devDependencies": {
-    "@types/node": "^14.14.37",
+    "@types/node": "^15.3.0",
     "@types/react": "^17.0.3",
     "@types/styled-components": "^5.1.9",
     "eslint": "^7.23.0",
