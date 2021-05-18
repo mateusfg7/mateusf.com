@@ -68,7 +68,7 @@ export const Container = styled.header`
 
         background: none;
         border: none;
-        /* border: 1px solid red; */
+
         border-radius: var(--border-radius);
 
         font-size: 1.4rem;
@@ -116,23 +116,5 @@ export const Container = styled.header`
       border-right: 0.15em solid white;
       animation: ${typing} 3.5s steps(40, end), ${blink} 0.75s step-end infinite;
     }
-  }
-
-  nav {
-    a {
-      color: ${props => props.theme.colors.text};
-      margin-right: 30px;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  img {
-    width: 50px;
-    height: 50px;
-
-    border-radius: 0;
   }
 `
