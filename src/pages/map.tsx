@@ -25,41 +25,99 @@ const Map: React.FC<Props> = ({ allPostData, categories }) => {
 
       <Container>
         <LinksContainer>
-          <Link href="/">
-            <code>
-              <a>/</a>
-            </code>
-          </Link>
-
-          <Link href="/posts">
-            <code>
-              <a>/posts</a>
-            </code>
-          </Link>
-
-          {allPostData.map((post, key) => {
+          {/* {allPostData.map((post, key) => {
             return (
-              <Link key={key} href={`/post/${post.id}`}>
-                <code>
-                  <a>{`/post/${post.id}`}</a>
-                </code>
-              </Link>
+              <code>
+                <a key={key} href={`/post/${post.id}`}>{`/post/${post.id}`}</a>
+              </code>
             )
           })}
 
-          <Link href="/categories">
-            <code>
-              <a>/categories</a>
-            </code>
-          </Link>
-
           {categories.map((categoryData, index) => (
-            <Link key={index} href={`/category/${categoryData.category}`}>
-              <code>
-                <a>{`/category/${categoryData.category}`}</a>
-              </code>
-            </Link>
-          ))}
+            <code>
+              <a
+                key={index}
+                href={`/category/${categoryData.category}`}
+              >{`/category/${categoryData.category}`}</a>
+            </code>
+          ))} */}
+
+          <code>
+            <a href="/">/</a>
+          </code>
+          <code>
+            <a href="/posts">/posts</a>
+          </code>
+          <code>
+            <a href="/post/react-native_notes_nlw5">
+              /post/react-native_notes_nlw5
+            </a>
+          </code>
+          <code>
+            <a href="/post/react_notes_nlw5">/post/react_notes_nlw5</a>
+          </code>
+          <code>
+            <a href="/post/elixir_notes_nlw5">/post/elixir_notes_nlw5</a>
+          </code>
+          <code>
+            <a href="/post/sqlite3-with-python">/post/sqlite3-with-python</a>
+          </code>
+          <code>
+            <a href="/post/learn-elixir-ep4">/post/learn-elixir-ep4</a>
+          </code>
+          <code>
+            <a href="/post/learn-elixir-ep3">/post/learn-elixir-ep3</a>
+          </code>
+          <code>
+            <a href="/post/learn-elixir-ep2">/post/learn-elixir-ep2</a>
+          </code>
+          <code>
+            <a href="/post/learn-elixir-ep1">/post/learn-elixir-ep1</a>
+          </code>
+          <code>
+            <a href="/post/oak-over-https">/post/oak-over-https</a>
+          </code>
+          <code>
+            <a href="/post/neovim">/post/neovim</a>
+          </code>
+          <code>
+            <a href="/post/learn-with-ethereum-ep2">
+              /post/learn-with-ethereum-ep2
+            </a>
+          </code>
+          <code>
+            <a href="/post/learn-with-ethereum">/post/learn-with-ethereum</a>
+          </code>
+          <code>
+            <a href="/post/draft-post">/post/draft-post</a>
+          </code>
+          <code>
+            <a href="/categories">/categories</a>
+          </code>
+          <code>
+            <a href="/category/React Native">/category/React Native</a>
+          </code>
+          <code>
+            <a href="/category/Next.js">/category/Next.js</a>
+          </code>
+          <code>
+            <a href="/category/Elixir">/category/Elixir</a>
+          </code>
+          <code>
+            <a href="/category/Python">/category/Python</a>
+          </code>
+          <code>
+            <a href="/category/Deno">/category/Deno</a>
+          </code>
+          <code>
+            <a href="/category/Vim">/category/Vim</a>
+          </code>
+          <code>
+            <a href="/category/Ethereum">/category/Ethereum</a>
+          </code>
+          <code>
+            <a href="/category/Draft">/category/Draft</a>
+          </code>
         </LinksContainer>
       </Container>
     </div>
