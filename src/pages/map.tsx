@@ -11,12 +11,7 @@ import {
   getCategoriesAndNumberOfPosts
 } from '../lib/categories'
 
-interface Props {
-  allPostData: PostData[]
-  categories: CategoriesAndNumberOfPosts[]
-}
-
-const Map: React.FC<Props> = ({ allPostData, categories }) => {
+const Map: React.FC = () => {
   return (
     <div>
       <Head>
@@ -109,7 +104,7 @@ const Map: React.FC<Props> = ({ allPostData, categories }) => {
 
 export default Map
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostData = getSortedPostsData()
 
   const categories = getCategoriesAndNumberOfPosts(allPostData)
@@ -142,9 +137,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   `)
 
   return {
-    props: {
-      allPostData,
-      categories
-    }
+    props: {}
   }
 }
