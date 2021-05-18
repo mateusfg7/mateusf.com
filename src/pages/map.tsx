@@ -25,23 +25,6 @@ const Map: React.FC<Props> = ({ allPostData, categories }) => {
 
       <Container>
         <LinksContainer>
-          {/* {allPostData.map((post, key) => {
-            return (
-              <code>
-                <a key={key} href={`/post/${post.id}`}>{`/post/${post.id}`}</a>
-              </code>
-            )
-          })}
-
-          {categories.map((categoryData, index) => (
-            <code>
-              <a
-                key={index}
-                href={`/category/${categoryData.category}`}
-              >{`/category/${categoryData.category}`}</a>
-            </code>
-          ))} */}
-
           <code>
             <a href="/">/</a>
           </code>
@@ -130,6 +113,33 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const allPostData = getSortedPostsData()
 
   const categories = getCategoriesAndNumberOfPosts(allPostData)
+
+  // Links
+
+  console.log(`
+    <code>
+      <a href="/">/</a>
+    </code>
+    <code>
+      <a href="/posts">/posts</a>
+    </code>
+    ${allPostData.map(
+      post =>
+        `<code>
+          <a href="/post/${post.id}">/post/${post.id}</a>
+        </code>`
+    )}
+    <code>
+    <a href="/categories">/categories</a>
+    </code>
+    ${categories.map(
+      categoryData =>
+        `<code>
+            <a href="/category/${categoryData.category}">/category/${categoryData.category}</a>
+        </code>`
+    )}
+
+  `)
 
   return {
     props: {
