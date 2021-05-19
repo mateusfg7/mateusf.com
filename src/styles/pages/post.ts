@@ -74,7 +74,24 @@ export const PostContent = styled.div`
   }
 
   ul {
-    list-style: inside;
+    list-style: disc inside;
+
+    p {
+      display: inline;
+    }
+
+    li {
+      font-size: 1.1rem;
+
+      ul {
+        padding: 0 1.5rem;
+
+        li {
+          list-style: '∟  ' inside;
+          font-size: 1rem;
+        }
+      }
+    }
 
     &.contains-task-list {
       list-style: none;
