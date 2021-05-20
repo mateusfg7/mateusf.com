@@ -5,17 +5,19 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { getAllPostIds, getPostData } from '../../lib/posts'
+
 import Container from '../../components/Container'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Date from '../../components/Date'
 
+import { RiHistoryLine } from 'react-icons/ri'
+
 import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/github-gist.css'
 
 import { PostHeader, PostContent } from '../../styles/pages/post'
-
-import { getAllPostIds, getPostData } from '../../lib/posts'
 
 interface PostDataWithContent extends PostData {
   contentHtml: string
@@ -48,6 +50,11 @@ const Post: React.FC<Props> = ({ postData }) => {
                     {postData.category}
                   </Link>
                 </p>
+                {postData.lastUpdate && (
+                  <p className="last-update" title="Last Update">
+                    <Date dateString={postData.lastUpdate} /> <RiHistoryLine />
+                  </p>
+                )}
                 <p className="tags">
                   {tags.map((tag, index) => (
                     <span key={index} className="tag">
