@@ -12,10 +12,20 @@ export const PostHeader = styled.div`
     margin-bottom: 0.5rem;
   }
 
+  .last-update {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    color: ${props => props.theme.colors.unselected.secondText};
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+
+    margin-top: 0.3rem;
 
     .tag {
       color: ${props => props.theme.colors.unselected.secondText};
