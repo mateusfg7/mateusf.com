@@ -8,4 +8,5 @@ interface PostData {
   tags: string
   id: string
   description: string
+  lastUpdate?: string
 }

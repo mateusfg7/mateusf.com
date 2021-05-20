@@ -97,6 +97,7 @@ export async function getPostData(id) {
       category: string
       tags: string
       description: string
+      lastUpdate?: string
     })
   }
 }
