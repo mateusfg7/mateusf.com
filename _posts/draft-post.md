@@ -1,6 +1,7 @@
 ---
 title: 'Draft Post'
 date: '0001-01-01'
+lastUpdate: '2021-05-20'
 description: 'Post made for test markdown render'
 category: 'Draft'
 tags: 'title4test, content4test, code4test'
