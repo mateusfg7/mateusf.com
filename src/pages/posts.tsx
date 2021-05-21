@@ -34,7 +34,7 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
                   <Post>
                     <h2>{post.title}</h2>
                     <span>
-                      <Date dateString={post.date} /> &#8226; { post.description }
+                      <Date dateString={post.date} /> &#8226; {post.description}
                     </span>
                   </Post>
                 </a>
