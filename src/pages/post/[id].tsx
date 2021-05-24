@@ -14,13 +14,19 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/github-gist.css'
 
 import { PostHeader, PostContent } from '../../styles/pages/post'
 
+import unified from 'unified'
+import markdown from 'remark-parse'
+import highlight from 'remark-highlight.js'
+import remark2rehype from 'remark-rehype'
+import rehype2react from 'rehype-react'
+import gfm from 'remark-gfm'
+
 interface PostDataWithContent extends PostData {
-  contentHtml: string
+  content: string
 }
 interface Props {
   postData: PostDataWithContent
@@ -28,6 +34,13 @@ interface Props {
 
 const Post: React.FC<Props> = ({ postData }) => {
   const tags = postData.tags.split(',')
+
+  const contentProcessor = unified()
+    .use(markdown)
+    .use(gfm)
+    .use(highlight)
+    .use(remark2rehype)
+    .use(rehype2react, { createElement: React.createElement })
 
   return (
     <div>
@@ -65,7 +78,7 @@ const Post: React.FC<Props> = ({ postData }) => {
               </div>
             </PostHeader>
             <PostContent>
-              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              {contentProcessor.processSync(postData.content).result}
             </PostContent>
           </article>
         </Main>
@@ -85,7 +98,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(
+    typeof params.id === 'string' ? params.id : ''
+  )
 
   return {
     props: {
