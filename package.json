@@ -26,6 +26,7 @@
     "remark-gfm": "^1.0.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
+    "remark-parse": "^9.0.0",
     "styled-components": "^5.2.2",
     "unified": "^9.2.1"
   },
