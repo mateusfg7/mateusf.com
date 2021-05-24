@@ -26,6 +26,8 @@ import katex from 'rehype-katex'
 import remark2rehype from 'remark-rehype'
 import rehype2react from 'rehype-react'
 import gfm from 'remark-gfm'
+import toc from 'rehype-toc'
+import slug from 'rehype-slug'
 
 interface PostDataWithContent extends PostData {
   content: string
@@ -44,6 +46,8 @@ const Post: React.FC<Props> = ({ postData }) => {
     .use(highlight)
     .use(remark2rehype)
     .use(katex)
+    .use(slug)
+    .use(toc)
     .use(rehype2react, { createElement: React.createElement })
 
   return (
