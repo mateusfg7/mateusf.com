@@ -17,6 +17,12 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="shortcut icon" href="assets/brain.png" type="image/png" />
+
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
