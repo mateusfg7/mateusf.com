@@ -116,6 +116,12 @@ a2 | b1 | c2
 - item 2
 - item 3
 
+math
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
 separation
 
 ---
