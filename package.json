@@ -26,7 +26,8 @@
     "remark-gfm": "^1.0.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
-    "styled-components": "^5.2.2"
+    "styled-components": "^5.2.2",
+    "unified": "^9.2.1"
   },
   "devDependencies": {
     "@types/node": "^15.3.0",
