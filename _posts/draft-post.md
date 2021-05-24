@@ -119,8 +119,12 @@ a2 | b1 | c2
 math
 
 $$
-L = \frac{1}{2} \rho v^2 S C_L
+f(x) = \int_{-\infty}^\infty
+    f\hat\xi\,e^{2 \pi i \xi x}
+    \,d\xi
 $$
+
+inline math: $ x+1 = 2 $
 
 separation
 
