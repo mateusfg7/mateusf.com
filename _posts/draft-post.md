@@ -69,10 +69,29 @@ const y = bar(1);
 
 tables
 
+
 | A | B | C |
 |---|---|---|
 | a1 | b1 | c1 |
 | a2 | b1 | c2 |
+
+|---|---|---|
+| A | B | C |
+|---|---|---|
+| a1 | b1 | c1 |
+|---|---|---|
+| a2 | b1 | c2 |
+|---|---|---|
+
+A | B | C
+---|---|---
+a1 | b1 | c1
+a2 | b1 | c2
+
+| foo | bar |
+| :-- | :-: |
+| baz | qux |
+
 
 <table>
   <tr>
@@ -96,6 +115,16 @@ tables
 - item 1
 - item 2
 - item 3
+
+math
+
+$$
+f(x) = \int_{-\infty}^\infty
+    f\hat\xi\,e^{2 \pi i \xi x}
+    \,d\xi
+$$
+
+inline math: $ x+1 = 2 $
 
 separation
 
