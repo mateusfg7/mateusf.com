@@ -102,6 +102,8 @@ collaboration, DevOps and customer engagement._
 
 ## Office
 
+[**OnlyOffice**](https://www.onlyoffice.com/): _OnlyOffice, stylized as ONLYOFFICE, is a free software office suite developed by Ascensio System SIA, a company headquartered in Riga, Latvia. It features online document editors, platform for document management, corporate communication, mail and project management tools._
+
 [**CUPS**](https://www.cups.org/): _CUPS is the standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems. CUPS uses the Internet Printing Protocol (IPP) to support printing to local and network printers._
 
 [**LeanTime**](https://leantime.io/): _Straightforward open source project management system to make your ideas reality._
@@ -155,6 +157,12 @@ using Bitcoin cryptography and BitTorrent network._
 [**Porteiner**](https://www.portainer.io/): _Portainer is a universal container management tool. It works with Kubernetes, Docker, Docker Swarm and Azure ACI. It allows you to manage containers without needing to know platform-specific code._
 
 [**Kubernets**](https://kubernetes.io/): _Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications._
+
+# Conclusion
+
+Help me with this list!
+
+If you know more softwares, make a contribution to the list at https://github.com/mateusfg7/mfg-b/blob/main/_posts/self-hosted-softwares.md
 
 # referencies
 
