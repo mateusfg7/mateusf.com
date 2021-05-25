@@ -41,14 +41,14 @@ export const PostHeader = styled.div`
 `
 
 export const PostContent = styled.div`
-  line-height: 2rem;
+  line-height: 1.5rem;
   word-wrap: break-word;
 
   h1,
   h2,
   h3,
   h4 {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     font-weight: 500;
   }
 
