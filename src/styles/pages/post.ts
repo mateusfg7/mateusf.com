@@ -64,6 +64,10 @@ export const PostContent = styled.div`
     font-size: 1.2rem;
   }
 
+  p {
+    margin-bottom: 1rem;
+  }
+
   strong {
     font-weight: 500;
   }
