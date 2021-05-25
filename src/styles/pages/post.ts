@@ -148,6 +148,7 @@ export const PostContent = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 
+
     ol {
       list-style: none;
 
@@ -155,13 +156,16 @@ export const PostContent = styled.div`
         color: ${props => props.theme.colors.text};
 
         &.toc-link-h1 {
-          font-weight: 700;
+          font-weight: 500;
         }
         &.toc-link-h2 {
-          font-weight: 500;
+          font-weight: 400;
         }
         &.toc-link-h3 {
           font-weight: 300;
+        }
+        &.toc-link-h4 {
+          font-weight: 200;
         }
       }
 
