@@ -111,7 +111,6 @@ export const PostContent = styled.div`
     }
 
     li {
-      font-size: 1.1rem;
 
       ul {
         padding: 0 1.5rem;
