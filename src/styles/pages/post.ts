@@ -87,6 +87,22 @@ export const PostContent = styled.div`
     }
   }
 
+  blockquote {
+    padding-left: 0.3rem;
+    margin: 0.5rem 0;
+
+    border-left: 2px solid ${props => props.theme.colors.unselected.text};
+    border-radius: 4px;
+
+    background: rgba(0,0,0,0.04);
+
+    font-size: 0.8rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
   ul {
     list-style: disc inside;
 
