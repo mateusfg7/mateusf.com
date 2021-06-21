@@ -72,7 +72,7 @@ The `stdout=subprocess.PIPE` param defines that the output of the subprocess is 
 
 We are getting the `stdout` object of `Popen`, and running the `read()` function to read the output of the command. 
 
-—
+---
 
 # referencies
 
