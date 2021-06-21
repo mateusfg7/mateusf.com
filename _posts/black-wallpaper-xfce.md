@@ -16,6 +16,7 @@ This problem consists of black background insted the wallpaper on xfce4, apparen
 3. Will appear a window, enter some name, like "Wallpaper Daemon" and the description, "Daemon to load the xfce4 wallpaper", on the command field, add the command `xfdesktop --replace`.
 4. After save the config, restart the computer.
 
+
 ---
 
 # references
