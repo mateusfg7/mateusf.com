@@ -14,7 +14,7 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import 'highlight.js/styles/github-gist.css'
+import 'highlight.js/styles/github.css'
 
 import { PostHeader, PostContent } from '../../styles/pages/post'
 
