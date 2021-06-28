@@ -64,6 +64,10 @@ export const PostContent = styled.div`
     font-size: 1.2rem;
   }
 
+  h4 {
+    font-size: 1.1rem;
+  }
+
   p {
     margin: 1rem 0;
   }
