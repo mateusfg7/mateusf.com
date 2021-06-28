@@ -88,6 +88,10 @@ export const PostContent = styled.div`
     }
   }
 
+  hr {
+    margin: 2rem 0;
+  }
+
   blockquote {
     padding-left: 0.3rem;
     margin: 0.5rem 0;
