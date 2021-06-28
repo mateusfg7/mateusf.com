@@ -65,7 +65,7 @@ export const PostContent = styled.div`
   }
 
   p {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 
   strong {
@@ -84,6 +84,7 @@ export const PostContent = styled.div`
     th,
     td {
       padding: 0.3rem;
+      text-align: left;
     }
   }
 
