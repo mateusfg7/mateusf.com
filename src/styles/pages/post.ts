@@ -103,6 +103,10 @@ export const PostContent = styled.div`
     }
   }
 
+  ol {
+    list-style: number inside;
+  }
+
   ul {
     list-style: disc inside;
 
