@@ -110,6 +110,11 @@ export const PostContent = styled.div`
 
   ol {
     list-style: number inside;
+    li {
+      code {
+        padding: 0.27rem;
+      }
+    }
   }
 
   ul {
