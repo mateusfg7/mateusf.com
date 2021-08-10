@@ -30,7 +30,7 @@
     "remark-gfm": "^1.0.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^14.0.0",
-    "remark-math": "^4.0.0",
+    "remark-math": "^5.0.0",
     "remark-parse": "^10.0.0",
     "remark-rehype": "^8.1.0",
     "styled-components": "^5.2.2",
