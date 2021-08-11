@@ -24,6 +24,15 @@ const Stats: React.FC = () => {
             <img src="https://github-profile-trophy.vercel.app/?username=mateusfg7" />
           </section>
 
+          <section className="topic streak">
+            <header>
+              <p>Github Streak</p>
+            </header>
+
+
+            <img src="https://github-readme-streak-stats.herokuapp.com?user=mateusfg7&hide_border=true&ring=FB8C012B&dates=555555" />
+          </section>
+
           <section className="topic status">
             <header>
               <p>Github Status</p>
