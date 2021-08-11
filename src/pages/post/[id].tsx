@@ -18,7 +18,7 @@ import 'highlight.js/styles/github.css'
 
 import { PostHeader, PostContent } from '../../styles/pages/post'
 
-import unified from 'unified'
+import { unified } from 'unified'
 import markdown from 'remark-parse'
 import highlight from 'remark-highlight.js'
 import math from 'remark-math'
