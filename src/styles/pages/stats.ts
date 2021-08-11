@@ -38,9 +38,10 @@ export const Main = styled.div`
 export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, min-content);
+  grid-template-rows: repeat(5, min-content);
   grid-template-areas:
     'status status'
+    'streak streak'
     'trophy trophy'
     'code-time code-time'
     'languages languages';
@@ -95,6 +96,10 @@ export const Content = styled.div`
 
   section.trophy {
     grid-area: trophy;
+  }
+
+  section.streak {
+    grid-area: streak;
   }
 
   section.status {
