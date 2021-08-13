@@ -21,11 +21,11 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
   return (
     <div>
       <Head>
-        <title>Posts</title>
+        <title>Knowledge</title>
       </Head>
 
       <Container>
-        <Header imageUrl={avatarUrl} title="Posts" />
+        <Header imageUrl={avatarUrl} title="Knowledge" />
         <Main>
           {allPostData.map((post, key) => {
             return (
