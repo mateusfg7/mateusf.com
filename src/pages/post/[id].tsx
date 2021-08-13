@@ -14,8 +14,6 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import 'highlight.js/styles/github.css'
-
 import { PostHeader, PostContent } from '../../styles/pages/post'
 
 import { unified } from 'unified'
@@ -29,6 +27,18 @@ import gfm from 'remark-gfm'
 import toc from 'rehype-toc'
 import slug from 'rehype-slug'
 
+import elixir from "highlight.js/lib/languages/elixir"
+import vim from "highlight.js/lib/languages/vim"
+import typescript from "highlight.js/lib/languages/typescript"
+import javascript from "highlight.js/lib/languages/javascript"
+import bash from "highlight.js/lib/languages/bash"
+import python from "highlight.js/lib/languages/python"
+import css from "highlight.js/lib/languages/css"
+import xml from "highlight.js/lib/languages/xml"
+import plaintext from "highlight.js/lib/languages/plaintext"
+import sql from "highlight.js/lib/languages/sql"
+
+import 'highlight.js/styles/github.css'
 interface PostDataWithContent extends PostData {
   content: string
 }
@@ -39,12 +49,18 @@ interface Props {
 const Post: React.FC<Props> = ({ postData }) => {
   const tags = postData.tags.split(',')
 
+  const highlightLanguages = {
+    elixir, vim, typescript,
+    javascript, bash, python,
+    css, xml, plaintext, sql
+  }
+
   const contentProcessor = unified()
     .use(markdown)
     .use(gfm)
     .use(math)
     .use(remark2rehype)
-    .use(rehypeHighlight)
+    .use(rehypeHighlight, { languages: highlightLanguages })
     .use(katex)
     .use(slug)
     .use(toc)
