@@ -42,4 +42,13 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+
+  ::-webkit-scrollbar {
+    background: ${props => props.theme.colors.background};
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.text};
+    border-radius: 10px;
+  }
 `
