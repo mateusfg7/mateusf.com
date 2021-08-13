@@ -20,7 +20,7 @@ import { PostHeader, PostContent } from '../../styles/pages/post'
 
 import { unified } from 'unified'
 import markdown from 'remark-parse'
-import highlight from 'remark-highlight.js'
+import rehypeHighlight from 'rehype-highlight'
 import math from 'remark-math'
 import katex from 'rehype-katex'
 import remark2rehype from 'remark-rehype'
@@ -43,8 +43,8 @@ const Post: React.FC<Props> = ({ postData }) => {
     .use(markdown)
     .use(gfm)
     .use(math)
-    .use(highlight)
     .use(remark2rehype)
+    .use(rehypeHighlight)
     .use(katex)
     .use(slug)
     .use(toc)
