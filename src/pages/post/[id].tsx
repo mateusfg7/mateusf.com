@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { getAllPostIds, getPostData } from '../../lib/knowledgeFunctions'
+import { getAllKnowledgeIds, getPostData } from '../../lib/knowledgeFunctions'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -114,7 +114,7 @@ const Post: React.FC<Props> = ({ postData }) => {
 export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllKnowledgeIds()
   return {
     paths,
     fallback: false

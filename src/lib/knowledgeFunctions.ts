@@ -51,7 +51,7 @@ export function getSortedKnowledgeData() {
   })
 }
 
-export function getAllPostIds() {
+export function getAllKnowledgeIds() {
   const fileNames = fs.readdirSync(knowledgeDirectory)
 
   // Returns an array that looks like this:
