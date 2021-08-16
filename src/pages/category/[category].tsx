@@ -15,12 +15,13 @@ import {
   getCategoryListFromPosts,
   getPostsOfCategory
 } from '../../lib/categories'
+import { KnowledgeData } from '../../lib/types/types'
 
 import { Post } from '../../styles/pages/category'
 
 interface Props {
   category: string
-  posts: PostData[]
+  posts: KnowledgeData[]
 }
 
 const Category: React.FC<Props> = ({ category, posts }) => {

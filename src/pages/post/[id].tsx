@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { getAllKnowledgeIds, getKnowledgeData } from '../../lib/knowledgeFunctions'
+import { KnowledgeData } from '../../lib/types/types'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -39,7 +40,7 @@ import plaintext from "highlight.js/lib/languages/plaintext"
 import sql from "highlight.js/lib/languages/sql"
 
 import 'highlight.js/styles/github.css'
-interface PostDataWithContent extends PostData {
+interface PostDataWithContent extends KnowledgeData {
   content: string
 }
 interface Props {

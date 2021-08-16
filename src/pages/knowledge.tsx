@@ -11,10 +11,11 @@ import Date from '../components/Date'
 import { Post } from '../styles/pages/posts'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
+import { KnowledgeData } from '../lib/types/types'
 
 interface Props {
   avatarUrl: string
-  allPostData: PostData[]
+  allPostData: KnowledgeData[]
 }
 
 const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {

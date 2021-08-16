@@ -1,4 +1,4 @@
-interface PostData {
+export interface KnowledgeData {
   date: string
   title: string
   category: string
