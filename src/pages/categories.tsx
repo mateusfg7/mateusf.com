@@ -51,9 +51,9 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
 export default Categories
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostData = getSortedKnowledgeData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
-  const categories = getCategoriesAndNumberOfKnowledge(allPostData)
+  const categories = getCategoriesAndNumberOfKnowledge(allKnowledgeData)
 
   return {
     props: {
