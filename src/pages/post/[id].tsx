@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { getAllKnowledgeIds, getKnowledgeData } from '../../lib/knowledgeFunctions'
-import { KnowledgeData } from '../../lib/types/types'
+import { KnowledgeData } from '../../lib/types'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'

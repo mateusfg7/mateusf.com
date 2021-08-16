@@ -15,7 +15,7 @@ import {
   getCategoryListFromPosts,
   getPostsOfCategory
 } from '../../lib/categories'
-import { KnowledgeData } from '../../lib/types/types'
+import { KnowledgeData } from '../../lib/types'
 
 import { Post } from '../../styles/pages/category'
 

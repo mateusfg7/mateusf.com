@@ -1,5 +1,5 @@
 import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
-import { KnowledgeData } from './types/types'
+import { KnowledgeData } from './types'
 export interface CategoriesAndNumberOfPosts {
   category: string
   numberOfPosts: number

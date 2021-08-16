@@ -11,7 +11,7 @@ import Date from '../components/Date'
 import { Post } from '../styles/pages/posts'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
-import { KnowledgeData } from '../lib/types/types'
+import { KnowledgeData } from '../lib/types'
 
 interface Props {
   avatarUrl: string
