@@ -17,7 +17,7 @@ import {
 } from '../../lib/categories'
 import { KnowledgeData } from '../../lib/types'
 
-import { Post } from '../../styles/pages/category'
+import { Knowledge } from '../../styles/pages/category'
 
 interface Props {
   category: string
@@ -40,12 +40,12 @@ const Category: React.FC<Props> = ({ category, knowledgeList }) => {
             return (
               <Link key={key} href={`/post/${knowledge.id}`}>
                 <a>
-                  <Post>
+                  <Knowledge>
                     <h2>{knowledge.title}</h2>
                     <span>
                       <Date dateString={knowledge.date} />
                     </span>
-                  </Post>
+                  </Knowledge>
                 </a>
               </Link>
             )

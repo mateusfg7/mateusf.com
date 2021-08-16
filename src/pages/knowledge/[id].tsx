@@ -15,7 +15,7 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import { PostHeader, PostContent } from '../../styles/pages/post'
+import { PostHeader, KnowledgeContent } from '../../styles/pages/post'
 
 import { unified } from 'unified'
 import markdown from 'remark-parse'
@@ -102,9 +102,9 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
                 </p>
               </div>
             </PostHeader>
-            <PostContent>
+            <KnowledgeContent>
               {contentProcessor.processSync(knowledgeData.content).result}
-            </PostContent>
+            </KnowledgeContent>
           </article>
         </Main>
       </Container>
