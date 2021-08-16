@@ -11,11 +11,11 @@ import {
 } from '../lib/categories'
 
 interface Props {
-  allPostData: SortedKnowledgeData
+  allKnowledgeData: SortedKnowledgeData
   categories: CategoriesAndNumberOfKnowledge[]
 }
 
-const Map: React.FC<Props> = ({allPostData, categories}) => {
+const Map: React.FC<Props> = ({allKnowledgeData, categories}) => {
   return (
     <div>
       <Head>
@@ -30,7 +30,7 @@ const Map: React.FC<Props> = ({allPostData, categories}) => {
           <code>
             <a href="/posts">/posts</a>
           </code>
-          ${allPostData.map(post =>
+          ${allKnowledgeData.map(post =>
             (
               <code>
                 <a href={`/post/${post.id}`}>/post/{post.id}</a>
@@ -56,13 +56,13 @@ const Map: React.FC<Props> = ({allPostData, categories}) => {
 export default Map
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostData = getSortedKnowledgeData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
-  const categories = getCategoriesAndNumberOfKnowledge(allPostData)
+  const categories = getCategoriesAndNumberOfKnowledge(allKnowledgeData)
 
   return {
     props: {
-      allPostData,
+      allKnowledgeData,
       categories
     }
   }
