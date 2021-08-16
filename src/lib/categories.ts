@@ -1,38 +1,38 @@
 import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
-
-export interface CategoriesAndNumberOfPosts {
+import { KnowledgeData } from './types'
+export interface CategoriesAndNumberOfKnowledge {
   category: string
-  numberOfPosts: number
+  numberOfKnowledge: number
 }
 
-export const getRawCategoryListFromPosts = (posts: PostData[]): string[] =>
-  posts.map(post => post.category)
+export const getRawCategoryListFromKnowledge = (knowledgeList: KnowledgeData[]): string[] =>
+  knowledgeList.map(knowledge => knowledge.category)
 
-export const getCategoryListFromPosts = (posts: PostData[]): string[] => {
-  const rawCategoryList = getRawCategoryListFromPosts(posts)
+export const getCategoryListFromPosts = (knowledgeList: KnowledgeData[]): string[] => {
+  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
 
   return removeRepeatedValuesFromArray(rawCategoryList)
 }
 
-export function getCategoriesAndNumberOfPosts(
-  posts: PostData[]
-): CategoriesAndNumberOfPosts[] {
-  const rawCategoryList = getRawCategoryListFromPosts(posts)
-  const categoryList = getCategoryListFromPosts(posts)
+export function getCategoriesAndNumberOfKnowledge(
+  knowledgeList: KnowledgeData[]
+): CategoriesAndNumberOfKnowledge[] {
+  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
+  const categoryList = getCategoryListFromPosts(knowledgeList)
 
-  const categoriesAndNumberOfPosts = categoryList.map(category => {
-    const numberOfPosts = getFrequencyOfValue(rawCategoryList, category)
+  const categoriesAndNumberOfKnowledge = categoryList.map(category => {
+    const numberOfKnowledge = getFrequencyOfValue(rawCategoryList, category)
 
     return {
       category,
-      numberOfPosts
+      numberOfKnowledge
     }
   })
 
-  return categoriesAndNumberOfPosts
+  return categoriesAndNumberOfKnowledge
 }
 
-export const getPostsOfCategory = (
-  posts: PostData[],
+export const getKnowledgeListOfCategory = (
+  knowledgeList: KnowledgeData[],
   category: string
-): PostData[] => posts.filter(post => post.category === category)
+): KnowledgeData[] => knowledgeList.filter(knowledge => knowledge.category === category)

@@ -40,7 +40,7 @@ export const PostHeader = styled.div`
   }
 `
 
-export const PostContent = styled.div`
+export const KnowledgeContent = styled.div`
   line-height: 1.5rem;
   word-wrap: break-word;
 

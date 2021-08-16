@@ -5,7 +5,8 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllKnowledgeIds, getKnowledgeData } from '../../lib/knowledgeFunctions'
+import { KnowledgeData } from '../../lib/types'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -14,7 +15,7 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import { PostHeader, PostContent } from '../../styles/pages/post'
+import { PostHeader, KnowledgeContent } from '../../styles/pages/post'
 
 import { unified } from 'unified'
 import markdown from 'remark-parse'
@@ -39,15 +40,15 @@ import plaintext from "highlight.js/lib/languages/plaintext"
 import sql from "highlight.js/lib/languages/sql"
 
 import 'highlight.js/styles/github.css'
-interface PostDataWithContent extends PostData {
+interface KnowledgeDataWithContent extends KnowledgeData {
   content: string
 }
 interface Props {
-  postData: PostDataWithContent
+  knowledgeData: KnowledgeDataWithContent
 }
 
-const Post: React.FC<Props> = ({ postData }) => {
-  const tags = postData.tags.split(',')
+const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
+  const tags = knowledgeData.tags.split(',')
 
   const highlightLanguages = {
     elixir, vim, typescript,
@@ -69,27 +70,27 @@ const Post: React.FC<Props> = ({ postData }) => {
   return (
     <div>
       <Head>
-        <title>{postData.title}</title>
+        <title>{knowledgeData.title}</title>
       </Head>
       <Container>
         <Header
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={postData.id}
+          title={knowledgeData.id}
         />
         <Main>
           <article>
             <PostHeader>
-              <h2>{postData.title}</h2>
+              <h2>{knowledgeData.title}</h2>
               <div>
                 <p>
-                  <Date dateString={postData.date} /> &#8226;{' '}
-                  <Link href={`/category/${postData.category}`}>
-                    {postData.category}
+                  <Date dateString={knowledgeData.date} /> &#8226;{' '}
+                  <Link href={`/category/${knowledgeData.category}`}>
+                    {knowledgeData.category}
                   </Link>
                 </p>
-                {postData.lastUpdate && (
+                {knowledgeData.lastUpdate && (
                   <p className="last-update" title="Last Update">
-                    <Date dateString={postData.lastUpdate} /> <RiHistoryLine />
+                    <Date dateString={knowledgeData.lastUpdate} /> <RiHistoryLine />
                   </p>
                 )}
                 <p className="tags">
@@ -101,9 +102,9 @@ const Post: React.FC<Props> = ({ postData }) => {
                 </p>
               </div>
             </PostHeader>
-            <PostContent>
-              {contentProcessor.processSync(postData.content).result}
-            </PostContent>
+            <KnowledgeContent>
+              {contentProcessor.processSync(knowledgeData.content).result}
+            </KnowledgeContent>
           </article>
         </Main>
       </Container>
@@ -111,10 +112,10 @@ const Post: React.FC<Props> = ({ postData }) => {
   )
 }
 
-export default Post
+export default Knowledge
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllKnowledgeIds()
   return {
     paths,
     fallback: false
@@ -122,13 +123,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(
+  const knowledgeData = await getKnowledgeData(
     typeof params.id === 'string' ? params.id : ''
   )
 
   return {
     props: {
-      postData
+      knowledgeData
     }
   }
 }

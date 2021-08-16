@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Post = styled.section`
+export const KnowledgeSection = styled.section`
   margin-bottom: 30px;
 
   h2 {

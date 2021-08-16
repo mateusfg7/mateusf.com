@@ -8,35 +8,36 @@ import Header from '../components/Header/index'
 import Main from '../components/Main/index'
 import Date from '../components/Date'
 
-import { Post } from '../styles/pages/posts'
+import { KnowledgeSection } from '../styles/pages/posts'
 
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
+import { KnowledgeData } from '../lib/types'
 
 interface Props {
   avatarUrl: string
-  allPostData: PostData[]
+  allKnowledgeData: KnowledgeData[]
 }
 
-const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
+const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
   return (
     <div>
       <Head>
-        <title>Posts</title>
+        <title>Knowledge</title>
       </Head>
 
       <Container>
-        <Header imageUrl={avatarUrl} title="Posts" />
+        <Header imageUrl={avatarUrl} title="Knowledge" />
         <Main>
-          {allPostData.map((post, key) => {
+          {allKnowledgeData.map((knowledge, key) => {
             return (
-              <Link key={key} href={`/post/${post.id}`}>
+              <Link key={key} href={`/knowledge/${knowledge.id}`}>
                 <a>
-                  <Post>
-                    <h2>{post.title}</h2>
+                  <KnowledgeSection>
+                    <h2>{knowledge.title}</h2>
                     <span>
-                      <Date dateString={post.date} /> &#8226; {post.description}
+                      <Date dateString={knowledge.date} /> &#8226; {knowledge.description}
                     </span>
-                  </Post>
+                  </KnowledgeSection>
                 </a>
               </Link>
             )
@@ -47,15 +48,15 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
   )
 }
 
-export default Posts
+export default Knowledge
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostData = getSortedPostsData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
   return {
     props: {
       avatarUrl: 'https://avatars1.githubusercontent.com/u/40613276?v=4',
-      allPostData
+      allKnowledgeData
     }
   }
 }

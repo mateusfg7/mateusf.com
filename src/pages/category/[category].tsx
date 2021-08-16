@@ -10,20 +10,21 @@ import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Date from '../../components/Date'
 
-import { getSortedPostsData } from '../../lib/posts'
+import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
 import {
   getCategoryListFromPosts,
-  getPostsOfCategory
+  getKnowledgeListOfCategory
 } from '../../lib/categories'
+import { KnowledgeData } from '../../lib/types'
 
-import { Post } from '../../styles/pages/category'
+import { Knowledge } from '../../styles/pages/category'
 
 interface Props {
   category: string
-  posts: PostData[]
+  knowledgeList: KnowledgeData[]
 }
 
-const Category: React.FC<Props> = ({ category, posts }) => {
+const Category: React.FC<Props> = ({ category, knowledgeList }) => {
   return (
     <div>
       <Head>
@@ -35,16 +36,16 @@ const Category: React.FC<Props> = ({ category, posts }) => {
           title={category}
         />
         <Main>
-          {posts.map((post, key) => {
+          {knowledgeList.map((knowledge, key) => {
             return (
-              <Link key={key} href={`/post/${post.id}`}>
+              <Link key={key} href={`/post/${knowledge.id}`}>
                 <a>
-                  <Post>
-                    <h2>{post.title}</h2>
+                  <Knowledge>
+                    <h2>{knowledge.title}</h2>
                     <span>
-                      <Date dateString={post.date} />
+                      <Date dateString={knowledge.date} />
                     </span>
-                  </Post>
+                  </Knowledge>
                 </a>
               </Link>
             )
@@ -58,8 +59,8 @@ const Category: React.FC<Props> = ({ category, posts }) => {
 export default Category
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getSortedPostsData()
-  const categoryList = getCategoryListFromPosts(posts)
+  const knowledgeList = getSortedKnowledgeData()
+  const categoryList = getCategoryListFromPosts(knowledgeList)
 
   const paths = categoryList.map(category => ({ params: { category } }))
 
@@ -72,15 +73,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params.category
 
-  const allPostsData = getSortedPostsData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
   if (typeof category == 'string') {
-    const posts = getPostsOfCategory(allPostsData, category)
+    const knowledgeList = getKnowledgeListOfCategory(allKnowledgeData, category)
 
     return {
       props: {
         category,
-        posts
+        knowledgeList
       }
     }
   }

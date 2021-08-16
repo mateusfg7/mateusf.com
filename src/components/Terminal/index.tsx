@@ -25,8 +25,8 @@ const Terminal: React.FC = () => {
               <span className="shell">~#</span>
               <span className="typewrite">
                 ./mateus-brain --show{' '}
-                <Link href="/posts">
-                  <a>posts</a>
+                <Link href="/knowledge">
+                  <a>knowledge</a>
                 </Link>
                 /
                 <Link href="/categories">

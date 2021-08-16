@@ -4,18 +4,18 @@ import Head from 'next/head'
 
 import { Container, LinksContainer } from '../styles/pages/map'
 
-import { getSortedPostsData, SortedPostsData } from '../lib/posts'
+import { getSortedKnowledgeData, SortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
-  CategoriesAndNumberOfPosts,
-  getCategoriesAndNumberOfPosts
+  CategoriesAndNumberOfKnowledge,
+  getCategoriesAndNumberOfKnowledge
 } from '../lib/categories'
 
 interface Props {
-  allPostData: SortedPostsData
-  categories: CategoriesAndNumberOfPosts[]
+  allKnowledgeData: SortedKnowledgeData
+  categories: CategoriesAndNumberOfKnowledge[]
 }
 
-const Map: React.FC<Props> = ({allPostData, categories}) => {
+const Map: React.FC<Props> = ({allKnowledgeData, categories}) => {
   return (
     <div>
       <Head>
@@ -30,7 +30,7 @@ const Map: React.FC<Props> = ({allPostData, categories}) => {
           <code>
             <a href="/posts">/posts</a>
           </code>
-          ${allPostData.map(post =>
+          ${allKnowledgeData.map(post =>
             (
               <code>
                 <a href={`/post/${post.id}`}>/post/{post.id}</a>
@@ -56,13 +56,13 @@ const Map: React.FC<Props> = ({allPostData, categories}) => {
 export default Map
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostData = getSortedPostsData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
-  const categories = getCategoriesAndNumberOfPosts(allPostData)
+  const categories = getCategoriesAndNumberOfKnowledge(allKnowledgeData)
 
   return {
     props: {
-      allPostData,
+      allKnowledgeData,
       categories
     }
   }

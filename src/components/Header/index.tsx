@@ -21,8 +21,8 @@ const Header: React.FC<Props> = ({ imageUrl, title, isHome }) => {
         <h2>brain</h2>/<h1>{title}</h1>
       </div>
       <nav>
-        <Link href="/posts">
-          <a>Posts</a>
+        <Link href="/knowledge">
+          <a>Knowledge</a>
         </Link>
 
         <Link href="/categories">
