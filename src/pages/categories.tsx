@@ -9,7 +9,7 @@ import Main from '../components/Main/index'
 
 import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedPostsData } from '../lib/knowledgeFunctions'
 import {
   getCategoriesAndNumberOfPosts,
   CategoriesAndNumberOfPosts

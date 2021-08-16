@@ -10,7 +10,7 @@ import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Date from '../../components/Date'
 
-import { getSortedPostsData } from '../../lib/posts'
+import { getSortedPostsData } from '../../lib/knowledgeFunctions'
 import {
   getCategoryListFromPosts,
   getPostsOfCategory

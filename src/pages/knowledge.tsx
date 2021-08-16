@@ -10,7 +10,7 @@ import Date from '../components/Date'
 
 import { Post } from '../styles/pages/posts'
 
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedPostsData } from '../lib/knowledgeFunctions'
 
 interface Props {
   avatarUrl: string

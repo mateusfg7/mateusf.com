@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 import { Container, LinksContainer } from '../styles/pages/map'
 
-import { getSortedPostsData, SortedPostsData } from '../lib/posts'
+import { getSortedPostsData, SortedPostsData } from '../lib/knowledgeFunctions'
 import {
   CategoriesAndNumberOfPosts,
   getCategoriesAndNumberOfPosts
