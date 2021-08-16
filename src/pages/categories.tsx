@@ -11,13 +11,13 @@ import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
-  getCategoriesAndNumberOfPosts,
-  CategoriesAndNumberOfPosts
+  getCategoriesAndNumberOfKnowledge,
+  CategoriesAndNumberOfKnowledge
 } from '../lib/categories'
 
 interface Props {
   avatarUrl: string
-  categories: CategoriesAndNumberOfPosts[]
+  categories: CategoriesAndNumberOfKnowledge[]
 }
 
 const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
@@ -36,7 +36,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
                 <CategoryButton>
                   <p>
                     {categoryData.category}
-                    <sup> {categoryData.numberOfPosts} </sup>
+                    <sup> {categoryData.numberOfKnowledge} </sup>
                   </p>
                 </CategoryButton>
               </Link>
@@ -53,7 +53,7 @@ export default Categories
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const allPostData = getSortedKnowledgeData()
 
-  const categories = getCategoriesAndNumberOfPosts(allPostData)
+  const categories = getCategoriesAndNumberOfKnowledge(allPostData)
 
   return {
     props: {

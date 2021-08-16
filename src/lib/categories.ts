@@ -1,38 +1,38 @@
 import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
 import { KnowledgeData } from './types'
-export interface CategoriesAndNumberOfPosts {
+export interface CategoriesAndNumberOfKnowledge {
   category: string
-  numberOfPosts: number
+  numberOfKnowledge: number
 }
 
-export const getRawCategoryListFromPosts = (posts: KnowledgeData[]): string[] =>
-  posts.map(post => post.category)
+export const getRawCategoryListFromKnowledge = (knowledgeList: KnowledgeData[]): string[] =>
+  knowledgeList.map(knowledge => knowledge.category)
 
-export const getCategoryListFromPosts = (posts: KnowledgeData[]): string[] => {
-  const rawCategoryList = getRawCategoryListFromPosts(posts)
+export const getCategoryListFromPosts = (knowledgeList: KnowledgeData[]): string[] => {
+  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
 
   return removeRepeatedValuesFromArray(rawCategoryList)
 }
 
-export function getCategoriesAndNumberOfPosts(
-  posts: KnowledgeData[]
-): CategoriesAndNumberOfPosts[] {
-  const rawCategoryList = getRawCategoryListFromPosts(posts)
-  const categoryList = getCategoryListFromPosts(posts)
+export function getCategoriesAndNumberOfKnowledge(
+  knowledgeList: KnowledgeData[]
+): CategoriesAndNumberOfKnowledge[] {
+  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
+  const categoryList = getCategoryListFromPosts(knowledgeList)
 
-  const categoriesAndNumberOfPosts = categoryList.map(category => {
-    const numberOfPosts = getFrequencyOfValue(rawCategoryList, category)
+  const categoriesAndNumberOfKnowledge = categoryList.map(category => {
+    const numberOfKnowledge = getFrequencyOfValue(rawCategoryList, category)
 
     return {
       category,
-      numberOfPosts
+      numberOfKnowledge
     }
   })
 
-  return categoriesAndNumberOfPosts
+  return categoriesAndNumberOfKnowledge
 }
 
-export const getPostsOfCategory = (
-  posts: KnowledgeData[],
+export const getKnowledgeListOfCategory = (
+  knowledgeList: KnowledgeData[],
   category: string
-): KnowledgeData[] => posts.filter(post => post.category === category)
+): KnowledgeData[] => knowledgeList.filter(knowledge => knowledge.category === category)

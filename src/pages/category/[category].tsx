@@ -13,7 +13,7 @@ import Date from '../../components/Date'
 import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
 import {
   getCategoryListFromPosts,
-  getPostsOfCategory
+  getKnowledgeListOfCategory
 } from '../../lib/categories'
 import { KnowledgeData } from '../../lib/types'
 
@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allPostsData = getSortedKnowledgeData()
 
   if (typeof category == 'string') {
-    const posts = getPostsOfCategory(allPostsData, category)
+    const posts = getKnowledgeListOfCategory(allPostsData, category)
 
     return {
       props: {
