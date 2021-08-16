@@ -18,7 +18,7 @@ export type SortedKnowledgeData = {
 export function getSortedKnowledgeData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(knowledgeDirectory)
-  const allPostsData = fileNames.map(fileName => {
+  const allKnowledgeData = fileNames.map(fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
@@ -42,7 +42,7 @@ export function getSortedKnowledgeData() {
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return allKnowledgeData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
