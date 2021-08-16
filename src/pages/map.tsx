@@ -4,14 +4,14 @@ import Head from 'next/head'
 
 import { Container, LinksContainer } from '../styles/pages/map'
 
-import { getSortedPostsData, SortedPostsData } from '../lib/knowledgeFunctions'
+import { getSortedPostsData, SortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
   CategoriesAndNumberOfPosts,
   getCategoriesAndNumberOfPosts
 } from '../lib/categories'
 
 interface Props {
-  allPostData: SortedPostsData
+  allPostData: SortedKnowledgeData
   categories: CategoriesAndNumberOfPosts[]
 }
 

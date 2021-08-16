@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 
 const knowledgeDirectory = path.join(process.cwd(), '_mybrainknowledge')
 
-export type SortedPostsData = {
+export type SortedKnowledgeData = {
   id: string
   date: string
   title: string
