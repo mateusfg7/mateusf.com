@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 import { Container, LinksContainer } from '../styles/pages/map'
 
-import { getSortedPostsData, SortedKnowledgeData } from '../lib/knowledgeFunctions'
+import { getSortedKnowledgeData, SortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
   CategoriesAndNumberOfPosts,
   getCategoriesAndNumberOfPosts
@@ -56,7 +56,7 @@ const Map: React.FC<Props> = ({allPostData, categories}) => {
 export default Map
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostData = getSortedPostsData()
+  const allPostData = getSortedKnowledgeData()
 
   const categories = getCategoriesAndNumberOfPosts(allPostData)
 

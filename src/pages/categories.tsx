@@ -9,7 +9,7 @@ import Main from '../components/Main/index'
 
 import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
-import { getSortedPostsData } from '../lib/knowledgeFunctions'
+import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
   getCategoriesAndNumberOfPosts,
   CategoriesAndNumberOfPosts
@@ -51,7 +51,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
 export default Categories
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostData = getSortedPostsData()
+  const allPostData = getSortedKnowledgeData()
 
   const categories = getCategoriesAndNumberOfPosts(allPostData)
 

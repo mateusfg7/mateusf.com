@@ -10,7 +10,7 @@ import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Date from '../../components/Date'
 
-import { getSortedPostsData } from '../../lib/knowledgeFunctions'
+import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
 import {
   getCategoryListFromPosts,
   getPostsOfCategory
@@ -58,7 +58,7 @@ const Category: React.FC<Props> = ({ category, posts }) => {
 export default Category
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getSortedPostsData()
+  const posts = getSortedKnowledgeData()
   const categoryList = getCategoryListFromPosts(posts)
 
   const paths = categoryList.map(category => ({ params: { category } }))
@@ -72,7 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params.category
 
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedKnowledgeData()
 
   if (typeof category == 'string') {
     const posts = getPostsOfCategory(allPostsData, category)

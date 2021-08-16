@@ -10,7 +10,7 @@ import Date from '../components/Date'
 
 import { Post } from '../styles/pages/posts'
 
-import { getSortedPostsData } from '../lib/knowledgeFunctions'
+import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 
 interface Props {
   avatarUrl: string
@@ -50,7 +50,7 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
 export default Posts
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostData = getSortedPostsData()
+  const allPostData = getSortedKnowledgeData()
 
   return {
     props: {

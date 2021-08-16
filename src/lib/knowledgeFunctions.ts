@@ -15,7 +15,7 @@ export type SortedKnowledgeData = {
   description: string
 }[]
 
-export function getSortedPostsData() {
+export function getSortedKnowledgeData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(knowledgeDirectory)
   const allPostsData = fileNames.map(fileName => {
