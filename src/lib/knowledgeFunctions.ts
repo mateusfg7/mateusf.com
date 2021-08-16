@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const postsDirectory = path.join(process.cwd(), '_mybrainknowledge')
+const knowledgeDirectory = path.join(process.cwd(), '_mybrainknowledge')
 
 export type SortedPostsData = {
   id: string
@@ -17,13 +17,13 @@ export type SortedPostsData = {
 
 export function getSortedPostsData() {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(knowledgeDirectory)
   const allPostsData = fileNames.map(fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
+    const fullPath = path.join(knowledgeDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the post metadata section
@@ -52,7 +52,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(knowledgeDirectory)
 
   // Returns an array that looks like this:
   // [
@@ -77,7 +77,7 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fullPath = path.join(knowledgeDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
