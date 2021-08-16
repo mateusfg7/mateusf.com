@@ -76,7 +76,7 @@ export function getAllKnowledgeIds() {
   })
 }
 
-export async function getPostData(id: string) {
+export async function getKnowledgeData(id: string) {
   const fullPath = path.join(knowledgeDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 

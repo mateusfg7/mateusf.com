@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { getAllKnowledgeIds, getPostData } from '../../lib/knowledgeFunctions'
+import { getAllKnowledgeIds, getKnowledgeData } from '../../lib/knowledgeFunctions'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -122,7 +122,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(
+  const postData = await getKnowledgeData(
     typeof params.id === 'string' ? params.id : ''
   )
 
