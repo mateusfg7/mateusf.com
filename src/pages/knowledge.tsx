@@ -15,10 +15,10 @@ import { KnowledgeData } from '../lib/types'
 
 interface Props {
   avatarUrl: string
-  allPostData: KnowledgeData[]
+  allKnowledgeData: KnowledgeData[]
 }
 
-const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
+const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
   return (
     <div>
       <Head>
@@ -28,14 +28,14 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
       <Container>
         <Header imageUrl={avatarUrl} title="Knowledge" />
         <Main>
-          {allPostData.map((post, key) => {
+          {allKnowledgeData.map((knowledge, key) => {
             return (
-              <Link key={key} href={`/post/${post.id}`}>
+              <Link key={key} href={`/knowledge/${knowledge.id}`}>
                 <a>
                   <Post>
-                    <h2>{post.title}</h2>
+                    <h2>{knowledge.title}</h2>
                     <span>
-                      <Date dateString={post.date} /> &#8226; {post.description}
+                      <Date dateString={knowledge.date} /> &#8226; {knowledge.description}
                     </span>
                   </Post>
                 </a>
@@ -48,15 +48,15 @@ const Posts: React.FC<Props> = ({ avatarUrl, allPostData }) => {
   )
 }
 
-export default Posts
+export default Knowledge
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allPostData = getSortedKnowledgeData()
+  const allKnowledgeData = getSortedKnowledgeData()
 
   return {
     props: {
       avatarUrl: 'https://avatars1.githubusercontent.com/u/40613276?v=4',
-      allPostData
+      allKnowledgeData
     }
   }
 }
