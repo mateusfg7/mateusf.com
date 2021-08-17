@@ -7,7 +7,7 @@ import { BiBrain } from 'react-icons/bi'
 import { Container } from './styles'
 
 const Terminal: React.FC = () => {
-  const [isActive, setIsActive] = useState(true)
+  const [isActive, setIsActive] = useState(false)
 
   return (
     <Container className="home">
