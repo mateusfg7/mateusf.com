@@ -18,7 +18,7 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import { KnowledgeHeader, KnowledgeContent } from '../../styles/pages/post'
+import { KnowledgeHeader, KnowledgeContent } from '../../styles/pages/knowledge'
 
 import { unified } from 'unified'
 import markdown from 'remark-parse'

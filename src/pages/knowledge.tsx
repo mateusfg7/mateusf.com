@@ -8,7 +8,7 @@ import Header from '../components/Header/index'
 import Main from '../components/Main/index'
 import Date from '../components/Date'
 
-import { KnowledgeSection } from '../styles/pages/posts'
+import { KnowledgeSection } from '../styles/pages/knowledge-list'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import { KnowledgeData } from '../lib/types'
@@ -35,7 +35,8 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
                   <KnowledgeSection>
                     <h2>{knowledge.title}</h2>
                     <span>
-                      <Date dateString={knowledge.date} /> &#8226; {knowledge.description}
+                      <Date dateString={knowledge.date} /> &#8226;{' '}
+                      {knowledge.description}
                     </span>
                   </KnowledgeSection>
                 </a>
