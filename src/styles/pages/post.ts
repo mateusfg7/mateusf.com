@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const PostHeader = styled.div`
+export const KnowledgeHeader = styled.div`
   padding: 1rem 0;
 
   line-height: 1.5rem;

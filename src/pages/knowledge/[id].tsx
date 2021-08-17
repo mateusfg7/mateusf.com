@@ -5,7 +5,10 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { getAllKnowledgeIds, getKnowledgeData } from '../../lib/knowledgeFunctions'
+import {
+  getAllKnowledgeIds,
+  getKnowledgeData
+} from '../../lib/knowledgeFunctions'
 import { KnowledgeData } from '../../lib/types'
 
 import Container from '../../components/Container'
@@ -15,7 +18,7 @@ import Date from '../../components/Date'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import { PostHeader, KnowledgeContent } from '../../styles/pages/post'
+import { KnowledgeHeader, KnowledgeContent } from '../../styles/pages/post'
 
 import { unified } from 'unified'
 import markdown from 'remark-parse'
@@ -28,16 +31,16 @@ import gfm from 'remark-gfm'
 import toc from 'rehype-toc'
 import slug from 'rehype-slug'
 
-import elixir from "highlight.js/lib/languages/elixir"
-import vim from "highlight.js/lib/languages/vim"
-import typescript from "highlight.js/lib/languages/typescript"
-import javascript from "highlight.js/lib/languages/javascript"
-import bash from "highlight.js/lib/languages/bash"
-import python from "highlight.js/lib/languages/python"
-import css from "highlight.js/lib/languages/css"
-import xml from "highlight.js/lib/languages/xml"
-import plaintext from "highlight.js/lib/languages/plaintext"
-import sql from "highlight.js/lib/languages/sql"
+import elixir from 'highlight.js/lib/languages/elixir'
+import vim from 'highlight.js/lib/languages/vim'
+import typescript from 'highlight.js/lib/languages/typescript'
+import javascript from 'highlight.js/lib/languages/javascript'
+import bash from 'highlight.js/lib/languages/bash'
+import python from 'highlight.js/lib/languages/python'
+import css from 'highlight.js/lib/languages/css'
+import xml from 'highlight.js/lib/languages/xml'
+import plaintext from 'highlight.js/lib/languages/plaintext'
+import sql from 'highlight.js/lib/languages/sql'
 
 import 'highlight.js/styles/github.css'
 interface KnowledgeDataWithContent extends KnowledgeData {
@@ -51,9 +54,16 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
   const tags = knowledgeData.tags.split(',')
 
   const highlightLanguages = {
-    elixir, vim, typescript,
-    javascript, bash, python,
-    css, xml, plaintext, sql
+    elixir,
+    vim,
+    typescript,
+    javascript,
+    bash,
+    python,
+    css,
+    xml,
+    plaintext,
+    sql
   }
 
   const contentProcessor = unified()
@@ -79,7 +89,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
         />
         <Main>
           <article>
-            <PostHeader>
+            <KnowledgeHeader>
               <h2>{knowledgeData.title}</h2>
               <div>
                 <p>
@@ -90,7 +100,8 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
                 </p>
                 {knowledgeData.lastUpdate && (
                   <p className="last-update" title="Last Update">
-                    <Date dateString={knowledgeData.lastUpdate} /> <RiHistoryLine />
+                    <Date dateString={knowledgeData.lastUpdate} />{' '}
+                    <RiHistoryLine />
                   </p>
                 )}
                 <p className="tags">
@@ -101,7 +112,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
                   ))}
                 </p>
               </div>
-            </PostHeader>
+            </KnowledgeHeader>
             <KnowledgeContent>
               {contentProcessor.processSync(knowledgeData.content).result}
             </KnowledgeContent>
