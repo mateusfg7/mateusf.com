@@ -16,7 +16,7 @@ export const Container = styled.header`
   min-width: 37rem;
 
   div {
-    --border-radius: 1.5rem;
+    --border-radius: 0.9rem;
 
     display: flex;
     flex-direction: column;
@@ -81,7 +81,8 @@ export const Container = styled.header`
 
     main {
       color: rgba(255, 255, 255, 0.8);
-      font-size: 1.6rem;
+      font-family: 'Hack';
+      font-size: 1.4rem;
       padding: 4rem 2rem;
 
       display: flex;
