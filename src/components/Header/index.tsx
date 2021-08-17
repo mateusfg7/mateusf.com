@@ -1,19 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
-import Terminal from '../Terminal'
-
 import { StyledHeader } from './styles'
 
 interface Props {
   imageUrl: string
   title: string
-  isHome?: boolean
 }
 
-const Header: React.FC<Props> = ({ imageUrl, title, isHome }) => {
-  if (isHome) return <Terminal />
-
+const Header: React.FC<Props> = ({ imageUrl, title }) => {
   return (
     <StyledHeader>
       <div>
