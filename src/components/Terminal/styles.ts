@@ -21,7 +21,6 @@ export const Container = styled.header`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 
     font-size: 1.4rem;
 
