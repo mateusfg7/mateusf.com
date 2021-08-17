@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import Header from '../components/Header/index'
+import Terminal from '../components/Terminal'
 
 interface Props {
   avatarUrl: string
@@ -17,7 +17,7 @@ const Home: React.FC<Props> = props => {
 
       <div className="black-filter">
         <div className="center">
-          <Header imageUrl={props.avatarUrl} title="Home" isHome />
+          <Terminal />
         </div>
       </div>
     </div>
