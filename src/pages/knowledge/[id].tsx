@@ -9,6 +9,7 @@ import {
   getAllKnowledgeIds,
   getKnowledgeData
 } from '../../lib/knowledgeFunctions'
+import { getHashHeaderOfData } from '../../lib/utils'
 import { KnowledgeData } from '../../lib/types'
 
 import Container from '../../components/Container'
@@ -48,9 +49,10 @@ interface KnowledgeDataWithContent extends KnowledgeData {
 }
 interface Props {
   knowledgeData: KnowledgeDataWithContent
+  knowledgeId: string
 }
 
-const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
+const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
   const tags = knowledgeData.tags.split(',')
 
   const highlightLanguages = {
@@ -85,7 +87,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData }) => {
       <Container>
         <Header
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={knowledgeData.id}
+          title={knowledgeId}
         />
         <Main>
           <article>
@@ -137,10 +139,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const knowledgeData = await getKnowledgeData(
     typeof params.id === 'string' ? params.id : ''
   )
+  const knowledgeId = getHashHeaderOfData(knowledgeData.content)
 
   return {
     props: {
-      knowledgeData
+      knowledgeData,
+      knowledgeId
     }
   }
 }
