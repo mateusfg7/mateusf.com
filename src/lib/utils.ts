@@ -11,3 +11,13 @@ export const removeRepeatedValuesFromArray = (array: any[]): any[] => {
     return originalArray.indexOf(item) === index
   })
 }
+
+import md5 from 'blueimp-md5'
+
+export function getHashHeaderOfData(data: string | number): string {
+  const hash = md5(data.toString())
+  const hashHeader = hash.substring(0, hash.length / 2)
+  console.log(hashHeader.length)
+
+  return hashHeader
+}
