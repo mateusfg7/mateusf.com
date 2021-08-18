@@ -43,8 +43,8 @@ export const Content = styled.div`
     'status status'
     'streak streak'
     'trophy trophy'
-    'code-time code-time'
-    'languages languages';
+    'languages languages'
+    'code-time code-time';
 
   gap: 1rem;
 
