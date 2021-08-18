@@ -34,7 +34,7 @@ const Stats: React.FC = () => {
           />
           <StatsTopic
             title="Time Coding"
-            imgSrc="https://github-readme-stats.vercel.app/api/wakatime?username=mateusfg7&layout=compact&hide_title=true&hide_border=true&show_icons=true&title_color=000&icon_color=555&text_color=000"
+            imgSrc="https://github-readme-stats.vercel.app/api/wakatime?username=mateusfg7&layout=compact&hide_title=true&hide_border=true&show_icons=true&title_color=000&icon_color=555&text_color=000&api_domain=wakapi.dev"
             gridArea="code-time"
           />
           <StatsTopic
