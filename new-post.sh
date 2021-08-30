@@ -1,7 +1,7 @@
 #!/bin/bash
 
 current_date=$(date '+%Y-%m-%d')
-file="_posts/$1.md"
+file="_mybrainknowledge/$1.md"
 
 echo "---" > $file
 echo "title: 'Draft Post'" >> $file
