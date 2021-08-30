@@ -26,7 +26,7 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
       </Head>
 
       <Container>
-        <Header imageUrl={avatarUrl} title="Knowledge" />
+        <Header imageUrl={avatarUrl} title="Knowledge" knowledgePage />
         <Main>
           {allKnowledgeData.map((knowledge, key) => {
             return (
