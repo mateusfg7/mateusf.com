@@ -6,9 +6,10 @@ import { StyledHeader } from './styles'
 interface Props {
   imageUrl: string
   title: string
+  knowledgePage?: boolean
 }
 
-const Header: React.FC<Props> = ({ imageUrl, title }) => {
+const Header: React.FC<Props> = ({ imageUrl, title, knowledgePage }) => {
   return (
     <StyledHeader>
       <div>
@@ -16,9 +17,15 @@ const Header: React.FC<Props> = ({ imageUrl, title }) => {
         <h2>brain</h2>/<h1>{title}</h1>
       </div>
       <nav>
-        <Link href="/knowledge">
-          <a>Knowledge</a>
-        </Link>
+        {knowledgePage ? (
+          <Link href="/">
+            <a>Terminal</a>
+          </Link>
+        ) : (
+          <Link href="/knowledge">
+            <a>Knowledge</a>
+          </Link>
+        )}
 
         <Link href="/categories">
           <a>Categories</a>
