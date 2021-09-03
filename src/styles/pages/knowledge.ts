@@ -97,15 +97,13 @@ export const KnowledgeContent = styled.div`
   }
 
   blockquote {
-    padding-left: 0.3rem;
     margin: 0.5rem 0;
+    padding: 0 1rem;
 
-    border-left: 2px solid ${props => props.theme.colors.unselected.text};
-    border-radius: 4px;
+    border-left: 1px solid ${props => props.theme.colors.text};
 
-    background: rgba(0,0,0,0.04);
-
-    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-style: italic;
 
     p {
       margin: 0;
