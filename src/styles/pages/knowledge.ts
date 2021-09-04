@@ -50,22 +50,25 @@ export const KnowledgeContent = styled.div`
   h4 {
     margin: 1.5rem 0;
     font-weight: 500;
+    width: max-content;
   }
 
   h1 {
     font-size: 1.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0 1.5rem 0.5rem 0;
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   p {
