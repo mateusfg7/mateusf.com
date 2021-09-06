@@ -41,7 +41,7 @@
     "@types/blueimp-md5": "^2.18.0",
     "@types/node": "^16.4.12",
     "@types/react": "^17.0.3",
-    "@types/styled-components": "^5.1.9",
+    "@types/styled-components": "^5.1.14",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^4.0.0",
