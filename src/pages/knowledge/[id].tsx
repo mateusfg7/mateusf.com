@@ -16,6 +16,7 @@ import Container from '../../components/Container'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Date from '../../components/Date'
+import ReadProgress from '../../components/ReadProgress'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
@@ -84,6 +85,9 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
       <Head>
         <title>{knowledgeData.title}</title>
       </Head>
+
+      <ReadProgress />
+
       <Container>
         <Header
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
