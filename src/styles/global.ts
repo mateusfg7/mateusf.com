@@ -44,11 +44,11 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    background: ${props => props.theme.colors.background};
+    background: rgba(0,0,0,0.1);
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
     background: ${props => props.theme.colors.text};
-    border-radius: 10px;
+    border-radius: 3px;
   }
 `

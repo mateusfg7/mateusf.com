@@ -50,22 +50,25 @@ export const KnowledgeContent = styled.div`
   h4 {
     margin: 1.5rem 0;
     font-weight: 500;
+    width: max-content;
   }
 
   h1 {
     font-size: 1.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0 1.5rem 0.5rem 0;
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   p {
@@ -97,15 +100,13 @@ export const KnowledgeContent = styled.div`
   }
 
   blockquote {
-    padding-left: 0.3rem;
     margin: 0.5rem 0;
+    padding: 0 1rem;
 
-    border-left: 2px solid ${props => props.theme.colors.unselected.text};
-    border-radius: 4px;
+    border-left: 1px solid ${props => props.theme.colors.text};
 
-    background: rgba(0,0,0,0.04);
-
-    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-style: italic;
 
     p {
       margin: 0;
@@ -146,17 +147,27 @@ export const KnowledgeContent = styled.div`
   }
 
   code {
-    padding: 0.4rem;
+    padding: 0.3rem;
     background: rgba(0, 0, 0, 0.05);
   }
 
   pre {
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 0.8rem;
     background: rgba(0, 0, 0, 0.05);
 
     code {
       background: none;
+      padding: 0 0 0.5rem;
+
+      ::-webkit-scrollbar {
+        background: rgba(0,0,0,0.02);
+        height: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: ${props => props.theme.colors.text};
+        border-radius: 3px;
+      }
     }
   }
 
