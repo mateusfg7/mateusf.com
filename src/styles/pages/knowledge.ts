@@ -147,17 +147,27 @@ export const KnowledgeContent = styled.div`
   }
 
   code {
-    padding: 0.4rem;
+    padding: 0.3rem;
     background: rgba(0, 0, 0, 0.05);
   }
 
   pre {
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 0.8rem;
     background: rgba(0, 0, 0, 0.05);
 
     code {
       background: none;
+      padding: 0 0 0.5rem;
+
+      ::-webkit-scrollbar {
+        background: rgba(0,0,0,0.02);
+        height: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: ${props => props.theme.colors.text};
+        border-radius: 3px;
+      }
     }
   }
 
