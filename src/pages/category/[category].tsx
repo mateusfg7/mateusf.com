@@ -38,7 +38,7 @@ const Category: React.FC<Props> = ({ category, knowledgeList }) => {
         <Main>
           {knowledgeList.map((knowledge, key) => {
             return (
-              <Link key={key} href={`/post/${knowledge.id}`}>
+              <Link key={key} href={`/knowledge/${knowledge.id}`}>
                 <a>
                   <Knowledge>
                     <h2>{knowledge.title}</h2>
