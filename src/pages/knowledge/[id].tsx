@@ -112,9 +112,9 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
                 )}
                 <p className="tags">
                   {tags.map((tag, index) => (
-                    <span key={index} className="tag">
-                      {tag}
-                    </span>
+                    <Link href={`/tag/${tag.trim()}`} key={index}>
+                      <span className="tag">{tag}</span>
+                    </Link>
                   ))}
                 </p>
               </div>
