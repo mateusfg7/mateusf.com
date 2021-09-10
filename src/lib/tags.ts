@@ -29,7 +29,7 @@ export const getKnowledgeListOfTag = (
 ): KnowledgeData[] => {
 
   const filteredKnowledgeList = knowledgeList.filter(knowledge => {
-    const listOfTags = knowledge.tags.split(',')
+    const listOfTags = knowledge.tags.split(',').map(rawTag => rawTag.trim())
     return listOfTags.includes(tag)
   })
 
