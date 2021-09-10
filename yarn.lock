@@ -891,11 +891,6 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-character-entities-html4@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/character-entities-html4/-/character-entities-html4-2.0.0.tgz#55fcf3ed00febfe41f8f6a5709d25ab8ed73a449"
-  integrity sha512-dwT2xh5ZhUAjyP96k57ilMKoTQyASaw9IAMR9U5c1lCu2RUni6O6jxfpUEdO2RcPT6TJFvr8pqsbami4Jk+2oA==
-
 character-entities-legacy@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/character-entities-legacy/-/character-entities-legacy-2.0.0.tgz#57f4d00974c696e8f74e9f493e7fcb75b44d7ee7"
@@ -1877,29 +1872,6 @@ hast-util-parse-selector@^3.0.0:
   dependencies:
     "@types/hast" "^2.0.0"
 
-hast-util-sanitize@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/hast-util-sanitize/-/hast-util-sanitize-4.0.0.tgz#71a02ca2e50d04b852a5500846418070ca364f60"
-  integrity sha512-pw56+69jq+QSr/coADNvWTmBPDy+XsmwaF5KnUys4/wM1jt/fZdl7GPxhXXXYdXnz3Gj3qMkbUCH2uKjvX0MgQ==
-  dependencies:
-    "@types/hast" "^2.0.0"
-
-hast-util-to-html@^8.0.0:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/hast-util-to-html/-/hast-util-to-html-8.0.1.tgz#05d2f37ca7979f474f2d23536ea4655e91ceecef"
-  integrity sha512-S1mTqXvWVGIxrWw0xOHHvmevwCBFTRGNvXWsjE32IyEAlMhbMkK+ZuP6CAqkQ6Vb7swrehaHpfXHEI6voGDh0w==
-  dependencies:
-    "@types/hast" "^2.0.0"
-    ccount "^2.0.0"
-    comma-separated-tokens "^2.0.0"
-    hast-util-is-element "^2.0.0"
-    hast-util-whitespace "^2.0.0"
-    html-void-elements "^2.0.0"
-    property-information "^6.0.0"
-    space-separated-tokens "^2.0.0"
-    stringify-entities "^4.0.0"
-    unist-util-is "^5.0.0"
-
 hast-util-to-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hast-util-to-string/-/hast-util-to-string-2.0.0.tgz#b008b0a4ea472bf34dd390b7eea1018726ae152a"
@@ -1915,11 +1887,6 @@ hast-util-to-text@^3.0.0, hast-util-to-text@^3.1.0:
     "@types/hast" "^2.0.0"
     hast-util-is-element "^2.0.0"
     unist-util-find-after "^4.0.0"
-
-hast-util-whitespace@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/hast-util-whitespace/-/hast-util-whitespace-2.0.0.tgz#4fc1086467cc1ef5ba20673cb6b03cec3a970f1c"
-  integrity sha512-Pkw+xBHuV6xFeJprJe2BBEoDV+AvQySaz3pPDRUs5PNZEMQjpXJJueqrpcHIXxnWTcAGi/UOCgVShlkY6kLoqg==
 
 hastscript@^7.0.0:
   version "7.0.2"
@@ -1962,11 +1929,6 @@ hosted-git-info@^2.1.4:
   version "2.8.9"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
-
-html-void-elements@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/html-void-elements/-/html-void-elements-2.0.0.tgz#ea71bae0dd33de675cdda3c4ace1bc7584bb1071"
-  integrity sha512-4OYzQQsBt0G9bJ/nM9/DDsjm4+fVdzAaPJJcWk5QwA3GIAPxQEeOR0rsI8HbDHQz5Gta8pVvGnnTNSbZVEVvkQ==
 
 http-errors@1.7.3:
   version "1.7.3"
@@ -3625,17 +3587,6 @@ remark-gfm@^2.0.0:
     micromark-extension-gfm "^1.0.0"
     unified "^10.0.0"
 
-remark-html@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/remark-html/-/remark-html-14.0.1.tgz#2118516604c1a6c2ea9d5914a526942554e04e30"
-  integrity sha512-a/x5bTlFrkwYkz43zuJIk0m0IuS5Rx8zLztGwdzmAdUj0Hsi4C4nkJ8gTQRNXY/ET/gMrqQORMMI0arRItq/aQ==
-  dependencies:
-    "@types/mdast" "^3.0.0"
-    hast-util-sanitize "^4.0.0"
-    hast-util-to-html "^8.0.0"
-    mdast-util-to-hast "^11.0.0"
-    unified "^10.0.0"
-
 remark-math@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.0.tgz#8b1fe071be8584e1e87c14d9353464b67f98d1b5"
@@ -4019,14 +3970,6 @@ string_decoder@~1.1.1:
   integrity sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
   dependencies:
     safe-buffer "~5.1.0"
-
-stringify-entities@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/stringify-entities/-/stringify-entities-4.0.1.tgz#f483c9ca8d7e029edec9863c5a37c1f1e7702c8d"
-  integrity sha512-gmMQxKXPWIO3NXNSPyWNhlYcBNGpPA/487D+9dLPnU4xBnIrnHdr8cv5rGJOS/1BRxEXRb7uKwg7BA36IWV7xg==
-  dependencies:
-    character-entities-html4 "^2.0.0"
-    character-entities-legacy "^2.0.0"
 
 strip-ansi@6.0.0, strip-ansi@^6.0.0:
   version "6.0.0"
