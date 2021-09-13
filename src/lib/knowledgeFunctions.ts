@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const knowledgeDirectory = path.join(process.cwd(), '_mybrainknowledge')
+const knowledgeDirectory = path.join(process.cwd(), '_mybrainknowledge', 'documents')
 
 export type SortedKnowledgeData = {
   id: string
