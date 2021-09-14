@@ -11,7 +11,7 @@ export const ProgressBar = styled.div<ProgressBarProps>`
   width: ${props => props.width}%;
   background-color: black;
   transition: width;
-  transition-duration: 1s;
+  transition-duration: .3s;
   border-radius: 5px;
 `
 
