@@ -11,7 +11,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.20.0",
     "blueimp-md5": "^2.18.0",
-    "date-fns": "^2.19.0",
+    "date-fns": "^2.24.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
