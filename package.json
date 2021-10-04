@@ -8,8 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "4.32.0",
-    "@typescript-eslint/parser": "4.32.0",
+    "@typescript-eslint/eslint-plugin": "4.33.0",
+    "@typescript-eslint/parser": "4.33.0",
     "blueimp-md5": "2.19.0",
     "date-fns": "2.24.0",
     "eslint-config-standard": "16.0.3",
