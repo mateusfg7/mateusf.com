@@ -3,11 +3,7 @@ import Head from 'next/head'
 
 import Terminal from '../components/Terminal'
 
-interface Props {
-  avatarUrl: string
-}
-
-const Home: React.FC<Props> = () => {
+const Home: React.FC = () => {
   return (
     <div className="type">
       <Head>
