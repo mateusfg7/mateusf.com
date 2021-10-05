@@ -12,11 +12,6 @@
     "@typescript-eslint/parser": "4.33.0",
     "blueimp-md5": "2.19.0",
     "date-fns": "2.25.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-react": "7.26.1",
     "gray-matter": "4.0.3",
     "highlight.js": "11.2.0",
     "next": "11.1.2",
@@ -44,6 +39,11 @@
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-react": "7.26.1",
     "prettier": "2.4.1",
     "typescript": "4.4.3"
   }
