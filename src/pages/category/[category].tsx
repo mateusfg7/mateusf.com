@@ -75,7 +75,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const allKnowledgeData = getSortedKnowledgeData()
 
-  if (typeof category == 'string') {
+  if (typeof category === 'string') {
     const knowledgeList = getKnowledgeListOfCategory(allKnowledgeData, category)
 
     return {
