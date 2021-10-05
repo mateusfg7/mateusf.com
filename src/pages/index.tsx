@@ -1,5 +1,4 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import Terminal from '../components/Terminal'
@@ -25,11 +24,3 @@ const Home: React.FC<Props> = () => {
 }
 
 export default Home
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  return {
-    props: {
-      avatarUrl: 'https://github.com/mateusfg7.png'
-    }
-  }
-}
