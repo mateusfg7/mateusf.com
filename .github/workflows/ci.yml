@@ -1,0 +1,15 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Check Code Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: ESLint (JS/TS) Action
+        uses: iCrawl/action-eslint@v1
