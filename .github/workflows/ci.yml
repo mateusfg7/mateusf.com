@@ -11,5 +11,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
+      - name: Install DevDependencies
+        run: npm install --only=dev
+
       - name: ESLint (JS/TS) Action
         uses: iCrawl/action-eslint@v1
