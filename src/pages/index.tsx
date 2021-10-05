@@ -8,7 +8,7 @@ interface Props {
   avatarUrl: string
 }
 
-const Home: React.FC<Props> = props => {
+const Home: React.FC<Props> = () => {
   return (
     <div className="type">
       <Head>
