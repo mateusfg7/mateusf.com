@@ -1,6 +1,6 @@
 import md5 from 'blueimp-md5'
 
-export const getFrequencyOfValue = (array: any[], value: unknown): number => {
+export const getFrequencyOfValue = (array: unknown[], value: unknown): number => {
   let frequency = 0
 
   array.forEach(element => (element === value ? frequency++ : null))
@@ -8,7 +8,7 @@ export const getFrequencyOfValue = (array: any[], value: unknown): number => {
   return frequency
 }
 
-export const removeRepeatedValuesFromArray = (array: any[]): any[] => {
+export const removeRepeatedValuesFromArray = (array: unknown[]): unknown[] => {
   return array.filter((item, index, originalArray) => {
     return originalArray.indexOf(item) === index
   })
