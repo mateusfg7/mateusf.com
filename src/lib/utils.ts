@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import md5 from 'blueimp-md5'
+
 export const getFrequencyOfValue = (array: any[], value: unknown): number => {
   let frequency = 0
 
@@ -11,8 +14,6 @@ export const removeRepeatedValuesFromArray = (array: any[]): any[] => {
     return originalArray.indexOf(item) === index
   })
 }
-
-import md5 from 'blueimp-md5'
 
 export function getHashHeaderOfData(data: string | number): string {
   const hash = md5(data.toString())

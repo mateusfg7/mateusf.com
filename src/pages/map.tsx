@@ -4,7 +4,10 @@ import Head from 'next/head'
 
 import { Container, LinksContainer } from '../styles/pages/map'
 
-import { getSortedKnowledgeData, SortedKnowledgeData } from '../lib/knowledgeFunctions'
+import {
+  getSortedKnowledgeData,
+  SortedKnowledgeData
+} from '../lib/knowledgeFunctions'
 import {
   CategoriesAndNumberOfKnowledge,
   getCategoriesAndNumberOfKnowledge
@@ -15,7 +18,7 @@ interface Props {
   categories: CategoriesAndNumberOfKnowledge[]
 }
 
-const Map: React.FC<Props> = ({allKnowledgeData, categories}) => {
+const Map: React.FC<Props> = ({ allKnowledgeData, categories }) => {
   return (
     <div>
       <Head>
@@ -30,23 +33,23 @@ const Map: React.FC<Props> = ({allKnowledgeData, categories}) => {
           <code>
             <a href="/posts">/posts</a>
           </code>
-          ${allKnowledgeData.map(post =>
-            (
-              <code>
-                <a href={`/post/${post.id}`}>/post/{post.id}</a>
-              </code>
-            )
-          )}
+          $
+          {allKnowledgeData.map(post => (
+            <code key={post.id}>
+              <a href={`/post/${post.id}`}>/post/{post.id}</a>
+            </code>
+          ))}
           <code>
             <a href="/categories">/categories</a>
           </code>
-          ${categories.map(categoryData =>
-            (
-              <code>
-                <a href={`/category/${categoryData.category}`}>/category/{categoryData.category}</a>
-              </code>
-            )
-          )}
+          $
+          {categories.map(categoryData => (
+            <code key={categoryData.category}>
+              <a href={`/category/${categoryData.category}`}>
+                /category/{categoryData.category}
+              </a>
+            </code>
+          ))}
         </LinksContainer>
       </Container>
     </div>

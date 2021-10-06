@@ -1,14 +1,9 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import Terminal from '../components/Terminal'
 
-interface Props {
-  avatarUrl: string
-}
-
-const Home: React.FC<Props> = props => {
+const Home: React.FC = () => {
   return (
     <div className="type">
       <Head>
@@ -25,11 +20,3 @@ const Home: React.FC<Props> = props => {
 }
 
 export default Home
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  return {
-    props: {
-      avatarUrl: 'https://github.com/mateusfg7.png'
-    }
-  }
-}
