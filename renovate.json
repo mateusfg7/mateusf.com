@@ -4,8 +4,11 @@
   ],
   "labels": ["dependencies"],
   "automerge": true,
-  "stabilityDays": 3,
   "major": {
-    "automerge": false
+    "automerge": false,
+    "labels": ["d:major"]
+  },
+  "minor": {
+    "labels": ["d:minor"]
   }
 }
