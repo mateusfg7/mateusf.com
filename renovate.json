@@ -2,13 +2,12 @@
   "extends": [
     "config:base"
   ],
-  "labels": ["dependencies"],
   "automerge": true,
   "major": {
     "automerge": false,
-    "labels": ["d:major"]
+    "labels": ["dependencies", "d:major"]
   },
   "minor": {
-    "labels": ["d:minor"]
+    "labels": ["dependencies", "d:minor"]
   }
 }
