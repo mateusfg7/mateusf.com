@@ -29,8 +29,8 @@ const Terminal: React.FC = () => {
                   <a>knowledge</a>
                 </Link>
                 /
-                <Link href="/stats">
-                  <a>stats</a>
+                <Link href="/info">
+                  <a>info</a>
                 </Link>
               </span>
             </>
