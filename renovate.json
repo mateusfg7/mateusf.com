@@ -1,8 +1,7 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
+  "stabilityDays": 3,
   "major": {
     "automerge": false,
     "labels": ["dependencies", "d:major"]
