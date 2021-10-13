@@ -14,5 +14,5 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: ESLint (JS/TS) Action
-        uses: iCrawl/action-eslint@v1
+      - name: Run ESLint
+        run: npm run lint
