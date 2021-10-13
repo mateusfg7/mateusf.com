@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "blueimp-md5": "2.19.0",
