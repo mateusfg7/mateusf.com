@@ -11,5 +11,8 @@
   "minor": {
     "labels": ["dependencies", "d:minor"],
     "stabilityDays": 3
+  },
+  "patch": {
+    "labels": ["dependencies", "d:patch"]
   }
 }
