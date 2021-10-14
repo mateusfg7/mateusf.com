@@ -2,7 +2,6 @@
   "extends": ["config:base"],
   "automerge": true,
   "labels": ["dependencies"],
-  "stabilityDays": 1,
   "major": {
     "automerge": false,
     "labels": ["dependencies", "d:major"],
@@ -13,7 +12,8 @@
     "stabilityDays": 3
   },
   "patch": {
-    "labels": ["dependencies", "d:patch"]
+    "labels": ["dependencies", "d:patch"],
+    "stabilityDays": 1
   },
   "pin": {
     "labels": ["dependencies", "d:pin"]
