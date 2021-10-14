@@ -1,6 +1,9 @@
 {
-  "name": "root",
-  "version": "0.1.0",
+  "name": "mfg-b",
+  "version": "1.0.0",
+  "homepage": "https://mfg-b.vercel.app",
+  "license": "GPL-3.0",
+  "author": "Mateus Felipe Gonçalves <mateusfg7@protonmail.com> (https://mfg-b.vercel.app/info)",
   "private": true,
   "scripts": {
     "dev": "next dev",
