@@ -14,5 +14,11 @@
   },
   "patch": {
     "labels": ["dependencies", "d:patch"]
+  },
+  "pin": {
+    "labels": ["dependencies", "d:pin"]
+  },
+  "rollback": {
+    "labels": ["dependencies", "d:rollback"]
   }
 }
