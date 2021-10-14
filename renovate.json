@@ -1,12 +1,13 @@
 {
   "extends": ["config:base"],
   "automerge": true,
-  "stabilityDays": 3,
   "major": {
     "automerge": false,
-    "labels": ["dependencies", "d:major"]
+    "labels": ["dependencies", "d:major"],
+    "stabilityDays": 3
   },
   "minor": {
-    "labels": ["dependencies", "d:minor"]
+    "labels": ["dependencies", "d:minor"],
+    "stabilityDays": 1
   }
 }
