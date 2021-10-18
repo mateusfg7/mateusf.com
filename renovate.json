@@ -1,24 +1,50 @@
 {
   "extends": ["config:base"],
   "automerge": true,
+  "commitBodyTable": true,
+  "branchPrefix": "deps/",
   "labels": ["dependencies"],
-  "major": {
-    "automerge": false,
-    "labels": ["dependencies", "d:major"],
-    "stabilityDays": 3
-  },
-  "minor": {
-    "labels": ["dependencies", "d:minor"],
-    "stabilityDays": 3
-  },
-  "patch": {
-    "labels": ["dependencies", "d:patch"],
-    "stabilityDays": 1
-  },
-  "pin": {
-    "labels": ["dependencies", "d:pin"]
-  },
-  "rollback": {
-    "labels": ["dependencies", "d:rollback"]
-  }
+  "packageRules": [
+    {
+      "matchDepTypes": ["major", "minor"],
+      "stabilityDays": 3
+    },
+    {
+      "matchDepTypes": ["major"],
+      "automerge": false,
+      "addLabels": ["d:major"]
+    },
+    {
+      "matchDepTypes": ["minor"],
+      "addLabels": ["d:minor"]
+    },
+    {
+      "matchDepTypes": ["patch"],
+      "addLabels": ["d:patch"]
+    },
+    {
+      "matchDepTypes": ["pin"],
+      "addLabels": ["d:pin"]
+    },
+    {
+      "matchDepTypes": ["rollback"],
+      "addLabels": ["d:rollback"]
+    },
+    {
+      "matchDepTypes": ["optionalDependencies"],
+      "addLabels": ["optional"]
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "addLabels": ["lint"]
+    },
+    {
+      "matchPackagePatterns": ["styled-components"],
+      "addLabels": ["styled-components"]
+    },
+    {
+      "matchPackagePatterns": ["typescript"],
+      "addLabels": ["typescript"]
+    }
+  ]
 }
