@@ -6,16 +6,14 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchDepTypes": ["major", "minor"],
-      "stabilityDays": 3
-    },
-    {
       "matchDepTypes": ["major"],
       "automerge": false,
+      "stabilityDays": 3,
       "addLabels": ["d:major"]
     },
     {
       "matchDepTypes": ["minor"],
+      "stabilityDays": 3,
       "addLabels": ["d:minor"]
     },
     {
