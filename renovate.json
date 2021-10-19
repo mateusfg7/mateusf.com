@@ -43,6 +43,10 @@
     {
       "matchPackagePatterns": ["typescript"],
       "addLabels": ["typescript"]
+    },
+    {
+      "matchPackagePatterns": ["highlight.js"],
+      "addLabels": ["highlight.js"]
     }
   ]
 }
