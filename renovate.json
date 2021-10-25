@@ -6,31 +6,27 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchDepTypes": ["major"],
+      "matchUpdateTypes": ["major"],
       "automerge": false,
       "stabilityDays": 3,
       "addLabels": ["d:major"]
     },
     {
-      "matchDepTypes": ["minor"],
+      "matchUpdateTypes": ["minor"],
       "stabilityDays": 3,
       "addLabels": ["d:minor"]
     },
     {
-      "matchDepTypes": ["patch"],
+      "matchUpdateTypes": ["patch"],
       "addLabels": ["d:patch"]
     },
     {
-      "matchDepTypes": ["pin"],
+      "matchUpdateTypes": ["pin"],
       "addLabels": ["d:pin"]
     },
     {
-      "matchDepTypes": ["rollback"],
+      "matchUpdateTypes": ["rollback"],
       "addLabels": ["d:rollback"]
-    },
-    {
-      "matchDepTypes": ["optionalDependencies"],
-      "addLabels": ["optional"]
     },
     {
       "matchPackagePatterns": ["eslint"],
