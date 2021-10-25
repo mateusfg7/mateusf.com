@@ -45,6 +45,14 @@
       "addLabels": ["typescript"]
     },
     {
+      "matchPackagePatterns": ["types"],
+      "addLabels": ["typescript"]
+    },
+    {
+      "matchPackagePatterns": ["react"],
+      "addLabels": ["react"]
+    },
+    {
       "matchPackagePatterns": ["highlight.js"],
       "addLabels": ["highlight.js"]
     }
