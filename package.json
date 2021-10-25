@@ -39,7 +39,7 @@
     "@types/node": "16.9.4",
     "@types/styled-components": "5.1.15",
     "@types/react": "17.0.30",
-    "eslint": "8.0.1",
+    "eslint": "8.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-config-standard": "16.0.3",
