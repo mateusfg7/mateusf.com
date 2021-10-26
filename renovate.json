@@ -51,6 +51,10 @@
     {
       "matchPackagePatterns": ["highlight.js"],
       "addLabels": ["highlight.js"]
+    },
+    {
+      "matchPackagePatterns": ["next"],
+      "addLabels": ["next.js"]
     }
   ]
 }
