@@ -8,12 +8,10 @@
     {
       "matchUpdateTypes": ["major"],
       "automerge": false,
-      "stabilityDays": 3,
       "addLabels": ["d:major"]
     },
     {
       "matchUpdateTypes": ["minor"],
-      "stabilityDays": 3,
       "addLabels": ["d:minor"]
     },
     {
