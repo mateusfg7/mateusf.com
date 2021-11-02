@@ -1,15 +1,17 @@
 {
   "extends": ["config:base"],
-  "automerge": true,
   "commitBodyTable": true,
   "branchPrefix": "deps/",
   "labels": ["dependencies"],
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
-      "automerge": false,
       "addLabels": ["d:major"]
     },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
     {
       "matchUpdateTypes": ["minor"],
       "addLabels": ["d:minor"]
@@ -35,7 +37,7 @@
       "addLabels": ["styled-components"]
     },
     {
-      "matchPackagePatterns": ["typescript"],
+      "matchPackagePatterns": ["typescript", "types"],
       "addLabels": ["typescript"]
     },
     {
