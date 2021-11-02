@@ -2,7 +2,7 @@
   "extends": ["config:base"],
   "commitBodyTable": true,
   "branchPrefix": "deps/",
-  "stabilityDays: 0,
+  "stabilityDays": 0,
   "labels": ["dependencies"],
   "packageRules": [
     {
