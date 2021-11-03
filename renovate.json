@@ -7,7 +7,7 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": false,
-      "stabilityDays": 0,
+      "stabilityDays": 0
     },
     {
       "matchUpdateTypes": ["major"],
