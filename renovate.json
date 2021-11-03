@@ -2,16 +2,19 @@
   "extends": ["config:base"],
   "commitBodyTable": true,
   "branchPrefix": "deps/",
-  "stabilityDays": 3,
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
-      "addLabels": ["d:major"]
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "stabilityDays": 3,
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["d:major"]
     },
     {
       "matchUpdateTypes": ["minor"],
