@@ -7,6 +7,10 @@ import Container from '../components/Container/index'
 import Header from '../components/Header/index'
 import Main from '../components/Main/index'
 import Date from '../components/Date'
+import {
+  MotionVariantsContainer,
+  MotionVariantsItem
+} from '../components/motion/Variants'
 
 import { KnowledgeSection } from '../styles/pages/knowledge-list'
 
@@ -28,21 +32,25 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
       <Container>
         <Header imageUrl={avatarUrl} title="Knowledge" knowledgePage />
         <Main>
-          {allKnowledgeData.map((knowledge, key) => {
-            return (
-              <Link key={key} href={`/knowledge/${knowledge.id}`}>
-                <a>
-                  <KnowledgeSection>
-                    <h2>{knowledge.title}</h2>
-                    <span>
-                      <Date dateString={knowledge.date} /> &#8226;{' '}
-                      {knowledge.description}
-                    </span>
-                  </KnowledgeSection>
-                </a>
-              </Link>
-            )
-          })}
+          <MotionVariantsContainer>
+            {allKnowledgeData.map((knowledge, key) => {
+              return (
+                <MotionVariantsItem key={key}>
+                  <Link href={`/knowledge/${knowledge.id}`}>
+                    <a>
+                      <KnowledgeSection>
+                        <h2>{knowledge.title}</h2>
+                        <span>
+                          <Date dateString={knowledge.date} /> &#8226;{' '}
+                          {knowledge.description}
+                        </span>
+                      </KnowledgeSection>
+                    </a>
+                  </Link>
+                </MotionVariantsItem>
+              )
+            })}
+          </MotionVariantsContainer>
         </Main>
       </Container>
     </div>
