@@ -4,6 +4,7 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -38,7 +39,9 @@ const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
               <Link key={key} href={`/knowledge/${knowledge.id}`}>
                 <a>
                   <Knowledge>
-                    <h2>{knowledge.title}</h2>
+                    <motion.h2 layoutId={knowledge.id}>
+                      {knowledge.title}
+                    </motion.h2>
                     <span>
                       <Date dateString={knowledge.date} />
                     </span>

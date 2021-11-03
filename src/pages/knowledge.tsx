@@ -2,6 +2,7 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import Container from '../components/Container/index'
 import Header from '../components/Header/index'
@@ -39,7 +40,9 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
                   <Link href={`/knowledge/${knowledge.id}`}>
                     <a>
                       <KnowledgeSection>
-                        <h2>{knowledge.title}</h2>
+                        <motion.h2 layoutId={knowledge.id}>
+                          {knowledge.title}
+                        </motion.h2>
                         <span>
                           <Date dateString={knowledge.date} /> &#8226;{' '}
                           {knowledge.description}
