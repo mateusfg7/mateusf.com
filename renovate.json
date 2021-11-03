@@ -51,6 +51,10 @@
     {
       "matchPackagePatterns": ["next"],
       "addLabels": ["next.js"]
+    },
+    {
+      "matchPackagePatterns": ["framer-motion"],
+      "addLabels": ["framer-motion"]
     }
   ]
 }
