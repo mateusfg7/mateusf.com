@@ -10,7 +10,7 @@
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin"],
-      "automerge": true,
+      "automerge": true
     },
     {
       "matchUpdateTypes": ["major"],
