@@ -14,7 +14,7 @@
     },
     {
       "matchUpdateTypes": ["major"],
-      "addLabels": ["d:major"],
+      "addLabels": ["d:major"]
     },
     {
       "matchUpdateTypes": ["minor"],
