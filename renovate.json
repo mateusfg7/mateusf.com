@@ -5,14 +5,16 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "stabilityDays": 3
+    },
+    {
       "matchUpdateTypes": ["minor", "patch", "pin"],
       "automerge": true,
-      "stabilityDays": 3
     },
     {
       "matchUpdateTypes": ["major"],
       "addLabels": ["d:major"],
-      "stabilityDays": 3
     },
     {
       "matchUpdateTypes": ["minor"],
