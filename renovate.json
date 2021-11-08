@@ -3,15 +3,16 @@
   "commitBodyTable": true,
   "branchPrefix": "deps/",
   "labels": ["dependencies"],
-  "stabilityDays": 3,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin"],
-      "automerge": true
+      "automerge": true,
+      "stabilityDays": 3
     },
     {
       "matchUpdateTypes": ["major"],
-      "addLabels": ["d:major"]
+      "addLabels": ["d:major"],
+      "stabilityDays": 3
     },
     {
       "matchUpdateTypes": ["minor"],
