@@ -985,6 +985,11 @@ commander@^6.0.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
+commander@^8.0.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
+  integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -2399,6 +2404,13 @@ katex@^0.13.0:
   dependencies:
     commander "^6.0.0"
 
+katex@^0.15.0:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.15.1.tgz#cf4ce2fa1257c3279cc7a7fe0c8d1fab40800893"
+  integrity sha512-KIk+gizli0gl1XaJlCYS8/donGMbzXYTka6BbH3AgvDJTOwyDY4hJ+YmzJ1F0y/3XzX5B9ED8AqB2Hmn2AZ0uA==
+  dependencies:
+    commander "^8.0.0"
+
 kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
@@ -3622,15 +3634,15 @@ rehype-highlight@5.0.0:
     unified "^10.0.0"
     unist-util-visit "^4.0.0"
 
-rehype-katex@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/rehype-katex/-/rehype-katex-6.0.1.tgz#e505e86afb26c343dfc0242e605433261b03fd62"
-  integrity sha512-7SVO6mzudHI9LCsAaU4Kw7k0C+kj+2Zgh55Vt03aludTMEObVvc2UZ1wGvpthZWHe7HsikLmBVCOjVoYbtdDUA==
+rehype-katex@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/rehype-katex/-/rehype-katex-6.0.2.tgz#20197bbc10bdf79f6b999bffa6689d7f17226c35"
+  integrity sha512-C4gDAlS1+l0hJqctyiU64f9CvT00S03qV1T6HiMzbSuLBgWUtcqydWHY9OpKrm0SpkK16FNd62CDKyWLwV2ppg==
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/katex" "^0.11.0"
     hast-util-to-text "^3.1.0"
-    katex "^0.13.0"
+    katex "^0.15.0"
     rehype-parse "^8.0.0"
     unified "^10.0.0"
     unist-util-remove-position "^4.0.0"
@@ -3688,10 +3700,10 @@ remark-gfm@3.0.1:
     micromark-extension-gfm "^2.0.0"
     unified "^10.0.0"
 
-remark-math@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.0.tgz#8b1fe071be8584e1e87c14d9353464b67f98d1b5"
-  integrity sha512-Igu6p5+Ks8NWX+CzosHHG4r+ETMQIPscoTYPhNPk+ROauJnPEWPFeIe6JdaM1Z+ctHurpIDyYaLRXzgzZAhYSQ==
+remark-math@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-5.1.1.tgz#459e798d978d4ca032e745af0bac81ddcdf94964"
+  integrity sha512-cE5T2R/xLVtfFI4cCePtiRn+e6jKMtFDR3P8V3qpv8wpKjwvHoBA4eJzvX+nVrnlNy0911bdGmuspCSwetfYHw==
   dependencies:
     "@types/mdast" "^3.0.0"
     mdast-util-math "^2.0.0"
