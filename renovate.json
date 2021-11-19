@@ -67,6 +67,14 @@
     {
       "matchPackagePatterns": ["remark"],
       "addLabels": ["remark"]
+    },
+    {
+      "matchPackagePatterns": ["unified"],
+      "addLabels": ["unified"]
+    },
+    {
+      "matchPackagePatterns": ["date-fns"],
+      "addLabels": ["date-fns"]
     }
   ]
 }
