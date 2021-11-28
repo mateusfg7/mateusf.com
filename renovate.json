@@ -75,6 +75,10 @@
     {
       "matchPackagePatterns": ["date-fns"],
       "addLabels": ["date-fns"]
+    },
+    {
+      "matchPackagePatterns": ["prettier"],
+      "addLabels": ["prettier"]
     }
   ]
 }
