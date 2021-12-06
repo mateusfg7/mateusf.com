@@ -3642,10 +3642,10 @@ regexpp@^3.0.0, regexpp@^3.2.0:
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.2.0.tgz#0425a2768d8f23bad70ca4b90461fa2f1213e1b2"
   integrity sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==
 
-rehype-highlight@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/rehype-highlight/-/rehype-highlight-5.0.0.tgz#a1814e31180bcc55c37f66c289df69c3d004ece1"
-  integrity sha512-LXbdRzHM0PNzVfHvbiF+r/BZzCHSdtpSTCnJej6ZuvJKDKRVfwl0Io5b81gWqUnfZmpzjhPAzm5es4iikv1jzg==
+rehype-highlight@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-highlight/-/rehype-highlight-5.0.1.tgz#86b4e1d77589cbd25fe7016319711bbfb412b033"
+  integrity sha512-OyKw8dFiZnuWhI+BnQCVD9LT8hDRqUszQPGtzMaVioWgGCR5UwhPn5CPyW1cs776VwQuA8rLrKTbPI/fKCpKHA==
   dependencies:
     "@types/hast" "^2.0.0"
     hast-util-to-text "^3.0.0"
