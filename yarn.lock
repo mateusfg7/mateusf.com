@@ -3703,10 +3703,10 @@ rehype-parse@^8.0.0:
     parse5 "^6.0.0"
     unified "^10.0.0"
 
-rehype-react@7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/rehype-react/-/rehype-react-7.0.3.tgz#9c96051de79a385fd44908597a52eb964e4b891a"
-  integrity sha512-nrn2fAYAPv/XD3mFe9Z2cfra1UY0a9TutNYdb5dAHsfz4HAzSVxf1LbyGins/1UtvKBzvNS/0FQJknjp/d+iEg==
+rehype-react@7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/rehype-react/-/rehype-react-7.0.4.tgz#33d8d0137153ed2b0ca9dfcedbd4a81db024956c"
+  integrity sha512-mC3gT/EVmxB8mgwz6XkupjF/UAhA2NOai/bYvTQYC+AW0jvomXB+LGpC4UcX3vsY327nM29BttEDG4lLrtqu/g==
   dependencies:
     "@mapbox/hast-util-table-cell-style" "^0.2.0"
     "@types/hast" "^2.0.0"
