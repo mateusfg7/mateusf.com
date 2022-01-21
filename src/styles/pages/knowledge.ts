@@ -88,10 +88,27 @@ export const KnowledgeContent = styled.div`
   }
 
   table {
+    border-collapse: collapse;
+
     th,
     td {
       padding: 0.3rem;
       text-align: left;
+    }
+
+    th {
+      background-color: rgba(0,0,0,0.04);
+      font-weight: 500;
+      strong {
+        font-weight: 900;
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(0,0,0,0.02);
+    }
+    tr:hover {
+      background-color: rgba(0,0,0,0.04);
     }
   }
 
