@@ -33,6 +33,7 @@ import rehype2react from 'rehype-react'
 import gfm from 'remark-gfm'
 import toc from 'rehype-toc'
 import slug from 'rehype-slug'
+import rehypeRaw from 'rehype-raw'
 
 import elixir from 'highlight.js/lib/languages/elixir'
 import vim from 'highlight.js/lib/languages/vim'
@@ -74,7 +75,8 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
     .use(markdown)
     .use(gfm)
     .use(math)
-    .use(remark2rehype)
+    .use(remark2rehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeHighlight, { languages: highlightLanguages })
     .use(katex)
     .use(slug)
