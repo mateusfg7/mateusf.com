@@ -14,16 +14,22 @@ import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
 import rehype2react from 'rehype-react'
 
-import elixir from 'highlight.js/lib/languages/elixir.js'
+import elixir from 'highlight.js/lib/languages/elixir'
+import vim from 'highlight.js/lib/languages/vim'
 
 export function unifiedContentProcessor(contentToProcess: string) {
+  const languages = {
+    elixir,
+    vim
+  }
+
   const contentProcessor = unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkMath)
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeHighlight, { languages: { elixir } })
+    .use(rehypeHighlight, { languages })
     .use(rehypeKatex)
     .use(rehypeSlug)
     .use(rehypeToc)
