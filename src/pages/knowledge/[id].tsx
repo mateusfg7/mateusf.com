@@ -4,7 +4,6 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 import {
   getAllKnowledgeIds,
@@ -53,9 +52,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
         <Main>
           <article>
             <KnowledgeHeader>
-              <motion.h2 layoutId={knowledgeData.id}>
-                {knowledgeData.title}
-              </motion.h2>
+              <h2>{knowledgeData.title}</h2>
               <div>
                 <p>
                   <Date dateString={knowledgeData.date} /> &#8226;{' '}
