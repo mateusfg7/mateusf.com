@@ -15,7 +15,6 @@ import { unifiedContentProcessor } from '../../lib/unifiedContentProcessor'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
-import Main from '../../components/Main'
 import Date from '../../components/Date'
 import ReadProgress from '../../components/ReadProgress'
 
@@ -49,7 +48,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
           title={knowledgeId}
         />
-        <Main>
+        <main>
           <article>
             <KnowledgeHeader>
               <h2>{knowledgeData.title}</h2>
@@ -79,7 +78,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
               {unifiedContentProcessor(knowledgeData.content)}
             </KnowledgeContent>
           </article>
-        </Main>
+        </main>
       </Container>
     </div>
   )

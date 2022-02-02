@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 import Container from '../components/Container/index'
 import Header from '../components/Header/index'
-import Main from '../components/Main/index'
 
 import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
@@ -29,7 +28,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
 
       <Container>
         <Header imageUrl={avatarUrl} title="Categories" />
-        <Main>
+        <main>
           <CategoryList>
             {categories.map((categoryData, index) => (
               <Link key={index} href={`/category/${categoryData.category}`}>
@@ -42,7 +41,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
               </Link>
             ))}
           </CategoryList>
-        </Main>
+        </main>
       </Container>
     </div>
   )

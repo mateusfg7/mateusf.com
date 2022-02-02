@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 import Container from '../components/Container/index'
 import Header from '../components/Header/index'
-import Main from '../components/Main/index'
 import Date from '../components/Date'
 
 import { KnowledgeSection } from '../styles/pages/knowledge-list'
@@ -27,7 +26,7 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
 
       <Container>
         <Header imageUrl={avatarUrl} title="Knowledge" knowledgePage />
-        <Main>
+        <main>
           {allKnowledgeData.map((knowledge, key) => {
             return (
               <Link href={`/knowledge/${knowledge.id}`} key={key}>
@@ -43,7 +42,7 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
               </Link>
             )
           })}
-        </Main>
+        </main>
       </Container>
     </div>
   )

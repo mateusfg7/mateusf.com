@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
-import Main from '../../components/Main'
 import Date from '../../components/Date'
 
 import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
@@ -32,7 +31,7 @@ const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
           title={tag}
         />
-        <Main>
+        <main>
           {knowledgeList.map((knowledge, key) => {
             return (
               <Link key={key} href={`/knowledge/${knowledge.id}`}>
@@ -47,7 +46,7 @@ const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
               </Link>
             )
           })}
-        </Main>
+        </main>
       </Container>
     </div>
   )
