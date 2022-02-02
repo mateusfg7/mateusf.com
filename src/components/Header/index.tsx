@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({ imageUrl, title, knowledgePage }) => {
       <nav>
         {knowledgePage ? (
           <Link href="/">
-            <a>Terminal</a>
+            <a>Home</a>
           </Link>
         ) : (
           <Link href="/knowledge">
