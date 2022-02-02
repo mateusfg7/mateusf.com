@@ -4,7 +4,6 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 import Container from '../../components/Container'
 import Header from '../../components/Header'
@@ -42,9 +41,7 @@ const Category: React.FC<Props> = ({ category, knowledgeList }) => {
               <Link key={key} href={`/knowledge/${knowledge.id}`}>
                 <a>
                   <Knowledge>
-                    <motion.h2 layoutId={knowledge.id}>
-                      {knowledge.title}
-                    </motion.h2>
+                    <h2>{knowledge.title}</h2>
                     <span>
                       <Date dateString={knowledge.date} />
                     </span>
