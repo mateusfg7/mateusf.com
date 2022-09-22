@@ -36,8 +36,8 @@
     "unified": "10.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
     "@types/blueimp-md5": "2.18.0",
     "@types/node": "16.11.59",
     "@types/react": "17.0.50",
@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.0.1",
     "eslint-plugin-react": "7.31.8",
-    "husky": "^8.0.1",
+    "husky": "8.0.1",
     "prettier": "2.7.1",
     "typescript": "4.8.3"
   }
