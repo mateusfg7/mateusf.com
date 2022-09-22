@@ -5,12 +5,8 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": ["major", "minor"],
       "stabilityDays": 3
-    },
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin"],
-      "automerge": true
     },
     {
       "matchUpdateTypes": ["major"],
@@ -31,50 +27,6 @@
     {
       "matchUpdateTypes": ["rollback"],
       "addLabels": ["d:rollback"]
-    },
-    {
-      "matchPackagePatterns": ["eslint"],
-      "addLabels": ["lint"]
-    },
-    {
-      "matchPackagePatterns": ["styled-components"],
-      "addLabels": ["styled-components"]
-    },
-    {
-      "matchPackagePatterns": ["typescript", "types"],
-      "addLabels": ["typescript"]
-    },
-    {
-      "matchPackagePatterns": ["types"],
-      "addLabels": ["typescript"]
-    },
-    {
-      "matchPackagePatterns": ["react"],
-      "addLabels": ["react"]
-    },
-    {
-      "matchPackagePatterns": ["highlight.js"],
-      "addLabels": ["highlight.js"]
-    },
-    {
-      "matchPackagePatterns": ["next"],
-      "addLabels": ["next.js"]
-    },
-    {
-      "matchPackagePatterns": ["remark"],
-      "addLabels": ["remark"]
-    },
-    {
-      "matchPackagePatterns": ["unified"],
-      "addLabels": ["unified"]
-    },
-    {
-      "matchPackagePatterns": ["date-fns"],
-      "addLabels": ["date-fns"]
-    },
-    {
-      "matchPackagePatterns": ["prettier"],
-      "addLabels": ["prettier"]
     }
   ]
 }
