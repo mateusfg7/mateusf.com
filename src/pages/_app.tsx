@@ -3,8 +3,9 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
-import GlobalStyle from '../styles/global'
 import defaultTheme from '../styles/theme'
+
+import '../styles/main.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -19,7 +20,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <ThemeProvider theme={defaultTheme}>
         <Component {...pageProps} />
-        <GlobalStyle />
       </ThemeProvider>
     </>
   )
