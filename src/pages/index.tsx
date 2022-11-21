@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import Container from '../components/Container/index'
+import { Container } from '../components/Container'
 import Header from '../components/Header/index'
 import { KnowledgeLink } from '../components/KnowledgeLink'
 
@@ -14,7 +14,7 @@ interface Props {
   allKnowledgeData: KnowledgeData[]
 }
 
-const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
+const Home: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
   return (
     <div>
       <Head>
@@ -41,7 +41,7 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
   )
 }
 
-export default Knowledge
+export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const allKnowledgeData = getSortedKnowledgeData()

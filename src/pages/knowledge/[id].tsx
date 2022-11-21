@@ -13,7 +13,7 @@ import { getHashHeaderOfData } from '../../lib/utils'
 import { KnowledgeData } from '../../lib/types'
 import { unifiedContentProcessor } from '../../lib/unifiedContentProcessor'
 
-import Container from '../../components/Container'
+import { Container } from '../../components/Container'
 import Header from '../../components/Header'
 import Date from '../../components/Date'
 import ReadProgress from '../../components/ReadProgress'

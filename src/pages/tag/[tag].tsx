@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Container from '../../components/Container'
+import { Container } from '../../components/Container'
 import Header from '../../components/Header'
 import Date from '../../components/Date'
 

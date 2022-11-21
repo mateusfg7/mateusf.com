@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Container from '../components/Container/index'
+import { Container } from '../components/Container/index'
 import Header from '../components/Header/index'
 
 import { CategoryList, CategoryButton } from '../styles/pages/categories'
