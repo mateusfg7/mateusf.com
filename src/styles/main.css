@@ -19,11 +19,12 @@
   }
 
   .knowledge-content h1,
-  h2,
-  h3,
-  h4 {
+  .knowledge-content h2,
+  .knowledge-content h3,
+  .knowledge-content h4 {
     @apply my-6 mx-0 font-medium w-max;
   }
+
   .knowledge-content h1 {
     font-size: 1.6rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
