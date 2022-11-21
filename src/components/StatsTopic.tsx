@@ -6,7 +6,7 @@ interface Props {
   imgSrc: string
 }
 
-const StatsTopic: React.FC<Props> = ({ imgSrc, title, gridArea }) => {
+export const StatsTopic: React.FC<Props> = ({ imgSrc, title, gridArea }) => {
   return (
     <section className={`topic ${gridArea}`}>
       <header>
@@ -17,5 +17,3 @@ const StatsTopic: React.FC<Props> = ({ imgSrc, title, gridArea }) => {
     </section>
   )
 }
-
-export default StatsTopic

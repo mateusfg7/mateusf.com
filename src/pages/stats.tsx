@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import StatsTopic from '../components/StatsTopic'
+import { StatsTopic } from '../components/StatsTopic'
 import { Container, Header, Main, Content } from '../styles/pages/stats'
 
 const Stats: React.FC = () => {
@@ -42,7 +42,6 @@ const Stats: React.FC = () => {
             imgSrc="https://github-readme-stats.vercel.app/api/top-langs/?username=mateusfg7&layout=compact&hide_title=true&hide_border=true&show_icons=true&title_color=000&icon_color=555&text_color=000&langs_count=11&hide=html"
             gridArea="languages"
           />
-
         </Content>
       </Main>
     </Container>
