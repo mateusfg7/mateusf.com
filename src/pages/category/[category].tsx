@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { Container } from '../../components/Container'
-import Header from '../../components/Header'
+import { Header } from '../../components/Header'
 
 import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
 import {

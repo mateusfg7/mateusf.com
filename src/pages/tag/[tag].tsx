@@ -7,7 +7,7 @@ import { getTagListFromPosts, getKnowledgeListOfTag } from '../../lib/tags'
 import { KnowledgeData } from '../../lib/types'
 
 import { Container } from '../../components/Container'
-import Header from '../../components/Header'
+import { Header } from '../../components/Header'
 import { KnowledgeLink } from '../../components/KnowledgeLink'
 
 interface Props {

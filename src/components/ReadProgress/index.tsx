@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { ProgressBar, PercentageProgress } from './styles'
 
-const ReadProgress: React.FC = () => {
+export const ReadProgress: React.FC = () => {
   const [progressWidth, setProgressWith] = useState(0)
 
   const handleScroll = () => {
@@ -23,5 +23,3 @@ const ReadProgress: React.FC = () => {
     </>
   )
 }
-
-export default ReadProgress

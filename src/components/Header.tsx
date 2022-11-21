@@ -6,7 +6,7 @@ interface Props {
   title: string
 }
 
-const Header: React.FC<Props> = ({ imageUrl, title }) => {
+export const Header: React.FC<Props> = ({ imageUrl, title }) => {
   return (
     <header className="flex justify-between items-center mb-24">
       <div className="flex items-center gap-5">
@@ -27,5 +27,3 @@ const Header: React.FC<Props> = ({ imageUrl, title }) => {
     </header>
   )
 }
-
-export default Header

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Date from './Date'
+
+import { Date } from './Date'
 
 interface Props {
   id: string

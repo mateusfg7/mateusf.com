@@ -14,9 +14,9 @@ import { KnowledgeData } from '../../lib/types'
 import { unifiedContentProcessor } from '../../lib/unifiedContentProcessor'
 
 import { Container } from '../../components/Container'
-import Header from '../../components/Header'
-import Date from '../../components/Date'
-import ReadProgress from '../../components/ReadProgress'
+import { Header } from '../../components/Header'
+import { Date } from '../../components/Date'
+import { ReadProgress } from '../../components/ReadProgress'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
