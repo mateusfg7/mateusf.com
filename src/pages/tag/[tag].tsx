@@ -1,19 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-
-import Container from '../../components/Container'
-import Header from '../../components/Header'
-import Date from '../../components/Date'
 
 import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
 import { getTagListFromPosts, getKnowledgeListOfTag } from '../../lib/tags'
 import { KnowledgeData } from '../../lib/types'
 
-import { Knowledge } from '../../styles/general-styled-components'
+import { Container } from '../../components/Container'
+import { Header } from '../../components/Header'
+import { KnowledgeLink } from '../../components/KnowledgeLink'
 
 interface Props {
   tag: string
@@ -34,16 +29,13 @@ const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
         <main>
           {knowledgeList.map((knowledge, key) => {
             return (
-              <Link key={key} href={`/knowledge/${knowledge.id}`}>
-                <a>
-                  <Knowledge>
-                    <h2>{knowledge.title}</h2>
-                    <span>
-                      <Date dateString={knowledge.date} />
-                    </span>
-                  </Knowledge>
-                </a>
-              </Link>
+              <KnowledgeLink
+                key={key}
+                id={knowledge.id}
+                title={knowledge.title}
+                date={knowledge.date}
+                description={knowledge.description}
+              />
             )
           })}
         </main>

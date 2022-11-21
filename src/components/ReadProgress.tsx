@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { ProgressBar, PercentageProgress } from './styles'
-
-const ReadProgress: React.FC = () => {
+export const ReadProgress: React.FC = () => {
   const [progressWidth, setProgressWith] = useState(0)
 
   const handleScroll = () => {
@@ -17,11 +15,11 @@ const ReadProgress: React.FC = () => {
   }, [])
 
   return (
-    <>
-      <ProgressBar width={progressWidth} />
-      <PercentageProgress>{progressWidth.toFixed(2)}% Read</PercentageProgress>
-    </>
+    <div
+      className="fixed top-0 bg-black transition-all duration-300 rounded-md h-1"
+      style={{
+        width: `${progressWidth}%`
+      }}
+    />
   )
 }
-
-export default ReadProgress

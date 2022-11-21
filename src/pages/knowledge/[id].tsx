@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
@@ -13,14 +11,12 @@ import { getHashHeaderOfData } from '../../lib/utils'
 import { KnowledgeData } from '../../lib/types'
 import { unifiedContentProcessor } from '../../lib/unifiedContentProcessor'
 
-import Container from '../../components/Container'
-import Header from '../../components/Header'
-import Date from '../../components/Date'
-import ReadProgress from '../../components/ReadProgress'
+import { Container } from '../../components/Container'
+import { Header } from '../../components/Header'
+import { Date } from '../../components/Date'
+import { ReadProgress } from '../../components/ReadProgress'
 
 import { RiHistoryLine } from 'react-icons/ri'
-
-import { KnowledgeHeader, KnowledgeContent } from '../../styles/pages/knowledge'
 
 import 'highlight.js/styles/github.css'
 
@@ -49,35 +45,38 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
           title={knowledgeId}
         />
         <main>
-          <article>
-            <KnowledgeHeader>
-              <h2>{knowledgeData.title}</h2>
-              <div>
-                <p>
-                  <Date dateString={knowledgeData.date} /> &#8226;{' '}
-                  <Link href={`/category/${knowledgeData.category}`}>
-                    {knowledgeData.category}
+          <div className="py-4 px-0 leading-6 border-b-[1px] border-unselectedSecondText mb-8">
+            <h2 className="mb-2 font-bold text-xl">{knowledgeData.title}</h2>
+            <div>
+              <p>
+                <Date dateString={knowledgeData.date} /> &#8226;{' '}
+                <Link href={`/category/${knowledgeData.category}`}>
+                  {knowledgeData.category}
+                </Link>
+              </p>
+              {knowledgeData.lastUpdate && (
+                <p
+                  className="flex items-center gap-1 text-unselectedSecondText"
+                  title="Last Update"
+                >
+                  <Date dateString={knowledgeData.lastUpdate} />{' '}
+                  <RiHistoryLine />
+                </p>
+              )}
+              <p className="flex flex-wrap gap-2 mt-1">
+                {tags.map((tag, index) => (
+                  <Link href={`/tag/${tag.trim()}`} key={index}>
+                    <span className="text-unselectedSecondText hover:text-text transition-colors duration-200 hover:cursor-pointe">
+                      {tag}
+                    </span>
                   </Link>
-                </p>
-                {knowledgeData.lastUpdate && (
-                  <p className="last-update" title="Last Update">
-                    <Date dateString={knowledgeData.lastUpdate} />{' '}
-                    <RiHistoryLine />
-                  </p>
-                )}
-                <p className="tags">
-                  {tags.map((tag, index) => (
-                    <Link href={`/tag/${tag.trim()}`} key={index}>
-                      <span className="tag">{tag}</span>
-                    </Link>
-                  ))}
-                </p>
-              </div>
-            </KnowledgeHeader>
-            <KnowledgeContent>
-              {unifiedContentProcessor(knowledgeData.content)}
-            </KnowledgeContent>
-          </article>
+                ))}
+              </p>
+            </div>
+          </div>
+          <div className="knowledge-content">
+            {unifiedContentProcessor(knowledgeData.content)}
+          </div>
         </main>
       </Container>
     </div>

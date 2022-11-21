@@ -1,10 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
 
-import GlobalStyle from '../styles/global'
-import defaultTheme from '../styles/theme'
+import '../styles/main.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -17,10 +15,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
         />
       </Head>
-      <ThemeProvider theme={defaultTheme}>
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </ThemeProvider>
+      <Component {...pageProps} />
     </>
   )
 }
