@@ -1,13 +1,10 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 
 import Container from '../components/Container/index'
 import Header from '../components/Header/index'
-import Date from '../components/Date'
-
-import { KnowledgeSection } from '../styles/pages/knowledge-list'
+import { KnowledgeLink } from '../components/KnowledgeLink'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import { KnowledgeData } from '../lib/types'
@@ -25,21 +22,17 @@ const Knowledge: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
       </Head>
 
       <Container>
-        <Header imageUrl={avatarUrl} title="Knowledge" knowledgePage />
+        <Header imageUrl={avatarUrl} title="Knowledge" />
         <main>
           {allKnowledgeData.map((knowledge, key) => {
             return (
-              <Link href={`/knowledge/${knowledge.id}`} key={key}>
-                <a>
-                  <KnowledgeSection>
-                    <h2>{knowledge.title}</h2>
-                    <span>
-                      <Date dateString={knowledge.date} /> &#8226;{' '}
-                      {knowledge.description}
-                    </span>
-                  </KnowledgeSection>
-                </a>
-              </Link>
+              <KnowledgeLink
+                key={key}
+                id={knowledge.id}
+                title={knowledge.title}
+                date={knowledge.date}
+                description={knowledge.description}
+              />
             )
           })}
         </main>
