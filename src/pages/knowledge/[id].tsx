@@ -45,7 +45,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
           title={knowledgeId}
         />
         <main>
-          <div className="py-4 px-0 leading-6 border-b-[1px] border-neutral-500 mb-8">
+          <div className="py-4 px-0 leading-6 border-b border-neutral-500 mb-8">
             <h2 className="mb-2 font-bold text-xl">{knowledgeData.title}</h2>
             <div>
               <p>
