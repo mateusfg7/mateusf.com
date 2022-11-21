@@ -3,10 +3,8 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Container } from '../components/Container/index'
+import { Container } from '../components/Container'
 import Header from '../components/Header/index'
-
-import { CategoryList, CategoryButton } from '../styles/pages/categories'
 
 import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
@@ -29,18 +27,18 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
       <Container>
         <Header imageUrl={avatarUrl} title="Categories" />
         <main>
-          <CategoryList>
+          <div className="flex flex-wrap gap-2">
             {categories.map((categoryData, index) => (
               <Link key={index} href={`/category/${categoryData.category}`}>
-                <CategoryButton>
+                <div className="py-1 px-4 border-2 border-solid border-unselectedText hover:border-primary font-bold text-unselectedText hover:text-primary duration-100 hover:cursor-pointer">
                   <p>
                     {categoryData.category}
                     <sup> {categoryData.numberOfKnowledge} </sup>
                   </p>
-                </CategoryButton>
+                </div>
               </Link>
             ))}
-          </CategoryList>
+          </div>
         </main>
       </Container>
     </div>
