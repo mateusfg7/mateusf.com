@@ -30,7 +30,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
           <div className="flex flex-wrap gap-2">
             {categories.map((categoryData, index) => (
               <Link key={index} href={`/category/${categoryData.category}`}>
-                <div className="py-1 px-4 border-2 border-solid border-unselectedText hover:border-primary font-bold text-unselectedText hover:text-primary duration-100 hover:cursor-pointer">
+                <div className="py-1 px-4 border-2 border-solid border-neutral-700 hover:border-blue-700 font-bold text-neutral-700 hover:text-blue-700 duration-100 hover:cursor-pointer">
                   <p>
                     {categoryData.category}
                     <sup> {categoryData.numberOfKnowledge} </sup>

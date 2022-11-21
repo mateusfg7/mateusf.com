@@ -17,11 +17,11 @@ export const Header: React.FC<Props> = ({ imageUrl, title }) => {
       </div>
       <nav>
         <Link href="/">
-          <a className="text-text mr-8 hover:underline">Home</a>
+          <a className="text-neutral-900 mr-8 hover:underline">Home</a>
         </Link>
 
         <Link href="/categories">
-          <a className="text-text mr-8 hover:underline">Categories</a>
+          <a className="text-neutral-900 mr-8 hover:underline">Categories</a>
         </Link>
       </nav>
     </header>

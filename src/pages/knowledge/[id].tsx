@@ -45,7 +45,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
           title={knowledgeId}
         />
         <main>
-          <div className="py-4 px-0 leading-6 border-b-[1px] border-unselectedSecondText mb-8">
+          <div className="py-4 px-0 leading-6 border-b-[1px] border-neutral-500 mb-8">
             <h2 className="mb-2 font-bold text-xl">{knowledgeData.title}</h2>
             <div>
               <p>
@@ -56,7 +56,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
               </p>
               {knowledgeData.lastUpdate && (
                 <p
-                  className="flex items-center gap-1 text-unselectedSecondText"
+                  className="flex items-center gap-1 text-neutral-500"
                   title="Last Update"
                 >
                   <Date dateString={knowledgeData.lastUpdate} />{' '}
@@ -66,7 +66,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
               <p className="flex flex-wrap gap-2 mt-1">
                 {tags.map((tag, index) => (
                   <Link href={`/tag/${tag.trim()}`} key={index}>
-                    <span className="text-unselectedSecondText hover:text-text transition-colors duration-200 hover:cursor-pointe">
+                    <span className="text-neutral-500 hover:text-neutral-900 transition-colors duration-200 hover:cursor-pointe">
                       {tag}
                     </span>
                   </Link>
