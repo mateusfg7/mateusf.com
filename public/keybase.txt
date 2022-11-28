@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mateusfg7
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mfg-b.vercel.app
+  * I am mateusfg7 (https://keybase.io/mateusfg7) on keybase.
+  * I have a public key ASDFxX9KLMm04nfXYjkhdrHQLCzy2ZGr3LBSpbQIUyy6Rwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c5c57f4a2cc9b4e277d762392176b1d02c2cf2d991abdcb052a5b408532cba470a",
+      "host": "keybase.io",
+      "kid": "0120c5c57f4a2cc9b4e277d762392176b1d02c2cf2d991abdcb052a5b408532cba470a",
+      "uid": "fc951a04bc8dabcc97729b1d56a6e819",
+      "username": "mateusfg7"
+    },
+    "merkle_root": {
+      "ctime": 1669665659,
+      "hash": "5257de6afd8a4c4e5417af6bb4980a4f10bc3460a8d83261bf64ac3c494d72966eae6f5d2cd685e3298f65f505d4f29a6c2f6dbb9fd66776da2a97148f6ec083",
+      "hash_meta": "b1ab2b5c906bd67e384bf217992b6d0b5ca673f8a573278b3b80082774a2386c",
+      "seqno": 23629973
+    },
+    "service": {
+      "entropy": "2ft6jkEn/fAg7K1qd1BS3uOC",
+      "hostname": "mfg-b.vercel.app",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.2"
+  },
+  "ctime": 1669665731,
+  "expire_in": 504576000,
+  "prev": "5775b8e40ad3f3acd96ea1a06a214c008aa5349364b068b21bb1483a43de8db9",
+  "seqno": 30,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgxcV/SizJtOJ312I5IXax0Cws8tmRq9ywUqW0CFMsukcKp3BheWxvYWTESpcCHsQgV3W45ArT86zZbqGgaiFMAIqlNJNksGiyG7FIOkPejbnEIFOXA+gTsY5SRFLJLxeSEuIl43quOaUYExmmXQWGO9u8AgHCo3NpZ8RALijqHOrOG1jc2Ez4STLnj9v+55AZNkZQfXk5wc5MDqXeHeSwOdyd8tW++2OyPkOEkCDHJM1c7u5o1XTDRm6+DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKNQ+TLhF3Y8QTShYZGvuRUlSdfOQUHjpFzrDGRDOM+lo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mateusfg7
+
+==================================================================
