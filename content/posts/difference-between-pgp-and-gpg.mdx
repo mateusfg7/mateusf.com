@@ -1,0 +1,42 @@
+---
+title: 'PGP vs GPG'
+date: '2021-07-01'
+description: 'The difference between PGP and GPG'
+category: 'PGP-GPG'
+tags: 'hash, cryptography, asymmetric-cipher, security, transcription'
+---
+
+# Disclaimer
+
+This is just a complete copy of [this article](http://www.differencebetween.net/technology/software-technology/difference-between-pgp-and-gpg/)!
+
+
+# PGP vs GPG
+
+“PGP” and “GPG” stand for “Pretty Good Privacy” and “Gnu Privacy Guard.” These are two different computer programs developed to protect electronic communications. Today almost everyone uses emails for correspondence and communication, but this medium is not as secure as we think it is. The emails can easily be forged by someone using anybody’s name or identity, and the emails can easily be stored and read by people with special skills. To solve these existing problems and improving the security of emails as well as making them more private, these two programs were developed and used. The privacy of emails is maintained by these programs because they allow encryption of messages by people, and only the people who are authorized can read the encrypted messages; secondly, they are difficult to forge.
+
+For these programs to run properly, the computer used should be secure. If the computers are easily infected with viruses or attacked by spyware programs which can report the key to someone, then first the computer needs to be secure to implement the full strength of these programs.
+
+## PGP
+
+“PGP” stands for “Pretty Good Privacy.” It was developed by Phil Zimmermann. At first it was written as copyrighted freeware under the Gnu Public License. Later, PGP was upgraded and made into a propriety program. The rights for this program are traded around. The reason for this upgrade was legal defense costs and royalty issues related to the export laws of the USA. Now the PGP program is owned by PGP Corporation. Only the command line version is not owned by PGP Corporation which is also not for sale.  PGP uses the RSA algorithm and the IDEA encryption algorithm. The PGP is considered to have Windows interface which is more polished.
+
+## GPG
+
+“GPG” stands for “Gnu Privacy Guard.” GPG is a re-write or upgrade of PGP. It does not use the IDEA encryption algorithm. This is to make it completely free. It uses the NIST AES, Advanced Encryption Standard. All the algorithm data is stored and documented publicly by OpenPGP Alliance. The main reason for this change is that AES costs less than IDEA and is considered more secure. Moreover, it is royalty free because it is not patented.  GPG is more compatible than the original PGP with OpenPGP. GPG is also based on a command line. Windows frontends are also available for GPG other than the command line.
+
+The freeware version of the PGP  program can be downloaded from the home page of PGP International. It is restricted for personal use and is not for commercial purposes, or one can buy it from PGP Corporation. The free digital signature and email encryption program can be downloaded from GPG if it is for personal as well as for business use.
+
+# Summary
+
+
+1. “PGP” stands for “Pretty Good Privacy”; “GPG” stands for “Gnu Privacy Guard.”
+2. It was the original freeware copyrighted program; GPG is the re-write of PGP.
+3. The PGP uses the RSA algorithm and the IDEA encryption algorithm. GPG uses the NIST AES, Advanced Encryption Standard.
+4. A freeware version of the PGP program can be downloaded from the home page of PGP International. It is restricted for personal use and is not for commercial purposes. The free, digital signature and email encryption program can be downloaded from GPG if it is for personal as well as for business use.
+
+---
+
+# referencies
+
+Difference Between PGP and GPG: http://www.differencebetween.net/technology/software-technology/difference-between-pgp-and-gpg/ [[_archive_](https://web.archive.org/web/20210701144244/http://www.differencebetween.net/technology/software-technology/difference-between-pgp-and-gpg/)]
