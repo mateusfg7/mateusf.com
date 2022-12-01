@@ -6,15 +6,14 @@ import { Container } from '../components/Container'
 import { Header } from '../components/Header'
 import { KnowledgeLink } from '../components/KnowledgeLink'
 
-import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
-import { KnowledgeData } from '../lib/types'
+import { allPosts, Post } from 'contentlayer/generated'
 
 interface Props {
   avatarUrl: string
-  allKnowledgeData: KnowledgeData[]
+  posts: Post[]
 }
 
-const Home: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
+const Home: React.FC<Props> = ({ avatarUrl, posts }) => {
   return (
     <div>
       <Head>
@@ -24,14 +23,14 @@ const Home: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
       <Container>
         <Header imageUrl={avatarUrl} title="Knowledge" />
         <main>
-          {allKnowledgeData.map((knowledge, key) => {
+          {posts.map((post, key) => {
             return (
               <KnowledgeLink
                 key={key}
-                id={knowledge.id}
-                title={knowledge.title}
-                date={knowledge.date}
-                description={knowledge.description}
+                id={post.id}
+                title={post.title}
+                date={post.date}
+                description={post.description}
               />
             )
           })}
@@ -44,12 +43,10 @@ const Home: React.FC<Props> = ({ avatarUrl, allKnowledgeData }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allKnowledgeData = getSortedKnowledgeData()
-
   return {
     props: {
       avatarUrl: 'https://avatars1.githubusercontent.com/u/40613276?v=4',
-      allKnowledgeData
+      posts: allPosts
     }
   }
 }
