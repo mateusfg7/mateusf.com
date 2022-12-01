@@ -2,14 +2,9 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
-import {
-  getAllKnowledgeIds,
-  getKnowledgeData
-} from '../../lib/knowledgeFunctions'
-import { getHashHeaderOfData } from '../../lib/utils'
-import { KnowledgeData } from '../../lib/types'
-import { unifiedContentProcessor } from '../../lib/unifiedContentProcessor'
+import { allPosts, type Post } from 'contentlayer/generated'
 
 import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
@@ -18,23 +13,18 @@ import { ReadProgress } from '../../components/ReadProgress'
 
 import { RiHistoryLine } from 'react-icons/ri'
 
-import 'highlight.js/styles/github.css'
-
-interface KnowledgeDataWithContent extends KnowledgeData {
-  content: string
-}
 interface Props {
-  knowledgeData: KnowledgeDataWithContent
-  knowledgeId: string
+  post: Post
 }
 
-const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
-  const tags = knowledgeData.tags.split(',')
+const Knowledge = ({ post }: Props) => {
+  const tags = post.tags.split(',')
+  const MDXContent = useMDXComponent(post.body.code)
 
   return (
     <div>
       <Head>
-        <title>{knowledgeData.title}</title>
+        <title>{post.title}</title>
       </Head>
 
       <ReadProgress />
@@ -42,25 +32,22 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
       <Container>
         <Header
           imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={knowledgeId}
+          title={post.id}
         />
         <main>
           <div className="py-4 px-0 leading-6 border-b border-neutral-500 mb-8">
-            <h2 className="mb-2 font-bold text-xl">{knowledgeData.title}</h2>
+            <h2 className="mb-2 font-bold text-xl">{post.title}</h2>
             <div>
               <p>
-                <Date dateString={knowledgeData.date} /> &#8226;{' '}
-                <Link href={`/category/${knowledgeData.category}`}>
-                  {knowledgeData.category}
-                </Link>
+                <Date dateString={post.date} /> &#8226;{' '}
+                <Link href={`/category/${post.category}`}>{post.category}</Link>
               </p>
-              {knowledgeData.lastUpdate && (
+              {post.lastUpdate && (
                 <p
                   className="flex items-center gap-1 text-neutral-500"
                   title="Last Update"
                 >
-                  <Date dateString={knowledgeData.lastUpdate} />{' '}
-                  <RiHistoryLine />
+                  <Date dateString={post.lastUpdate} /> <RiHistoryLine />
                 </p>
               )}
               <p className="flex flex-wrap gap-2 mt-1">
@@ -75,7 +62,7 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
             </div>
           </div>
           <div className="knowledge-content">
-            {unifiedContentProcessor(knowledgeData.content)}
+            <MDXContent />
           </div>
         </main>
       </Container>
@@ -86,23 +73,20 @@ const Knowledge: React.FC<Props> = ({ knowledgeData, knowledgeId }) => {
 export default Knowledge
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllKnowledgeIds()
   return {
-    paths,
+    paths: allPosts.map(post => ({
+      params: {
+        id: post.id
+      }
+    })),
     fallback: false
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const knowledgeData = await getKnowledgeData(
-    typeof params.id === 'string' ? params.id : ''
-  )
-  const knowledgeId = getHashHeaderOfData(knowledgeData.content)
-
   return {
     props: {
-      knowledgeData,
-      knowledgeId
+      post: allPosts.find(post => post.id === params?.id)
     }
   }
 }
