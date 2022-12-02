@@ -12,6 +12,7 @@ import {
 
 import { KnowledgeLink } from '../../components/KnowledgeLink'
 import { Post } from 'contentlayer/generated'
+import { getSortedPosts } from 'src/lib/getSortedPosts'
 
 interface Props {
   category: string
@@ -61,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params.category
 
   if (typeof category === 'string') {
-    const postList = getPostListOfCategory(category)
+    const postList = getSortedPosts(getPostListOfCategory(category))
 
     return {
       props: {
