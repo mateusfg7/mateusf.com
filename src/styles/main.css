@@ -14,159 +14,189 @@
 }
 
 @layer components {
-  .knowledge-content {
+  .post-content {
     @apply leading-6;
-  }
 
-  .knowledge-content h1,
-  .knowledge-content h2,
-  .knowledge-content h3,
-  .knowledge-content h4 {
-    @apply my-6 mx-0 font-medium w-max;
-  }
+    h1,
+    h2,
+    h3,
+    h4 {
+      @apply my-6 mx-0 font-medium w-max;
 
-  .knowledge-content h1 {
-    font-size: 1.6rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    padding: 0 1.5rem 0.5rem 0;
-  }
+      a {
+        @apply text-[#111] hover:no-underline;
+        @apply before:content-['#'] before:absolute before:-ml-5 before:text-gray-300/0 hover:before:text-gray-300 pl-5 -ml-5;
+      }
+    }
 
-  .knowledge-content h2 {
-    font-size: 1.6rem;
-  }
+    h1 {
+      @apply text-2xl border-b border-b-black/30 pr-6 pb-2;
+    }
+    h2 {
+      @apply text-2xl;
+    }
+    h3 {
+      @apply text-xl;
+    }
+    h4 {
+      @apply text-lg;
+    }
 
-  .knowledge-content h3 {
-    font-size: 1.4rem;
-  }
+    p {
+      @apply my-4;
+    }
 
-  .knowledge-content h4 {
-    font-size: 1.2rem;
-  }
+    img {
+      max-width: 100%;
+    }
 
-  .knowledge-content p {
-    margin: 1rem 0;
-  }
+    a {
+      @apply hover:underline;
+    }
 
-  .knowledge-content strong {
-    font-weight: 500;
-  }
+    table {
+      @apply border-collapse;
 
-  .knowledge-content img {
-    max-width: 100%;
-  }
+      th,
+      td {
+        @apply p-1 text-left;
+      }
 
-  .knowledge-content a:hover {
-    text-decoration: underline;
-  }
+      th {
+        @apply bg-black/[.04] font-medium;
 
-  .knowledge-content table {
-    border-collapse: collapse;
-  }
-  .knowledge-content table th,
-  td {
-    padding: 0.3rem;
-    text-align: left;
-  }
-  .knowledge-content table th {
-    background-color: rgba(0, 0, 0, 0.04);
-    font-weight: 500;
-  }
-  .knowledge-content table th strong {
-    font-weight: 900;
-  }
-  .knowledge-content table tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.02);
-  }
-  .knowledge-content table tr:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-  }
+        strong {
+          @apply font-black;
+        }
+      }
 
-  .knowledge-content hr {
-    margin: 2rem 0;
-  }
+      tr {
+        @apply even:bg-black/[.02]
+          hover:bg-black/[.04];
+      }
+    }
 
-  .knowledge-content blockquote {
-    margin: 0.5rem 0;
-    padding: 0 1rem;
+    hr {
+      @apply my-8;
+    }
 
-    border-left: 1px solid #111;
+    blockquote {
+      @apply my-2 px-4;
+      @apply border-l border-l-zinc-900;
+      @apply text-black/80 italic;
+    }
 
-    color: rgba(0, 0, 0, 0.8);
-    font-style: italic;
-  }
-  .knowledge-content blockquote p {
-    margin: 0;
-  }
+    ol {
+      @apply list-decimal list-inside;
+    }
 
-  .knowledge-content ol {
-    list-style: number inside;
-  }
-  .knowledge-content ol li code {
-    padding: 0.27rem;
-  }
+    ul {
+      @apply list-disc list-inside;
 
-  .knowledge-content ul {
-    list-style: disc inside;
-  }
-  .knowledge-content ul.contains-task-list {
-    list-style: none;
-  }
-  .knowledge-content ul p {
-    display: inline;
-  }
-  .knowledge-content ul li ul {
-    padding: 0 1.5rem;
-  }
-  .knowledge-content ul li ul li {
-    list-style: '∟  ' inside;
-    font-size: 1rem;
-  }
+      &.contains-task-list {
+        @apply list-none;
+      }
 
-  .knowledge-content code {
-    padding: 0.3rem;
-    background: rgba(0, 0, 0, 0.05);
-  }
+      li {
+        ul {
+          @apply px-6;
+        }
 
-  .knowledge-content pre {
-    margin: 1rem 0;
-    padding: 0.8rem;
-    background: rgba(0, 0, 0, 0.05);
-  }
-  .knowledge-content pre code {
-    background: none;
-    padding: 0 0 0.5rem;
-  }
+        code {
+          @apply leading-8;
+        }
+      }
+    }
 
-  .knowledge-content nav.toc {
-    padding: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-  }
-  .knowledge-content nav.toc ol {
-    list-style: none;
-  }
-  .knowledge-content nav.toc ol.toc-level-2 {
-    padding: 0 1rem;
-  }
-  .knowledge-content nav.toc ol.toc-level-3 {
-    padding: 0 1.5rem;
-  }
-  .knowledge-content nav.toc ol.toc-level-4 {
-    padding: 0 2rem;
-  }
-  .knowledge-content nav.toc ol a {
-    color: #111;
-  }
-  .knowledge-content nav.toc ol a.toc-link-h1 {
-    font-weight: 500;
-  }
-  .knowledge-content nav.toc ol a.toc-link-h2 {
-    font-weight: 400;
-  }
-  .knowledge-content nav.toc ol a.toc-link-h3 {
-    font-weight: 300;
-  }
-  .knowledge-content nav.toc ol a.toc-link-h4 {
-    font-weight: 200;
+    code {
+      @apply bg-black/[.02] p-1;
+    }
+
+    pre {
+      @apply overflow-scroll;
+
+      & > code {
+        @apply grid;
+        @apply py-3 px-0;
+
+        span {
+          &.line {
+            @apply pl-3;
+          }
+
+          &.highlighted-line {
+            @apply bg-gray-500/10 border-l border-l-gray-500;
+          }
+
+          &.highlighted-word {
+            @apply bg-gray-500/10;
+          }
+        }
+      }
+    }
+
+    code[data-line-numbers=''] {
+      counter-reset: line;
+
+      & > .line::before {
+        counter-increment: line;
+        content: counter(line);
+
+        @apply inline-block w-4 mr-5;
+        @apply text-right text-gray-500;
+      }
+    }
+
+    div[data-rehype-pretty-code-title=''] {
+      @apply bg-black/[.02] p-3;
+      @apply italic text-gray-500;
+      @apply border-b border-b-gray-300;
+    }
+
+    nav {
+      &.toc {
+        @apply p-4;
+        @apply border border-black/10;
+
+        ol {
+          @apply list-none;
+
+          &.toc-level-2 {
+            @apply px-4;
+          }
+          &.toc-level-3 {
+            @apply px-6;
+          }
+          &.toc-level-4 {
+            @apply px-8;
+          }
+
+          a {
+            @apply text-zinc-900;
+
+            &.toc-link-h1 {
+              @apply font-medium;
+            }
+            &.toc-link-h2 {
+              @apply font-normal;
+            }
+            &.toc-link-h3 {
+              @apply font-light;
+            }
+            &.toc-link-h4 {
+              @apply font-extralight;
+            }
+          }
+        }
+      }
+    }
+
+    div.math-display {
+      @apply w-fit p-6;
+
+      span.katex-display {
+        @apply m-0;
+      }
+    }
   }
 }
