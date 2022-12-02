@@ -6,8 +6,11 @@ import { Header } from '../components/Header'
 import { KnowledgeLink } from '../components/KnowledgeLink'
 
 import { allPosts } from 'contentlayer/generated'
+import { getSortedPosts } from 'src/lib/getSortedPosts'
 
 const Home = () => {
+  const posts = getSortedPosts(allPosts)
+
   return (
     <div>
       <Head>
@@ -17,7 +20,7 @@ const Home = () => {
       <Container>
         <Header title="Knowledge" />
         <main>
-          {allPosts.map((post, key) => {
+          {posts.map((post, key) => {
             return (
               <KnowledgeLink
                 key={key}
