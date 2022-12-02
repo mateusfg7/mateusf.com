@@ -1,38 +1,31 @@
+import { allPosts } from 'contentlayer/generated'
 import { getFrequencyOfValue, removeRepeatedValuesFromArray } from './utils'
-import { KnowledgeData } from './types'
-export interface CategoriesAndNumberOfKnowledge {
+
+const getRawCategoryList = () => allPosts.map(post => post.category)
+
+export function getUniqueCategoryList(): string[] {
+  return removeRepeatedValuesFromArray(getRawCategoryList())
+}
+
+export interface CategoriesAndNumberOfPosts {
   category: string
-  numberOfKnowledge: number
+  numberOfPosts: number
 }
+export function getCategoriesAndNumberOfPosts(): CategoriesAndNumberOfPosts[] {
+  const rawCategoryList = getRawCategoryList()
+  const uniqueCategoryList = getUniqueCategoryList()
 
-export const getRawCategoryListFromKnowledge = (knowledgeList: KnowledgeData[]): string[] =>
-  knowledgeList.map(knowledge => knowledge.category)
-
-export const getCategoryListFromPosts = (knowledgeList: KnowledgeData[]): string[] => {
-  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
-
-  return removeRepeatedValuesFromArray(rawCategoryList)
-}
-
-export function getCategoriesAndNumberOfKnowledge(
-  knowledgeList: KnowledgeData[]
-): CategoriesAndNumberOfKnowledge[] {
-  const rawCategoryList = getRawCategoryListFromKnowledge(knowledgeList)
-  const categoryList = getCategoryListFromPosts(knowledgeList)
-
-  const categoriesAndNumberOfKnowledge = categoryList.map(category => {
-    const numberOfKnowledge = getFrequencyOfValue(rawCategoryList, category)
+  const categoriesAndNumberOfPosts = uniqueCategoryList.map(category => {
+    const numberOfPosts = getFrequencyOfValue(rawCategoryList, category)
 
     return {
       category,
-      numberOfKnowledge
+      numberOfPosts
     }
   })
 
-  return categoriesAndNumberOfKnowledge
+  return categoriesAndNumberOfPosts
 }
 
-export const getKnowledgeListOfCategory = (
-  knowledgeList: KnowledgeData[],
-  category: string
-): KnowledgeData[] => knowledgeList.filter(knowledge => knowledge.category === category)
+export const getPostListOfCategory = (category: string) =>
+  allPosts.filter(post => post.category === category)
