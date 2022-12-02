@@ -11,9 +11,9 @@ export const rehypePrettyCodeOptions: Partial<Options> = {
   },
   // Feel free to add classNames that suit your docs
   onVisitHighlightedLine(node) {
-    node.properties.className.push('highlighted')
+    node.properties.className.push('highlighted-line')
   },
   onVisitHighlightedWord(node) {
-    node.properties.className = ['word']
+    node.properties.className = ['highlighted-word']
   }
 }
