@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white font-['Inter']
+    @apply bg-zinc-100 font-['Inter']
       text-[#111];
   }
 
