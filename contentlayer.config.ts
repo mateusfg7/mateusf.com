@@ -1,5 +1,6 @@
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
+import remarkBreaks from 'remark-breaks'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
@@ -15,7 +16,7 @@ export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkMath],
+    remarkPlugins: [remarkGfm, remarkMath, remarkBreaks],
     rehypePlugins: [
       [rehypePrettyCode, rehypePrettyCodeOptions],
       rehypeSlug,
