@@ -30,10 +30,7 @@ const Knowledge = ({ post }: Props) => {
       <ReadProgress />
 
       <Container>
-        <Header
-          imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={post.id}
-        />
+        <Header title={post.id} />
         <main>
           <div className="py-4 px-0 leading-6 border-b border-neutral-500 mb-8">
             <h2 className="mb-2 font-bold text-xl">{post.title}</h2>

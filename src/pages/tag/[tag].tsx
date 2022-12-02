@@ -24,10 +24,7 @@ const Tag: React.FC<Props> = ({ tag, postList }) => {
         <title>{tag} | mfg-b</title>
       </Head>
       <Container>
-        <Header
-          imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={tag}
-        />
+        <Header title={tag} />
         <main>
           {postList.map((post, key) => {
             return (

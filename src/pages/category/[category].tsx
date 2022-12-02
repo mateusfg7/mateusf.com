@@ -25,10 +25,7 @@ const Category: React.FC<Props> = ({ category, postList }) => {
         <title>{category}</title>
       </Head>
       <Container>
-        <Header
-          imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={category}
-        />
+        <Header title={category} />
         <main>
           {postList.map((post, key) => {
             return (

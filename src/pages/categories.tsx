@@ -11,11 +11,10 @@ import {
 } from '../lib/categories'
 
 interface Props {
-  avatarUrl: string
   categories: CategoriesAndNumberOfPosts[]
 }
 
-const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
+const Categories: React.FC<Props> = ({ categories }) => {
   return (
     <div>
       <Head>
@@ -23,7 +22,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
       </Head>
 
       <Container>
-        <Header imageUrl={avatarUrl} title="Categories" />
+        <Header title="Categories" />
         <main>
           <div className="flex flex-wrap gap-2">
             {categories.map((categoryData, index) => (
@@ -50,9 +49,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      avatarUrl: 'https://avatars1.githubusercontent.com/u/40613276?v=4',
       categories
-    },
-    revalidate: 20
+    }
   }
 }
