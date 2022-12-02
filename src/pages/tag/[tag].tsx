@@ -11,6 +11,7 @@ import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
 import { KnowledgeLink } from '../../components/KnowledgeLink'
 import { Post } from 'contentlayer/generated'
+import { getSortedPosts } from 'src/lib/getSortedPosts'
 
 interface Props {
   tag: string
@@ -60,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const tag = params.tag
 
   if (typeof tag === 'string') {
-    const postList = getPostListBasedOnTag(tag)
+    const postList = getSortedPosts(getPostListBasedOnTag(tag))
 
     return {
       props: {
