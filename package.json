@@ -13,7 +13,6 @@
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx"
   },
   "dependencies": {
-    "blueimp-md5": "2.19.0",
     "contentlayer": "^0.2.9",
     "date-fns": "2.29.3",
     "gray-matter": "4.0.3",
