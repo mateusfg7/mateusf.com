@@ -61,7 +61,7 @@ const Knowledge = ({ post }: Props) => {
               </p>
             </div>
           </div>
-          <div className="knowledge-content">
+          <div className="post-content">
             <MDXContent />
           </div>
         </main>
