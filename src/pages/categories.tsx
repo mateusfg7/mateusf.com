@@ -5,16 +5,14 @@ import Link from 'next/link'
 
 import { Container } from '../components/Container'
 import { Header } from '../components/Header'
-
-import { getSortedKnowledgeData } from '../lib/knowledgeFunctions'
 import {
-  getCategoriesAndNumberOfKnowledge,
-  CategoriesAndNumberOfKnowledge
+  CategoriesAndNumberOfPosts,
+  getCategoriesAndNumberOfPosts
 } from '../lib/categories'
 
 interface Props {
   avatarUrl: string
-  categories: CategoriesAndNumberOfKnowledge[]
+  categories: CategoriesAndNumberOfPosts[]
 }
 
 const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
@@ -33,7 +31,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
                 <div className="py-1 px-4 border-2 border-solid border-neutral-700 hover:border-blue-700 font-bold text-neutral-700 hover:text-blue-700 duration-100 hover:cursor-pointer">
                   <p>
                     {categoryData.category}
-                    <sup> {categoryData.numberOfKnowledge} </sup>
+                    <sup> {categoryData.numberOfPosts} </sup>
                   </p>
                 </div>
               </Link>
@@ -48,9 +46,7 @@ const Categories: React.FC<Props> = ({ avatarUrl, categories }) => {
 export default Categories
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allKnowledgeData = getSortedKnowledgeData()
-
-  const categories = getCategoriesAndNumberOfKnowledge(allKnowledgeData)
+  const categories = getCategoriesAndNumberOfPosts()
 
   return {
     props: {
