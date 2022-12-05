@@ -2,39 +2,39 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { getSortedKnowledgeData } from '../../lib/knowledgeFunctions'
-import { getTagListFromPosts, getKnowledgeListOfTag } from '../../lib/tags'
-import { KnowledgeData } from '../../lib/types'
+import {
+  getUniqueTagListFromPosts,
+  getPostListBasedOnTag
+} from '../../lib/tags'
 
 import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
 import { KnowledgeLink } from '../../components/KnowledgeLink'
+import { Post } from 'contentlayer/generated'
+import { getSortedPosts } from 'src/lib/getSortedPosts'
 
 interface Props {
   tag: string
-  knowledgeList: KnowledgeData[]
+  postList: Post[]
 }
 
-const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
+const Tag: React.FC<Props> = ({ tag, postList }) => {
   return (
     <div>
       <Head>
-        <title>{tag}</title>
+        <title>{tag} | mfg-b</title>
       </Head>
       <Container>
-        <Header
-          imageUrl="https://avatars1.githubusercontent.com/u/40613276?v=4"
-          title={tag}
-        />
+        <Header title={tag} />
         <main>
-          {knowledgeList.map((knowledge, key) => {
+          {postList.map((post, key) => {
             return (
               <KnowledgeLink
                 key={key}
-                id={knowledge.id}
-                title={knowledge.title}
-                date={knowledge.date}
-                description={knowledge.description}
+                id={post.id}
+                title={post.title}
+                date={post.date}
+                description={post.description}
               />
             )
           })}
@@ -47,8 +47,7 @@ const Tag: React.FC<Props> = ({ tag, knowledgeList }) => {
 export default Tag
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const knowledgeList = getSortedKnowledgeData()
-  const tagList = getTagListFromPosts(knowledgeList)
+  const tagList = getUniqueTagListFromPosts()
 
   const paths = tagList.map(tag => ({ params: { tag } }))
 
@@ -61,15 +60,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const tag = params.tag
 
-  const allKnowledgeData = getSortedKnowledgeData()
-
   if (typeof tag === 'string') {
-    const knowledgeList = getKnowledgeListOfTag(allKnowledgeData, tag)
+    const postList = getSortedPosts(getPostListBasedOnTag(tag))
 
     return {
       props: {
         tag,
-        knowledgeList
+        postList
       }
     }
   }

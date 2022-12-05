@@ -1,37 +1,28 @@
+import { allPosts } from 'contentlayer/generated'
 import { removeRepeatedValuesFromArray } from './utils'
-import { KnowledgeData } from './types'
 
-export const getRawTagListFromKnowledge = (knowledgeList: KnowledgeData[]): string[] => {
-
-  const splicedTagListOfSubLists = knowledgeList.map(knowledge => {
-    return knowledge.tags.split(',')
+const getRawTagListFromPosts = (): string[] => {
+  const listOfTagList = allPosts.map(post => {
+    return post.tags.split(',')
   })
 
-  let completeRawTagList = []
+  let completeRawTagList: string[] = []
 
-  splicedTagListOfSubLists.forEach(tagList => {
+  listOfTagList.forEach(tagList => {
     tagList.forEach(tag => completeRawTagList.push(tag.trim()))
   })
 
   return completeRawTagList
 }
 
-export const getTagListFromPosts = (knowledgeList: KnowledgeData[]): string[] => {
-  const rawTagList = getRawTagListFromKnowledge(knowledgeList)
-  const tagList = removeRepeatedValuesFromArray(rawTagList)
+export const getUniqueTagListFromPosts = () =>
+  removeRepeatedValuesFromArray(getRawTagListFromPosts())
 
-  return tagList
-}
-
-export const getKnowledgeListOfTag = (
-  knowledgeList: KnowledgeData[],
-  tag: string
-): KnowledgeData[] => {
-
-  const filteredKnowledgeList = knowledgeList.filter(knowledge => {
-    const listOfTags = knowledge.tags.split(',').map(rawTag => rawTag.trim())
+export function getPostListBasedOnTag(tag: string) {
+  const filteredPostList = allPosts.filter(post => {
+    const listOfTags = post.tags.split(',').map(rawTag => rawTag.trim())
     return listOfTags.includes(tag)
   })
 
-  return filteredKnowledgeList
+  return filteredPostList
 }
