@@ -3,6 +3,8 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import { RiHistoryLine } from 'react-icons/ri'
+import { FiTag } from 'react-icons/fi'
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
@@ -10,8 +12,6 @@ import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
 import { Date } from '../../components/Date'
 import { ReadProgress } from '../../components/ReadProgress'
-
-import { RiHistoryLine } from 'react-icons/ri'
 
 interface Props {
   post: Post
@@ -47,11 +47,11 @@ const Knowledge = ({ post }: Props) => {
                   <Date dateString={post.lastUpdate} /> <RiHistoryLine />
                 </p>
               )}
-              <p className="flex flex-wrap gap-2 mt-1">
+              <p className="flex flex-wrap gap-3 mt-1">
                 {tags.map((tag, index) => (
                   <Link href={`/tag/${tag.trim()}`} key={index}>
-                    <span className="text-neutral-500 hover:text-neutral-900 transition-colors duration-200 hover:cursor-pointe">
-                      {tag}
+                    <span className="flex items-center justify-center gap-1 text-neutral-500 hover:text-neutral-900 transition-colors duration-200 hover:cursor-pointe">
+                      {tag} <FiTag size={15} />
                     </span>
                   </Link>
                 ))}
