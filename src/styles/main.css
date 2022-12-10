@@ -113,11 +113,13 @@
     }
 
     pre {
+      @apply bg-black/[.02];
       @apply overflow-scroll;
 
       & > code {
         @apply grid;
         @apply py-3 px-0;
+        @apply bg-transparent;
 
         span {
           &.line {
