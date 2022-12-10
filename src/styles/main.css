@@ -200,5 +200,11 @@
         @apply m-0;
       }
     }
+
+    section.footnotes[data-footnotes='true'] {
+      ol li p {
+        @apply inline;
+      }
+    }
   }
 }
