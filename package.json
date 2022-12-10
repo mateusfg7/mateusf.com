@@ -37,7 +37,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@types/blueimp-md5": "2.18.0",
     "@types/node": "18.11.11",
-    "@types/react": "17.0.52",
+    "@types/react": "18.0.26",
     "@typescript-eslint/eslint-plugin": "5.45.1",
     "@typescript-eslint/parser": "5.45.1",
     "autoprefixer": "^10.4.13",
