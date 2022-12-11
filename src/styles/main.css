@@ -206,5 +206,19 @@
         @apply inline;
       }
     }
+
+    p.hint {
+      @apply border rounded w-max p-3;
+
+      &.tip {
+        @apply text-cyan-900 border-cyan-900 bg-cyan-900/10;
+      }
+      &.warn {
+        @apply text-amber-900 border-amber-900 bg-amber-900/10;
+      }
+      &.error {
+        @apply text-red-900 border-red-900 bg-red-900/10;
+      }
+    }
   }
 }
