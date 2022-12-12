@@ -69,7 +69,7 @@
       }
 
       th {
-        @apply bg-black/[.08] dark:bg-white/[.08] font-medium;
+        @apply bg-black/10 dark:bg-white/10 font-medium;
 
         strong {
           @apply font-black;
@@ -77,8 +77,8 @@
       }
 
       tbody tr {
-        @apply even:bg-black/[.02] dark:even:bg-white/[.02];
-        @apply hover:bg-black/[.05] dark:bg-white/[.05] dark:hover:bg-white/[.05] even:hover:bg-black/[.05] dark:even:hover:bg-white/[.05];
+        @apply bg-black/[.02] dark:bg-white/[.02];
+        @apply even:bg-black/[.04] dark:even:bg-white/[.04];
       }
     }
 
