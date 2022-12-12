@@ -18,13 +18,16 @@ export const Header: React.FC<Props> = ({ title }) => {
         <h1 className="text-xl font-bold">{title}</h1>
       </div>
       <nav>
-        <Link href="/" className="text-neutral-900 mr-8 hover:underline">
+        <Link
+          href="/"
+          className="text-neutral-900 dark:text-neutral-100 mr-8 hover:underline"
+        >
           Home
         </Link>
 
         <Link
           href="/categories"
-          className="text-neutral-900 mr-8 hover:underline"
+          className="text-neutral-900 dark:text-neutral-100 mr-8 hover:underline"
         >
           Categories
         </Link>
