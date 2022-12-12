@@ -8,14 +8,13 @@ tags: 'title4test, content4test, code4test'
 ---
 
 # Title 1
-
 ## Title 2
-
 ### Title 3
-
 #### Title 4
 
-< HTML TESTS >
+# HTML Tests
+
+## Common Tags
 
 <h1> Title with HTML </h1>
 
@@ -25,39 +24,78 @@ tags: 'title4test, content4test, code4test'
 
 <div align="center">content in a div with align center</div>
 
+## Iframe
+
+
 <iframe
   width="560"
   height="315"
   src="https://www.youtube.com/embed/ms1iTZzAutY"
   title="YouTube video player"
   frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
   allowfullscreen
 ></iframe>
+
+## Image
+
+### Width 100px
+
+<img
+  src="https://2.bp.blogspot.com/-B7951Pnxrsk/V12Jlk-7yWI/AAAAAAAAnPA/Y0lS0NHADDoAztXWmkzZe411XLtRmEJvwCLcB/s1600/bem%2Bvindo%2Bao%2Bmundo%2Bdas%2Bgambiarras%2Bsacanas.gif"
+  width="100"
+/>
+
+### Width 300px
+
+<img
+  src="https://2.bp.blogspot.com/-B7951Pnxrsk/V12Jlk-7yWI/AAAAAAAAnPA/Y0lS0NHADDoAztXWmkzZe411XLtRmEJvwCLcB/s1600/bem%2Bvindo%2Bao%2Bmundo%2Bdas%2Bgambiarras%2Bsacanas.gif"
+  width="300"
+/>
+
+### Width 560px
 
 <img
   src="https://2.bp.blogspot.com/-B7951Pnxrsk/V12Jlk-7yWI/AAAAAAAAnPA/Y0lS0NHADDoAztXWmkzZe411XLtRmEJvwCLcB/s1600/bem%2Bvindo%2Bao%2Bmundo%2Bdas%2Bgambiarras%2Bsacanas.gif"
   width="560"
 />
 
-< /HTML TESTS >
+### Width 1000px
 
-&nbsp;
+<img
+  src="https://2.bp.blogspot.com/-B7951Pnxrsk/V12Jlk-7yWI/AAAAAAAAnPA/Y0lS0NHADDoAztXWmkzZe411XLtRmEJvwCLcB/s1600/bem%2Bvindo%2Bao%2Bmundo%2Bdas%2Bgambiarras%2Bsacanas.gif"
+  width="1000"
+/>
+
+### Width 2000px
+
+<img
+  src="https://2.bp.blogspot.com/-B7951Pnxrsk/V12Jlk-7yWI/AAAAAAAAnPA/Y0lS0NHADDoAztXWmkzZe411XLtRmEJvwCLcB/s1600/bem%2Bvindo%2Bao%2Bmundo%2Bdas%2Bgambiarras%2Bsacanas.gif"
+  width="2000"
+/>
+
+# Formating
 
 normal
 **negrito**
 _itálico_
 ~~riscado~~
 
-image
+# Image
+
+## Alt text
 
 ![alt image text](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.steves-digicams.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F10%2FNikon_D850_Sample_13.jpg&f=1&nofb=1)
+
+# Code
+
+## Inline
 
 `inline code`
 
 &nbsp;
 
-block code
+## Block
 
 elixir (hightlight /x = Foo.bar 0/)
 
@@ -191,12 +229,37 @@ sdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhg
 sdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgf
 ```
 
-tables
+# Tables
+
+## Md
+
+### Tipo 1
+
+```markdown
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+```
+
 
 | A   | B   | C   |
 | --- | --- | --- |
 | a1  | b1  | c1  |
 | a2  | b1  | c2  |
+
+### Tipo 2
+
+```markdown
+|---|---|---|
+| A | B | C |
+|---|---|---|
+| a1 | b1 | c1 |
+|---|---|---|
+| a2 | b1 | c2 |
+|---|---|---|
+```
+
 
 |---|---|---|
 | A | B | C |
@@ -206,32 +269,78 @@ tables
 | a2 | b1 | c2 |
 |---|---|---|
 
+### Tipo 3
+
+```markdown
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+```
+
+
 | A   | B   | C   |
 | --- | --- | --- |
 | a1  | b1  | c1  |
 | a2  | b1  | c2  |
 
+### Tipo 4
+
+```markdown
+| foo | bar |
+| :-- | :-: |
+| baz | qux |
+```
+
+
 | foo | bar |
 | :-- | :-: |
 | baz | qux |
 
+## Html
+
+```html
 <table>
   <tr>
-    <td>Test 1</td>
-    <td>Test 2</td>
+    <th>Test 1</th>
+    <th>Test 2</th>
   </tr>
   <tr>
     <td>Test 3</td>
     <td>Test 4</td>
   </tr>
+  <tr>
+    <td>Test 5</td>
+    <td>Test 6</td>
+  </tr>
 </table>
+```
+
+<table>
+  <tr>
+    <th>Test 1</th>
+    <th>Test 2</th>
+  </tr>
+  <tr>
+    <td>Test 3</td>
+    <td>Test 4</td>
+  </tr>
+  <tr>
+    <td>Test 5</td>
+    <td>Test 6</td>
+  </tr>
+</table>
+
+# Tasks
 
 - [x] task 1
 - [x] task 2
 - [ ] task 3
 - [ ] task 4
 
-<br />
+# Lists
+
+## Unordered
 
 - item 1
 - item 2
@@ -245,11 +354,13 @@ tables
   - item 6.3
 - item 7
 
+## Ordered
+
 1. Mateus
 2. Felipe
 3. Gonçalves
 
-< START HINTS >
+# Hints
 
 !> This is a tip.
 _A cheat for yout life_
@@ -260,10 +371,10 @@ _A cheat for yout life_
 x> This is a error!!
 Pay **attention**!
 
-< END HINTS >
 
-math
+# Math
 
+block
 
 $$
 f(x) = \int_{-\infty}^\infty
@@ -274,28 +385,32 @@ $$
 inline math: $ x+1 = 2 $
 
 
-blockquot
+# Blockquot
 
 > This is a blockquote
 
-separation
+# Separation
 
 ---
 
 foo
+
+# Footnote
 
 Sample footnote [^1], sample another footnote [^another]
 
 [^1]: Just a footnote
 [^another]: Just one more footnote
 
-Custom variables
+# Variables
+
+## Text
 
 [var]: This text was inside a variable
 
 Text: [var]
 
-Variable for images
+## Image
 
 [image]: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.steves-digicams.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F10%2FNikon_D850_Sample_13.jpg&f=1&nofb=1
 
