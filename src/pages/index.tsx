@@ -3,10 +3,10 @@ import Head from 'next/head'
 
 import { Container } from '../components/Container'
 import { Header } from '../components/Header'
-import { KnowledgeLink } from '../components/KnowledgeLink'
 
 import { allPosts } from 'contentlayer/generated'
 import { getSortedPosts } from 'src/lib/getSortedPosts'
+import { KnowledgeList } from 'src/components/KnowledgeList'
 
 const Home = () => {
   const posts = getSortedPosts(allPosts)
@@ -20,17 +20,7 @@ const Home = () => {
       <Container>
         <Header title="Knowledge" />
         <main>
-          {posts.map((post, key) => {
-            return (
-              <KnowledgeLink
-                key={key}
-                id={post.id}
-                title={post.title}
-                date={post.date}
-                description={post.description}
-              />
-            )
-          })}
+          <KnowledgeList posts={posts} />
         </main>
       </Container>
     </div>

@@ -9,7 +9,8 @@ import {
 
 import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
-import { KnowledgeLink } from '../../components/KnowledgeLink'
+import { KnowledgeList } from 'src/components/KnowledgeList'
+
 import { Post } from 'contentlayer/generated'
 import { getSortedPosts } from 'src/lib/getSortedPosts'
 
@@ -27,17 +28,7 @@ const Tag: React.FC<Props> = ({ tag, postList }) => {
       <Container>
         <Header title={tag} />
         <main>
-          {postList.map((post, key) => {
-            return (
-              <KnowledgeLink
-                key={key}
-                id={post.id}
-                title={post.title}
-                date={post.date}
-                description={post.description}
-              />
-            )
-          })}
+          <KnowledgeList posts={postList} />
         </main>
       </Container>
     </div>

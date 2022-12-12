@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
 
 import '../styles/main.css'
 
@@ -15,7 +16,9 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class" defaultTheme="light">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

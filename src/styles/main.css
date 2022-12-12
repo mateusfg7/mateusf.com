@@ -1,15 +1,21 @@
+@import './syntax-highlighting.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply duration-100;
+  }
+
   body {
-    @apply bg-zinc-100 font-['Inter']
-      text-[#111];
+    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply text-neutral-900 dark:text-neutral-300 font-['Inter'];
   }
 
   a {
-    @apply no-underline text-[#0070f3];
+    /* @apply text-[#0070f3] */
+    @apply no-underline text-blue-700 dark:text-blue-500;
   }
 }
 
@@ -24,13 +30,13 @@
       @apply my-6 mx-0 font-medium w-max;
 
       a {
-        @apply text-[#111] hover:no-underline;
-        @apply before:content-['#'] before:absolute before:-ml-5 before:text-gray-300/0 hover:before:text-gray-300 pl-5 -ml-5;
+        @apply text-neutral-900 dark:text-neutral-100 hover:no-underline;
+        @apply before:content-['#'] before:absolute before:-ml-5 before:text-black/0 hover:before:text-neutral-300 dark:hover:before:text-gray-600 pl-5 -ml-5;
       }
     }
 
     h1 {
-      @apply text-2xl border-b border-b-black/30 pr-6 pb-2;
+      @apply text-2xl border-b border-b-black/30 dark:border-b-white/30 pr-6 pb-2;
     }
     h2 {
       @apply text-2xl;
@@ -55,35 +61,35 @@
     }
 
     table {
-      @apply border-collapse;
+      @apply border-collapse w-full;
 
       th,
       td {
-        @apply p-1 text-left;
+        @apply p-2 text-center first:text-left last:text-right;
       }
 
       th {
-        @apply bg-black/[.04] font-medium;
+        @apply bg-black/10 dark:bg-white/10 font-medium;
 
         strong {
           @apply font-black;
         }
       }
 
-      tr {
-        @apply even:bg-black/[.02]
-          hover:bg-black/[.04];
+      tbody tr {
+        @apply bg-black/[.02] dark:bg-white/[.02];
+        @apply even:bg-black/[.04] dark:even:bg-white/[.04];
       }
     }
 
     hr {
-      @apply my-8 bg-black/40 h-[2px];
+      @apply my-8 bg-black/40  h-[2px];
     }
 
     blockquote {
       @apply my-2 px-4;
-      @apply border-l border-l-zinc-900;
-      @apply text-black/80 italic;
+      @apply border-l border-l-neutral-900 dark:border-l-neutral-100;
+      @apply text-black/80 dark:text-white/70 italic;
     }
 
     ol {
@@ -109,17 +115,17 @@
     }
 
     code {
-      @apply bg-black/[.05] p-1;
+      @apply bg-black/[.05] dark:bg-white/[.05]  p-1;
     }
 
     pre {
-      @apply bg-black/[.05];
+      @apply bg-black/[.05] dark:bg-white/[.05];
       @apply overflow-scroll;
 
       & > code {
         @apply grid;
         @apply py-2 px-0;
-        @apply bg-transparent;
+        @apply bg-transparent dark:bg-transparent;
 
         span {
           &.line {
@@ -150,15 +156,15 @@
     }
 
     div[data-rehype-pretty-code-title=''] {
-      @apply bg-black/[.05] p-3;
+      @apply bg-black/[.05] dark:bg-white/[.05] p-3;
       @apply italic text-gray-500;
-      @apply border-b border-b-gray-300;
+      @apply border-b border-b-gray-300 dark:border-b-gray-600;
     }
 
     nav {
       &.toc {
         @apply p-4;
-        @apply border border-black/10;
+        @apply border border-black/10 dark:border-white/10;
 
         ol {
           @apply list-none;
@@ -174,7 +180,7 @@
           }
 
           a {
-            @apply text-zinc-900;
+            @apply text-neutral-900 dark:text-neutral-300;
 
             &.toc-link-h1 {
               @apply font-medium;
@@ -211,13 +217,19 @@
       @apply border rounded w-max p-3;
 
       &.tip {
-        @apply text-cyan-900 border-cyan-900 bg-cyan-900/10;
+        @apply text-cyan-900 dark:text-cyan-600;
+        @apply border-cyan-900 dark:border-cyan-600;
+        @apply bg-cyan-900/10 dark:bg-cyan-600/10;
       }
       &.warn {
-        @apply text-amber-900 border-amber-900 bg-amber-900/10;
+        @apply text-amber-900 dark:text-amber-600;
+        @apply border-amber-900 dark:border-amber-600;
+        @apply bg-amber-900/10 dark:bg-amber-600/10;
       }
       &.error {
-        @apply text-red-900 border-red-900 bg-red-900/10;
+        @apply text-red-900 dark:text-red-600;
+        @apply border-red-900 dark:border-red-600;
+        @apply bg-red-900/10 dark:bg-red-600/10;
       }
     }
   }

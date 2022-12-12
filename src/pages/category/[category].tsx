@@ -4,13 +4,13 @@ import Head from 'next/head'
 
 import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
+import { KnowledgeList } from 'src/components/KnowledgeList'
 
 import {
   getUniqueCategoryList,
   getPostListOfCategory
 } from '../../lib/categories'
 
-import { KnowledgeLink } from '../../components/KnowledgeLink'
 import { Post } from 'contentlayer/generated'
 import { getSortedPosts } from 'src/lib/getSortedPosts'
 
@@ -28,17 +28,7 @@ const Category: React.FC<Props> = ({ category, postList }) => {
       <Container>
         <Header title={category} />
         <main>
-          {postList.map((post, key) => {
-            return (
-              <KnowledgeLink
-                key={key}
-                id={post.id}
-                title={post.title}
-                date={post.date}
-                description={post.description}
-              />
-            )
-          })}
+          <KnowledgeList posts={postList} />
         </main>
       </Container>
     </div>
