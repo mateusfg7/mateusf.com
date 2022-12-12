@@ -74,7 +74,7 @@
 
       tbody tr {
         @apply even:bg-black/[.02] dark:even:bg-white/[.02];
-        @apply hover:bg-black/[.05] dark:bg-white/[.05] dark:hover:bg-white/[.05] even:hover:bg-black/[.05] dark:bg-white/[.05] dark:even:hover:bg-white/[.05];
+        @apply hover:bg-black/[.05] dark:bg-white/[.05] dark:hover:bg-white/[.05] even:hover:bg-black/[.05] dark:even:hover:bg-white/[.05];
       }
     }
 
