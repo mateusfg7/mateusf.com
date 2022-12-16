@@ -18,11 +18,28 @@ const Categories: React.FC<Props> = ({ categories }) => {
   return (
     <div>
       <Head>
-        <title>Categories</title>
+        <meta
+          name="description"
+          content="Post categories about all kind of things"
+        />
+        <meta name="title" content="mfg-b | Categories" />
+
+        <meta property="og:title" content="mfg-b | Categories" />
+        <meta
+          property="og:description"
+          content="Post categories about all kind of things"
+        />
+
+        <meta property="twitter:title" content="mfg-b | Categories" />
+        <meta
+          property="twitter:description"
+          content="Post categories about all kind of things"
+        />
+        <title>mfg-b | Categories</title>
       </Head>
 
       <Container>
-        <Header title="Categories" />
+        <Header title="Categories" isMainTitle />
         <main>
           <div className="flex flex-wrap gap-2">
             {categories.map((categoryData, index) => (
