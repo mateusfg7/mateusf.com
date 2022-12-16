@@ -2,6 +2,7 @@
   "extends": ["config:base"],
   "commitBodyTable": true,
   "branchPrefix": "deps/",
+  "bumpVersion": "patch",
   "labels": ["dependencies"],
   "stabilityDays": 3,
   "packageRules": [
