@@ -7,6 +7,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
 import rehypeKatex from 'rehype-katex'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeShiftHeading from 'rehype-shift-heading'
 
 import { makeSource } from 'contentlayer/source-files'
 
@@ -28,7 +29,8 @@ export default makeSource({
         {
           behavior: 'wrap'
         }
-      ]
+      ],
+      [rehypeShiftHeading, { shift: 1 }]
     ]
   }
 })
