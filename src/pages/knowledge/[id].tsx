@@ -24,7 +24,32 @@ const Knowledge = ({ post }: Props) => {
   return (
     <div>
       <Head>
-        <title>{post.title}</title>
+        <meta
+          name="author"
+          content="Mateus Felipe Gonçalves (mateusfg7) <mateusfelipefg77@gmail.com>"
+        />
+        <meta name="description" content={post.description} />
+        <meta name="title" content={`mfg-b | ${post.title}`} />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://mfg-b.vercel.app/knowledge/${post.id}`}
+        />
+        <meta property="og:title" content={`mfg-b | ${post.title}`} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:image" content="" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://mfg-b.vercel.app/knowledge/${post.id}`}
+        />
+        <meta property="twitter:title" content={`mfg-b | ${post.title}`} />
+        <meta property="twitter:description" content={post.description} />
+        <meta property="twitter:image" content="" />
+
+        <title>mfg-b | {post.title}</title>
       </Head>
 
       <ReadProgress />
@@ -33,7 +58,7 @@ const Knowledge = ({ post }: Props) => {
         <Header title={post.id} />
         <main>
           <div className="py-4 px-0 leading-6 border-b border-neutral-500 mb-8">
-            <h2 className="mb-2 font-bold text-xl">{post.title}</h2>
+            <h1 className="mb-2 font-bold text-xl">{post.title}</h1>
             <div>
               <p>
                 <Date dateString={post.date} /> &#8226;{' '}
