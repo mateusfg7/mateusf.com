@@ -38,10 +38,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             property="og:description"
             content="Mateus Felipe's notes, articles, reflections and knowledge..."
           />
-          <meta
-            property="og:image"
-            content="https://github.com/mateusfg7.png"
-          />
+          <meta property="og:image" content="" />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://mfg-b.vercel.app/" />
@@ -50,10 +47,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             property="twitter:description"
             content="Mateus Felipe's notes, articles, reflections and knowledge..."
           />
-          <meta
-            property="twitter:image"
-            content="https://github.com/mateusfg7.png"
-          />
+          <meta property="twitter:image" content="" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Component {...pageProps} />
