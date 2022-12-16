@@ -34,11 +34,11 @@ tags: 'blockchain, hash, cryptography, tool'
 
 Primeiros passos em [eth.build](https://eth.build)
 
-## Hash Functions
+# Hash Functions
 
-### Generating the hash color of...
+## Generating the hash color of...
 
-#### ... a string
+### ... a string
 
 ![/assets/learn-with-ethereum/screenshot_1.png][screenshot_1]
 
@@ -52,13 +52,13 @@ O bloco **SUBSTRING** está pegando essa _hash_, e esta fazendo um tratamento de
 
 O segundo bloco **STRING** esta exibindo o _output_ do **SUBSTRING**, e esta envidando para o bloco **COLOR**, que por sua vez esta exibindo uma cor baseada na _string_ recebida como um hexadecimal.
 
-#### ... a file
+### ... a file
 
 ![/assets/learn-with-ethereum/screenshot_2.png][screenshot_2]
 
 Os mesmos passos que com uma _string_, porem substituindo um bloco **STRING** por um bloco **FILE DROP**. O bloco **FILE DROP** recebe um arquivo como _input_.
 
-#### ... combinations of hashes
+### ... combinations of hashes
 
 ![/assets/learn-with-ethereum/screenshot_3.png][screenshot_3]
 ![/assets/learn-with-ethereum/screenshot_4.png][screenshot_4]
@@ -67,11 +67,11 @@ Aqui estou usando o bloco **COMBINE** para combinar as _hashes_ anteriores e ger
 
 Qualquer mudança no _input_ inicial de qualquer um dos 3 blocos **TEXT** irá alterar tanto o resultado daquele _workflow_ em específico, quanto o do resultado usando o **COMBINE**.
 
-## Key Pair
+# Key Pair
 
 ![/assets/learn-with-ethereum/screenshot_5.png][screenshot_5]
 
-### Generate fingerprints
+## Generate fingerprints
 
 **KEY PAIR** é um bloco que consegue gerar uma _private key_, uma _public key_ e um _address_ baseado em um _string_ aleatória (neste caso quem ta gerando uma _string_ aleatória é o bloco **BUTTON**).
 
@@ -83,20 +83,20 @@ Address:
 
 ![/assets/learn-with-ethereum/screenshot_6.png][screenshot_6]
 
-### Sign a message
+## Sign a message
 
 O bloco **SIGN** vai usar como parâmetro de _input_ uma mensagem, no caso "the bear is stick with honey", e uma _private key_. A partir disso ele vai gerar uma assinatura como _output_: `0x21fa2503c40eab0c53ef362c79b2b84e8cb9b46bb3c4db8cd981394461ce4a32515f17c0d7ed62bb52fdd2a1c09fe22973cefaed8fd98bdcb852a125ffacd4711b`
 
-### Verify a message
+## Verify a message
 
 ![/assets/learn-with-ethereum/screenshot_7.png][screenshot_7]
 [_click here to edit this workflow on eth.build_][workflow 2]
 
 O bloco **RECOVER** é capaz de pegar a mensagem e a assinatura, e verificar se a assinatura é válida de um determinado endereço.
 
-## Send and Receive values
+# Send and Receive values
 
-### Create a receiver address
+## Create a receiver address
 
 ![/assets/learn-with-ethereum/screenshot_8.png][screenshot_8]
 [_click here to edit this workflow on eth.build_][workflow 3]
@@ -107,7 +107,7 @@ O bloco **QR** exibe um _QR Code_, esse _QR Code_ será o usado para receber tra
 
 O bloco **BALANCE** recebe como parâmetro o endereço de uma rede _blockchain_ existente e o endereço, e devolve o balanço monetário atual disponível para aquele endereço. O bloco **FROM WEI** converte esse valor do tipo _string_ para o tipo _number_, e o bloco **DOLLARS** pega ess número e formata como um valor monetário em dólar.
 
-### Send values
+## Send values
 
 ![/assets/learn-with-ethereum/screenshot_9.png][screenshot_9]
 [_click here to edit this workflow on eth.build_][workflow 4]
@@ -120,7 +120,7 @@ O bloco **SEND TX** é o bloco que vai executar a transação, ele recebe o par�
 
 ---
 
-## referências
+# Referências
 
 Austin Griffith: [https://www.youtube.com/playlist?list=PLJz1HruEnenCXH7KW7wBCEBnBLOVkiqIi](https://www.youtube.com/playlist?list=PLJz1HruEnenCXH7KW7wBCEBnBLOVkiqIi)
 
