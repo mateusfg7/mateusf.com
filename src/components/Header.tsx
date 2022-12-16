@@ -5,9 +5,10 @@ import { FiMoon, FiSun } from 'react-icons/fi'
 
 interface Props {
   title: string
+  isMainTitle?: boolean
 }
 
-export const Header: React.FC<Props> = ({ title }) => {
+export const Header: React.FC<Props> = ({ title, isMainTitle }) => {
   const { theme, setTheme } = useTheme()
 
   function toggleTheme() {
@@ -21,10 +22,15 @@ export const Header: React.FC<Props> = ({ title }) => {
         <img
           src="https://github.com/mateusfg7.png"
           className="w-12 h-12 rounded-full text-gray-600"
+          alt="My Github picture"
         />
         <h2>brain</h2>
         <span className="text-xs">/</span>
-        <h1 className="text-xl font-bold">{title}</h1>
+        {isMainTitle ? (
+          <h1 className="text-xl font-bold">{title}</h1>
+        ) : (
+          <p className="text-xl font-bold">{title}</p>
+        )}
       </div>
       <div className="flex justify-center items-center gap-8">
         <nav className="flex justify-center items-center gap-5">
@@ -44,9 +50,9 @@ export const Header: React.FC<Props> = ({ title }) => {
         </nav>
         <button onClick={() => toggleTheme()} className="p-1">
           {theme === 'light' ? (
-            <FiMoon className="text-xl" />
+            <FiMoon className="text-xl" title="Dark mode" />
           ) : (
-            <FiSun className="text-xl" />
+            <FiSun className="text-xl" title="Light mode" />
           )}
         </button>
       </div>
