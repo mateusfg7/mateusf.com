@@ -23,10 +23,21 @@ const Tag: React.FC<Props> = ({ tag, postList }) => {
   return (
     <div>
       <Head>
-        <title>{tag} | mfg-b</title>
+        <meta name="description" content={`Posts with tag ${tag}`} />
+        <meta name="title" content={`mfg-b | ${tag}`} />
+
+        <meta property="og:title" content={`mfg-b | ${tag}`} />
+        <meta property="og:description" content={`Posts with tag ${tag}`} />
+
+        <meta property="twitter:title" content={`mfg-b | ${tag}`} />
+        <meta
+          property="twitter:description"
+          content={`Posts with tag ${tag}`}
+        />
+        <title>mfg-b | {tag}</title>
       </Head>
       <Container>
-        <Header title={tag} />
+        <Header title={tag} isMainTitle />
         <main>
           <KnowledgeList posts={postList} />
         </main>

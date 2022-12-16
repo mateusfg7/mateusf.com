@@ -23,10 +23,24 @@ const Category: React.FC<Props> = ({ category, postList }) => {
   return (
     <div>
       <Head>
-        <title>{category}</title>
+        <meta name="description" content={`Posts about ${category} category`} />
+        <meta name="title" content={`mfg-b | ${category}`} />
+
+        <meta property="og:title" content={`mfg-b | ${category}`} />
+        <meta
+          property="og:description"
+          content={`Posts about ${category} category`}
+        />
+
+        <meta property="twitter:title" content={`mfg-b | ${category}`} />
+        <meta
+          property="twitter:description"
+          content={`Posts about ${category} category`}
+        />
+        <title>mfg-b | {category}</title>
       </Head>
       <Container>
-        <Header title={category} />
+        <Header title={category} isMainTitle />
         <main>
           <KnowledgeList posts={postList} />
         </main>

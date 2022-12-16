@@ -2555,6 +2555,16 @@ hast-util-parse-selector@^3.0.0:
   dependencies:
     "@types/hast" "^2.0.0"
 
+hast-util-shift-heading@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-shift-heading/-/hast-util-shift-heading-3.0.0.tgz#e622659f44c71c2ac53f320c9c6f734e809b3fa9"
+  integrity sha512-I2FctYjdGABQHfTVeOGin5u7UZpQhgUaU00RANKpfm48/qwpUBVIT4o+M42y75ezbKlkE4TNc8yp9pNPlsPPAw==
+  dependencies:
+    "@types/hast" "^2.0.0"
+    "@types/unist" "^2.0.0"
+    hast-util-heading-rank "^2.0.0"
+    unist-util-visit "^3.0.0"
+
 hast-util-to-estree@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/hast-util-to-estree/-/hast-util-to-estree-2.1.0.tgz#aeac70aad0102ae309570907b3f56a08231d5323"
@@ -4483,6 +4493,15 @@ rehype-pretty-code@^0.5.1:
   dependencies:
     parse-numeric-range "^1.3.0"
 
+rehype-shift-heading@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rehype-shift-heading/-/rehype-shift-heading-1.0.2.tgz#d5870d0068b2f8e858367e09854ff7446662083f"
+  integrity sha512-fP2DOp7X+jHmFfkTs9hCm+v4RaKUJj2nr2XaZf4EbEqItXj5q9tQ8lNvenOaEyKYL2t9R/ZlvZaJgjAgEY8f7w==
+  dependencies:
+    "@types/hast" "^2.0.0"
+    hast-util-shift-heading "^3.0.0"
+    unified "^10.0.0"
+
 rehype-slug@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/rehype-slug/-/rehype-slug-5.1.0.tgz#1f7e69be7ea1a2067bcc4cfe58e74c881d5c047e"
@@ -5230,6 +5249,14 @@ unist-util-stringify-position@^3.0.0:
   dependencies:
     "@types/unist" "^2.0.0"
 
+unist-util-visit-parents@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-4.1.1.tgz#e83559a4ad7e6048a46b1bdb22614f2f3f4724f2"
+  integrity sha512-1xAFJXAKpnnJl8G7K5KgU7FY55y3GcLIXqkzUj5QF/QVP7biUm0K0O2oqVkYsdjzJKifYeWn9+o6piAK2hGSHw==
+  dependencies:
+    "@types/unist" "^2.0.0"
+    unist-util-is "^5.0.0"
+
 unist-util-visit-parents@^5.0.0, unist-util-visit-parents@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-5.1.1.tgz#868f353e6fce6bf8fa875b251b0f4fec3be709bb"
@@ -5237,6 +5264,15 @@ unist-util-visit-parents@^5.0.0, unist-util-visit-parents@^5.1.1:
   dependencies:
     "@types/unist" "^2.0.0"
     unist-util-is "^5.0.0"
+
+unist-util-visit@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-3.1.0.tgz#9420d285e1aee938c7d9acbafc8e160186dbaf7b"
+  integrity sha512-Szoh+R/Ll68QWAyQyZZpQzZQm2UPbxibDvaY8Xc9SUtYgPsDzx5AWSk++UUt2hJuow8mvwR+rG+LQLw+KsuAKA==
+  dependencies:
+    "@types/unist" "^2.0.0"
+    unist-util-is "^5.0.0"
+    unist-util-visit-parents "^4.0.0"
 
 unist-util-visit@^4.0.0:
   version "4.1.1"

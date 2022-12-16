@@ -14,11 +14,29 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Knowledge</title>
+        <meta name="title" content="My Knowledge | mfg-b" />
+        <meta
+          name="description"
+          content="List of my knowledge, reflections, notes and likes about all kind of things."
+        />
+
+        <meta property="og:title" content="My Knowledge | mfg-b" />
+        <meta
+          property="og:description"
+          content="List of my knowledge, reflections, notes and likes about all kind of things"
+        />
+
+        <meta property="twitter:title" content="My Knowledge | mfg-b" />
+        <meta
+          property="twitter:description"
+          content="List of my knowledge, reflections, notes and likes about all kind of things"
+        />
+
+        <title>mfg-b | Knowledge</title>
       </Head>
 
       <Container>
-        <Header title="Knowledge" />
+        <Header title="Knowledge" isMainTitle />
         <main>
           <KnowledgeList posts={posts} />
         </main>
