@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "bump-tag": "deno run --allow-env --allow-read --allow-write --allow-run tools/bump-tag-version.ts",
+    "cache": "deno cache tools/bump-tag-version.ts"
+  }
+}
