@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FiBook, FiDownload } from 'react-icons/fi'
 
 export function AboutSection() {
   return (
@@ -87,13 +88,17 @@ export function AboutSection() {
           </p>
           <div className="mt-6 flex items-center gap-10">
             <a
-              className="text-blue-500 hover:text-blue-300"
-              href="/assets/portifolio/cv-mateus-felipe-gonçalves.pdf"
+              className="text-blue-500 hover:text-blue-300 flex justify-center items-center gap-2"
+              target="_blank"
+              href="/assets/portifolio/cv-mateus-felipe.pdf"
             >
-              Baixar CV [X]
+              Baixar CV <FiDownload />
             </a>
-            <Link className="text-blue-500 hover:text-blue-300" href="/">
-              Blog [X]
+            <Link
+              className="text-blue-500 hover:text-blue-300 flex justify-center items-center gap-2"
+              href="/"
+            >
+              Blog <FiBook />
             </Link>
           </div>
         </div>
