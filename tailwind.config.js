@@ -4,6 +4,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        'chivo-mono': ['"Chivo Mono"', 'cursive']
+      },
       colors: {
         neutral: {
           1000: 'rgba(17, 17, 17)'
@@ -11,7 +14,7 @@ module.exports = {
       },
       animation: {
         cursor: 'cursor .6s linear infinite alternate',
-        typing: 'typing 1.8s ease-in .8s 1 normal both',
+        typing: 'typing 1.8s ease-in .8s 1 normal both'
       },
       keyframes: {
         typing: {
