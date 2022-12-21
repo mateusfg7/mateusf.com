@@ -1,4 +1,6 @@
+import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
 import { ProjectData } from './projects'
+import { BsDot } from 'react-icons/bs'
 
 interface Props {
   data: ProjectData
@@ -19,7 +21,9 @@ export function ProjectCard({ data }: Props) {
       <div className="p-5">
         <div className="flex items-center gap-5 text-2xl text-neutral-50 mb-4">
           <h2 className="font-bold">{data.title}</h2>
-          <span>°</span>
+          <span>
+            <BsDot />
+          </span>
           <span className="flex items-center gap-2 ">
             {data.core_techs.map(coreTech => {
               const TechIcon = coreTech.icon
@@ -45,9 +49,9 @@ export function ProjectCard({ data }: Props) {
                 href={data.repository}
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
               >
-                Repositório [X]
+                Repositório <FiGithub />
               </a>
             </>
           )}
@@ -57,9 +61,9 @@ export function ProjectCard({ data }: Props) {
                 href={data.files}
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
               >
-                Arquivos [X]
+                Arquivos <FiFolder />
               </a>
             </>
           )}
@@ -69,9 +73,9 @@ export function ProjectCard({ data }: Props) {
                 href={data.website}
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-500 hover:text-neutral-50 border border-blue-500 bg-blue-500/10 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 bg-blue-500/10 hover:bg-blue-500 rounded-2xl p-4"
               >
-                Website [X]
+                Website <FiGlobe />
               </a>
             </>
           )}
