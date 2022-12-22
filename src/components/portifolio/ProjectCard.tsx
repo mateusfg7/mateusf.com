@@ -8,7 +8,7 @@ interface Props {
 
 export function ProjectCard({ data }: Props) {
   return (
-    <div className="bg-neutral-900 shadow-2xl shadow-black/30 w-[30rem] rounded-3xl overflow-hidden">
+    <div className="bg-neutral-900 shadow-2xl shadow-black/30  flex flex-col w-[30rem] rounded-3xl overflow-hidden">
       {data.image && (
         <div className="h-56 w-full">
           <img
@@ -18,31 +18,40 @@ export function ProjectCard({ data }: Props) {
           />
         </div>
       )}
-      <div className="p-5">
-        <div className="flex items-center gap-5 text-2xl text-neutral-50 mb-4">
-          <h2 className="font-bold">{data.title}</h2>
-          <span>
-            <BsDot />
-          </span>
-          <span className="flex items-center gap-2 ">
-            {data.core_techs.map(coreTech => {
-              const TechIcon = coreTech.icon
-              return <TechIcon key={coreTech.key} />
-            })}
-          </span>
-        </div>
-        <p>{data.description}</p>
-        <div className="my-4 flex flex-wrap items-center gap-2">
-          {data.tags.map(tag => (
-            <span
-              key={tag}
-              className="text-blue-400 bg-blue-400/5 p-1 rounded-xl"
-            >
-              {tag}
+      <div className="p-5 flex-1 flex flex-col">
+        <div>
+          <div className="flex items-center gap-5 text-2xl text-neutral-50 mb-4">
+            <h2 className="font-bold">{data.title}</h2>
+            <span>
+              <BsDot />
             </span>
-          ))}
+            <span className="flex items-center gap-3">
+              {data.core_techs.map(coreTech => {
+                const TechIcon = coreTech.icon
+                return (
+                  <span
+                    key={coreTech.key}
+                    className="text-xl hover:cursor-pointer"
+                  >
+                    <TechIcon />
+                  </span>
+                )
+              })}
+            </span>
+          </div>
+          <p>{data.description}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            {data.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-blue-400 bg-blue-400/5 p-1 rounded-xl"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="mt-9 flex items-center justify-center gap-6">
+        <div className="mt-9 flex flex-1 items-end justify-center gap-6">
           {data.repository && (
             <>
               <a
