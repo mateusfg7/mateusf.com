@@ -26,7 +26,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body>
+      <body className="scroll-smooth">
         <Main />
         <NextScript />
       </body>
