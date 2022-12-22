@@ -29,7 +29,7 @@ import {
 export function KnowledgeSection() {
   return (
     <div
-      id="knowledge"
+      id="conhecimentos"
       className="min-h-screen flex justify-center py-20 border-t border-neutral-800"
     >
       <div className="content-w">

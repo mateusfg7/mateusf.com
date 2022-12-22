@@ -8,7 +8,7 @@ import {
 export function ContactSection() {
   return (
     <div
-      id="contact"
+      id="contato"
       className="min-h-screen flex justify-center py-20 bg-neutral-900"
     >
       <div className="content-w">

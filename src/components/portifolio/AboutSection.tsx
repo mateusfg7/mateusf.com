@@ -4,7 +4,7 @@ import { FiBook, FiDownload } from 'react-icons/fi'
 export function AboutSection() {
   return (
     <div
-      id="about"
+      id="sobre-mim"
       className="min-h-screen flex items-center justify-center bg-neutral-900"
     >
       <div className="content-w flex justify-between">
