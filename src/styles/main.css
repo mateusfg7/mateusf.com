@@ -258,3 +258,14 @@
     }
   }
 }
+
+@layer utils {
+  .content-w {
+    @apply max-w-5xl w-full;
+  }
+
+  .limits {
+    @apply border-red-600 border;
+    @apply bg-blue-500;
+  }
+}
