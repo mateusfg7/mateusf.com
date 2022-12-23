@@ -16,9 +16,9 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
   }, [scrollPosition, maxScrollValue])
 
   return (
-    <div className="flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full">
-      <nav className="content-w flex items-center justify-center py-6 relative">
-        <div className=" absolute left-0">
+    <div className="flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full z-50">
+      <nav className="content-w flex items-center justify-between md:justify-center gap-4 py-10 md:py-6 relative">
+        <div className="md:absolute left-0">
           <a
             href="#home"
             className="text-blue-500 font-medium font-chivo-mono hover:cursor-pointer"
@@ -26,7 +26,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
             Mateus Felipe
           </a>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           <a
             href="#sobre-mim"
             className={`${
@@ -68,7 +68,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
             Contato
           </a>
         </div>
-        <div className="flex items-center gap-4 absolute right-0">
+        <div className="flex items-center gap-6 md:gap-4 md:absolute right-0">
           <a
             className="text-xl text-neutral-300 hover:text-neutral-50 hover:cursor-pointer"
             href="https://linkedin.com/in/mateusfg"

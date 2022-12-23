@@ -7,20 +7,24 @@ export function AboutSection() {
       id="sobre-mim"
       className="min-h-screen flex items-center justify-center bg-neutral-900 py-20"
     >
-      <div className="content-w flex justify-between">
-        <div className="flex-1">
+      <div className="content-w flex flex-col md:flex-row justify-between">
+        <div className="hidden md:block flex-1">
           <img
             src="https://github.com/mateusfg7.png"
             className="w-96 h-[30rem] object-cover rounded-3xl shadow-2xl shadow-black/70"
           />
         </div>
-        <div className="flex-1">
-          <h1 className="text-4xl mb-8 text-blue-500">Sobre mim</h1>
-          <p className="text-xl mb-3">
+        <div className="flex-1 flex flex-col items-center md:block">
+          <h1 className="text-4xl md:mb-8 text-blue-500">Sobre mim</h1>
+          <img
+            src="https://github.com/mateusfg7.png"
+            className="md:hidden w-1/2 my-14 object-cover rounded-3xl"
+          />
+          <p className="text-xl mb-3 px-4 md:p-0">
             Me chamo <span className="font-bold">Mateus Felipe Gonçalves</span>,
             tenho 20 anos e moro em Pará de Minas - MG, Brasil.
           </p>
-          <p className="text-xl mb-3">
+          <p className="text-xl mb-3 px-4 md:p-0">
             <span className="font-semibold">Auto didata</span> full-stack.
             Possuo conhecimento em{' '}
             <a
@@ -82,11 +86,11 @@ export function AboutSection() {
             assuntos em inglês, e também escrevendo blog posts e documentações
             de projetos pessoais.
           </p>
-          <p className="text-xl">
+          <p className="text-xl px-4 md:p-0">
             Também tenho interesse na área de construção civil, elétrica e
             automação residencial.
           </p>
-          <div className="mt-6 flex items-center gap-10">
+          <div className="mt-12 md:mt-6 flex items-center gap-10">
             <a
               className="text-blue-500 hover:text-blue-300 flex justify-center items-center gap-2"
               target="_blank"

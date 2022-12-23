@@ -20,9 +20,9 @@ export function ProjectCard({ data }: Props) {
       )}
       <div className="p-5 flex-1 flex flex-col">
         <div>
-          <div className="flex items-center gap-5 text-2xl text-neutral-50 mb-4">
+          <div className="flex flex-col md:flex-row items-center gap-5 text-2xl text-neutral-50 mb-10 md:mb-4">
             <h2 className="font-bold">{data.title}</h2>
-            <span>
+            <span className="hidden md:inline">
               <BsDot />
             </span>
             <span className="flex items-center gap-3">
@@ -39,8 +39,8 @@ export function ProjectCard({ data }: Props) {
               })}
             </span>
           </div>
-          <p>{data.description}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
+          <p className="text-justify md:text-left">{data.description}</p>
+          <div className="mt-10 md:mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
             {data.tags.map(tag => (
               <span
                 key={tag}
