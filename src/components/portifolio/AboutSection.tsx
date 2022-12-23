@@ -5,7 +5,7 @@ export function AboutSection() {
   return (
     <div
       id="sobre-mim"
-      className="min-h-screen flex items-center justify-center bg-neutral-900"
+      className="min-h-screen flex items-center justify-center bg-neutral-900 py-20"
     >
       <div className="content-w flex justify-between">
         <div className="flex-1">

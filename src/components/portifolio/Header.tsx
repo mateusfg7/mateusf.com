@@ -1,61 +1,69 @@
+import { useEffect, useState } from 'react'
 import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 
 interface Props {
   scrollPosition: number
+  maxScrollValue: number
 }
 
-export function Header({ scrollPosition }: Props) {
-  function scrollTo(position: number) {
-    if (window) window.scrollTo({ top: position, behavior: 'smooth' })
-  }
+export function Header({ scrollPosition, maxScrollValue }: Props) {
+  const [percentScrollPosition, setPercentScrollPosition] = useState(0)
+
+  useEffect(() => {
+    setPercentScrollPosition(
+      Math.round((scrollPosition / maxScrollValue) * 100)
+    )
+  }, [scrollPosition, maxScrollValue])
 
   return (
     <div className="flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full">
       <nav className="content-w flex items-center justify-center py-6 relative">
         <div className=" absolute left-0">
           <a
+            href="#home"
             className="text-blue-500 font-medium font-chivo-mono hover:cursor-pointer"
-            onClick={() => scrollTo(0)}
           >
             Mateus Felipe
           </a>
         </div>
         <div className="flex items-center gap-4">
           <a
+            href="#sobre-mim"
             className={`${
-              scrollPosition >= 590 && scrollPosition < 1380
+              percentScrollPosition >= 9 && percentScrollPosition < 21
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
-            onClick={() => scrollTo(768)}
           >
             Sobre mim
           </a>
           <a
+            href="#projetos"
             className={`${
-              scrollPosition >= 1380 && scrollPosition < 4140
+              percentScrollPosition >= 21 && percentScrollPosition < 66
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
-            onClick={() => scrollTo(1536)}
           >
             Projetos
           </a>
           <a
+            href="#conhecimentos"
             className={`${
-              scrollPosition >= 4140 && scrollPosition < 5382
+              percentScrollPosition >= 66 && percentScrollPosition < 83
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
-            onClick={() => scrollTo(4544)}
           >
             Conhecimentos
           </a>
           <a
+            href="#contato"
             className={`${
-              scrollPosition >= 5382 ? 'text-neutral-50' : 'text-neutral-400'
+              percentScrollPosition >= 83
+                ? 'text-neutral-50'
+                : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
-            onClick={() => scrollTo(5661)}
           >
             Contato
           </a>

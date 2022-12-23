@@ -8,21 +8,38 @@ import { ProjectsSection } from 'src/components/portifolio/ProjectsSection'
 
 function Portifolio() {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [maxScrollValue, setMaxScrollValue] = useState(0)
 
   function updateScrollPosition() {
     if (window) {
       setScrollPosition(window.scrollY)
     }
   }
+  function updateMaxScrollValue() {
+    if (document) {
+      setMaxScrollValue(
+        document.documentElement.scrollHeight -
+          document.documentElement.clientHeight
+      )
+    }
+  }
+  function handleScroll() {
+    updateScrollPosition()
+    updateMaxScrollValue()
+  }
 
   useEffect(() => {
-    if (window)
-      window.addEventListener('scroll', updateScrollPosition, { passive: true })
+    updateScrollPosition()
+    updateMaxScrollValue()
+
+    if (window) {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
   }, [])
 
   return (
-    <div className="bg-neutral-1000 text-neutral-300">
-      <Header scrollPosition={scrollPosition} />
+    <div className="bg-neutral-1000 text-neutral-300" id="portifolio">
+      <Header scrollPosition={scrollPosition} maxScrollValue={maxScrollValue} />
       <HomeSection />
       <AboutSection />
       <ProjectsSection />
