@@ -1,4 +1,3 @@
-import { IoLogoJavascript } from 'react-icons/io'
 import {
   SiAdobephotoshop,
   SiCss3,
@@ -36,9 +35,9 @@ export function KnowledgeSection() {
         <div className="w-full text-center mb-20">
           <h1 className="text-blue-500 text-4xl">Em que me destaco</h1>
         </div>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           <div className="bg-neutral-900 rounded-3xl p-10 flex flex-col items-center gap-4">
-            <h2 className="text-neutral-50 text-xl mb-7">
+            <h2 className="text-neutral-50 text-xl mb-7 text-center">
               Linguagens de programação
             </h2>
             <div className="w-full h-full flex justify-center">
@@ -83,7 +82,7 @@ export function KnowledgeSection() {
             </div>
           </div>
           <div className="bg-neutral-900 rounded-3xl p-10 flex flex-col items-center gap-4">
-            <h2 className="text-neutral-50 text-xl mb-7">
+            <h2 className="text-neutral-50 text-xl mb-7 text-center">
               Desenvolvimento Web
             </h2>
             <div className="w-full h-full flex justify-center">
@@ -146,7 +145,7 @@ export function KnowledgeSection() {
             </div>
           </div>
           <div className="bg-neutral-900 rounded-3xl p-10 flex flex-col items-center gap-4">
-            <h2 className="text-neutral-50 text-xl mb-7">
+            <h2 className="text-neutral-50 text-xl mb-7 text-center">
               Desenvolvimento Back-end
             </h2>
             <div className="w-full h-full flex justify-center">
