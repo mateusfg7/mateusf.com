@@ -85,7 +85,7 @@ export const devProjects: ProjectData[] = [
       }
     ],
     description:
-      'Web page for listen combinations of sounds for relaxing or getting more productive on tasks.',
+      'Website para ouvir combinações de sons para relaxar e se tornar mais produtivo nas suas tarefas.',
     tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'zustand', 'pwa'],
     repository: 'https://github.com/mateusfg7/Noisekun',
     website: 'https://noisekun.vercel.app'
@@ -160,7 +160,7 @@ export const devProjects: ProjectData[] = [
       }
     ],
     description:
-      'Feedget is widget to send feedbacks to the page owner. This project was made during the Next Level Week Return: Impulse, by Rocketseat. ',
+      'Feedget é um  widget para enviar feedbacks para o criador do conteúdo de uma página. O projeto foi desenvolvido durante a Next Level Week Return: Impulse, pela Rocketseat.',
     tags: [
       'typescript',
       'reactjs',
