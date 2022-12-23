@@ -261,7 +261,7 @@
 
 @layer utils {
   .content-w {
-    @apply max-w-5xl w-full;
+    @apply px-5 md:p-0 md:max-w-5xl w-full;
   }
 
   .limits {
