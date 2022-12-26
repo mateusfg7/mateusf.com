@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { AboutSection } from 'src/components/portifolio/AboutSection'
 import { ContactSection } from 'src/components/portifolio/ContactSection'
@@ -39,6 +40,9 @@ function Portifolio() {
 
   return (
     <div className="bg-neutral-1000 text-neutral-300" id="portifolio">
+      <Head>
+        <title>Portifólio | Mateus Felipe Gonçalves</title>
+      </Head>
       <Header scrollPosition={scrollPosition} maxScrollValue={maxScrollValue} />
       <HomeSection />
       <AboutSection />
