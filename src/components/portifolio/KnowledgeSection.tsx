@@ -201,7 +201,7 @@ export function KnowledgeSection() {
                   </span>
                   <span className="flex flex-col gap-1">
                     <span className="text-neutral-50">Fastify</span>
-                    <span className="text-neutral-400">Iniciantes</span>
+                    <span className="text-neutral-400">Iniciante</span>
                   </span>
                 </div>
                 <div className="flex gap-2">
@@ -210,7 +210,7 @@ export function KnowledgeSection() {
                   </span>
                   <span className="flex flex-col gap-1">
                     <span className="text-neutral-50">NGINX</span>
-                    <span className="text-neutral-400">Iniciantes</span>
+                    <span className="text-neutral-400">Iniciante</span>
                   </span>
                 </div>
               </div>
