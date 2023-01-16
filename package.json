@@ -1,6 +1,6 @@
 {
   "name": "mfg-b",
-  "version": "2.5.3",
+  "version": "2.5.4",
   "homepage": "https://mfg-b.vercel.app",
   "license": "GPL-3.0",
   "author": "Mateus Felipe Gonçalves <mateusfg7@protonmail.com> (https://mfg-b.vercel.app/info)",
@@ -24,7 +24,7 @@
     "react-icons": "4.7.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "6.0.2",
-    "rehype-pretty-code": "^0.5.1",
+    "rehype-pretty-code": "^0.9.0",
     "rehype-shift-heading": "^1.0.2",
     "rehype-slug": "5.1.0",
     "rehype-toc": "3.0.2",
