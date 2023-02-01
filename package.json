@@ -1,6 +1,6 @@
 {
   "name": "mfg-b",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "homepage": "https://mfg-b.vercel.app",
   "license": "GPL-3.0",
   "author": "Mateus Felipe Gonçalves <mateusfg7@protonmail.com> (https://mfg-b.vercel.app/info)",
@@ -53,7 +53,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.1.1",
-    "eslint-plugin-react": "7.31.11",
+    "eslint-plugin-react": "7.32.2",
     "husky": "^8.0.1",
     "postcss": "^8.4.19",
     "prettier": "2.8.1",
