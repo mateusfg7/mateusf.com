@@ -1,6 +1,6 @@
 {
   "name": "mfg-b",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "homepage": "https://mfg-b.vercel.app",
   "license": "GPL-3.0",
   "author": "Mateus Felipe Gonçalves <mateusfg7@protonmail.com> (https://mfg-b.vercel.app/info)",
@@ -16,7 +16,7 @@
     "contentlayer": "^0.2.9",
     "date-fns": "2.29.3",
     "gray-matter": "4.0.3",
-    "next": "13.1.4",
+    "next": "13.2.4",
     "next-contentlayer": "^0.2.9",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
