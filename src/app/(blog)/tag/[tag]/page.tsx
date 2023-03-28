@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { Container } from 'components/Container'
 import { Header } from 'components/Header'
 import { KnowledgeList } from 'components/KnowledgeList'
 
@@ -25,12 +24,10 @@ export default function Page({ params }: Props) {
 
   return (
     <div>
-      <Container>
-        <Header title={tag} isMainTitle />
-        <main>
-          <KnowledgeList posts={postList} />
-        </main>
-      </Container>
+      <Header title={tag} isMainTitle />
+      <main>
+        <KnowledgeList posts={postList} />
+      </main>
     </div>
   )
 }
