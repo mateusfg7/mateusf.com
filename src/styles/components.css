@@ -1,19 +1,4 @@
-@import './syntax-highlighting.css';
-@tailwind base;
 @tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-neutral-100 dark:bg-neutral-900;
-    @apply text-neutral-900 dark:text-neutral-300 font-['Inter'];
-  }
-
-  a {
-    /* @apply text-[#0070f3] */
-    @apply no-underline text-blue-700 dark:text-blue-500;
-  }
-}
 
 @layer components {
   .post-content {
@@ -252,16 +237,5 @@
         @apply bg-red-900/10 dark:bg-red-600/10;
       }
     }
-  }
-}
-
-@layer utils {
-  .content-w {
-    @apply px-5 md:p-0 md:max-w-5xl w-full;
-  }
-
-  .limits {
-    @apply border-red-600 border;
-    @apply bg-blue-500;
   }
 }

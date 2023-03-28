@@ -1,0 +1,12 @@
+@tailwind utilities;
+
+@layer utilities {
+  .content-w {
+    @apply px-5 md:p-0 md:max-w-5xl w-full;
+  }
+
+  .limits {
+    @apply border-red-600 border;
+    @apply bg-blue-500;
+  }
+}

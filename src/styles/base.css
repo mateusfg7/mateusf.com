@@ -1,0 +1,13 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply text-neutral-900 dark:text-neutral-300 font-['Inter'];
+  }
+
+  a {
+    /* @apply text-[#0070f3] */
+    @apply no-underline text-blue-700 dark:text-blue-500;
+  }
+}
