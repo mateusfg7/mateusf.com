@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { FiMoon, FiSun } from 'react-icons/fi'
+
+import { ToggleTheme } from './ToggleTheme'
 
 interface Props {
   title: string
@@ -9,13 +9,6 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ title, isMainTitle }) => {
-  const { theme, setTheme } = useTheme()
-
-  function toggleTheme() {
-    if (theme === 'light') setTheme('dark')
-    else setTheme('light')
-  }
-
   return (
     <header className="flex justify-between items-center mb-24">
       <div className="flex items-center gap-5">
@@ -48,13 +41,7 @@ export const Header: React.FC<Props> = ({ title, isMainTitle }) => {
             Categories
           </Link>
         </nav>
-        <button onClick={() => toggleTheme()} className="p-1">
-          {theme === 'light' ? (
-            <FiMoon className="text-xl" title="Dark mode" />
-          ) : (
-            <FiSun className="text-xl" title="Light mode" />
-          )}
-        </button>
+        <ToggleTheme />
       </div>
     </header>
   )
