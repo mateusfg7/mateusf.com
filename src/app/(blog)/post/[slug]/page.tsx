@@ -37,7 +37,7 @@ export default function Page({ params }: Props) {
 
   return (
     <div>
-      <ReadProgress />
+      {/* <ReadProgress /> */}
 
       <Header title={post.id} />
       <main>
