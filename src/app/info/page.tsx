@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Info: React.FC = () => {
+export default function Page() {
   return (
     <div>
       <img src="https://github.com/mateusfg7.png" alt="mateusfg7 profile" />
@@ -18,5 +16,3 @@ const Info: React.FC = () => {
     </div>
   )
 }
-
-export default Info
