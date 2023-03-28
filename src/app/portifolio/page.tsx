@@ -1,13 +1,16 @@
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import { AboutSection } from 'src/components/portifolio/AboutSection'
-import { ContactSection } from 'src/components/portifolio/ContactSection'
-import { Header } from 'src/components/portifolio/Header'
-import { HomeSection } from 'src/components/portifolio/HomeSection'
-import { KnowledgeSection } from 'src/components/portifolio/KnowledgeSection'
-import { ProjectsSection } from 'src/components/portifolio/ProjectsSection'
+'use client'
 
-function Portifolio() {
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+
+import { Header } from './Header'
+import { AboutSection } from './AboutSection'
+import { ContactSection } from './ContactSection'
+import { HomeSection } from './HomeSection'
+import { KnowledgeSection } from './KnowledgeSection'
+import { ProjectsSection } from './ProjectsSection'
+
+export default function Page() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [maxScrollValue, setMaxScrollValue] = useState(0)
 
@@ -52,5 +55,3 @@ function Portifolio() {
     </div>
   )
 }
-
-export default Portifolio
