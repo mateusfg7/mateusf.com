@@ -13,7 +13,7 @@ interface Props {
 
 export function KnowledgeLink({ id, key, title, date, description }: Props) {
   return (
-    <Link href={`/knowledge/${id}`} className="group" key={key}>
+    <Link href={`/post/${id}`} className="group" key={key}>
       <section className="mb-8">
         <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500 group-hover:text-blue-700 dark:group-hover:text-blue-500">
           {title}
