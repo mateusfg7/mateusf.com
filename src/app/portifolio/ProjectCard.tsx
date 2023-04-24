@@ -1,5 +1,5 @@
 import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
-import { ProjectData } from './projects'
+import { ProjectData, techIcons } from './projects'
 import { BsDot } from 'react-icons/bs'
 
 interface Props {
@@ -27,12 +27,9 @@ export function ProjectCard({ data }: Props) {
             </span>
             <span className="flex items-center gap-3">
               {data.core_techs.map(coreTech => {
-                const TechIcon = coreTech.icon
+                const TechIcon = techIcons[coreTech]
                 return (
-                  <span
-                    key={coreTech.key}
-                    className="text-xl hover:cursor-pointer"
-                  >
+                  <span key={coreTech} className="text-xl hover:cursor-pointer">
                     <TechIcon />
                   </span>
                 )
