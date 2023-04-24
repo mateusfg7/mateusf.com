@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 
 import { Header } from './Header'
+import { HomeSection } from './HomeSection'
 import { AboutSection } from './AboutSection'
 import { ContactSection } from './ContactSection'
-import { HomeSection } from './HomeSection'
 import { KnowledgeSection } from './KnowledgeSection'
 import { ProjectsSection } from './ProjectsSection'
 
