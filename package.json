@@ -13,6 +13,7 @@
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.8",
     "contentlayer": "^0.2.9",
     "date-fns": "2.29.3",
     "gray-matter": "4.0.3",
