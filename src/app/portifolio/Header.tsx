@@ -16,7 +16,13 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
   }, [scrollPosition, maxScrollValue])
 
   return (
-    <div className="flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full z-50">
+    <div
+      className={`flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full z-50 duration-300 border-b ${
+        percentScrollPosition > 0
+          ? 'border-b-neutral-800'
+          : 'border-b-transparent'
+      }`}
+    >
       <nav className="content-w flex items-center justify-between md:justify-center gap-4 py-10 md:py-6 relative">
         <div className="md:absolute left-0">
           <a
