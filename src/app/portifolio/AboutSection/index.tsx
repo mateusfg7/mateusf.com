@@ -5,13 +5,13 @@ export function AboutSection() {
   return (
     <div
       id="sobre-mim"
-      className="min-h-screen flex items-center justify-center bg-neutral-900 py-20"
+      className="min-h-screen flex items-center justify-center bg-neutral-900 py-20 shadow-2xl shadow-black/30"
     >
       <div className="content-w flex flex-col md:flex-row justify-between">
         <div className="hidden md:block flex-1">
           <img
             src="https://github.com/mateusfg7.png"
-            className="w-96 h-[30rem] object-cover rounded-3xl shadow-2xl shadow-black/70"
+            className="w-96 h-[30rem] object-cover rounded-3xl border border-neutral-500"
           />
         </div>
         <div className="flex-1 flex flex-col items-center md:block">
