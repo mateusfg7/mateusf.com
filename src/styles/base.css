@@ -8,6 +8,6 @@
 
   a {
     /* @apply text-[#0070f3] */
-    @apply no-underline text-blue-700 dark:text-blue-500;
+    /*@apply no-underline text-blue-700 dark:text-blue-500;*/
   }
 }
