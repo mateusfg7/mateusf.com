@@ -7,6 +7,37 @@ interface Props {
 }
 
 export function ProjectCard({ data }: Props) {
+  const Title = () => (
+    <div className="flex flex-col md:flex-row items-center gap-5 text-2xl text-neutral-50 mb-10 md:mb-4">
+      <h2 className="font-bold">{data.title}</h2>
+      <span className="hidden md:inline">
+        <BsDot />
+      </span>
+      <span className="flex items-center gap-3">
+        {data.core_techs.map(coreTech => {
+          const TechIcon = techIcons[coreTech]
+          return (
+            <span key={coreTech} className="text-xl hover:cursor-pointer">
+              <TechIcon />
+            </span>
+          )
+        })}
+      </span>
+    </div>
+  )
+  const Tags = () => (
+    <div className="mt-10 md:mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+      {data.tags.map(tag => (
+        <span
+          key={tag}
+          className="text-blue-400 bg-blue-400/5 py-1 px-2 rounded-xl"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  )
+
   return (
     <div className="bg-neutral-900 shadow-2xl shadow-black/30  flex flex-col w-[30rem] rounded-3xl overflow-hidden">
       {data.image && (
@@ -20,33 +51,9 @@ export function ProjectCard({ data }: Props) {
       )}
       <div className="p-5 flex-1 flex flex-col">
         <div>
-          <div className="flex flex-col md:flex-row items-center gap-5 text-2xl text-neutral-50 mb-10 md:mb-4">
-            <h2 className="font-bold">{data.title}</h2>
-            <span className="hidden md:inline">
-              <BsDot />
-            </span>
-            <span className="flex items-center gap-3">
-              {data.core_techs.map(coreTech => {
-                const TechIcon = techIcons[coreTech]
-                return (
-                  <span key={coreTech} className="text-xl hover:cursor-pointer">
-                    <TechIcon />
-                  </span>
-                )
-              })}
-            </span>
-          </div>
+          <Title />
           <p className="text-justify md:text-left">{data.description}</p>
-          <div className="mt-10 md:mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
-            {data.tags.map(tag => (
-              <span
-                key={tag}
-                className="text-blue-400 bg-blue-400/5 p-1 rounded-xl"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          <Tags />
         </div>
         <div className="mt-9 flex flex-1 items-end justify-center gap-6">
           {data.repository && (
