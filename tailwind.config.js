@@ -14,7 +14,9 @@ module.exports = {
       },
       animation: {
         cursor: 'cursor .6s linear infinite alternate',
-        typing: 'typing 1.8s ease-in .8s 1 normal both'
+        typing: 'typing 1.8s ease-in .8s 1 normal both',
+        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)'
       },
       keyframes: {
         typing: {
@@ -28,6 +30,14 @@ module.exports = {
         cursor: {
           '0%, 40%': { opacity: 1 },
           '60%, 100%': { opacity: 0 }
+        },
+        slideDown: {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' }
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 }
         }
       }
     }
