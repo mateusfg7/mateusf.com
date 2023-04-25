@@ -56,7 +56,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
           <a
             href="#conhecimentos"
             className={`${
-              percentScrollPosition >= 66 && percentScrollPosition < 83
+              percentScrollPosition >= 66 && percentScrollPosition < 95
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
@@ -66,7 +66,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
           <a
             href="#contato"
             className={`${
-              percentScrollPosition >= 83
+              percentScrollPosition >= 95
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
             } hover:text-neutral-50 hover:cursor-pointer`}
