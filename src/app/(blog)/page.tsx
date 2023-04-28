@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { allPosts } from 'contentlayer/generated'
 import { getSortedPosts } from 'lib/getSortedPosts'
 
-import { Header } from 'components/Header'
 import { KnowledgeList } from 'components/KnowledgeList'
 
 export const metadata: Metadata = {
@@ -17,11 +16,8 @@ export default function Page() {
   const posts = getSortedPosts(allPosts)
 
   return (
-    <div>
-      <Header title="Knowledge" isMainTitle />
-      <main>
-        <KnowledgeList posts={posts} />
-      </main>
+    <div className="blog-content-w m-auto">
+      <KnowledgeList posts={posts} />
     </div>
   )
 }

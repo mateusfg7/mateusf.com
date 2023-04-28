@@ -36,12 +36,8 @@ export default function Page({ params }: Props) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div>
-      {/* <ReadProgress /> */}
-
-      <Header title={post.id} />
-      <main>
-        <div className="py-4 px-0 leading-6 border-b border-neutral-500 mb-8">
+    <div className='blog-content-w m-auto'>
+        <div className="pb-4 px-0 leading-6 border-b border-neutral-500 mb-8">
           <h1 className="mb-2 font-bold text-xl">{post.title}</h1>
           <div>
             <p>
@@ -75,7 +71,6 @@ export default function Page({ params }: Props) {
         <div className="post-content">
           <MDXContent />
         </div>
-      </main>
     </div>
   )
 }

@@ -1,3 +1,6 @@
+import { Footer } from 'components/Footer'
+import { Header } from 'components/Header'
+
 export default function BlogLayout({
   children
 }: {
@@ -6,7 +9,9 @@ export default function BlogLayout({
   return (
     <html>
       <body>
-        <div className="max-w-4xl p-5 m-auto">{children}</div>
+        <Header />
+        <div className="pt-36">{children}</div>
+        <Footer />
       </body>
     </html>
   )

@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { Header } from 'components/Header'
 import { KnowledgeList } from 'components/KnowledgeList'
 
 import { getUniqueCategoryList, getPostListOfCategory } from 'lib/categories'
@@ -24,8 +23,8 @@ export default function Page({ params }: Props) {
   const postList = getSortedPosts(getPostListOfCategory(category))
 
   return (
-    <div>
-      <Header title={category} isMainTitle />
+    <div className="blog-content-w m-auto">
+      <h1 className="mb-5 font-bold text-2xl">{category}</h1>
       <main>
         <KnowledgeList posts={postList} />
       </main>
