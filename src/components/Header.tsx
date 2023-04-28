@@ -38,6 +38,18 @@ export function Header() {
 
   const isOnTop = percentScrollPosition > 0
 
+  const MenuItem: React.FC<{ name: string; path: string }> = ({
+    name,
+    path
+  }) => (
+    <Link
+      href={path}
+      className="p-1 rounded-lg text-neutral-700 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 hover:bg-neutral-200/50 hover:dark:bg-neutral-900"
+    >
+      {name}
+    </Link>
+  )
+
   return (
     <header
       className={`w-full fixed top-0 bg-neutral-100/80 dark:bg-neutral-1000/80 backdrop-blur-lg ${
@@ -48,7 +60,7 @@ export function Header() {
           : 'border-b-transparent'
       }`}
     >
-      <div className="blog-content-w m-auto flex justify-between">
+      <div className="blog-content-w m-auto flex justify-between items-center">
         <Link href="/">
           <h1
             className={`text-blue-700 dark:text-blue-500 ${
@@ -60,19 +72,9 @@ export function Header() {
         </Link>
         <div className="flex justify-center items-center gap-8">
           <nav className="flex justify-center items-center gap-5">
-            <Link
-              href="/"
-              className="text-neutral-900 dark:text-neutral-100 hover:underline"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/categories"
-              className="text-neutral-900 dark:text-neutral-100 hover:underline"
-            >
-              Categories
-            </Link>
+            <MenuItem name="Home" path="/" />
+            <MenuItem name="Categories" path="/categories" />
+            <MenuItem name="Portifolio" path="/portifolio" />
           </nav>
           <ToggleTheme />
         </div>
