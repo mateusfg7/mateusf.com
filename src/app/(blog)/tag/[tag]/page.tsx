@@ -23,8 +23,8 @@ export default function Page({ params }: Props) {
   const postList = getSortedPosts(getPostListBasedOnTag(tag))
 
   return (
-    <div>
-      <Header title={tag} isMainTitle />
+    <div className="blog-content-w m-auto">
+      <h1 className="mb-5 font-bold text-2xl">{tag}</h1>
       <main>
         <KnowledgeList posts={postList} />
       </main>

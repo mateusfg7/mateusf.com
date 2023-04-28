@@ -17,7 +17,7 @@ export default function Page() {
 
   return (
     <div className="blog-content-w m-auto">
-      <KnowledgeList posts={posts} />
+      <KnowledgeList posts={posts} separateByYear />
     </div>
   )
 }
