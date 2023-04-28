@@ -7,7 +7,7 @@ export function AboutSection() {
       id="sobre-mim"
       className="min-h-screen flex items-center justify-center bg-neutral-900 py-20 shadow-2xl shadow-black/30"
     >
-      <div className="content-w flex flex-col md:flex-row justify-between">
+      <div className="portifolio-content-w flex flex-col md:flex-row justify-between">
         <div className="hidden md:block flex-1">
           <img
             src="https://github.com/mateusfg7.png"

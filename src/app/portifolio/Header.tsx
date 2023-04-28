@@ -23,7 +23,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
           : 'border-b-transparent'
       }`}
     >
-      <nav className="content-w flex items-center justify-between md:justify-center gap-4 py-10 md:py-6 relative">
+      <nav className="portifolio-content-w flex items-center justify-between md:justify-center gap-4 py-10 md:py-6 relative">
         <div className="md:absolute left-0">
           <a
             href="#home"

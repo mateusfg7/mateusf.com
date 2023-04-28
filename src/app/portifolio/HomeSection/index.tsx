@@ -5,7 +5,7 @@ export function HomeSection() {
       className="min-h-screen flex justify-center items-center relative"
     >
       <div className="md:hidden absolute h-full w-full bg-[url(/assets/portifolio/code-type.svg)] bg-no-repeat bg-center bg-fixed opacity-10" />
-      <div className="content-w flex justify-center md:justify-between items-center gap-12">
+      <div className="portifolio-content-w flex justify-center md:justify-between items-center gap-12">
         <div className="flex flex-col gap-4">
           <span className="text-neutral-50 text-7xl font-bold w-min md:w-max">
             Eu sou Mateus,
