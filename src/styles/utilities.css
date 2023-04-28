@@ -1,8 +1,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .content-w {
+  .portifolio-content-w {
     @apply px-5 md:p-0 md:max-w-5xl w-full;
+  }
+  .blog-content-w {
+    @apply px-4 md:p-0 md:max-w-4xl w-full;
   }
 
   .limits {
