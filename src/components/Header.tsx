@@ -1,47 +1,81 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { ToggleTheme } from './ToggleTheme'
 
-interface Props {
-  title: string
-  isMainTitle?: boolean
-}
+export function Header() {
+  const [percentScrollPosition, setPercentScrollPosition] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [maxScrollValue, setMaxScrollValue] = useState(0)
 
-export const Header: React.FC<Props> = ({ title, isMainTitle }) => {
+  function handleScroll() {
+    if (window) {
+      setScrollPosition(window.scrollY)
+    }
+    if (document) {
+      setMaxScrollValue(
+        document.documentElement.scrollHeight -
+          document.documentElement.clientHeight
+      )
+    }
+  }
+
+  useEffect(() => {
+    handleScroll()
+
+    if (window) {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
+  }, [])
+
+  useEffect(() => {
+    setPercentScrollPosition(
+      Math.round((scrollPosition / maxScrollValue) * 100)
+    )
+  }, [scrollPosition, maxScrollValue])
+
+  const isOnTop = percentScrollPosition > 0
+
   return (
-    <header className="flex justify-between items-center mb-24">
-      <div className="flex items-center gap-5">
-        <img
-          src="https://github.com/mateusfg7.png"
-          className="w-12 h-12 rounded-full text-gray-600"
-          alt="My Github picture"
-        />
-        <h2>brain</h2>
-        <span className="text-xs">/</span>
-        {isMainTitle ? (
-          <h1 className="text-xl font-bold">{title}</h1>
-        ) : (
-          <p className="text-xl font-bold">{title}</p>
-        )}
-      </div>
-      <div className="flex justify-center items-center gap-8">
-        <nav className="flex justify-center items-center gap-5">
-          <Link
-            href="/"
-            className="text-neutral-900 dark:text-neutral-100 hover:underline"
+    <header
+      className={`w-full fixed top-0 bg-neutral-100/80 dark:bg-neutral-1000/80 backdrop-blur-lg ${
+        isOnTop ? 'py-3' : 'py-6'
+      } duration-300 border-b ${
+        isOnTop
+          ? 'border-b-neutral-50 dark:border-b-neutral-800'
+          : 'border-b-transparent'
+      }`}
+    >
+      <div className="blog-content-w m-auto flex justify-between">
+        <Link href="/">
+          <h1
+            className={`text-blue-700 dark:text-blue-500 ${
+              isOnTop ? 'font-medium' : 'font-base'
+            } font-chivo-mono hover:cursor-pointer`}
           >
-            Home
-          </Link>
+            Mateus Felipe
+          </h1>
+        </Link>
+        <div className="flex justify-center items-center gap-8">
+          <nav className="flex justify-center items-center gap-5">
+            <Link
+              href="/"
+              className="text-neutral-900 dark:text-neutral-100 hover:underline"
+            >
+              Home
+            </Link>
 
-          <Link
-            href="/categories"
-            className="text-neutral-900 dark:text-neutral-100 hover:underline"
-          >
-            Categories
-          </Link>
-        </nav>
-        <ToggleTheme />
+            <Link
+              href="/categories"
+              className="text-neutral-900 dark:text-neutral-100 hover:underline"
+            >
+              Categories
+            </Link>
+          </nav>
+          <ToggleTheme />
+        </div>
       </div>
     </header>
   )
