@@ -1,4 +1,3 @@
-import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 
 export default function BlogLayout({
@@ -11,7 +10,6 @@ export default function BlogLayout({
       <body>
         <Header />
         <div className="pt-36">{children}</div>
-        <Footer />
       </body>
     </html>
   )
