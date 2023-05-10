@@ -11,3 +11,10 @@ export function removeRepeatedValuesFromArray<T>(array: T[]): T[] {
     return originalArray.indexOf(item) === index
   })
 }
+
+export const transformToSlug = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize('NFD')
+    .replaceAll(/\p{M}/gu, '')
+    .replaceAll(' ', '-')
