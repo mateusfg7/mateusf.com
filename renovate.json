@@ -1,30 +1,53 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:base"
+  ],
   "commitBodyTable": true,
   "branchPrefix": "deps/",
-  "bumpVersion": "patch",
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "stabilityDays": 3,
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
-      "addLabels": ["d:major"]
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "addLabels": [
+        "d:major"
+      ]
     },
     {
-      "matchUpdateTypes": ["minor"],
-      "addLabels": ["d:minor"]
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "addLabels": [
+        "d:minor"
+      ]
     },
     {
-      "matchUpdateTypes": ["patch"],
-      "addLabels": ["d:patch"]
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "addLabels": [
+        "d:patch"
+      ]
     },
     {
-      "matchUpdateTypes": ["pin"],
-      "addLabels": ["d:pin"]
+      "matchUpdateTypes": [
+        "pin"
+      ],
+      "addLabels": [
+        "d:pin"
+      ]
     },
     {
-      "matchUpdateTypes": ["rollback"],
-      "addLabels": ["d:rollback"]
+      "matchUpdateTypes": [
+        "rollback"
+      ],
+      "addLabels": [
+        "d:rollback"
+      ]
     }
   ]
 }
