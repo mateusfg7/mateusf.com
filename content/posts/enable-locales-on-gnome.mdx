@@ -4,6 +4,7 @@ date: '2022-08-10'
 description: 'Enable some locales to use when they not appear on "Region & Language" menu'
 category: 'GNOME'
 tags: 'desktop, how-to, languages, config'
+author: 'mateusfg7'
 ---
 
 # Introduction
@@ -16,15 +17,18 @@ For this, just edit the file `/etc/locale.gen` with root privileges:
 
 ```
 $ sudo vim /etc/locale.gen
-``` 
+```
 
 And uncomment the language that you looking for, e.g:
 
 _for_
+
 ```
 #pt_BR.UTF-8 UTF-8
 ```
+
 _remove the `#`, and save_
+
 ```
 pt_BR.UTF-8 UTF-8
 ```
@@ -41,4 +45,4 @@ That's it! Just go to Region & Language and select your language.
 
 # Referencies
 
-Gnome (Debian 11): How to install en_DK formats (date, numbers, units)?: https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units [[_archive_](https://web.archive.org/web/20220810182103/https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units)]
+Gnome (Debian 11): How to install en*DK formats (date, numbers, units)?: https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units [[\_archive*](https://web.archive.org/web/20220810182103/https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units)]

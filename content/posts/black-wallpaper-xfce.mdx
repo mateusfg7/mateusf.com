@@ -5,18 +5,17 @@ lastUpdate: '2022-08-10'
 description: 'Black wallpaper on xfce4 when restart the computer'
 category: 'XFCE'
 tags: 'bug, desktop, how-to'
+author: 'mateusfg7'
 ---
 
 # How to fix
 
 This problem consists of black background insted the wallpaper on xfce4, apparently is the `xfdesktop` daemon that was not starting on login. To fix it, wee just need to setup this daemon to auto start on login:
 
-
 1. Go to `Session and Startup` > `Application Autostart`
 2. Then click on `Add`
 3. Will appear a window, enter some name, like "Wallpaper Daemon" and the description, "Daemon to load the xfce4 wallpaper", on the command field, add the command `xfdesktop --replace`.
 4. After save the config, restart the computer.
-
 
 ---
 
