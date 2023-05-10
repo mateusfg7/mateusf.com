@@ -1,9 +1,10 @@
 import { defineDocumentType } from 'contentlayer/source-files'
+import { authors } from 'lib/authors'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   contentType: 'mdx',
-  filePathPattern: 'posts/*.mdx',
+  filePathPattern: 'posts/**/*.mdx',
   fields: {
     title: {
       type: 'string',
@@ -26,6 +27,11 @@ export const Post = defineDocumentType(() => ({
     },
     tags: {
       type: 'string',
+      required: true
+    },
+    author: {
+      type: 'enum',
+      options: authors.map(author => author.user),
       required: true
     }
   },
