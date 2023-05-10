@@ -5,6 +5,7 @@ import { KnowledgeList } from 'components/KnowledgeList'
 
 import { getUniqueCategoryList, getPostListOfCategory } from 'lib/categories'
 import { getSortedPosts } from 'lib/getSortedPosts'
+import { FolderOpen } from './Icons'
 
 interface Props {
   params: { category: string }
@@ -24,7 +25,10 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 font-bold text-2xl">{category}</h1>
+      <h1 className="mb-5 font-bold text-2xl flex items-center gap-2">
+        <FolderOpen weight="duotone" className="text-3xl" />
+        {category}
+      </h1>
       <main>
         <KnowledgeList posts={postList} />
       </main>

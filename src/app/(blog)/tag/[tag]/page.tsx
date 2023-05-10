@@ -5,6 +5,7 @@ import { KnowledgeList } from 'components/KnowledgeList'
 
 import { getUniqueTagListFromPosts, getPostListBasedOnTag } from 'lib/tags'
 import { getSortedPosts } from 'lib/getSortedPosts'
+import { Tag } from './Icons'
 
 interface Props {
   params: { tag: string }
@@ -23,7 +24,10 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 font-bold text-2xl">{tag}</h1>
+      <h1 className="mb-5 font-bold text-2xl flex items-end gap-2">
+        {tag}
+        <Tag />
+      </h1>
       <main>
         <KnowledgeList posts={postList} />
       </main>
