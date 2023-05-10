@@ -1,9 +1,10 @@
 ---
-title: "Neovim"
+title: 'Neovim'
 date: '2020-12-16'
-description: "How to install, use and configure Neovim"
+description: 'How to install, use and configure Neovim'
 tags: 'cli, step-by-step, plugins, editor, programming, code'
 category: 'Vim'
+author: 'mateusfg7'
 ---
 
 ## O que é?
@@ -11,16 +12,21 @@ category: 'Vim'
 [Neovim](https://neovim.io/) é um editor de texto baseado no Vim que roda via CLI (Linha de comando), com a possibilidade de instala plugins.
 
 ## Instalar neovim
+
 Executei o comando
+
 ```bash
 $ sudo apt install python3-neovim
 ```
+
 no Parrot Sec 4.10 e ele instalou o neovim e os módulos python para ele automaticamente.
 
 A forma mais direta de instalar usando uma distribuição debian-based é com
+
 ```bash
 $ sudo apt install neovim
 ```
+
 Para abrir o neovim basta executar o comando `nvim` no terminal.
 
 Arquivo de configurações do neovim:
@@ -36,15 +42,15 @@ Todos os comandos do neovim devem ser adicionados após `:` no buffer do neovim.
 
 ### Comandos
 
-descrição | comando
----|---
-Sair | `:q`
-Sair sem salvar | `:q!`
-Salvar um arquivo | `:w`
-Salvar e sair | `:wq`
-Deletar um character | `x`
-Desfazer uma ação | `u`
-Procurar uma letra ou palavra | `/palavra`
+| descrição                     | comando    |
+| ----------------------------- | ---------- |
+| Sair                          | `:q`       |
+| Sair sem salvar               | `:q!`      |
+| Salvar um arquivo             | `:w`       |
+| Salvar e sair                 | `:wq`      |
+| Deletar um character          | `x`        |
+| Desfazer uma ação             | `u`        |
+| Procurar uma letra ou palavra | `/palavra` |
 
 ### Atalhos
 
@@ -59,22 +65,29 @@ Navegar para cima e para baixo - `Page Up` e `Page Down`
 Apagar uma linha - `CTRL+U`
 
 ## Instalar Plugins
+
 ### step-by-step
+
 O gerenciador de plugins que vou usar é o [VimPlug](https://github.com/junegunn/vim-plug).
 
 #### Configurar nvim para instalar pluggins:
 
 Instale o gerenciador VimPlug:
+
 ```bash
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
 Adicione essas linhas no `~/.config/nvim/init.vim`
+
 ```vim
 call plug#begin()
 " Your plugins...
 call plug#end()
 ```
+
 _ex:_
+
 ```vim
 call plug#begin()
 Plug 'roxma/nvim-completion-manager'
@@ -86,14 +99,17 @@ call plug#end()
 #### Instalar plugins
 
 Você pode encontrar muitos plugins no site [VimAwesome](https://vimawesome.com/). Escolha um e adicione as linhas do plugins entre a função `call plug#begin()` e `call plug#end()` no arquivo `~/.config/nvim/init.vim`.
+
 ```vim
 call plug#begin()
 Plug 'valloric/youcompleteme'
 call plug#end()
- ```
+```
+
 segundo o padrão `Plug 'nomedodesenvolvedor/nomedoplugin'`.
 
 depois execute os comandos a seguir no nvim
+
 ```
 :PlugInstall
 :UpdateRemotePlugins
@@ -116,36 +132,42 @@ ex1:
 ```html
 html:5
 ```
+
 > `CTRL+Y+,`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
 </html>
 ```
+
 ex2:
+
 ```html
 div>ul>li*5
 ```
+
 > `CTRL+Y+,`
+
 ```html
 <div>
-	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
 ```
 
 _Additional Config_
+
 ```vim
 let g:user_emmet_leader_key='<C-Z>' " remap keybind to CTRL+Z+,
 ```
@@ -190,9 +212,10 @@ _Download_: https://vimawesome.com/plugin/vim-workspace
 
 _Plugin Label_: 'thaerkh/vim-workspace'
 
-_Usage_: Disponibiliza funcionalidades interessantes, mas eu uso so o autosave, porque é  o único que sei usar
+_Usage_: Disponibiliza funcionalidades interessantes, mas eu uso so o autosave, porque é o único que sei usar
 
 _Additional Config_:
+
 ```vim
 let g:workspace_autosave_always = 1
 ```
@@ -222,7 +245,6 @@ _Plugin Label_: 'editorconfig/editorconfig-vim'
 
 _Usage_: Padroniza configuração de editores através do arquivo `.editorconfig`
 
-
 ---
 
 referencias:
@@ -232,4 +254,3 @@ Installing Neovim: [https://github.com/neovim/neovim/wiki/Installing-Neovim](htt
 How to find a Word in Vim or vi text editor: [https://www.cyberciti.biz/faq/find-a-word-in-vim-or-vi-text-editor/](https://www.cyberciti.biz/faq/find-a-word-in-vim-or-vi-text-editor/) [[_archive_](https://web.archive.org/web/20210918162917/https://www.cyberciti.biz/faq/find-a-word-in-vim-or-vi-text-editor/)]
 
 How to Install NeoVim and Plugins with vim-plug: [https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/) [[_archive_](https://web.archive.org/web/20210918163307/https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)]
-

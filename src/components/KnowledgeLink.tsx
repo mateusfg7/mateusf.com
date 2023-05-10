@@ -2,23 +2,26 @@ import React from 'react'
 import Link from 'next/link'
 
 import { Date } from './Date'
+import { Post } from 'contentlayer/generated'
 
 interface Props {
-  id: string
-  title: string
-  description: string
-  date: string
+  post: Post
+  hideYear?: boolean
 }
 
-export function KnowledgeLink({ id, title, date, description }: Props) {
+export function KnowledgeLink({ post, hideYear = false }: Props) {
   return (
-    <Link href={`/post/${id}`} className="group">
+    <Link href={`/post/${post.id}`} className="group">
       <section>
         <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500 group-hover:text-blue-700 dark:group-hover:text-blue-500">
-          {title}
+          {post.title}
         </h2>
         <span className="text-neutral-500 group-hover:text-neutral-700 dark:group-hover:text-neutral-400">
-          <Date dateString={date} /> &#8226; {description}
+          <Date
+            dateString={post.date}
+            dateFormat={hideYear ? 'LLL d' : 'LLL d, yyyy'}
+          />{' '}
+          &#8226; {post.description}
         </span>
       </section>
     </Link>

@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  * {
+    @apply duration-150;
+  }
+
   body {
     @apply bg-neutral-100 dark:bg-neutral-1000;
     @apply text-neutral-900 dark:text-neutral-300 font-['Inter'];

@@ -4,6 +4,7 @@ date: '2021-05-11'
 description: React Native notes write during NextLevelWeek #5 of the Rocketseat'
 category: 'React Native'
 tags: 'nlw5, rocketseat, mobile, expo, libs'
+author: 'mateusfg7'
 ---
 
 # Packages
@@ -13,8 +14,11 @@ To install a package with expo just type:
 ```
 $ expo install [package]
 ```
+
 ## Used Packages/Components
+
 - **react-native** (does not need installation)
+
   - **SafeAreaView**: _A view, but contain all the content in visible area of the phone. (just works on Iphone)_
   - **Platform**: _Get information about the running device._
   - **StatusBar**: _Get information and dimensions about the status bar of the phone._
@@ -24,6 +28,7 @@ $ expo install [package]
   - **ActivityIndicator**: _Component to show load circle_
 
 - **expo**
+
   - **@expo/vector-icons**: _Use most common icons on expo, equivalent to react-icons package for React._
   - **expo-font**: _Use customized fonts on expo._
   - **@expo-google-fonts/[font]**: _Use a specific font from google fonts. package e.g.: @expo-google-fonts/inter_
@@ -35,15 +40,14 @@ $ expo install [package]
   - **Swipeable** from **react-native-gesture-handler/Swipeable**: _A view thats allows swipe it to any side, and render some component behind original component_
   - **react-native-iphone-x-helper**: _Misc help methods for Iphone X_
 
-
 # Javascript/Typescript
 
 ## If/Else
 
 The `if` conditional accepts a block without `{}`, like:
-```typescript
-if (condition)
-  return "Hello Word"
 
-if (condition) return "Hello Word"
+```typescript
+if (condition) return 'Hello Word'
+
+if (condition) return 'Hello Word'
 ```

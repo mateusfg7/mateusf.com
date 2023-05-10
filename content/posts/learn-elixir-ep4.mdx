@@ -1,20 +1,23 @@
 ---
-title: "Learn Elixir #4"
-description: "binaries, strings, and charlists"
+title: 'Learn Elixir #4'
+description: 'binaries, strings, and charlists'
 date: '2021-02-18'
 category: Elixir
 tags: 'getting-start, cli, code, programming, learn-elixir'
+author: 'mateusfg7'
 ---
 
 ## Unicode and Code Points
 
 **You can use `?` before a character literal to see your code point**
+
 ```elixir
 iex> ?a
 97
 iex> ?ł
 322
 ```
+
 ```elixir
 iex> "\u0061" === "a"
 true
@@ -35,6 +38,7 @@ iex> String.length(string)
 iex> byte_size(string)
 7
 ```
+
 ## Charlist
 
 **A charlist is a list of integers where all the integers are valid code points**
@@ -49,6 +53,7 @@ iex> 'hello'
 iex> List.first('hello')
 104
 ```
+
 ```elixir
 iex> heartbeats_per_minute = [99, 97, 116]
 'cat'
@@ -64,6 +69,7 @@ iex> to_string :hello
 iex> to_string 1
 "1"
 ```
+
 ```elixir
 iex> 'this ' <> 'fails'
 ** (ArgumentError) expected binary argument in <> operator but got: 'this '
@@ -85,4 +91,3 @@ iex> "he" <> "llo"
 ## referencies
 
 Binaries, strings, and charlists: [https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html) [[_archive_](https://web.archive.org/web/20210920215640/https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)]
-

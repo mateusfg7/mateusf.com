@@ -1,9 +1,10 @@
 ---
-title: "Sqlite3 With Python"
+title: 'Sqlite3 With Python'
 date: '2021-03-20'
 description: 'Manage a SQLite3 database with Python'
 category: Python
 tags: 'database, sqlite, crud'
+author: 'mateusfg7'
 ---
 
 [screenshot_1]: https://i.ibb.co/XYnddkT/screenshot-1.png
@@ -16,6 +17,7 @@ tags: 'database, sqlite, crud'
 ## Connection
 
 First, we need to create a connection with database:
+
 ```python
 import sqlite3
 from sqlite3 import Error
@@ -41,6 +43,7 @@ In this case the connection was saved in `conn`, this variable will receive all 
 After running this on python3 interactive shell we will receive the version of sqlite library and the database will be generated:
 
 `$ python3`
+
 ```
 >>> from create_connection import create_connection
 >>> create_connection('my_database.db')
@@ -54,12 +57,12 @@ If you pass file name as ':memory:', the database will be saved on the memory of
 
 ![/assets/sqlite3-with-python/screenshot_2][screenshot_2]
 
-
 ## Refactor 1
 
 Before of all, lets create a class where will contain all the methods:
 
 `db_manager.py`
+
 ```python
 class DB_Manager:
   def __init__(self):
@@ -93,19 +96,25 @@ def create_table(self, create_table_sql):
 ```
 
 With the `DB_Manager`, let's run the Python Interactive Shell:
+
 ```bash
 $ python3
 ```
 
 Let's import the `DB_Manager`:
+
 ```python
 >>> from db_manager import DB_manager
 ```
+
 then declare the variable containing the database name:
+
 ```python
 >>> database = 'pythonsqlite.db'
 ```
+
 then, declare the variable containing the SQL statement of project table and the task table:
+
 ```python
 >>> sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS projects (
                                       id integer PRIMARY KEY,
@@ -124,13 +133,16 @@ then, declare the variable containing the SQL statement of project table and the
                                   FOREIGN KEY (project_id) REFERENCES projects (id)
                                 ); """
 ```
+
 then, we will instantiate the `DB_Manager` and create the connection:
+
 ```python
 >>> db_manager = DB_Manager()
 >>> db_manager.create_connection()
 ```
 
 after, let's create the tables:
+
 ```python
 >>> if db_manager.conn is not None:
         # create projects table
@@ -189,6 +201,7 @@ First, let's write the connection and the insert statement as a hard code on `__
 
 # code...
 ```
+
 Then, delete the `create_connection` function.
 
 ## Insert Data
@@ -294,11 +307,12 @@ SELECT * FROM tasks;
 
 ![/assets/sqlite3-with-python/screenshot_6][screenshot_6]
 
-
 ---
+
 ## referencies:
 
 SQLite Python: [https://www.sqlitetutorial.net/sqlite-python/](https://www.sqlitetutorial.net/sqlite-python/) [[_archive_](https://web.archive.org/web/20210922122212/https://www.sqlitetutorial.net/sqlite-python/)]
-  - Creating a New Database: [https://www.sqlitetutorial.net/sqlite-python/creating-database/](https://www.sqlitetutorial.net/sqlite-python/creating-database/) [[_archive_](https://web.archive.org/web/20210922122523/https://www.sqlitetutorial.net/sqlite-python/creating-database/)]
-  - Creating Tables: [https://www.sqlitetutorial.net/sqlite-python/create-tables/](https://www.sqlitetutorial.net/sqlite-python/create-tables/) [[_archive_](https://web.archive.org/web/20210922122450/https://www.sqlitetutorial.net/sqlite-python/create-tables/)]
-  - Insert data: [https://www.sqlitetutorial.net/sqlite-python/insert/](https://www.sqlitetutorial.net/sqlite-python/insert/) [[_archive_](https://web.archive.org/web/20210922122231/https://www.sqlitetutorial.net/sqlite-python/insert/)]
+
+- Creating a New Database: [https://www.sqlitetutorial.net/sqlite-python/creating-database/](https://www.sqlitetutorial.net/sqlite-python/creating-database/) [[_archive_](https://web.archive.org/web/20210922122523/https://www.sqlitetutorial.net/sqlite-python/creating-database/)]
+- Creating Tables: [https://www.sqlitetutorial.net/sqlite-python/create-tables/](https://www.sqlitetutorial.net/sqlite-python/create-tables/) [[_archive_](https://web.archive.org/web/20210922122450/https://www.sqlitetutorial.net/sqlite-python/create-tables/)]
+- Insert data: [https://www.sqlitetutorial.net/sqlite-python/insert/](https://www.sqlitetutorial.net/sqlite-python/insert/) [[_archive_](https://web.archive.org/web/20210922122231/https://www.sqlitetutorial.net/sqlite-python/insert/)]

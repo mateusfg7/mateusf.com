@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { Header } from 'components/Header'
 import { KnowledgeList } from 'components/KnowledgeList'
 
 import { getUniqueTagListFromPosts, getPostListBasedOnTag } from 'lib/tags'
