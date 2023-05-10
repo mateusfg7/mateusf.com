@@ -20,13 +20,7 @@ export function KnowledgeList({ posts, separateByYear = false }: Props) {
             </h1>
             <div className="flex flex-col gap-3">
               {postsOfYear.posts.map((post, key) => (
-                <KnowledgeLink
-                  key={key}
-                  id={post.id}
-                  title={post.title}
-                  date={post.date}
-                  description={post.description}
-                />
+                <KnowledgeLink key={key} post={post} hideYear />
               ))}
             </div>
           </div>
@@ -37,13 +31,7 @@ export function KnowledgeList({ posts, separateByYear = false }: Props) {
     return (
       <div className="flex flex-col gap-5">
         {posts.map((post, key) => (
-          <KnowledgeLink
-            key={key}
-            id={post.id}
-            title={post.title}
-            date={post.date}
-            description={post.description}
-          />
+          <KnowledgeLink key={key} post={post} />
         ))}
       </div>
     )
