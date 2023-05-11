@@ -1,5 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
-import { getFrequencyOfValue, removeRepeatedValuesFromArray, transformToSlug } from './utils'
+import { getFrequencyOfValue, removeRepeatedValuesFromArray, slug } from './utils'
 
 const getRawCategoryList = () => allPosts.map(post => post.category)
 
@@ -28,10 +28,10 @@ export function getCategoriesAndNumberOfPosts(): CategoriesAndNumberOfPosts[] {
 }
 
 export const getPostListOfCategory = (category: string) =>
-  allPosts.filter(post => transformToSlug(post.category) === transformToSlug(category))
+  allPosts.filter(post => slug(post.category) === slug(category))
 
   export function getNormalCategoryString(category: string) {
     const categories = getUniqueCategoryList()
 
-    return categories.find(currCategory => transformToSlug(currCategory) === transformToSlug(category))
+    return categories.find(currCategory => slug(currCategory) === slug(category))
   }

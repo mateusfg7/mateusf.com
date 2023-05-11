@@ -6,7 +6,7 @@ import { KnowledgeList } from 'components/KnowledgeList'
 import { getUniqueTagListFromPosts, getPostListBasedOnTag, getNormalTagString } from 'lib/tags'
 import { getSortedPosts } from 'lib/getSortedPosts'
 import { Tag } from './Icons'
-import { transformToSlug } from 'lib/utils'
+import { slug } from 'lib/utils'
 
 interface Props {
   params: { tag: string }
@@ -21,7 +21,7 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function Page({ params }: Props) {
   const { tag } = params
-  const postList = getSortedPosts(getPostListBasedOnTag(transformToSlug(tag)))
+  const postList = getSortedPosts(getPostListBasedOnTag(slug(tag)))
 
   return (
     <div className="blog-content-w m-auto">
@@ -39,5 +39,5 @@ export default function Page({ params }: Props) {
 export async function generateStaticParams() {
   const tagList = getUniqueTagListFromPosts()
 
-  return tagList.map(tag => ({ tag: transformToSlug(tag) }))
+  return tagList.map(tag => ({ tag: slug(tag) }))
 }

@@ -5,7 +5,7 @@ import { KnowledgeList } from 'components/KnowledgeList'
 
 import { getUniqueCategoryList, getPostListOfCategory, getNormalCategoryString } from 'lib/categories'
 import { getSortedPosts } from 'lib/getSortedPosts'
-import { transformToSlug } from 'lib/utils'
+import { slug } from 'lib/utils'
 import { FolderOpen } from './Icons'
 
 interface Props {
@@ -22,7 +22,7 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function Page({ params }: Props) {
   const { category } = params
 
-  const postList = getSortedPosts(getPostListOfCategory(transformToSlug(category)))
+  const postList = getSortedPosts(getPostListOfCategory(slug(category)))
 
   return (
     <div className="blog-content-w m-auto">
@@ -40,5 +40,5 @@ export default function Page({ params }: Props) {
 export async function generateStaticParams() {
   const categoryList = getUniqueCategoryList()
 
-  return categoryList.map(category => ({ category: transformToSlug(category) }))
+  return categoryList.map(category => ({ category: slug(category) }))
 }

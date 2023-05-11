@@ -12,7 +12,7 @@ export function removeRepeatedValuesFromArray<T>(array: T[]): T[] {
   })
 }
 
-export const transformToSlug = (text: string) =>
+export const slug = (text: string) =>
   text
     .toLowerCase()
     .normalize('NFD')

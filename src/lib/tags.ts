@@ -1,5 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
-import { removeRepeatedValuesFromArray, transformToSlug } from './utils'
+import { removeRepeatedValuesFromArray, slug } from './utils'
 
 const getRawTagListFromPosts = (): string[] => {
   const listOfTagList = allPosts.map(post => {
@@ -20,8 +20,8 @@ export const getUniqueTagListFromPosts = () =>
 
 export function getPostListBasedOnTag(tag: string) {
   const filteredPostList = allPosts.filter(post => {
-    const listOfTags = post.tags.split(',').map(rawTag => transformToSlug(rawTag.trim()))
-    return listOfTags.includes(transformToSlug(tag))
+    const listOfTags = post.tags.split(',').map(rawTag => slug(rawTag.trim()))
+    return listOfTags.includes(slug(tag))
   })
 
   return filteredPostList
@@ -30,5 +30,5 @@ export function getPostListBasedOnTag(tag: string) {
 export function getNormalTagString(tag: string) {
   const allTags = getUniqueTagListFromPosts()
 
-  return allTags.find(currTag => transformToSlug(currTag) === transformToSlug(tag))
+  return allTags.find(currTag => slug(currTag) === slug(tag))
 }
