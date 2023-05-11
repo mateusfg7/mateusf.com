@@ -9,6 +9,7 @@ import { allPosts, type Post } from 'contentlayer/generated'
 
 import { Date } from 'components/Date'
 import { authors } from 'lib/authors'
+import { transformToSlug } from 'lib/utils'
 
 interface Props {
   params: { slug: string }
@@ -55,7 +56,7 @@ export default function Page({ params }: Props) {
           <p>
             <Date dateString={post.date} /> &#8226;{' '}
             <Link
-              href={`/category/${post.category}`}
+              href={`/category/${transformToSlug(post.category)}`}
               className="hover:text-blue-500 dark:hover:text-blue-400"
             >
               {post.category}
@@ -71,7 +72,7 @@ export default function Page({ params }: Props) {
           )}
           <p className="flex flex-wrap gap-3 mt-1">
             {tags.map((tag, index) => (
-              <Link href={`/tag/${tag}`} key={index}>
+              <Link href={`/tag/${transformToSlug(tag)}`} key={index}>
                 <span className="flex items-center justify-center gap-1 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200 hover:cursor-pointe">
                   {tag} <FiTag size={15} />
                 </span>

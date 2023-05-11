@@ -1,6 +1,6 @@
 import { allPosts } from 'contentlayer/generated'
 
-import { removeRepeatedValuesFromArray } from './utils'
+import { removeRepeatedValuesFromArray, transformToSlug } from './utils'
 import { getSortedPosts } from './getSortedPosts'
 
 export function getAuthors() {
@@ -10,11 +10,11 @@ export function getAuthors() {
 }
 
 export function getAuthorByUser(user: string) {
-  return authors.filter(author => author.user === user)[0]
+  return authors.filter(author => transformToSlug(author.user) === transformToSlug(user))[0]
 }
 
 export function getPostsByAuthor(authorUsername: string) {
-  const postList = allPosts.filter(post => post.author === authorUsername)
+  const postList = allPosts.filter(post => transformToSlug(post.author) === transformToSlug(authorUsername))
 
   return getSortedPosts(postList)
 }
