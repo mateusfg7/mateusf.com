@@ -12,10 +12,14 @@ import rehypeShiftHeading from 'rehype-shift-heading'
 import { makeSource } from 'contentlayer/source-files'
 
 import { Post } from './content/definitions/Post'
-import { rehypePrettyCodeOptions } from './src/lib/rehypePrettyCode'
+import {
+  rehypePrettyCodeOptions,
+  rehypeAutolinkHeadingsOptions,
+  rehypeShiftHeadingOptions
+} from './content/plugin'
 
 export default makeSource({
-  contentDirPath: 'content',
+  contentDirPath: 'contentlayer',
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkBreaks, remarkHint],
@@ -24,13 +28,8 @@ export default makeSource({
       rehypeSlug,
       rehypeToc,
       rehypeKatex,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'wrap'
-        }
-      ],
-      [rehypeShiftHeading, { shift: 1 }]
+      [rehypeAutolinkHeadings, rehypeAutolinkHeadingsOptions],
+      [rehypeShiftHeading, rehypeShiftHeadingOptions]
     ]
   }
 })
