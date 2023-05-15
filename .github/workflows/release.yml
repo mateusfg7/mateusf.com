@@ -59,7 +59,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Update CHANGELOG.md
         run: |
-          npx conventional-changelog-cli -p conventionalcommits -i docs/CHANGELOG.md -s -r 0 &&\
+          npx conventional-changelog-cli -p conventionalcommits -i CHANGELOG.md -s -r 0 &&\
             git add docs/CHANGELOG.md &&\
             git commit -m "docs(CHANGELOG): v$(git describe --tags --abbrev=0)" &&\
             git push
