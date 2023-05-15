@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx",
-    "bump-tag": "ts-node tools/bump-tag-version.ts"
+    "bump-tag": "npx ts-node tools/bump-tag-version.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.8",
