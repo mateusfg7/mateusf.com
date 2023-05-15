@@ -138,6 +138,12 @@ devDependencies:
   prettier:
     specifier: 2.8.8
     version: 2.8.8
+  semver:
+    specifier: ^7.5.1
+    version: 7.5.1
+  simple-git:
+    specifier: ^3.18.0
+    version: 3.18.0
   tailwindcss:
     specifier: ^3.2.4
     version: 3.2.7(postcss@8.4.21)(ts-node@10.9.1)
@@ -848,6 +854,18 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /@kwsites/file-exists@1.1.1:
+    resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@kwsites/promise-deferred@1.1.1:
+    resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+    dev: true
+
   /@mdx-js/esbuild@2.3.0(esbuild@0.17.18):
     resolution: {integrity: sha512-r/vsqsM0E+U4Wr0DK+0EfmABE/eg+8ITW4DjvYdh3ve/tK2safaqHArNnaqbOk1DjYGrhxtoXoGaM3BY8fGBTA==}
     peerDependencies:
@@ -1142,7 +1160,7 @@ packages:
       '@opentelemetry/propagator-b3': 1.5.0(@opentelemetry/api@1.1.0)
       '@opentelemetry/propagator-jaeger': 1.5.0(@opentelemetry/api@1.1.0)
       '@opentelemetry/sdk-trace-base': 1.5.0(@opentelemetry/api@1.1.0)
-      semver: 7.3.8
+      semver: 7.5.1
     dev: false
 
   /@opentelemetry/semantic-conventions@1.5.0:
@@ -1522,7 +1540,7 @@ packages:
       grapheme-splitter: 1.0.4
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
-      semver: 7.3.8
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@4.9.5)
       typescript: 4.9.5
     transitivePeerDependencies:
@@ -1596,7 +1614,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@4.9.5)
       typescript: 4.9.5
     transitivePeerDependencies:
@@ -1617,7 +1635,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.5(typescript@4.9.5)
       eslint: 8.40.0
       eslint-scope: 5.1.1
-      semver: 7.3.8
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1872,7 +1890,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.3.8
+      semver: 7.5.1
     dev: true
 
   /busboy@1.6.0:
@@ -2546,7 +2564,7 @@ packages:
       is-core-module: 2.11.0
       minimatch: 3.1.2
       resolve: 1.22.1
-      semver: 7.3.8
+      semver: 7.5.1
     dev: true
 
   /eslint-plugin-node@11.1.0(eslint@8.40.0):
@@ -4599,7 +4617,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.11.0
-      semver: 7.3.8
+      semver: 7.5.1
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -5384,6 +5402,14 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
+
+  /semver@7.5.1:
+    resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -5416,6 +5442,16 @@ packages:
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: true
+
+  /simple-git@3.18.0:
+    resolution: {integrity: sha512-Yt0GJ5aYrpPci3JyrYcsPz8Xc05Hi4JPSOb+Sgn/BmPX35fn/6Fp9Mef8eMBCrL2siY5w4j49TA5Q+bxPpri1Q==}
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /slash@3.0.0:
