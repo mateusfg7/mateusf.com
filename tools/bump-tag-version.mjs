@@ -1,6 +1,6 @@
 import semver from 'semver'
 import { simpleGit } from 'simple-git'
-import packageJson from '../package.json'
+import packageJson from '../package.json' assert { type: 'json' }
 import path from 'path'
 
 function log(text) {
