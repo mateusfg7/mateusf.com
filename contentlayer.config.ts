@@ -19,18 +19,22 @@ import {
   rehypeAutolinkHeadingsOptions,
   rehypeShiftHeadingOptions
 } from './content/plugin'
+import { POST_SOURCES } from './content/postsSources'
 
 const syncContentFromGit = async (contentDir: string) => {
   const syncRun = async () => {
-    const gitUrl = 'https://github.com/mateusfg7/_mfg-b_articles'
-    await runBashCommand(`
-      if [ -d  "${contentDir}" ];
-        then
-          cd "${contentDir}"; git pull;
-        else
-          git clone --depth 1 --single-branch ${gitUrl} ${contentDir}/posts;
-      fi
-    `)
+    POST_SOURCES.map(async url => {
+      const repoName = url.split('/').pop()
+      const originDir = `${contentDir}/posts/${repoName}`
+      await runBashCommand(`
+        if [ -d  "${originDir}" ];
+          then
+            cd "${originDir}"; git pull;
+          else
+            git clone --depth 1 --single-branch ${url} ${originDir};
+        fi
+      `)
+    })
   }
 
   let wasCancelled = false
