@@ -1,4 +1,5 @@
 import { defineDocumentType } from 'contentlayer/source-files'
+import { slug } from '../../src/lib/utils'
 import { authors } from '../../src/lib/authors'
 
 export const Post = defineDocumentType(() => ({
@@ -38,7 +39,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     id: {
       type: 'string',
-      resolve: post => post._raw.sourceFileName.replace(/\.mdx$/, '')
+      resolve: post => slug(post.title)
     }
   }
 }))
