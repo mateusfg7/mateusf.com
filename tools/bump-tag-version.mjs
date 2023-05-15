@@ -1,16 +1,16 @@
 import semver from 'semver'
-import { simpleGit, SimpleGit } from 'simple-git'
+import { simpleGit } from 'simple-git'
 import packageJson from '../package.json'
 import path from 'path'
 
-function log(text: string) {
+function log(text) {
   console.log(`LOG | ${text}`)
 }
 
 const REPO_DIR = path.resolve(__dirname, '../')
 
 async function main() {
-  const simplegit: SimpleGit = simpleGit(REPO_DIR)
+  const simplegit = simpleGit(REPO_DIR)
 
   const tags = await simplegit.tags()
   const lastTag = tags.latest
