@@ -60,7 +60,7 @@ jobs:
       - name: Update CHANGELOG.md
         run: |
           npx conventional-changelog-cli -p conventionalcommits -i CHANGELOG.md -s -r 0 &&\
-            git add docs/CHANGELOG.md &&\
+            git add CHANGELOG.md &&\
             git commit -m "docs(CHANGELOG): v$(git describe --tags --abbrev=0)" &&\
             git push
 
