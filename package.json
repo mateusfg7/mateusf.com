@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx",
