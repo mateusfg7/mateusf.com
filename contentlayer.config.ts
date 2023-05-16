@@ -21,11 +21,16 @@ import {
 } from './content/plugin'
 import { POST_SOURCES } from './content/postsSources'
 
+const log = (msg: string) => console.log(`CONTENTLAYER | ${msg}`)
+
 const syncContentFromGit = async (contentDir: string) => {
   const syncRun = async () => {
+    log('Init repositories sync')
+
     POST_SOURCES.map(async url => {
       const repoName = url.split('/').pop()
       const originDir = `${contentDir}/posts/${repoName}`
+      log(`Sync ${repoName}`)
       await runBashCommand(`
         if [ -d  "${originDir}" ];
           then
@@ -41,12 +46,13 @@ const syncContentFromGit = async (contentDir: string) => {
   let syncInterval
 
   const syncLoop = async () => {
-    console.log('Syncing content files from git')
+    log('Syncing content files from git')
 
     await syncRun()
 
     if (wasCancelled) return
 
+    log('Set interval')
     syncInterval = setTimeout(syncLoop, 1000 * 60)
   }
 
