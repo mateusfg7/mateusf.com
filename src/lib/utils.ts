@@ -17,4 +17,8 @@ export const slug = (text: string) =>
     .toLowerCase()
     .normalize('NFD')
     .replaceAll(/\p{M}/gu, '')
+    .replaceAll('-', '')
+    .replaceAll('—', '')
     .replaceAll(' ', '-')
+    .replaceAll('#', '')
+    .replaceAll(',', '')
