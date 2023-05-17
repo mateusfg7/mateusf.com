@@ -1,3 +1,5 @@
+import { slug as githubSlugger } from 'github-slugger'
+
 export function getFrequencyOfValue<T>(array: T[], value: unknown): number {
   let frequency = 0
 
@@ -13,12 +15,4 @@ export function removeRepeatedValuesFromArray<T>(array: T[]): T[] {
 }
 
 export const slug = (text: string) =>
-  text
-    .toLowerCase()
-    .normalize('NFD')
-    .replaceAll(/\p{M}/gu, '')
-    .replaceAll('-', '')
-    .replaceAll('—', '')
-    .replaceAll(' ', '-')
-    .replaceAll('#', '')
-    .replaceAll(',', '')
+  githubSlugger(text).toLowerCase().normalize('NFD').replaceAll(/\p{M}/gu, '')
