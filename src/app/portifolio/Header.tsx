@@ -17,29 +17,29 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
 
   return (
     <div
-      className={`flex justify-center items-center fixed bg-neutral-1000/80 backdrop-blur-lg w-full z-50 duration-300 border-b ${
+      className={`fixed z-50 flex w-full items-center justify-center border-b bg-neutral-1000/80 backdrop-blur-lg duration-300 ${
         percentScrollPosition > 0
           ? 'border-b-neutral-800'
           : 'border-b-transparent'
       }`}
     >
-      <nav className="portifolio-content-w flex items-center justify-between md:justify-center gap-4 py-10 md:py-6 relative">
-        <div className="md:absolute left-0">
+      <nav className="portifolio-content-w relative flex items-center justify-between gap-4 py-10 md:justify-center md:py-6">
+        <div className="left-0 md:absolute">
           <a
             href="#home"
-            className="text-blue-500 font-medium font-chivo-mono hover:cursor-pointer"
+            className="font-chivo-mono font-medium text-blue-500 hover:cursor-pointer"
           >
             Mateus Felipe
           </a>
         </div>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden items-center gap-4 md:flex">
           <a
             href="#sobre-mim"
             className={`${
               percentScrollPosition >= 9 && percentScrollPosition < 21
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
-            } hover:text-neutral-50 hover:cursor-pointer`}
+            } hover:cursor-pointer hover:text-neutral-50`}
           >
             Sobre mim
           </a>
@@ -49,7 +49,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
               percentScrollPosition >= 21 && percentScrollPosition < 66
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
-            } hover:text-neutral-50 hover:cursor-pointer`}
+            } hover:cursor-pointer hover:text-neutral-50`}
           >
             Projetos
           </a>
@@ -59,7 +59,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
               percentScrollPosition >= 66 && percentScrollPosition < 95
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
-            } hover:text-neutral-50 hover:cursor-pointer`}
+            } hover:cursor-pointer hover:text-neutral-50`}
           >
             Conhecimentos
           </a>
@@ -69,14 +69,14 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
               percentScrollPosition >= 95
                 ? 'text-neutral-50'
                 : 'text-neutral-400'
-            } hover:text-neutral-50 hover:cursor-pointer`}
+            } hover:cursor-pointer hover:text-neutral-50`}
           >
             Contato
           </a>
         </div>
-        <div className="flex items-center gap-6 md:gap-4 md:absolute right-0">
+        <div className="right-0 flex items-center gap-6 md:absolute md:gap-4">
           <a
-            className="text-xl text-neutral-300 hover:text-neutral-50 hover:cursor-pointer"
+            className="text-xl text-neutral-300 hover:cursor-pointer hover:text-neutral-50"
             href="https://linkedin.com/in/mateusfg"
             target="_blank"
             rel="noreferrer"
@@ -85,7 +85,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
             <FiLinkedin />
           </a>
           <a
-            className="text-xl text-neutral-300 hover:text-neutral-50 hover:cursor-pointer"
+            className="text-xl text-neutral-300 hover:cursor-pointer hover:text-neutral-50"
             href="https://github.com/mateusfg7"
             target="_blank"
             rel="noreferrer"
@@ -94,7 +94,7 @@ export function Header({ scrollPosition, maxScrollValue }: Props) {
             <FiGithub />
           </a>
           <a
-            className="text-xl text-neutral-300 hover:text-neutral-50 hover:cursor-pointer"
+            className="text-xl text-neutral-300 hover:cursor-pointer hover:text-neutral-50"
             href="https://instagram.com/mateusfg7"
             target="_blank"
             rel="noreferrer"

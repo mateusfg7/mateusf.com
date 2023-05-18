@@ -13,7 +13,7 @@ export function KnowledgeLink({ post, hideYear = false }: Props) {
   return (
     <Link href={`/post/${post.id}`} className="group">
       <section>
-        <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500 group-hover:text-blue-700 dark:group-hover:text-blue-500">
+        <h2 className="text-xl font-bold text-neutral-700 group-hover:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500">
           {post.title}
         </h2>
         <span className="text-neutral-500 group-hover:text-neutral-700 dark:group-hover:text-neutral-400">

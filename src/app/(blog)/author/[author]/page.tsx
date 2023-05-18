@@ -27,8 +27,8 @@ export default function Page({ params }: Props) {
     <div className="blog-content-w m-auto">
       <div className="mb-7">
         <div className="flex items-end gap-2">
-          <h1 className="font-bold text-2xl">{author.name}</h1>
-          <span className="text-neutral-500 italic">{author.user}</span>
+          <h1 className="text-2xl font-bold">{author.name}</h1>
+          <span className="italic text-neutral-500">{author.user}</span>
         </div>
         <div className="flex items-center gap-5 text-neutral-600 dark:text-neutral-400">
           <div className="flex items-center gap-1">
@@ -39,7 +39,7 @@ export default function Page({ params }: Props) {
             href={author.url}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1 group hover:text-black hover:dark:text-white"
+            className="group flex items-center gap-1 hover:text-black hover:dark:text-white"
           >
             <span>About me</span>
             <ArrowRight className="opacity-0 group-hover:opacity-100" />

@@ -2,14 +2,14 @@
 
 @layer utilities {
   .portifolio-content-w {
-    @apply px-5 md:p-0 md:max-w-5xl w-full;
+    @apply w-full px-5 md:max-w-5xl md:p-0;
   }
   .blog-content-w {
-    @apply px-4 md:p-0 md:max-w-4xl w-full;
+    @apply w-full px-4 md:max-w-4xl md:p-0;
   }
 
   .limits {
-    @apply border-red-600 border;
+    @apply border border-red-600;
     @apply bg-blue-500;
   }
 }

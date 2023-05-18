@@ -8,7 +8,7 @@ interface Props {
 
 export function ProjectCard({ data }: Props) {
   const Title = () => (
-    <div className="flex flex-col md:flex-row items-center gap-5 text-2xl text-neutral-50 mb-10 md:mb-4">
+    <div className="mb-10 flex flex-col items-center gap-5 text-2xl text-neutral-50 md:mb-4 md:flex-row">
       <h2 className="font-bold">{data.title}</h2>
       <span className="hidden md:inline">
         <BsDot />
@@ -26,11 +26,11 @@ export function ProjectCard({ data }: Props) {
     </div>
   )
   const Tags = () => (
-    <div className="mt-10 md:mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+    <div className="mt-10 flex flex-wrap items-center justify-center gap-2 md:mt-4 md:justify-start">
       {data.tags.map(tag => (
         <span
           key={tag}
-          className="text-blue-400 bg-blue-400/5 py-1 px-2 rounded-xl"
+          className="rounded-xl bg-blue-400/5 py-1 px-2 text-blue-400"
         >
           {tag}
         </span>
@@ -39,7 +39,7 @@ export function ProjectCard({ data }: Props) {
   )
 
   return (
-    <div className="bg-neutral-900 shadow-2xl shadow-black/30  flex flex-col w-[30rem] rounded-3xl overflow-hidden">
+    <div className="flex w-[30rem] flex-col  overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl shadow-black/30">
       {data.image && (
         <div className="h-56 w-full">
           <img
@@ -49,7 +49,7 @@ export function ProjectCard({ data }: Props) {
           />
         </div>
       )}
-      <div className="p-5 flex-1 flex flex-col">
+      <div className="flex flex-1 flex-col p-5">
         <div>
           <Title />
           <p className="text-justify md:text-left">{data.description}</p>
@@ -62,7 +62,7 @@ export function ProjectCard({ data }: Props) {
                 href={data.repository}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 rounded-2xl border border-blue-500 p-4 text-blue-500 hover:bg-blue-500 hover:text-neutral-50"
               >
                 Repositório <FiGithub />
               </a>
@@ -74,7 +74,7 @@ export function ProjectCard({ data }: Props) {
                 href={data.files}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 rounded-2xl border border-blue-500 p-4 text-blue-500 hover:bg-blue-500 hover:text-neutral-50"
               >
                 Arquivos <FiFolder />
               </a>
@@ -86,7 +86,7 @@ export function ProjectCard({ data }: Props) {
                 href={data.website}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-blue-500 hover:text-neutral-50 border border-blue-500 bg-blue-500/10 hover:bg-blue-500 rounded-2xl p-4"
+                className="flex items-center gap-2 rounded-2xl border border-blue-500 bg-blue-500/10 p-4 text-blue-500 hover:bg-blue-500 hover:text-neutral-50"
               >
                 Website <FiGlobe />
               </a>

@@ -39,9 +39,9 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <div className="flex flex-col gap-4 pb-5 leading-6 border-b border-neutral-500 mb-8">
+      <div className="mb-8 flex flex-col gap-4 border-b border-neutral-500 pb-5 leading-6">
         <div>
-          <h1 className="font-bold text-2xl">{post.title}</h1>
+          <h1 className="text-2xl font-bold">{post.title}</h1>
           <div className="flex gap-2 text-neutral-600 dark:text-neutral-400">
             <span>by</span>
             <Link
@@ -70,10 +70,10 @@ export default function Page({ params }: Props) {
               <Date dateString={post.lastUpdate} /> <RiHistoryLine />
             </p>
           )}
-          <p className="flex flex-wrap gap-3 mt-1">
+          <p className="mt-1 flex flex-wrap gap-3">
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
-                <span className="flex items-center justify-center gap-1 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200 hover:cursor-pointe">
+                <span className="hover:cursor-pointe flex items-center justify-center gap-1 text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
                   {tag} <FiTag size={15} />
                 </span>
               </Link>

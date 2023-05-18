@@ -5,30 +5,30 @@ export function AboutSection() {
   return (
     <div
       id="sobre-mim"
-      className="min-h-screen flex items-center justify-center bg-neutral-900 py-20 shadow-2xl shadow-black/30"
+      className="flex min-h-screen items-center justify-center bg-neutral-900 py-20 shadow-2xl shadow-black/30"
     >
-      <div className="portifolio-content-w flex flex-col md:flex-row justify-between">
-        <div className="hidden md:block flex-1">
+      <div className="portifolio-content-w flex flex-col justify-between md:flex-row">
+        <div className="hidden flex-1 md:block">
           <img
             src="https://github.com/mateusfg7.png"
-            className="w-96 h-[30rem] object-cover rounded-3xl border border-neutral-500"
+            className="h-[30rem] w-96 rounded-3xl border border-neutral-500 object-cover"
           />
         </div>
-        <div className="flex-1 flex flex-col items-center md:block">
-          <h1 className="text-4xl md:mb-8 text-blue-500">Sobre mim</h1>
+        <div className="flex flex-1 flex-col items-center md:block">
+          <h1 className="text-4xl text-blue-500 md:mb-8">Sobre mim</h1>
           <img
             src="https://github.com/mateusfg7.png"
-            className="md:hidden w-1/2 my-14 object-cover rounded-3xl"
+            className="my-14 w-1/2 rounded-3xl object-cover md:hidden"
           />
-          <p className="text-xl mb-3 px-4 md:p-0">
+          <p className="mb-3 px-4 text-xl md:p-0">
             Me chamo <span className="font-bold">Mateus Felipe Gonçalves</span>,
             tenho 20 anos e moro em Pará de Minas - MG, Brasil.
           </p>
-          <p className="text-xl mb-3 px-4 md:p-0">
+          <p className="mb-3 px-4 text-xl md:p-0">
             <span className="font-semibold">Auto didata</span> full-stack.
             Possuo conhecimento em{' '}
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://reactjs.org/"
               target="_blank"
               rel="noreferrer"
@@ -37,7 +37,7 @@ export function AboutSection() {
             </a>{' '}
             e{' '}
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://nextjs.org/"
               target="_blank"
               rel="noreferrer"
@@ -46,7 +46,7 @@ export function AboutSection() {
             </a>{' '}
             no Front-end,{' '}
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://deno.land/"
               target="_blank"
               rel="noreferrer"
@@ -55,7 +55,7 @@ export function AboutSection() {
             </a>{' '}
             e{' '}
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://nodejs.org/"
               target="_blank"
               rel="noreferrer"
@@ -64,7 +64,7 @@ export function AboutSection() {
             </a>{' '}
             no Back-end, e{' '}
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://reactnative.dev/"
               target="_blank"
               rel="noreferrer"
@@ -73,7 +73,7 @@ export function AboutSection() {
             </a>
             /
             <a
-              className="text-neutral-50 hover:underline hover:cursor-pointer"
+              className="text-neutral-50 hover:cursor-pointer hover:underline"
               href="https://expo.dev/"
               target="_blank"
               rel="noreferrer"
@@ -86,20 +86,20 @@ export function AboutSection() {
             assuntos em inglês, e também escrevendo blog posts e documentações
             de projetos pessoais.
           </p>
-          <p className="text-xl px-4 md:p-0">
+          <p className="px-4 text-xl md:p-0">
             Também tenho interesse na área de construção civil, elétrica e
             automação residencial.
           </p>
-          <div className="mt-12 md:mt-6 flex items-center gap-10">
+          <div className="mt-12 flex items-center gap-10 md:mt-6">
             <a
-              className="text-blue-500 hover:text-blue-300 flex justify-center items-center gap-2"
+              className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-300"
               target="_blank"
               href="/assets/portifolio/cv-mateus-felipe.pdf"
             >
               Baixar CV <FiDownload />
             </a>
             <Link
-              className="text-blue-500 hover:text-blue-300 flex justify-center items-center gap-2"
+              className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-300"
               href="/"
             >
               Blog <FiBook />

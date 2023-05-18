@@ -6,21 +6,21 @@ import { devProjects, civilProjects } from './projects'
 export function ProjectsSection() {
   return (
     <SectionLayout title="Projetos Pessoais" id="projetos">
-      <div className="w-full mb-20">
-        <div className="w-full text-center mb-12">
-          <h2 className="text-neutral-50 text-3xl">Programação</h2>
+      <div className="mb-20 w-full">
+        <div className="mb-12 w-full text-center">
+          <h2 className="text-3xl text-neutral-50">Programação</h2>
         </div>
-        <div className="flex justify-center flex-wrap gap-10">
+        <div className="flex flex-wrap justify-center gap-10">
           {devProjects.map(project => (
             <ProjectCard data={project} key={project.title} />
           ))}
         </div>
       </div>
-      <div className="w-full mb-20">
-        <div className="w-full text-center mb-12">
-          <h2 className="text-neutral-50 text-3xl">Edificações</h2>
+      <div className="mb-20 w-full">
+        <div className="mb-12 w-full text-center">
+          <h2 className="text-3xl text-neutral-50">Edificações</h2>
         </div>
-        <div className="flex justify-center flex-wrap gap-10">
+        <div className="flex flex-wrap justify-center gap-10">
           {civilProjects.map(project => (
             <ProjectCard data={project} key={project.title} />
           ))}

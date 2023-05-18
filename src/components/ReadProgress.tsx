@@ -18,7 +18,7 @@ export const ReadProgress: React.FC = () => {
 
   return (
     <div
-      className="fixed top-0 bg-black transition-all duration-300 rounded-md h-1"
+      className="fixed top-0 h-1 rounded-md bg-black transition-all duration-300"
       style={{
         width: `${progressWidth}%`
       }}

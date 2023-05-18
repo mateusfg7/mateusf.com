@@ -3,7 +3,11 @@ import type { Metadata } from 'next'
 
 import { KnowledgeList } from 'components/KnowledgeList'
 
-import { getUniqueTagListFromPosts, getPostListBasedOnTag, getNormalTagString } from 'lib/tags'
+import {
+  getUniqueTagListFromPosts,
+  getPostListBasedOnTag,
+  getNormalTagString
+} from 'lib/tags'
 import { getSortedPosts } from 'lib/getSortedPosts'
 import { Tag } from './Icons'
 import { slug } from 'lib/utils'
@@ -25,7 +29,7 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 font-bold text-2xl flex items-end gap-2">
+      <h1 className="mb-5 flex items-end gap-2 text-2xl font-bold">
         {getNormalTagString(tag)}
         <Tag />
       </h1>

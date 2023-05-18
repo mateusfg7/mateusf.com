@@ -2,25 +2,25 @@ export function HomeSection() {
   return (
     <div
       id="home"
-      className="min-h-screen flex justify-center items-center relative"
+      className="relative flex min-h-screen items-center justify-center"
     >
-      <div className="md:hidden absolute h-full w-full bg-[url(/assets/portifolio/code-type.svg)] bg-no-repeat bg-center bg-fixed opacity-10" />
-      <div className="portifolio-content-w flex justify-center md:justify-between items-center gap-12">
+      <div className="absolute h-full w-full bg-[url(/assets/portifolio/code-type.svg)] bg-fixed bg-center bg-no-repeat opacity-10 md:hidden" />
+      <div className="portifolio-content-w flex items-center justify-center gap-12 md:justify-between">
         <div className="flex flex-col gap-4">
-          <span className="text-neutral-50 text-7xl font-bold w-min md:w-max">
+          <span className="w-min text-7xl font-bold text-neutral-50 md:w-max">
             Eu sou Mateus,
           </span>
-          <span className="text-neutral-400 text-2xl md:text-3xl flex items-center ">
-            <span className="md:inline-block md:overflow-hidden md:whitespace-nowrap md:animate-typing">
+          <span className="flex items-center text-2xl text-neutral-400 md:text-3xl ">
+            <span className="md:inline-block md:animate-typing md:overflow-hidden md:whitespace-nowrap">
               <span>
                 Desenvolvedor full-stack.
-                <span className="md:hidden animate-cursor">|</span>
+                <span className="animate-cursor md:hidden">|</span>
               </span>
             </span>
-            <span className="hidden md:inline animate-cursor">|</span>
+            <span className="hidden animate-cursor md:inline">|</span>
           </span>
         </div>
-        <div className="hidden md:block w-64 flex-1">
+        <div className="hidden w-64 flex-1 md:block">
           <img src="/assets/portifolio/code-type.svg" className="w-full" />
         </div>
       </div>

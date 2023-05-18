@@ -10,19 +10,19 @@
     h4,
     h5,
     h6 {
-      @apply my-6 mx-0 font-medium w-max;
+      @apply my-6 mx-0 w-max font-medium;
 
       a {
-        @apply text-neutral-900 dark:text-neutral-100 hover:no-underline;
-        @apply before:content-['#'] before:absolute before:-ml-5 before:text-black/0 hover:before:text-neutral-300 dark:hover:before:text-gray-600 pl-5 -ml-5;
+        @apply text-neutral-900 hover:no-underline dark:text-neutral-100;
+        @apply -ml-5 pl-5 before:absolute before:-ml-5 before:text-black/0 before:content-['#'] hover:before:text-neutral-300 dark:hover:before:text-gray-600;
       }
     }
 
     h1 {
-      @apply text-2xl border-b border-b-black/30 dark:border-b-white/30 pr-6 pb-2;
+      @apply border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30;
     }
     h2 {
-      @apply text-2xl border-b border-b-black/30 dark:border-b-white/30 pr-6 pb-2;
+      @apply border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30;
     }
     h3 {
       @apply text-2xl;
@@ -43,16 +43,16 @@
     }
 
     iframe {
-      @apply rounded-lg w-[700px] max-w-full h-[350px];
+      @apply h-[350px] w-[700px] max-w-full rounded-lg;
     }
 
     a {
       @apply text-[#0070f3] hover:underline;
-      @apply no-underline text-blue-700 dark:text-blue-500;
+      @apply text-blue-700 no-underline dark:text-blue-500;
     }
 
     table {
-      @apply border-collapse w-full;
+      @apply w-full border-collapse;
 
       th,
       td {
@@ -60,7 +60,7 @@
       }
 
       th {
-        @apply bg-black/10 dark:bg-white/10 font-medium;
+        @apply bg-black/10 font-medium dark:bg-white/10;
 
         strong {
           @apply font-black;
@@ -85,21 +85,21 @@
     }
 
     hr {
-      @apply my-8 bg-black/40  h-[2px];
+      @apply my-8 h-[2px]  bg-black/40;
     }
 
     blockquote {
       @apply my-2 px-4;
       @apply border-l border-l-neutral-900 dark:border-l-neutral-100;
-      @apply text-black/80 dark:text-white/70 italic;
+      @apply italic text-black/80 dark:text-white/70;
     }
 
     ol {
-      @apply list-decimal list-inside;
+      @apply list-inside list-decimal;
     }
 
     ul {
-      @apply list-disc list-inside;
+      @apply list-inside list-disc;
 
       &.contains-task-list {
         @apply list-none;
@@ -117,11 +117,11 @@
     }
 
     code {
-      @apply bg-black/[.05] dark:bg-white/[.05] py-[0.16rem] px-1 rounded-lg;
+      @apply rounded-lg bg-black/[.05] py-[0.16rem] px-1 dark:bg-white/[.05];
     }
 
     div[data-rehype-pretty-code-fragment=''] {
-      @apply rounded-lg overflow-hidden;
+      @apply overflow-hidden rounded-lg;
 
       pre {
         @apply bg-black/[.05] dark:bg-white/[.05];
@@ -138,7 +138,7 @@
             }
 
             &.highlighted-line {
-              @apply bg-gray-500/10 border-l-2 border-l-gray-500;
+              @apply border-l-2 border-l-gray-500 bg-gray-500/10;
             }
 
             &.highlighted-word {
@@ -155,13 +155,13 @@
           counter-increment: line;
           content: counter(line);
 
-          @apply inline-block w-4 mr-5;
+          @apply mr-5 inline-block w-4;
           @apply text-right text-gray-500;
         }
       }
 
       div[data-rehype-pretty-code-title=''] {
-        @apply bg-black/[.05] dark:bg-white/[.05] p-3;
+        @apply bg-black/[.05] p-3 dark:bg-white/[.05];
         @apply italic text-gray-500;
         @apply border-b border-b-gray-300 dark:border-b-gray-600;
       }
@@ -170,7 +170,7 @@
     nav {
       &.toc {
         @apply p-4;
-        @apply border border-black/10 dark:border-white/10 rounded-lg;
+        @apply rounded-lg border border-black/10 dark:border-white/10;
 
         ol {
           @apply list-none;
@@ -220,7 +220,7 @@
     }
 
     p.hint {
-      @apply border rounded-lg w-max p-3;
+      @apply w-max rounded-lg border p-3;
 
       &.tip {
         @apply text-cyan-900 dark:text-cyan-600;

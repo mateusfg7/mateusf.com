@@ -15,7 +15,7 @@ export function KnowledgeList({ posts, separateByYear = false }: Props) {
       <div className="flex flex-col gap-7">
         {postsByYear.map(postsOfYear => (
           <div key={postsOfYear.year}>
-            <h1 className="mb-5 font-bold text-2xl p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900">
+            <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-2xl font-bold dark:bg-neutral-900">
               {postsOfYear.year === 1 ? 'Posts for test' : postsOfYear.year}
             </h1>
             <div className="flex flex-col gap-3">

@@ -11,9 +11,9 @@ export const Contact: React.FC<{
   const [isHover, setIsHover] = useState(false)
 
   return (
-    <div className="flex items-center text-xl text-neutral-200 border-b border-b-neutral-800 last:border-none">
+    <div className="flex items-center border-b border-b-neutral-800 text-xl text-neutral-200 last:border-none">
       <div
-        className="flex items-center gap-2 w-40 text-2xl h-full mr-7"
+        className="mr-7 flex h-full w-40 items-center gap-2 text-2xl"
         style={{
           color
         }}
@@ -21,11 +21,11 @@ export const Contact: React.FC<{
         <Icon weight="duotone" />
         <span>{title}</span>
       </div>
-      <div className="w-72 flex items-center h-full mr-20">
+      <div className="mr-20 flex h-full w-72 items-center">
         <span>{data}</span>
       </div>
       <div
-        className="group hover:cursor-pointer flex items-center text-3xl py-6"
+        className="group flex items-center py-6 text-3xl hover:cursor-pointer"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
