@@ -1,3 +1,13 @@
+## [5.1.0](https://github.com/mateusfg7/mfg-b/compare/5.0.6...5.1.0) (2023-05-18)
+
+
+### Features
+
+* **ui:** update article style ([67bf7d8](https://github.com/mateusfg7/mfg-b/commit/67bf7d856bfa88be0cb43756ea626fc4cb412eb4))
+* **ui:** update article style ([0249822](https://github.com/mateusfg7/mfg-b/commit/02498229f18e9fbc24462a20099bf593ea100c08))
+* **utils:** complement slug function with github-slug package ([fd84d93](https://github.com/mateusfg7/mfg-b/commit/fd84d93bac66ed55e7dfcf3ae3d6b9fa65eb9a3e)), closes [#497](https://github.com/mateusfg7/mfg-b/issues/497)
+* **utils:** increment `slug` function ([361e731](https://github.com/mateusfg7/mfg-b/commit/361e731582e8f3a4f3b22eecf3e08ab0bd7845b5))
+
 ### [5.0.6](https://github.com/mateusfg7/mfg-b/compare/5.0.5...5.0.6) (2023-05-16)
 
 ### [5.0.5](https://github.com/mateusfg7/mfg-b/compare/5.0.0...5.0.5) (2023-05-16)
