@@ -116,7 +116,7 @@
     }
 
     code {
-      @apply bg-black/[.05] dark:bg-white/[.05] p-1 rounded-lg;
+      @apply bg-black/[.05] dark:bg-white/[.05] py-[0.16rem] px-1 rounded-lg;
     }
 
     div[data-rehype-pretty-code-fragment=''] {
