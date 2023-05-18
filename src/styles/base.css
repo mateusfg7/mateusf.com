@@ -10,8 +10,28 @@
     @apply text-neutral-900 dark:text-neutral-300 font-['Inter'];
   }
 
-  a {
-    /* @apply text-[#0070f3] */
-    /*@apply no-underline text-blue-700 dark:text-blue-500;*/
+  /* Syntax Highlighting */
+  pre[data-theme='dark'] {
+    color-scheme: dark;
+  }
+
+  html.light {
+    pre[data-theme='dark'] {
+      display: none;
+    }
+
+    div[data-rehype-pretty-code-title=''][data-theme='dark'] {
+      display: none;
+    }
+  }
+
+  html.dark {
+    pre[data-theme='light'] {
+      display: none;
+    }
+
+    div[data-rehype-pretty-code-title=''][data-theme='light'] {
+      display: none;
+    }
   }
 }
