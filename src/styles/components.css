@@ -47,7 +47,8 @@
     }
 
     a {
-      @apply hover:underline;
+      @apply text-[#0070f3] hover:underline;
+      @apply no-underline text-blue-700 dark:text-blue-500;
     }
 
     table {
