@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx",
-    "bump-tag": "tsx tools/bump-tag-version.ts"
+    "bump-tag": "tsx tools/bump-tag-version.ts",
+    "vercel": "vercel"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.8",
@@ -68,6 +69,7 @@
     "simple-git": "^3.18.0",
     "tailwindcss": "^3.2.4",
     "tsx": "^3.12.7",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vercel": "^29.3.4"
   }
 }

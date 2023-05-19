@@ -1,6 +1,6 @@
 name: CI
 
-on: [pull_request, push]
+on: push
 
 jobs:
   lint:
@@ -10,14 +10,17 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
+          node-version: 19.x
+
+      - name: Install PNPM
+        run: npm i -g pnpm
 
       - name: Install Dependencies
-        run: yarn install
+        run: pnpm i
 
       - name: Run ESLint
-        run: yarn lint
+        run: pnpm lint
