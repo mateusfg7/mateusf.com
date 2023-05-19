@@ -8,6 +8,7 @@ import { FiTag } from 'react-icons/fi'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { Date } from 'components/Date'
+import { TopButton } from 'components/TopButton'
 import { authors } from 'lib/authors'
 import { slug } from 'lib/utils'
 
@@ -84,6 +85,7 @@ export default function Page({ params }: Props) {
       <div className="post-content">
         <MDXContent />
       </div>
+      <TopButton />
     </div>
   )
 }
