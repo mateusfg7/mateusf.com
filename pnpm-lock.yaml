@@ -56,8 +56,8 @@ dependencies:
     specifier: 3.0.2
     version: 3.0.2
   remark:
-    specifier: 14.0.2
-    version: 14.0.2
+    specifier: 14.0.3
+    version: 14.0.3
   remark-breaks:
     specifier: ^3.0.2
     version: 3.0.2
@@ -3090,7 +3090,7 @@ packages:
     resolution: {integrity: sha512-xsasg19ysrnfVkPLZ7eTo6gyQiTkhG7VAad4OH4IaQ+8pAE2iS2smjiZae4PfVDJitwicYsgLGOFH7fA05aPRQ==}
     dependencies:
       '@types/mdast': 3.0.10
-      remark: 14.0.2
+      remark: 14.0.3
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
@@ -9096,8 +9096,8 @@ packages:
       mdast-util-to-markdown: 1.5.0
       unified: 10.1.2
 
-  /remark@14.0.2:
-    resolution: {integrity: sha512-A3ARm2V4BgiRXaUo5K0dRvJ1lbogrbXnhkJRmD0yw092/Yl0kOCZt1k9ZeElEwkZsWGsMumz6qL5MfNJH9nOBA==}
+  /remark@14.0.3:
+    resolution: {integrity: sha512-bfmJW1dmR2LvaMJuAnE88pZP9DktIFYXazkTfOIKZzi3Knk9lT0roItIA24ydOucI3bV/g/tXBA6hzqq3FV9Ew==}
     dependencies:
       '@types/mdast': 3.0.10
       remark-parse: 10.0.1
