@@ -1,3 +1,10 @@
+## [5.2.0](https://github.com/mateusfg7/mfg-b/compare/5.1.0...5.2.0) (2023-05-19)
+
+
+### Features
+
+* **ui:** add "go to top" button on post pages ([9ce884b](https://github.com/mateusfg7/mfg-b/commit/9ce884b499da519b9615226ad366996402e17145)), closes [#29](https://github.com/mateusfg7/mfg-b/issues/29)
+
 ## [5.1.0](https://github.com/mateusfg7/mfg-b/compare/5.0.6...5.1.0) (2023-05-18)
 
 
