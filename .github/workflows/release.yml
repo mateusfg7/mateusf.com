@@ -1,4 +1,4 @@
-name: 'Release and deploy new version'
+name: 'Release and Deploy'
 
 on:
   push:
