@@ -91,7 +91,7 @@ export default function Page({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return allPosts.map(post => ({
+  return allPosts.filter(post => post.status !== 'planned').map(post => ({
     slug: post.id
   }))
 }

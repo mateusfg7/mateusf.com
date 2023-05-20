@@ -2,9 +2,11 @@ import { allPosts } from 'contentlayer/generated'
 import { removeRepeatedValuesFromArray, slug } from './utils'
 
 const getRawTagListFromPosts = (): string[] => {
-  const listOfTagList = allPosts.map(post => {
-    return post.tags.split(',')
-  })
+  const listOfTagList = allPosts
+    .filter(post => !post.test)
+    .map(post => {
+      return post.tags.split(',')
+    })
 
   let completeRawTagList: string[] = []
 

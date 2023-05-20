@@ -38,7 +38,8 @@
     "remark-gfm": "3.0.1",
     "remark-hint": "^1.0.10",
     "remark-math": "5.1.1",
-    "shiki": "^0.14.0"
+    "shiki": "^0.14.0",
+    "tailwindcss-animated": "^1.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

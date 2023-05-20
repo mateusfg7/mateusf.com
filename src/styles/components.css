@@ -1,6 +1,12 @@
 @tailwind components;
 
 @layer components {
+  .common-badge {
+    @apply flex items-center gap-1 p-1;
+    @apply rounded-lg border;
+    @apply text-xs leading-none;
+  }
+
   .post-content {
     @apply leading-6;
 

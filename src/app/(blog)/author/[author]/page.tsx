@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { KnowledgeList } from 'components/KnowledgeList'
+import { PostList } from 'components/PostList'
 import { getAuthorByUser, getAuthors, getPostsByAuthor } from 'lib/authors'
 import { ArrowRight, Envelope } from './Icons'
 
@@ -47,7 +47,7 @@ export default function Page({ params }: Props) {
         </div>
       </div>
       <main>
-        <KnowledgeList posts={postList} />
+        <PostList posts={postList} />
       </main>
     </div>
   )

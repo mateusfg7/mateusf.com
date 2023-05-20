@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { KnowledgeList } from 'components/KnowledgeList'
+import { PostList } from 'components/PostList'
 
 import {
   getUniqueTagListFromPosts,
@@ -34,7 +34,7 @@ export default function Page({ params }: Props) {
         <Tag />
       </h1>
       <main>
-        <KnowledgeList posts={postList} />
+        <PostList posts={postList} />
       </main>
     </div>
   )
