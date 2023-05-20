@@ -8,7 +8,7 @@ interface Props {
   separateByYear?: boolean
 }
 
-export function KnowledgeList({ posts, separateByYear = false }: Props) {
+export function PostList({ posts, separateByYear = false }: Props) {
   const postsByStatus = separatePostsByStatus(posts)
   const testPosts = posts.filter(post => post.test)
 
