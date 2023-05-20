@@ -34,6 +34,15 @@ export const Post = defineDocumentType(() => ({
       type: 'enum',
       options: authors.map(author => author.user),
       required: true
+    },
+    status: {
+      type: 'enum',
+      options: ['published', 'draft', 'planned'],
+      default: 'draft'
+    },
+    test: {
+      type: 'boolean',
+      default: false
     }
   },
   computedFields: {
