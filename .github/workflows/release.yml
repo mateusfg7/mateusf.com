@@ -1,4 +1,4 @@
-name: 'Release Version'
+name: 'Release and Deploy'
 
 on:
   push:
@@ -88,3 +88,29 @@ jobs:
         with:
           body: ${{ needs.changelog.outputs.changelog }}
           tag_name: ${{ steps.get_tag.outputs.tag }}
+
+  deploy-prod:
+    name: Deploy to production
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.x
+
+      - name: Install PNPM
+        run: npm i -g pnpm
+
+      - name: Install Packages
+        run: pnpm i
+
+      - name: Pull Vercel Environment Information
+        run: pnpm vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: pnpm vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: pnpm vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
