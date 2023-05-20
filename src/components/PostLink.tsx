@@ -10,7 +10,7 @@ interface Props {
   hideYear?: boolean
 }
 
-export function KnowledgeLink({ post, hideYear = false }: Props) {
+export function PostLink({ post, hideYear = false }: Props) {
   const showDate = !post.test && post.status !== 'planned'
 
   if (post.status === 'planned') {
