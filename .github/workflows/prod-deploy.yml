@@ -1,6 +1,16 @@
 name: 'Production Deployment'
 
-on: [workflow_call, workflow_dispatch]
+on:
+  workflow_call:
+    secrets:
+      VERCEL_ORG_ID:
+        required: true
+      VERCEL_PROJECT_ID:
+        required: true
+      VERCEL_TOKEN:
+        required: true
+
+  workflow_dispatch:
 
 jobs:
   prod-deploy:

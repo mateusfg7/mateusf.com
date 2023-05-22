@@ -9,4 +9,8 @@ jobs:
   call-prod-deploy:
     name: Call prod-deploy.yml
     uses: mateusfg7/mfg-b/.github/workflows/prod-deploy.yml@main
+    with:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
