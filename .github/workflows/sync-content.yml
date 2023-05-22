@@ -13,7 +13,7 @@ jobs:
       - name: Get latest release with tag
         id: latestrelease
         run: |
-          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/weide-zhou/ticket13/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+          echo "releasetag=$(curl -s https://api.github.com/repos/mateusfg7/mfg-b/releases/latest | jq '.tag_name' | sed 's/\"//g')" >> $GITHUB_OUTPUT
 
       - name: Confirm release tag
         run: |
