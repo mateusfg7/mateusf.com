@@ -131,7 +131,7 @@
 
       pre {
         @apply bg-black/[.05] dark:bg-white/[.05];
-        @apply overflow-scroll;
+        @apply overflow-auto;
 
         & > code {
           @apply grid;
