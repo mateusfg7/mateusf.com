@@ -3,7 +3,7 @@
   "version": "5.2.0",
   "homepage": "https://mfg-b.vercel.app",
   "license": "GPL-3.0",
-  "author": "Mateus Felipe Gonçalves <mateusfg7@protonmail.com> (https://mfg-b.vercel.app/info)",
+  "author": "Mateus Felipe Gonçalves (mateusfg7) <mateusfelipefg77@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
