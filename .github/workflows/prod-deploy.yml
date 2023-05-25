@@ -28,21 +28,21 @@ jobs:
         run: |
           echo ${{ steps.latestrelease.outputs.releasetag }}
 
-      # - name: Tag Checkout Repo
-      #   uses: actions/checkout@v3
-      #   with:
-      #     ref: ${{ steps.latestrelease.outputs.releasetag }}
+      - name: Tag Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
 
-      # - name: Setup node
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 19.x
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.x
 
-      # - name: Install PNPM
-      #   run: npm i -g pnpm
+      - name: Install PNPM
+        run: npm i -g pnpm
 
-      # - name: Install Packages
-      #   run: pnpm i
+      - name: Install Packages
+        run: pnpm i
 
       # - name: Pull Vercel Environment Information
       #   run: pnpm vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
