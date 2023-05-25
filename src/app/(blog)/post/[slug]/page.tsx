@@ -57,7 +57,7 @@ export default function Page({ params }: Props) {
           <p>
             <Date dateString={post.date} /> &#8226;{' '}
             <Link
-              href={`/category/${slug(post.category)}`}
+              href={`/categories/${slug(post.category)}`}
               className="hover:text-blue-500 dark:hover:text-blue-400"
             >
               {post.category}
@@ -91,7 +91,9 @@ export default function Page({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return allPosts.filter(post => post.status !== 'planned').map(post => ({
-    slug: post.id
-  }))
+  return allPosts
+    .filter(post => post.status !== 'planned')
+    .map(post => ({
+      slug: post.id
+    }))
 }
