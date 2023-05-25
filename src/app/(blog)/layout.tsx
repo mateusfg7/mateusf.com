@@ -9,7 +9,7 @@ export default function BlogLayout({
     <html>
       <body>
         <Header />
-        <div className="py-36">{children}</div>
+        <div className="py-48 md:py-36">{children}</div>
       </body>
     </html>
   )
