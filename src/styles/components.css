@@ -123,7 +123,7 @@
     }
 
     code {
-      @apply rounded-lg bg-black/[.05] py-[0.16rem] px-1 dark:bg-white/[.05];
+      @apply text-ellipsis break-words rounded-lg bg-black/[.05] py-[0.16rem] px-1 dark:bg-white/[.05];
     }
 
     div[data-rehype-pretty-code-fragment=''] {
