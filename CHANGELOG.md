@@ -1,3 +1,33 @@
+## [6.0.0](https://github.com/mateusfg7/mfg-b/compare/5.2.0...6.0.0) (2023-05-25)
+
+
+### Features
+
+* filter planned posts from `generateStaticParams` on "/post/[slug]" ([367572f](https://github.com/mateusfg7/mfg-b/commit/367572f81eda9799448803159af3f6a9c6d80d52))
+* **lib:** create `searchMatch` function to be used as search algorithm ([543babb](https://github.com/mateusfg7/mfg-b/commit/543babb3289f6d000c03130dc6622833139a99a4))
+* **lib:** create `separatePostsByStatus` function ([080bcfc](https://github.com/mateusfg7/mfg-b/commit/080bcfc2a5412c4b186941c69f3eb43e12051ec3))
+* **lib:** filter test posts on `categorizePostsByYear` ([4926118](https://github.com/mateusfg7/mfg-b/commit/492611867c2436bb8a96839a22f9abf53b3805c3))
+* **lib:** filter test posts on `getRawCategoryList` ([215b60f](https://github.com/mateusfg7/mfg-b/commit/215b60f2f6eadf0bba790864c3e0b165b1a14240))
+* **lib:** filter test posts on `getRawTagListFromPosts` ([21813e0](https://github.com/mateusfg7/mfg-b/commit/21813e0e394bead1db9cd8ff82073baa59779d83))
+* **Post:** add "status" and "test" fields ([5c1dd58](https://github.com/mateusfg7/mfg-b/commit/5c1dd584462bb9d3f0aa308569e80200d57f1701))
+* **providers:** add `GeistProvider` provider ([7f5b63a](https://github.com/mateusfg7/mfg-b/commit/7f5b63abb6efa8037b12e603b32627bfc7b0c2ca))
+* **tailwind:** add new animations ([d4e3505](https://github.com/mateusfg7/mfg-b/commit/d4e35059c28eaa82657affe74ca5febefa1f2800))
+* **ui:** add `Search` compoentn to `Header` ([eba77ec](https://github.com/mateusfg7/mfg-b/commit/eba77ec64cf0aea9178c68f0fe67405a9284e36f))
+* **ui:** add badges on knowledge link component ([1d359ec](https://github.com/mateusfg7/mfg-b/commit/1d359ecf481f7fa7938aa0969605ebcd8aa356ed))
+* **ui:** create `.common-badge` component class ([ddb76a5](https://github.com/mateusfg7/mfg-b/commit/ddb76a5ce19f1b5e1caab1980d70e2e66dfbb6e3))
+* **ui:** create `Keyboard` component ([6a60d52](https://github.com/mateusfg7/mfg-b/commit/6a60d52fccc69704596a82197c2890087a9665c8))
+* **ui:** create `Search` component ([ed86468](https://github.com/mateusfg7/mfg-b/commit/ed86468e79fec96b50a484374beb98b6ffff3e4c))
+* **ui:** create post badge components ([82c27ce](https://github.com/mateusfg7/mfg-b/commit/82c27ce5242a3ef904660885b2942694fb87d73c))
+* **ui:** increase blog vertical padding on small screens ([d846ba3](https://github.com/mateusfg7/mfg-b/commit/d846ba3a2e669c980399146c4482cb8d71b5a461))
+* **ui:** separate posts by status on post list ([fd24132](https://github.com/mateusfg7/mfg-b/commit/fd241323e5e5678be8beaeb1de8ba6223b35e5d7))
+
+
+### Bug Fixes
+
+* **deps:** regenerate lock file ([a3d6112](https://github.com/mateusfg7/mfg-b/commit/a3d611270821345577033d0aaba8d0ef101c52ca))
+* **deps:** update dependency next to v13.4.3 ([4828322](https://github.com/mateusfg7/mfg-b/commit/4828322b762e24138a1829c201178e948eab2519))
+* **deps:** update dependency remark to v14.0.3 ([e1f257a](https://github.com/mateusfg7/mfg-b/commit/e1f257a1df36d9b5e83fd6b1a81f6346bd356440))
+
 ## [5.2.0](https://github.com/mateusfg7/mfg-b/compare/5.1.0...5.2.0) (2023-05-19)
 
 
