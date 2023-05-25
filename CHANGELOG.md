@@ -1,3 +1,10 @@
+### [6.0.1](https://github.com/mateusfg7/mfg-b/compare/6.0.0...6.0.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* category link on post page was redirecting to a non existing route `/category/slug` ([9ce8229](https://github.com/mateusfg7/mfg-b/commit/9ce822977223a75ec23bf37fcf45faff6b679182))
+
 ## [6.0.0](https://github.com/mateusfg7/mfg-b/compare/5.2.0...6.0.0) (2023-05-25)
 
 
