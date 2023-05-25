@@ -1,3 +1,11 @@
+### [6.0.2](https://github.com/mateusfg7/mfg-b/compare/6.0.1...6.0.2) (2023-05-25)
+
+
+### Bug Fixes
+
+* **ui:** breake longer strings on inline code blocks ([2e4513b](https://github.com/mateusfg7/mfg-b/commit/2e4513b8227b5f134e6627f39a63df4c9ab66f57)), closes [#430](https://github.com/mateusfg7/mfg-b/issues/430)
+* **ui:** shows code block scroll bar only when necessary ([41d699e](https://github.com/mateusfg7/mfg-b/commit/41d699efad8fc74dace6e081930898b0c9adb66c))
+
 ### [6.0.1](https://github.com/mateusfg7/mfg-b/compare/6.0.0...6.0.1) (2023-05-25)
 
 
