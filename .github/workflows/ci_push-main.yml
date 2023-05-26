@@ -31,6 +31,7 @@ jobs:
             src/**
             public/**
             content/**
+            tmp/**
             contentlayer.config.ts
             package.json
             tailwind.config.js
@@ -43,8 +44,9 @@ jobs:
         if: needs.check-changed-files.outputs.isSelectedChanged == 'true'
         run: echo "YES, WAS CHANGED!"
       - name: List changed files
+        run: echo "CHANGED FILES:" ${{ steps.changed-files.outputs.all_changed_files }}
+      - name: List all changed files
         run: |
-          echo ${{ steps.changed-files.outputs.all_changed_files }}
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
