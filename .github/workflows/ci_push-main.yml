@@ -44,10 +44,10 @@ jobs:
         if: needs.check-changed-files.outputs.isSelectedChanged == 'true'
         run: echo "YES, WAS CHANGED!"
       - name: List changed files
-        run: echo "CHANGED FILES:" ${{ steps.changed-files.outputs.all_changed_files }}
+        run: echo "CHANGED FILES:" ${{ needs.check-changed-files.outputs.allChanges }}
       - name: List all changed files
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          for file in ${{ needs.check-changed-files.outputs.allChanges }}; do
             echo "$file was changed"
           done
 
