@@ -4,10 +4,21 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-on: push
+on:
+  workflow_call:
+    secrets:
+      VERCEL_ORG_ID:
+        required: true
+      VERCEL_PROJECT_ID:
+        required: true
+      VERCEL_TOKEN:
+        required: true
+
+  workflow_dispatch:
 
 jobs:
   deploy-preview:
+    name: Deploy to preview
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
