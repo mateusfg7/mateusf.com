@@ -10,8 +10,7 @@ jobs:
     name: Check changed files
     runs-on: ubuntu-latest
     outputs:
-      isSelectedChanged: ${{ steps.changed-files-specific.outputs.any_changed }}
-      allChanges: ${{ steps.changed-files.outputs.all_changed_files }}
+      isCodeRelatedFilesChanged: ${{ steps.changed-files.outputs.any_changed }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -22,32 +21,22 @@ jobs:
         uses: tj-actions/changed-files@v36
         with:
           since_last_remote_commit: true
-      - name: Get specific changed files
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v36
-        with:
-          since_last_remote_commit: true
           files: |
             src/**
             public/**
             content/**
-            tmp/**
             contentlayer.config.ts
-            package.json
             tailwind.config.js
-  debug:
-    name: Debug
-    runs-on: ubuntu-latest
+            package.json
+
+  call-release:
+    name: Call release.yml
+    uses: mateusfg7/mfg-b/.github/workflows/release.yml@main
+    secrets: inherit
     needs: check-changed-files
-    steps:
-      - name: Is specific changes files changed?
-        if: needs.check-changed-files.outputs.isSelectedChanged == 'true'
-        run: echo "YES, WAS CHANGED!"
-      - name: List changed files
-        run: echo "CHANGED FILES:" ${{ needs.check-changed-files.outputs.allChanges }}
-      - name: List all changed files
-        run: |
-          for file in ${{ needs.check-changed-files.outputs.allChanges }}; do
-            echo "$file was changed"
-          done
+    if: needs.check-changed-files.outputs.isCodeRelatedFilesChanged == 'true'
+
+  call-lint:
+    name: Call lint.yml
+    uses: mateusfg7/mfg-b/.github/workflows/lint.yml@main
 
