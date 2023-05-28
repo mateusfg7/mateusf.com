@@ -2,8 +2,8 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { getCategoriesAndNumberOfPosts } from 'lib/categories'
-import { slug } from 'lib/utils'
+import { getCategoriesAndNumberOfPosts } from '@/lib/categories'
+import { slug } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'mfg-b | Categories',

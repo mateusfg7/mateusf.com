@@ -1,6 +1,6 @@
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Keyboard } from 'components/Keyboard'
+import { Keyboard } from '@/components/Keyboard'
 
 export function Trigger() {
   return (

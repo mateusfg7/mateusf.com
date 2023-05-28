@@ -1,15 +1,15 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from 'components/PostList'
+import { PostList } from '@/components/PostList'
 
 import {
   getUniqueCategoryList,
   getPostListOfCategory,
   getNormalCategoryString
-} from 'lib/categories'
-import { getSortedPosts } from 'lib/getSortedPosts'
-import { slug } from 'lib/utils'
+} from '@/lib/categories'
+import { getSortedPosts } from '@/lib/getSortedPosts'
+import { slug } from '@/lib/utils'
 import { FolderOpen } from './Icons'
 
 interface Props {

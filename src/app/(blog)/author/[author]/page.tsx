@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from 'components/PostList'
-import { getAuthorByUser, getAuthors, getPostsByAuthor } from 'lib/authors'
+import { PostList } from '@/components/PostList'
+import { getAuthorByUser, getAuthors, getPostsByAuthor } from '@/lib/authors'
 import { ArrowRight, Envelope } from './Icons'
 
 interface Props {

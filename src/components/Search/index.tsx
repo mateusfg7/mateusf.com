@@ -7,7 +7,7 @@ import { X } from '@phosphor-icons/react'
 import { KeyCode, KeyMod, useKeyboard } from '@geist-ui/core'
 
 import { allPosts } from 'contentlayer/generated'
-import { searchMath } from 'lib/match'
+import { searchMath } from '@/lib/match'
 import { Trigger } from './trigger'
 import { PostLink } from './post-link'
 import { Overlay } from './overlay'

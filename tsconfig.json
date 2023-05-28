@@ -18,11 +18,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "contentlayer/generated": [
-        "../.contentlayer/generated"
+        ".contentlayer/generated"
       ],
+      "@/*": [
+        "src/*"
+      ]
     },
     "plugins": [
       {

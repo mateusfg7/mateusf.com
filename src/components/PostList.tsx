@@ -1,7 +1,7 @@
 import { Post } from 'contentlayer/generated'
-import { categorizePostsByYear } from 'lib/categorizePostsByYear'
+import { categorizePostsByYear } from '@/lib/categorizePostsByYear'
 import { PostLink } from './PostLink'
-import { separatePostsByStatus } from 'lib/separatePostsByStatus'
+import { separatePostsByStatus } from '@/lib/separatePostsByStatus'
 
 interface Props {
   posts: Post[]
@@ -13,7 +13,10 @@ export function PostList({ posts, separateByYear = false }: Props) {
   const testPosts = posts.filter(post => post.test)
 
   if (separateByYear) {
-    const postsByYear = categorizePostsByYear([...postsByStatus.publishedPosts, ...postsByStatus.draftPosts])
+    const postsByYear = categorizePostsByYear([
+      ...postsByStatus.publishedPosts,
+      ...postsByStatus.draftPosts
+    ])
 
     return (
       <div className="flex flex-col gap-7">
@@ -29,7 +32,7 @@ export function PostList({ posts, separateByYear = false }: Props) {
             </div>
           </div>
         ))}
-        <div >
+        <div>
           <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-2xl font-bold dark:bg-neutral-900">
             Others
           </h1>
@@ -37,11 +40,9 @@ export function PostList({ posts, separateByYear = false }: Props) {
             {postsByStatus.plannedPosts.map((post, key) => (
               <PostLink key={key} post={post} />
             ))}
-            {
-              testPosts.map((post, key) => (
-                <PostLink key={key} post={post} />
-              ))
-            }
+            {testPosts.map((post, key) => (
+              <PostLink key={key} post={post} />
+            ))}
           </div>
         </div>
       </div>
