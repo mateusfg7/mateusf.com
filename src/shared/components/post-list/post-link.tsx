@@ -20,7 +20,8 @@ export function PostLink({ post, hideYear = false }: Props) {
           <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500">
             {post.title}
           </h2>
-          <span className="group-hover:animate-wiggle group-hover:animate-infinite">
+          <span className="relative overflow-hidden rounded-lg">
+            <span className="shine group-hover:animate-shine group-hover:animate-duration-[1.5s]" />
             <PlannedBadge />
           </span>
         </div>
