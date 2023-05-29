@@ -7,10 +7,10 @@ import {
   getUniqueTagListFromPosts,
   getPostListBasedOnTag,
   getNormalTagString
-} from '@/lib/tags'
-import { getSortedPosts } from '@/lib/getSortedPosts'
+} from '@/shared/lib/tags'
+import { getSortedPosts } from '@/shared/lib/getSortedPosts'
 import { Tag } from './components/icons'
-import { slug } from '@/lib/slug'
+import { slug } from '@/shared/lib/slug'
 
 interface Props {
   params: { tag: string }

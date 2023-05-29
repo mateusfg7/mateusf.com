@@ -1,6 +1,6 @@
 import { Post } from 'contentlayer/generated'
-import { categorizePostsByYear } from '@/lib/categorizePostsByYear'
-import { separatePostsByStatus } from '@/lib/separatePostsByStatus'
+import { categorizePostsByYear } from '@/shared/lib/categorizePostsByYear'
+import { separatePostsByStatus } from '@/shared/lib/separatePostsByStatus'
 import { PostLink } from './post-link'
 
 interface Props {

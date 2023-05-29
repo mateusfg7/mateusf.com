@@ -7,9 +7,9 @@ import {
   getUniqueCategoryList,
   getPostListOfCategory,
   getNormalCategoryString
-} from '@/lib/categories'
-import { getSortedPosts } from '@/lib/getSortedPosts'
-import { slug } from '@/lib/slug'
+} from '@/shared/lib/categories'
+import { getSortedPosts } from '@/shared/lib/getSortedPosts'
+import { slug } from '@/shared/lib/slug'
 import { FolderOpen } from './components/icons'
 
 interface Props {
