@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { allPosts } from 'contentlayer/generated'
 import { getSortedPosts } from '@/lib/getSortedPosts'
 
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/components/post-list'
 
 export const metadata: Metadata = {
   title: 'My Knowledge | mfg-b',

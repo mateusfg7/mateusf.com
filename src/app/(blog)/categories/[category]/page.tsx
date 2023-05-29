@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/components/post-list'
 
 import {
   getUniqueCategoryList,
