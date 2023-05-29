@@ -1,5 +1,6 @@
 import { allPosts } from 'contentlayer/generated'
-import { removeRepeatedValuesFromArray, slug } from './utils'
+import { slug } from './utils'
+import { removeRepeatedValuesFromArray } from '@/lib/remove-repeated-values-from-array'
 import { getFrequencyOfValue } from '@/lib/get-frequency-of-value'
 
 const getRawCategoryList = () =>
