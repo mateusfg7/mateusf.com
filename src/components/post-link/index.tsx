@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { Date } from '@/components/Date'
 import { Post } from 'contentlayer/generated'
-import { DraftBadge, PlannedBadge, TestBadge } from '@/components/PostBadges'
+import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
 interface Props {
   post: Post
