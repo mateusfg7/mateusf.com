@@ -9,7 +9,7 @@ import { allPosts, type Post } from 'contentlayer/generated'
 
 import { authors } from '@/lib/authors'
 import { slug } from '@/lib/utils'
-import { Date } from '@/components/Date'
+import { Date } from '@/components/date'
 import { TopButton } from './components/top-button'
 
 interface Props {

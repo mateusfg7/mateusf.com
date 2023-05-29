@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Date } from '@/components/Date'
+import { Date } from '@/components/date'
 import { Post } from 'contentlayer/generated'
 import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
