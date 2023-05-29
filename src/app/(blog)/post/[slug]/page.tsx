@@ -8,7 +8,7 @@ import { FiTag } from 'react-icons/fi'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { authors } from '@/lib/authors'
-import { slug } from '@/lib/utils'
+import { slug } from '@/lib/slug'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 

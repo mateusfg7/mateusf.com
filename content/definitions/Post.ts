@@ -1,5 +1,5 @@
 import { defineDocumentType } from 'contentlayer/source-files'
-import { slug } from '../../src/lib/utils'
+import { slug } from '../../src/lib/slug'
 import { authors } from '../../src/lib/authors'
 
 export const Post = defineDocumentType(() => ({

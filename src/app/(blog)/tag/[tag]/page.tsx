@@ -10,7 +10,7 @@ import {
 } from '@/lib/tags'
 import { getSortedPosts } from '@/lib/getSortedPosts'
 import { Tag } from './components/icons'
-import { slug } from '@/lib/utils'
+import { slug } from '@/lib/slug'
 
 interface Props {
   params: { tag: string }

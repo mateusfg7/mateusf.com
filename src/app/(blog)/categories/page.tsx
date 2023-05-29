@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getCategoriesAndNumberOfPosts } from '@/lib/categories'
-import { slug } from '@/lib/utils'
+import { slug } from '@/lib/slug'
 
 export const metadata: Metadata = {
   title: 'mfg-b | Categories',

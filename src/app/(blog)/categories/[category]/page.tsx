@@ -9,7 +9,7 @@ import {
   getNormalCategoryString
 } from '@/lib/categories'
 import { getSortedPosts } from '@/lib/getSortedPosts'
-import { slug } from '@/lib/utils'
+import { slug } from '@/lib/slug'
 import { FolderOpen } from './components/icons'
 
 interface Props {
