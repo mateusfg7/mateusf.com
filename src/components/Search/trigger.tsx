@@ -1,6 +1,5 @@
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Keyboard } from '@/components/Keyboard'
 
 export function Trigger() {
   return (
@@ -10,7 +9,7 @@ export function Trigger() {
           <MagnifyingGlass />
           <span className="text-neutral-400">Search...</span>
         </span>
-        <Keyboard keys={['Ctrl', 'K']} className="hidden md:flex" />
+        <kbd className="keyboard hidden md:flex">Ctrl K</kbd>
       </button>
     </Dialog.Trigger>
   )
