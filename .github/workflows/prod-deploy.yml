@@ -16,6 +16,9 @@ jobs:
   deploy-production:
     name: Deploy to production
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://mateusfg7.vercel.app/
     steps:
       - name: Get latest release with tag
         id: latestrelease
