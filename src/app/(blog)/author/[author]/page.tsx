@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '@/components/post-list'
+import { PostList } from '@/shared/components/post-list'
 import { getAuthorByUser, getAuthors, getPostsByAuthor } from '@/lib/authors'
 import { ArrowRight, Envelope } from './components/icons'
 
