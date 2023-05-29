@@ -60,5 +60,7 @@ export default function Page({ params }: Props) {
 export async function generateStaticParams() {
   const authors = getAuthors()
 
-  return authors.map(author => ({ author: author.username }))
+  return authors.map(author => ({ author: author.user }))
 }
+
+export const dynamicParams = false
