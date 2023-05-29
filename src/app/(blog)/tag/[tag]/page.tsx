@@ -9,7 +9,7 @@ import {
   getNormalTagString
 } from '@/lib/tags'
 import { getSortedPosts } from '@/lib/getSortedPosts'
-import { Tag } from './Icons'
+import { Tag } from './components/icons'
 import { slug } from '@/lib/utils'
 
 interface Props {
