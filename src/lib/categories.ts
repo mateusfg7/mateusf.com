@@ -1,5 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
-import { slug } from './slug'
+import { slug } from '@/lib/slug'
 import { removeRepeatedValuesFromArray } from '@/lib/remove-repeated-values-from-array'
 import { getFrequencyOfValue } from '@/lib/get-frequency-of-value'
 
