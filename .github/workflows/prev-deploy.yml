@@ -17,7 +17,7 @@ jobs:
     name: Deploy to preview
     runs-on: ubuntu-latest
     environment:
-      name: preview
+      name: Preview
       url: https://mfg-b-mateusfg7.vercel.app/
     steps:
       - name: Checkout repo
