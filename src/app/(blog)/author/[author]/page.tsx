@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 import { PostList } from '@/components/PostList'
 import { getAuthorByUser, getAuthors, getPostsByAuthor } from '@/lib/authors'
-import { ArrowRight, Envelope } from './Icons'
+import { ArrowRight, Envelope } from './components/icons'
 
 interface Props {
   params: { author: string }
