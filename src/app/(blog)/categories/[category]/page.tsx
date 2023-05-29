@@ -10,7 +10,7 @@ import {
 } from '@/lib/categories'
 import { getSortedPosts } from '@/lib/getSortedPosts'
 import { slug } from '@/lib/utils'
-import { FolderOpen } from './Icons'
+import { FolderOpen } from './components/icons'
 
 interface Props {
   params: { category: string }
