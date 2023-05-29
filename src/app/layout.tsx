@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { Providers } from './providers'
 
-import '../styles/main.css'
+import '@/styles/main.css'
 
 export const metadata: Metadata = {
   title: 'mfg-b',
