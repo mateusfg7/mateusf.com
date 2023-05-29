@@ -2,7 +2,7 @@ import { allPosts } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
 import { removeRepeatedValuesFromArray } from '@/shared/lib/remove-repeated-values-from-array'
-import { getSortedPosts } from './getSortedPosts'
+import { getSortedPosts } from './get-sorted-posts'
 
 export function getAuthors() {
   const authors = allPosts.map(post => post.author)

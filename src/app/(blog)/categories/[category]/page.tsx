@@ -8,7 +8,7 @@ import {
   getPostListOfCategory,
   getNormalCategoryString
 } from '@/shared/lib/categories'
-import { getSortedPosts } from '@/shared/lib/getSortedPosts'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { slug } from '@/shared/lib/slug'
 import { FolderOpen } from './components/icons'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 
 import { allPosts } from 'contentlayer/generated'
-import { getSortedPosts } from '@/shared/lib/getSortedPosts'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 
 import { PostList } from '@/shared/components/post-list'
 

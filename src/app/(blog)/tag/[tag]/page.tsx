@@ -8,7 +8,7 @@ import {
   getPostListBasedOnTag,
   getNormalTagString
 } from '@/shared/lib/tags'
-import { getSortedPosts } from '@/shared/lib/getSortedPosts'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { Tag } from './components/icons'
 import { slug } from '@/shared/lib/slug'
 
