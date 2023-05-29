@@ -1,6 +1,28 @@
-import { defineDocumentType } from 'contentlayer/source-files'
-import { slug } from '../../src/lib/utils'
-import { authors } from '../../src/lib/authors'
+import { defineDocumentType, defineNestedType } from 'contentlayer/source-files'
+import { slug } from '../../src/shared/lib/slug'
+import { authors } from './author-list'
+
+const Author = defineNestedType(() => ({
+  name: 'Author',
+  fields: {
+    user: {
+      type: 'string',
+      description: 'Author username'
+    },
+    name: {
+      type: 'string',
+      description: 'Author name'
+    },
+    email: {
+      type: 'string',
+      description: 'Author contact email'
+    },
+    url: {
+      type: 'string',
+      description: 'Author url'
+    }
+  }
+}))
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -49,6 +71,11 @@ export const Post = defineDocumentType(() => ({
     id: {
       type: 'string',
       resolve: post => slug(post.title)
+    },
+    author_info: {
+      type: 'nested',
+      of: Author,
+      resolve: post => authors.find(author => author.user === post.author)
     }
   }
 }))

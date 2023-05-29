@@ -2,9 +2,9 @@ import React from 'react'
 import type { Metadata } from 'next'
 
 import { allPosts } from 'contentlayer/generated'
-import { getSortedPosts } from '@/lib/getSortedPosts'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/shared/components/post-list'
 
 export const metadata: Metadata = {
   title: 'My Knowledge | mfg-b',

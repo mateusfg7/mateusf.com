@@ -6,9 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger,
   Info
-} from './AccordionComponents'
+} from './accordion'
 
-import { SectionLayout } from '../SectionLayout'
+import { SectionLayout } from '../section-layout'
 
 export function KnowledgeSection() {
   return (

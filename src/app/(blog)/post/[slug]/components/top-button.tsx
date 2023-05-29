@@ -1,7 +1,7 @@
 'use client'
 
-import { CaretUp } from "@phosphor-icons/react"
-import { useEffect, useState } from "react"
+import { CaretUp } from '@phosphor-icons/react'
+import { useEffect, useState } from 'react'
 
 export function TopButton() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
@@ -15,7 +15,7 @@ export function TopButton() {
     if (document) {
       setMaxScrollValue(
         document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
+          document.documentElement.clientHeight
       )
     }
   }
@@ -39,12 +39,18 @@ export function TopButton() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    });
-  };
+      behavior: 'smooth'
+    })
+  }
 
   return (
-    <button onClick={scrollToTop} title="Go to top" className={`fixed right-7 bottom-7 rounded-full hidden md:flex items-center justify-center p-2 hover:bg-neutral-200 hover:dark:bg-neutral-900 ${isNotOnTop ? 'opacity-100' : 'opacity-0'}`}>
+    <button
+      onClick={scrollToTop}
+      title="Go to top"
+      className={`fixed right-7 bottom-7 hidden items-center justify-center rounded-full p-2 hover:bg-neutral-200 hover:dark:bg-neutral-900 md:flex ${
+        isNotOnTop ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <CaretUp className="text-2xl" />
     </button>
   )

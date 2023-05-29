@@ -1,16 +1,16 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/shared/components/post-list'
 
 import {
   getUniqueCategoryList,
   getPostListOfCategory,
   getNormalCategoryString
-} from '@/lib/categories'
-import { getSortedPosts } from '@/lib/getSortedPosts'
-import { slug } from '@/lib/utils'
-import { FolderOpen } from './Icons'
+} from '@/shared/lib/categories'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
+import { slug } from '@/shared/lib/slug'
+import { FolderOpen } from './components/icons'
 
 interface Props {
   params: { category: string }

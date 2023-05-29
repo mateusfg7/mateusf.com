@@ -1,5 +1,5 @@
-import { SectionLayout } from '../SectionLayout'
-import { ProjectCard } from './ProjectCard'
+import { SectionLayout } from '../section-layout'
+import { ProjectCard } from './project-card'
 
 import { devProjects, civilProjects } from './projects'
 

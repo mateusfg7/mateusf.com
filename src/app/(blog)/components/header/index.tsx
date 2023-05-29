@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-import { ToggleTheme } from './ToggleTheme'
-import { Search } from './Search'
+import { ToggleTheme } from './toggle-theme'
+import { Search } from './search'
 
 export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)

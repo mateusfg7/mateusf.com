@@ -1,16 +1,16 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/shared/components/post-list'
 
 import {
   getUniqueTagListFromPosts,
   getPostListBasedOnTag,
   getNormalTagString
-} from '@/lib/tags'
-import { getSortedPosts } from '@/lib/getSortedPosts'
-import { Tag } from './Icons'
-import { slug } from '@/lib/utils'
+} from '@/shared/lib/tags'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
+import { Tag } from './components/icons'
+import { slug } from '@/shared/lib/slug'
 
 interface Props {
   params: { tag: string }

@@ -1,5 +1,6 @@
 import { allPosts } from 'contentlayer/generated'
-import { removeRepeatedValuesFromArray, slug } from './utils'
+import { slug } from '@/shared/lib/slug'
+import { removeRepeatedValuesFromArray } from '@/shared/lib/remove-repeated-values-from-array'
 
 const getRawTagListFromPosts = (): string[] => {
   const listOfTagList = allPosts

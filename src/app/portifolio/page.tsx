@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 
-import { Header } from './Header'
-import { HomeSection } from './HomeSection'
-import { AboutSection } from './AboutSection'
-import { ProjectsSection } from './ProjectsSection'
-import { KnowledgeSection } from './KnowledgeSection'
-import { ContactSection } from './ContactSection'
+import {
+  Header,
+  AboutSection,
+  ContactSection,
+  HomeSection,
+  KnowledgeSection,
+  ProjectsSection
+} from './components'
 
 export default function Page() {
   const [scrollPosition, setScrollPosition] = useState(0)

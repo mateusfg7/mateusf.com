@@ -1,5 +1,5 @@
-import { SectionLayout } from '../SectionLayout'
-import { Contact } from './Contact'
+import { SectionLayout } from '../section-layout'
+import { Contact } from './contact'
 import { contactList } from './contact-list'
 
 export function ContactSection() {
