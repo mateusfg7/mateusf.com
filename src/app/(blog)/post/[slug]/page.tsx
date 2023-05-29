@@ -7,7 +7,6 @@ import { FiTag } from 'react-icons/fi'
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
-import { authors } from '@/shared/lib/authors'
 import { slug } from '@/shared/lib/slug'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
@@ -36,7 +35,7 @@ export default function Page({ params }: Props) {
   const tags = post.tags.split(',').map(tag => tag.trim())
   const MDXContent = useMDXComponent(post.body.code)
 
-  const author = authors.filter(author => author.user === post.author)[0]
+  const author = post.author_info
 
   return (
     <div className="blog-content-w m-auto">
