@@ -2,14 +2,15 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { RiHistoryLine } from 'react-icons/ri'
 import { FiTag } from 'react-icons/fi'
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
 import { Date } from '@/shared/components/date'
+import { CalendarBlank, Clock } from '@/shared/components/icons'
 import { TopButton } from './components/top-button'
+import { Folder } from './components/icons'
 
 interface Props {
   params: { slug: string }
@@ -53,24 +54,38 @@ export default function Page({ params }: Props) {
           </div>
         </div>
         <div>
-          <p>
-            <Date dateString={post.date} /> &#8226;{' '}
-            <Link
-              href={`/categories/${slug(post.category)}`}
-              className="hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              {post.category}
-            </Link>
-          </p>
-          {post.lastUpdate && (
-            <p
-              className="flex items-center gap-1 text-neutral-500"
-              title="Last Update"
-            >
-              <Date dateString={post.lastUpdate} /> <RiHistoryLine />
-            </p>
-          )}
-          <p className="mt-1 flex flex-wrap gap-3">
+          <div>
+            <div className="flex items-center gap-1">
+              <span className="inline-flex items-center gap-1">
+                <CalendarBlank />
+                <Date dateString={post.date} />
+              </span>
+              {post.lastUpdate && (
+                <span
+                  className="inline-flex items-center gap-1 text-neutral-500"
+                  title="Last Update"
+                >
+                  {'->'} <Date dateString={post.lastUpdate} />
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="group inline-flex items-center gap-1">
+                <Folder />
+                <Link
+                  href={`/categories/${slug(post.category)}`}
+                  className="group-dark:hover:text-blue-400 group-hover:text-blue-500"
+                >
+                  {post.category}
+                </Link>
+              </span>
+              <span className="group inline-flex items-center gap-1">
+                <Clock />
+                <span>{Math.ceil(post.reading_time.minutes)} min read</span>
+              </span>
+            </div>
+          </div>
+          <div className="mt-1 flex flex-wrap gap-3">
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
                 <span className="hover:cursor-pointe flex items-center justify-center gap-1 text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
@@ -78,7 +93,7 @@ export default function Page({ params }: Props) {
                 </span>
               </Link>
             ))}
-          </p>
+          </div>
         </div>
       </div>
       <div className="post-content">
