@@ -5,7 +5,7 @@ RUN sudo apt update && sudo apt upgrade -y
 
 # Setup Pnpm
 RUN corepack enable
-RUN corepack prepare pnpm@latest --activate
+RUN npm i -g pnpm@latest
 
 # Setup ZSH with Oh-My-Zsh
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
