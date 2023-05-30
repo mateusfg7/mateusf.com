@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Date } from '@/shared/components/date'
 import { Post } from 'contentlayer/generated'
 import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
-import { CalendarBlank, Clock } from './icons'
+import { CalendarBlank, Clock } from '@/shared/components/icons'
 
 interface Props {
   post: Post
