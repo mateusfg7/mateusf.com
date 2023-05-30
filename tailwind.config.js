@@ -55,7 +55,7 @@ module.exports = {
         },
         shine: {
           '20%, 100%': {
-            transform: 'translateX(300%)'
+            transform: 'translateX(300%) skewX(-20deg)'
           }
         }
       }
