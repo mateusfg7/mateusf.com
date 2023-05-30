@@ -1,3 +1,27 @@
+## [6.1.0](https://github.com/mateusfg7/mfg-b/compare/6.0.2...6.1.0) (2023-05-30)
+
+
+### Features
+
+* **components:** create shared icons ([6d6fd17](https://github.com/mateusfg7/mfg-b/commit/6d6fd170f75571cfbf7935f6616bd0d640322015))
+* **components:** use `@/*` import path on `PostLink` component ([00b2818](https://github.com/mateusfg7/mfg-b/commit/00b2818a070814fdbe4e8cd005f20233fccd3a9d))
+* **contentlayer:** add reading_time computed field on Post definitions ([5948ea4](https://github.com/mateusfg7/mfg-b/commit/5948ea43e2be72c8c93195ffe0d73625af9ed4ad))
+* **lib:** use `@/*` path when import slug ([c8b71ea](https://github.com/mateusfg7/mfg-b/commit/c8b71ea9b60cf4fbd9d305af64f4f8560d6dcba8))
+* **post:** add `author_info` computed field ([d0859d6](https://github.com/mateusfg7/mfg-b/commit/d0859d67f43f49e507b1d08a0b61e5a92c3b80b8))
+* **providers:** add `enableSystem` option on next themes provider ([05e7fd8](https://github.com/mateusfg7/mfg-b/commit/05e7fd8dc6c824ce124b73d4b55df40fe718409e))
+* **ui:** add reading time on post link ([ee2ed71](https://github.com/mateusfg7/mfg-b/commit/ee2ed717963bfddc7c1498c6cd983a9c12027cec))
+* **ui:** add reading time on post page ([e90fdf0](https://github.com/mateusfg7/mfg-b/commit/e90fdf0b81e8ac0f06f3140f7b48a86c12efdc5f))
+* **ui:** add shine effect on planned badge ([d69daf6](https://github.com/mateusfg7/mfg-b/commit/d69daf6ff12d9080b2d7df7c02108d80ba3cc34e))
+
+
+### Bug Fixes
+
+* **contentlayer:** use relative imports instead of ts paths on `Post` definition ([ceb8f68](https://github.com/mateusfg7/mfg-b/commit/ceb8f688cfa035e1862c80d995272340dc4ef5fc))
+* **deps:** update dependency next to v13.4.4 ([a72ba1a](https://github.com/mateusfg7/mfg-b/commit/a72ba1af8fc33112badd78b02f68a12e79e0d90c))
+* **route:** use `user` instead of `username` on author page ([4f362da](https://github.com/mateusfg7/mfg-b/commit/4f362da6bd359614fea75ffa8405fe2fe62bf4cb))
+* **ui:** add a batter background contrast on post-link dark mode ([17281c0](https://github.com/mateusfg7/mfg-b/commit/17281c0bb7c423b6a4df3ebe7f1b554d4075b100))
+* **ui:** add better contrast on shine effect color ([1947d4d](https://github.com/mateusfg7/mfg-b/commit/1947d4d48fe6678059445858d60d89d99ce46583)), closes [#523](https://github.com/mateusfg7/mfg-b/issues/523)
+
 ### [6.0.2](https://github.com/mateusfg7/mfg-b/compare/6.0.1...6.0.2) (2023-05-25)
 
 
