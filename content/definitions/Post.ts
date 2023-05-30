@@ -1,4 +1,5 @@
 import { defineDocumentType, defineNestedType } from 'contentlayer/source-files'
+import readingTime from 'reading-time'
 import { slug } from '../../src/shared/lib/slug'
 import { authors } from './author-list'
 
@@ -76,6 +77,10 @@ export const Post = defineDocumentType(() => ({
       type: 'nested',
       of: Author,
       resolve: post => authors.find(author => author.user === post.author)
+    },
+    reading_time: {
+      type: 'json',
+      resolve: post => readingTime(post.body.raw)
     }
   }
 }))
