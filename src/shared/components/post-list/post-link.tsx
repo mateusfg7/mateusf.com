@@ -56,7 +56,7 @@ export function PostLink({ post, hideYear = false }: Props) {
           </div>
           <span className="inline-flex items-center gap-3 text-neutral-500 group-hover:text-neutral-700 dark:group-hover:text-neutral-400">
             {(showDate || showReadingTime) && (
-              <span className="inline-flex items-center gap-2 rounded-lg bg-neutral-200/40 p-1 leading-none">
+              <span className="inline-flex items-center gap-2 rounded-lg bg-neutral-200/40 p-1 leading-none dark:bg-neutral-800/30">
                 {showDate && (
                   <span className="inline-flex items-center gap-1">
                     <CalendarBlank />
