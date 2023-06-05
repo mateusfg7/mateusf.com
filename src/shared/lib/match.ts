@@ -4,12 +4,17 @@ import { slug } from '@/shared/lib/slug'
 export function searchMath(post: Post, search: string) {
   const sluggedSearch = slug(search)
 
-  if (slug(post.title).includes(sluggedSearch)) return true
-  if (slug(post.description).includes(sluggedSearch)) return true
-  if (slug(post.author).includes(sluggedSearch)) return true
-  if (slug(post.category).includes(sluggedSearch)) return true
-  if (slug(post.status).includes(sluggedSearch)) return true
-  if (slug(post.tags).includes(sluggedSearch)) return true
+  let weight = 0
+  const sources = [
+    post.title,
+    post.description,
+    post.author,
+    post.category,
+    post.status,
+    post.tags
+  ]
 
-  return false
+  sources.forEach(source => slug(source).includes(sluggedSearch) && weight++)
+
+  return weight
 }

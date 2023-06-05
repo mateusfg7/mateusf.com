@@ -30,12 +30,14 @@ export function Search() {
     if (isSearching) {
       setPosts(
         allPosts
-          .filter(
-            post => searchMath(post, searchString) && post.status !== 'planned'
-          )
+          .map(post => ({
+            ...post,
+            matchWeight: searchMath(post, searchString)
+          }))
+          .filter(post => post.matchWeight !== 0 && post.status !== 'planned')
           .sort((a, b) => {
-            if (a.title < b.title) return -1
-            if (a.title > b.title) return 1
+            if (a.matchWeight > b.matchWeight) return -1
+            if (a.matchWeight < b.matchWeight) return 1
             return 0
           })
       )
