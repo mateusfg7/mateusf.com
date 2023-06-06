@@ -238,16 +238,31 @@
         @apply text-cyan-900 dark:text-cyan-600;
         @apply border-cyan-900 dark:border-cyan-600;
         @apply bg-cyan-900/10 dark:bg-cyan-600/10;
+
+        a {
+          @apply text-cyan-900 dark:text-cyan-600;
+          @apply font-medium;
+        }
       }
       &.warn {
         @apply text-amber-900 dark:text-amber-600;
         @apply border-amber-900 dark:border-amber-600;
         @apply bg-amber-900/10 dark:bg-amber-600/10;
+
+        a {
+          @apply text-amber-900 dark:text-amber-600;
+          @apply font-medium;
+        }
       }
       &.error {
         @apply text-red-900 dark:text-red-600;
         @apply border-red-900 dark:border-red-600;
         @apply bg-red-900/10 dark:bg-red-600/10;
+
+        a {
+          @apply text-red-900 dark:text-red-600;
+          @apply font-medium;
+        }
       }
     }
   }

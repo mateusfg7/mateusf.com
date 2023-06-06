@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { FiTag } from 'react-icons/fi'
@@ -11,6 +12,7 @@ import { Folder } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { CalendarBlank, Clock } from '@/shared/components/icons'
 import { TopButton } from './components/top-button'
+import { Anchor } from './components/anchor'
 
 interface Props {
   params: { slug: string }
@@ -28,6 +30,17 @@ export function generateMetadata({ params }: Props): Metadata {
       url: `https://mfg-b.vercel.app/post/${params.slug}`
     }
   }
+}
+
+const mdxComponents: MDXComponents = {
+  a: ({ children, href, ...props }) =>
+    href?.startsWith('http') ? (
+      <Anchor href={href} {...props}>
+        {children}
+      </Anchor>
+    ) : (
+      <a href={href}>{children}</a>
+    )
 }
 
 export default function Page({ params }: Props) {
@@ -97,7 +110,7 @@ export default function Page({ params }: Props) {
         </div>
       </div>
       <div className="post-content">
-        <MDXContent />
+        <MDXContent components={mdxComponents} />
       </div>
       <TopButton />
     </div>
