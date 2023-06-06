@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://mateusfg7.vercel.app/
+      url: https://mateusf.vercel.app/
     steps:
       - name: Get latest release with tag
         id: latestrelease
