@@ -1,3 +1,11 @@
+## [6.2.0](https://github.com/mateusfg7/mfg-b/compare/6.1.0...6.2.0) (2023-06-06)
+
+
+### Features
+
+* **lib:** use weight on search function ([e1976e8](https://github.com/mateusfg7/mfg-b/commit/e1976e80b6acf2ea6fc8f70f0d14ae56523dc970)), closes [#521](https://github.com/mateusfg7/mfg-b/issues/521)
+* **ui:** move metadata to right on post link component ([6b69cf6](https://github.com/mateusfg7/mfg-b/commit/6b69cf6d3c3c86bc6e9d5c91158a306864f297fb))
+
 ## [6.1.0](https://github.com/mateusfg7/mfg-b/compare/6.0.2...6.1.0) (2023-05-30)
 
 
