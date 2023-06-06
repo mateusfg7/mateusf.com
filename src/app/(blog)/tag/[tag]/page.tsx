@@ -9,7 +9,7 @@ import {
   getNormalTagString
 } from '@/shared/lib/tags'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
-import { Tag } from './components/icons'
+import { Tag } from '@/shared/lib/phosphor-icons'
 import { slug } from '@/shared/lib/slug'
 
 interface Props {

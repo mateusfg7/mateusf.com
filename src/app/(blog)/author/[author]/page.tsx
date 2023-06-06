@@ -7,7 +7,7 @@ import {
   getAuthors,
   getPostsByAuthor
 } from '@/shared/lib/authors'
-import { ArrowRight, Envelope } from './components/icons'
+import { Envelope, ArrowRight } from '@/shared/lib/phosphor-icons'
 
 interface Props {
   params: { author: string }

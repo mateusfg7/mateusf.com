@@ -7,10 +7,10 @@ import { FiTag } from 'react-icons/fi'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
+import { Folder } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { CalendarBlank, Clock } from '@/shared/components/icons'
 import { TopButton } from './components/top-button'
-import { Folder } from './components/icons'
 
 interface Props {
   params: { slug: string }
