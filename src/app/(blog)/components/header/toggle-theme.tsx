@@ -1,32 +1,57 @@
 'use client'
 
+import { Menu } from '@headlessui/react'
+import { Moon, Sun, Desktop } from '@phosphor-icons/react'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import { FiMoon, FiSun } from 'react-icons/fi'
 
-export const ToggleTheme = () => {
-  const [mounted, setMounted] = useState(false)
+export function ToggleTheme() {
+  const { setTheme, theme: currTheme } = useTheme()
 
-  const { setTheme, resolvedTheme } = useTheme()
-
-  const isLight = resolvedTheme === 'light'
-  const oppositeTheme = isLight ? 'dark' : 'light'
-
-  const toggleTheme = () => setTheme(oppositeTheme)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
-  return (
-    <button onClick={toggleTheme} className="p-1">
-      {isLight ? (
-        <FiMoon className="text-xl" title="Dark mode" />
-      ) : (
-        <FiSun className="text-xl" title="Light mode" />
+  const SelectTheme = ({ theme }: { theme: 'light' | 'dark' | 'system' }) => (
+    <button
+      onClick={() => setTheme(theme)}
+      className={`flex w-full items-center justify-start gap-4 rounded-xl p-2 text-lg leading-none hover:bg-neutral-100 hover:dark:bg-neutral-1000 ${
+        currTheme === theme && 'font-bold'
+      }`}
+    >
+      {theme === 'light' && (
+        <>
+          <Sun weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <span>Light</span>
+        </>
+      )}
+      {theme === 'dark' && (
+        <>
+          <Moon weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <span>Dark</span>
+        </>
+      )}
+      {theme === 'system' && (
+        <>
+          <Desktop weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <span>System</span>
+        </>
       )}
     </button>
+  )
+
+  return (
+    <Menu as="div" className="relative inline-flex items-center">
+      <Menu.Button>
+        {currTheme === 'light' && <Sun className="text-xl" />}
+        {currTheme === 'dark' && <Moon className="text-xl" />}
+        {currTheme === 'system' && <Desktop className="text-xl" />}
+      </Menu.Button>
+      <Menu.Items
+        as="div"
+        className="absolute right-0 top-10 origin-top-right animate-fade-down rounded-xl bg-neutral-50 p-1 outline-none animate-duration-300 dark:bg-neutral-900"
+      >
+        <Menu.Item as="div">
+          <SelectTheme theme="light" />
+          <SelectTheme theme="dark" />
+          <SelectTheme theme="system" />
+        </Menu.Item>
+      </Menu.Items>
+    </Menu>
   )
 }
