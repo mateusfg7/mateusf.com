@@ -57,8 +57,8 @@ dependencies:
     specifier: 6.0.3
     version: 6.0.3
   rehype-pretty-code:
-    specifier: ^0.9.0
-    version: 0.9.0(shiki@0.14.0)
+    specifier: 0.9.6
+    version: 0.9.6(shiki@0.14.0)
   rehype-shift-heading:
     specifier: ^1.0.2
     version: 1.0.2
@@ -3689,10 +3689,10 @@ packages:
       minimatch: 9.0.1
       node-fetch: 2.6.11
       ora: 5.4.1
-      postcss: 8.4.19
-      postcss-discard-duplicates: 5.1.0(postcss@8.4.19)
-      postcss-load-config: 4.0.1(postcss@8.4.19)(ts-node@10.9.1)
-      postcss-modules: 6.0.0(postcss@8.4.19)
+      postcss: 8.4.24
+      postcss-discard-duplicates: 5.1.0(postcss@8.4.24)
+      postcss-load-config: 4.0.1(postcss@8.4.24)(ts-node@10.9.1)
+      postcss-modules: 6.0.0(postcss@8.4.24)
       prettier: 2.7.1
       pretty-ms: 7.0.1
       proxy-agent: 5.0.0
@@ -6163,7 +6163,7 @@ packages:
       '@types/glob': 7.2.0
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       glob: 7.2.3
       ignore: 5.2.4
       merge2: 1.4.1
@@ -6546,13 +6546,13 @@ packages:
       safer-buffer: 2.1.2
     dev: true
 
-  /icss-utils@5.1.0(postcss@8.4.19):
+  /icss-utils@5.1.0(postcss@8.4.24):
     resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.19
+      postcss: 8.4.24
     dev: true
 
   /ieee754@1.2.1:
@@ -7988,12 +7988,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanoid@4.0.2:
-    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
-    engines: {node: ^14 || ^16 || >=18}
-    hasBin: true
-    dev: false
-
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -8548,13 +8542,13 @@ packages:
       pathe: 1.1.1
     dev: true
 
-  /postcss-discard-duplicates@5.1.0(postcss@8.4.19):
+  /postcss-discard-duplicates@5.1.0(postcss@8.4.24):
     resolution: {integrity: sha512-zmX3IoSI2aoenxHV6C7plngHWWhUOV3sP1T8y2ifzxzbtnuhk1EdPwm0S1bIUNaJ2eNbWeGLEwzw8huPD67aQw==}
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      postcss: 8.4.19
+      postcss: 8.4.24
     dev: true
 
   /postcss-import@14.1.0(postcss@8.4.19):
@@ -8594,7 +8588,7 @@ packages:
       ts-node: 10.9.1(@types/node@18.16.16)(typescript@5.1.3)
       yaml: 1.10.2
 
-  /postcss-load-config@4.0.1(postcss@8.4.19)(ts-node@10.9.1):
+  /postcss-load-config@4.0.1(postcss@8.4.24)(ts-node@10.9.1):
     resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
     engines: {node: '>= 14'}
     peerDependencies:
@@ -8607,65 +8601,65 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.19
+      postcss: 8.4.24
       ts-node: 10.9.1(@types/node@18.16.16)(typescript@5.1.3)
       yaml: 2.3.1
     dev: true
 
-  /postcss-modules-extract-imports@3.0.0(postcss@8.4.19):
+  /postcss-modules-extract-imports@3.0.0(postcss@8.4.24):
     resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.19
+      postcss: 8.4.24
     dev: true
 
-  /postcss-modules-local-by-default@4.0.3(postcss@8.4.19):
+  /postcss-modules-local-by-default@4.0.3(postcss@8.4.24):
     resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.19)
-      postcss: 8.4.19
+      icss-utils: 5.1.0(postcss@8.4.24)
+      postcss: 8.4.24
       postcss-selector-parser: 6.0.13
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-scope@3.0.0(postcss@8.4.19):
+  /postcss-modules-scope@3.0.0(postcss@8.4.24):
     resolution: {integrity: sha512-hncihwFA2yPath8oZ15PZqvWGkWf+XUfQgUGamS4LqoP1anQLOsOJw0vr7J7IwLpoY9fatA2qiGUGmuZL0Iqlg==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.19
+      postcss: 8.4.24
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /postcss-modules-values@4.0.0(postcss@8.4.19):
+  /postcss-modules-values@4.0.0(postcss@8.4.24):
     resolution: {integrity: sha512-RDxHkAiEGI78gS2ofyvCsu7iycRv7oqw5xMWn9iMoR0N/7mf9D50ecQqUo5BZ9Zh2vH4bCUR/ktCqbB9m8vJjQ==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.19)
-      postcss: 8.4.19
+      icss-utils: 5.1.0(postcss@8.4.24)
+      postcss: 8.4.24
     dev: true
 
-  /postcss-modules@6.0.0(postcss@8.4.19):
+  /postcss-modules@6.0.0(postcss@8.4.24):
     resolution: {integrity: sha512-7DGfnlyi/ju82BRzTIjWS5C4Tafmzl3R79YP/PASiocj+aa6yYphHhhKUOEoXQToId5rgyFgJ88+ccOUydjBXQ==}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
       generic-names: 4.0.0
-      icss-utils: 5.1.0(postcss@8.4.19)
+      icss-utils: 5.1.0(postcss@8.4.24)
       lodash.camelcase: 4.3.0
-      postcss: 8.4.19
-      postcss-modules-extract-imports: 3.0.0(postcss@8.4.19)
-      postcss-modules-local-by-default: 4.0.3(postcss@8.4.19)
-      postcss-modules-scope: 3.0.0(postcss@8.4.19)
-      postcss-modules-values: 4.0.0(postcss@8.4.19)
+      postcss: 8.4.24
+      postcss-modules-extract-imports: 3.0.0(postcss@8.4.24)
+      postcss-modules-local-by-default: 4.0.3(postcss@8.4.24)
+      postcss-modules-scope: 3.0.0(postcss@8.4.24)
+      postcss-modules-values: 4.0.0(postcss@8.4.24)
       string-hash: 1.1.3
     dev: true
 
@@ -9201,14 +9195,13 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-pretty-code@0.9.0(shiki@0.14.0):
-    resolution: {integrity: sha512-oiSrzb04ho9GNrDEhmpBVErtAfxgKvW8hoM8Ka/BKJ9eaXKmZ3gaBlnhhEwM9RqvPVBc2VoCLSBlVRVi/vQt5w==}
+  /rehype-pretty-code@0.9.6(shiki@0.14.0):
+    resolution: {integrity: sha512-l94QKT6w00AIJp1FsbVnbKmcEckKdYkJQfstgiSI4GTt/hSdDrnQRz6rP8r01x1rXNFC2exMG4WY0X7fOpVQGw==}
     engines: {node: ^12.16.0 || >=13.2.0}
     peerDependencies:
       shiki: '*'
     dependencies:
       hash-obj: 4.0.0
-      nanoid: 4.0.2
       parse-numeric-range: 1.3.0
       shiki: 0.14.0
     dev: false
