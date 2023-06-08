@@ -2,6 +2,11 @@ name: Vercel Preview Deployment
 
 on:
   workflow_call:
+    inputs:
+      deploy:
+        required: false
+        default: true
+        type: boolean
     secrets:
       VERCEL_ORG_ID:
         required: true
@@ -39,4 +44,5 @@ jobs:
       - name: Build Project Artifacts
         run: pnpm vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
+        if: ${{ inputs.deploy == true }}
         run: pnpm vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}

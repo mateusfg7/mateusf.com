@@ -7,6 +7,8 @@ jobs:
     name: Call prev-deploy.yml
     uses: mateusfg7/mfg-b/.github/workflows/prev-deploy.yml@main
     secrets: inherit
+    with:
+      deploy: false
 
   call-lint:
     name: Call lint.yml
