@@ -1,3 +1,20 @@
+## [6.3.0](https://github.com/mateusfg7/mfg-b/compare/6.2.0...6.3.0) (2023-06-09)
+
+
+### Features
+
+* **stats:** add umami tracker script ([d179569](https://github.com/mateusfg7/mfg-b/commit/d1795690031bc11afc65d42e2579b80c0c229db7))
+* **ui:** add headlessui menu to select theme ([0b4ebee](https://github.com/mateusfg7/mfg-b/commit/0b4ebeebc42270358183cc997ca2ff499c559132))
+* **ui:** create custom `<a/>` component ([a68a3ab](https://github.com/mateusfg7/mfg-b/commit/a68a3ab14945672989995d9b2f70cad4b290489e))
+* **ui:** remove leading on header menu items ([1c30440](https://github.com/mateusfg7/mfg-b/commit/1c304408ee6f9b8c40c5277e6fa7fa5fae9545f4))
+* **ui:** update anchor style on hints ([97ba3d0](https://github.com/mateusfg7/mfg-b/commit/97ba3d037b4be14cd9671ed2e6165561f4d1d5fa))
+
+
+### Bug Fixes
+
+* **deps:** update dependency next-contentlayer to v0.3.3 ([9e6345a](https://github.com/mateusfg7/mfg-b/commit/9e6345a7acfba7935632d783dcae0e3606d755a1))
+* **deps:** update dependency react-icons to v4.9.0 ([904a0a3](https://github.com/mateusfg7/mfg-b/commit/904a0a328f8617dbf465706ecb17e1908ad8e3d5))
+
 ## [6.2.0](https://github.com/mateusfg7/mfg-b/compare/6.1.0...6.2.0) (2023-06-06)
 
 
@@ -30,7 +47,7 @@
 * **ui:** add a batter background contrast on post-link dark mode ([17281c0](https://github.com/mateusfg7/mfg-b/commit/17281c0bb7c423b6a4df3ebe7f1b554d4075b100))
 * **ui:** add better contrast on shine effect color ([1947d4d](https://github.com/mateusfg7/mfg-b/commit/1947d4d48fe6678059445858d60d89d99ce46583)), closes [#523](https://github.com/mateusfg7/mfg-b/issues/523)
 
-### [6.0.2](https://github.com/mateusfg7/mfg-b/compare/6.0.1...6.0.2) (2023-05-25)
+## [6.0.2](https://github.com/mateusfg7/mfg-b/compare/6.0.1...6.0.2) (2023-05-25)
 
 
 ### Bug Fixes
@@ -38,7 +55,7 @@
 * **ui:** breake longer strings on inline code blocks ([2e4513b](https://github.com/mateusfg7/mfg-b/commit/2e4513b8227b5f134e6627f39a63df4c9ab66f57)), closes [#430](https://github.com/mateusfg7/mfg-b/issues/430)
 * **ui:** shows code block scroll bar only when necessary ([41d699e](https://github.com/mateusfg7/mfg-b/commit/41d699efad8fc74dace6e081930898b0c9adb66c))
 
-### [6.0.1](https://github.com/mateusfg7/mfg-b/compare/6.0.0...6.0.1) (2023-05-25)
+## [6.0.1](https://github.com/mateusfg7/mfg-b/compare/6.0.0...6.0.1) (2023-05-25)
 
 
 ### Bug Fixes
@@ -92,9 +109,9 @@
 * **utils:** complement slug function with github-slug package ([fd84d93](https://github.com/mateusfg7/mfg-b/commit/fd84d93bac66ed55e7dfcf3ae3d6b9fa65eb9a3e)), closes [#497](https://github.com/mateusfg7/mfg-b/issues/497)
 * **utils:** increment `slug` function ([361e731](https://github.com/mateusfg7/mfg-b/commit/361e731582e8f3a4f3b22eecf3e08ab0bd7845b5))
 
-### [5.0.6](https://github.com/mateusfg7/mfg-b/compare/5.0.5...5.0.6) (2023-05-16)
+## [5.0.6](https://github.com/mateusfg7/mfg-b/compare/5.0.5...5.0.6) (2023-05-16)
 
-### [5.0.5](https://github.com/mateusfg7/mfg-b/compare/5.0.0...5.0.5) (2023-05-16)
+## [5.0.5](https://github.com/mateusfg7/mfg-b/compare/5.0.0...5.0.5) (2023-05-16)
 
 
 ### Features
@@ -122,7 +139,7 @@
 * **ui:** add icon next to category and tag title ([a7b1420](https://github.com/mateusfg7/mfg-b/commit/a7b14203e9aaf6cc439d91f151163b592ca762bf)), closes [#488](https://github.com/mateusfg7/mfg-b/issues/488)
 * **ui:** show test message instead of "1" on year section ([9d16c5e](https://github.com/mateusfg7/mfg-b/commit/9d16c5ece058f7f71217e96a5c78a1ee27cca096)), closes [#487](https://github.com/mateusfg7/mfg-b/issues/487)
 
-### [4.0.1](https://github.com/mateusfg7/mfg-b/compare/4.0.0...4.0.1) (2023-05-10)
+## [4.0.1](https://github.com/mateusfg7/mfg-b/compare/4.0.0...4.0.1) (2023-05-10)
 
 ## [4.0.0](https://github.com/mateusfg7/mfg-b/compare/3.3.4...4.0.0) (2023-05-10)
 
@@ -146,14 +163,14 @@
 
 * **`Post`:** use relative import on `Post` definition ([3d00d37](https://github.com/mateusfg7/mfg-b/commit/3d00d375dae1137e791ef22e02b4dab1f8c3002b))
 
-### [3.3.4](https://github.com/mateusfg7/mfg-b/compare/3.3.3...3.3.4) (2023-05-05)
+## [3.3.4](https://github.com/mateusfg7/mfg-b/compare/3.3.3...3.3.4) (2023-05-05)
 
 
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.3.4 ([e1a5675](https://github.com/mateusfg7/mfg-b/commit/e1a5675e3d643e6f23f8ef6d936be5c72f273962))
 
-### [3.3.3](https://github.com/mateusfg7/mfg-b/compare/3.3.2...3.3.3) (2023-05-05)
+## [3.3.3](https://github.com/mateusfg7/mfg-b/compare/3.3.2...3.3.3) (2023-05-05)
 
 
 ### Bug Fixes
@@ -162,9 +179,9 @@
 * **deps:** update dependency date-fns to v2.30.0 ([6c4ffab](https://github.com/mateusfg7/mfg-b/commit/6c4ffab51abe767e66bf98e4308b7ac4a9eb573a))
 * **deps:** update dependency rehype-katex to v6.0.3 ([674ef21](https://github.com/mateusfg7/mfg-b/commit/674ef21d9095616b27307dc6f9e1cf359f71baab))
 
-### [3.3.2](https://github.com/mateusfg7/mfg-b/compare/3.3.1...3.3.2) (2023-05-05)
+## [3.3.2](https://github.com/mateusfg7/mfg-b/compare/3.3.1...3.3.2) (2023-05-05)
 
-### [3.3.1](https://github.com/mateusfg7/mfg-b/compare/3.3.0...3.3.1) (2023-04-28)
+## [3.3.1](https://github.com/mateusfg7/mfg-b/compare/3.3.0...3.3.1) (2023-04-28)
 
 
 ### Features
@@ -185,7 +202,7 @@
 * **ui:** create `.portifolio-content-w` and `.blog-content-w` css classes ([c71a000](https://github.com/mateusfg7/mfg-b/commit/c71a00038c800fafee1810870ac7d1964bc5a46a))
 * **ui:** use `bg-neutral-1000` as default website background ([17943ea](https://github.com/mateusfg7/mfg-b/commit/17943eaf68dbf8bbabb09a0396431d7fcf75a41d))
 
-### [3.2.1](https://github.com/mateusfg7/mfg-b/compare/3.2.0...3.2.1) (2023-04-27)
+## [3.2.1](https://github.com/mateusfg7/mfg-b/compare/3.2.0...3.2.1) (2023-04-27)
 
 ## [3.2.0](https://github.com/mateusfg7/mfg-b/compare/3.1.0...3.2.0) (2023-04-25)
 
@@ -205,7 +222,7 @@
 * **ui:** update `ContactSection` on portifolio page ([479a6be](https://github.com/mateusfg7/mfg-b/commit/479a6bef794de9c11346414c0adc9152adef41b9))
 * **ui:** update `ProjectCard` on portifolio page ([d03e2d7](https://github.com/mateusfg7/mfg-b/commit/d03e2d712fd0dcbd457daf822cc03f483e961e0e))
 
-### [3.0.1](https://github.com/mateusfg7/mfg-b/compare/3.0.0...3.0.1) (2023-04-24)
+## [3.0.1](https://github.com/mateusfg7/mfg-b/compare/3.0.0...3.0.1) (2023-04-24)
 
 
 ### Bug Fixes
@@ -226,9 +243,9 @@
 
 * **deps:** update dependency react-icons to v4.8.0 ([47b76cb](https://github.com/mateusfg7/mfg-b/commit/47b76cbd47c9f0426734c9eabf7bb5605c6f4e67))
 
-### [2.5.8](https://github.com/mateusfg7/mfg-b/compare/2.5.7...2.5.8) (2023-03-21)
+## [2.5.8](https://github.com/mateusfg7/mfg-b/compare/2.5.7...2.5.8) (2023-03-21)
 
-### [2.5.7](https://github.com/mateusfg7/mfg-b/compare/2.5.6...2.5.7) (2023-03-20)
+## [2.5.7](https://github.com/mateusfg7/mfg-b/compare/2.5.6...2.5.7) (2023-03-20)
 
 
 ### Bug Fixes
@@ -236,37 +253,37 @@
 * **deps:** update dependency next to v13.2.4 ([bac75a6](https://github.com/mateusfg7/mfg-b/commit/bac75a66ca71ae712b263da17df571cd5ce03181))
 * **deps:** update dependency shiki to ^0.14.0 ([560a877](https://github.com/mateusfg7/mfg-b/commit/560a877513a5a2906c10dc0a8bf3a3f97eae5e1b))
 
-### [2.5.6](https://github.com/mateusfg7/mfg-b/compare/2.5.5...2.5.6) (2023-03-20)
+## [2.5.6](https://github.com/mateusfg7/mfg-b/compare/2.5.5...2.5.6) (2023-03-20)
 
-### [2.5.5](https://github.com/mateusfg7/mfg-b/compare/2.5.4...2.5.5) (2023-01-26)
+## [2.5.5](https://github.com/mateusfg7/mfg-b/compare/2.5.4...2.5.5) (2023-01-26)
 
 
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.1.4 ([2c66622](https://github.com/mateusfg7/mfg-b/commit/2c66622c9e3b590666b27dd40cf05c79f83d6a74))
 
-### [2.5.4](https://github.com/mateusfg7/mfg-b/compare/2.5.3...2.5.4) (2023-01-26)
+## [2.5.4](https://github.com/mateusfg7/mfg-b/compare/2.5.3...2.5.4) (2023-01-26)
 
 
 ### Bug Fixes
 
 * **deps:** update dependency rehype-pretty-code to ^0.9.0 ([862420b](https://github.com/mateusfg7/mfg-b/commit/862420bd12d12a560dc80ef24f5a90357906223e))
 
-### [2.5.3](https://github.com/mateusfg7/mfg-b/compare/2.5.2...2.5.3) (2022-12-26)
+## [2.5.3](https://github.com/mateusfg7/mfg-b/compare/2.5.2...2.5.3) (2022-12-26)
 
 
 ### Features
 
 * **seo:** add title on Portifolio page ([ea012aa](https://github.com/mateusfg7/mfg-b/commit/ea012aacf01bb08ca415eed4e86b8a3dcc365b7a))
 
-### [2.5.2](https://github.com/mateusfg7/mfg-b/compare/2.5.1...2.5.2) (2022-12-26)
+## [2.5.2](https://github.com/mateusfg7/mfg-b/compare/2.5.1...2.5.2) (2022-12-26)
 
 
 ### Bug Fixes
 
 * **ui:** fixes spelling errors in portfolio ([ddfc89a](https://github.com/mateusfg7/mfg-b/commit/ddfc89a93ae22b94f32828c74d872daa14521504))
 
-### [2.5.1](https://github.com/mateusfg7/mfg-b/compare/2.5.0...2.5.1) (2022-12-26)
+## [2.5.1](https://github.com/mateusfg7/mfg-b/compare/2.5.0...2.5.1) (2022-12-26)
 
 
 ### Features
@@ -283,14 +300,14 @@
 
 * **deps:** update dependency next to v13.1.0 ([954c5e6](https://github.com/mateusfg7/mfg-b/commit/954c5e6daa4c5294f01f60771a4f4ab14e03bb40))
 
-### [2.4.2](https://github.com/mateusfg7/mfg-b/compare/2.4.1...2.4.2) (2022-12-23)
+## [2.4.2](https://github.com/mateusfg7/mfg-b/compare/2.4.1...2.4.2) (2022-12-23)
 
 
 ### Bug Fixes
 
 * scroll behavior on portifolio' ([020d031](https://github.com/mateusfg7/mfg-b/commit/020d031c10090425588ebd1f8719a292f16e529e))
 
-### [2.4.1](https://github.com/mateusfg7/mfg-b/compare/2.4.0...2.4.1) (2022-12-23)
+## [2.4.1](https://github.com/mateusfg7/mfg-b/compare/2.4.0...2.4.1) (2022-12-23)
 
 
 ### Features
@@ -302,7 +319,7 @@
 * **ui:** update Header nav behavior ([96d7650](https://github.com/mateusfg7/mfg-b/commit/96d7650e7a436559ea046f9f9a71730c050fffa1))
 * update smooth scroll rules ([456030f](https://github.com/mateusfg7/mfg-b/commit/456030f5fd1d7e3347c28a7fe725b348bf5642f6))
 
-### [2.3.1](https://github.com/mateusfg7/mfg-b/compare/2.3.0...2.3.1) (2022-12-22)
+## [2.3.1](https://github.com/mateusfg7/mfg-b/compare/2.3.0...2.3.1) (2022-12-22)
 
 
 ### Features
@@ -325,16 +342,16 @@
 
 * **deps:** update dependency shiki to ^0.12.0 ([f741cf0](https://github.com/mateusfg7/mfg-b/commit/f741cf000db6a226c6020d57037462728a542fae))
 
-### [2.2.4](https://github.com/mateusfg7/mfg-b/compare/2.2.3...2.2.4) (2022-12-20)
+## [2.2.4](https://github.com/mateusfg7/mfg-b/compare/2.2.3...2.2.4) (2022-12-20)
 
-### [2.2.3](https://github.com/mateusfg7/mfg-b/compare/2.2.2...2.2.3) (2022-12-20)
+## [2.2.3](https://github.com/mateusfg7/mfg-b/compare/2.2.2...2.2.3) (2022-12-20)
 
 
 ### Bug Fixes
 
 * next using tools folder ([ee1f14a](https://github.com/mateusfg7/mfg-b/commit/ee1f14ac712427da3709ce634222f90fd518b5a7))
 
-### [2.2.2](https://github.com/mateusfg7/mfg-b/compare/98988ae237e25b6e987d170c71d349db4e59dc0e...2.2.2) (2022-12-19)
+## [2.2.2](https://github.com/mateusfg7/mfg-b/compare/98988ae237e25b6e987d170c71d349db4e59dc0e...2.2.2) (2022-12-19)
 
 
 ### Features
