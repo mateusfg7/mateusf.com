@@ -44,3 +44,5 @@ content/posts
 
 # obsidian
 .obsidian
+
+.env
