@@ -88,6 +88,7 @@ export default makeSource({
   syncFiles: syncContentFromGit,
   contentDirPath: 'content',
   documentTypes: [Post],
+  disableImportAliasWarning: true,
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkBreaks, remarkHint],
     rehypePlugins: [
