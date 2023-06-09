@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Providers } from './providers'
 
 import '@/styles/main.css'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'mfg-b',
@@ -46,6 +47,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css"
           crossOrigin="anonymous"
+        />
+        <Script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
       <body className="scroll-smooth">
