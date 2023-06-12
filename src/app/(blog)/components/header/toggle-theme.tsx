@@ -1,10 +1,13 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { Menu } from '@headlessui/react'
 import { Moon, Sun, Desktop } from '@phosphor-icons/react'
 import { useTheme } from 'next-themes'
 
 export function ToggleTheme() {
+  const [isMounted, setIsMounted] = useState(false)
+
   const { setTheme, theme: currTheme } = useTheme()
 
   const SelectTheme = ({ theme }: { theme: 'light' | 'dark' | 'system' }) => (
@@ -34,6 +37,10 @@ export function ToggleTheme() {
       )}
     </button>
   )
+
+  useEffect(() => setIsMounted(true), [])
+
+  if (!isMounted) return <></>
 
   return (
     <Menu as="div" className="relative inline-flex items-center">
