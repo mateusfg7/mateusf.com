@@ -14,7 +14,7 @@ export function Header() {
 
   const glitch = useGlitch({
     timing: { duration: 5000, easing: 'ease-in' },
-    glitchTimeSpan: { start: 0.2, end: 0.8 }
+    glitchTimeSpan: { start: 0.5, end: 0.7 }
   })
 
   function handleScroll() {
