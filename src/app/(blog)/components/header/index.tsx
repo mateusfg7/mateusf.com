@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useGlitch } from 'react-powerglitch'
 
 import { ToggleTheme } from './toggle-theme'
 import { Search } from './search'
@@ -10,6 +11,11 @@ export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [maxScrollValue, setMaxScrollValue] = useState(0)
+
+  const glitch = useGlitch({
+    timing: { duration: 5000, easing: 'ease-in' },
+    glitchTimeSpan: { start: 0.5, end: 0.7 }
+  })
 
   function handleScroll() {
     if (window) {
@@ -64,6 +70,7 @@ export function Header() {
       <div className="blog-content-w m-auto flex flex-col flex-wrap items-center justify-between md:flex-row">
         <Link href="/">
           <h1
+            ref={glitch.ref}
             className={`text-blue-700 dark:text-blue-500 ${
               isNotOnTop ? 'font-medium' : 'font-base'
             } font-chivo-mono hover:cursor-pointer`}

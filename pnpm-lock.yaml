@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -50,6 +50,9 @@ dependencies:
   react-icons:
     specifier: 4.9.0
     version: 4.9.0(react@18.2.0)
+  react-powerglitch:
+    specifier: ^1.0.0
+    version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
   reading-time:
     specifier: ^1.5.0
     version: 1.5.0
@@ -8723,6 +8726,10 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /powerglitch@2.3.2:
+    resolution: {integrity: sha512-nRKMttDRu0aOeu5/rUm0CFvwuaE3b7Klujjn0AIgoLUim0E2+4YpXZ76+2t9cJERQuFZ+7D36ywG7GLtRUSyMQ==}
+    dev: false
+
   /prelude-ls@1.1.2:
     resolution: {integrity: sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==}
     engines: {node: '>= 0.8.0'}
@@ -8987,6 +8994,17 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-powerglitch@1.0.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Nq0b+H8aVtP36+E7SMWFQLsDxTCjIUeudfVfzzhxn0s0eDbOhxGjM3Pq+/zmpukOSw0CB5G1jjqyZl4oyZcPkA==}
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+    dependencies:
+      powerglitch: 2.3.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
