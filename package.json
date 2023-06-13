@@ -24,7 +24,7 @@
     "date-fns": "2.30.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "4.0.3",
-    "next": "13.4.4",
+    "next": "13.4.5",
     "next-contentlayer": "0.3.3",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
