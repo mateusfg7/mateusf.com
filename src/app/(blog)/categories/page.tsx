@@ -16,9 +16,9 @@ export default function Page() {
   return (
     <div className="blog-content-w m-auto">
       <h1 className="mb-5 text-2xl font-bold">Categories</h1>
-      <div className="flex flex-wrap justify-between gap-2">
+      <div className="flex flex-wrap gap-2">
         {categories
-          .sort((a, b) => a.category.localeCompare(b.category))
+          .sort((a, b) => b.numberOfPosts - a.numberOfPosts)
           .map((categoryData, index) => (
             <Link
               key={index}
