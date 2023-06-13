@@ -1,3 +1,22 @@
+## [6.4.0](https://github.com/mateusfg7/mfg-b/compare/6.3.0...6.4.0) (2023-06-13)
+
+
+### Features
+
+* **lib:** create `getTagsAndNumberOfPosts` function ([e37eee6](https://github.com/mateusfg7/mfg-b/commit/e37eee6cade7c907ae9e8def05ceac0421de29dc))
+* **ui:** add glitch effect on header title ([c206c40](https://github.com/mateusfg7/mfg-b/commit/c206c40028573bb7bfb1395fb88f7db062472fe9))
+* **ui:** change category display on categories page ([1d2319e](https://github.com/mateusfg7/mfg-b/commit/1d2319e97c9adb519480e8bd045368c8207a9d45))
+* **ui:** create category selector menu ([6a0c9ae](https://github.com/mateusfg7/mfg-b/commit/6a0c9ae892ef040fbe94e0f684b0b218218d6de6))
+* **ui:** create tags page ([d2128a0](https://github.com/mateusfg7/mfg-b/commit/d2128a09b6b47cd8df0a2bbc70243fcd78c2f991))
+* **ui:** update `glitchTimeSpan` on glitch effect ([66e7ef0](https://github.com/mateusfg7/mfg-b/commit/66e7ef0b28b77864de04ca6dbe0eb99ef664745f))
+* **ui:** update some tailwind styles of post page ([16f28cc](https://github.com/mateusfg7/mfg-b/commit/16f28cc941348074fffd003fb6375893795534d0))
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v13.4.5 ([ef4489c](https://github.com/mateusfg7/mfg-b/commit/ef4489cd247c532001bd83398ec7c29e57e5897e))
+* **ui:** return toggle theme component just when mounted ([9dbe8f7](https://github.com/mateusfg7/mfg-b/commit/9dbe8f7139feb41504afb985c708b17bf784058e))
+
 ## [6.3.0](https://github.com/mateusfg7/mfg-b/compare/6.2.0...6.3.0) (2023-06-09)
 
 
