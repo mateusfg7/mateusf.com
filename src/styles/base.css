@@ -23,6 +23,9 @@
     div[data-rehype-pretty-code-title=''][data-theme='dark'] {
       display: none;
     }
+    div[data-rehype-pretty-code-caption=''][data-theme='dark'] {
+      display: none;
+    }
   }
 
   html.dark {
@@ -31,6 +34,9 @@
     }
 
     div[data-rehype-pretty-code-title=''][data-theme='light'] {
+      display: none;
+    }
+    div[data-rehype-pretty-code-caption=''][data-theme='light'] {
       display: none;
     }
   }
