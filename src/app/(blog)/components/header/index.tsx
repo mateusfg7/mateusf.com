@@ -6,6 +6,7 @@ import { useGlitch } from 'react-powerglitch'
 
 import { ToggleTheme } from './toggle-theme'
 import { Search } from './search'
+import { CategorySelector } from './category-selector'
 
 export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
@@ -81,8 +82,8 @@ export function Header() {
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8">
           <nav className="flex flex-wrap items-center justify-center gap-5">
             <MenuItem name="Home" path="/" />
-            <MenuItem name="Categories" path="/categories" />
             <MenuItem name="Portifolio" path="/portifolio" />
+            <CategorySelector />
           </nav>
           <div className="flex w-full items-center gap-8 md:w-auto">
             <Search />
