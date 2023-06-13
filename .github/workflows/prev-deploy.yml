@@ -16,7 +16,12 @@ on:
         required: true
 
   workflow_dispatch:
-
+    inputs:
+      deploy:
+        description: 'Deploy builded app to Vercel'
+        required: false
+        default: true
+        type: boolean
 jobs:
   deploy-preview:
     name: Deploy to preview
