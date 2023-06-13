@@ -3,14 +3,12 @@ import type { Metadata } from 'next'
 import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { FiTag } from 'react-icons/fi'
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
-import { Folder } from '@/shared/lib/phosphor-icons'
+import { Folder, CalendarBlank, Clock, Tag } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
-import { CalendarBlank, Clock } from '@/shared/components/icons'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
 
@@ -102,7 +100,7 @@ export default function Page({ params }: Props) {
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
                 <span className="hover:cursor-pointe flex items-center justify-center gap-1 text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
-                  {tag} <FiTag size={15} />
+                  {tag} <Tag size={15} />
                 </span>
               </Link>
             ))}
