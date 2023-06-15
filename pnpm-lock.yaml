@@ -74,6 +74,9 @@ dependencies:
   rehype-slug:
     specifier: 5.1.0
     version: 5.1.0
+  rehype-stringify:
+    specifier: ^9.0.3
+    version: 9.0.3
   rehype-toc:
     specifier: 3.0.2
     version: 3.0.2
@@ -92,12 +95,21 @@ dependencies:
   remark-math:
     specifier: 5.1.1
     version: 5.1.1
+  remark-parse:
+    specifier: ^10.0.2
+    version: 10.0.2
+  remark-rehype:
+    specifier: ^10.1.0
+    version: 10.1.0
   shiki:
     specifier: ^0.14.0
     version: 0.14.0
   tailwindcss-animated:
     specifier: ^1.0.1
     version: 1.0.1(tailwindcss@3.2.4)
+  unified:
+    specifier: ^10.1.2
+    version: 10.1.2
 
 devDependencies:
   '@commitlint/cli':
