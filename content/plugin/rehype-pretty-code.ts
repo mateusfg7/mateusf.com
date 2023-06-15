@@ -1,6 +1,6 @@
-import { type Options } from 'rehype-pretty-code'
+import pluggin, { Options } from 'rehype-pretty-code'
 
-export const rehypePrettyCodeOptions: Partial<Options> = {
+const options: Partial<Options> = {
   theme: {
     dark: 'github-dark',
     light: 'github-light'
@@ -20,3 +20,7 @@ export const rehypePrettyCodeOptions: Partial<Options> = {
     node.properties.className = ['highlighted-word']
   }
 }
+
+const rehypePrettyCode = { pluggin, options }
+
+export default rehypePrettyCode

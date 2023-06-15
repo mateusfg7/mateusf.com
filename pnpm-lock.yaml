@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -26,6 +26,9 @@ dependencies:
   date-fns:
     specifier: 2.30.0
     version: 2.30.0
+  feed:
+    specifier: ^4.2.2
+    version: 4.2.2
   github-slugger:
     specifier: ^2.0.0
     version: 2.0.0
@@ -71,6 +74,9 @@ dependencies:
   rehype-slug:
     specifier: 5.1.0
     version: 5.1.0
+  rehype-stringify:
+    specifier: ^9.0.3
+    version: 9.0.3
   rehype-toc:
     specifier: 3.0.2
     version: 3.0.2
@@ -89,12 +95,21 @@ dependencies:
   remark-math:
     specifier: 5.1.1
     version: 5.1.1
+  remark-parse:
+    specifier: ^10.0.2
+    version: 10.0.2
+  remark-rehype:
+    specifier: ^10.1.0
+    version: 10.1.0
   shiki:
     specifier: ^0.14.0
     version: 0.14.0
   tailwindcss-animated:
     specifier: ^1.0.1
     version: 1.0.1(tailwindcss@3.2.4)
+  unified:
+    specifier: ^10.1.2
+    version: 10.1.2
 
 devDependencies:
   '@commitlint/cli':
@@ -6051,6 +6066,13 @@ packages:
     dependencies:
       format: 0.2.2
 
+  /feed@4.2.2:
+    resolution: {integrity: sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==}
+    engines: {node: '>=0.4.0'}
+    dependencies:
+      xml-js: 1.6.11
+    dev: false
+
   /fetch-blob@3.2.0:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
@@ -9762,6 +9784,10 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
+  /sax@1.2.4:
+    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    dev: false
+
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
@@ -11013,6 +11039,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /xml-js@1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
+    hasBin: true
+    dependencies:
+      sax: 1.2.4
+    dev: false
 
   /xregexp@2.0.0:
     resolution: {integrity: sha512-xl/50/Cf32VsGq/1R8jJE5ajH1yMCQkpmoS10QbFZWl2Oor4H0Me64Pu2yxvsRWK3m6soJbmGfzSR7BYmDcWAA==}
