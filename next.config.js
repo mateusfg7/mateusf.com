@@ -6,27 +6,23 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: '/rss',
         destination: '/feed',
-        permanet: true
       },
       {
         source: '/atom',
         destination: '/feed',
-        permanet: true
       },
       {
         source: '/rss.xml',
         destination: '/feed',
-        permanet: true
       },
       {
         source: '/atom.xml',
         destination: '/feed',
-        permanet: true
       },
     ]
   }
