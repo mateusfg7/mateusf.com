@@ -21,7 +21,7 @@ export function generateFeed() {
     copyright: `All rights reserved ${date.getFullYear()}, Mateus Felipe.`,
     updated: posts.length > 0 ? new Date(posts[0].date) : date,
     feedLinks: {
-      rss2: `${host}/feed`
+      atom1: `${host}/feed`
     },
     docs: 'https://github.com/mateusfg7/mfg-b',
     generator: 'Feed for Node.js',
