@@ -1,5 +1,5 @@
-const isProduction = process.env.NODE_ENV === 'production'
+const isDevelopment = process.env.NODE_ENV === 'development'
 
-export const host = isProduction
-  ? `https://${process.env.VERCEL_URL}`
-  : 'http://localhost:3000'
+export const host = isDevelopment
+  ? 'http://localhost:3000'
+  : `https://${process.env.HOST}`
