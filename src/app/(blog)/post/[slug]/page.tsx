@@ -51,7 +51,7 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <div className="mb-8 flex flex-col gap-4 border-b border-neutral-500 pb-5 leading-6">
+      <div className="flex flex-col gap-4 leading-6">
         <div>
           <h1 className="text-2xl font-bold">{post.title}</h1>
           <div className="flex gap-2 text-neutral-600 dark:text-neutral-400">
@@ -64,7 +64,7 @@ export default function Page({ params }: Props) {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="space-y-3">
           <div>
             <div className="flex items-center gap-1">
               <span className="inline-flex items-center gap-1">
@@ -96,10 +96,10 @@ export default function Page({ params }: Props) {
               </span>
             </div>
           </div>
-          <div className="mt-1 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 gap-y-2">
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
-                <span className="hover:cursor-pointe flex items-center justify-center gap-1 text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
+                <span className="flex items-center justify-center gap-1 leading-none text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
                   {tag} <Tag size={15} />
                 </span>
               </Link>
@@ -107,6 +107,7 @@ export default function Page({ params }: Props) {
           </div>
         </div>
       </div>
+      <div className="my-6 h-px w-full bg-neutral-500/50" />
       <div className="post-content">
         <MDXContent components={mdxComponents} />
       </div>
