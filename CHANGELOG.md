@@ -1,3 +1,27 @@
+## [7.0.0](https://github.com/mateusfg7/mfg-b/compare/6.4.0...7.0.0) (2023-06-19)
+
+
+### Features
+
+* **api:** create endpoint to get atom feed ([69d0665](https://github.com/mateusfg7/mfg-b/commit/69d06654967946ff1dbd704457f72b6fe838e818))
+* **ceo:** create dynamic sitemap ([97ca8ac](https://github.com/mateusfg7/mfg-b/commit/97ca8ac77c75e25ba86f29a2e0babc53f25e5585)), closes [#544](https://github.com/mateusfg7/mfg-b/issues/544)
+* **contentlayer:** add custom rehype plugin to get ad inject raw code on code elements ([061b378](https://github.com/mateusfg7/mfg-b/commit/061b378c04eec95555445720ce42715a95f5363f))
+* **lib:** check if is on development env instead of production ([6579ff3](https://github.com/mateusfg7/mfg-b/commit/6579ff3ec9dcb2d0a47f39b5a93f2132131f68fd))
+* **lib:** create function to generate atom feed ([5c7dfaf](https://github.com/mateusfg7/mfg-b/commit/5c7dfaf6f76511b7db49eca9eaf03bceb56e04b4))
+* **lib:** create markdown-to-html converter ([1d815c4](https://github.com/mateusfg7/mfg-b/commit/1d815c46868a5cd806a59ba27d517aa028d6778d))
+* **lib:** create webserver constanst for export things like `host` ([dd12303](https://github.com/mateusfg7/mfg-b/commit/dd12303330241b2108fed8977959fe6adc439332))
+* **lib:** set host based on `HOST` env variabled ([f713625](https://github.com/mateusfg7/mfg-b/commit/f713625cbf58d6862834e3e0cc2bee952b32f388))
+* **lib:** update feed config on `generateFeed()` ([915ad5b](https://github.com/mateusfg7/mfg-b/commit/915ad5ba3cd6b412914568f83ca1dd90e7c559c2))
+* **ui:** add custom code component with copy button on post page ([2b2fb01](https://github.com/mateusfg7/mfg-b/commit/2b2fb019235fea459151861c071f23938c9f473c))
+* **ui:** improve post matadata spaces on post page ([3ed0a5f](https://github.com/mateusfg7/mfg-b/commit/3ed0a5f355432feb0ffb19f8bd92e1f0002135e7))
+* **ui:** small updates on post style ([bf22a03](https://github.com/mateusfg7/mfg-b/commit/bf22a030974b1f27044b067d7333afbd073938c6))
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v13.4.6 ([cb5b817](https://github.com/mateusfg7/mfg-b/commit/cb5b8176c8ec6531a817266987167b266c29008c))
+* **seo:** use slug version of tag/category link on sitemap ([9b13834](https://github.com/mateusfg7/mfg-b/commit/9b13834c9ec6ac18905f301b296821e9ca212adb))
+
 ## [6.4.0](https://github.com/mateusfg7/mfg-b/compare/6.3.0...6.4.0) (2023-06-13)
 
 
