@@ -3,6 +3,7 @@ import { getUniqueCategoryList } from '@/shared/lib/categories'
 import { getUniqueTagListFromPosts } from '@/shared/lib/tags'
 import { host } from '@/shared/lib/webserver-constants'
 import { allPosts } from 'contentlayer/generated'
+import { slug } from '@/shared/lib/slug'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const commonRoutes = ['', 'categories', 'feed', 'tag', 'portifolio'].map(
@@ -13,11 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   )
 
   const tags = getUniqueTagListFromPosts().map(tag => ({
-    url: `${host}/tag/${tag}`,
+    url: `${host}/tag/${slug(tag)}`,
     lastModified: new Date().toISOString()
   }))
   const categories = getUniqueCategoryList().map(category => ({
-    url: `${host}/categories/${category}`,
+    url: `${host}/categories/${slug(category)}`,
     lastModified: new Date().toISOString()
   }))
   const posts = allPosts.map(post => ({
