@@ -11,6 +11,7 @@ import { Folder, CalendarBlank, Clock, Tag } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
+import { PrettyCodeElement } from './components/pretty-code-element'
 
 interface Props {
   params: { slug: string }
@@ -38,7 +39,8 @@ const mdxComponents: MDXComponents = {
       </Anchor>
     ) : (
       <a href={href}>{children}</a>
-    )
+    ),
+  div: PrettyCodeElement
 }
 
 export default function Page({ params }: Props) {
