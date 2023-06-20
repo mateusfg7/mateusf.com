@@ -1,3 +1,4 @@
+import { Footer } from './components/footer'
 import { Header } from './components/header'
 
 export default function BlogLayout({
@@ -9,7 +10,8 @@ export default function BlogLayout({
     <html>
       <body>
         <Header />
-        <div className="py-48 md:py-36">{children}</div>
+        <div className="pt-48 md:pt-36">{children}</div>
+        <Footer />
       </body>
     </html>
   )
