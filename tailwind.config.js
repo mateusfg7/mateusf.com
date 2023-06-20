@@ -23,7 +23,9 @@ module.exports = {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         shine: 'shine 4s linear 0s forwards',
-        'custom-fade-down': 'custom-fade-down 200ms linear'
+        'custom-fade-down': 'custom-fade-down 200ms linear',
+        'slide-left': 'slide-left 70ms linear',
+        'slide-right': 'slide-right 70ms linear'
       },
       keyframes: {
         typing: {
@@ -69,6 +71,26 @@ module.exports = {
             opacity: 1,
             transform:
               'translate(var(--tw-translate-x), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          }
+        },
+        'slide-right': {
+          '0%': {
+            transform:
+              'translate(0, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          },
+          '100%': {
+            transform:
+              'translate(100%, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          }
+        },
+        'slide-left': {
+          '0%': {
+            transform:
+              'translate(100%, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          },
+          '100%': {
+            transform:
+              'translate(0, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
           }
         }
       }
