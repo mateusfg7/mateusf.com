@@ -14,7 +14,7 @@ export default function Page() {
   const tags = getTagsAndNumberOfPosts()
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="blog-content-w z-0 m-auto">
       <h1 className="mb-5 text-2xl font-bold">Tags</h1>
       <div className="flex flex-wrap gap-2">
         {tags
