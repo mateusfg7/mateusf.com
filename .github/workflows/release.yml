@@ -111,8 +111,13 @@ jobs:
         id: get_tag
         run: echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - name: Checkout to prod
-        run: git checkout prod
+        run: git pull origin prod && git checkout prod
       - name: Merge "main" to "prod"
-        run: git merge --squash -X ours main && git commit -m "v${{ steps.get_tag.outputs.tag }}"
+        run: git merge --squash -X ours main
+
+      - name: Show git status
+        run: git status
+      - name: Commit merge
+        run: git commit -m "v${{ steps.get_tag.outputs.tag }}"
       - name: Push prod branch
         run: git push origin prod
