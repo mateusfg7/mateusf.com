@@ -22,10 +22,10 @@ export function PostList({ posts, separateByYear = false }: Props) {
       <div className="flex flex-col gap-7">
         {postsByYear.map(postsOfYear => (
           <div key={postsOfYear.year}>
-            <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-2xl font-bold dark:bg-neutral-900">
+            <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-center text-2xl font-bold dark:bg-neutral-900 md:text-left">
               {postsOfYear.year}
             </h1>
-            <div className="flex flex-col gap-3">
+            <div className="my-5 flex flex-col gap-4 md:my-0 md:gap-3">
               {postsOfYear.posts.map((post, key) => (
                 <PostLink key={key} post={post} hideYear />
               ))}
@@ -33,7 +33,7 @@ export function PostList({ posts, separateByYear = false }: Props) {
           </div>
         ))}
         <div>
-          <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-2xl font-bold dark:bg-neutral-900">
+          <h1 className="mb-5 rounded-xl bg-neutral-50 p-3 text-center text-2xl font-bold dark:bg-neutral-900 md:text-left">
             Others
           </h1>
           <div className="flex flex-col gap-3">

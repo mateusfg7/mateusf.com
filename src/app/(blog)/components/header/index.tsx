@@ -7,6 +7,7 @@ import { useGlitch } from 'react-powerglitch'
 import { ToggleTheme } from './toggle-theme'
 import { Search } from './search'
 import { CategorySelector } from './category-selector'
+import { MobileMenu } from './mobile-menu/index'
 
 export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
@@ -60,7 +61,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-3 left-3 right-3 rounded-xl bg-neutral-100/80 backdrop-blur-lg dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
+      className={`fixed top-3 left-3 right-3 z-10 rounded-xl bg-neutral-100/80 backdrop-blur-lg dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
         isNotOnTop ? 'py-3' : 'py-3 md:py-6'
       } border border-neutral-50 dark:border-neutral-800 md:border-b md:border-none ${
         isNotOnTop
@@ -68,7 +69,8 @@ export function Header() {
           : 'md:border-b-transparent'
       }`}
     >
-      <div className="blog-content-w m-auto flex flex-col flex-wrap items-center justify-between md:flex-row">
+      <div className="blog-content-w m-auto flex flex-wrap items-center justify-between">
+        <div className="md:hidden" />
         <Link href="/">
           <h1
             ref={glitch.ref}
@@ -79,7 +81,7 @@ export function Header() {
             Mateus Felipe
           </h1>
         </Link>
-        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8">
+        <div className="hidden flex-wrap items-center justify-center gap-8 md:flex">
           <nav className="flex flex-wrap items-center justify-center gap-5">
             <MenuItem name="Home" path="/" />
             <MenuItem name="Portifolio" path="/portifolio" />
@@ -91,6 +93,7 @@ export function Header() {
             <ToggleTheme />
           </div>
         </div>
+        <MobileMenu />
       </div>
     </header>
   )
