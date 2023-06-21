@@ -1,3 +1,5 @@
+## [7.1.5](https://github.com/mateusfg7/mfg-b/compare/7.1.4...7.1.5) (2023-06-21)
+
 ## [7.1.4](https://github.com/mateusfg7/mfg-b/compare/7.1.3...7.1.4) (2023-06-21)
 
 ## [7.1.3](https://github.com/mateusfg7/mfg-b/compare/7.1.2...7.1.3) (2023-06-21)
