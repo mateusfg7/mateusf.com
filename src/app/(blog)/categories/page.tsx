@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { getCategoriesAndNumberOfPosts } from '@/shared/lib/categories'
 import { slug } from '@/shared/lib/slug'
+import { Folder } from '@/shared/lib/phosphor-icons'
 
 export const metadata: Metadata = {
   title: 'mfg-b | Categories',
@@ -15,8 +16,8 @@ export default function Page() {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 text-2xl font-bold">Categories</h1>
-      <div className="flex flex-wrap gap-2">
+      <h1 className="mb-5 text-center text-2xl font-bold md:text-left">Categories</h1>
+      <div className="hidden flex-wrap gap-2 md:flex">
         {categories
           .sort((a, b) => b.numberOfPosts - a.numberOfPosts)
           .map((categoryData, index) => (
@@ -29,6 +30,24 @@ export default function Page() {
                   {categoryData.category}
                   <sup> {categoryData.numberOfPosts} </sup>
                 </p>
+              </div>
+            </Link>
+          ))}
+      </div>
+      <div className="flex flex-col gap-2 md:hidden">
+        {categories
+          .sort((a, b) => b.numberOfPosts - a.numberOfPosts)
+          .map((categoryData, index) => (
+            <Link key={index} href={`/categories/${slug(categoryData.category)}`}>
+              <div className="flex items-center rounded-md p-4 font-bold leading-none text-neutral-700 bg-neutral-300/10 dark:bg-neutral-800/10 active:bg-blue-700/10 active:text-blue-700 dark:text-neutral-500 active:dark:bg-blue-500/10 active:dark:text-blue-500 gap-4">
+                <span className="inline-flex items-end gap-1">
+                  <Folder weight='duotone' />
+                  <span>
+                    {categoryData.category}
+                  </span>
+                </span>
+                <span className="h-px flex-1 border-b border-dotted border-neutral-700 dark:border-neutral-500" />
+                <span>{categoryData.numberOfPosts}</span>
               </div>
             </Link>
           ))}

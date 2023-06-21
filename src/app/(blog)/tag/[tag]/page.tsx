@@ -29,9 +29,9 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 flex items-end gap-2 text-2xl font-bold">
+      <h1 className="mb-5 justify-center md:justify-start flex items-end gap-2 text-2xl font-bold">
         {getNormalTagString(tag)}
-        <Tag />
+        <Tag weight="duotone" />
       </h1>
       <main>
         <PostList posts={postList} />
