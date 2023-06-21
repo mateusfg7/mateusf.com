@@ -96,15 +96,22 @@ jobs:
           body: ${{ needs.changelog.outputs.changelog }}
           tag_name: ${{ steps.get_tag.outputs.tag }}
 
-  call-prod-deploy:
-    name: Call prod-deploy.yml
+  deploy-to-prod:
+    name: Merge to production branch
     needs: release
-    uses: mateusfg7/mfg-b/.github/workflows/prod-deploy.yml@main
-    secrets: inherit
-
-  call-prev-deploy:
-    name: Call prev-deploy.yml
-    needs: sync-tag
-    if: needs.sync-tag.outputs.isReleaseNew == 'false'
-    uses: mateusfg7/mfg-b/.github/workflows/prev-deploy.yml@main
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Checkout to prod
+        run: git checkout prod
+      - name: Merge "main" to "prod"
+        run: git merge --squash main && git commit -m "v$(git describe --tags --abbrev=0)"
+      - name: Push prod branch
+        run: git push origin prod

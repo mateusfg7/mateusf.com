@@ -3,13 +3,6 @@ name: "[CI] Pull Request"
 on: pull_request
 
 jobs:
-  call-prev-deploy:
-    name: Call prev-deploy.yml
-    uses: mateusfg7/mfg-b/.github/workflows/prev-deploy.yml@main
-    secrets: inherit
-    with:
-      deploy: false
-
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/mfg-b/.github/workflows/lint.yml@main
