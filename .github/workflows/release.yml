@@ -109,16 +109,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Get package version
-        run: |
-          PACKAGE_VERSION=$(cat package.json \
-          | grep version \
-          | head -1 \
-          | awk -F: '{ print $2 }' \
-          | sed 's/[",]//g')
+      - name: Get tag
+        id: get_tag
+        run: echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - name: Checkout to prod
         run: git checkout prod
       - name: Merge "main" to "prod"
-        run: git merge --squash -X ours main && git commit -m "v$PACKAGE_VERSION"
+        run: git merge --squash -X ours main && git commit -m "v${{ steps.get_tag.outputs.tag }}"
       - name: Push prod branch
         run: git push origin prod
