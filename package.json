@@ -11,6 +11,8 @@
     "start": "next start",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint --fix . --ext js,jsx,ts,tsx",
+    "style": "prettier --check **/*.{ts,tsx}",
+    "style:fix": "prettier --write **/*.{ts,tsx}",
     "bump-tag": "tsx tools/bump-tag-version.ts",
     "vercel": "vercel"
   },
