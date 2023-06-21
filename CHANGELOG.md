@@ -1,3 +1,25 @@
+## [7.1.0](https://github.com/mateusfg7/mfg-b/compare/7.0.0...7.1.0) (2023-06-21)
+
+
+### Features
+
+* **tailwind:** add new animations ([8700b0a](https://github.com/mateusfg7/mfg-b/commit/8700b0a40ee7685c0488bbb9151d7eb7b8261193))
+* **ui:** create Footer component for blog section ([7853ed0](https://github.com/mateusfg7/mfg-b/commit/7853ed04404c27cd9f28b83fade4900a1895a494))
+* **ui:** create mobile menu ([96a8af4](https://github.com/mateusfg7/mfg-b/commit/96a8af49fa18ea55c82498615008a121f6922220))
+* **ui:** update padding top on blog main content ([c1a6251](https://github.com/mateusfg7/mfg-b/commit/c1a6251457494b95e8210e19eb17e1719da2b193))
+* **ux:** adapt footer layout to small devices ([e6c15d9](https://github.com/mateusfg7/mfg-b/commit/e6c15d96b835368c896cc31b94fee184e31506e7))
+* **ux:** adapt portifolio page to small devices ([c6b48d5](https://github.com/mateusfg7/mfg-b/commit/c6b48d56475b1a604d7c1f8c7a444b9f2414fd13))
+* **ux:** adapt post link layout to small devices ([838ce70](https://github.com/mateusfg7/mfg-b/commit/838ce70357d1fd3626be010f907fb42714a2619f))
+* **ux:** adapt post list layout to small devices ([088ab9e](https://github.com/mateusfg7/mfg-b/commit/088ab9e44b3519313a23b2ce00e41f49731ed1ab))
+* **ux:** adapt post page to small devices ([5492a99](https://github.com/mateusfg7/mfg-b/commit/5492a992ac85f78ed78e71b37b60db249fac2b51))
+* **ux:** adapt tags and categories pages to small devices ([b2b8faa](https://github.com/mateusfg7/mfg-b/commit/b2b8faaf6e59aa2886b3f48547da30ea044bcf3b))
+
+
+### Bug Fixes
+
+* **ui:** reset just horizontal padding instead all padding on `portifolio-content-w` and `blog-content-w` utilities ([152ed28](https://github.com/mateusfg7/mfg-b/commit/152ed2897392fc0b2ebb1312e5ba2223cd315c1b))
+* **ui:** set z-index of tag post number to 0 ([392bb80](https://github.com/mateusfg7/mfg-b/commit/392bb80d48ce3c4cb6a637bdabaa6568d81b4ba0))
+
 ## [7.0.0](https://github.com/mateusfg7/mfg-b/compare/6.4.0...7.0.0) (2023-06-19)
 
 
