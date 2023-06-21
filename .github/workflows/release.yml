@@ -113,7 +113,7 @@ jobs:
       - name: Checkout to prod
         run: git pull origin prod && git checkout prod
       - name: Merge "main" to "prod"
-        run: git merge --squash -X ours main
+        run: git merge --squash main
 
       - name: Show git status
         run: git status
