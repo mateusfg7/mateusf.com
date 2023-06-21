@@ -119,6 +119,6 @@ jobs:
       - name: Checkout to prod
         run: git checkout prod
       - name: Merge "main" to "prod"
-        run: git merge --squash main && git commit -m "v$PACKAGE_VERSION"
+        run: git merge --squash -X ours main && git commit -m "v$PACKAGE_VERSION"
       - name: Push prod branch
         run: git push origin prod
