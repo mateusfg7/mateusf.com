@@ -33,7 +33,7 @@ export const AccordionTrigger = React.forwardRef(
   ) => (
     <Accordion.Header className="flex">
       <Accordion.Trigger
-        className="group flex flex-1 cursor-default items-center justify-between bg-neutral-900 p-7 text-lg leading-none shadow-lg shadow-black/5 outline-none duration-300 hover:cursor-pointer hover:bg-neutral-800"
+        className="group flex flex-1 cursor-default items-center justify-between bg-neutral-900 p-4 py-7 md:p-7 text-lg leading-none shadow-lg shadow-black/5 outline-none duration-300 hover:cursor-pointer hover:bg-neutral-800"
         {...props}
         ref={forwardedRef}
       >
@@ -60,7 +60,7 @@ export const AccordionContent = React.forwardRef(
       {...props}
       ref={forwardedRef}
     >
-      <div className="p-7">{children}</div>
+      <div className="p-4 py-7 md:p-7">{children}</div>
     </Accordion.Content>
   )
 )
@@ -69,8 +69,8 @@ export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
   const Icon = knowledge.icon
 
   return (
-    <div className="relative flex w-full items-center text-xl">
-      <div className="flex w-[60%] items-center gap-6">
+    <div className="relative flex w-full items-center">
+      <div className="flex w-1/2 md:w-[60%] items-center gap-4 md:gap-6 md:text-xl">
         <span>
           <Icon />
         </span>
@@ -78,15 +78,15 @@ export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
       </div>
       <div className="flex-1">
         <div
-          className={`rounded-2xl bg-neutral-800 px-3 text-lg text-neutral-400 ${
+          className={`rounded-full bg-neutral-800 leading-none p-[0.35rem] md:px-3 md:text-lg text-neutral-400 ${
             knowledge.level === 1 && 'w-[10%]'
           } ${knowledge.level === 2 && 'w-[60%]'} ${
             knowledge.level === 3 && 'w-[100%]'
           } min-w-max`}
         >
-          {knowledge.level === 1 && 'Iniciante'}
-          {knowledge.level === 2 && 'Intermediário'}
-          {knowledge.level === 3 && 'Avançado'}
+          {knowledge.level === 1 && 'iniciante'}
+          {knowledge.level === 2 && 'intermediário'}
+          {knowledge.level === 3 && 'avançado'}
         </div>
       </div>
     </div>

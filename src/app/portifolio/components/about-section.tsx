@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FiBook, FiDownload } from 'react-icons/fi'
+import { DownloadSimple, Book } from '@/shared/lib/phosphor-icons'
 
 export function AboutSection() {
   return (
@@ -20,89 +20,91 @@ export function AboutSection() {
             src="https://github.com/mateusfg7.png"
             className="my-14 w-1/2 rounded-3xl object-cover md:hidden"
           />
-          <p className="mb-3 px-4 text-xl md:p-0">
-            Me chamo <span className="font-bold">Mateus Felipe Gonçalves</span>,
-            tenho 20 anos e moro em Pará de Minas - MG, Brasil.
-          </p>
-          <p className="mb-3 px-4 text-xl md:p-0">
-            <span className="font-semibold">Auto didata</span> full-stack.
-            Possuo conhecimento em{' '}
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ReactJS
-            </a>{' '}
-            e{' '}
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://nextjs.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              NextJS
-            </a>{' '}
-            no Front-end,{' '}
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://deno.land/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Deno
-            </a>{' '}
-            e{' '}
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://nodejs.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              NodeJS
-            </a>{' '}
-            no Back-end, e{' '}
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://reactnative.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              React-native
-            </a>
-            /
-            <a
-              className="text-neutral-50 hover:cursor-pointer hover:underline"
-              href="https://expo.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Expo
-            </a>{' '}
-            no Mobile com foco em Android. Possuo nível intermediário de inglês
-            em leitura e escrita, habilidade adquirida através da leitura de
-            várias documentações e artigos relacionados a tecnologias e outros
-            assuntos em inglês, e também escrevendo blog posts e documentações
-            de projetos pessoais.
-          </p>
-          <p className="px-4 text-xl md:p-0">
-            Também tenho interesse na área de construção civil, elétrica e
-            automação residencial.
-          </p>
+          <div className='px-4 md:p-0 text-xl flex flex-col gap-3 text-justify md:text-left'>
+            <p>
+              Me chamo <span className="font-bold">Mateus Felipe Gonçalves</span>,
+              tenho 20 anos e moro em Pará de Minas - MG, Brasil.
+            </p>
+            <p>
+              <span className="font-semibold">Auto didata</span> full-stack.
+              Possuo conhecimento em{' '}
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://reactjs.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ReactJS
+              </a>{' '}
+              e{' '}
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                NextJS
+              </a>{' '}
+              no Front-end,{' '}
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://deno.land/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Deno
+              </a>{' '}
+              e{' '}
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://nodejs.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                NodeJS
+              </a>{' '}
+              no Back-end, e{' '}
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://reactnative.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                React-native
+              </a>
+              /
+              <a
+                className="text-neutral-50 hover:cursor-pointer hover:underline"
+                href="https://expo.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Expo
+              </a>{' '}
+              no Mobile com foco em Android. Possuo nível intermediário de inglês
+              em leitura e escrita, habilidade adquirida através da leitura de
+              várias documentações e artigos relacionados a tecnologias e outros
+              assuntos em inglês, e também escrevendo blog posts e documentações
+              de projetos pessoais.
+            </p>
+            <p>
+              Também tenho interesse na área de construção civil, elétrica e
+              automação residencial.
+            </p>
+          </div>
           <div className="mt-12 flex items-center gap-10 md:mt-6">
             <a
               className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-300"
               target="_blank"
               href="/assets/portifolio/cv-mateus-felipe.pdf"
             >
-              Baixar CV <FiDownload />
+              Baixar CV <DownloadSimple />
             </a>
             <Link
               className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-300"
               href="/"
             >
-              Blog <FiBook />
+              Blog <Book />
             </Link>
           </div>
         </div>
