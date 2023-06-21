@@ -32,7 +32,7 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="blog-content-w m-auto">
-      <h1 className="mb-5 justify-center md:justify-start flex gap-2 text-2xl font-bold">
+      <h1 className="mb-5 flex justify-center gap-2 text-2xl font-bold md:justify-start">
         <FolderOpen weight="duotone" className="text-3xl" />
         {getNormalCategoryString(category)}
       </h1>

@@ -38,12 +38,14 @@ export default function Page() {
           .sort((a, b) => a.tag.localeCompare(b.tag))
           .map((categoryData, index) => (
             <Link key={index} href={`/tag/${slug(categoryData.tag)}`}>
-              <div className="flex items-center rounded-md p-4 font-bold leading-none text-neutral-700 bg-neutral-300/10 dark:bg-neutral-800/10 active:bg-blue-700/10 active:text-blue-700 dark:text-neutral-500 active:dark:bg-blue-500/10 active:dark:text-blue-500 gap-4">
+              <div className="flex items-center gap-4 rounded-md bg-neutral-300/10 p-4 font-bold leading-none text-neutral-700 active:bg-blue-700/10 active:text-blue-700 dark:bg-neutral-800/10 dark:text-neutral-500 active:dark:bg-blue-500/10 active:dark:text-blue-500">
                 <span className="inline-flex items-end gap-px">
-                  <Tag className='-scale-x-100 text-xs' weight='duotone' size={12} />
-                  <span>
-                    {categoryData.tag}
-                  </span>
+                  <Tag
+                    className="-scale-x-100 text-xs"
+                    weight="duotone"
+                    size={12}
+                  />
+                  <span>{categoryData.tag}</span>
                 </span>
                 <span className="h-px flex-1 border-b border-dotted border-neutral-700 dark:border-neutral-500" />
                 <span>{categoryData.numberOfPosts}</span>
