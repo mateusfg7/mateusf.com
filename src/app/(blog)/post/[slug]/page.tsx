@@ -55,8 +55,8 @@ export default function Page({ params }: Props) {
     <div className="blog-content-w m-auto">
       <div className="flex flex-col gap-4 leading-6">
         <div>
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-          <div className="flex gap-2 text-neutral-600 dark:text-neutral-400">
+          <h1 className="text-2xl font-bold text-center md:text-left">{post.title}</h1>
+          <div className="flex justify-center md:justify-start gap-2 text-neutral-600 dark:text-neutral-400">
             <span>by</span>
             <Link
               href={`/author/${author.user}`}
@@ -101,8 +101,8 @@ export default function Page({ params }: Props) {
           <div className="flex flex-wrap gap-3 gap-y-2">
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
-                <span className="flex items-center justify-center gap-1 leading-none text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100">
-                  {tag} <Tag size={15} />
+                <span className="flex items-center justify-center rounded-md gap-1 leading-none text-neutral-500 bg-neutral-500/5 md:bg-transparent transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 p-1 md:p-0">
+                  {tag} <Tag size={15} className='hidden md:inline' />
                 </span>
               </Link>
             ))}

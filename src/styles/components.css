@@ -60,7 +60,7 @@
     h4,
     h5,
     h6 {
-      @apply my-6 mx-0 w-max font-medium;
+      @apply my-6 mx-0 w-full md:w-max font-medium whitespace-pre-wrap text-center md:text-left;
 
       a {
         @apply text-neutral-900 hover:no-underline dark:text-neutral-100;
@@ -68,32 +68,32 @@
       }
     }
 
-    h1 {
-      @apply border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30;
-    }
     h2 {
-      @apply border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30;
+      @apply md:border-b border-b-black/30 pr-6 pb-2 text-3xl dark:border-b-white/30 underline md:no-underline underline-offset-4;
     }
     h3 {
-      @apply text-2xl;
+      @apply md:border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30 underline md:no-underline underline-offset-4;
     }
     h4 {
-      @apply text-xl;
+      @apply text-2xl;
     }
     h5 {
+      @apply text-xl;
+    }
+    h6 {
       @apply text-lg;
     }
 
     p {
-      @apply my-4;
+      @apply my-4 text-justify md:text-left;
     }
 
     img {
-      @apply max-w-full rounded-lg;
+      @apply max-w-full rounded-lg m-auto md:m-0;
     }
 
     iframe {
-      @apply h-[26rem] w-full max-w-full rounded-lg;
+      @apply aspect-video md:h-[26rem] w-full max-w-full rounded-lg;
     }
 
     a {
@@ -102,7 +102,7 @@
     }
 
     table {
-      @apply w-full border-collapse;
+      @apply w-full overflow-hidden border-collapse rounded-lg bg-black/[.02] dark:bg-white/[.02];
 
       th,
       td {
@@ -122,15 +122,7 @@
       }
 
       tbody tr {
-        &:nth-child(even) td {
-          @apply bg-black/[.04] dark:bg-white/[.04];
-        }
-        &:nth-child(odd) td {
-          @apply bg-black/[.02] dark:bg-white/[.02];
-        }
-        &:last-of-type td {
-          @apply first:rounded-bl-lg  last:rounded-br-lg;
-        }
+        @apply even:bg-black/[.02] even:dark:bg-white/[.02];
       }
     }
 
@@ -156,15 +148,15 @@
     }
 
     ol {
-      @apply list-inside list-decimal;
+      @apply list-inside list-decimal text-justify md:text-left;
 
       li::marker {
-        @apply font-bold;
+        @apply font-black;
       }
     }
 
     ul {
-      @apply list-inside list-disc;
+      @apply list-inside list-disc text-justify md:text-left;
 
       &.contains-task-list {
         @apply list-none;
@@ -199,7 +191,7 @@
 
           span {
             &.line {
-              @apply pl-3;
+              @apply px-3;
             }
 
             &.highlighted-line {
@@ -273,7 +265,7 @@
     }
 
     div.math-display {
-      @apply w-fit p-6;
+      @apply w-fit p-6 m-auto md:m-0;
 
       span.katex-display {
         @apply m-0;

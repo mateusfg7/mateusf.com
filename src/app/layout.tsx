@@ -38,7 +38,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&family=Source+Sans+Pro:wght@300;400;600&family=Inter:wght@200;300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&family=Source+Sans+Pro:wght@300;400;600&family=Inter:wght@200;300;400;500;600;700;900&display=swap"
           rel="stylesheet"
         />
         <link rel="shortcut icon" href="assets/brain.png" type="image/png" />
