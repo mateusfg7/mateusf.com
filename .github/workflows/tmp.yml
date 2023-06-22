@@ -19,10 +19,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git branch --list
-      - run: git merge prod
+      # - run: git merge prod
       - run: git checkout prod
       - run: git branch --list
       - run: git log | head
-      - run: git merge --squash main && git commit -m 'RELEASE KRL v2'
+      - run: git merge --squash -X ours main && git commit -m 'RELEASE KRL v2'
       - run: git log | head
       - run: git push origin prod
