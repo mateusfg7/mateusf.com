@@ -19,6 +19,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git branch --list
+      - run: git merge prod
       - run: git checkout prod
       - run: git branch --list
       - run: git log | head
