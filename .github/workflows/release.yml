@@ -103,6 +103,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup git
         run: |
           git config user.name "github-actions[bot]"
@@ -110,16 +112,15 @@ jobs:
       - name: Get tag
         id: get_tag
         run: echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
-      - name: Pull origin prod
-        run: git pull origin prod
+
       - name: Checkout to prod
         run: git checkout prod
-      - name: Merge "main" to "prod"
-        run: git merge --squash main
 
-      - name: Show git status
-        run: git status
+      - name: Merge "main" to "prod"
+        run: git merge --squash --strategy ort --strategy-option theirs main
+
       - name: Commit merge
         run: git commit -m "v${{ steps.get_tag.outputs.tag }}"
+
       - name: Push prod branch
         run: git push origin prod
