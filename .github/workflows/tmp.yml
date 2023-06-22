@@ -16,4 +16,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: Show branches
-        run: git branch
+        run: git branch --list *
