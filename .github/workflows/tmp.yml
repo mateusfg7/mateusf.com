@@ -24,3 +24,4 @@ jobs:
       - run: git log | head
       - run: git merge --squash main && git commit -m 'RELEASE KRL'
       - run: git log | head
+      - run: git push origin prod
