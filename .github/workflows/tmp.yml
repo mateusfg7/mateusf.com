@@ -23,7 +23,8 @@ jobs:
       - run: git checkout prod
       - run: git branch --list
       - run: git log | head
-      - run: git merge --squash --strategy ort --strategy-option theirs main #&& git commit -m 'RELEASE KRL v2'
+      - run: git merge --squash --strategy ort --strategy-option theirs main
       - run: git status
+      - run: git commit -m 'RELEASE KRL v2'
       - run: git log | head
       - run: git push origin prod
