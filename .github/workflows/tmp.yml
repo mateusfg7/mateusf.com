@@ -23,6 +23,6 @@ jobs:
       - run: git checkout prod
       - run: git branch --list
       - run: git log | head
-      - run: git merge --squash -X ours main && git commit -m 'RELEASE KRL v2'
+      - run: git merge --squash -X ours main #&& git commit -m 'RELEASE KRL v2'
       - run: git log | head
       - run: git push origin prod
