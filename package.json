@@ -37,7 +37,7 @@
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "6.0.3",
-    "rehype-pretty-code": "0.9.9",
+    "rehype-pretty-code": "0.9.11",
     "rehype-shift-heading": "^1.0.2",
     "rehype-slug": "5.1.0",
     "rehype-stringify": "^9.0.3",
