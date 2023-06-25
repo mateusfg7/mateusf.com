@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
-import { CaretDown } from '@phosphor-icons/react'
+import { CaretDown } from '@/shared/lib/phosphor-icons'
 
 import { Knowledge } from './knowledge-categories'
 
@@ -33,7 +33,7 @@ export const AccordionTrigger = React.forwardRef(
   ) => (
     <Accordion.Header className="flex">
       <Accordion.Trigger
-        className="group flex flex-1 cursor-default items-center justify-between bg-neutral-900 p-4 py-7 md:p-7 text-lg leading-none shadow-lg shadow-black/5 outline-none duration-300 hover:cursor-pointer hover:bg-neutral-800"
+        className="group flex flex-1 cursor-default items-center justify-between bg-neutral-900 p-4 py-7 text-lg leading-none shadow-lg shadow-black/5 outline-none duration-300 hover:cursor-pointer hover:bg-neutral-800 md:p-7"
         {...props}
         ref={forwardedRef}
       >
@@ -70,7 +70,7 @@ export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
 
   return (
     <div className="relative flex w-full items-center">
-      <div className="flex w-1/2 md:w-[60%] items-center gap-4 md:gap-6 md:text-xl">
+      <div className="flex w-1/2 items-center gap-4 md:w-[60%] md:gap-6 md:text-xl">
         <span>
           <Icon />
         </span>
@@ -78,7 +78,7 @@ export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
       </div>
       <div className="flex-1">
         <div
-          className={`rounded-full bg-neutral-800 leading-none p-[0.35rem] md:px-3 md:text-lg text-neutral-400 ${
+          className={`rounded-full bg-neutral-800 p-[0.35rem] leading-none text-neutral-400 md:px-3 md:text-lg ${
             knowledge.level === 1 && 'w-[10%]'
           } ${knowledge.level === 2 && 'w-[60%]'} ${
             knowledge.level === 3 && 'w-[100%]'

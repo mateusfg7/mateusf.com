@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowSquareOut, Icon as IconType } from '@phosphor-icons/react'
+import { ArrowSquareOut, Icon as IconType } from '@/shared/lib/phosphor-icons'
 
 export const Contact: React.FC<{
   title: string
@@ -11,10 +11,10 @@ export const Contact: React.FC<{
   const [isHover, setIsHover] = useState(false)
 
   return (
-    <div className="flex items-center border-b border-b-neutral-800 text-xl text-neutral-200 last:border-none gap-5 md:gap-10 py-3 md:p-0">
-      <div className='flex-1 flex md:items-center flex-col md:flex-row md:gap-7'>
+    <div className="flex items-center gap-5 border-b border-b-neutral-800 py-3 text-xl text-neutral-200 last:border-none md:gap-10 md:p-0">
+      <div className="flex flex-1 flex-col md:flex-row md:items-center md:gap-7">
         <div
-          className="flex h-full md:w-40 items-center gap-2 text-2xl"
+          className="flex h-full items-center gap-2 text-2xl md:w-40"
           style={{
             color
           }}
@@ -22,7 +22,7 @@ export const Contact: React.FC<{
           <Icon weight="duotone" />
           <span>{title}</span>
         </div>
-        <div className="flex md:w-72 h-full items-center text-neutral-400">
+        <div className="flex h-full items-center text-neutral-400 md:w-72">
           <span>{data}</span>
         </div>
       </div>

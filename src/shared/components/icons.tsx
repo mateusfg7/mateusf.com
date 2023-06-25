@@ -5,7 +5,7 @@ import {
   Clock as ClockIcon,
   FolderOpen as FolderOpenIcon,
   IconProps
-} from '@phosphor-icons/react'
+} from '@/shared/lib/phosphor-icons'
 import React from 'react'
 
 export const CalendarBlank: React.FC<IconProps> = ({ ...props }) => (

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Menu } from '@headlessui/react'
-import { Moon, Sun, Desktop } from '@phosphor-icons/react'
+import { Moon, Sun, Desktop } from '@/shared/lib/phosphor-icons'
 import { useTheme } from 'next-themes'
 
 export function ToggleTheme() {

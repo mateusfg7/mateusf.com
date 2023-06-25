@@ -3,7 +3,7 @@ import {
   GithubLogo,
   LinkedinLogo,
   WhatsappLogo
-} from '@phosphor-icons/react'
+} from '@/shared/lib/phosphor-icons'
 
 export const contactList = [
   {

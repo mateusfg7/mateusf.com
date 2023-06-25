@@ -3,7 +3,7 @@ import {
   PencilSimpleLine,
   Code,
   Article
-} from '@phosphor-icons/react'
+} from '@/shared/lib/phosphor-icons'
 import { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 

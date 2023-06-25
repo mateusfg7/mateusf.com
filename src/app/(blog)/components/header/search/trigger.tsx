@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from '@phosphor-icons/react'
+import { MagnifyingGlass } from '@/shared/lib/phosphor-icons'
 import * as Dialog from '@radix-ui/react-dialog'
 
 export function Trigger() {

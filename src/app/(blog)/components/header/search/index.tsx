@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { X } from '@phosphor-icons/react'
+import { X } from '@/shared/lib/phosphor-icons'
 import { KeyCode, KeyMod, useKeyboard } from '@geist-ui/core'
 
 import { allPosts } from 'contentlayer/generated'
