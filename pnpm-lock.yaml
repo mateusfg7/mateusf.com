@@ -66,8 +66,8 @@ dependencies:
     specifier: 6.0.3
     version: 6.0.3
   rehype-pretty-code:
-    specifier: 0.9.9
-    version: 0.9.9(shiki@0.14.0)
+    specifier: 0.9.11
+    version: 0.9.11(shiki@0.14.0)
   rehype-shift-heading:
     specifier: ^1.0.2
     version: 1.0.2
@@ -9502,8 +9502,8 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-pretty-code@0.9.9(shiki@0.14.0):
-    resolution: {integrity: sha512-mlU2Qgupn9MMK31CTmWk0Ie5Vp0od+jh2vCkGDBMlPAMeAvYASn6Ois6xRmosutMT4yH/COc3R4r/PELpuUoWg==}
+  /rehype-pretty-code@0.9.11(shiki@0.14.0):
+    resolution: {integrity: sha512-Eq90eCYXQJISktfRZ8PPtwc5SUyH6fJcxS8XOMnHPUQZBtC6RYo67gGlley9X2nR8vlniPj0/7oCDEYHKQa/oA==}
     engines: {node: '>=16'}
     peerDependencies:
       shiki: '*'
