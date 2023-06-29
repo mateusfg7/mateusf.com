@@ -13,6 +13,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           filename: .github/assets/pagespeed-metrics.svg
-          token: NOT_NEEDED
           plugin_pagespeed: yes
+          plugin_pagespeed_detailed: yes
+          plugin_pagespeed_screenshot: yes
           plugin_pagespeed_url: https://mateusf.vercel.app
