@@ -12,6 +12,7 @@ import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
 import { PrettyCodeElement } from './components/pretty-code-element'
+import { UtterancesComments } from './components/utterances-comments'
 
 interface Props {
   params: { slug: string }
@@ -25,6 +26,10 @@ export function generateMetadata({ params }: Props): Metadata {
     description: post.description,
     authors: { name: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>' },
     openGraph: {
+      title: post.title,
+      description: post.description,
+      tags: post.tags.split(',').map(tag => tag.trim()),
+      authors: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
       type: 'article',
       url: `https://mfg-b.vercel.app/post/${params.slug}`
     }
@@ -55,8 +60,10 @@ export default function Page({ params }: Props) {
     <div className="blog-content-w m-auto">
       <div className="flex flex-col gap-4 leading-6">
         <div>
-          <h1 className="text-2xl font-bold text-center md:text-left">{post.title}</h1>
-          <div className="flex justify-center md:justify-start gap-2 text-neutral-600 dark:text-neutral-400">
+          <h1 className="text-center text-2xl font-bold md:text-left">
+            {post.title}
+          </h1>
+          <div className="flex justify-center gap-2 text-neutral-600 dark:text-neutral-400 md:justify-start">
             <span>by</span>
             <Link
               href={`/author/${author.user}`}
@@ -101,8 +108,8 @@ export default function Page({ params }: Props) {
           <div className="flex flex-wrap gap-3 gap-y-2">
             {tags.map((tag, index) => (
               <Link href={`/tag/${slug(tag)}`} key={index}>
-                <span className="flex items-center justify-center rounded-md gap-1 leading-none text-neutral-500 bg-neutral-500/5 md:bg-transparent transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 p-1 md:p-0">
-                  {tag} <Tag size={15} className='hidden md:inline' />
+                <span className="flex items-center justify-center gap-1 rounded-md bg-neutral-500/5 p-1 leading-none text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 md:bg-transparent md:p-0">
+                  {tag} <Tag size={15} className="hidden md:inline" />
                 </span>
               </Link>
             ))}
@@ -112,6 +119,9 @@ export default function Page({ params }: Props) {
       <div className="my-6 h-px w-full bg-neutral-500/50" />
       <div className="post-content">
         <MDXContent components={mdxComponents} />
+      </div>
+      <div className="pt-5">
+        <UtterancesComments />
       </div>
       <TopButton />
     </div>
