@@ -1,3 +1,21 @@
+## [7.2.0](https://github.com/mateusfg7/mfg-b/compare/7.1.8...7.2.0) (2023-07-03)
+
+
+### Features
+
+* **ui:** add utterances component to post page ([a887085](https://github.com/mateusfg7/mfg-b/commit/a88708523f153f9189f990d70ee383d6bab31a69))
+* **ui:** create utterances comments component ([8a8c2d3](https://github.com/mateusfg7/mfg-b/commit/8a8c2d358e502f0e1203cf306db28cc6ebf4c9bc))
+
+
+### Bug Fixes
+
+* **deps:** update dependency contentlayer to v0.3.4 ([ba2e66b](https://github.com/mateusfg7/mfg-b/commit/ba2e66be8190f147512972efd951d303b4315983))
+* **deps:** update dependency next to v13.4.7 ([f8a0a49](https://github.com/mateusfg7/mfg-b/commit/f8a0a497d70045579cb850315face9da8e6f4ccb))
+* **deps:** update dependency next-contentlayer to v0.3.4 ([02cf3d1](https://github.com/mateusfg7/mfg-b/commit/02cf3d198e1c2638d67c0df295a7f769194a9ee2))
+* **deps:** update dependency react-icons to v4.10.1 ([afa2219](https://github.com/mateusfg7/mfg-b/commit/afa2219f386ed9e4be1e677abd15781232fac4ee))
+* **deps:** update dependency rehype-pretty-code to v0.9.11 ([1e9bb33](https://github.com/mateusfg7/mfg-b/commit/1e9bb335f29f103b991beec7fbfd08ccfb38d408))
+* **deps:** update dependency rehype-pretty-code to v0.9.9 ([1b3307f](https://github.com/mateusfg7/mfg-b/commit/1b3307f522e4c9d3bb1cebe0d27186400b8beffc))
+
 ## [7.1.8](https://github.com/mateusfg7/mfg-b/compare/7.1.7...7.1.8) (2023-06-22)
 
 ## [7.1.7](https://github.com/mateusfg7/mfg-b/compare/7.1.6...7.1.7) (2023-06-21)
