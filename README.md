@@ -21,13 +21,14 @@ My personal homepage & portfolio: https://mateusf.vercel.app
 - Dark Mode
 - Mobile friendly
 - Reading-time prediction like Medium
-- SEO Optimized with meta information tags
 - Feed RSS
-- Sitemap
 - Search posts
+- Post comments by [Utterances](https://utteranc.es)
 - Sorting posts by tags, categories and author
-- Next 13 App dir with RSC and Typescript
+- Sitemap
+- SEO Optimized with meta information tags
 - Tailwind CSS for styling
+- Next 13 App dir with RSC and Typescript
 - Github actions workflow with Vercel for deployment
 - Automatic changelog generator
 
