@@ -61,7 +61,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@types/blueimp-md5": "2.18.0",
     "@types/mdx": "^2.0.3",
-    "@types/node": "18.16.18",
+    "@types/node": "18.16.19",
     "@types/react": "18.2.14",
     "@types/remark-hint": "^1.0.1",
     "@types/semver": "^7.5.0",
