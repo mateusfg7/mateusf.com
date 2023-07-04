@@ -16,8 +16,6 @@ export async function GET(
     return NextResponse.json({ error: 'Post not found' }, { status: 404 })
   }
 
-  console.log()
-
   return new ImageResponse(
     (
       <div
