@@ -25,7 +25,9 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `mfg-b | ${post.title}`,
     description: post.description,
-    authors: { name: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>' },
+    authors: { name: post.author_info.name, url: post.author_info.url },
+    keywords: post.tags.split(',').map(tag => tag.trim()),
+    publisher: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
     openGraph: {
       title: post.title,
       description: post.description,
@@ -33,6 +35,18 @@ export function generateMetadata({ params }: Props): Metadata {
       authors: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
       type: 'article',
       url: `https://mfg-b.vercel.app/post/${params.slug}`,
+      images: {
+        url: `${host}/post/${post.id}/og`,
+        width: 1200,
+        height: 630
+      }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      creator: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
+      site: `${host}`,
       images: {
         url: `${host}/post/${post.id}/og`,
         width: 1200,
