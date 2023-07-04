@@ -21,7 +21,7 @@ export function generateFeed() {
     copyright: `All rights reserved ${date.getFullYear()}, Mateus Felipe.`,
     updated: posts.length > 0 ? new Date(posts[0].date) : date,
     feedLinks: {
-      atom1: `${host}/feed`
+      rss2: `${host}/feed`
     },
     docs: 'https://github.com/mateusfg7/mfg-b',
     generator: 'Feed for Node.js',
@@ -32,20 +32,25 @@ export function generateFeed() {
     }
   })
 
-  posts.forEach(post => {
-    const { name, email, url } = post.author_info
+  posts.forEach(async post => {
+    const { name, email, url: authorLink } = post.author_info
+    const link = `${host}/post/${post.id}`
 
     feed.addItem({
+      link,
       title: post.title,
       id: post.id,
-      link: `${host}/post/${post.id}`,
       description: post.description,
       content: markdownToHtml(post.body.raw),
-      author: [{ name, email, link: url }],
+      author: [{ name, email, link: authorLink }],
       date: new Date(post.date),
-      category: post.tags.split(',').map(tag => ({ name: tag.trim() }))
+      category: post.tags.split(',').map(tag => ({ name: tag.trim() })),
+      image: {
+        url: `${link}/og`,
+        type: 'image/png'
+      }
     })
   })
 
-  return feed.atom1()
+  return feed.rss2()
 }
