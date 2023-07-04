@@ -7,6 +7,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
+import { host } from '@/shared/lib/webserver-constants'
 import { Folder, CalendarBlank, Clock, Tag } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
@@ -24,14 +25,33 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `mfg-b | ${post.title}`,
     description: post.description,
-    authors: { name: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>' },
+    authors: { name: post.author_info.name, url: post.author_info.url },
+    keywords: post.tags.split(',').map(tag => tag.trim()),
+    publisher: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
     openGraph: {
       title: post.title,
       description: post.description,
       tags: post.tags.split(',').map(tag => tag.trim()),
       authors: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
       type: 'article',
-      url: `https://mfg-b.vercel.app/post/${params.slug}`
+      url: `https://mfg-b.vercel.app/post/${params.slug}`,
+      images: {
+        url: `${host}/post/${post.id}/thumbnail`,
+        width: 1200,
+        height: 630
+      }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      creator: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
+      site: `${host}`,
+      images: {
+        url: `${host}/post/${post.id}/og`,
+        width: 1200,
+        height: 630
+      }
     }
   }
 }
