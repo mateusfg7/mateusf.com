@@ -60,7 +60,7 @@
     h4,
     h5,
     h6 {
-      @apply my-6 mx-0 w-full md:w-max font-medium whitespace-pre-wrap text-center md:text-left;
+      @apply my-6 mx-0 w-full whitespace-pre-wrap text-center font-medium md:w-max md:text-left;
 
       a {
         @apply text-neutral-900 hover:no-underline dark:text-neutral-100;
@@ -69,10 +69,10 @@
     }
 
     h2 {
-      @apply md:border-b border-b-black/30 pr-6 pb-2 text-3xl dark:border-b-white/30 underline md:no-underline underline-offset-4;
+      @apply border-b-black/30 pr-6 pb-2 text-3xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
     }
     h3 {
-      @apply md:border-b border-b-black/30 pr-6 pb-2 text-2xl dark:border-b-white/30 underline md:no-underline underline-offset-4;
+      @apply border-b-black/30 pr-6 pb-2 text-2xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
     }
     h4 {
       @apply text-2xl;
@@ -85,15 +85,15 @@
     }
 
     p {
-      @apply my-4 text-justify md:text-left;
+      @apply my-4 text-left;
     }
 
     img {
-      @apply max-w-full rounded-lg m-auto md:m-0;
+      @apply m-auto max-w-full rounded-lg md:m-0;
     }
 
     iframe {
-      @apply aspect-video md:h-[26rem] w-full max-w-full rounded-lg;
+      @apply aspect-video w-full max-w-full rounded-lg md:h-[26rem];
     }
 
     a {
@@ -102,7 +102,7 @@
     }
 
     table {
-      @apply w-full overflow-hidden border-collapse rounded-lg bg-black/[.02] dark:bg-white/[.02];
+      @apply w-full border-collapse overflow-hidden rounded-lg bg-black/[.02] dark:bg-white/[.02];
 
       th,
       td {
@@ -265,7 +265,7 @@
     }
 
     div.math-display {
-      @apply w-fit p-6 m-auto md:m-0;
+      @apply m-auto w-fit p-6 md:m-0;
 
       span.katex-display {
         @apply m-0;
