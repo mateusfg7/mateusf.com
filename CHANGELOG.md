@@ -1,3 +1,10 @@
+## [7.2.1](https://github.com/mateusfg7/mfg-b/compare/7.2.0...7.2.1) (2023-07-04)
+
+
+### Features
+
+* **ui:** justify post text to left on all devices ([562d504](https://github.com/mateusfg7/mfg-b/commit/562d50414662b97a50eb57d84788efa146ad75ab))
+
 ## [7.2.0](https://github.com/mateusfg7/mfg-b/compare/7.1.8...7.2.0) (2023-07-03)
 
 
