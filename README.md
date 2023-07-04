@@ -27,6 +27,7 @@ My personal homepage & portfolio: https://mateusf.vercel.app
 - Sorting posts by tags, categories and author
 - Sitemap
 - SEO Optimized with meta information tags
+- Post OG image generator
 - Tailwind CSS for styling
 - Next 13 App dir with RSC and Typescript
 - Github actions workflow with Vercel for deployment
