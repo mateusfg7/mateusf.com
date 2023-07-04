@@ -36,7 +36,7 @@ export function generateMetadata({ params }: Props): Metadata {
       type: 'article',
       url: `https://mfg-b.vercel.app/post/${params.slug}`,
       images: {
-        url: `${host}/post/${post.id}/og`,
+        url: `${host}/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }

@@ -46,7 +46,7 @@ export function generateFeed() {
       date: new Date(post.date),
       category: post.tags.split(',').map(tag => ({ name: tag.trim() })),
       image: {
-        url: `${link}/og`,
+        url: `${link}/thumbnail`,
         type: 'image/png'
       }
     })
