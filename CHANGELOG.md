@@ -1,3 +1,15 @@
+## [7.3.0](https://github.com/mateusfg7/mfg-b/compare/7.2.1...7.3.0) (2023-07-04)
+
+
+### Features
+
+* **feed:** generate rss2 instead of atom1 and add image metadata ([9500e19](https://github.com/mateusfg7/mfg-b/commit/9500e19460a8b0018d572e0b2d4ec5fee93dc2f3))
+* **seo:** add `robots.txt` generator ([6652a6c](https://github.com/mateusfg7/mfg-b/commit/6652a6c6776659480d49f2e51ff9ea7e16122bb7))
+* **seo:** add og:image to post metadata ([5fef014](https://github.com/mateusfg7/mfg-b/commit/5fef014debbd8a523c85bf48dcb5a4c6d764c6cb))
+* **seo:** add post thumbnail path to robots.txt ([2d1e04c](https://github.com/mateusfg7/mfg-b/commit/2d1e04c9519b84b132e985cfe58037c8f11c88e4))
+* **seo:** add twitter and other metadatas to post ([a20e4c7](https://github.com/mateusfg7/mfg-b/commit/a20e4c7188d238f8a66ec87f4b5734e9ff32df4c))
+* **seo:** create og image generator for posts ([7057a15](https://github.com/mateusfg7/mfg-b/commit/7057a155f607428c1bb3ed36d6c578abadc9d792))
+
 ## [7.2.1](https://github.com/mateusfg7/mfg-b/compare/7.2.0...7.2.1) (2023-07-04)
 
 
