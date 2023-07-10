@@ -14,4 +14,4 @@ jobs:
     uses: mateusfg7/mfg-b/.github/workflows/pagespeed-metrics.yml@main
     secrets: inherit
     with:
-      target: https://mateusf.vercel.app
+      target: https://mateusf.com
