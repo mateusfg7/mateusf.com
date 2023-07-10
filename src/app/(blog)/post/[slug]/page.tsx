@@ -7,7 +7,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
-import { host } from '@/shared/lib/webserver-constants'
+import { config } from 'global-config'
 import { Folder, CalendarBlank, Clock, Tag } from '@/shared/lib/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const post = allPosts.find(post => post.id === params.slug) as Post
 
   return {
-    title: `mfg-b | ${post.title}`,
+    title: post.title,
     description: post.description,
     authors: { name: post.author_info.name, url: post.author_info.url },
     keywords: post.tags.split(',').map(tag => tag.trim()),
@@ -36,7 +36,7 @@ export function generateMetadata({ params }: Props): Metadata {
       type: 'article',
       url: `https://mfg-b.vercel.app/post/${params.slug}`,
       images: {
-        url: `${host}/post/${post.id}/thumbnail`,
+        url: `${config.webserver.host}/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -46,9 +46,9 @@ export function generateMetadata({ params }: Props): Metadata {
       title: post.title,
       description: post.description,
       creator: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
-      site: `${host}`,
+      site: `${config.webserver.host}`,
       images: {
-        url: `${host}/post/${post.id}/og`,
+        url: `${config.webserver.host}/post/${post.id}/og`,
         width: 1200,
         height: 630
       }

@@ -25,6 +25,9 @@
       ],
       "@/*": [
         "src/*"
+      ],
+      "global-config": [
+        "./website.config.ts"
       ]
     },
     "plugins": [

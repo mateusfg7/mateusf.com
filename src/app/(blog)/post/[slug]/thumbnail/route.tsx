@@ -2,7 +2,7 @@ import { ImageResponse, NextResponse } from 'next/server'
 import { FiFolder, FiCalendar, FiClock } from 'react-icons/fi'
 import { allPosts } from 'contentlayer/generated'
 import { Date } from '@/shared/components/date'
-import { host } from '@/shared/lib/webserver-constants'
+import { config } from 'global-config'
 
 export const runtime = 'edge'
 
@@ -85,7 +85,7 @@ export async function GET(
                 <FiClock /> {Math.ceil(post.reading_time.minutes)} min read
               </span>
             </div>
-            <span style={{ display: 'flex' }}>{host.split('//')[1]}</span>
+            <span style={{ display: 'flex' }}>{config.webserver.host.split('//')[1]}</span>
           </div>
         </div>
       </div>

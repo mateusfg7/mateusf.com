@@ -7,7 +7,7 @@ import { getTagsAndNumberOfPosts } from '@/shared/lib/tags'
 import { Tag } from '@/shared/lib/phosphor-icons'
 
 export const metadata: Metadata = {
-  title: 'mfg-b | Tags',
+  title: 'Blog Tags',
   description: 'Post tags about all kind of things'
 }
 

@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
 
 import {
   Header,
@@ -45,9 +44,6 @@ export default function Page() {
 
   return (
     <div className="bg-neutral-1000 text-neutral-300" id="portifolio">
-      <Head>
-        <title>Portifólio | Mateus Felipe Gonçalves</title>
-      </Head>
       <Header scrollPosition={scrollPosition} maxScrollValue={maxScrollValue} />
       <HomeSection />
       <AboutSection />

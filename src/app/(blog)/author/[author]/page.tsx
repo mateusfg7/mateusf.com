@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const author = getAuthorByUser(params.author)
 
   return {
-    title: `mfg-b | ${author.name}`,
+    title: author.name,
     description: `Posts written by ${author.name} (${author.user}) <${author.email}>`
   }
 }

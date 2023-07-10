@@ -18,7 +18,7 @@ interface Props {
 
 export function generateMetadata({ params }: Props): Metadata {
   return {
-    title: `mfg-b | ${getNormalTagString(params.tag)}`,
+    title: getNormalTagString(params.tag),
     description: `Posts with tag "${getNormalTagString(params.tag)}"`
   }
 }

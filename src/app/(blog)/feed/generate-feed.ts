@@ -1,5 +1,5 @@
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
-import { host } from '@/shared/lib/webserver-constants'
+import { config } from 'global-config'
 import { allPosts } from 'contentlayer/generated'
 import { Feed } from 'feed'
 import { markdownToHtml } from './markdown-to-html'
@@ -15,13 +15,13 @@ export function generateFeed() {
     title: "Mateus Felipe's interests",
     description:
       'This is my "corner of internet", where I take some tests, document my studies and write about some subjects I like...',
-    id: host,
-    link: host,
-    favicon: `${host}/assets/brain.png`,
+    id: config.webserver.host,
+    link: config.webserver.host,
+    favicon: `${config.webserver.host}/assets/brain.png`,
     copyright: `All rights reserved ${date.getFullYear()}, Mateus Felipe.`,
     updated: posts.length > 0 ? new Date(posts[0].date) : date,
     feedLinks: {
-      rss2: `${host}/feed`
+      rss2: `${config.webserver.host}/feed`
     },
     docs: 'https://github.com/mateusfg7/mfg-b',
     generator: 'Feed for Node.js',
@@ -34,7 +34,7 @@ export function generateFeed() {
 
   posts.forEach(async post => {
     const { name, email, url: authorLink } = post.author_info
-    const link = `${host}/post/${post.id}`
+    const link = `${config.webserver.host}/post/${post.id}`
 
     feed.addItem({
       link,

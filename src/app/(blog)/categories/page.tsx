@@ -7,7 +7,7 @@ import { slug } from '@/shared/lib/slug'
 import { Folder } from '@/shared/lib/phosphor-icons'
 
 export const metadata: Metadata = {
-  title: 'mfg-b | Categories',
+  title: 'Blog Categories',
   description: 'Post categories about all kind of things'
 }
 

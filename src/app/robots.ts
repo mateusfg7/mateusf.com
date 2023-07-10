@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { host } from '@/shared/lib/webserver-constants'
+import { config } from 'global-config'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: ['/', '/post/*/thumbnail'],
     },
-    sitemap: `${host}/sitemap.xml`
+    sitemap: `${config.webserver.host}/sitemap.xml`
   }
 }

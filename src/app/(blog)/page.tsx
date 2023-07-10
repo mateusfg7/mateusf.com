@@ -7,7 +7,7 @@ import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { PostList } from '@/shared/components/post-list'
 
 export const metadata: Metadata = {
-  title: 'My Knowledge | mfg-b',
+  title: 'Blog',
   description:
     'List of my knowledge, reflections, notes and likes about all kind of things.'
 }

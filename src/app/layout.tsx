@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { config } from 'global-config'
 
 import { Providers } from './providers'
 
@@ -6,20 +7,21 @@ import '@/styles/main.css'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'mfg-b',
-  description: "Mateus Felipe's notes, articles, reflections and knowledge...",
+  ...config.metadata,
+  title: {
+    default: config.metadata.title,
+    template: `%s | ${config.metadata.title}`
+  },
   colorScheme: 'dark light',
   viewport: 'width=device-width, initial-scale=1',
   openGraph: {
-    title: 'mfg-b',
+    ...config.metadata,
     type: 'website',
-    url: 'https://mfg-b.vercel.app/',
-    description: "Mateus Felipe's notes, articles, reflections and knowledge..."
+    url: config.webserver.host,
   },
   twitter: {
-    title: 'mfg-b',
+    ...config.metadata,
     card: 'summary_large_image',
-    description: "Mateus Felipe's notes, articles, reflections and knowledge..."
   }
 }
 
