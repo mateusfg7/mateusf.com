@@ -1,9 +1,8 @@
-import type { Metadata } from "next"
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Portifolio',
-  description:
-    'List of my projects and sills'
+  description: 'List of my projects and sills'
 }
 
 export default function PortfolioLayout({
@@ -11,9 +10,5 @@ export default function PortfolioLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <>
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

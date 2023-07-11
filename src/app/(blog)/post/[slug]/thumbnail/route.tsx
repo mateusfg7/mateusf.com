@@ -85,7 +85,9 @@ export async function GET(
                 <FiClock /> {Math.ceil(post.reading_time.minutes)} min read
               </span>
             </div>
-            <span style={{ display: 'flex' }}>{config.webserver.host.split('//')[1]}</span>
+            <span style={{ display: 'flex' }}>
+              {config.webserver.host.split('//')[1]}
+            </span>
           </div>
         </div>
       </div>

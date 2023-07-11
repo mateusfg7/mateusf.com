@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     ...config.metadata,
     type: 'website',
-    url: config.webserver.host,
+    url: config.webserver.host
   },
   twitter: {
     ...config.metadata,
-    card: 'summary_large_image',
+    card: 'summary_large_image'
   }
 }
 

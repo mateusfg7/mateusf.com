@@ -2,8 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { DownloadSimple, Book } from '@/shared/lib/phosphor-icons'
 
-
-
 export function AboutSection() {
   return (
     <div
@@ -29,10 +27,11 @@ export function AboutSection() {
             alt="Mateus Felipe's picture"
             className="my-14 w-1/2 rounded-3xl object-cover md:hidden"
           />
-          <div className='px-4 md:p-0 text-xl flex flex-col gap-3 text-justify md:text-left'>
+          <div className="flex flex-col gap-3 px-4 text-justify text-xl md:p-0 md:text-left">
             <p>
-              Me chamo <span className="font-bold">Mateus Felipe Gonçalves</span>,
-              tenho 20 anos e moro em Pará de Minas - MG, Brasil.
+              Me chamo{' '}
+              <span className="font-bold">Mateus Felipe Gonçalves</span>, tenho
+              20 anos e moro em Pará de Minas - MG, Brasil.
             </p>
             <p>
               <span className="font-semibold">Auto didata</span> full-stack.
@@ -90,11 +89,11 @@ export function AboutSection() {
               >
                 Expo
               </a>{' '}
-              no Mobile com foco em Android. Possuo nível intermediário de inglês
-              em leitura e escrita, habilidade adquirida através da leitura de
-              várias documentações e artigos relacionados a tecnologias e outros
-              assuntos em inglês, e também escrevendo blog posts e documentações
-              de projetos pessoais.
+              no Mobile com foco em Android. Possuo nível intermediário de
+              inglês em leitura e escrita, habilidade adquirida através da
+              leitura de várias documentações e artigos relacionados a
+              tecnologias e outros assuntos em inglês, e também escrevendo blog
+              posts e documentações de projetos pessoais.
             </p>
             <p>
               Também tenho interesse na área de construção civil, elétrica e
