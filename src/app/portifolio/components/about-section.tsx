@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { DownloadSimple, Book } from '@/shared/lib/phosphor-icons'
+
+
 
 export function AboutSection() {
   return (
@@ -9,15 +12,21 @@ export function AboutSection() {
     >
       <div className="portifolio-content-w flex flex-col justify-between md:flex-row">
         <div className="hidden flex-1 md:block">
-          <img
+          <Image
             src="https://github.com/mateusfg7.png"
+            height={460}
+            width={460}
+            alt="Mateus Felipe's picture"
             className="h-[30rem] w-96 rounded-3xl border border-neutral-500 object-cover"
           />
         </div>
         <div className="flex flex-1 flex-col items-center md:block">
           <h1 className="text-4xl text-blue-500 md:mb-8">Sobre mim</h1>
-          <img
+          <Image
             src="https://github.com/mateusfg7.png"
+            height={460}
+            width={460}
+            alt="Mateus Felipe's picture"
             className="my-14 w-1/2 rounded-3xl object-cover md:hidden"
           />
           <div className='px-4 md:p-0 text-xl flex flex-col gap-3 text-justify md:text-left'>

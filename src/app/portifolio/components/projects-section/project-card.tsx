@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
-import { ProjectData, techIcons } from './projects'
 import { BsDot } from 'react-icons/bs'
+import { ProjectData, techIcons } from './projects'
 
 interface Props {
   data: ProjectData
@@ -42,8 +43,10 @@ export function ProjectCard({ data }: Props) {
     <div className="flex w-[30rem] flex-col  overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl shadow-black/30">
       {data.image && (
         <div className="h-56 w-full">
-          <img
+          <Image
             src={data.image}
+            width={2700}
+            height={2025}
             alt="Project image"
             className="h-full w-full object-cover object-top"
           />

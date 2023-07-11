@@ -44,7 +44,7 @@ export const devProjects: ProjectData[] = [
   {
     title: 'Formatch',
     image:
-      'https://raw.githubusercontent.com/mateusfg7/formatch/main/.github/thumbnail.png',
+      'https://raw.githubusercontent.com/mateusfg7/formatch-app/main/.github/thumbnail.png',
     core_techs: ['typescript', 'react-native', 'expo'],
     description:
       'Aplicativo que conecta você a um profissional da área de construção civil, e ainda te mantém informado sobre novidades do setor. ',

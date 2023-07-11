@@ -1,24 +1,29 @@
 const { withContentlayer } = require('next-contentlayer')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['raw.githubusercontent.com', 'github.com', 'i.imgur.com']
+  },
   async rewrites() {
     return [
       {
         source: '/rss',
-        destination: '/feed',
+        destination: '/feed'
       },
       {
         source: '/atom',
-        destination: '/feed',
+        destination: '/feed'
       },
       {
         source: '/rss.xml',
-        destination: '/feed',
+        destination: '/feed'
       },
       {
         source: '/atom.xml',
-        destination: '/feed',
-      },
+        destination: '/feed'
+      }
     ]
   }
 }

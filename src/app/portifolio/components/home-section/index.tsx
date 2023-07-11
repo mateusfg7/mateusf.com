@@ -1,3 +1,7 @@
+import Image from "next/image";
+
+import codeTyping from './code-type.svg'
+
 export function HomeSection() {
   return (
     <div
@@ -21,7 +25,7 @@ export function HomeSection() {
           </span>
         </div>
         <div className="hidden w-64 flex-1 md:block">
-          <img src="/assets/portifolio/code-type.svg" className="w-full" />
+          <Image src={codeTyping} alt="Code Typing" className="w-full" />
         </div>
       </div>
     </div>
