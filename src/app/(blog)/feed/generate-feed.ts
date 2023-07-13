@@ -28,7 +28,7 @@ export function generateFeed() {
     author: {
       name: 'Mateus Felipe Gonçalves',
       email: 'mateusfelipefg77@gmail.com',
-      link: 'https://mateusf.vercel.app'
+      link: 'https://mateusf.com'
     }
   })
 

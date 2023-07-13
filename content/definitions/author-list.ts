@@ -3,7 +3,7 @@ export const authors = [
     user: 'mateusfg7',
     name: 'Mateus Felipe Gonçalves',
     email: 'mateusfelipefg77@gmail.com',
-    url: 'https://mateusf.vercel.app/portifolio'
+    url: 'https://mateusf.com/portifolio'
   },
   {
     user: 'kmclara',

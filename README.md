@@ -1,7 +1,7 @@
 <div align="center">
 
 # 👨‍💻 Mateus' Hideout
-My personal homepage & portfolio: https://mateusf.vercel.app
+My personal homepage & portfolio: https://mateusf.com
 
 ![GitHub deployments](https://img.shields.io/github/deployments/mateusfg7/mfg-b/production?label=deploy)
 

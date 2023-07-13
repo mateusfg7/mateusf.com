@@ -34,7 +34,7 @@ export function generateMetadata({ params }: Props): Metadata {
       tags: post.tags.split(',').map(tag => tag.trim()),
       authors: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
       type: 'article',
-      url: `https://mfg-b.vercel.app/post/${params.slug}`,
+      url: `https://mateusf.com/post/${params.slug}`,
       images: {
         url: `${config.webserver.host}/post/${post.id}/thumbnail`,
         width: 1200,
