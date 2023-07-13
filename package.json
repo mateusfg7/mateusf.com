@@ -15,17 +15,14 @@
     "check-unused": "npx depcheck"
   },
   "dependencies": {
-    "@geist-ui/core": "^2.3.8",
     "@headlessui/react": "^1.7.15",
     "@phosphor-icons/react": "^2.0.8",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-dialog": "^1.0.3",
     "contentlayer": "0.3.4",
     "date-fns": "2.30.0",
-    "disqus-react": "^1.1.5",
     "feed": "^4.2.2",
     "github-slugger": "^2.0.0",
-    "gray-matter": "4.0.3",
     "kbar": "0.1.0-beta.40",
     "next": "13.4.9",
     "next-contentlayer": "0.3.4",
@@ -42,7 +39,6 @@
     "rehype-slug": "5.1.0",
     "rehype-stringify": "^9.0.3",
     "rehype-toc": "3.0.2",
-    "remark": "14.0.3",
     "remark-breaks": "^3.0.2",
     "remark-gfm": "3.0.1",
     "remark-hint": "^1.0.10",
@@ -55,10 +51,9 @@
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
+    "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.1.0",
     "@tailwindcss/forms": "^0.5.3",
-    "@types/blueimp-md5": "2.18.0",
     "@types/mdx": "^2.0.3",
     "@types/node": "18.16.19",
     "@types/react": "18.2.14",
