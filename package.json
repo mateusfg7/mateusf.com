@@ -10,7 +10,8 @@
     "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint",
-    "bump-tag": "tsx tools/bump-tag-version.ts"
+    "bump-tag": "tsx tools/bump-tag-version.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
