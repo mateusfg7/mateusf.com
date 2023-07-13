@@ -15,8 +15,8 @@ export const contactList = [
   },
   {
     title: 'Email',
-    data: 'mateusfelipefg77@gmail.com',
-    link: 'mailto:mateusfelipefg77@gmail.com',
+    data: 'contact@mateusf.com',
+    link: 'mailto:contact@mateusf.com',
     color: 'rgba(252 165 165)',
     icon: Envelope
   },

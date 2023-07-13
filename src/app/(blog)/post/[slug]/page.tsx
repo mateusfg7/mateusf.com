@@ -27,12 +27,12 @@ export function generateMetadata({ params }: Props): Metadata {
     description: post.description,
     authors: { name: post.author_info.name, url: post.author_info.url },
     keywords: post.tags.split(',').map(tag => tag.trim()),
-    publisher: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
+    publisher: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
     openGraph: {
       title: post.title,
       description: post.description,
       tags: post.tags.split(',').map(tag => tag.trim()),
-      authors: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
+      authors: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       type: 'article',
       url: `https://mateusf.com/post/${params.slug}`,
       images: {
@@ -45,7 +45,7 @@ export function generateMetadata({ params }: Props): Metadata {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      creator: 'Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>',
+      creator: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       site: `${config.webserver.host}`,
       images: {
         url: `${config.webserver.host}/post/${post.id}/og`,

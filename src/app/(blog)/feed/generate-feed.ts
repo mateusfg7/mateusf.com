@@ -27,7 +27,7 @@ export function generateFeed() {
     generator: 'Feed for Node.js',
     author: {
       name: 'Mateus Felipe Gonçalves',
-      email: 'mateusfelipefg77@gmail.com',
+      email: 'contact@mateusf.com',
       link: 'https://mateusf.com'
     }
   })
