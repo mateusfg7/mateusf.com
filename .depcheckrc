@@ -1,2 +1,2 @@
-ignores: ["@commitlint/config-conventional", "autoprefixer", "postcss", "vercel", "esbuild"]
+ignores: ["@commitlint/cli", "@commitlint/config-conventional", "autoprefixer", "postcss", "vercel", "esbuild"]
 skip-missing: true
