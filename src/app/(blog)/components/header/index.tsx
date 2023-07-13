@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { useGlitch } from 'react-powerglitch'
 
 import { ToggleTheme } from './toggle-theme'
-import { Search } from './search'
 import { CategorySelector } from './category-selector'
-import { MobileMenu } from './mobile-menu/index'
+import { MobileMenu } from './mobile-menu'
+import { Search } from './search'
 
 export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
@@ -62,12 +62,10 @@ export function Header() {
   return (
     <header
       className={`fixed top-3 left-3 right-3 z-10 rounded-xl bg-neutral-100/80 backdrop-blur-lg dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
-        isNotOnTop ? 'py-3' : 'py-3 md:py-6'
-      } border border-neutral-50 dark:border-neutral-800 md:border-b md:border-none ${
         isNotOnTop
-          ? 'md:border-b-neutral-50 md:dark:border-b-neutral-800'
-          : 'md:border-b-transparent'
-      }`}
+          ? 'py-3 md:border-b-neutral-50 md:dark:border-b-neutral-800'
+          : 'py-3 md:border-b-transparent md:py-6'
+      } border border-neutral-50 dark:border-neutral-800 md:border-b md:border-none`}
     >
       <div className="blog-content-w m-auto flex flex-wrap items-center justify-between">
         <div className="md:hidden" />

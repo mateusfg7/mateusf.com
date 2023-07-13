@@ -22,8 +22,8 @@ My personal homepage & portfolio: https://mateusf.vercel.app
 - Mobile friendly
 - Reading-time prediction like Medium
 - Feed RSS
-- Search posts
-- Post comments by [Utterances](https://utteranc.es)
+- Command bar/Search modal _by [KBar](https://kbar.vercel.app/)_
+- Post comments _by [Utterances](https://utteranc.es)_
 - Sorting posts by tags, categories and author
 - Sitemap
 - SEO Optimized with meta information tags
