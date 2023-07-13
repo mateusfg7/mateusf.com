@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "bump-tag": "tsx tools/bump-tag-version.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "check-unused": "npx depcheck"
   },
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
