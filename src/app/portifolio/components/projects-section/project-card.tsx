@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import { Project } from 'contentlayer/generated'
 import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
 import { BsDot } from 'react-icons/bs'
-import { ProjectData, techIcons } from './projects'
+import { techIcons } from './tech-icons'
 
 interface Props {
-  data: ProjectData
+  data: Project
 }
 
 export function ProjectCard({ data }: Props) {
