@@ -1,4 +1,6 @@
 import { Post } from 'contentlayer/generated'
+import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
+
 import { separatePostsByStatus } from './separate-posts-by-status'
 import { categorizePostsByYear } from './categorize-posts-by-year'
 import { PostLink } from './post-link'
@@ -26,7 +28,7 @@ export function PostList({ posts, separateByYear = false }: Props) {
               {postsOfYear.year}
             </h1>
             <div className="my-5 flex flex-col gap-4 md:my-0 md:gap-3">
-              {postsOfYear.posts.map((post, key) => (
+              {getSortedPosts(postsOfYear.posts).map((post, key) => (
                 <PostLink key={key} post={post} hideYear />
               ))}
             </div>
