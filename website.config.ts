@@ -4,6 +4,6 @@ export const config = {
     description: "Mateus Felipe's notes, articles, reflections and knowledge..."
   },
   webserver: {
-    host: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
+    host: process.env.HOST ?? 'http://localhost:3000'
   }
 }
