@@ -1,3 +1,10 @@
+## [7.4.1](https://github.com/mateusfg7/mateusf.com/compare/7.4.0...7.4.1) (2023-07-14)
+
+
+### Bug Fixes
+
+* **config:** use manual setted HOST env variable instead of use VERCEL_URL ([ff1703e](https://github.com/mateusfg7/mateusf.com/commit/ff1703ef855f86af044f84af8adef22294072cb2))
+
 ## [7.4.0](https://github.com/mateusfg7/mateusf.com/compare/7.3.0...7.4.0) (2023-07-14)
 
 
