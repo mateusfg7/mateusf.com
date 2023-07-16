@@ -1,7 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
 import {
   Header,
   AboutSection,
@@ -12,39 +8,9 @@ import {
 } from './components'
 
 export default function Page() {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [maxScrollValue, setMaxScrollValue] = useState(0)
-
-  function updateScrollPosition() {
-    if (window) {
-      setScrollPosition(window.scrollY)
-    }
-  }
-  function updateMaxScrollValue() {
-    if (document) {
-      setMaxScrollValue(
-        document.documentElement.scrollHeight -
-          document.documentElement.clientHeight
-      )
-    }
-  }
-  function handleScroll() {
-    updateScrollPosition()
-    updateMaxScrollValue()
-  }
-
-  useEffect(() => {
-    updateScrollPosition()
-    updateMaxScrollValue()
-
-    if (window) {
-      window.addEventListener('scroll', handleScroll, { passive: true })
-    }
-  }, [])
-
   return (
     <div className="bg-neutral-1000 text-neutral-300" id="portifolio">
-      <Header scrollPosition={scrollPosition} maxScrollValue={maxScrollValue} />
+      <Header />
       <HomeSection />
       <AboutSection />
       <ProjectsSection />

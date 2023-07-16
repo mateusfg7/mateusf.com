@@ -4,6 +4,7 @@ import { spawn } from 'node:child_process'
 import { makeSource } from 'contentlayer/source-remote-files'
 
 import { Post } from './content/definitions/Post'
+import { Project } from './content/definitions/Project'
 import { remarkPlugins, rehypePlugins } from './content/plugin'
 import { POST_SOURCES } from './content/postsSources'
 
@@ -73,7 +74,7 @@ const runBashCommand = (command: string) =>
 export default makeSource({
   syncFiles: syncContentFromGit,
   contentDirPath: 'content',
-  documentTypes: [Post],
+  documentTypes: [Post, Project],
   disableImportAliasWarning: true,
   mdx: {
     remarkPlugins,
