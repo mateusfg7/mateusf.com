@@ -1,19 +1,38 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 
-interface Props {
-  scrollPosition: number
-  maxScrollValue: number
-}
-
-export function Header({ scrollPosition, maxScrollValue }: Props) {
+export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [maxScrollValue, setMaxScrollValue] = useState(0)
+
+  function handleScroll() {
+    if (window) {
+      setScrollPosition(window.scrollY)
+    }
+    if (document) {
+      setMaxScrollValue(
+        document.documentElement.scrollHeight -
+          document.documentElement.clientHeight
+      )
+    }
+  }
 
   useEffect(() => {
     setPercentScrollPosition(
       Math.round((scrollPosition / maxScrollValue) * 100)
     )
   }, [scrollPosition, maxScrollValue])
+
+  useEffect(() => {
+    handleScroll()
+
+    if (window) {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
+  }, [])
 
   return (
     <div
