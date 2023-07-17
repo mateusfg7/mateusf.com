@@ -56,7 +56,7 @@ export function PostLink({ post, hideYear = false }: Props) {
 
     return (
       <Link
-        href={`/post/${post.id}`}
+        href={`/blog/post/${post.id}`}
         className="group flex flex-col justify-between gap-1 md:flex-row md:gap-3"
       >
         <section className="space-y-1">

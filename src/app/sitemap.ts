@@ -14,15 +14,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   )
 
   const tags = getUniqueTagListFromPosts().map(tag => ({
-    url: `${config.webserver.host}/tag/${slug(tag)}`,
+    url: `${config.webserver.host}/blog/tag/${slug(tag)}`,
     lastModified: new Date().toISOString()
   }))
   const categories = getUniqueCategoryList().map(category => ({
-    url: `${config.webserver.host}/categories/${slug(category)}`,
+    url: `${config.webserver.host}/blog/categories/${slug(category)}`,
     lastModified: new Date().toISOString()
   }))
   const posts = allPosts.map(post => ({
-    url: `${config.webserver.host}/post/${post.id}`,
+    url: `${config.webserver.host}/blog/post/${post.id}`,
     lastModified: new Date(post.date).toISOString()
   }))
 
@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories,
     ...posts,
     {
-      url: `${config.webserver.host}/author/mateusfg7`,
+      url: `${config.webserver.host}/blog/author/mateusfg7`,
       lastModified: new Date().toISOString()
     }
   ]

@@ -34,9 +34,9 @@ export function generateMetadata({ params }: Props): Metadata {
       tags: post.tags.split(',').map(tag => tag.trim()),
       authors: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       type: 'article',
-      url: `https://mateusf.com/post/${params.slug}`,
+      url: `https://mateusf.com/blog/post/${params.slug}`,
       images: {
-        url: `${config.webserver.host}/post/${post.id}/thumbnail`,
+        url: `${config.webserver.host}/blog/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -48,7 +48,7 @@ export function generateMetadata({ params }: Props): Metadata {
       creator: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       site: `${config.webserver.host}`,
       images: {
-        url: `${config.webserver.host}/post/${post.id}/og`,
+        url: `${config.webserver.host}/blog/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -86,7 +86,7 @@ export default function Page({ params }: Props) {
           <div className="flex justify-center gap-2 text-neutral-600 dark:text-neutral-400 md:justify-start">
             <span>by</span>
             <Link
-              href={`/author/${author.user}`}
+              href={`/blog/author/${author.user}`}
               className="cursor-pointer hover:text-black dark:hover:text-white"
             >
               {author.name} ({author.user})
@@ -113,7 +113,7 @@ export default function Page({ params }: Props) {
               <span className="group inline-flex items-center gap-1">
                 <Folder />
                 <Link
-                  href={`/categories/${slug(post.category)}`}
+                  href={`/blog/categories/${slug(post.category)}`}
                   className="group-dark:hover:text-blue-400 group-hover:text-blue-500"
                 >
                   {post.category}
@@ -127,7 +127,7 @@ export default function Page({ params }: Props) {
           </div>
           <div className="flex flex-wrap gap-3 gap-y-2">
             {tags.map((tag, index) => (
-              <Link href={`/tag/${slug(tag)}`} key={index}>
+              <Link href={`/blog/tag/${slug(tag)}`} key={index}>
                 <span className="flex items-center justify-center gap-1 rounded-md bg-neutral-500/5 p-1 leading-none text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 md:bg-transparent md:p-0">
                   {tag} <Tag size={15} className="hidden md:inline" />
                 </span>

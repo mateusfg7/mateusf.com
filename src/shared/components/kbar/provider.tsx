@@ -55,7 +55,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: category,
       icon: <Folder weight="duotone" />,
       parent: 'categories',
-      perform: () => push(`/categories/${slug(category)}`)
+      perform: () => push(`/blog/categories/${slug(category)}`)
     }))
   const tagsAsAction: Action[] = getUniqueTagListFromPosts()
     .sort()
@@ -64,7 +64,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: tag,
       icon: <Tag weight="duotone" />,
       parent: 'tags',
-      perform: () => push(`/tag/${slug(tag)}`)
+      perform: () => push(`/blog/tag/${slug(tag)}`)
     }))
 
   const getIconByStatus = (status: 'published' | 'draft' | 'planned') => {
@@ -85,7 +85,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       .replaceAll(',', ' '),
     parent: 'search-posts',
     subtitle: description,
-    perform: () => push(`/post/${id}`)
+    perform: () => push(`/blog/post/${id}`)
   }))
 
   const blogActions: Action[] = [

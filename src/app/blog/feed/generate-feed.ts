@@ -21,7 +21,7 @@ export function generateFeed() {
     copyright: `All rights reserved ${date.getFullYear()}, Mateus Felipe.`,
     updated: posts.length > 0 ? new Date(posts[0].date) : date,
     feedLinks: {
-      rss2: `${config.webserver.host}/feed`
+      rss2: `${config.webserver.host}/blog/feed`
     },
     docs: 'https://github.com/mateusfg7/mfg-b',
     generator: 'Feed for Node.js',
@@ -34,7 +34,7 @@ export function generateFeed() {
 
   posts.forEach(async post => {
     const { name, email, url: authorLink } = post.author_info
-    const link = `${config.webserver.host}/post/${post.id}`
+    const link = `${config.webserver.host}/blog/post/${post.id}`
 
     feed.addItem({
       link,

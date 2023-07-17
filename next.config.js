@@ -10,19 +10,19 @@ const nextConfig = {
     return [
       {
         source: '/rss',
-        destination: '/feed'
+        destination: '/blog/feed'
       },
       {
         source: '/atom',
-        destination: '/feed'
+        destination: '/blog/feed'
       },
       {
         source: '/rss.xml',
-        destination: '/feed'
+        destination: '/blog/feed'
       },
       {
         source: '/atom.xml',
-        destination: '/feed'
+        destination: '/blog/feed'
       }
     ]
   }

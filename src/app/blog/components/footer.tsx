@@ -32,7 +32,7 @@ export function Footer() {
             <span>Sitemap</span>
             <ArrowIcon />
           </Link>
-          <Link href="/feed" rel="noreferrer">
+          <Link href="/blog/feed" rel="noreferrer">
             <span>RSS</span>
             <ArrowIcon />
           </Link>

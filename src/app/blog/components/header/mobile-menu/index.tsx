@@ -119,7 +119,7 @@ export function MobileMenu() {
                 title="RSS"
                 icon={RssSimple}
                 rel="noreferrer"
-                href="/feed"
+                href="/blog/feed"
               />
               <OutLink
                 title="Sitemap"
