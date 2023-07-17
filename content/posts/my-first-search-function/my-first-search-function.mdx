@@ -1,0 +1,105 @@
+---
+title: 'My first search function'
+date: '2023-07-13T14:27:04.000Z'
+description: 'Archive of how I implemented a search algorithm with Typescript'
+category: 'Article'
+tags: 'javascript,typescript,search,algorithm,react,next.js,radix-ui,geist-ui,tailwindcss,archive'
+author: 'mateusfg7'
+status: 'published'
+---
+
+# The Search Algorithm
+
+I had a component in my website for search through my blog posts, the component consisted in a modal with a search input on top, and the list of posts after the input, here is an screenshot:
+
+![screenshot.png](https://i.imgur.com/J8sk1vb.png)
+
+The modal is triggered by an button that looks like another input search (_but isn't_) with a keyboard shortcut (`Ctrl+K`).
+
+All of this was made using Tailwindcss, Phosphor icons, Radix UI and Geist UI (_for the keyboard shortcut_) on Next.js.
+
+The initial post list is a random list, then, when a search input is detected, a function is called, for get the input and return the matched post. This function is the main topic of this post.
+
+I'm dropping this implementation now, for use a more better, modern and complete alternative: The [kbar](https://github.com/timc1/kbar) library.
+
+I will not talk about kbar now, but I prefer to use him instead of my own, pure, implementation of search modal, but I sincerely like my search function, is simple, and precise. I think that there is better search algorithm that will fit better in my use case, but is my first search function, and I want to register/archive my implementation. If you know another search algorith, feel free to share in the comments section bellow, any link, reference, topic... Anything!
+
+Well, here is:
+
+```typescript
+import { Post } from 'contentlayer/generated'
+import { slug } from '@/shared/lib/slug'
+
+export function searchMath(post: Post, search: string) {
+  const sluggedSearch = slug(search)
+
+  let weight = 0
+  const sources = [
+    post.title,
+    post.description,
+    post.author,
+    post.category,
+    post.status,
+    post.tags
+  ]
+
+  sources.forEach(source => slug(source).includes(sluggedSearch) && weight++)
+
+  return weight
+}
+```
+
+Well, let me explain...
+
+The `Post` here is an interface for my defined Post on contentlayer, it's not relevant to write a detailed explanation about it, but you can check the types of the properties bellow:
+
+prop | type | example
+---|---|---
+`title` | String | "Why Galo is the biggest of Minas"
+`description` | String | "Mariaa, eu sei que você tremee... 🎶"
+`author` | String | "Mateus Felipe Gonçalves"
+`category` | String  | "Article"
+`status` | Enum | "Published"
+`tags` | String | "galo, maria, futebol, campeonato mineiro"
+
+The `slug` function is just to get a string and return a slugged version of it (e.g. "Clube Atlético Mineiro" to "clube-atletico-mineiro").
+
+The logic is to attach a weight to the post, that represents how close the post is to the target search, using a weight number between 0-n (_**n** is the number of sources to consider, in this case is 6_). With a list of Posts and their respective weights, we can purge all the posts with weight 0 (_posts that not match the search_) and sort the rest based on weight value, from biggest value (_most matching post_) to lowest value (_least matching post_).
+
+Implementation: https://github.com/mateusfg7/mateusf.com/blob/7.3.0/src/shared/lib/match.ts
+
+## My mistake
+
+While I was reading my code, I notice that the search isn't case-sensitive, because I transform all to a slug version, and compare this slugged version of the strings.
+
+This ends up decreasing the accuracy of the search, and this "String Processor" it's useless, in fact, it just gets in the way.
+
+I process all the string with the `slug` function because I already had problems with compare string without process on post titles to get the reference of posts, but this it's not the case.
+
+**Moral of the story**:  beware of "muscle memory" of your brain!
+
+# Observation
+
+I was not honest when I said this is my first search implementation, I made another before, but it not have the concept of _weight_, is just a match script. This script it's self explanatory, so I won't go into details about how it works:
+
+```typescript
+import { Post } from 'contentlayer/generated'
+import { slug } from './utils'
+
+export function searchMath(post: Post, search: string) {
+  const sluggedSearch = slug(search)
+
+  if (slug(post.title).includes(sluggedSearch)) return true
+  if (slug(post.description).includes(sluggedSearch)) return true
+  if (slug(post.author).includes(sluggedSearch)) return true
+  if (slug(post.category).includes(sluggedSearch)) return true
+  if (slug(post.status).includes(sluggedSearch)) return true
+  if (slug(post.tags).includes(sluggedSearch)) return true
+
+  return false
+}
+```
+
+Implementation: https://github.com/mateusfg7/mateusf.com/blob/6.0.0/src/lib/match.ts
+
+!> Another great algorithm that I discovered after my implementation and remember while I was writing this post is the [Cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity), take a look!

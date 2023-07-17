@@ -40,6 +40,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.mts",
     "**/*.tsx",
     ".contentlayer/generated",
     ".next/types/**/*.ts"
