@@ -40,7 +40,6 @@ yarn-error.log*
 
 # contentlayer
 .contentlayer
-content/posts
 
 # obsidian
 .obsidian

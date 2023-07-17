@@ -1,0 +1,33 @@
+---
+title: 'Typed Props on Styled Components'
+date: '2021-07-01'
+description: 'Use typed props with styled-compoents and typescript'
+category: 'How To'
+tags: 'ux/ui, styles, typing, styled-components'
+author: 'mateusfg7'
+status: 'published'
+---
+
+# How
+
+Just create a interface and add the type with the property read only. After, add the interface to the tag declaration with `< >`:
+
+```typescript
+interface Props {
+  readonly color: string
+}
+
+const Text = styled.h1<Props>`
+  color: ${(props) => props.color};
+`
+
+const Component = () => <Text color='white'>Title</Text>
+
+export default Component
+```
+
+---
+
+# referencies
+
+Using custom props: https://styled-components.com/docs/api#using-custom-props [[_archive_](https://web.archive.org/web/20210701174608if_/https://styled-components.com/docs/api)]
