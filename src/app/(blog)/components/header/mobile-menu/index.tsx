@@ -6,18 +6,17 @@ import {
   X,
   House,
   ArrowUpRight,
-  ReadCvLogo,
-  Tag,
-  FolderOpen,
   File,
   GithubLogo,
   RssSimple,
-  TreeStructure
+  TreeStructure,
+  MagnifyingGlass
 } from '@/shared/lib/phosphor-icons'
 import { AnchorHTMLAttributes, useState } from 'react'
 
 import './styles.css'
 import { ToggleTheme } from './toggle-theme'
+import { useKBar } from 'kbar'
 
 interface LinkProps extends NextLinkProps {
   title: string
@@ -61,6 +60,27 @@ export function MobileMenu() {
     )
   }
 
+  const Search = () => {
+    const {
+      query: { toggle }
+    } = useKBar()
+
+    return (
+      <button
+        onClick={() => {
+          setIsDialogOpen(false)
+          toggle()
+        }}
+        className="menu-item"
+      >
+        <MagnifyingGlass weight="duotone" />
+        <span className="flex items-end gap-px">
+          <span>Search</span>
+        </span>
+      </button>
+    )
+  }
+
   return (
     <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <Dialog.Trigger asChild className="md:hidden">
@@ -82,8 +102,7 @@ export function MobileMenu() {
             </Dialog.Close>
             <div className="flex flex-1 flex-col overflow-y-scroll rounded-tl-[2rem] rounded-bl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-900">
               <Link title="Home" icon={House} href="/" />
-              <Link title="Tags" icon={Tag} href="/tag" />
-              <Link title="Categories" icon={FolderOpen} href="/categories" />
+              <Search />
               <OutLink
                 title="License"
                 icon={File}
@@ -108,6 +127,7 @@ export function MobileMenu() {
                 rel="noreferrer"
                 href="/sitemap.xml"
               />
+
               <ToggleTheme />
             </div>
           </div>
