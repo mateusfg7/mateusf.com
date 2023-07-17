@@ -6,12 +6,18 @@ import { allPosts } from 'contentlayer/generated'
 import { slug } from '@/shared/lib/slug'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const commonRoutes = ['', 'categories', 'feed', 'tag', 'portifolio'].map(
-    route => ({
-      url: `${config.webserver.host}/${route}`,
-      lastModified: new Date().toISOString()
-    })
-  )
+  const commonRoutes = [
+    '',
+    'blog',
+    'blog/categories',
+    'blog/tag',
+    'blog/feed',
+    'blog/author',
+    'archive/portifolio'
+  ].map(route => ({
+    url: `${config.webserver.host}/${route}`,
+    lastModified: new Date().toISOString()
+  }))
 
   const tags = getUniqueTagListFromPosts().map(tag => ({
     url: `${config.webserver.host}/blog/tag/${slug(tag)}`,
