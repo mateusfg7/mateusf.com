@@ -85,12 +85,6 @@ export function MobileMenu() {
               <Link title="Tags" icon={Tag} href="/tag" />
               <Link title="Categories" icon={FolderOpen} href="/categories" />
               <OutLink
-                title="Portifolio"
-                icon={ReadCvLogo}
-                rel="author"
-                href="/portifolio"
-              />
-              <OutLink
                 title="License"
                 icon={File}
                 rel="license"

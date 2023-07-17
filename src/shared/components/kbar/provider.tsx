@@ -45,14 +45,6 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       keywords: 'homepage main',
       icon: <House weight="duotone" />,
       perform: () => push('/')
-    },
-    {
-      id: 'portifolio',
-      name: 'Portfolio',
-      shortcut: ['n', 'p'],
-      keywords: 'portfolio projects',
-      icon: <Briefcase weight="duotone" />,
-      perform: () => push('/portifolio')
     }
   ]
 
@@ -222,10 +214,23 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     }
   ]
 
+  const archiveNavigationActions: Action[] = [
+    {
+      id: 'portifolio',
+      name: 'Portfolio',
+      section: 'Archive',
+      shortcut: ['a', 'p'],
+      keywords: 'portfolio projects',
+      icon: <Briefcase weight="duotone" />,
+      perform: () => push('/archive/portifolio')
+    }
+  ]
+
   const actions: Action[] = [
     ...navigationActions,
     ...blogActions,
     ...websiteInformationActions,
+    ...archiveNavigationActions,
     ...themeActions
   ]
 
