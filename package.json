@@ -50,7 +50,7 @@
     "shiki": "^0.14.0",
     "tailwindcss-animated": "^1.0.1",
     "unified": "^10.1.2",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@clack/prompts": "^0.6.3",
