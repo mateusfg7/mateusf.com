@@ -3,5 +3,5 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return <div className="content-vertical-spaces">{children}</div>
 }
