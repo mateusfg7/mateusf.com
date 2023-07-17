@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useGlitch } from 'react-powerglitch'
 
 import { ToggleTheme } from './toggle-theme'
-import { CategorySelector } from './category-selector'
 import { MobileMenu } from './mobile-menu'
 import { Search } from './search'
 
@@ -83,8 +82,6 @@ export function Header() {
           <nav className="flex flex-wrap items-center justify-center gap-5">
             <MenuItem name="Home" path="/" />
             <MenuItem name="Portifolio" path="/portifolio" />
-            <MenuItem name="Tags" path="/tag" />
-            <CategorySelector />
           </nav>
           <div className="flex w-full items-center gap-8 md:w-auto">
             <Search />
