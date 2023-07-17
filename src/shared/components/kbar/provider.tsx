@@ -11,6 +11,7 @@ import {
   File,
   FileDashed,
   FolderOpen,
+  Folder,
   GithubLogo,
   House,
   MagnifyingGlass,
@@ -26,6 +27,9 @@ import {
 } from '@/shared/lib/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
+import { slug } from '@/shared/lib/slug'
+import { getUniqueCategoryList } from '@/shared/lib/categories'
+import { getUniqueTagListFromPosts } from '@/shared/lib/tags'
 
 export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const { push } = useRouter()
@@ -51,6 +55,25 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       perform: () => push('/portifolio')
     }
   ]
+
+  const categoriesAsAction: Action[] = getUniqueCategoryList()
+    .sort()
+    .map(category => ({
+      id: slug(category),
+      name: category,
+      icon: <Folder weight="duotone" />,
+      parent: 'categories',
+      perform: () => push(`/categories/${slug(category)}`)
+    }))
+  const tagsAsAction: Action[] = getUniqueTagListFromPosts()
+    .sort()
+    .map(tag => ({
+      id: slug(tag),
+      name: tag,
+      icon: <Tag weight="duotone" />,
+      parent: 'tags',
+      perform: () => push(`/tag/${slug(tag)}`)
+    }))
 
   const getIconByStatus = (status: 'published' | 'draft' | 'planned') => {
     if (status === 'published') return <Article weight="duotone" />
@@ -89,18 +112,18 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b', 'c'],
       section: 'Blog',
       keywords: 'posts writing',
-      icon: <FolderOpen weight="duotone" />,
-      perform: () => push('/categories')
+      icon: <FolderOpen weight="duotone" />
     },
+    ...categoriesAsAction,
     {
       id: 'tags',
       name: 'Tags',
       shortcut: ['b', 't'],
       section: 'Blog',
       keywords: 'posts writing',
-      icon: <Tag weight="duotone" />,
-      perform: () => push('/tag')
+      icon: <Tag weight="duotone" />
     },
+    ...tagsAsAction,
     {
       id: 'rss',
       name: 'Rss',
