@@ -6,12 +6,13 @@ import Tilt from 'react-parallax-tilt'
 export function ImageCard({ mobile = false }) {
   return (
     <Tilt
-      className="overflow-hidden rounded-3xl shadow-2xl"
+      className="overflow-hidden rounded-3xl shadow-2xl dark:shadow-black"
       tiltMaxAngleX={5}
       tiltMaxAngleY={5}
       glarePosition="all"
       glareBorderRadius="1.5rem"
-      glareMaxOpacity={0.2}
+      glareMaxOpacity={0.4}
+      glareReverse
       glareEnable
       trackOnWindow
       gyroscope
