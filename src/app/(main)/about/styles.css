@@ -1,0 +1,5 @@
+.about-rendered-mdx {
+  a {
+    @apply text-neutral-700 hover:underline dark:text-neutral-50;
+  }
+}
