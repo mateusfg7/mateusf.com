@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Chivo_Mono, Inter } from 'next/font/google'
 import { config } from 'global-config'
 
 import { Providers } from './providers'
@@ -25,6 +26,19 @@ export const metadata: Metadata = {
   }
 }
 
+const chivoMono = Chivo_Mono({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-chivo-mono',
+  display: 'swap'
+})
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '900'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
 export default function RootLayout({
   children
 }: {
@@ -33,18 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&family=Source+Sans+Pro:wght@300;400;600&family=Inter:wght@200;300;400;500;600;700;900&display=swap"
-          rel="stylesheet"
-        />
         <link rel="shortcut icon" href="assets/brain.png" type="image/png" />
-
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css"
@@ -56,7 +59,7 @@ export default function RootLayout({
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className="scroll-smooth">
+      <body className={`scroll-smooth ${chivoMono.variable} ${inter.variable}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

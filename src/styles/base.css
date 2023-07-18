@@ -7,7 +7,7 @@
 
   body {
     @apply bg-neutral-100 dark:bg-neutral-1000;
-    @apply font-['Inter'] text-neutral-900 dark:text-neutral-300;
+    @apply font-sans text-neutral-900 dark:text-neutral-300;
   }
 
   /* Syntax Highlighting */
