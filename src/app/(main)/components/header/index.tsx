@@ -82,6 +82,7 @@ export function Header() {
           <nav className="flex flex-wrap items-center justify-center gap-5">
             <MenuItem name="Home" path="/" />
             <MenuItem name="Blog" path="/blog" />
+            <MenuItem name="About" path="/about" />
           </nav>
           <div className="flex w-full items-center gap-8 md:w-auto">
             <Search />
