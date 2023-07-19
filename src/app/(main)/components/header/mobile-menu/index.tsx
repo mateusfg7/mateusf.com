@@ -12,7 +12,8 @@ import {
   TreeStructure,
   MagnifyingGlass,
   Note,
-  User
+  User,
+  Briefcase
 } from '@/shared/wrappers/phosphor-icons'
 import { AnchorHTMLAttributes, useState } from 'react'
 
@@ -105,6 +106,7 @@ export function MobileMenu() {
             <div className="flex flex-1 flex-col overflow-y-scroll rounded-tl-[2rem] rounded-bl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-900">
               <Link title="Home" icon={House} href="/" />
               <Link title="Blog" icon={Note} href="/blog" />
+              <Link title="Projects" icon={Briefcase} href="/projects" />
               <Link title="About" icon={User} href="/about" />
               <Search />
               <OutLink
