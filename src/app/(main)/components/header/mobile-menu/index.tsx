@@ -86,7 +86,7 @@ export function MobileMenu() {
   return (
     <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <Dialog.Trigger asChild className="md:hidden">
-        <button>
+        <button aria-label="Open menu">
           <List />
         </button>
       </Dialog.Trigger>
