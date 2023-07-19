@@ -8,6 +8,7 @@ import { slug } from '@/shared/lib/slug'
 export default function sitemap(): MetadataRoute.Sitemap {
   const commonRoutes = [
     '',
+    'about',
     'blog',
     'blog/categories',
     'blog/tag',

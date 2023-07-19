@@ -23,7 +23,8 @@ import {
   Sun,
   Tag,
   TreeStructure,
-  ChartLine
+  ChartLine,
+  User
 } from '@/shared/lib/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -45,6 +46,14 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       keywords: 'homepage main',
       icon: <House weight="duotone" />,
       perform: () => push('/')
+    },
+    {
+      id: 'about',
+      name: 'About',
+      shortcut: ['n', 'a'],
+      keywords: 'about me user information info',
+      icon: <User weight="duotone" />,
+      perform: () => push('/about')
     }
   ]
 

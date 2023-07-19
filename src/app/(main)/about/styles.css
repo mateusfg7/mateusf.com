@@ -1,0 +1,13 @@
+.about-rendered-mdx {
+  a {
+    @apply text-neutral-700 hover:underline dark:text-neutral-50;
+  }
+}
+
+.contact-line {
+  @apply border-b border-neutral-200 py-4 last:border-none dark:border-neutral-900;
+}
+
+.contact-line-title {
+  @apply flex items-center gap-1;
+}

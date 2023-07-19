@@ -2,7 +2,7 @@
 
 @layer base {
   * {
-    @apply duration-150;
+    @apply selection:bg-neutral-1000 selection:text-neutral-50 dark:selection:bg-neutral-50 dark:selection:text-neutral-1000;
   }
 
   body {
