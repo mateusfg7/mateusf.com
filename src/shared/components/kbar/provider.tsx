@@ -25,7 +25,7 @@ import {
   TreeStructure,
   ChartLine,
   User
-} from '@/shared/lib/phosphor-icons'
+} from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
 import { slug } from '@/shared/lib/slug'

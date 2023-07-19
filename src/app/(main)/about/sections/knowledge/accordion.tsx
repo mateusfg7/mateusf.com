@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
-import { CaretDown } from '@/shared/lib/phosphor-icons'
+import { CaretDown } from '@/shared/wrappers/phosphor-icons'
 
 import { Knowledge } from './knowledge-categories'
 

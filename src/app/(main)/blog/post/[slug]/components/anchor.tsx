@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 
-import { ArrowSquareOut } from '@/shared/lib/phosphor-icons'
+import { ArrowSquareOut } from '@/shared/wrappers/phosphor-icons'
 
 interface Props
   extends DetailedHTMLProps<

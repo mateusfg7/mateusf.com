@@ -13,7 +13,7 @@ import {
   MagnifyingGlass,
   Note,
   User
-} from '@/shared/lib/phosphor-icons'
+} from '@/shared/wrappers/phosphor-icons'
 import { AnchorHTMLAttributes, useState } from 'react'
 
 import './styles.css'

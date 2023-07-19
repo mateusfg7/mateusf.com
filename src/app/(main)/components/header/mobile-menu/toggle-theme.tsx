@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes'
-import { Desktop, Moon, Sun } from '@/shared/lib/phosphor-icons'
+import { Desktop, Moon, Sun } from '@/shared/wrappers/phosphor-icons'
 
 export function ToggleTheme() {
   const { setTheme, theme: currTheme } = useTheme()

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { DownloadSimple, Book } from '@/shared/lib/phosphor-icons'
+import { DownloadSimple, Book } from '@/shared/wrappers/phosphor-icons'
 
 export function AboutSection() {
   return (

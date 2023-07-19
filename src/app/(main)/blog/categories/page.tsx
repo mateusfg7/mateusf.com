@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { getCategoriesAndNumberOfPosts } from '@/shared/lib/categories'
 import { slug } from '@/shared/lib/slug'
-import { Folder } from '@/shared/lib/phosphor-icons'
+import { Folder } from '@/shared/wrappers/phosphor-icons'
 
 export const metadata: Metadata = {
   title: 'Blog Categories',

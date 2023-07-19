@@ -1,4 +1,7 @@
-import { ArrowSquareOut, Icon as IconType } from '@/shared/lib/phosphor-icons'
+import {
+  ArrowSquareOut,
+  Icon as IconType
+} from '@/shared/wrappers/phosphor-icons'
 
 export const Contact: React.FC<{
   title: string

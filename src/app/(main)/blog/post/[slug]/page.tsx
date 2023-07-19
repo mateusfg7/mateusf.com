@@ -8,7 +8,12 @@ import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
 import { config } from 'global-config'
-import { Folder, CalendarBlank, Clock, Tag } from '@/shared/lib/phosphor-icons'
+import {
+  Folder,
+  CalendarBlank,
+  Clock,
+  Tag
+} from '@/shared/wrappers/phosphor-icons'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'

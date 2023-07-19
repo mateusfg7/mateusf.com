@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { slug } from '@/shared/lib/slug'
 import { getTagsAndNumberOfPosts } from '@/shared/lib/tags'
-import { Tag } from '@/shared/lib/phosphor-icons'
+import { Tag } from '@/shared/wrappers/phosphor-icons'
 
 export const metadata: Metadata = {
   title: 'Blog Tags',

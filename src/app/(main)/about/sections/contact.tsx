@@ -7,7 +7,7 @@ import {
   TwitterLogo,
   InstagramLogo,
   ArrowUpRight
-} from '@/shared/lib/phosphor-icons'
+} from '@/shared/wrappers/phosphor-icons'
 
 export function Contact() {
   return (
