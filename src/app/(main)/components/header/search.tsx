@@ -13,7 +13,9 @@ export function Search() {
     >
       <span className="flex items-center gap-3">
         <MagnifyingGlass />
-        <span className="text-neutral-400">Search...</span>
+        <span className="text-neutral-600 dark:text-neutral-400">
+          Search...
+        </span>
       </span>
       <kbd className="keyboard hidden md:flex">Ctrl K</kbd>
     </button>
