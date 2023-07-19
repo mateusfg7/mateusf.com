@@ -14,8 +14,7 @@ export const Project = defineDocumentType(() => ({
       required: true
     },
     image: {
-      type: 'string',
-      required: true
+      type: 'string'
     },
     core_techs: {
       type: 'list',
@@ -35,6 +34,15 @@ export const Project = defineDocumentType(() => ({
     },
     website: {
       type: 'string'
+    },
+    featured: {
+      type: 'boolean',
+      default: false
+    },
+    priority: {
+      type: 'enum',
+      options: ['1', '2', '3'],
+      default: '3'
     }
   }
 }))
