@@ -44,7 +44,7 @@ export function ToggleTheme() {
 
   return (
     <Menu as="div" className="relative inline-flex items-center">
-      <Menu.Button>
+      <Menu.Button aria-label="Change color theme">
         {currTheme === 'light' && <Sun className="text-xl" />}
         {currTheme === 'dark' && <Moon className="text-xl" />}
         {currTheme === 'system' && <Desktop className="text-xl" />}
