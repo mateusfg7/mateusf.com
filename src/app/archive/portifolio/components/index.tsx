@@ -1,6 +1,0 @@
-export * from './header'
-export * from './home-section'
-export * from './about-section'
-export * from './projects-section'
-export * from './knowledge-section'
-export * from './contact-section'

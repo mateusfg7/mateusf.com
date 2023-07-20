@@ -1,7 +1,8 @@
 import Image from 'next/image'
+
 import { Typewriter } from './components/typewriter'
-import codeTyping from './components/code-type.svg'
 import { StartButton } from './components/start-button'
+import codeTyping from './components/code-type.svg'
 
 export default function Page() {
   return (

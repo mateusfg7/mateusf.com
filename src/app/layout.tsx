@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Chivo_Mono, Inter } from 'next/font/google'
-import { config } from 'global-config'
 
+import { config } from 'global-config'
+import { Header } from './components/header'
+import { Footer } from './components/footer'
 import { Providers } from './providers'
 
 import '@/styles/main.css'
-import Script from 'next/script'
 
 export const metadata: Metadata = {
   ...config.metadata,
@@ -60,7 +62,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`scroll-smooth ${chivoMono.variable} ${inter.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
