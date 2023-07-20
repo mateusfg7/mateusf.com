@@ -2,7 +2,7 @@
 
 @layer utilities {
   .content-container {
-    @apply w-full px-4 md:max-w-4xl md:px-0;
+    @apply w-full px-4 md:max-w-4xl lg:px-0;
   }
   .content-vertical-spaces {
     @apply pt-24 pb-28 md:pt-36;
