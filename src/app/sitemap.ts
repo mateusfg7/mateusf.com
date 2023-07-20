@@ -14,8 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'blog/categories',
     'blog/tag',
     'blog/feed',
-    'blog/author',
-    'archive/portifolio'
+    'blog/author'
   ].map(route => ({
     url: `${config.webserver.host}/${route}`,
     lastModified: new Date().toISOString()
