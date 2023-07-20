@@ -70,16 +70,19 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="mailto:contact@mateusf.com"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">Send e-mail</span>
             <ArrowUpRight className="text-sm" />
-            <span></span>
           </a>
         </div>
         <div className="contact-line">
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://github.com/mateusfg7"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">Open profile</span>
             <ArrowUpRight className="text-sm" />
@@ -89,6 +92,8 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://www.linkedin.com/in/mateusfg/"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">Open profile</span>
             <ArrowUpRight className="text-sm" />
@@ -98,6 +103,8 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://stackoverflow.com/users/15445504/mateusfg7"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">Open summary</span>
             <ArrowUpRight className="text-sm" />
@@ -107,6 +114,8 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://www.reddit.com/user/mateusfg7/"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">See comments</span>
             <ArrowUpRight className="text-sm" />
@@ -116,6 +125,8 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://twitter.com/mateusfg77"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">See tweets</span>
             <ArrowUpRight className="text-sm" />
@@ -125,6 +136,8 @@ export function Contact() {
           <a
             className="inline-flex items-end gap-px hover:underline"
             href="https://www.instagram.com/mateusfg7/"
+            target="_blank"
+            rel="external"
           >
             <span className="leading-none">Open profile</span>
             <ArrowUpRight className="text-sm" />
