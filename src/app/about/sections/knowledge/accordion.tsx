@@ -78,7 +78,7 @@ export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
       </div>
       <div className="flex-1">
         <div
-          className={`flex min-w-max items-center rounded-full bg-gradient-to-r from-blue-800/70 bg-no-repeat px-2 leading-none text-neutral-50 dark:from-blue-800/50 dark:text-neutral-300 md:text-lg ${
+          className={`flex min-w-max items-center rounded-full bg-gradient-to-r from-blue-800/70 bg-no-repeat px-2 py-1 leading-none text-neutral-50 dark:from-blue-800/50 dark:text-neutral-300 md:py-0 md:text-lg ${
             knowledge.level === 1 && 'bg-[length:50%]'
           }
           ${knowledge.level === 2 && 'bg-[length:80%]'}
