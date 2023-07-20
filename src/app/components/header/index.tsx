@@ -60,7 +60,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-3 left-3 right-3 z-10 rounded-xl bg-neutral-100/80 py-3 backdrop-blur-lg dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
+      className={`fixed top-3 left-3 right-3 z-40 rounded-xl bg-neutral-100/80 py-3 backdrop-blur-lg dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
         isNotOnTop
           ? 'md:border-b-neutral-50 md:dark:border-b-neutral-800'
           : 'md:border-b-transparent md:py-6'

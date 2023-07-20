@@ -12,9 +12,9 @@ import {
 
 export function Knowledge() {
   return (
-    <div className="z-0">
+    <div>
       <Accordion.Root
-        className="w-full overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-900"
+        className="z-0 w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-200/30 dark:border-neutral-900 dark:bg-neutral-900/30"
         type="single"
         collapsible
       >
