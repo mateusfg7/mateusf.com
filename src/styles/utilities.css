@@ -1,9 +1,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .portifolio-content-w {
-    @apply w-full px-5 md:max-w-5xl md:px-0;
-  }
   .blog-content-w {
     @apply w-full px-4 md:max-w-4xl md:px-0;
   }
