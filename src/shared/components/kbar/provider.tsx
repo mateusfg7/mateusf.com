@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { KBarProvider, Action } from 'kbar'
 import { useTheme } from 'next-themes'
-import { allPosts } from 'contentlayer/generated'
+import { allPosts, allProjects } from 'contentlayer/generated'
 import {
   Article,
   Briefcase,
@@ -24,7 +24,8 @@ import {
   Tag,
   TreeStructure,
   ChartLine,
-  User
+  User,
+  SquaresFour
 } from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -35,8 +36,6 @@ import { getUniqueTagListFromPosts } from '@/shared/lib/tags'
 export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const { push } = useRouter()
   const { setTheme } = useTheme()
-
-  // TODO: List projects on command bar (https://github.com/mateusfg7/mateusf.com/issues/572)
 
   const navigationActions: Action[] = [
     {
@@ -57,6 +56,43 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     }
   ]
 
+  const projectsAsActions: Action[] = allProjects.map(project => ({
+    id: `out-${slug(project.title)}`,
+    name: project.title,
+    subtitle: project.description,
+    keywords: [...project.tags, project.core_techs].toString(),
+    section: 'Projects',
+    icon: <SquaresFour weight="duotone" />,
+    parent: 'search-projects',
+    get perform() {
+      if (project.website) return () => window.open(project.website, '_blank')
+      if (project.repository)
+        return () => window.open(project.repository, '_blank')
+
+      return undefined
+    }
+  }))
+  const projectsActions: Action[] = [
+    {
+      id: 'projects',
+      name: 'Projects',
+      shortcut: ['p'],
+      section: 'Projects',
+      keywords: 'works projects tools apps',
+      icon: <Briefcase weight="duotone" />,
+      perform: () => push('/projects')
+    },
+    {
+      id: 'search-projects',
+      name: 'Search project...',
+      shortcut: ['p', 's'],
+      section: 'Projects',
+      keywords: 'works projects tools apps',
+      icon: <MagnifyingGlass weight="duotone" />
+    },
+    ...projectsAsActions
+  ]
+
   const categoriesAsAction: Action[] = getUniqueCategoryList()
     .sort()
     .map(category => ({
@@ -64,6 +100,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: category,
       icon: <Folder weight="duotone" />,
       parent: 'categories',
+      section: 'Blog',
       perform: () => push(`/blog/categories/${slug(category)}`)
     }))
   const tagsAsAction: Action[] = getUniqueTagListFromPosts()
@@ -73,6 +110,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: tag,
       icon: <Tag weight="duotone" />,
       parent: 'tags',
+      section: 'Blog',
       perform: () => push(`/blog/tag/${slug(tag)}`)
     }))
 
@@ -94,6 +132,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       .replaceAll(',', ' '),
     parent: 'search-posts',
     subtitle: description,
+    section: 'Blog',
     perform: () => push(`/blog/post/${id}`)
   }))
 
@@ -238,6 +277,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const actions: Action[] = [
     ...navigationActions,
     ...blogActions,
+    ...projectsActions,
     ...websiteInformationActions,
     ...archiveNavigationActions,
     ...themeActions
