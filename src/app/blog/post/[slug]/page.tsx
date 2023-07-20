@@ -82,7 +82,7 @@ export default function Page({ params }: Props) {
   const author = post.author_info
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <div className="flex flex-col gap-4 leading-6">
         <div>
           <h1 className="text-center text-2xl font-bold md:text-left">

@@ -28,7 +28,7 @@ export default function Page({ params }: Props) {
   const postList = getPostsByAuthor(author.user)
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <div className="mb-7">
         <div className="flex items-end gap-2">
           <h1 className="text-2xl font-bold">{author.name}</h1>

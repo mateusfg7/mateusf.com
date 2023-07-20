@@ -19,7 +19,7 @@ export function Footer() {
 
   return (
     <div className="border-t border-neutral-300/30 py-11 dark:border-neutral-800/20">
-      <div className="blog-content-w m-auto flex items-center leading-none md:justify-between">
+      <div className="content-container m-auto flex items-center leading-none md:justify-between">
         <div className="hidden gap-4 text-neutral-500 dark:text-neutral-400 md:flex">
           <Link
             href="https://github.com/mateusfg7/mfg-b/blob/main/LICENSE"

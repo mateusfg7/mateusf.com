@@ -13,7 +13,7 @@ export default function Page() {
     .sort((a, b) => Number(a.priority) - Number(b.priority))
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <h1 className="mb-8 bg-gradient-to-br from-blue-700 to-blue-400 bg-clip-text text-center text-4xl font-bold text-transparent md:w-fit md:text-left">
         Projects
       </h1>

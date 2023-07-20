@@ -66,7 +66,7 @@ export function Header() {
           : 'md:border-b-transparent md:py-6'
       } border border-neutral-50 dark:border-neutral-800 md:border-b md:border-none`}
     >
-      <div className="blog-content-w m-auto flex flex-wrap items-center justify-between">
+      <div className="content-container m-auto flex flex-wrap items-center justify-between">
         <div className="md:hidden" />
         <Link href="/">
           <h1

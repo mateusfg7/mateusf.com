@@ -15,7 +15,7 @@ export default function Page() {
   const categories = getCategoriesAndNumberOfPosts()
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <h1 className="mb-5 text-center text-2xl font-bold md:text-left">
         Categories
       </h1>

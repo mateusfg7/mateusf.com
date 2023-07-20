@@ -28,7 +28,7 @@ export default function Page({ params }: Props) {
   const postList = getSortedPosts(getPostListBasedOnTag(slug(tag)))
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <h1 className="mb-5 flex items-end justify-center gap-2 text-2xl font-bold md:justify-start">
         {getNormalTagString(tag)}
         <Tag weight="duotone" />

@@ -31,7 +31,7 @@ export default function Page({ params }: Props) {
   const postList = getSortedPosts(getPostListOfCategory(slug(category)))
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <h1 className="mb-5 flex justify-center gap-2 text-2xl font-bold md:justify-start">
         <FolderOpen weight="duotone" className="text-3xl" />
         {getNormalCategoryString(category)}

@@ -6,7 +6,7 @@ import './styles.css'
 
 export default function Page() {
   return (
-    <div className="blog-content-w m-auto space-y-32">
+    <div className="content-container m-auto space-y-32">
       <AboutMe />
       <Knowledge />
       <Contact />

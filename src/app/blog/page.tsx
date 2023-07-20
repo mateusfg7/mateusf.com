@@ -16,7 +16,7 @@ export default function Page() {
   const posts = getSortedPosts(allPosts)
 
   return (
-    <div className="blog-content-w m-auto">
+    <div className="content-container m-auto">
       <PostList posts={posts} separateByYear />
     </div>
   )

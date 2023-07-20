@@ -1,7 +1,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .blog-content-w {
+  .content-container {
     @apply w-full px-4 md:max-w-4xl md:px-0;
   }
   .content-vertical-spaces {

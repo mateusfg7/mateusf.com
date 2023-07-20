@@ -6,7 +6,7 @@ import codeTyping from './components/code-type.svg'
 
 export default function Page() {
   return (
-    <div className="blog-content-w relative m-auto mb-10 flex min-h-screen flex-col items-center justify-between py-10">
+    <div className="content-container relative m-auto mb-10 flex min-h-screen flex-col items-center justify-between py-10">
       <div className="absolute h-full w-full bg-[url(/assets/code-type.svg)] bg-fixed bg-center bg-no-repeat opacity-10 md:hidden" />
       <div />
       <div className="flex w-full items-center justify-center gap-12 md:justify-between">
