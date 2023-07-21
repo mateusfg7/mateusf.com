@@ -238,7 +238,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     },
     {
       id: 'system-theme',
-      name: 'System defined',
+      name: 'System colors',
       icon: <Desktop weight="duotone" />,
       parent: 'set-theme',
       keywords: 'theme dark light',
