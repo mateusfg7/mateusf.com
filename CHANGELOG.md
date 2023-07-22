@@ -1,3 +1,53 @@
+## [8.0.0](https://github.com/mateusfg7/mateusf.com/compare/7.4.1...8.0.0) (2023-07-22)
+
+
+### Features
+
+* **a11y:** add `aria-label` to mobile menu trigger button ([0e8ff23](https://github.com/mateusfg7/mateusf.com/commit/0e8ff23cab138b3011a4745a6d93b07858d96909))
+* **a11y:** add `aria-label` to toggle-theme trigger button ([e80f479](https://github.com/mateusfg7/mateusf.com/commit/e80f47993065b024ed8d1320d6b8e331bf6b026c))
+* **a11y:** update icon and titles of toggle-theme component ([2962fc7](https://github.com/mateusfg7/mateusf.com/commit/2962fc7e3cf6bad30d81bba6eebc08702d60e8da))
+* **a11y:** update name of system color theme on kbar ([360a1b1](https://github.com/mateusfg7/mateusf.com/commit/360a1b1fba936ffde0b9d8a9736e3fa3c158dc22))
+* add `targe="_blank"` to all contact links ([23fcd09](https://github.com/mateusfg7/mateusf.com/commit/23fcd097f3984608a945d714367984f1617e109b))
+* **assets:** add code-type.svg ([d9c892b](https://github.com/mateusfg7/mateusf.com/commit/d9c892b75f9b760d787510e5d0a2876c1b8124b0))
+* **contentlayer:** add new projects ([eede1a2](https://github.com/mateusfg7/mateusf.com/commit/eede1a2943838fa52c04d02cb7e47744c6165808))
+* **contentlayer:** create AboutMe definition and mdx file ([dacd878](https://github.com/mateusfg7/mateusf.com/commit/dacd878429c670f4560cf3e87c9a36c0c9c3fb77))
+* **contentlayer:** create Project definition ([310186d](https://github.com/mateusfg7/mateusf.com/commit/310186d96d4a875c9acc5054ec307bf47120d0c9))
+* **contentlayer:** update Project fields ([f95dc03](https://github.com/mateusfg7/mateusf.com/commit/f95dc03e90f1aa686d4a62a917d05d3ab5e421f9))
+* **seo:** add about links to sitemap and menus ([1edf801](https://github.com/mateusfg7/mateusf.com/commit/1edf801e25e73f9282af685e7ebe20eaacca3578))
+* **seo:** add about page metadata ([822d928](https://github.com/mateusfg7/mateusf.com/commit/822d9288b52be8fdad15055a1f35ff3d8fea24ba))
+* **seo:** add project page links ([9d531ac](https://github.com/mateusfg7/mateusf.com/commit/9d531acbd150276a4dc03c6c3491e19362e1612c))
+* **seo:** update sitemap generator with new routes ([3a2d9f2](https://github.com/mateusfg7/mateusf.com/commit/3a2d9f241b8dd275e37ac00dde37ada2c3c763ae))
+* **ui:** add `::selection` styles ([6e3bba7](https://github.com/mateusfg7/mateusf.com/commit/6e3bba7b3bcf035ed3f8f0d7068a89702866aab7))
+* **ui:** add blog link on header ([83d27a5](https://github.com/mateusfg7/mateusf.com/commit/83d27a5c636a6772b1864985ba0a2f1e99818533))
+* **ui:** add info section on about page ([2de757e](https://github.com/mateusfg7/mateusf.com/commit/2de757eccd71470bf7483c5ac7ad4126094d7034))
+* **ui:** add search button and remove category/tag links from header mobile ([29e92ef](https://github.com/mateusfg7/mateusf.com/commit/29e92eff105737f9fa900d17f0635c6a0e49073b))
+* **ui:** add tag and category list on kbar component ([6fa2767](https://github.com/mateusfg7/mateusf.com/commit/6fa2767fdba88b4f17ee78a09f530647f26b05d8))
+* **ui:** add title to blog page ([36dfa67](https://github.com/mateusfg7/mateusf.com/commit/36dfa67c37bbfe53d2bfd7dccc7cb5e2cade1153))
+* **ui:** crate contact list on about page ([bffad04](https://github.com/mateusfg7/mateusf.com/commit/bffad040faa7f54e3db592e3942a70855beccbe2))
+* **ui:** crate knowledge accordion on about page ([887b92d](https://github.com/mateusfg7/mateusf.com/commit/887b92d3259fa5f0a0ccb604bbdc33ad2abf43f4))
+* **ui:** create home page ([feb091d](https://github.com/mateusfg7/mateusf.com/commit/feb091ddc0b8e00367d49ac11432596bb57c9d74))
+* **ui:** create projects page ([41252ff](https://github.com/mateusfg7/mateusf.com/commit/41252ff4519bc0d82e237d7a7f6eb43d7ef80f9d))
+* **ui:** improve color contrast on search button ([610f5e4](https://github.com/mateusfg7/mateusf.com/commit/610f5e400375bc531766234f8e73461a16771bbb))
+* **ui:** remove global animation duration style ([d0152ae](https://github.com/mateusfg7/mateusf.com/commit/d0152ae0b84f725e25b9dd017fca47ce2ba85f28))
+* **ui:** small improvements on `.content-container` responsve style ([862ec72](https://github.com/mateusfg7/mateusf.com/commit/862ec72ae4eacbbf619714d8a3698f5ee5ab2669))
+* **ui:** small improvements on image card style ([c56192c](https://github.com/mateusfg7/mateusf.com/commit/c56192c831a2b6d1d49d4784b1c620bdde1fcf8f))
+* **ui:** small improvements on knowledge accordion responsve style ([48efe4c](https://github.com/mateusfg7/mateusf.com/commit/48efe4cb3b7f0fb74b98f51d04dc2a273c506259))
+* **ui:** small improvements on knowledge accordion style ([248043d](https://github.com/mateusfg7/mateusf.com/commit/248043d8822bb0980ba2d35cc077e12ef51e2aab))
+* **ui:** style improvements ([68d0df3](https://github.com/mateusfg7/mateusf.com/commit/68d0df374c54d62d587f3d97563ce67a46e08ccb))
+* **ui:** update some contact-section styles and remove "use client" directive ([34906c4](https://github.com/mateusfg7/mateusf.com/commit/34906c4783b254cb4a1177a056f94e587d390241))
+
+
+### Bug Fixes
+
+* **deps:** update dependency unist-util-visit to v5 ([dfadcd9](https://github.com/mateusfg7/mateusf.com/commit/dfadcd9b13106ff424379925caeea2fb5dc93996))
+* **rendering:** add "use client" directive to knowledge-section component ([37f8f10](https://github.com/mateusfg7/mateusf.com/commit/37f8f10d052a4a6843a4f1f0cf837368021b6afa))
+* **ui:** use `getSortedPosts` to correct post-list-by-year sorting ([73f36ad](https://github.com/mateusfg7/mateusf.com/commit/73f36ad7f434dd40910d6d7169f282852e308f4a))
+
+
+### Performance Improvements
+
+* **ui:** use fonts from `next/font/google` ([2ba632b](https://github.com/mateusfg7/mateusf.com/commit/2ba632ba480f48761e8d5fcd0b504bbf7ecabf05)), closes [#589](https://github.com/mateusfg7/mateusf.com/issues/589)
+
 ## [7.4.1](https://github.com/mateusfg7/mateusf.com/compare/7.4.0...7.4.1) (2023-07-14)
 
 
