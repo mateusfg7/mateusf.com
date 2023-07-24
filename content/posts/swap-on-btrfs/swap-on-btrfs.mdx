@@ -27,7 +27,7 @@ sudo btrfs subvolume create /swap
 
 Agora vamos criar o swap file em si, com o comando próprio do btrfs, já passando o tamanho que queremos alocar:
 ```console
-sudo btrfs filesystem mkswapfile --size 10g --uuid clear /swap/swapfile_00
+sudo btrfs filesystem mkswapfile --size 10g --uuid clear /swap/swapfile
 ```
 _note em que estou criando um arquivo de **10 gigabytes** em `10g`, mas você pode passar o tamanho que quiser. Se `--size` for omitido, será criado um arquivo de 2GiB por padrão._
 
