@@ -58,8 +58,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge average">
                 <circle class="gauge-base" r="53" cx="60" cy="60"/>
                 
-                  <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="259.91 329"/>
-                  <text x="60" y="60" dominant-baseline="central">79</text>
+                  <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="269.78 329"/>
+                  <text x="60" y="60" dominant-baseline="central">82</text>
                 
                 </svg>
               
@@ -68,11 +68,11 @@
           
             <div class="category column">
               
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge average">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge high">
                 <circle class="gauge-base" r="53" cx="60" cy="60"/>
                 
-                  <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="286.23 329"/>
-                  <text x="60" y="60" dominant-baseline="central">87</text>
+                  <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="319.13 329"/>
+                  <text x="60" y="60" dominant-baseline="central">97</text>
                 
                 </svg>
               
@@ -129,7 +129,7 @@
           <div class="field">
             <div class="audit text">
               
-                0.82 s
+                0.54 s
               
             </div>
             
@@ -140,7 +140,7 @@
           <div class="field">
             <div class="audit text">
               
-                0.82 s
+                0.62 s
               
             </div>
             
@@ -181,7 +181,7 @@
           <div class="field">
             <div class="audit text">
               
-                0.82 s
+                0.54 s
               
             </div>
             
@@ -192,7 +192,7 @@
           <div class="field">
             <div class="audit text">
               
-                0.82 s
+                0.62 s
               
             </div>
             
