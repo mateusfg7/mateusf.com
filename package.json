@@ -24,7 +24,7 @@
     "date-fns": "2.30.0",
     "feed": "^4.2.2",
     "github-slugger": "^2.0.0",
-    "kbar": "0.1.0-beta.40",
+    "kbar": "0.1.0-beta.41",
     "next": "13.4.12",
     "next-contentlayer": "0.3.4",
     "next-themes": "^0.2.1",
