@@ -6,18 +6,24 @@ on:
       - dev
 
 jobs:
-  call-sync-main:
-    name: Call sync-main-branch.yml
-    uses: mateusfg7/mfg-b/.github/workflows/sync-main-branch.yml@main
-    if: startsWith(github.event.head_commit.message, "chore(release)")
+  log-refs:
+    name: Log Refs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log refs
+        run: echo ${{ github.event.head_commit.message }}
+  # call-sync-main:
+  #   name: Call sync-main-branch.yml
+  #   uses: mateusfg7/mfg-b/.github/workflows/sync-main-branch.yml@main
+  #   if: startsWith(github.event.head_commit.message, "chore(release)")
 
-  call-release:
-    name: Call release.yml
-    uses: mateusfg7/mfg-b/.github/workflows/release.yml@main
-    secrets: inherit
-    needs: call-sync-main
+  # call-release:
+  #   name: Call release.yml
+  #   uses: mateusfg7/mfg-b/.github/workflows/release.yml@main
+  #   secrets: inherit
+  #   needs: call-sync-main
 
-  call-lint:
-    name: Call lint.yml
-    uses: mateusfg7/mfg-b/.github/workflows/lint.yml@main
+  # call-lint:
+  #   name: Call lint.yml
+  #   uses: mateusfg7/mfg-b/.github/workflows/lint.yml@main
 
