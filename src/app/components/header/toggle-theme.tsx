@@ -12,8 +12,6 @@ import {
 } from '@/shared/wrappers/phosphor-icons'
 
 export function ToggleTheme() {
-  const [isMounted, setIsMounted] = useState(false)
-
   const { setTheme, theme: currTheme } = useTheme()
 
   const SelectTheme = ({
@@ -51,10 +49,6 @@ export function ToggleTheme() {
       )}
     </Menu.Item>
   )
-
-  useEffect(() => setIsMounted(true), [])
-
-  if (!isMounted) return <></>
 
   return (
     <Menu as="div" className="relative inline-flex items-center">
