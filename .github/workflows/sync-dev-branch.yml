@@ -21,4 +21,4 @@ jobs:
       # - name: Rebase to Main
       #   run: git rebase main && git push
       - name: Log branches
-        run: git branch
+        run: git branch -a
