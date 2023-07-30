@@ -1,26 +1,7 @@
 name: Generate Pagespeed Metrics
 
 on:
-  workflow_call:
-    inputs:
-      target:
-        type: string
-        required: true
-        description: Target website that will be analysed
-      pwa:
-        type: boolean
-        default: false
-        description: Enable PWA tests
   workflow_dispatch:
-    inputs:
-      target:
-        type: string
-        required: true
-        description: Target website that will be analysed
-      pwa:
-        type: boolean
-        default: false
-        description: Enable PWA tests
 
 jobs:
   generate-metrics:
@@ -38,5 +19,9 @@ jobs:
 
           plugin_pagespeed: yes
           plugin_pagespeed_detailed: yes
-          plugin_pagespeed_url: ${{ inputs.target }}
-          plugin_pagespeed_pwa: ${{ inputs.pwa == true && 'yes' || 'no' }}
+          plugin_pagespeed_url: https://mateusf.com
+
+  call-sync-dev:
+    name: Call sync-dev-branch.yml
+    uses: mateusfg7/mfg-b/.github/workflows/sync-dev-branch.yml@main
+    needs: generate-metrics
