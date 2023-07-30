@@ -25,7 +25,9 @@ import {
   TreeStructure,
   ChartLine,
   User,
-  SquaresFour
+  SquaresFour,
+  Files,
+  Books
 } from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -183,6 +185,29 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     ...postsAsAction
   ]
 
+  const personalLinksActions: Action[] = [
+    {
+      id: 'out-dotfiles',
+      name: 'My Manjaro Dotfiles',
+      section: 'Personal Links',
+      keywords: 'linux config setup',
+      icon: <Files weight="duotone" />,
+      perform: () =>
+        window.open('https://github.com/mateusfg7/dotfiles', '_blank')
+    },
+    {
+      id: 'out-bookshelf',
+      name: 'My Bookshelf',
+      section: 'Personal Links',
+      keywords: 'books library',
+      icon: <Books weight="duotone" />,
+      perform: () =>
+        window.open(
+          'https://www.skoob.com.br/estante/livros/todos/8289961',
+          '_blank'
+        )
+    }
+  ]
   const websiteInformationActions: Action[] = [
     {
       id: 'out-repo',
@@ -266,6 +291,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     ...navigationActions,
     ...blogActions,
     ...projectsActions,
+    ...personalLinksActions,
     ...websiteInformationActions,
     ...themeActions
   ]
