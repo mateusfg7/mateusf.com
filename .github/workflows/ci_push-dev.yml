@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Log refs
-        run: echo ${{ github.event.head_commit.message }}
+        run: echo "${{ github.event.head_commit.message }}"
   # call-sync-main:
   #   name: Call sync-main-branch.yml
   #   uses: mateusfg7/mfg-b/.github/workflows/sync-main-branch.yml@main
