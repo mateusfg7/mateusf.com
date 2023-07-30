@@ -1,3 +1,15 @@
+## [8.0.1](https://github.com/mateusfg7/mateusf.com/compare/8.0.0...8.0.1) (2023-07-30)
+
+
+### Features
+
+* **content/projects:** add bg-eraser project ([0272f2a](https://github.com/mateusfg7/mateusf.com/commit/0272f2ae8c3c2880d935c6777adfd0d0844fbb47))
+
+
+### Bug Fixes
+
+* **deps:** update dependency kbar to v0.1.0-beta.41 ([2f49e85](https://github.com/mateusfg7/mateusf.com/commit/2f49e85346ab8fb137246548bef8acae143fa071))
+
 ## [8.0.0](https://github.com/mateusfg7/mateusf.com/compare/7.4.1...8.0.0) (2023-07-22)
 
 
