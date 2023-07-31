@@ -131,7 +131,7 @@ export function MobileMenu() {
                 title="Sitemap"
                 icon={TreeStructure}
                 rel="noreferrer"
-                href="/sitemap.xml"
+                href="/sitemap"
               />
 
               <ToggleTheme />

@@ -28,7 +28,7 @@ export function Footer() {
             <span>License</span>
             <ArrowIcon />
           </Link>
-          <Link href="/sitemap.xml" rel="noreferrer">
+          <Link href="/sitemap" rel="noreferrer">
             <span>Sitemap</span>
             <ArrowIcon />
           </Link>
