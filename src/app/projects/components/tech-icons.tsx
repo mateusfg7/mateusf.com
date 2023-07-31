@@ -1,3 +1,4 @@
+import { FaJava } from 'react-icons/fa'
 import {
   SiTypescript,
   SiReact,
@@ -9,7 +10,10 @@ import {
   SiPrisma,
   SiVuedotjs,
   SiMdx,
-  SiJavascript
+  SiJavascript,
+  SiDeno,
+  SiPostgresql,
+  SiPython
 } from 'react-icons/si'
 
 export const techIcons = {
@@ -34,5 +38,11 @@ export const techIcons = {
   ),
   prisma: () => <SiPrisma className="hover:text-[#4C51BF]" title="Prisma" />,
   vue: () => <SiVuedotjs className="hover:text-[#4FC08D]" title="Vue.js" />,
-  mdx: () => <SiMdx className="hover:text-[#1B1F24]" title="MDX" />
+  mdx: () => <SiMdx className="hover:text-[#1B1F24]" title="MDX" />,
+  deno: () => <SiDeno title="Deno" />,
+  postgresql: () => (
+    <SiPostgresql className="hover:text-[#4169E1]" title="PostgreSQL" />
+  ),
+  java: () => <FaJava className="hover:text-[#f89820]" title="Java" />,
+  python: () => <SiPython className="hover:text-[#3776AB]" title="Python" />
 }
