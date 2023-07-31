@@ -248,7 +248,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       section: 'Website',
       keywords: 'map links crawler',
       icon: <TreeStructure weight="duotone" />,
-      perform: () => push('/sitemap.xml')
+      perform: () => push('/sitemap')
     }
   ]
 
