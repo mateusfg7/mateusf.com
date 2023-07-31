@@ -1,3 +1,13 @@
+## [8.1.0](https://github.com/mateusfg7/mateusf.com/compare/8.0.3...8.1.0) (2023-07-31)
+
+
+### Features
+
+* **ui:** add personal links section on kbar modal ([6b94905](https://github.com/mateusfg7/mateusf.com/commit/6b94905f608a3621eb6bcf77e70be441d66bd95f))
+* **ui:** create `/sitemap` page ([492eb43](https://github.com/mateusfg7/mateusf.com/commit/492eb434699131db1ef6d00fc7b8cc8d0f81a7c2))
+* **ui:** remove mount delay of "toggle-theme" component ([cf1bcd6](https://github.com/mateusfg7/mateusf.com/commit/cf1bcd6aed1ee04771e3038bf63e34bf4f422e6f)), closes [#596](https://github.com/mateusfg7/mateusf.com/issues/596)
+* update sitemap page links ([b75320c](https://github.com/mateusfg7/mateusf.com/commit/b75320c111e3e2cb3b0be2bcabe5b3b82d06b08c))
+
 ## [8.0.3](https://github.com/mateusfg7/mateusf.com/compare/8.0.2...8.0.3) (2023-07-30)
 
 ## [8.0.2](https://github.com/mateusfg7/mateusf.com/compare/8.0.1...8.0.2) (2023-07-30)
