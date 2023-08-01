@@ -1,3 +1,11 @@
+## [8.2.0](https://github.com/mateusfg7/mateusf.com/compare/8.1.0...8.2.0) (2023-08-01)
+
+
+### Features
+
+* **ui:** add "project-info" effect when hover ([077a36f](https://github.com/mateusfg7/mateusf.com/commit/077a36fa6716a0124721faa92082cf3ab688a85d))
+* **ui:** add non-featured projects ([840185c](https://github.com/mateusfg7/mateusf.com/commit/840185c2630ff854b64947c2ec96401e3d096396))
+
 ## [8.1.0](https://github.com/mateusfg7/mateusf.com/compare/8.0.3...8.1.0) (2023-07-31)
 
 
