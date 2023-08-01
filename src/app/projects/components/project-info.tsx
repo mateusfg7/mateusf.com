@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import { Project } from 'contentlayer/generated'
-import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
-import { BsDot } from 'react-icons/bs'
+import { FiGithub } from 'react-icons/fi'
 import { techIcons } from './tech-icons'
 
 interface Props {
@@ -38,7 +36,7 @@ export function ProjectInfo({ data }: Props) {
   )
 
   return (
-    <div className="flex h-full flex-col items-center justify-between gap-12 rounded-3xl bg-neutral-100 p-5 shadow-2xl shadow-black/30 dark:bg-neutral-900 md:flex-row md:gap-3">
+    <div className="flex flex-col items-center justify-between gap-12 rounded-3xl bg-gradient-to-r from-neutral-100 to-neutral-100 p-5 shadow-2xl shadow-black/30 transition-all duration-1000 hover:to-[#f9f9f9] dark:from-neutral-900 dark:to-neutral-900 dark:hover:to-[#191919] md:flex-row md:gap-3">
       <div>
         <Title />
         <p className="text-justify md:text-left">{data.description}</p>
