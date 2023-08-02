@@ -1,3 +1,10 @@
+## [8.2.1](https://github.com/mateusfg7/mateusf.com/compare/8.2.0...8.2.1) (2023-08-02)
+
+
+### Features
+
+* **ui:** small header style improvements ([452d657](https://github.com/mateusfg7/mateusf.com/commit/452d6572b9a8661259c2978fa73ee94a404b12a5))
+
 ## [8.2.0](https://github.com/mateusfg7/mateusf.com/compare/8.1.0...8.2.0) (2023-08-01)
 
 
