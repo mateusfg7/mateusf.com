@@ -9,21 +9,22 @@ export function ToggleTheme() {
       <div className="flex overflow-hidden rounded-xl bg-neutral-200/50 text-2xl dark:bg-neutral-1000/50">
         <button
           onClick={() => setTheme('light')}
-          className={`p-4 ${currTheme === 'light' && 'bg-neutral-300'}`}
+          data-theme-light={currTheme === 'light'}
+          className="p-4 data-[theme-light='true']:bg-neutral-300"
         >
           <Sun weight={currTheme === 'light' ? 'duotone' : 'regular'} />
         </button>
         <button
           onClick={() => setTheme('system')}
-          className={`p-4 ${
-            currTheme === 'system' && 'bg-neutral-300 dark:bg-neutral-800'
-          }`}
+          data-theme-system={currTheme === 'system'}
+          className="p-4 data-[theme-system='true']:bg-neutral-300 data-[theme-system='true']:dark:bg-neutral-800"
         >
           <Desktop weight={currTheme === 'system' ? 'duotone' : 'regular'} />
         </button>
         <button
           onClick={() => setTheme('dark')}
-          className={`p-4 ${currTheme === 'dark' && 'bg-neutral-800'}`}
+          data-theme-dark={currTheme === 'dark'}
+          className="p-4 data-[theme-dark='true']:bg-neutral-800"
         >
           <Moon weight={currTheme === 'dark' ? 'duotone' : 'regular'} />
         </button>
