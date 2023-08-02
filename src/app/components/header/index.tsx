@@ -2,21 +2,19 @@
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useGlitch } from 'react-powerglitch'
+import Image from 'next/image'
 
 import { ToggleTheme } from './toggle-theme'
 import { MobileMenu } from './mobile-menu'
 import { Search } from './search'
 
+import signatureDark from './signature-dark.png'
+import signatureLight from './signature-light.png'
+
 export function Header() {
   const [percentScrollPosition, setPercentScrollPosition] = useState(0)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [maxScrollValue, setMaxScrollValue] = useState(0)
-
-  const glitch = useGlitch({
-    timing: { duration: 5000, easing: 'ease-in' },
-    glitchTimeSpan: { start: 0.5, end: 0.7 }
-  })
 
   function handleScroll() {
     if (window) {
@@ -64,12 +62,16 @@ export function Header() {
       <div className="content-container m-auto flex flex-wrap items-center justify-between">
         <div className="md:hidden" />
         <Link href="/">
-          <h1
-            ref={glitch.ref}
-            className="font-chivo-mono font-medium text-blue-700 hover:cursor-pointer dark:text-blue-500"
-          >
-            Mateus Felipe
-          </h1>
+          <Image
+            src={signatureDark}
+            alt="Mateus Felipe"
+            className="w-16 dark:hidden"
+          />
+          <Image
+            src={signatureLight}
+            alt="Mateus Felipe"
+            className="hidden w-16 dark:block"
+          />
         </Link>
         <div className="hidden flex-wrap items-center justify-center gap-8 md:flex">
           <nav className="flex flex-wrap items-center justify-center gap-5">
