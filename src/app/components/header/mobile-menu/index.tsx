@@ -1,5 +1,7 @@
-import * as Dialog from '@radix-ui/react-dialog'
+import { ComponentProps, useState } from 'react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
+import * as Dialog from '@radix-ui/react-dialog'
+import { useKBar } from 'kbar'
 import {
   Icon as IconType,
   List,
@@ -15,18 +17,16 @@ import {
   User,
   Briefcase
 } from '@/shared/wrappers/phosphor-icons'
-import { AnchorHTMLAttributes, useState } from 'react'
+import { ToggleTheme } from './toggle-theme'
 
 import './styles.css'
-import { ToggleTheme } from './toggle-theme'
-import { useKBar } from 'kbar'
 
 interface LinkProps extends NextLinkProps {
   title: string
   icon: IconType
 }
 
-interface OutLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface OutLinkProps extends ComponentProps<'a'> {
   title: string
   icon: IconType
 }
