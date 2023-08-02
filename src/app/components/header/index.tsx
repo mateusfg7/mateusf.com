@@ -44,8 +44,6 @@ export function Header() {
     )
   }, [scrollPosition, maxScrollValue])
 
-  const isNotOnTop = percentScrollPosition > 0
-
   const MenuItem: React.FC<{ name: string; path: string }> = ({
     name,
     path
@@ -60,20 +58,15 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 rounded-xl bg-neutral-100/80 py-3 backdrop-blur transition-all dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none ${
-        isNotOnTop
-          ? 'md:border-b-neutral-50 md:dark:border-b-neutral-800'
-          : 'md:border-b-transparent md:py-6'
-      } border border-neutral-50 dark:border-neutral-800 md:border-b md:border-none`}
+      data-on-top={percentScrollPosition === 0}
+      className="fixed top-0 left-0 right-0 z-40 rounded-xl border border-neutral-50 bg-neutral-100/80 py-3 backdrop-blur transition-all dark:border-neutral-800 dark:bg-neutral-1000/80 md:top-0 md:right-0 md:left-0 md:w-full md:rounded-none md:border-b md:border-none data-[on-top='true']:md:border-b-transparent data-[on-top='false']:md:border-b-neutral-50 data-[on-top='true']:md:py-6 data-[on-top='false']:md:dark:border-b-neutral-800"
     >
       <div className="content-container m-auto flex flex-wrap items-center justify-between">
         <div className="md:hidden" />
         <Link href="/">
           <h1
             ref={glitch.ref}
-            className={`text-blue-700 dark:text-blue-500 ${
-              isNotOnTop ? 'font-medium' : 'font-base'
-            } font-chivo-mono hover:cursor-pointer`}
+            className="font-chivo-mono font-medium text-blue-700 hover:cursor-pointer dark:text-blue-500"
           >
             Mateus Felipe
           </h1>
