@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes'
-import { Menu } from '@headlessui/react'
+import { Menu, MenuItemProps } from '@headlessui/react'
 
 import {
   Moon,
@@ -13,18 +13,16 @@ export function ToggleTheme() {
 
   const SelectTheme = ({
     theme,
-    title
+    ...props
   }: {
     theme: 'light' | 'dark' | 'system'
-    title: string
-  }) => (
+  } & MenuItemProps<'button'>) => (
     <Menu.Item
       as="button"
-      title={title}
       onClick={() => setTheme(theme)}
-      className={`flex w-full items-center justify-start gap-4 rounded-xl p-2 text-lg leading-none hover:bg-neutral-100 hover:dark:bg-neutral-1000 ${
-        currTheme === theme && 'font-bold'
-      }`}
+      data-isThemeActive={currTheme === theme}
+      className="flex w-full items-center justify-start gap-4 rounded-xl p-2 text-lg leading-none hover:bg-neutral-100 data-[isThemeActive='true']:font-bold hover:dark:bg-neutral-1000"
+      {...props}
     >
       {theme === 'light' && (
         <>
