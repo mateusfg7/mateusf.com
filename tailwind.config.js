@@ -8,7 +8,6 @@ module.exports = {
         20: '20deg'
       },
       fontFamily: {
-        'chivo-mono': 'var(--font-chivo-mono)',
         sans: 'var(--font-inter)'
       },
       colors: {

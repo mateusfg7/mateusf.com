@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { Chivo_Mono, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
 import { config } from 'global-config'
 import { Header } from './components/header'
@@ -28,12 +28,6 @@ export const metadata: Metadata = {
   }
 }
 
-const chivoMono = Chivo_Mono({
-  subsets: ['latin'],
-  weight: ['500'],
-  variable: '--font-chivo-mono',
-  display: 'swap'
-})
 const inter = Inter({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600', '700', '900'],
@@ -61,7 +55,7 @@ export default function RootLayout({
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className={`scroll-smooth ${chivoMono.variable} ${inter.variable}`}>
+      <body className={`scroll-smooth ${inter.variable}`}>
         <Providers>
           <Header />
           <div>{children}</div>
