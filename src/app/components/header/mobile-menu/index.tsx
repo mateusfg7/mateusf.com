@@ -93,17 +93,17 @@ export function MobileMenu() {
       </Dialog.Trigger>
       <Dialog.Portal className="z-50">
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md data-[state=open]:animate-overlayShow" />
-        <Dialog.Content className="fixed top-0 bottom-0 right-0 z-50 w-3/4 data-[state=open]:animate-slide-left data-[state=closed]:animate-slide-right">
+        <Dialog.Content className="fixed bottom-0 right-0 top-0 z-50 w-3/4 data-[state=closed]:animate-slide-right data-[state=open]:animate-slide-left">
           <div className="relative flex h-screen w-full">
             <Dialog.Close
               asChild
-              className="absolute top-2 left-2 rounded-full p-2 backdrop-blur-lg active:bg-red-300/20 active:text-red-500 active:dark:bg-red-300/10 active:dark:text-red-400"
+              className="absolute left-2 top-2 rounded-full p-2 backdrop-blur-lg active:bg-red-300/20 active:text-red-500 active:dark:bg-red-300/10 active:dark:text-red-400"
             >
               <button aria-label="Close">
                 <X weight="bold" />
               </button>
             </Dialog.Close>
-            <div className="flex flex-1 flex-col overflow-y-scroll rounded-tl-[2rem] rounded-bl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-900">
+            <div className="flex flex-1 flex-col overflow-y-scroll rounded-bl-[2rem] rounded-tl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-900">
               <Link title="Home" icon={House} href="/" />
               <Link title="Blog" icon={Note} href="/blog" />
               <Link title="Projects" icon={Briefcase} href="/projects" />

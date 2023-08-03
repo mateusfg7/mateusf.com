@@ -27,7 +27,7 @@ export default function Page() {
               key={index}
               href={`/blog/categories/${slug(categoryData.category)}`}
             >
-              <div className="rounded-lg border-2 border-solid border-neutral-700 py-1 px-4 font-bold text-neutral-700 duration-100 hover:cursor-pointer hover:border-blue-700 hover:bg-blue-700/10 hover:text-blue-700 dark:border-neutral-500  dark:text-neutral-500 dark:hover:border-blue-500 dark:hover:bg-blue-500/10 dark:hover:text-blue-500">
+              <div className="rounded-lg border-2 border-solid border-neutral-700 px-4 py-1 font-bold text-neutral-700 duration-100 hover:cursor-pointer hover:border-blue-700 hover:bg-blue-700/10 hover:text-blue-700 dark:border-neutral-500  dark:text-neutral-500 dark:hover:border-blue-500 dark:hover:bg-blue-500/10 dark:hover:text-blue-500">
                 <p>
                   {categoryData.category}
                   <sup> {categoryData.numberOfPosts} </sup>

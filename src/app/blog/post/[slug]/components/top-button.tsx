@@ -47,7 +47,7 @@ export function TopButton() {
     <button
       onClick={scrollToTop}
       title="Go to top"
-      className={`fixed right-7 bottom-7 hidden items-center justify-center rounded-full p-2 hover:bg-neutral-200 hover:dark:bg-neutral-900 md:flex ${
+      className={`fixed bottom-7 right-7 hidden items-center justify-center rounded-full p-2 hover:bg-neutral-200 hover:dark:bg-neutral-900 md:flex ${
         isNotOnTop ? 'opacity-100' : 'opacity-0'
       }`}
     >

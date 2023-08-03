@@ -33,7 +33,7 @@ export function ProjectCard({ data }: Props) {
       {data.tags.map(tag => (
         <span
           key={tag}
-          className="rounded-xl bg-neutral-700/10 py-1 px-2 text-sm text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200"
+          className="rounded-xl bg-neutral-700/10 px-2 py-1 text-sm text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200"
         >
           {tag}
         </span>

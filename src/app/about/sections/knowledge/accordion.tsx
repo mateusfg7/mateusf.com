@@ -56,7 +56,7 @@ export const AccordionContent = React.forwardRef(
     forwardedRef: React.ForwardedRef<HTMLDivElement>
   ) => (
     <Accordion.Content
-      className="overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp"
+      className="overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown"
       {...props}
       ref={forwardedRef}
     >
