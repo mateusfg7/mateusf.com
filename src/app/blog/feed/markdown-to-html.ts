@@ -9,6 +9,8 @@ import remarkBreaks from 'remark-breaks'
 import remarkHint from 'remark-hint'
 import rehypeKatex from 'rehype-katex'
 
+import rehypeMermaid from 'content/plugin/rehype-mermaid'
+
 export function markdownToHtml(markdown: string) {
   const file = unified()
     .use(remarkParse)
@@ -19,6 +21,7 @@ export function markdownToHtml(markdown: string) {
     .use(remarkRehype)
     .use(rehypeKatex)
     .use(rehypeStringify)
+    .use([rehypeMermaid.plugin, rehypeMermaid.options])
     .processSync(markdown)
 
   return String(file)

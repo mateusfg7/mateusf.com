@@ -11,6 +11,7 @@ import rehypeKatex from 'rehype-katex'
 import rehypeAutolinkHeadings from './rehype-autolink-headings'
 import rehypePrettyCode from './rehype-pretty-code'
 import rehypeShiftHeading from './rehype-shift-heading'
+import rehypeMermaid from './rehype-mermaid'
 
 const saveCodeTagContentToRaw = () => tree => {
   visit(tree, node => {
@@ -43,6 +44,7 @@ export const rehypePlugins = [
   rehypeKatex,
   [rehypeAutolinkHeadings.pluggin, rehypeAutolinkHeadings.options],
   [rehypeShiftHeading.pluggin, rehypeShiftHeading.options],
+  [rehypeMermaid.plugin, rehypeMermaid.options],
   saveCodeTagContentToRaw,
   [rehypePrettyCode.pluggin, rehypePrettyCode.options],
   addRawCodeToPrettyCodeFragment
