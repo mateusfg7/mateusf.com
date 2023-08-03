@@ -1,3 +1,16 @@
+## [8.3.0](https://github.com/mateusfg7/mateusf.com/compare/8.2.1...8.3.0) (2023-08-03)
+
+
+### Features
+
+* **ui:** update mobile-menu items order and use `Link` on Sitemap item instead of `OutLink` ([b50f5da](https://github.com/mateusfg7/mateusf.com/commit/b50f5dade262717bc12383a6a94191ab0b6163a5))
+* **ui:** use signature as logo ([e17656a](https://github.com/mateusfg7/mateusf.com/commit/e17656a1c2804f7206784eef5175798b91ae5fab))
+
+
+### Bug Fixes
+
+* **ui:** rollback mobile spaces of header ([f4caf81](https://github.com/mateusfg7/mateusf.com/commit/f4caf81115767180fe03aae31fb29346b20989bd))
+
 ## [8.2.1](https://github.com/mateusfg7/mateusf.com/compare/8.2.0...8.2.1) (2023-08-02)
 
 
