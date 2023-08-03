@@ -1,3 +1,5 @@
+import { Title } from '@/shared/components/title'
+
 import { allProjects } from 'contentlayer/generated'
 import { ProjectCard } from './components/project-card'
 import { ProjectInfo } from './components/project-info'
@@ -15,9 +17,7 @@ export default function Page() {
 
   return (
     <div className="content-container m-auto space-y-8">
-      <h1 className="bg-gradient-to-br from-blue-700 to-blue-400 bg-clip-text text-center text-4xl font-bold text-transparent md:w-fit md:text-left">
-        Projects
-      </h1>
+      <Title text="Projects" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {featuredProjects.length > 0 &&
           featuredProjects.map(project => (
