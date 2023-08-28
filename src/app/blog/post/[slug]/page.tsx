@@ -20,6 +20,8 @@ import { Anchor } from './components/anchor'
 import { PrettyCodeElement } from './components/pretty-code-element'
 import { UtterancesComments } from './components/utterances-comments'
 
+import 'katex/dist/katex.min.css'
+
 interface Props {
   params: { slug: string }
 }

@@ -44,11 +44,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="shortcut icon" href="assets/brain.png" type="image/png" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css"
-          crossOrigin="anonymous"
-        />
         <Script
           async
           src="https://analytics.umami.is/script.js"
