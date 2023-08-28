@@ -1,3 +1,10 @@
+## [8.3.1](https://github.com/mateusfg7/mateusf.com/compare/8.3.0...8.3.1) (2023-08-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kbar to v0.1.0-beta.43 ([180e58a](https://github.com/mateusfg7/mateusf.com/commit/180e58a44f3268f87aae7cedfc667b680e520063))
+
 ## [8.3.0](https://github.com/mateusfg7/mateusf.com/compare/8.2.1...8.3.0) (2023-08-03)
 
 
