@@ -1,3 +1,10 @@
+## [8.4.0](https://github.com/mateusfg7/mateusf.com/compare/8.3.1...8.4.0) (2023-08-29)
+
+
+### Features
+
+* **ui:** change color pallete ([83f2bba](https://github.com/mateusfg7/mateusf.com/commit/83f2bbaa18113381cabba6e89aa89d7d4336bc71))
+
 ## [8.3.1](https://github.com/mateusfg7/mateusf.com/compare/8.3.0...8.3.1) (2023-08-28)
 
 
