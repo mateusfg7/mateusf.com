@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     default: config.metadata.title,
     template: `%s | ${config.metadata.title}`
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#060606' },
+    { media: '(prefers-color-scheme: light)', color: '#fafafa' }
+  ],
   colorScheme: 'dark light',
   viewport: 'width=device-width, initial-scale=1',
   openGraph: {

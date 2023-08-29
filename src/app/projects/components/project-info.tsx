@@ -36,7 +36,7 @@ export function ProjectInfo({ data }: Props) {
   )
 
   return (
-    <div className="flex flex-col items-center justify-between gap-12 rounded-3xl bg-gradient-to-r from-neutral-100 to-neutral-100 p-5 shadow-2xl shadow-black/30 transition-all duration-1000 hover:to-[#f9f9f9] dark:from-neutral-900 dark:to-neutral-900 dark:hover:to-[#191919] md:flex-row md:gap-3">
+    <div className="pointer-events-none relative flex flex-col items-center justify-between gap-12 overflow-hidden rounded-3xl bg-neutral-100 bg-no-repeat p-5 shadow-xl shadow-black/5 transition-colors duration-500 before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-neutral-100 before:to-[rgb(240,240,240)] hover:bg-transparent dark:bg-neutral-950 before:dark:from-neutral-950 before:dark:to-[rgb(14,14,14)] hover:dark:bg-transparent md:flex-row md:gap-3">
       <div>
         <Title />
         <p className="text-justify md:text-left">{data.description}</p>
@@ -48,7 +48,7 @@ export function ProjectInfo({ data }: Props) {
           title="Repository"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 rounded-2xl border border-[#181717] p-4 text-[#181717] hover:bg-[#181717] hover:text-[#F6F8FA] dark:border-[#F6F8FA] dark:text-[#F6F8FA] dark:hover:bg-[#F6F8FA] hover:dark:text-[#181717] md:text-2xl"
+          className="pointer-events-auto flex items-center gap-2 rounded-2xl border border-[#181717] p-4 text-[#181717] duration-300 hover:bg-[#181717] hover:text-[#F6F8FA] dark:border-[#F6F8FA] dark:text-[#F6F8FA] dark:hover:bg-[#F6F8FA] hover:dark:text-[#181717] md:text-2xl"
         >
           <span className="md:hidden">Repository</span>
           <FiGithub />

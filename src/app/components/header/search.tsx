@@ -9,7 +9,7 @@ export function Search() {
   return (
     <button
       onClick={toggle}
-      className="flex flex-1 cursor-text items-center gap-5 rounded-xl bg-neutral-200/30 p-2 text-sm leading-none backdrop-blur-3xl dark:bg-neutral-800/30"
+      className="flex flex-1 cursor-text items-center gap-5 rounded-xl bg-neutral-200/20 p-2 text-sm leading-none backdrop-blur-3xl dark:bg-neutral-800/20"
     >
       <span className="flex items-center gap-3">
         <MagnifyingGlass />

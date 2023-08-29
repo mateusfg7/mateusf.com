@@ -14,7 +14,7 @@ export function Knowledge() {
   return (
     <div>
       <Accordion.Root
-        className="z-0 w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-200/30 dark:border-neutral-900 dark:bg-neutral-900/30"
+        className="z-0 w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-200/30 dark:border-neutral-950 dark:bg-neutral-950/30"
         type="single"
         collapsible
       >

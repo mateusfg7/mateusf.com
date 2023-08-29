@@ -52,7 +52,7 @@ export function ToggleTheme() {
       </Menu.Button>
       <Menu.Items
         as="div"
-        className="absolute right-0 top-10 origin-top-right animate-fade-down rounded-xl bg-neutral-50 p-1 outline-none animate-duration-300 dark:bg-neutral-900"
+        className="absolute right-0 top-10 origin-top-right animate-fade-down rounded-xl bg-neutral-50 p-1 outline-none animate-duration-300 dark:bg-neutral-950"
       >
         <div className="p-2 text-sm text-neutral-500">Color themes</div>
         <SelectTheme theme="light" title="Set light colors" />

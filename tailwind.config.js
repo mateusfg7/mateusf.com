@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         neutral: {
-          1000: 'rgba(17, 17, 17)'
+          1000: 'rgba(6, 6, 6)'
         }
       },
       animation: {

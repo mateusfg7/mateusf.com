@@ -5,7 +5,7 @@
 }
 
 .contact-line {
-  @apply border-b border-neutral-200 py-4 last:border-none dark:border-neutral-900;
+  @apply border-b border-neutral-200 py-4 last:border-none dark:border-neutral-950;
 }
 
 .contact-line-title {

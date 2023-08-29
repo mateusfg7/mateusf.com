@@ -8,7 +8,7 @@
   }
 
   .keyboard {
-    @apply bg-neutral-100 p-1 dark:bg-neutral-900;
+    @apply bg-neutral-100 p-1 dark:bg-neutral-950;
     @apply rounded-lg border border-neutral-300 dark:border-neutral-700;
     @apply text-neutral-600 dark:text-neutral-500;
     @apply leading-none;
@@ -61,7 +61,7 @@
     h4,
     h5,
     h6 {
-      @apply my-6 mx-0 w-full whitespace-pre-wrap text-center font-medium md:w-max md:text-left;
+      @apply mx-0 my-6 w-full whitespace-pre-wrap text-center font-medium md:w-max md:text-left;
 
       a {
         @apply text-neutral-900 hover:no-underline dark:text-neutral-100;
@@ -70,10 +70,10 @@
     }
 
     h2 {
-      @apply border-b-black/30 pr-6 pb-2 text-3xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
+      @apply border-b-black/30 pb-2 pr-6 text-3xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
     }
     h3 {
-      @apply border-b-black/30 pr-6 pb-2 text-2xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
+      @apply border-b-black/30 pb-2 pr-6 text-2xl underline underline-offset-4 dark:border-b-white/30 md:border-b md:no-underline;
     }
     h4 {
       @apply text-2xl;
@@ -175,7 +175,7 @@
     }
 
     code {
-      @apply text-ellipsis break-words rounded-lg bg-black/5 py-[0.16rem] px-1 dark:bg-white/5;
+      @apply text-ellipsis break-words rounded-lg bg-black/5 px-1 py-[0.16rem] dark:bg-white/5;
     }
 
     div[data-rehype-pretty-code-fragment=''] {
@@ -187,7 +187,7 @@
 
         & > code {
           @apply grid;
-          @apply py-2 px-0;
+          @apply px-0 py-2;
           @apply bg-transparent dark:bg-transparent;
 
           span {

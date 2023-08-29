@@ -103,7 +103,7 @@ export function MobileMenu() {
                 <X weight="bold" />
               </button>
             </Dialog.Close>
-            <div className="flex flex-1 flex-col overflow-y-scroll rounded-bl-[2rem] rounded-tl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-900">
+            <div className="flex flex-1 flex-col overflow-y-scroll rounded-bl-[2rem] rounded-tl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-950">
               <Link title="Home" icon={House} href="/" />
               <Link title="Blog" icon={Note} href="/blog" />
               <Link title="Projects" icon={Briefcase} href="/projects" />
