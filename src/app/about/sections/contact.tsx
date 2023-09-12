@@ -6,7 +6,8 @@ import {
   RedditLogo,
   TwitterLogo,
   InstagramLogo,
-  ArrowUpRight
+  ArrowUpRight,
+  CodepenLogo
 } from '@/shared/wrappers/phosphor-icons'
 
 export function Contact() {
@@ -37,6 +38,12 @@ export function Contact() {
           </span>
           <span>Stack Overflow</span>
         </div>
+        <div className="contact-line contact-line-title text-[#181717] dark:text-[#E6EDF3]">
+          <span className="rounded bg-[#181717] bg-opacity-10 p-1 dark:bg-[#E6EDF3] dark:bg-opacity-10">
+            <CodepenLogo weight="duotone" />
+          </span>
+          <span>Codepen</span>
+        </div>
         <div className="contact-line contact-line-title text-[#FF4500]">
           <span className="rounded bg-[#FF4500] bg-opacity-10 p-1">
             <RedditLogo weight="duotone" />
@@ -60,6 +67,7 @@ export function Contact() {
         <div className="contact-line">contact@mateusf.com</div>
         <div className="contact-line">mateusfg7</div>
         <div className="contact-line">mateusfg</div>
+        <div className="contact-line">mateusfg7</div>
         <div className="contact-line">mateusfg7</div>
         <div className="contact-line">u/mateusfg7</div>
         <div className="contact-line">@mateusfg77</div>
@@ -107,6 +115,17 @@ export function Contact() {
             rel="external"
           >
             <span className="leading-none">Open summary</span>
+            <ArrowUpRight className="text-sm" />
+          </a>
+        </div>
+        <div className="contact-line">
+          <a
+            className="inline-flex items-end gap-px hover:underline"
+            href="https://codepen.io/mateusfg7"
+            target="_blank"
+            rel="external"
+          >
+            <span className="leading-none">View pens</span>
             <ArrowUpRight className="text-sm" />
           </a>
         </div>
