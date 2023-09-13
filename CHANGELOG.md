@@ -1,3 +1,19 @@
+## [8.4.1](https://github.com/mateusfg7/mateusf.com/compare/8.4.0...8.4.1) (2023-09-13)
+
+
+### Features
+
+* **ui:** add codepen to contact links ([48961b3](https://github.com/mateusfg7/mateusf.com/commit/48961b3eee3e0a383dcc198ced9596b821f0c0e1)), closes [#625](https://github.com/mateusfg7/mateusf.com/issues/625)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v4.11.0 ([bdb9d72](https://github.com/mateusfg7/mateusf.com/commit/bdb9d72ae275575457fb68ec59d4aee11351c16e))
+* **deps:** update dependency rehype-autolink-headings to v7 ([eb637af](https://github.com/mateusfg7/mateusf.com/commit/eb637afbdff6462076d2760fa71a671fdcc32e68))
+* **deps:** update dependency rehype-shift-heading to v2 ([c159118](https://github.com/mateusfg7/mateusf.com/commit/c159118a4abae2400474eed664e16b43f344c790))
+* **deps:** update dependency rehype-slug to v6 ([3c52ef2](https://github.com/mateusfg7/mateusf.com/commit/3c52ef237bdfd8c2adcd012ab0f3310e5fce679d))
+* **ui:** change portuguese button title ([12d5180](https://github.com/mateusfg7/mateusf.com/commit/12d5180b3329e22d0ad12d1255222e54981bb11f))
+
 ## [8.4.0](https://github.com/mateusfg7/mateusf.com/compare/8.3.1...8.4.0) (2023-08-29)
 
 
