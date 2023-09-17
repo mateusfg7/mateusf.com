@@ -65,30 +65,26 @@ export const AccordionContent = React.forwardRef(
   )
 )
 
-export const Info: React.FC<{ knowledge: Knowledge }> = ({ knowledge }) => {
-  const Icon = knowledge.icon
+export function KnowledgeInfo({ knowledge }: { knowledge: Knowledge }) {
+  const Dot = () => (
+    <span className="absolute right-2 top-2">
+      <span className="relative flex h-1 w-1">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+        <span className="relative inline-flex h-1 w-1 rounded-full bg-green-500"></span>
+      </span>
+    </span>
+  )
 
   return (
-    <div className="relative flex w-full items-center">
-      <div className="flex w-1/2 items-center gap-4 md:gap-6 md:text-xl">
-        <span>
-          <Icon />
-        </span>
-        <span>{knowledge.title}</span>
-      </div>
-      <div className="flex-1">
-        <div
-          className={`flex min-w-max items-center rounded-full bg-gradient-to-r from-blue-800/70 bg-no-repeat px-2 py-1 leading-none text-neutral-50 dark:from-blue-800/50 dark:text-neutral-300 md:py-0 md:text-lg ${
-            knowledge.level === 1 && 'bg-[length:50%]'
-          }
-          ${knowledge.level === 2 && 'bg-[length:80%]'}
-          ${knowledge.level === 3 && 'to-blue-800/5'}`}
-        >
-          {knowledge.level === 1 && <span>beginner</span>}
-          {knowledge.level === 2 && <span>intermediate</span>}
-          {knowledge.level === 3 && <span>advanced</span>}
-        </div>
-      </div>
+    <div
+      key={knowledge.title}
+      data-is-bad={knowledge.status === 'bad'}
+      className="relative flex items-center justify-center gap-1 rounded-2xl bg-neutral-900/5 p-4 leading-none data-[is-bad='true']:opacity-50 dark:bg-neutral-300/5"
+    >
+      <span>{knowledge.icon({})}</span>
+      <span>{knowledge.title}</span>
+
+      {knowledge.status === 'learning' && <Dot />}
     </div>
   )
 }
