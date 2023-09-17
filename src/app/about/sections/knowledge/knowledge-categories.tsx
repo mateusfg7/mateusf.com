@@ -37,7 +37,6 @@ import {
   SiCplusplus,
   SiPhp,
   SiJquery,
-  SiBootstrap,
   SiGraphql,
   SiNunjucks,
   SiElectron,
@@ -47,8 +46,6 @@ import {
   SiVercel,
   SiCloudflare,
   SiPlanetscale,
-  SiCoderwall,
-  SiAdobeillustrator,
   SiHeroku
 } from 'react-icons/si'
 import { FaJava, FaPhoenixFramework } from 'react-icons/fa'
@@ -57,7 +54,7 @@ export interface Knowledge {
   icon: IconType
   title: string
   color: string
-  level: 1 | 2 | 3
+  status: 'god' | 'bad' | 'learning'
 }
 
 export const knowledgeCategories: {
@@ -69,33 +66,57 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Javascript',
-        level: 3,
+        status: 'god',
         icon: SiJavascript,
         color: '#F7DF1E'
       },
       {
         title: 'Typescript',
-        level: 3,
+        status: 'god',
         icon: SiTypescript,
         color: '#3178C6'
       },
       {
         title: 'Python',
-        level: 2,
+        status: 'god',
         icon: SiPython,
         color: '#3776AB'
       },
       {
         title: 'Rust',
-        level: 1,
+        status: 'learning',
         icon: SiRust,
         color: '#F74C00'
       },
       {
+        title: 'Elixir',
+        icon: SiElixir,
+        color: '#4B275F',
+        status: 'bad'
+      },
+      {
         title: 'Bash Script',
-        level: 2,
+        status: 'god',
         icon: SiGnubash,
         color: '#4EAA25'
+      },
+      {
+        title: 'PHP',
+        icon: SiPhp,
+        color: '#777BB4',
+        status: 'bad'
+      },
+      {
+        title: 'Java',
+        icon: FaJava,
+        color: '#f89820',
+        status: 'bad'
+      },
+      {
+        title: 'C++',
+        icon: SiCplusplus,
+        color: '#00599C',
+        status: 'bad'
       }
     ]
   },
@@ -104,45 +125,69 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'HTML5',
-        level: 3,
+        status: 'god',
         icon: SiHtml5,
         color: '#E34F26'
       },
       {
         title: 'CSS3',
-        level: 3,
+        status: 'god',
         icon: SiCss3,
         color: '#1572B6'
       },
       {
         title: 'React.js',
-        level: 2,
+        status: 'god',
         icon: SiReact,
         color: '#61DAFB'
       },
       {
         title: 'Next.js',
-        level: 2,
+        status: 'god',
         icon: SiNextdotjs,
         color: '#FFFFFF'
       },
       {
+        title: 'Vue.js',
+        status: 'learning',
+        icon: SiVuedotjs,
+        color: '#4FC08D'
+      },
+      {
         title: 'Tailwind CSS',
-        level: 3,
+        status: 'god',
         icon: SiTailwindcss,
         color: '#06B6D4'
       },
       {
         title: 'Styled Component',
-        level: 2,
+        status: 'god',
         icon: SiStyledcomponents,
         color: '#DB7093'
       },
       {
         title: 'PWA',
-        level: 1,
+        status: 'god',
         icon: SiPwa,
         color: '#5A0FC8'
+      },
+      {
+        title: 'Nunjucks',
+        icon: SiNunjucks,
+        color: '#1C4913',
+        status: 'bad'
+      },
+      {
+        title: 'Wordpress',
+        icon: SiWordpress,
+        color: '#21759B',
+        status: 'god'
+      },
+      {
+        title: 'jQuery',
+        icon: SiJquery,
+        color: '#0769AD',
+        status: 'bad'
       }
     ]
   },
@@ -151,45 +196,57 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Node.js',
-        level: 2,
+        status: 'god',
         icon: SiNodedotjs,
         color: '#339933'
       },
       {
         title: 'Deno',
-        level: 1,
+        status: 'god',
         icon: SiDeno,
         color: '#FFFFFF'
       },
       {
         title: 'Prisma',
-        level: 2,
+        status: 'god',
         icon: SiPrisma,
         color: '#2D3748'
       },
       {
         title: 'Express',
-        level: 2,
+        status: 'god',
         icon: SiExpress,
         color: '#FFFFFF'
       },
       {
         title: 'Fastify',
-        level: 1,
+        status: 'bad',
         icon: SiFastify,
         color: '#FFF'
       },
       {
         title: 'Nest.js',
-        level: 1,
+        status: 'god',
         icon: SiNestjs,
         color: '#E0234E'
       },
       {
         title: 'NGINX',
-        level: 1,
+        status: 'bad',
         icon: SiNginx,
         color: '#009639'
+      },
+      {
+        title: 'GraphQL',
+        icon: SiGraphql,
+        color: '#E10098',
+        status: 'bad'
+      },
+      {
+        title: 'Phoenix',
+        icon: FaPhoenixFramework,
+        color: '#FD4F00',
+        status: 'bad'
       }
     ]
   },
@@ -198,21 +255,32 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'React Native',
-        level: 2,
+        status: 'god',
         icon: SiReact,
         color: '#61DAFB'
       },
       {
         title: 'Expo',
-        level: 2,
+        status: 'god',
         icon: SiExpo,
         color: '#000020'
       },
       {
         title: 'Google Play',
-        level: 1,
+        status: 'god',
         icon: SiGoogleplay,
         color: '#414141'
+      }
+    ]
+  },
+  {
+    title: 'Desktop development',
+    knowledgeList: [
+      {
+        title: 'Electron',
+        icon: SiElectron,
+        color: '#47848F',
+        status: 'bad'
       }
     ]
   },
@@ -221,57 +289,68 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Heroku',
-        level: 2,
+        status: 'god',
         icon: SiHeroku,
         color: '#430098'
       },
       {
         title: 'Docker',
-        level: 2,
+        status: 'god',
         icon: SiDocker,
         color: '#2496ED'
       },
       {
         title: 'Linux',
-        level: 2,
+        status: 'god',
         icon: SiLinux,
         color: '#FCC624'
       },
       {
         title: 'Google Cloud',
-        level: 1,
+        status: 'god',
         icon: SiGooglecloud,
         color: '#4285F4'
       },
       {
         title: 'AWS',
-        level: 1,
+        status: 'bad',
         icon: SiAmazonaws,
         color: '#232F3E'
       },
       {
         title: 'Github',
-        level: 3,
+        status: 'god',
         icon: SiGithub,
         color: '#181717'
       },
       {
         title: 'Vercel',
-        level: 2,
+        status: 'god',
         icon: SiVercel,
         color: '#000000'
       },
       {
         title: 'PlanetScale',
-        level: 1,
+        status: 'god',
         icon: SiPlanetscale,
         color: '#000000'
       },
       {
         title: 'Cloudflare',
-        level: 1,
+        status: 'god',
         icon: SiCloudflare,
         color: '#F38020'
+      }
+    ]
+  },
+  {
+    title: 'Electrical',
+    knowledgeList: [
+      {
+        title: 'Arduino',
+        icon: SiArduino,
+        color: '#00878F',
+        status: 'bad'
       }
     ]
   },
@@ -280,13 +359,13 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Figma',
-        level: 2,
+        status: 'god',
         icon: SiFigma,
         color: '#F24E1E'
       },
       {
         title: 'Photoshop',
-        level: 2,
+        status: 'god',
         icon: SiAdobephotoshop,
         color: '#31A8FF'
       }
@@ -297,93 +376,34 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Google Workspace',
-        level: 2,
+        status: 'god',
         icon: SiGoogle,
         color: '#4285F4'
       },
       {
         title: 'Microsoft Office',
-        level: 3,
+        status: 'god',
         icon: SiMicrosoftoffice,
         color: '#217346'
       },
       {
         title: 'Onlyoffice',
-        level: 3,
+        status: 'god',
         icon: SiOnlyoffice,
         color: '#444444'
       },
       {
         title: 'Thunderbird',
-        level: 1,
+        status: 'bad',
         icon: SiThunderbird,
         color: '#0A84FF'
       },
       {
         title: 'Windows',
-        level: 2,
+        status: 'god',
         icon: SiWindows,
         color: '#0078D6'
       }
     ]
-  }
-]
-
-export const studiedTechs: { icon: IconType; title: string }[] = [
-  {
-    title: 'Vue.js',
-    icon: SiVuedotjs
-  },
-  {
-    title: 'Electron',
-    icon: SiElectron
-  },
-  {
-    title: 'Elixir',
-    icon: SiElixir
-  },
-  {
-    title: 'GraphQL',
-    icon: SiGraphql
-  },
-  {
-    title: 'Nunjucks',
-    icon: SiNunjucks
-  },
-  {
-    title: 'Phoenix',
-    icon: FaPhoenixFramework
-  },
-  {
-    title: 'PHP',
-    icon: SiPhp
-  },
-  {
-    title: 'Wordpress',
-    icon: SiWordpress
-  },
-  {
-    title: 'jQuery',
-    icon: SiJquery
-  },
-  {
-    title: 'Bootstrap',
-    icon: SiBootstrap
-  },
-  {
-    title: 'Java',
-    icon: FaJava
-  },
-  {
-    title: 'C++',
-    icon: SiCplusplus
-  },
-  {
-    title: 'Arduino',
-    icon: SiArduino
-  },
-  {
-    title: 'Illustrator',
-    icon: SiAdobeillustrator
   }
 ]
