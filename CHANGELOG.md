@@ -1,3 +1,12 @@
+## [8.5.0](https://github.com/mateusfg7/mateusf.com/compare/8.4.1...8.5.0) (2023-09-17)
+
+
+### Features
+
+* **ui:** create `KnowledgeInfo` component ([5807dc2](https://github.com/mateusfg7/mateusf.com/commit/5807dc28bba6eeeda56991865041b50e709f53d3))
+* **ui:** overwrite tailwind ping animation keyframes ([b77fc00](https://github.com/mateusfg7/mateusf.com/commit/b77fc00c4d7e2320592f2323fb85df9ea558ac93))
+* **ui:** update knowledge accordion layout ([43d64d2](https://github.com/mateusfg7/mateusf.com/commit/43d64d22ab1d9e0bead09d27ce80357482793007))
+
 ## [8.4.1](https://github.com/mateusfg7/mateusf.com/compare/8.4.0...8.4.1) (2023-09-13)
 
 
