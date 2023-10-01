@@ -1,3 +1,17 @@
+## [8.6.0](https://github.com/mateusfg7/mateusf.com/compare/8.5.0...8.6.0) (2023-10-01)
+
+
+### Features
+
+* **ui:** create Comments component with giscus ([843c07f](https://github.com/mateusfg7/mateusf.com/commit/843c07fd939799383ee17123fa5ea669babdea69))
+
+
+### Bug Fixes
+
+* **deps:** update dependency rehype-katex to v7 ([961d294](https://github.com/mateusfg7/mateusf.com/commit/961d294fdf91e71181f28734d536934ab153f344))
+* **deps:** update dependency remark-breaks to v4 ([3cf75d9](https://github.com/mateusfg7/mateusf.com/commit/3cf75d96e2389deaa6f630394a943e25d66337f2))
+* **deps:** update dependency remark-rehype to v11 ([3a327f0](https://github.com/mateusfg7/mateusf.com/commit/3a327f0285591a68de678844752bcae71d8213f5))
+
 ## [8.5.0](https://github.com/mateusfg7/mateusf.com/compare/8.4.1...8.5.0) (2023-09-17)
 
 
