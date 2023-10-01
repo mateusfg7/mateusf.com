@@ -1,0 +1,14 @@
+{
+  "origins": [
+    "https://www.mateusf.com",
+    "https://www.mateusf.vercel.app/",
+    "https://www.mfg-b-mateusfg7.vercel.app/",
+    "https://mateusf.com",
+    "https://mateusf.vercel.app/",
+    "https://mfg-b-mateusfg7.vercel.app/"
+  ],
+  "originsRegex": [
+    "https://mateusf-([A-z0-9]|-)*mateusf\\.vercel\\.app",
+    "http://localhost:[0-9]+"
+  ]
+}

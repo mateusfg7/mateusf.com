@@ -21,6 +21,7 @@ import { PrettyCodeElement } from './components/pretty-code-element'
 import { UtterancesComments } from './components/utterances-comments'
 
 import 'katex/dist/katex.min.css'
+import { Comments } from './components/comments'
 
 interface Props {
   params: { slug: string }
@@ -147,8 +148,8 @@ export default function Page({ params }: Props) {
       <div className="post-content">
         <MDXContent components={mdxComponents} />
       </div>
-      <div className="pt-5">
-        <UtterancesComments />
+      <div className="pt-12">
+        <Comments />
       </div>
       <TopButton />
     </div>
