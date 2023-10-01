@@ -18,7 +18,7 @@ import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
 import { PrettyCodeElement } from './components/pretty-code-element'
-import { UtterancesComments } from './components/utterances-comments'
+import { Comments } from './components/comments'
 
 import 'katex/dist/katex.min.css'
 
@@ -147,8 +147,8 @@ export default function Page({ params }: Props) {
       <div className="post-content">
         <MDXContent components={mdxComponents} />
       </div>
-      <div className="pt-5">
-        <UtterancesComments />
+      <div className="pt-12">
+        <Comments />
       </div>
       <TopButton />
     </div>

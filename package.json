@@ -16,6 +16,7 @@
     "check-unused": "npx depcheck"
   },
   "dependencies": {
+    "@giscus/react": "^2.3.0",
     "@headlessui/react": "^1.7.15",
     "@phosphor-icons/react": "^2.0.8",
     "@radix-ui/react-accordion": "^1.1.1",
