@@ -18,10 +18,9 @@ import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
 import { PrettyCodeElement } from './components/pretty-code-element'
-import { UtterancesComments } from './components/utterances-comments'
+import { Comments } from './components/comments'
 
 import 'katex/dist/katex.min.css'
-import { Comments } from './components/comments'
 
 interface Props {
   params: { slug: string }
