@@ -1,0 +1,73 @@
+---
+title: 'Raiz de 2 é inrracional'
+date: '2023-10-15T20:55:36.202Z'
+description: 'Prova de que raiz de 2 é inrracional'
+category: 'Article'
+tags: 'math,proof'
+author: 'mateusfg7'
+status: 'draft'
+---
+
+# Definições
+
+Primeiro recordamos que _números pares_ são os inteiros $\pm2, \pm4, \pm6, \pm8,...$, que podem ser escritos na forma $2n$ para algum inteiro $n$. Um número _ímpar_ é um inteiro como $\pm1, \pm3, \pm5, \pm7,...$, que pode ser escrito na forma $2n+1$ para algum inteiro $n$. Então $6=2\cdot3$ é par (escolhemos $n=3$) e
+
+$$
+11=2\cdot5+1
+$$
+
+é ímpar (escolhemos $n=5$).
+
+Observamos que o quadrado de um número par é par. Com efeito, se $n$ é um inteiro e $2n$ é um número par, então
+
+$$
+(2n)^2=4n^2
+$$
+
+é um número par, que pode ser escrito $2(2n²)$, o produto de $2$ pelo inteiro $2n²$.
+
+O quadrado de um número ímpar é ímpar. Para provar isso, seja $2n+1$ um número ímpar ($n$ sendo um inteiro). Então seu quadrado é
+$$
+(2n+1)²=4n²+4n+1
+$$
+$$
+\hspace{5.5em} =2(2n²+2n)+1
+$$
+
+Como $2n²+2n$ é um inteiro, obtivemos o quadrado de nosso número ímpar na forma $2m+1$ para algum inteiro $m$, e então mostramos que seu quadrado é ímpar.
+
+# Prova
+
+Estamos agora prontos para provar que a raiz quadrada de 2 não é um número racional. Suponhamos que seja. Isso significa que podemos achar um número racional $a$, tal que $a²=2$. Podemos escrever
+
+$$
+a=\frac{m}{n}
+$$
+
+onde $m$, $n$ são inteiros, e nem $m$ nem $n$ é $0$. Além disso, podemos supor $m$, $n$ não simultaneamente pares porque, dividindo-os por $2$ quanto possível, podemos cancelar as potências de $2$ de pelo menos um deles. Assim, podemos admitir que $m$ ou $n$ é ímpar.
+Da hipótese de que $a²=2$ obtemos $(m/n)^2=2$, ou
+
+$$
+\frac{m^2}{n²}=2
+$$
+
+Multiplicando ambos os membros desta equação por $n²$ obtemos
+
+$$
+m²=2n²
+$$
+
+e $m²$ é então par. Pelo que vimos acima, isto significa que $m$ é par e podemos escrever $m=2k$ para algum inteiro $k$. Substituindo, obtemos
+
+$$
+(2k)²=2n²
+$$
+
+ou $4k²=2n^2$. Cancelamos o $2$ e obtemos $2k²=n²$. Isto significa que $n²$ é par e, consequentemente, pelo que vimos acima, que $n$ é par. Concluímos assim que $m$ e $n$ são pares, o que contradiz o fato de que pelo menos um deles é ímpar. Podemos então concluir que não existe nenhuma fração $m/n$ cujo quadrado seja $2$.
+
+<br />
+
+
+$$
+\sqrt{2} \subset \mathbb{I}
+$$
