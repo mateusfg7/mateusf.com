@@ -13,7 +13,8 @@ import {
   SiJavascript,
   SiDeno,
   SiPostgresql,
-  SiPython
+  SiPython,
+  SiSvelte
 } from 'react-icons/si'
 
 export const techIcons = {
@@ -38,6 +39,7 @@ export const techIcons = {
   ),
   prisma: () => <SiPrisma className="hover:text-[#4C51BF]" title="Prisma" />,
   vue: () => <SiVuedotjs className="hover:text-[#4FC08D]" title="Vue.js" />,
+  svelte: () => <SiSvelte className="hover:text-[#FF3E00]" title="Svelte" />,
   mdx: () => <SiMdx className="hover:text-[#1B1F24]" title="MDX" />,
   deno: () => <SiDeno title="Deno" />,
   postgresql: () => (
