@@ -46,7 +46,8 @@ import {
   SiVercel,
   SiCloudflare,
   SiPlanetscale,
-  SiHeroku
+  SiHeroku,
+  SiSvelte
 } from 'react-icons/si'
 import { FaJava, FaPhoenixFramework } from 'react-icons/fa'
 
@@ -149,9 +150,15 @@ export const knowledgeCategories: {
       },
       {
         title: 'Vue.js',
-        status: 'learning',
+        status: 'bad',
         icon: SiVuedotjs,
         color: '#4FC08D'
+      },
+      {
+        title: 'Svelte',
+        status: 'learning',
+        icon: SiSvelte,
+        color: '#FF3E00'
       },
       {
         title: 'Tailwind CSS',
