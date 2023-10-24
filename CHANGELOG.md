@@ -1,3 +1,5 @@
+## [8.6.1](https://github.com/mateusfg7/mateusf.com/compare/8.6.0...8.6.1) (2023-10-24)
+
 ## [8.6.0](https://github.com/mateusfg7/mateusf.com/compare/8.5.0...8.6.0) (2023-10-01)
 
 
