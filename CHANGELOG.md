@@ -1,3 +1,10 @@
+## [8.6.2](https://github.com/mateusfg7/mateusf.com/compare/8.6.1...8.6.2) (2023-10-24)
+
+
+### Features
+
+* **ui:** add svelte on knowledge list ([e3e0a24](https://github.com/mateusfg7/mateusf.com/commit/e3e0a248672338d321bd4ed4c82e5cd564987815))
+
 ## [8.6.1](https://github.com/mateusfg7/mateusf.com/compare/8.6.0...8.6.1) (2023-10-24)
 
 ## [8.6.0](https://github.com/mateusfg7/mateusf.com/compare/8.5.0...8.6.0) (2023-10-01)
