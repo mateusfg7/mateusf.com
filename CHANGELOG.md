@@ -1,3 +1,12 @@
+## [8.7.0](https://github.com/mateusfg7/mateusf.com/compare/8.6.2...8.7.0) (2023-10-28)
+
+
+### Features
+
+* **ui:** add bottom-right illustrantion on all pages ([078774f](https://github.com/mateusfg7/mateusf.com/commit/078774f3aa699e0ffcd5887184b5e13874dc4acf))
+* **ui:** add top-left illustrantion on all pages ([ae5e2d3](https://github.com/mateusfg7/mateusf.com/commit/ae5e2d31da0ff6b15f82380ed186cdd0b32325a1))
+* **ui:** update homepage illustration ([0cd691a](https://github.com/mateusfg7/mateusf.com/commit/0cd691a8f6b68a7e3763bececdcff90db8b9dd93)), closes [#679](https://github.com/mateusfg7/mateusf.com/issues/679)
+
 ## [8.6.2](https://github.com/mateusfg7/mateusf.com/compare/8.6.1...8.6.2) (2023-10-24)
 
 
