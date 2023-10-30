@@ -1,3 +1,10 @@
+## [8.7.2](https://github.com/mateusfg7/mateusf.com/compare/8.7.1...8.7.2) (2023-10-30)
+
+
+### Bug Fixes
+
+* **deps:** rollback unified related updates ([8333384](https://github.com/mateusfg7/mateusf.com/commit/8333384cdca0b8d932167f4615dc1452a1e7304e))
+
 ## [8.7.1](https://github.com/mateusfg7/mateusf.com/compare/8.7.0...8.7.1) (2023-10-30)
 
 
