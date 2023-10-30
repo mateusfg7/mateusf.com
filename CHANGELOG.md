@@ -1,3 +1,21 @@
+## [8.7.1](https://github.com/mateusfg7/mateusf.com/compare/8.7.0...8.7.1) (2023-10-30)
+
+
+### Features
+
+* **ui:** add watermark to og image ([0288881](https://github.com/mateusfg7/mateusf.com/commit/0288881433a44d38c0eaeed8c8c7e2097b85afcc)), closes [#685](https://github.com/mateusfg7/mateusf.com/issues/685)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rehype-stringify to v10 ([ea272e2](https://github.com/mateusfg7/mateusf.com/commit/ea272e2a7d8c03a1d53032749113d420b65b315d))
+* **deps:** update dependency remark-gfm to v4 ([cf6a7fa](https://github.com/mateusfg7/mateusf.com/commit/cf6a7fa7e90a12bbfba4459f37d0c7da70eebf0e))
+* **deps:** update dependency remark-math to v6 ([#673](https://github.com/mateusfg7/mateusf.com/issues/673)) ([0d9bbe2](https://github.com/mateusfg7/mateusf.com/commit/0d9bbe2e38a686df2acea736521f0490b50ce3c9))
+* **deps:** update dependency remark-parse to v11 ([223966e](https://github.com/mateusfg7/mateusf.com/commit/223966eb04bf6636a61bae507df16e7235366de8))
+* **deps:** update dependency unified to v11 ([cfc774a](https://github.com/mateusfg7/mateusf.com/commit/cfc774a3020ea9815694f129951ef3f286701b13))
+* **feed:** remove broken remark-hint from plugin list ([dd63e1f](https://github.com/mateusfg7/mateusf.com/commit/dd63e1f2605425d4b1b03454d487e3de93997fe5))
+* **og:** import `ImageResponse` from "next/og" instead of "next/server" ([fbf813b](https://github.com/mateusfg7/mateusf.com/commit/fbf813b379e56dcaa8015e7caf4de956c58d4f37))
+
 ## [8.7.0](https://github.com/mateusfg7/mateusf.com/compare/8.6.2...8.7.0) (2023-10-28)
 
 
