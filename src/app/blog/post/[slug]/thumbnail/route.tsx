@@ -1,4 +1,5 @@
-import { ImageResponse, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
+import { ImageResponse } from 'next/og'
 import { FiFolder, FiCalendar, FiClock } from 'react-icons/fi'
 import { allPosts } from 'contentlayer/generated'
 import { Date } from '@/shared/components/date'
