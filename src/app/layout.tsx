@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Inter } from 'next/font/google'
 
@@ -15,12 +15,6 @@ export const metadata: Metadata = {
     default: config.metadata.title,
     template: `%s | ${config.metadata.title}`
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#060606' },
-    { media: '(prefers-color-scheme: light)', color: '#fafafa' }
-  ],
-  colorScheme: 'dark light',
-  viewport: 'width=device-width, initial-scale=1',
   openGraph: {
     ...config.metadata,
     type: 'website',
@@ -30,6 +24,16 @@ export const metadata: Metadata = {
     ...config.metadata,
     card: 'summary_large_image'
   }
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#060606' },
+    { media: '(prefers-color-scheme: light)', color: '#fafafa' }
+  ],
+  colorScheme: 'dark light',
+  width: 'device-width',
+  initialScale: 1
 }
 
 const inter = Inter({
