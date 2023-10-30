@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextResponse } from 'next/server'
 import { ImageResponse } from 'next/og'
 import { FiFolder, FiCalendar, FiClock } from 'react-icons/fi'
 import { allPosts } from 'contentlayer/generated'
-import { Date } from '@/shared/components/date'
+import { Date as DateFormatter } from '@/shared/components/date'
 import { config } from 'global-config'
 
 export const runtime = 'edge'
@@ -17,6 +18,25 @@ export async function GET(
     return NextResponse.json({ error: 'Post not found' }, { status: 404 })
   }
 
+  const currentHour = new Date().getHours()
+
+  const theme = currentHour > 6 && currentHour < 18 ? 'light' : 'dark'
+
+  const uiByTheme = {
+    light: {
+      bg: '#fff',
+      text: '#000',
+      serverImage:
+        'https://raw.githubusercontent.com/mateusfg7/mateusf.com/cfc774a3020ea9815694f129951ef3f286701b13/public/assets/server-status-bro-light.svg'
+    },
+    dark: {
+      bg: '#000',
+      text: 'rgb(250,250,250)',
+      serverImage:
+        'https://raw.githubusercontent.com/mateusfg7/mateusf.com/cfc774a3020ea9815694f129951ef3f286701b13/public/assets/server-status-bro-dark.svg'
+    }
+  }
+
   return new ImageResponse(
     (
       <div
@@ -25,21 +45,30 @@ export async function GET(
           width: '100%',
           display: 'flex',
           fontSize: '2rem',
-          backgroundImage:
-            'linear-gradient(to bottom, rgb(15,0,0), rgb(0,0,0))',
-          color: 'rgb(250,250,250)'
+          backgroundColor: uiByTheme[theme].bg,
+          color: uiByTheme[theme].text
         }}
       >
-        <div
+        <img
+          alt=""
+          src="https://raw.githubusercontent.com/mateusfg7/mateusf.com/cfc774a3020ea9815694f129951ef3f286701b13/public/assets/robin-bird-bro.svg"
           style={{
             position: 'absolute',
-            right: '0',
-            bottom: '0',
-            display: 'flex',
-            height: '100%',
-            width: '100%',
-            backgroundImage:
-              'linear-gradient(to right, transparent, rgb(0,0,25))'
+            width: 300,
+            left: 0,
+            top: 60,
+            opacity: 0.2
+          }}
+        />
+        <img
+          alt=""
+          src={uiByTheme[theme].serverImage}
+          style={{
+            position: 'absolute',
+            width: 350,
+            right: 10,
+            bottom: 0,
+            opacity: 0.2
           }}
         />
         <div
@@ -73,7 +102,7 @@ export async function GET(
               <span
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
               >
-                <FiCalendar /> <Date dateString={post.date} />
+                <FiCalendar /> <DateFormatter dateString={post.date} />
               </span>
               <span
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
