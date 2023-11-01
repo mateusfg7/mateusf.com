@@ -57,8 +57,8 @@
   },
   "devDependencies": {
     "@clack/prompts": "^0.7.0",
-    "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "@types/mdx": "^2.0.3",
     "@types/node": "20.8.8",
