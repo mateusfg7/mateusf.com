@@ -41,7 +41,7 @@ export function generateFeed() {
       title: post.title,
       id: post.id,
       description: post.description,
-      content: markdownToHtml(post.body.raw),
+      content: markdownToHtml(`![](${link}/thumbnail) ${post.body.raw}`),
       author: [{ name, email, link: authorLink }],
       date: new Date(post.date),
       category: post.tags.split(',').map(tag => ({ name: tag.trim() })),
