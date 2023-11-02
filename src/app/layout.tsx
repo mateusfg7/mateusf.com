@@ -15,10 +15,36 @@ export const metadata: Metadata = {
     default: config.metadata.title,
     template: `%s | ${config.metadata.title}`
   },
+  applicationName: config.metadata.title,
+  authors: [
+    { name: 'Mateus Felipe Gonçalves', url: 'https://github.com/mateusfg7' }
+  ],
+  category: 'Personal Website',
+  keywords: [
+    'personal',
+    'blog',
+    'homepage',
+    'portfolio',
+    'about',
+    'me',
+    'tech',
+    'programming',
+    'knowledge'
+  ],
+  robots: {
+    follow: true,
+    index: true
+  },
   openGraph: {
     ...config.metadata,
     type: 'website',
-    url: config.webserver.host
+    url: config.webserver.host,
+    emails: [
+      'contact@mateusf.com',
+      'contato@mateusf.com',
+      'mateusfelipefg77@gmail.com',
+      'mateusfg7@protonmail.com'
+    ]
   },
   twitter: {
     ...config.metadata,

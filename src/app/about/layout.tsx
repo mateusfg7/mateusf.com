@@ -2,7 +2,9 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Me',
-  description: 'Who I am, what I know and where I am...'
+  description:
+    'Information about who is Mateus Felipe, my knowledge, statistics about me and social links.',
+  keywords: ['about', 'social', 'links', 'knowledge']
 }
 
 export default function AboutLayout({
