@@ -6,7 +6,7 @@ My personal homepage & portfolio: https://mateusf.com
 ![GitHub deployments](https://img.shields.io/github/deployments/mateusfg7/mfg-b/production?label=deploy)
 
 
-![](.github/assets/screenshot-desktop_mobile-duo.png)
+![](.github/assets/desktop-mobile_duo.png)
 
 </div>
 
