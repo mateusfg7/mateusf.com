@@ -4,7 +4,12 @@ const { withContentlayer } = require('next-contentlayer')
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['raw.githubusercontent.com', 'github.com', 'i.imgur.com']
+    domains: [
+      'raw.githubusercontent.com',
+      'github.com',
+      'i.imgur.com',
+      'mateusf.com'
+    ]
   },
   async rewrites() {
     return [
