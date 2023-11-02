@@ -77,7 +77,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="shortcut icon" href="assets/brain.png" type="image/png" />
         <Script
           async
           src="https://analytics.umami.is/script.js"
