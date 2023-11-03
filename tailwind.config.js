@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -96,6 +98,7 @@ module.exports = {
       }
     },
     keyframes: {
+      ...defaultTheme.keyframes,
       ping: {
         '0%': {
           transform: 'scale(1)'

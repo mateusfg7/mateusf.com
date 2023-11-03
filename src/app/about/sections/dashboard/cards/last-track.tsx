@@ -1,6 +1,8 @@
 import Image from 'next/image'
+
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
+import { placeholder } from '../placeholder'
 
 type Track = {
   artist: {
@@ -53,6 +55,7 @@ export async function LastTrack() {
             alt="Artist Image"
             width={300}
             height={300}
+            placeholder={placeholder(24, 24) as `data:image/${string}`}
             className="w-6"
           />
           <span className="block overflow-hidden overflow-ellipsis whitespace-nowrap">

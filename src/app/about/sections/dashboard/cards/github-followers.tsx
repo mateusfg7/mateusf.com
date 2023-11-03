@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
+import { placeholder } from '../placeholder'
 
 type User = {
   followers: number
@@ -41,7 +42,7 @@ export async function GithubFollowers() {
     return array
   }
 
-  const AVATAR_COUNT = 7
+  const AVATAR_COUNT = 8
 
   const slicedFollowers: Follower[] = shuffle(followersList).slice(
     0,
@@ -70,6 +71,7 @@ export async function GithubFollowers() {
                     alt=""
                     width={400}
                     height={400}
+                    placeholder={placeholder(28, 28) as `data:image/${string}`}
                     className="w-7 rounded-full border-2 border-neutral-200 transition-all hover:border-neutral-600 dark:border-neutral-950 dark:hover:border-neutral-400"
                   />
                 </a>
