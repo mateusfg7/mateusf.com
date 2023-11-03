@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt'
+import { placeholder } from './placeholder'
 
 export function ImageCard({ mobile = false }) {
   return (
@@ -26,6 +27,8 @@ export function ImageCard({ mobile = false }) {
         className={`object-cover dark:brightness-75 ${
           !mobile && 'h-[30rem] w-96'
         }`}
+        placeholder={placeholder(460, 460) as `data:image/${string}`}
+        priority
       />
     </Tilt>
   )
