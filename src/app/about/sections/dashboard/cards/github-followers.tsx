@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
-import { placeholder } from '../placeholder'
+import { placeholder } from '../../../components/placeholder'
 
 type User = {
   followers: number
