@@ -17,7 +17,7 @@ export async function GithubFollowers() {
     'https://api.github.com/users/mateusfg7'
   )
 
-  if (githubUserRequest.status !== 200) {
+  if (!githubUserRequest.ok) {
     console.log(githubUserRequest)
     return <Card title="Github Followers" content={<ApiErrorMessage />} />
   }
@@ -26,7 +26,7 @@ export async function GithubFollowers() {
     'https://api.github.com/users/mateusfg7/followers?per_page=200'
   )
 
-  if (githubFollowersRequest.status !== 200) {
+  if (!githubFollowersRequest.ok) {
     console.log(githubFollowersRequest)
     return <Card title="Github Followers" content={<ApiErrorMessage />} />
   }

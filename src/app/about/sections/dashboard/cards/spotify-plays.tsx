@@ -12,7 +12,7 @@ export async function SpotifyPlays() {
     `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
   )
 
-  if (lastFmApiRequest.status !== 200) {
+  if (!lastFmApiRequest.ok) {
     console.log(lastFmApiRequest)
     return <Card title="Spotify Plays" content={<ApiErrorMessage />} />
   }

@@ -11,7 +11,7 @@ export async function GithubStars() {
     'https://api.github.com/users/mateusfg7/repos?per_page=200'
   )
 
-  if (githubApiRequest.status !== 200) {
+  if (!githubApiRequest.ok) {
     console.log(githubApiRequest)
     return <Card title="Github Stars" content={<ApiErrorMessage />} />
   }
