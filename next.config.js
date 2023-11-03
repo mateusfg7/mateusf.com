@@ -6,9 +6,11 @@ const nextConfig = {
   images: {
     domains: [
       'raw.githubusercontent.com',
+      'avatars.githubusercontent.com',
       'github.com',
       'i.imgur.com',
-      'mateusf.com'
+      'mateusf.com',
+      'lastfm.freetls.fastly.net'
     ]
   },
   async rewrites() {
