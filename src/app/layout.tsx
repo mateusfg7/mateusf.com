@@ -11,6 +11,7 @@ import '@/styles/main.css'
 
 export const metadata: Metadata = {
   ...config.metadata,
+  metadataBase: new URL(config.webserver.host),
   title: {
     default: config.metadata.title,
     template: `%s | ${config.metadata.title}`
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     ...config.metadata,
     type: 'website',
-    url: config.webserver.host,
+    url: '/',
     emails: [
       'contact@mateusf.com',
       'contato@mateusf.com',

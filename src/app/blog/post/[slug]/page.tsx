@@ -7,7 +7,6 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { allPosts, type Post } from 'contentlayer/generated'
 
 import { slug } from '@/shared/lib/slug'
-import { config } from 'global-config'
 import {
   Folder,
   CalendarBlank,
@@ -41,9 +40,9 @@ export function generateMetadata({ params }: Props): Metadata {
       tags: post.tags.split(',').map(tag => tag.trim()),
       authors: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       type: 'article',
-      url: `https://mateusf.com/blog/post/${params.slug}`,
+      url: `/blog/post/${params.slug}`,
       images: {
-        url: `${config.webserver.host}/blog/post/${post.id}/thumbnail`,
+        url: `/blog/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -53,9 +52,9 @@ export function generateMetadata({ params }: Props): Metadata {
       title: post.title,
       description: post.description,
       creator: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
-      site: `${config.webserver.host}`,
+      site: '/',
       images: {
-        url: `${config.webserver.host}/blog/post/${post.id}/thumbnail`,
+        url: `/blog/post/${post.id}/thumbnail`,
         width: 1200,
         height: 630
       }
