@@ -1,3 +1,4 @@
+import { ApiErrorMessage } from '../api-error'
 import { Card } from '../card'
 
 type Repository = {
@@ -9,6 +10,11 @@ export async function GithubStars() {
   const githubApiRequest = await fetch(
     'https://api.github.com/users/mateusfg7/repos?per_page=200'
   )
+
+  if (githubApiRequest.status !== 200) {
+    console.log(githubApiRequest)
+    return <Card title="Github Stars" content={<ApiErrorMessage />} />
+  }
 
   const repos: Repository[] = await githubApiRequest.json()
 

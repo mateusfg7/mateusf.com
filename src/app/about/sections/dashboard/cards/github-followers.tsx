@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Card } from '../card'
+import { ApiErrorMessage } from '../api-error'
 
 type User = {
   followers: number
@@ -16,9 +17,19 @@ export async function GithubFollowers() {
     'https://api.github.com/users/mateusfg7'
   )
 
+  if (githubUserRequest.status !== 200) {
+    console.log(githubUserRequest)
+    return <Card title="Github Followers" content={<ApiErrorMessage />} />
+  }
+
   const githubFollowersRequest = await fetch(
     'https://api.github.com/users/mateusfg7/followers?per_page=200'
   )
+
+  if (githubFollowersRequest.status !== 200) {
+    console.log(githubFollowersRequest)
+    return <Card title="Github Followers" content={<ApiErrorMessage />} />
+  }
 
   const followersList: Follower[] = await githubFollowersRequest.json()
 

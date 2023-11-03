@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Card } from '../card'
+import { ApiErrorMessage } from '../api-error'
 
 type Track = {
   artist: {
@@ -27,6 +28,11 @@ export async function LastTrack() {
   const lastFmApiRequest = await fetch(
     `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
   )
+
+  if (lastFmApiRequest.status !== 200) {
+    console.log(lastFmApiRequest)
+    return <Card title="Last Played" content={<ApiErrorMessage />} />
+  }
 
   const jsonResponse: RecentTracks = await lastFmApiRequest.json()
 
