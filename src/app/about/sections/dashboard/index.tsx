@@ -5,7 +5,6 @@ import { GithubStars } from './cards/github-stars'
 import { LastTrack } from './cards/last-track'
 import { SpotifyPlays } from './cards/spotify-plays'
 import { TopArtist } from './cards/top-artist'
-import { Card } from './card'
 import { LoadingCard } from './loading-card'
 
 export function Dashboard() {
