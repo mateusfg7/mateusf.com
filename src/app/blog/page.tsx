@@ -10,7 +10,7 @@ export default function Page() {
   const posts = getSortedPosts(allPosts)
 
   return (
-    <div className="m-auto content-container">
+    <div className="content-container m-auto">
       <Title text="Blog" />
       <PostList posts={posts} separateByYear />
     </div>
