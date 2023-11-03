@@ -1,3 +1,5 @@
+import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
+
 import { ApiErrorMessage } from '../api-error'
 import { Card } from '../card'
 
@@ -30,6 +32,7 @@ export async function TopArtist() {
   return (
     <Card
       title="Top Artist"
+      icon={<SpotifyLogo weight="duotone" />}
       content={
         <a
           href={mostListened.url}

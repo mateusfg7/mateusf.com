@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { GithubLogo } from '@/shared/wrappers/phosphor-icons'
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
 import { placeholder } from '../../../components/placeholder'
@@ -55,6 +56,7 @@ export async function GithubFollowers() {
     <>
       <Card
         title="Github Followers"
+        icon={<GithubLogo weight="duotone" />}
         content={
           <div className="flex items-center gap-2">
             <div className="flex flex-row-reverse justify-end">

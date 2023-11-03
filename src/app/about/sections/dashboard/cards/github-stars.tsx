@@ -1,3 +1,4 @@
+import { GithubLogo } from '@/shared/wrappers/phosphor-icons'
 import { ApiErrorMessage } from '../api-error'
 import { Card } from '../card'
 
@@ -21,5 +22,11 @@ export async function GithubStars() {
   const mine = repos.filter(repo => !repo.fork)
   const stars = mine.reduce((acc, curr) => acc + curr.stargazers_count, 0)
 
-  return <Card title="Github Stars" content={String(stars)} />
+  return (
+    <Card
+      title="Github Stars"
+      icon={<GithubLogo weight="duotone" />}
+      content={String(stars)}
+    />
+  )
 }

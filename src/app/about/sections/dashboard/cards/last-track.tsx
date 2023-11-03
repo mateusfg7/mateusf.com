@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
 
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
@@ -43,6 +44,7 @@ export async function LastTrack() {
   return (
     <Card
       title="Last Played"
+      icon={<SpotifyLogo weight="duotone" />}
       content={
         <a
           href={lastTrack.url}

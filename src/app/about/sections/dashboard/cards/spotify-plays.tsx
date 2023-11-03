@@ -1,3 +1,5 @@
+import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
+
 import { ApiErrorMessage } from '../api-error'
 import { Card } from '../card'
 
@@ -21,5 +23,11 @@ export async function SpotifyPlays() {
 
   const lastFmUserData: User = jsonResponse.user
 
-  return <Card title="Spotify Plays" content={lastFmUserData.playcount} />
+  return (
+    <Card
+      title="Spotify Plays"
+      icon={<SpotifyLogo weight="duotone" />}
+      content={lastFmUserData.playcount}
+    />
+  )
 }
