@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt'
-import { placeholder } from './placeholder'
+import { placeholder } from '../../../shared/lib/placeholder'
 
 export function ImageCard({ mobile = false }) {
   return (

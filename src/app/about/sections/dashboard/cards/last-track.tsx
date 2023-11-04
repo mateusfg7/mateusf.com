@@ -3,7 +3,7 @@ import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
 
 import { Card } from '../card'
 import { ApiErrorMessage } from '../api-error'
-import { placeholder } from '../../../components/placeholder'
+import { placeholder } from '../../../../../shared/lib/placeholder'
 
 type Track = {
   artist: {
