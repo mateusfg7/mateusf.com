@@ -1,0 +1,18 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Statistics',
+  description:
+    'Updated statistics data about me and my tastes. Github data, Spotify, and other things...',
+  keywords: ['about', 'statistics', 'data']
+}
+
+export const revalidate = 3600 // 3600s = 1h
+
+export default function AboutLayout({
+  children
+}: {
+  children: React.ReactNode
+}) {
+  return <div className="content-vertical-spaces">{children}</div>
+}
