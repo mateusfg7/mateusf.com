@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 
-import { Followers, FollowersSkeleton } from './cards/followers'
+import { Followers } from './cards/followers'
 import { Languages, LanguagesSkeleton } from './cards/languages'
 import { Repos, ReposSkeleton } from './cards/repos'
 import { Stars, StarsSkeleton } from './cards/stars'
@@ -11,9 +11,7 @@ export function GithubDashboard() {
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
       <div className="col-span-2 row-span-3">
-        <Suspense fallback={<FollowersSkeleton />}>
-          <Followers />
-        </Suspense>
+        <Followers />
       </div>
 
       <Suspense fallback={<StarsSkeleton />}>
