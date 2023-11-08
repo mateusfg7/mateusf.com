@@ -1,8 +1,16 @@
+import { Metadata } from 'next'
 import { GithubLogo, SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
 import { Title } from '@/shared/components/title'
 
 import { GithubDashboard } from './components/github-dashboard'
 import { SpotifyDashboard } from './components/spotify-dashboard'
+
+export const metadata: Metadata = {
+  title: 'Statistics',
+  description:
+    'Updated statistics data about me and my tastes. Github data, Spotify, and other things...',
+  keywords: ['about', 'statistics', 'data']
+}
 
 export default function Page() {
   return (
