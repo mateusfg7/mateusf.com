@@ -1,4 +1,7 @@
 import { Suspense } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
+
+import { FallbackError } from '../fallback-error'
 
 import { LastTrack } from './cards/last-track'
 import { TopTracks } from './cards/top-tracks'
@@ -8,16 +11,18 @@ import { SpotifyStatsSkeleton } from './skeleton'
 
 export function SpotifyDashboard() {
   return (
-    <Suspense fallback={<SpotifyStatsSkeleton />}>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
-        <div className="md:col-span-2">
-          <LastTrack />
+    <ErrorBoundary fallback={<FallbackError />}>
+      <Suspense fallback={<SpotifyStatsSkeleton />}>
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
+          <div className="md:col-span-2">
+            <LastTrack />
+          </div>
+
+          <TopTracks />
+
+          <TopArtists />
         </div>
-
-        <TopTracks />
-
-        <TopArtists />
-      </div>
-    </Suspense>
+      </Suspense>
+    </ErrorBoundary>
   )
 }
