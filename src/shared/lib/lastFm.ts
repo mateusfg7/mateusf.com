@@ -114,3 +114,28 @@ export async function getTopTracks() {
 
   return tracks
 }
+
+type User = {
+  name: string
+  playcount: string
+  url: string
+}
+
+export async function getLastFmUserInfo() {
+  const lastFmApiRequest = await fetch(
+    `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
+  )
+
+  if (!lastFmApiRequest.ok) {
+    console.log(lastFmApiRequest)
+    throw new ApiError({
+      message: lastFmApiRequest.statusText,
+      status: lastFmApiRequest.status,
+      url: lastFmApiRequest.url
+    })
+  }
+
+  const { user }: { user: User } = await lastFmApiRequest.json()
+
+  return user
+}

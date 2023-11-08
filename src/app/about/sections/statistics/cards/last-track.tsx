@@ -1,45 +1,15 @@
 import Image from 'next/image'
+
 import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
 
+import { getRecentTracks } from '@/shared/lib/lastFm'
+import { placeholder } from '@/shared/lib/placeholder'
+
 import { Card } from '../card'
-import { ApiErrorMessage } from '../api-error'
-import { placeholder } from '../../../../../shared/lib/placeholder'
-
-type Track = {
-  artist: {
-    '#text': string
-  }
-  name: string
-  url: string
-  image: {
-    size: string
-    '#text': string
-  }[]
-  date: {
-    uts: string
-    '#text': string
-  }
-}
-
-type RecentTracks = {
-  recenttracks: {
-    track: Track[]
-  }
-}
 
 export async function LastTrack() {
-  const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
-  )
-
-  if (!lastFmApiRequest.ok) {
-    console.log(lastFmApiRequest)
-    return <Card title="Last Played" content={<ApiErrorMessage />} />
-  }
-
-  const jsonResponse: RecentTracks = await lastFmApiRequest.json()
-
-  const lastTrack = jsonResponse.recenttracks.track[0]
+  const recentTracks = await getRecentTracks()
+  const lastTrack = recentTracks[0]
 
   return (
     <Card

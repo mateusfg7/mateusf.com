@@ -1,56 +1,18 @@
 import Image from 'next/image'
+
 import { GithubLogo } from '@/shared/wrappers/phosphor-icons'
+
+import { getGithubFollowers } from '@/shared/lib/github'
+import { shuffleArray } from '@/shared/lib/shuffleArray'
+import { placeholder } from '@/shared/lib/placeholder'
+
 import { Card } from '../card'
-import { ApiErrorMessage } from '../api-error'
-import { placeholder } from '../../../../../shared/lib/placeholder'
-
-type User = {
-  followers: number
-}
-
-type Follower = {
-  login: string
-  avatar_url: string
-  html_url: string
-}
 
 export async function GithubFollowers() {
-  const githubUserRequest = await fetch(
-    'https://api.github.com/users/mateusfg7'
-  )
-
-  if (!githubUserRequest.ok) {
-    console.log(githubUserRequest)
-    return <Card title="Github Followers" content={<ApiErrorMessage />} />
-  }
-
-  const githubFollowersRequest = await fetch(
-    'https://api.github.com/users/mateusfg7/followers?per_page=200'
-  )
-
-  if (!githubFollowersRequest.ok) {
-    console.log(githubFollowersRequest)
-    return <Card title="Github Followers" content={<ApiErrorMessage />} />
-  }
-
-  const followersList: Follower[] = await githubFollowersRequest.json()
-
-  const shuffle = (array: any[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[array[i], array[j]] = [array[j], array[i]]
-    }
-    return array
-  }
-
   const AVATAR_COUNT = 8
 
-  const slicedFollowers: Follower[] = shuffle(followersList).slice(
-    0,
-    AVATAR_COUNT
-  )
-
-  const { followers }: User = await githubUserRequest.json()
+  const followersList = await getGithubFollowers()
+  const slicedFollowers = shuffleArray(followersList).slice(0, AVATAR_COUNT)
 
   return (
     <>
@@ -84,7 +46,7 @@ export async function GithubFollowers() {
               target="_blank"
               className="text-base transition-colors hover:text-black dark:hover:text-white"
             >
-              +{followers - AVATAR_COUNT}
+              +{followersList.length - AVATAR_COUNT}
             </a>
           </div>
         }
