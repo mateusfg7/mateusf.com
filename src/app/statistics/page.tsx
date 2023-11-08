@@ -7,7 +7,7 @@ import { SpotifyDashboard } from './components/spotify-dashboard'
 export default function Page() {
   return (
     <div className="content-container m-auto space-y-16">
-      <Title text="Statistics" />
+      <Title text="Statistics" description="Updates every 24 hours" />
       <div className="space-y-5">
         <div className="flex w-full items-center justify-center gap-2 text-3xl font-semibold text-[#333] dark:text-[#f5f5f5] md:justify-start">
           <h2>Github</h2>
