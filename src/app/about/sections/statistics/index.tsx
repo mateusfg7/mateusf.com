@@ -1,5 +1,8 @@
 import { Suspense } from 'react'
+import Link from 'next/link'
 import { ErrorBoundary } from 'react-error-boundary'
+
+import { ArrowUpRight } from '@/shared/wrappers/phosphor-icons'
 
 import { AgeCard } from './cards/age'
 import { GithubFollowers } from './cards/github-followers'
@@ -14,13 +17,24 @@ export function StatisticsGrid() {
   return (
     <ErrorBoundary fallback={<div />}>
       <Suspense fallback={<GridSkeleton />}>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-          <AgeCard />
-          <GithubStars />
-          <GithubFollowers />
-          <SpotifyPlays />
-          <TopArtist />
-          <LastTrack />
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+            <AgeCard />
+            <GithubStars />
+            <GithubFollowers />
+            <SpotifyPlays />
+            <TopArtist />
+            <LastTrack />
+          </div>
+          <div className="flex justify-end">
+            <Link
+              href="/about/statistics"
+              className="inline-flex items-end leading-none text-neutral-500 transition-colors hover:text-black dark:text-neutral-600 dark:hover:text-white"
+            >
+              <span>See more</span>
+              <ArrowUpRight className="text-xs" />
+            </Link>
+          </div>
         </div>
       </Suspense>
     </ErrorBoundary>
