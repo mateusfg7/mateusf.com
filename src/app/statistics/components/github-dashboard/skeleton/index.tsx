@@ -1,0 +1,26 @@
+import { FollowersSkeleton } from './follower'
+import { StarsSkeleton } from './stars'
+import { LanguagesSkeleton } from './languages'
+import { ReposSkeleton } from './repos'
+import { CommitsSkeleton } from './commits'
+import { GraphSkeleton } from './graph'
+
+export function GithubStatsSkeleton() {
+  return (
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
+      <div className="col-span-2 row-span-3">
+        <FollowersSkeleton />
+      </div>
+
+      <StarsSkeleton />
+      <LanguagesSkeleton />
+      <ReposSkeleton />
+
+      <CommitsSkeleton />
+
+      <div className="col-span-2">
+        <GraphSkeleton />
+      </div>
+    </div>
+  )
+}
