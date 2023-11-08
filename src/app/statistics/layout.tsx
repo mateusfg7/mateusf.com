@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ['about', 'statistics', 'data']
 }
 
-export const revalidate = 3600 // 3600s = 1h
+export const revalidate = 60 * 60 * 24 // 86400s = 24h = 1d
 
 export default function AboutLayout({
   children
