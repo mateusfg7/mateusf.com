@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { AboutMe } from './sections/about-me'
 import { Contact } from './sections/contact'
 import { Knowledge } from './sections/knowledge'
-import { Dashboard } from './sections/dashboard'
+import { StatisticsGrid } from './sections/statistics'
 
 import './styles.css'
 
@@ -18,7 +18,7 @@ export default function Page() {
     <div className="content-container m-auto space-y-32">
       <AboutMe />
       <Knowledge />
-      <Dashboard />
+      <StatisticsGrid />
       <Contact />
     </div>
   )
