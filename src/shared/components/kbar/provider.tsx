@@ -27,7 +27,8 @@ import {
   User,
   SquaresFour,
   Files,
-  Books
+  Books,
+  ChartPieSlice
 } from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -55,6 +56,14 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       keywords: 'about me user information info',
       icon: <User weight="duotone" />,
       perform: () => push('/about')
+    },
+    {
+      id: 'statistics',
+      name: 'Statistics',
+      shortcut: ['n', 's'],
+      keywords: 'statistics github spotify data',
+      icon: <ChartPieSlice weight="duotone" />,
+      perform: () => push('/about/statistics')
     }
   ]
 
