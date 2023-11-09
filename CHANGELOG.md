@@ -1,3 +1,38 @@
+## [8.8.0](https://github.com/mateusfg7/mateusf.com/compare/8.7.2...8.8.0) (2023-11-09)
+
+
+### Features
+
+* **assets:** create preview image ([1e7c2ca](https://github.com/mateusfg7/mateusf.com/commit/1e7c2ca6df9f68f3d95ce54a59f7748e56a326bd))
+* **lib:** create `sleep` function ([d7861a1](https://github.com/mateusfg7/mateusf.com/commit/d7861a1ee5f11feb0e6850e9f77bb86afdc166f3))
+* **rss:** add thumbnail image to returned xml feed content ([56005e6](https://github.com/mateusfg7/mateusf.com/commit/56005e69b1bfb7e6dca6daf570e2cab5dfbd69a7))
+* **seo:** add `metadataBase` config on root layout ([24fbdaa](https://github.com/mateusfg7/mateusf.com/commit/24fbdaa7c306fe584e60cb67fa7c46bef83ae2cc))
+* **sitemap:** include `/about/statistics` ([5d784f0](https://github.com/mateusfg7/mateusf.com/commit/5d784f0cba6ede1e8ec9a30a33d5dd18969f5b5f))
+* **ui:** add `description` prop on `Title` component ([4badc98](https://github.com/mateusfg7/mateusf.com/commit/4badc982df95e244e704f8a4bc8393dade63ae48))
+* **ui:** add a "See more" link to `/about/statistics` page on `/about` page ([cc921dd](https://github.com/mateusfg7/mateusf.com/commit/cc921dd3b2ea161b32e06544feeb00561992ddce))
+* **ui:** add description on statistics page title ([71770d8](https://github.com/mateusfg7/mateusf.com/commit/71770d815f34682a1d2ca86698fa8274d7857319))
+* **ui:** add error fallback ui on statistic cards ([26ef815](https://github.com/mateusfg7/mateusf.com/commit/26ef815359ab7dfad86a9ba11fd1d9cf4ab85976))
+* **ui:** add icon on personal statistics cards ([8585299](https://github.com/mateusfg7/mateusf.com/commit/85852993a0c436be914750f5de4336bb1a0d8386))
+* **ui:** add loading feedback for statstic cards ([648302b](https://github.com/mateusfg7/mateusf.com/commit/648302b652832b1dfbd878c3810d87e06c7f5b3c))
+* **ui:** add responsivity on `Title` component ([8e7181c](https://github.com/mateusfg7/mateusf.com/commit/8e7181c8a0d0fbdc187e604fd370fe611961e1ba))
+* **ui:** add responsivity on statistics cards of `/about` page ([a06c471](https://github.com/mateusfg7/mateusf.com/commit/a06c471fab77305a9999de36b88fa3587939622c))
+* **ui:** add visual error feedback on personal statistics ([0c57f41](https://github.com/mateusfg7/mateusf.com/commit/0c57f4136716140e4e056254c667bffb59a6da24))
+* **ui:** create personal statistic cards on about page ([233cdef](https://github.com/mateusfg7/mateusf.com/commit/233cdef5442effa928abc3e042c677f3dc6be929))
+* **ui:** create statistcs page ([d8a1eda](https://github.com/mateusfg7/mateusf.com/commit/d8a1edaa6b227defd1277f64e1c132cca0fc7f04))
+* **ui:** include `statistics` page on KBar link list ([a11b232](https://github.com/mateusfg7/mateusf.com/commit/a11b232534b9fae610d099cb53494ec1635c3636))
+* **ui:** use `Title` component on sitemap page ([4ec0365](https://github.com/mateusfg7/mateusf.com/commit/4ec03657b92d2003942479547044b1a58167e80c))
+* wrap statistics cards in an `<ErrorBoundary>` on `about` page ([a597ed5](https://github.com/mateusfg7/mateusf.com/commit/a597ed51ec184f490e62791cd097daddd498e8d1))
+
+
+### Performance Improvements
+
+* add `revalidate` config on `/about` page layout ([7f96b27](https://github.com/mateusfg7/mateusf.com/commit/7f96b27221d93ce2e9e42d90c200a05e3fd6b04f))
+* increase `revalidate` config to 86400 on `/about` route segment ([a69595b](https://github.com/mateusfg7/mateusf.com/commit/a69595b3131b6228a817ad35a72edb3c23c04e94))
+* increase statistics page `revalidate` to 24h ([6516af3](https://github.com/mateusfg7/mateusf.com/commit/6516af3cee0d2273bf88969e1e5f6f826205ab32))
+* optimize main image on `/about` page ([a45101f](https://github.com/mateusfg7/mateusf.com/commit/a45101f950c46a21ae758b035751579c0d5ae14a))
+* **ssr:** wrap statistics cards from `about` page with `<Suspense />` tag ([e2bacd9](https://github.com/mateusfg7/mateusf.com/commit/e2bacd952b96873ced5ee1bed26cf7052f00bdae))
+* wrap all statistics cards with `<Suspense />` ([137988e](https://github.com/mateusfg7/mateusf.com/commit/137988eeb24bf0d45f117cf1a6fb52d481233afa))
+
 ## [8.7.2](https://github.com/mateusfg7/mateusf.com/compare/8.7.1...8.7.2) (2023-10-30)
 
 
