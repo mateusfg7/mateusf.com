@@ -6,8 +6,9 @@ import { config } from 'global-config'
 
 const commonPaths = [
   '',
-  'about',
   'projects',
+  'about',
+  'about/statistics',
   'blog',
   'blog/categories',
   'blog/tag',
