@@ -1,10 +1,10 @@
 import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
-import { getTopArtists } from '@/shared/lib/lastFm'
+import { getLastFmTopArtists } from '@/shared/lib/lastFm'
 
 import { Card } from '../card'
 
 export async function TopArtist() {
-  const topArtists = await getTopArtists()
+  const topArtists = await getLastFmTopArtists()
   const mostListened = topArtists[0]
 
   return (

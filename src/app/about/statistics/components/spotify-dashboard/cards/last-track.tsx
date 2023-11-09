@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { MusicNotes } from '@/shared/wrappers/phosphor-icons'
 
 import { placeholder } from '@/shared/lib/placeholder'
-import { getRecentTracks } from '@/shared/lib/lastFm'
+import { getLastFmRecentTracks } from '@/shared/lib/lastFm'
 
 export async function LastTrack() {
-  const recentTracks = await getRecentTracks()
+  const recentTracks = await getLastFmRecentTracks()
 
   const lastTrack = recentTracks[0]
 

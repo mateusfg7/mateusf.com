@@ -1,6 +1,6 @@
 import { UserList } from '@/shared/wrappers/phosphor-icons'
 
-import { Artist, getTopArtists } from '@/shared/lib/lastFm'
+import { Artist, getLastFmTopArtists } from '@/shared/lib/lastFm'
 
 const ArtistItem = ({ artist }: { artist: Artist }) => (
   <div className="flex items-center justify-between gap-3 py-4">
@@ -16,7 +16,7 @@ const ArtistItem = ({ artist }: { artist: Artist }) => (
 )
 
 export async function TopArtists() {
-  const artists = await getTopArtists()
+  const artists = await getLastFmTopArtists()
 
   return (
     <div className="flex h-full w-full flex-col gap-4 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">

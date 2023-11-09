@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
 
-import { getRecentTracks } from '@/shared/lib/lastFm'
+import { getLastFmRecentTracks } from '@/shared/lib/lastFm'
 import { placeholder } from '@/shared/lib/placeholder'
 
 import { Card } from '../card'
 
 export async function LastTrack() {
-  const recentTracks = await getRecentTracks()
+  const recentTracks = await getLastFmRecentTracks()
   const lastTrack = recentTracks[0]
 
   return (

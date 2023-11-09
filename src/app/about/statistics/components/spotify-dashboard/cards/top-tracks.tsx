@@ -1,6 +1,6 @@
 import { Playlist } from '@/shared/wrappers/phosphor-icons'
 
-import { Track, getTopTracks } from '@/shared/lib/lastFm'
+import { Track, getLastFmTopTracks } from '@/shared/lib/lastFm'
 
 const TrackItem = ({ track }: { track: Track }) => (
   <div className="flex items-center justify-between gap-3 py-2">
@@ -25,7 +25,7 @@ const TrackItem = ({ track }: { track: Track }) => (
 )
 
 export async function TopTracks() {
-  const tracks = await getTopTracks()
+  const tracks = await getLastFmTopTracks()
 
   return (
     <div className="flex h-full w-full flex-col gap-4 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
