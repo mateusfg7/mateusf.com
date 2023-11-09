@@ -20,7 +20,7 @@ export async function LastTrack() {
           href={lastTrack.url}
           target="_blank"
           title={`${lastTrack.name} - ${lastTrack.artist['#text']}`}
-          className="flex items-center gap-1 hover:underline"
+          className="flex w-full items-center justify-center gap-1 hover:underline lg:justify-start"
         >
           <Image
             src={lastTrack.image[3]['#text']}
