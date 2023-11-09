@@ -7,10 +7,10 @@ interface Props extends ComponentProps<'h1'> {
 
 export function Title({ text, description, ...props }: Props) {
   return (
-    <div className="mb-8 inline">
+    <div className="mb-8 flex flex-col items-center md:items-start">
       <h1
         {...props}
-        className="bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-900/70 bg-clip-text text-center text-4xl font-semibold text-transparent dark:from-neutral-300 dark:via-neutral-300/90 dark:to-neutral-300/70 md:w-fit md:text-left"
+        className="w-fit bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-900/70 bg-clip-text text-4xl font-semibold text-transparent dark:from-neutral-300 dark:via-neutral-300/90 dark:to-neutral-300/70"
       >
         {text}
       </h1>
