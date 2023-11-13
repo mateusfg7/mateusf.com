@@ -1,5 +1,3 @@
-export const revalidate = 86400 // 24h
-
 export default function AboutLayout({
   children
 }: {
