@@ -76,7 +76,7 @@ type TopArtistsBody = {
 
 export async function getLastFmTopArtists() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=3month`,
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`,
     fetchInit
   )
 
@@ -104,7 +104,7 @@ type TopTracksBody = {
 
 export async function getLastFmTopTracks() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=3month`,
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`,
     fetchInit
   )
 

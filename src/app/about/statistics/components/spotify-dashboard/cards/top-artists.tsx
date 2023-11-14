@@ -26,7 +26,7 @@ export async function TopArtists() {
           <UserList weight="duotone" />
         </span>
         <span className="text-xs text-neutral-500 dark:text-neutral-700">
-          From last 3 months
+          From last 6 months
         </span>
       </div>
 
