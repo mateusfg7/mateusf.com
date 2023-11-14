@@ -1,3 +1,10 @@
+## [8.8.1](https://github.com/mateusfg7/mateusf.com/compare/8.8.0...8.8.1) (2023-11-14)
+
+
+### Features
+
+* **api:** increase period of spotify quest data ([f2e7db2](https://github.com/mateusfg7/mateusf.com/commit/f2e7db2646134aa96fe4868c1ec77744904223ed))
+
 ## [8.8.0](https://github.com/mateusfg7/mateusf.com/compare/8.7.2...8.8.0) (2023-11-09)
 
 
