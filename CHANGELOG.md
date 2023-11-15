@@ -1,3 +1,10 @@
+## [8.8.2](https://github.com/mateusfg7/mateusf.com/compare/8.8.1...8.8.2) (2023-11-15)
+
+
+### Features
+
+* **ui:** remove `initOptions` from API fetch functions ([8ab3e49](https://github.com/mateusfg7/mateusf.com/commit/8ab3e4928a30ff40a20b1cca6c924af4efffb9ff))
+
 ## [8.8.1](https://github.com/mateusfg7/mateusf.com/compare/8.8.0...8.8.1) (2023-11-14)
 
 
