@@ -1,11 +1,5 @@
 import { ApiError } from '@/shared/errors/api-error'
 
-const fetchInit: RequestInit = {
-  next: {
-    revalidate: 3600 // 1h
-  }
-}
-
 export type Track = {
   name: string
   url: string
@@ -38,8 +32,7 @@ type RecentTracksBody = {
 
 export async function getLastFmRecentTracks() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`,
-    fetchInit
+    `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
   )
 
   if (!lastFmApiRequest.ok) {
@@ -76,8 +69,7 @@ type TopArtistsBody = {
 
 export async function getLastFmTopArtists() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`,
-    fetchInit
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`
   )
 
   if (!lastFmApiRequest.ok) {
@@ -104,8 +96,7 @@ type TopTracksBody = {
 
 export async function getLastFmTopTracks() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`,
-    fetchInit
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`
   )
 
   if (!lastFmApiRequest.ok) {
@@ -132,8 +123,7 @@ type User = {
 
 export async function getLastFmUserInfo() {
   const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`,
-    fetchInit
+    `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
   )
 
   if (!lastFmApiRequest.ok) {

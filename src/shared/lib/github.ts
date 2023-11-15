@@ -1,11 +1,5 @@
 import { ApiError } from '@/shared/errors/api-error'
 
-const fetchInit: RequestInit = {
-  next: {
-    revalidate: 3600 // 1h
-  }
-}
-
 type User = {
   followers: number
   public_repos: number
@@ -13,8 +7,7 @@ type User = {
 
 export async function getGithubUserData() {
   const githubUserRequest = await fetch(
-    'https://api.github.com/users/mateusfg7',
-    fetchInit
+    'https://api.github.com/users/mateusfg7'
   )
 
   if (!githubUserRequest.ok) {
@@ -33,8 +26,7 @@ export async function getGithubUserData() {
 
 export async function getGithubCommits() {
   const githubApiRequest = await fetch(
-    'https://api.github.com/search/commits?q=author:mateusfg7',
-    fetchInit
+    'https://api.github.com/search/commits?q=author:mateusfg7'
   )
 
   if (!githubApiRequest.ok) {
@@ -68,8 +60,7 @@ export async function getGithubFollowers() {
 
   for (let index = 1; index <= numberOfPages; index++) {
     const githubFollowersRequest = await fetch(
-      `https://api.github.com/users/mateusfg7/followers?per_page=100&page=${index}`,
-      fetchInit
+      `https://api.github.com/users/mateusfg7/followers?per_page=100&page=${index}`
     )
 
     if (!githubFollowersRequest.ok) {
@@ -104,8 +95,7 @@ export async function getGithubRepositories() {
 
   for (let index = 1; index <= numberOfPages; index++) {
     const githubRepositoriesRequest = await fetch(
-      `https://api.github.com/users/mateusfg7/repos?per_page=100&page=${index}`,
-      fetchInit
+      `https://api.github.com/users/mateusfg7/repos?per_page=100&page=${index}`
     )
 
     if (!githubRepositoriesRequest.ok) {

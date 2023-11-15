@@ -12,10 +12,25 @@ export const metadata: Metadata = {
   keywords: ['about', 'statistics', 'data']
 }
 
+export const revalidate = 3600
+
+function padZero(n: number) {
+  if (n < 10) return `0${n}`
+  else return n
+}
+
 export default function Page() {
+  const date = new Date()
+  const calendar = `${padZero(date.getDate())}/${padZero(
+    date.getMonth()
+  )}/${padZero(date.getFullYear())}`
+  const timestamp = `${padZero(date.getHours())}:${padZero(
+    date.getMinutes()
+  )}:${padZero(date.getSeconds())}`
+
   return (
     <div className="content-container m-auto space-y-16">
-      <Title text="Statistics" />
+      <Title text="Statistics" description={`${calendar} ${timestamp}`} />
       <div className="space-y-5">
         <div className="flex w-full items-center justify-center gap-2 text-3xl font-semibold text-[#333] dark:text-[#f5f5f5] md:justify-start">
           <h2>Github</h2>
