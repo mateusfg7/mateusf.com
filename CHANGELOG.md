@@ -1,3 +1,10 @@
+## [8.8.3](https://github.com/mateusfg7/mateusf.com/compare/8.8.2...8.8.3) (2023-11-16)
+
+
+### Performance Improvements
+
+* add `revalidate` config on `/about` page ([188ae02](https://github.com/mateusfg7/mateusf.com/commit/188ae025732a6cbf26b2ba68f799a4b58b198465))
+
 ## [8.8.2](https://github.com/mateusfg7/mateusf.com/compare/8.8.1...8.8.2) (2023-11-15)
 
 
