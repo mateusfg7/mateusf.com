@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   keywords: ['about', 'social', 'links', 'knowledge']
 }
 
+export const revalidate = 3600 // 1h
+
 export default function Page() {
   return (
     <div className="content-container m-auto space-y-32">
