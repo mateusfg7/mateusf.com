@@ -1,3 +1,10 @@
+## [8.8.4](https://github.com/mateusfg7/mateusf.com/compare/8.8.3...8.8.4) (2023-11-20)
+
+
+### Features
+
+* **ui:** render statistics timestamp on client ([3c6d109](https://github.com/mateusfg7/mateusf.com/commit/3c6d109d815ccebb1ee36f13262298ded84191df))
+
 ## [8.8.3](https://github.com/mateusfg7/mateusf.com/compare/8.8.2...8.8.3) (2023-11-16)
 
 
