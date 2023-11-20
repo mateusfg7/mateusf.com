@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 
 interface Props extends ComponentProps<'h1'> {
   text: string
-  description?: string
+  description?: string | React.ReactNode
 }
 
 export function Title({ text, description, ...props }: Props) {
