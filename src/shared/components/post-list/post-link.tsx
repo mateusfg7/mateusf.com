@@ -17,7 +17,7 @@ export function PostLink({ post, hideYear = false }: Props) {
 
   if (post.status === 'planned') {
     return (
-      <section className="group cursor-pointer space-y-2">
+      <section className="group cursor-pointer space-y-1">
         <div className="flex items-center justify-between gap-2 md:justify-start">
           <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500">
             {post.title}
@@ -59,7 +59,7 @@ export function PostLink({ post, hideYear = false }: Props) {
         href={`/blog/post/${post.id}`}
         className="group flex flex-col justify-between gap-1 md:flex-row md:gap-3"
       >
-        <section className="space-y-1">
+        <section>
           <div className="flex items-center justify-between gap-2 md:justify-start">
             <h2 className="text-xl font-bold text-neutral-700 group-hover:text-blue-700 group-active:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500 group-active:dark:text-blue-500">
               {post.title}
