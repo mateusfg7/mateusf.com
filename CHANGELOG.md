@@ -1,3 +1,11 @@
+## [8.8.5](https://github.com/mateusfg7/mateusf.com/compare/8.8.4...8.8.5) (2023-11-23)
+
+
+### Features
+
+* **ui:** add rust core tech on projects page ([1c98597](https://github.com/mateusfg7/mateusf.com/commit/1c98597992005861707c6d6e2f58c862ba998455))
+* **ui:** small improvements on blog styles ([a1ec23d](https://github.com/mateusfg7/mateusf.com/commit/a1ec23d50a19cb7e00587e1cb1a81eb7b40c4817))
+
 ## [8.8.4](https://github.com/mateusfg7/mateusf.com/compare/8.8.3...8.8.4) (2023-11-20)
 
 
