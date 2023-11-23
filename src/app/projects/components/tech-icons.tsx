@@ -14,7 +14,8 @@ import {
   SiDeno,
   SiPostgresql,
   SiPython,
-  SiSvelte
+  SiSvelte,
+  SiRust
 } from 'react-icons/si'
 
 export const techIcons = {
@@ -46,5 +47,6 @@ export const techIcons = {
     <SiPostgresql className="hover:text-[#4169E1]" title="PostgreSQL" />
   ),
   java: () => <FaJava className="hover:text-[#f89820]" title="Java" />,
-  python: () => <SiPython className="hover:text-[#3776AB]" title="Python" />
+  python: () => <SiPython className="hover:text-[#3776AB]" title="Python" />,
+  rust: () => <SiRust className="hover:text-[#F74C00]" title="Rust" />
 }
