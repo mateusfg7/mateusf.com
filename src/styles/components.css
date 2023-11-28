@@ -279,4 +279,41 @@
       }
     }
   }
+
+  .til-content {
+    nav {
+      &.toc {
+        @apply hidden;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply m-0;
+    }
+
+    h2 {
+      @apply pb-1 text-2xl underline-offset-2;
+    }
+    h3 {
+      @apply pb-0 text-xl underline-offset-2;
+    }
+    h4 {
+      @apply text-xl;
+    }
+    h5 {
+      @apply text-lg;
+    }
+    h6 {
+      @apply text-base;
+    }
+
+    p {
+      @apply my-4 border-red-600 last:mb-0 [&:nth-child(2)]:mt-0;
+    }
+  }
 }
