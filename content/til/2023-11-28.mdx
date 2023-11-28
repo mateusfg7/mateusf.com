@@ -1,0 +1,108 @@
+---
+title: 'Tests on a React/Next.js project'
+description: 'How to test React components and some tips for mock zustand stores and next modules'
+date: '2023-11-28'
+tags: 'react,next.js,tests,jest,zustand,react-testing-library,mock,next/navigation'
+---
+
+# Mock "next/navigation" with Jest
+
+**Versions:**
+**Next.js**: 14.0.3
+
+When you try to test a component or hook that uses some function from "next/navigation" module (like `useRouter`, `useSearchParams`, `useSearchParams`, etc.), you may come across the error:
+
+```console
+● Test suite failed to run
+
+  invariant expected app router to be mounted
+
+    5 |
+    6 | export default function useQueryState(key: string, defaultValue: string = '') {
+  > 7 |   const router = useRouter()
+      |                           ^
+    8 |   const searchParams = useSearchParams()
+    9 |   const pathname = usePathname()
+   10 |
+```
+
+This happening because the "next/navigation" just works when app router was monted, to solve this, you need to mock the entire module. Put this before all your `describe`s and `it`/`test`s:
+
+```typescript
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(() => ({
+    replace: jest.fn()
+  })),
+  useSearchParams: jest.fn(() => ({
+    get: jest.fn()
+  })),
+  usePathname: jest.fn()
+}))
+```
+
+referencie: https://github.com/vercel/next.js/discussions/48937
+
+# Mock modules inside test
+
+Sometimes you are testing a component and need to mock a module (in this case I needed to mock a zustand store), but with the exemple of "next/navigation" mock, you are mocking the module for entire test suit on the file that you declare the `jest.mock()`. But, if you want to mock a specific implementation for each test? So first, with need to declare the module mock, without páss the implementation function:
+
+_in this case we are mocking `'../../stores/sounds-state-store'` module_
+
+```typescript
+jest.mock('../../stores/sounds-state-store')
+```
+
+And, inside each test, we will use the `jest.Mock.mockImplementation()` function to mock the implementation of module inside `it`/`test` scope:
+
+_the store we want to mock is `useSoundsStateStore`, from `'../../stores/sounds-state-store'`_
+
+```typescript
+useSoundsStateStore.mockImplementation(
+  () =>
+    [{ active: true, id: 'd4ad48e', loaded: true, volume: 1 }] as SoundState[]
+)
+```
+
+Full code:
+
+```typescript showLineNumbers /useSoundsStateStore/ {4,10-15}
+// other imports...
+import { SoundState, useSoundsStateStore } from '../../stores/sounds-state-store'
+
+jest.mock('../../stores/sounds-state-store')
+
+describe('Clear Button', () => {
+  // tests...
+
+  it('should not be disabled', async () => {
+    ;(useSoundsStateStore as unknown as jest.Mock).mockImplementation(
+      () =>
+        [
+          { active: true, id: 'd4ad48e', loaded: true, volume: 1 }
+        ] as SoundState[]
+    )
+
+    render(<ClearButton />)
+
+    const button = await screen.findByRole('button', { name: /clear/i })
+
+    expect(button.getAttribute('disabled')).toBeNull()
+  })
+
+  // tests...
+})
+```
+
+Note that we use:
+
+```typescript /;(useSoundsStateStore as unknown as jest.Mock)/
+;(useSoundsStateStore as unknown as jest.Mock).mockImplementation()
+```
+
+instead of:
+
+```typescript /useSoundsStateStore/
+useSoundsStateStore.mockImplementation()
+```
+
+Because it's a typescript project, and we need to tell the ts compiler that `useSoundsStateStore` have `jest.Mock` functions on this scope.
