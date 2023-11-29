@@ -1,3 +1,24 @@
+## [8.9.0](https://github.com/mateusfg7/mateusf.com/compare/8.8.5...8.9.0) (2023-11-29)
+
+
+### Features
+
+* **content:** create `Til` definition ([1310cbc](https://github.com/mateusfg7/mateusf.com/commit/1310cbc8864c3e6a45ecbabb7c9ec0a322cf8f6c))
+* **content:** include `Til` on contentlayer config ([97698f4](https://github.com/mateusfg7/mateusf.com/commit/97698f40fee08c3e42fbcd7b9aff7bdc1a4813f9))
+* **seo:** add metadata on `/about/til/` page ([aec294c](https://github.com/mateusfg7/mateusf.com/commit/aec294c45cc7fe14f1a0fed56d955499b5a31ae5))
+* **ui:** add "Today I Learn" page to kbar menu ([17b9e82](https://github.com/mateusfg7/mateusf.com/commit/17b9e8280c7aa1dffd03743f5b445b26a449baa3))
+* **ui:** add icon before title on `PostLink` component ([ecbf8b6](https://github.com/mateusfg7/mateusf.com/commit/ecbf8b6762dba323e1f6c3bfc529091fd8aab04a)), closes [#703](https://github.com/mateusfg7/mateusf.com/issues/703)
+* **ui:** add top links on blog page ([6186f10](https://github.com/mateusfg7/mateusf.com/commit/6186f1078152c1e99743b32e4114f3c1f29abc90))
+* **ui:** broken links on kbar component ([1841b87](https://github.com/mateusfg7/mateusf.com/commit/1841b87c9033d72ee34b36e832b35264df3a053a))
+* **ui:** create `/blog/til` page ([ef0f4a5](https://github.com/mateusfg7/mateusf.com/commit/ef0f4a563b4286482010479d600bf30e509dc28a))
+* **ui:** replace "|" with "•" separator on page title ([c6edf29](https://github.com/mateusfg7/mateusf.com/commit/c6edf29a1b8326dd15483f9ee1a9a3c3741a3b01)), closes [#705](https://github.com/mateusfg7/mateusf.com/issues/705)
+
+
+### Bug Fixes
+
+* **seo:** define `/blog` metadata on `page.tsx` instead of `layout.tsx` ([a8c2626](https://github.com/mateusfg7/mateusf.com/commit/a8c2626bd1f2469df2be3dd289b2991f6d935e78))
+* **ui:** sort T.I.Ls by date and fix content width ([930b649](https://github.com/mateusfg7/mateusf.com/commit/930b649a5da8b68cf9e8df29f7ddec780f636844))
+
 ## [8.8.5](https://github.com/mateusfg7/mateusf.com/compare/8.8.4...8.8.5) (2023-11-23)
 
 
