@@ -28,7 +28,8 @@ import {
   SquaresFour,
   Files,
   Books,
-  ChartPieSlice
+  ChartPieSlice,
+  Notebook
 } from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -156,6 +157,15 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       keywords: 'posts writing',
       icon: <Note weight="duotone" />,
       perform: () => push('/')
+    },
+    {
+      id: 'til',
+      name: 'Today I Learned',
+      shortcut: ['b', 'i'],
+      section: 'Blog',
+      keywords: 'writing learning progress skills',
+      icon: <Notebook weight="duotone" />,
+      perform: () => push('/blog/til')
     },
     {
       id: 'categories',

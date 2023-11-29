@@ -1,0 +1,81 @@
+---
+title: 'Mock module inside test'
+description: 'How to mock module implementation inside a test with jest'
+date: '2023-11-28'
+tags:
+  - 'react'
+  - 'next.js'
+  - 'tests'
+  - 'jest'
+  - 'zustand'
+  - 'react-testing-library'
+  - 'mock'
+---
+
+Sometimes you are testing a component and need to mock a module (in this case I needed to mock a zustand store), but with the exemple of "next/navigation" mock, you are mocking the module for entire test suit on the file that you declare the `jest.mock()`. But, if you want to mock a specific implementation for each test? So first, with need to declare the module mock, without pass the implementation function:
+
+```typescript
+jest.mock('../../stores/sounds-state-store')
+```
+
+In this case we are mocking `"../../stores/sounds-state-store"` module
+
+And, inside each test, we will use the `jest.Mock.mockImplementation()` function to mock the implementation of module inside `it`/`test` scope:
+
+_the store we want to mock is `useSoundsStateStore`, from `'../../stores/sounds-state-store'`_
+
+```typescript
+useSoundsStateStore.mockImplementation(
+  () =>
+    [{ active: true, id: 'd4ad48e', loaded: true, volume: 1 }] as SoundState[]
+)
+```
+
+Full code:
+
+```typescript showLineNumbers /useSoundsStateStore/ {4,10-15}
+// other imports...
+import { SoundState, useSoundsStateStore } from '../../stores/sounds-state-store'
+
+jest.mock('../../stores/sounds-state-store')
+
+describe('Clear Button', () => {
+  // tests...
+
+  it('should not be disabled', async () => {
+    ;(useSoundsStateStore as unknown as jest.Mock).mockImplementation(
+      () =>
+        [
+          { active: true, id: 'd4ad48e', loaded: true, volume: 1 }
+        ] as SoundState[]
+    )
+
+    render(<ClearButton />)
+
+    const button = await screen.findByRole('button', { name: /clear/i })
+
+    expect(button.getAttribute('disabled')).toBeNull()
+  })
+
+  // tests...
+})
+```
+
+Note that we use:
+
+```typescript /;(useSoundsStateStore as unknown as jest.Mock)/
+;(useSoundsStateStore as unknown as jest.Mock).mockImplementation()
+```
+
+instead of:
+
+```typescript /useSoundsStateStore/
+useSoundsStateStore.mockImplementation()
+```
+
+Because it's a typescript project, and we need to tell the ts compiler that `useSoundsStateStore` have `jest.Mock` functions on this scope.
+
+references:
+
+- [jest.mock() doesn't work inside tests, only outside tests](https://stackoverflow.com/questions/70566676/jest-mock-doesnt-work-inside-tests-only-outside-tests)
+- [jest.mock factory doesn't work inside a test](https://github.com/jestjs/jest/issues/2582)

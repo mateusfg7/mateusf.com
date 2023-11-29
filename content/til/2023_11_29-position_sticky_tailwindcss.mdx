@@ -1,0 +1,31 @@
+---
+title: 'Position Sticky'
+description: 'Use position sticky with tailwindcss'
+date: '2023-11-29'
+tags:
+  - 'tailwindcss'
+  - 'css'
+  - 'ui'
+---
+
+We can use `sticky` class when using tailwind to make an element fixed on screen while the parent element is visible.
+
+Code:
+```html
+<div class="relative">
+  <h1 class="sticky top-0">Element</h1>
+</div>
+```
+
+CSS Equivalent:
+```css
+.parent-element {
+  position: relative;
+}
+.element {
+  position: sticky;
+  top: 0;
+}
+```
+
+Visual example: https://www.w3schools.com/howto/howto_css_sticky_element.asp
