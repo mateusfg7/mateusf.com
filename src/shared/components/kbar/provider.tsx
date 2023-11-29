@@ -156,7 +156,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       section: 'Blog',
       keywords: 'posts writing',
       icon: <Note weight="duotone" />,
-      perform: () => push('/')
+      perform: () => push('/blog')
     },
     {
       id: 'til',
@@ -191,7 +191,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       section: 'Blog',
       keywords: 'feed rss atom',
       icon: <Rss weight="duotone" />,
-      perform: () => push('/rss')
+      perform: () => push('/blog/feed')
     },
     {
       id: 'search-posts',
