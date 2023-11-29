@@ -1,10 +1,18 @@
-import { allTILs, TIL } from 'contentlayer/generated'
+import { Metadata } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+
+import { allTILs, TIL } from 'contentlayer/generated'
 
 import { Title } from '@/shared/components/title'
 import { Date as DateUI } from '@/shared/components/date'
 
 import 'katex/dist/katex.min.css'
+
+export const metadata: Metadata = {
+  title: 'Today I Learned',
+  description: 'Some notes with things that I learned on last days',
+  keywords: ['learn', 'study', 'skills']
+}
 
 const TILComponent = ({ til }: { til: TIL }) => {
   const MDXContent = useMDXComponent(til.body.code)
