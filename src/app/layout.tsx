@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(config.webserver.host),
   title: {
     default: config.metadata.title,
-    template: `%s | ${config.metadata.title}`
+    template: `%s • ${config.metadata.title}`
   },
   applicationName: config.metadata.title,
   authors: [
