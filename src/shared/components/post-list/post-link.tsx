@@ -1,14 +1,29 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Date } from '@/shared/components/date'
 import { Post } from 'contentlayer/generated'
-import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
+import {
+  CompassTool,
+  ListBullets,
+  NoteBlank,
+  TextAlignLeft
+} from '@/shared/wrappers/phosphor-icons'
+import { Date } from '@/shared/components/date'
 import { CalendarBlank, Clock } from '@/shared/components/icons'
+import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
 interface Props {
   post: Post
   hideYear?: boolean
+}
+
+const TitleIcon = ({ category }: { category: string }) => {
+  if (category === 'How To') return <CompassTool weight="duotone" />
+  if (category === 'Article') return <TextAlignLeft weight="duotone" />
+  if (category === 'Notes') return <NoteBlank weight="duotone" />
+  if (category === 'List') return <ListBullets weight="duotone" />
+
+  return <></>
 }
 
 export function PostLink({ post, hideYear = false }: Props) {
@@ -61,8 +76,9 @@ export function PostLink({ post, hideYear = false }: Props) {
       >
         <section>
           <div className="flex items-center justify-between gap-2 md:justify-start">
-            <h2 className="text-xl font-bold text-neutral-700 group-hover:text-blue-700 group-active:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500 group-active:dark:text-blue-500">
-              {post.title}
+            <h2 className="flex items-center gap-1 text-xl font-bold text-neutral-700 group-hover:text-blue-700 group-active:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500 group-active:dark:text-blue-500">
+              <TitleIcon category={post.category} />
+              <span>{post.title}</span>
             </h2>
             {post.test && <TestBadge />}
             {post.status === 'draft' && !post.test && <DraftBadge />}
