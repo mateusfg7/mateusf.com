@@ -1,4 +1,5 @@
 import React from 'react'
+import { type Metadata } from 'next'
 import Link, { LinkProps } from 'next/link'
 
 import { allPosts } from 'contentlayer/generated'
@@ -12,6 +13,21 @@ import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 
 import { PostList } from '@/shared/components/post-list'
 import { Title } from '@/shared/components/title'
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description:
+    'My personal posts and thoughts about all kind of stuff that I like. Main philosophic and technical text.',
+  keywords: [
+    'blog',
+    'thoughts',
+    'texts',
+    'technical',
+    'tutorials',
+    'posts',
+    'phisolophy'
+  ]
+}
 
 type TopLinkProps = {
   Icon: PhosphorIcon
