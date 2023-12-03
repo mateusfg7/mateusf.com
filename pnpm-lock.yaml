@@ -36,8 +36,8 @@ dependencies:
     specifier: ^0.16.8
     version: 0.16.9
   kbar:
-    specifier: 0.1.0-beta.43
-    version: 0.1.0-beta.43(@types/react@18.2.35)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.1.0-beta.44
+    version: 0.1.0-beta.44(@types/react@18.2.35)(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: 14.0.0
     version: 14.0.0(@opentelemetry/api@1.6.0)(react-dom@18.2.0)(react@18.2.0)
@@ -5450,8 +5450,8 @@ packages:
       commander: 8.3.0
     dev: false
 
-  /kbar@0.1.0-beta.43(@types/react@18.2.35)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MmhhvGuZfmA616X9wuy/iaWCPFmlEi6kGkvce/7GlatWmCSkHZhD8glxUruFUpxSN0HZvW/6e/jvSgpRGnC76w==}
+  /kbar@0.1.0-beta.44(@types/react@18.2.35)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hfstBZn/XYhEEobxA6yhMkgu3yHNqAgHbBM/WavC1GvSEMRAVMZAWZBBrNwJCqknSIwu7nS9jsHORENtlrjU1Q==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
