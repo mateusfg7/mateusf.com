@@ -1,3 +1,10 @@
+## [8.9.1](https://github.com/mateusfg7/mateusf.com/compare/8.9.0...8.9.1) (2023-12-05)
+
+
+### Features
+
+* **ui:** improve blog/til content style ([70edbd9](https://github.com/mateusfg7/mateusf.com/commit/70edbd9b99c96b326b2c54a379076a454d94d73b))
+
 ## [8.9.0](https://github.com/mateusfg7/mateusf.com/compare/8.8.5...8.9.0) (2023-11-29)
 
 
