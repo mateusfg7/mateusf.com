@@ -50,7 +50,7 @@
     "remark-math": "5.1.1",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^11.0.0",
-    "sharp": "^0.32.5",
+    "sharp": "^0.33.0",
     "shiki": "^0.14.0",
     "tailwindcss-animated": "^1.0.1",
     "unified": "^10.1.2",
