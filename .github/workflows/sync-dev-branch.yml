@@ -5,23 +5,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge-to-dev:
+  rebase-to-dev:
+    name: Rebase to dev
     runs-on: ubuntu-latest
-    name: Sync dev branch
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Node
-        uses: actions/setup-node@v1
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
-          node-version: 18
-      - name: Opening pull request
-        id: pull
-        uses: tretuna/sync-branches@main
-        with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          FROM_BRANCH: "main"
-          TO_BRANCH: "dev"
-          PULL_REQUEST_TITLE: "chore(git): merge `main` into `dev` [skip ci]"
-          CONTENT_COMPARISON: true
-          PULL_REQUEST_AUTO_MERGE_METHOD: "merge"
+          ref: 'dev'
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Fetch Main
+        run: git fetch origin main:main
+      - name: Rebase to Main
+        run: "git merge main -m 'chore(git): merge `main` into `dev` [skip ci]' && git push"
+
+
+# chore(git): merge `main` into `dev` [skip ci]
