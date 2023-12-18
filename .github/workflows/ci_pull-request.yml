@@ -12,12 +12,3 @@ jobs:
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
-
-  labeler:
-    name: Labeler
-    runs-on: ubuntu-latest
-    steps:
-      # follows semantic versioning. Lock to different version: v1, v1.5, v1.5.0 or use a commit hash.
-      - uses: fuxingloh/multi-labeler@v2 # v2
-        with:
-          config-path: .github/labeler.yml # optional, default to '.github/labeler.yml'
