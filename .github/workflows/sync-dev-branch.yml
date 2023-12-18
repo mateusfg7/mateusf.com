@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge-to-dev:
+  create-sync-pr:
     runs-on: ubuntu-latest
     name: Sync dev branch
 
@@ -32,10 +32,23 @@ jobs:
           CONTENT_COMPARISON: true
           PULL_REQUEST_AUTO_MERGE_METHOD: "merge"
 
+  # merge-pr:
+  #   runs-on: ubuntu-latest
+  #   name: Merge PR
+  #   needs: create-sync-pr
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Merge PR
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         PULL_REQUEST_NUMBER: ${{needs.create-sync-pr.outputs.PULL_REQUEST_NUMBER}}
+  #       run: gh pr merge $PULL_REQUEST_NUMBER --merge
   add-automerge-label:
     runs-on: ubuntu-latest
     name: Add "automerge" label
-    needs: merge-to-dev
+    needs: create-sync-pr
 
     steps:
       - name: Checkout
@@ -43,5 +56,5 @@ jobs:
       - name: Add "automerge" label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_NUMBER: ${{needs.merge-to-dev.outputs.PULL_REQUEST_NUMBER}}
+          PULL_REQUEST_NUMBER: ${{needs.create-sync-pr.outputs.PULL_REQUEST_NUMBER}}
         run: gh pr edit $PULL_REQUEST_NUMBER --add-label automerge
