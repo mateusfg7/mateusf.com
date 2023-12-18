@@ -20,7 +20,7 @@ jobs:
       - name: Fetch Main
         run: git fetch origin main:main
       - name: Rebase to Main
-        run: "git merge main -m 'chore(git): merge `main` into `dev` [skip ci]' && git push"
+        run: "git merge main -m 'chore(git): merge `main` into `dev` [skip ci]' --allow-unrelated-histories && git push"
 
 
 # chore(git): merge `main` into `dev` [skip ci]
