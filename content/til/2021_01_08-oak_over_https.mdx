@@ -2,13 +2,15 @@
 title: 'Oak Over Https'
 description: 'Integrando Oak com certificados SSL'
 date: '2021-01-08'
-category: How To
-tags: 'ssl, cryptography, secure-internet, back-end, deno'
-author: 'mateusfg7'
-status: 'published'
+tags:
+  - 'ssl'
+  - 'cryptography'
+  - 'secure-internet'
+  - 'back-end'
+  - 'deno'
 ---
 
-## Dependencies
+## Dependências
 
 Primeiro devemos certificar que temos o programa `openssl`
 
@@ -32,7 +34,7 @@ _(debian based)_
 apt-get install openssl
 ```
 
-## Generate Keys
+## Gerar Chaves
 
 Para gerar a chave privada e o certificado rode o comando:
 
@@ -48,7 +50,7 @@ openssl rsa -in keytmp.pem -out key.pem
 
 ja pode excluir o arquivo `keytmp.pem`, ele não será mais necessário.
 
-## Use Oak with Key and Certificate
+## Usar Oak com a chave e o certificado
 
 Para usar Oak com HTTPS devemos passar os atributos `secure`, `certFile` e `keyFile`.
 como o exemplo a seguir:
@@ -62,9 +64,7 @@ await App.listen({
 })
 ```
 
----
-
-## referências
+## Referências
 
 How To Create an HTTPS Server on Localhost using Express: [https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28](https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28) [[_archive_](https://web.archive.org/web/20210920213433/https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28)]
 
