@@ -38,6 +38,8 @@ jobs:
     needs: merge-to-dev
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Add "automerge" label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
