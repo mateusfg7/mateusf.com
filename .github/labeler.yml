@@ -1,7 +1,0 @@
-version: v1
-
-labels:
-  - label: "automerge"
-    matcher:
-      # Matcher will match on any 8 matchers
-      title: "^chore(git):.*"
