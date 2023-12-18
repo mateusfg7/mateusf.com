@@ -1,18 +1,17 @@
 ---
 title: 'Enable Locales on GNOME'
-date: '2022-08-10'
 description: 'Enable some locales to use when they not appear on "Region & Language" menu'
-category: 'How To'
-tags: 'desktop, how-to, languages, config, gnome'
-author: 'mateusfg7'
-status: 'published'
+date: '2022-08-10'
+tags:
+  - 'desktop'
+  - 'how-to'
+  - 'languages'
+  - 'config'
+  - 'gnome'
 ---
-
-# Introduction
 
 When we go to Region & Language menu to change locale (language and units) of a newly installed system with GNOME, may not have the language you are looking for. For the most cases is a question of enable it on `/etc/locale.gen`.
 
-# Enable Locale
 
 For this, just edit the file `/etc/locale.gen` with root privileges:
 
@@ -42,8 +41,6 @@ sudo locale-gen
 
 That's it! Just go to Region & Language and select your language.
 
----
-
-# Referencies
+**referencies:**
 
 Gnome (Debian 11): How to install en*DK formats (date, numbers, units)?: https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units [[\_archive*](https://web.archive.org/web/20220810182103/https://unix.stackexchange.com/questions/679315/gnome-debian-11-how-to-install-en-dk-formats-date-numbers-units)]
