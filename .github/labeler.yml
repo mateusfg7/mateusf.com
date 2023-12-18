@@ -1,0 +1,8 @@
+version: v1
+
+labels:
+  - label: "automerge"
+    sync: true # remove label if match failed, default: false (pull_request/issue only)
+    matcher:
+      # Matcher will match on any 8 matchers
+      title: "chore(git): merge `main` into `dev` [skip ci]"
