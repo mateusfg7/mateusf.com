@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Merge PR
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW }}
           PULL_REQUEST_NUMBER: ${{needs.create-sync-pr.outputs.PULL_REQUEST_NUMBER}}
         run: gh pr merge $PULL_REQUEST_NUMBER --merge
   # add-automerge-label:
