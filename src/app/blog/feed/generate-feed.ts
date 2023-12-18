@@ -23,7 +23,7 @@ export function generateFeed() {
     feedLinks: {
       rss2: `${config.webserver.host}/blog/feed`
     },
-    docs: 'https://github.com/mateusfg7/mfg-b',
+    docs: 'https://github.com/mateusfg7/mateusf.com',
     generator: 'Feed for Node.js',
     author: {
       name: 'Mateus Felipe Gonçalves',

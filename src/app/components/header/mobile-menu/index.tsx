@@ -114,13 +114,13 @@ export function MobileMenu() {
                 title="License"
                 icon={File}
                 rel="license"
-                href="https://github.com/mateusfg7/mfg-b/blob/main/LICENSE"
+                href="https://github.com/mateusfg7/mateusf.com/blob/main/LICENSE"
               />
               <OutLink
                 title="Github"
                 icon={GithubLogo}
                 rel="external"
-                href="https://github.com/mateusfg7/mfg-b"
+                href="https://github.com/mateusfg7/mateusf.com"
               />
               <OutLink
                 title="RSS"

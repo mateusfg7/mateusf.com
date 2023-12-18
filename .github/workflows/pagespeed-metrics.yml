@@ -23,5 +23,5 @@ jobs:
 
   call-sync-dev:
     name: Call sync-dev-branch.yml
-    uses: mateusfg7/mfg-b/.github/workflows/sync-dev-branch.yml@main
+    uses: mateusfg7/mateusf.com/.github/workflows/sync-dev-branch.yml@main
     needs: generate-metrics
