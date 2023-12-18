@@ -5,6 +5,7 @@ import { allTILs, TIL } from 'contentlayer/generated'
 
 import { Title } from '@/shared/components/title'
 import { Date as DateUI } from '@/shared/components/date'
+import { slug } from '@/shared/lib/slug'
 
 import 'katex/dist/katex.min.css'
 
@@ -37,7 +38,8 @@ const TILComponent = ({ til }: { til: TIL }) => {
           ))}
         </div>
       </div>
-      <div className="post-content til-content md:w-2/3">
+      <div className="post-content til-content relative md:w-2/3">
+        <span className="absolute -top-24" id={slug(til.title)} />
         <MDXContent />
       </div>
     </div>
