@@ -44,7 +44,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_NUMBER: ${{needs.create-sync-pr.outputs.PULL_REQUEST_NUMBER}}
-        run: gh pr merge $PULL_REQUEST_NUMBER
+        run: gh pr merge $PULL_REQUEST_NUMBER --merge
   # add-automerge-label:
   #   runs-on: ubuntu-latest
   #   name: Add "automerge" label
