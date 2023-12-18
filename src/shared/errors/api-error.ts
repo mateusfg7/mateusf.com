@@ -1,4 +1,4 @@
-export const ApiError = function ({
+export function ApiError({
   message,
   url,
   status
