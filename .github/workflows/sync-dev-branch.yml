@@ -22,6 +22,6 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           FROM_BRANCH: "main"
           TO_BRANCH: "dev"
-          PULL_REQUEST_TITLE: "chore(git): merge `main` into `dev` [skip ci]"
+          PULL_REQUEST_TITLE: "chore(git): merge `main` into `dev`"
           CONTENT_COMPARISON: true
           PULL_REQUEST_AUTO_MERGE_METHOD: "merge"
