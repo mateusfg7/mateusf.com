@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { KBarProvider, Action } from 'kbar'
 import { useTheme } from 'next-themes'
-import { allPosts, allProjects } from 'contentlayer/generated'
+import { allPosts, allProjects, allTILs } from 'contentlayer/generated'
 import {
   Article,
   Briefcase,
@@ -147,6 +147,19 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     section: 'Blog',
     perform: () => push(`/blog/post/${id}`)
   }))
+  const tilsAsAction: Action[] = allTILs.map(til => ({
+    id: slug(til.title),
+    name: til.title,
+    icon: <Notebook weight="duotone" />,
+    keywords: til.tags
+      .map(tag => tag.trim())
+      .toString()
+      .replaceAll(',', ' '),
+    parent: 'search-posts',
+    subtitle: til.description,
+    section: 'Blog',
+    perform: () => push(`/blog/til#${slug(til.title)}`)
+  }))
 
   const blogActions: Action[] = [
     {
@@ -201,7 +214,8 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b', 's'],
       icon: <MagnifyingGlass weight="duotone" />
     },
-    ...postsAsAction
+    ...postsAsAction,
+    ...tilsAsAction
   ]
 
   const personalLinksActions: Action[] = [
