@@ -11,7 +11,8 @@ permissions:
 jobs:
   call-lint:
     name: Call lint.yml
-    uses: mateusfg7/mfg-b/.github/workflows/lint.yml@main
+    uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
+
   labeler:
     name: Labeler
     runs-on: ubuntu-latest

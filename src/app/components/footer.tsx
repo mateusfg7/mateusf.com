@@ -22,7 +22,7 @@ export function Footer() {
       <div className="content-container m-auto flex items-center leading-none md:justify-between">
         <div className="hidden gap-4 text-neutral-500 dark:text-neutral-400 md:flex">
           <Link
-            href="https://github.com/mateusfg7/mfg-b/blob/main/LICENSE"
+            href="https://github.com/mateusfg7/mateusf.com/blob/main/LICENSE"
             rel="license"
           >
             <span>License</span>
@@ -36,7 +36,7 @@ export function Footer() {
             <span>RSS</span>
             <ArrowIcon />
           </Link>
-          <Link href="https://github.com/mateusfg7/mfg-b" rel="external">
+          <Link href="https://github.com/mateusfg7/mateusf.com" rel="external">
             <span>Github</span>
             <ArrowIcon />
           </Link>
