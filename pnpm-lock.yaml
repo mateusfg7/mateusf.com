@@ -116,6 +116,9 @@ dependencies:
   shiki:
     specifier: ^0.14.0
     version: 0.14.5
+  shuffle-array:
+    specifier: ^1.0.1
+    version: 1.0.1
   tailwindcss-animated:
     specifier: ^1.0.1
     version: 1.0.1(tailwindcss@3.3.5)
@@ -154,6 +157,9 @@ devDependencies:
   '@types/semver':
     specifier: ^7.5.0
     version: 7.5.4
+  '@types/shuffle-array':
+    specifier: ^1.0.5
+    version: 1.0.5
   autoprefixer:
     specifier: ^10.4.13
     version: 10.4.16(postcss@8.4.31)
@@ -2389,6 +2395,10 @@ packages:
 
   /@types/semver@7.5.4:
     resolution: {integrity: sha512-MMzuxN3GdFwskAnb6fz0orFvhfqi752yjaXylr0Rp4oDg5H0Zn1IuyRhDVvYOwAXoJirx2xuS16I3WjxnAIHiQ==}
+    dev: true
+
+  /@types/shuffle-array@1.0.5:
+    resolution: {integrity: sha512-mwqFRdqxNpraOhjjW/50Ejs7Z025pB7tnf/yM2tNZ6DRuZLGOd1UWX0u9a+aK+xBQFtLs7YStVpumGoNm2Ta/g==}
     dev: true
 
   /@types/trusted-types@2.0.5:
@@ -8016,6 +8026,10 @@ packages:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: false
+
+  /shuffle-array@1.0.1:
+    resolution: {integrity: sha512-0TFRU8zVQaLatWKr0/czo19VyPNgb/a3sBc1GAjVfivfzEGaS54vueNgtAu/8/pW7EM/VF5fwq9zgpLdGyRmVw==}
     dev: false
 
   /side-channel@1.0.4:
