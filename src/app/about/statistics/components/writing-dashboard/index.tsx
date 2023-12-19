@@ -5,15 +5,15 @@ import { TILs } from './cards/tils'
 
 export function WritingDashboard() {
   return (
-    <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
       <Posts />
       <TILs />
 
-      <div className="col-span-2 row-span-3">
+      <div className="col-span-2 md:row-span-3">
         <TagCloud />
       </div>
 
-      <div className="col-span-2 row-span-2">
+      <div className="col-span-2 md:row-span-2">
         <MostUsedCategories />
       </div>
     </div>
