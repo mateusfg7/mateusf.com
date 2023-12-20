@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes } from 'react'
-import { ArrowUpRight } from '@/shared/wrappers/phosphor-icons'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
 export function Footer() {
   const Link = ({
