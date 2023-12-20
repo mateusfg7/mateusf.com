@@ -1,22 +1,19 @@
-import { AnchorHTMLAttributes } from 'react'
+import { ComponentProps } from 'react'
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
+const Link = ({ children, ...props }: ComponentProps<'a'>) => (
+  <a
+    {...props}
+    className="inline-flex items-end gap-px hover:text-neutral-900 active:text-neutral-900 hover:dark:text-neutral-200 active:dark:text-neutral-200"
+    target="_blank"
+  >
+    {children}
+  </a>
+)
+
+const ArrowIcon = () => <ArrowUpRight className="text-xs" />
+
 export function Footer() {
-  const Link = ({
-    children,
-    ...props
-  }: AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      {...props}
-      className="inline-flex items-end gap-px hover:text-neutral-900 active:text-neutral-900 hover:dark:text-neutral-200 active:dark:text-neutral-200"
-      target="_blank"
-    >
-      {children}
-    </a>
-  )
-
-  const ArrowIcon = () => <ArrowUpRight className="text-xs" />
-
   return (
     <div className="border-t border-neutral-300/30 py-11 dark:border-neutral-800/20">
       <div className="content-container m-auto flex items-center leading-none md:justify-between">
