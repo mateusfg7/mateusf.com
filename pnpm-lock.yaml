@@ -24,8 +24,8 @@ dependencies:
     specifier: 0.3.4
     version: 0.3.4(esbuild@0.19.5)
   date-fns:
-    specifier: 2.30.0
-    version: 2.30.0
+    specifier: 3.0.0
+    version: 3.0.0
   feed:
     specifier: ^4.2.2
     version: 4.2.2
@@ -3361,11 +3361,8 @@ packages:
     engines: {node: '>= 12'}
     dev: false
 
-  /date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
-    dependencies:
-      '@babel/runtime': 7.23.2
+  /date-fns@3.0.0:
+    resolution: {integrity: sha512-xjDz3rNN9jp+Lh3P/4MeY4E5HkaRnEnrJCcrdRZnKdn42gJlIe6hwrrwVXePRwVR2kh1UcMnz00erYBnHF8PFA==}
     dev: false
 
   /debug@3.2.7:
