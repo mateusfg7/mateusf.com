@@ -47,7 +47,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Home',
       shortcut: ['n', 'h'],
       keywords: 'homepage main',
-      icon: <House weight="duotone" />,
+      icon: <House size="1em" weight="duotone" />,
       perform: () => push('/')
     },
     {
@@ -55,7 +55,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'About',
       shortcut: ['n', 'a'],
       keywords: 'about me user information info',
-      icon: <User weight="duotone" />,
+      icon: <User size="1em" weight="duotone" />,
       perform: () => push('/about')
     },
     {
@@ -63,7 +63,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Statistics',
       shortcut: ['n', 's'],
       keywords: 'statistics github spotify data',
-      icon: <ChartPieSlice weight="duotone" />,
+      icon: <ChartPieSlice size="1em" weight="duotone" />,
       perform: () => push('/about/statistics')
     }
   ]
@@ -74,7 +74,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     subtitle: project.description,
     keywords: [...project.tags, project.core_techs].toString(),
     section: 'Projects',
-    icon: <SquaresFour weight="duotone" />,
+    icon: <SquaresFour size="1em" weight="duotone" />,
     parent: 'search-projects',
     get perform() {
       if (project.website) return () => window.open(project.website, '_blank')
@@ -91,7 +91,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['p'],
       section: 'Projects',
       keywords: 'works projects tools apps',
-      icon: <Briefcase weight="duotone" />,
+      icon: <Briefcase size="1em" weight="duotone" />,
       perform: () => push('/projects')
     },
     {
@@ -100,7 +100,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['p', 's'],
       section: 'Projects',
       keywords: 'works projects tools apps',
-      icon: <MagnifyingGlass weight="duotone" />
+      icon: <MagnifyingGlass size="1em" weight="duotone" />
     },
     ...projectsAsActions
   ]
@@ -110,7 +110,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     .map(category => ({
       id: slug(category),
       name: category,
-      icon: <Folder weight="duotone" />,
+      icon: <Folder size="1em" weight="duotone" />,
       parent: 'categories',
       section: 'Blog',
       perform: () => push(`/blog/categories/${slug(category)}`)
@@ -120,23 +120,24 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     .map(tag => ({
       id: slug(tag),
       name: tag,
-      icon: <Tag weight="duotone" />,
+      icon: <Tag size="1em" weight="duotone" />,
       parent: 'tags',
       section: 'Blog',
       perform: () => push(`/blog/tag/${slug(tag)}`)
     }))
 
   const getIconByStatus = (status: 'published' | 'draft' | 'planned') => {
-    if (status === 'published') return <Article weight="duotone" />
-    if (status === 'draft') return <FileDashed weight="duotone" />
-    if (status === 'planned') return <PencilSimpleLine weight="duotone" />
+    if (status === 'published') return <Article size="1em" weight="duotone" />
+    if (status === 'draft') return <FileDashed size="1em" weight="duotone" />
+    if (status === 'planned')
+      return <PencilSimpleLine size="1em" weight="duotone" />
   }
   const postsAsAction: Action[] = getSortedPosts(
     allPosts.filter(post => post.status !== 'planned')
   ).map(({ id, title, status, test, tags, description }) => ({
     id,
     name: title,
-    icon: test ? <Code weight="duotone" /> : getIconByStatus(status),
+    icon: test ? <Code size="1em" weight="duotone" /> : getIconByStatus(status),
     keywords: tags
       .split(',')
       .map(tag => tag.trim())
@@ -150,7 +151,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const tilsAsAction: Action[] = allTILs.map(til => ({
     id: slug(til.title),
     name: til.title,
-    icon: <Notebook weight="duotone" />,
+    icon: <Notebook size="1em" weight="duotone" />,
     keywords: til.tags
       .map(tag => tag.trim())
       .toString()
@@ -168,7 +169,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b'],
       section: 'Blog',
       keywords: 'posts writing',
-      icon: <Note weight="duotone" />,
+      icon: <Note size="1em" weight="duotone" />,
       perform: () => push('/blog')
     },
     {
@@ -177,7 +178,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b', 'i'],
       section: 'Blog',
       keywords: 'writing learning progress skills',
-      icon: <Notebook weight="duotone" />,
+      icon: <Notebook size="1em" weight="duotone" />,
       perform: () => push('/blog/til')
     },
     {
@@ -186,7 +187,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b', 'c'],
       section: 'Blog',
       keywords: 'posts writing',
-      icon: <FolderOpen weight="duotone" />
+      icon: <FolderOpen size="1em" weight="duotone" />
     },
     ...categoriesAsAction,
     {
@@ -195,7 +196,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       shortcut: ['b', 't'],
       section: 'Blog',
       keywords: 'posts writing',
-      icon: <Tag weight="duotone" />
+      icon: <Tag size="1em" weight="duotone" />
     },
     ...tagsAsAction,
     {
@@ -203,7 +204,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Rss',
       section: 'Blog',
       keywords: 'feed rss atom',
-      icon: <Rss weight="duotone" />,
+      icon: <Rss size="1em" weight="duotone" />,
       perform: () => push('/blog/feed')
     },
     {
@@ -212,7 +213,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       section: 'Blog',
       keywords: 'search posts write writing blog',
       shortcut: ['b', 's'],
-      icon: <MagnifyingGlass weight="duotone" />
+      icon: <MagnifyingGlass size="1em" weight="duotone" />
     },
     ...postsAsAction,
     ...tilsAsAction
@@ -224,7 +225,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'My Manjaro Dotfiles',
       section: 'Personal Links',
       keywords: 'linux config setup',
-      icon: <Files weight="duotone" />,
+      icon: <Files size="1em" weight="duotone" />,
       perform: () =>
         window.open('https://github.com/mateusfg7/dotfiles', '_blank')
     },
@@ -233,7 +234,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'My Bookshelf',
       section: 'Personal Links',
       keywords: 'books library',
-      icon: <Books weight="duotone" />,
+      icon: <Books size="1em" weight="duotone" />,
       perform: () =>
         window.open(
           'https://www.skoob.com.br/estante/livros/todos/8289961',
@@ -247,7 +248,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Source code',
       section: 'Website',
       keywords: 'repo source github código fonte',
-      icon: <GithubLogo weight="duotone" />,
+      icon: <GithubLogo size="1em" weight="duotone" />,
       perform: () =>
         window.open('https://github.com/mateusfg7/mateusf.com', '_blank')
     },
@@ -256,7 +257,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'License',
       section: 'Website',
       keywords: 'mit gpl',
-      icon: <File weight="duotone" />,
+      icon: <File size="1em" weight="duotone" />,
       perform: () =>
         window.open(
           'https://github.com/mateusfg7/mateusf.com/blob/main/LICENSE',
@@ -268,7 +269,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Analytics',
       section: 'Website',
       keywords: 'stats graph traffic',
-      icon: <ChartLine weight="duotone" />,
+      icon: <ChartLine size="1em" weight="duotone" />,
       perform: () =>
         window.open(
           'https://analytics.umami.is/share/IV950FFonuZg4Rbn/mateusf.com',
@@ -280,7 +281,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       name: 'Sitemap',
       section: 'Website',
       keywords: 'map links crawler',
-      icon: <TreeStructure weight="duotone" />,
+      icon: <TreeStructure size="1em" weight="duotone" />,
       perform: () => push('/sitemap')
     }
   ]
@@ -289,7 +290,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     {
       id: 'set-theme',
       name: 'Change theme',
-      icon: <Palette weight="duotone" />,
+      icon: <Palette size="1em" weight="duotone" />,
       keywords: 'theme dark light',
       shortcut: ['c', 't'],
       section: 'Configurations'
@@ -297,7 +298,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     {
       id: 'system-theme',
       name: 'System colors',
-      icon: <Desktop weight="duotone" />,
+      icon: <Desktop size="1em" weight="duotone" />,
       parent: 'set-theme',
       keywords: 'theme dark light',
       perform: () => setTheme('system')
@@ -305,7 +306,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     {
       id: 'dark-theme',
       name: 'Dark mode',
-      icon: <Moon weight="duotone" />,
+      icon: <Moon size="1em" weight="duotone" />,
       parent: 'set-theme',
       keywords: 'theme dark light',
       perform: () => setTheme('dark')
@@ -313,7 +314,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     {
       id: 'light-theme',
       name: 'Light mode',
-      icon: <Sun weight="duotone" />,
+      icon: <Sun size="1em" weight="duotone" />,
       parent: 'set-theme',
       keywords: 'theme dark light',
       perform: () => setTheme('light')

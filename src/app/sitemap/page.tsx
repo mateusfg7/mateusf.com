@@ -13,7 +13,7 @@ export default function Page() {
           className="inline-flex items-end text-xl leading-none text-blue-500 hover:text-blue-900"
         >
           <span>Sitemap XML</span>
-          <ArrowUpRight className="text-sm" />
+          <ArrowUpRight size="1em" className="text-sm" />
         </a>
         {allRoutes.map(url => (
           <a

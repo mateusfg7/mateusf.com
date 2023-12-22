@@ -23,7 +23,7 @@ export async function TopArtists() {
       <div className="flex flex-col leading-tight">
         <span className="inline-flex items-center gap-2 text-neutral-600">
           <span>Top Artists</span>
-          <UserList weight="duotone" />
+          <UserList size="1em" weight="duotone" />
         </span>
         <span className="text-xs text-neutral-500 dark:text-neutral-700">
           From last 6 months

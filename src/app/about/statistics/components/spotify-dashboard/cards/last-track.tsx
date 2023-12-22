@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import { MusicNotes } from '@phosphor-icons/react/dist/ssr'
 
 import { placeholder } from '@/shared/lib/placeholder'
@@ -15,7 +14,7 @@ export async function LastTrack() {
       <div className="flex h-full flex-1 flex-col overflow-hidden">
         <span className="inline-flex items-center gap-2 text-neutral-600">
           <span>Last Played</span>
-          <MusicNotes weight="duotone" />
+          <MusicNotes size="1em" weight="duotone" />
         </span>
         <span className="flex h-full items-center">
           <a

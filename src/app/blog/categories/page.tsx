@@ -46,7 +46,7 @@ export default function Page() {
             >
               <div className="flex items-center gap-4 rounded-md bg-neutral-300/10 p-4 font-bold leading-none text-neutral-700 active:bg-blue-700/10 active:text-blue-700 dark:bg-neutral-800/10 dark:text-neutral-500 active:dark:bg-blue-500/10 active:dark:text-blue-500">
                 <span className="inline-flex items-end gap-1">
-                  <Folder weight="duotone" />
+                  <Folder size="1em" weight="duotone" />
                   <span>{categoryData.category}</span>
                 </span>
                 <span className="h-px flex-1 border-b border-dotted border-neutral-700 dark:border-neutral-500" />

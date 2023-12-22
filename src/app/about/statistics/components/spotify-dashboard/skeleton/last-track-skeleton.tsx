@@ -6,7 +6,7 @@ export function LastTrackSkeleton() {
       <div className="flex h-full w-full flex-col gap-1">
         <span className="inline-flex items-center gap-2 text-neutral-600">
           <span>Last Played</span>
-          <MusicNotes weight="duotone" />
+          <MusicNotes size="1em" weight="duotone" />
         </span>
 
         <div className="flex h-full items-center">

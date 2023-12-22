@@ -20,7 +20,10 @@ export function StartButton() {
       <span className="inline md:hidden">Click</span>
       <span>to start</span>
 
-      <ArrowRight className="duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0" />
+      <ArrowRight
+        size="1em"
+        className="duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0"
+      />
     </button>
   )
 }

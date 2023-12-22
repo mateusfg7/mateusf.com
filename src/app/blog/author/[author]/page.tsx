@@ -36,7 +36,7 @@ export default function Page({ params }: Props) {
         </div>
         <div className="flex items-center gap-5 text-neutral-600 dark:text-neutral-400">
           <div className="flex items-center gap-1">
-            <Envelope weight="duotone" />
+            <Envelope size="1em" weight="duotone" />
             <span>{author.email}</span>
           </div>
           <a
@@ -46,7 +46,10 @@ export default function Page({ params }: Props) {
             className="group flex items-center gap-1 hover:text-black hover:dark:text-white"
           >
             <span>About me</span>
-            <ArrowRight className="opacity-0 group-hover:opacity-100" />
+            <ArrowRight
+              size="1em"
+              className="opacity-0 group-hover:opacity-100"
+            />
           </a>
         </div>
       </div>

@@ -6,7 +6,7 @@ export function TopTracksSkeleton() {
       <div className="flex flex-col leading-tight">
         <span className="inline-flex items-center gap-2 text-neutral-600">
           <span>Top Tracks</span>
-          <Playlist weight="duotone" />
+          <Playlist size="1em" weight="duotone" />
         </span>
         <span className="text-xs text-neutral-500 dark:text-neutral-700">
           From last 3 months

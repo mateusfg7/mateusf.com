@@ -31,7 +31,7 @@ export default function Page({ params }: Props) {
     <div className="content-container m-auto">
       <h1 className="mb-5 flex items-end justify-center gap-2 text-2xl font-bold md:justify-start">
         {getNormalTagString(tag)}
-        <Tag weight="duotone" />
+        <Tag size="1em" weight="duotone" />
       </h1>
       <main>
         <PostList posts={postList} />

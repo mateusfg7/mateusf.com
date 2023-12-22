@@ -34,7 +34,7 @@ const TopLink = ({ Icon, title, ...rest }: TopLinkProps) => (
     {...rest}
     className="inline-flex items-center gap-1 rounded-lg p-2 leading-none text-neutral-700 transition-colors hover:bg-neutral-200/50 hover:text-neutral-900 dark:text-neutral-300 hover:dark:bg-neutral-900 dark:hover:text-neutral-100"
   >
-    <Icon />
+    <Icon size="1em" />
     <span>{title}</span>
   </Link>
 )

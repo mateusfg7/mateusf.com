@@ -12,7 +12,7 @@ export async function GithubStars() {
   return (
     <Card
       title="Github Stars"
-      icon={<GithubLogo weight="duotone" />}
+      icon={<GithubLogo size="1em" weight="duotone" />}
       content={String(stars)}
     />
   )

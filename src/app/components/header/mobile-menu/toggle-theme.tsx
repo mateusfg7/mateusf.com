@@ -12,21 +12,30 @@ export function ToggleTheme() {
           data-theme-light={currTheme === 'light'}
           className="p-4 data-[theme-light='true']:bg-neutral-300"
         >
-          <Sun weight={currTheme === 'light' ? 'duotone' : 'regular'} />
+          <Sun
+            size="1em"
+            weight={currTheme === 'light' ? 'duotone' : 'regular'}
+          />
         </button>
         <button
           onClick={() => setTheme('system')}
           data-theme-system={currTheme === 'system'}
           className="p-4 data-[theme-system='true']:bg-neutral-300 data-[theme-system='true']:dark:bg-neutral-800"
         >
-          <Desktop weight={currTheme === 'system' ? 'duotone' : 'regular'} />
+          <Desktop
+            size="1em"
+            weight={currTheme === 'system' ? 'duotone' : 'regular'}
+          />
         </button>
         <button
           onClick={() => setTheme('dark')}
           data-theme-dark={currTheme === 'dark'}
           className="p-4 data-[theme-dark='true']:bg-neutral-800"
         >
-          <Moon weight={currTheme === 'dark' ? 'duotone' : 'regular'} />
+          <Moon
+            size="1em"
+            weight={currTheme === 'dark' ? 'duotone' : 'regular'}
+          />
         </button>
       </div>
     </div>

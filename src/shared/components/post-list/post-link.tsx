@@ -19,10 +19,11 @@ interface Props {
 }
 
 const TitleIcon = ({ category }: { category: string }) => {
-  if (category === 'How To') return <CompassTool weight="duotone" />
-  if (category === 'Article') return <TextAlignLeft weight="duotone" />
-  if (category === 'Notes') return <NoteBlank weight="duotone" />
-  if (category === 'List') return <ListBullets weight="duotone" />
+  if (category === 'How To') return <CompassTool size="1em" weight="duotone" />
+  if (category === 'Article')
+    return <TextAlignLeft size="1em" weight="duotone" />
+  if (category === 'Notes') return <NoteBlank size="1em" weight="duotone" />
+  if (category === 'List') return <ListBullets size="1em" weight="duotone" />
 
   return <></>
 }
@@ -53,7 +54,7 @@ export function PostLink({ post, hideYear = false }: Props) {
       <span className="flex items-center gap-4 whitespace-nowrap leading-none text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-400 md:flex-col md:items-end md:justify-center md:gap-2">
         {showDate && (
           <span className="inline-flex items-center gap-1 md:flex-row-reverse">
-            <CalendarBlank />
+            <CalendarBlank size="1em" />
             <Date
               dateString={post.date}
               dateFormat={hideYear ? 'LLL d' : 'LLL d, yyyy'}
@@ -63,7 +64,7 @@ export function PostLink({ post, hideYear = false }: Props) {
 
         {showReadingTime && (
           <span className="inline-flex items-center gap-1 md:flex-row-reverse">
-            <Clock />
+            <Clock size="1em" />
             <span>{Math.ceil(post.reading_time.minutes)} min read</span>
           </span>
         )}

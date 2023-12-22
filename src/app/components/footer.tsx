@@ -11,7 +11,7 @@ const Link = ({ children, ...props }: ComponentProps<'a'>) => (
   </a>
 )
 
-const ArrowIcon = () => <ArrowUpRight className="text-xs" />
+const ArrowIcon = () => <ArrowUpRight size="1em" className="text-xs" />
 
 export function Footer() {
   return (

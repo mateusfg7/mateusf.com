@@ -17,7 +17,7 @@ export async function GithubFollowers() {
     <>
       <Card
         title="Github Followers"
-        icon={<GithubLogo weight="duotone" />}
+        icon={<GithubLogo size="1em" weight="duotone" />}
         content={
           <div className="flex items-center gap-2">
             <div className="flex flex-row-reverse justify-end">

@@ -31,7 +31,7 @@ export function StatisticsGrid() {
               className="inline-flex items-end leading-none text-neutral-500 transition-colors hover:text-black dark:text-neutral-600 dark:hover:text-white"
             >
               <span>See more</span>
-              <ArrowUpRight className="text-xs" />
+              <ArrowUpRight size="1em" className="text-xs" />
             </Link>
           </div>
         </div>

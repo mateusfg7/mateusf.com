@@ -51,7 +51,7 @@ const ResultItem = forwardRef<
           <div className="flex items-end gap-px">
             <span className="leading-none">{action.name}</span>
             {action.id.startsWith('out') && (
-              <ArrowUpRight className="text-xs" />
+              <ArrowUpRight size="1em" className="text-xs" />
             )}
           </div>
           {action.subtitle && (

@@ -13,7 +13,7 @@ export async function LastTrack() {
   return (
     <Card
       title="Last Played"
-      icon={<SpotifyLogo weight="duotone" />}
+      icon={<SpotifyLogo size="1em" weight="duotone" />}
       content={
         <a
           href={lastTrack.url}

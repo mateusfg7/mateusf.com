@@ -9,7 +9,7 @@ export async function SpotifyPlays() {
   return (
     <Card
       title="Spotify Plays"
-      icon={<SpotifyLogo weight="duotone" />}
+      icon={<SpotifyLogo size="1em" weight="duotone" />}
       content={playcount}
     />
   )

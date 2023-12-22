@@ -26,19 +26,28 @@ export function ToggleTheme() {
     >
       {theme === 'light' && (
         <>
-          <Sun weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <Sun
+            size="1em"
+            weight={currTheme === theme ? 'duotone' : 'regular'}
+          />
           <span>Light</span>
         </>
       )}
       {theme === 'dark' && (
         <>
-          <Moon weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <Moon
+            size="1em"
+            weight={currTheme === theme ? 'duotone' : 'regular'}
+          />
           <span>Dark</span>
         </>
       )}
       {theme === 'system' && (
         <>
-          <Desktop weight={currTheme === theme ? 'duotone' : 'regular'} />
+          <Desktop
+            size="1em"
+            weight={currTheme === theme ? 'duotone' : 'regular'}
+          />
           <span>System</span>
         </>
       )}
@@ -48,7 +57,7 @@ export function ToggleTheme() {
   return (
     <Menu as="div" className="relative inline-flex items-center">
       <Menu.Button aria-label="Change color theme" title="Change color theme">
-        <PaintBrushBroad className="text-xl" />
+        <PaintBrushBroad size="1em" className="text-xl" />
       </Menu.Button>
       <Menu.Items
         as="div"

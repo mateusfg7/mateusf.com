@@ -28,7 +28,7 @@ export function AboutMe() {
             target="_blank"
             href="/assets/cv-mateus-felipe.pdf"
           >
-            Download CV <DownloadSimple />
+            Download CV <DownloadSimple size="1em" />
           </a>
         </div>
       </div>

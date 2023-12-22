@@ -103,7 +103,7 @@ export default function Page({ params }: Props) {
           <div>
             <div className="flex items-center gap-1">
               <span className="inline-flex items-center gap-1">
-                <CalendarBlank />
+                <CalendarBlank size="1em" />
                 <Date dateString={post.date} />
               </span>
               {post.lastUpdate && (
@@ -117,7 +117,7 @@ export default function Page({ params }: Props) {
             </div>
             <div className="flex items-center gap-1">
               <span className="group inline-flex items-center gap-1">
-                <Folder />
+                <Folder size="1em" />
                 <Link
                   href={`/blog/categories/${slug(post.category)}`}
                   className="group-dark:hover:text-blue-400 group-hover:text-blue-500"
@@ -126,7 +126,7 @@ export default function Page({ params }: Props) {
                 </Link>
               </span>
               <span className="group inline-flex items-center gap-1">
-                <Clock />
+                <Clock size="1em" />
                 <span>{Math.ceil(post.reading_time.minutes)} min read</span>
               </span>
             </div>

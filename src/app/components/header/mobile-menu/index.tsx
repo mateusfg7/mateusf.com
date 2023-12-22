@@ -44,7 +44,7 @@ export function MobileMenu() {
         onClick={() => setIsDialogOpen(false)}
         className="menu-item"
       >
-        <Icon weight="duotone" />
+        <Icon size="1em" weight="duotone" />
         <span>{title}</span>
       </NextLink>
     )
@@ -55,10 +55,10 @@ export function MobileMenu() {
 
     return (
       <a {...props} className="menu-item" target="_blank">
-        <Icon weight="duotone" />
+        <Icon size="1em" weight="duotone" />
         <span className="flex items-end gap-px">
           <span>{title}</span>
-          <ArrowUpRight className="text-xs" />
+          <ArrowUpRight size="1em" className="text-xs" />
         </span>
       </a>
     )
@@ -77,7 +77,7 @@ export function MobileMenu() {
         }}
         className="menu-item"
       >
-        <MagnifyingGlass weight="duotone" />
+        <MagnifyingGlass size="1em" weight="duotone" />
         <span className="flex items-end gap-px">
           <span>Search</span>
         </span>
@@ -89,7 +89,7 @@ export function MobileMenu() {
     <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <Dialog.Trigger asChild className="md:hidden">
         <button aria-label="Open menu">
-          <List />
+          <List size="1em" />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -101,7 +101,7 @@ export function MobileMenu() {
               className="absolute left-2 top-2 rounded-full p-2 backdrop-blur-lg active:bg-red-300/20 active:text-red-500 active:dark:bg-red-300/10 active:dark:text-red-400"
             >
               <button aria-label="Close">
-                <X weight="bold" />
+                <X size="1em" weight="bold" />
               </button>
             </Dialog.Close>
             <div className="flex flex-1 flex-col overflow-y-scroll rounded-bl-[2rem] rounded-tl-[2rem] bg-neutral-100 py-10 text-xl dark:bg-neutral-950">

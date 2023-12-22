@@ -23,7 +23,7 @@ export function Knowledge() {
         <AccordionItem value="Skill captions">
           <AccordionTrigger>
             <span className="flex items-center gap-3">
-              <ClosedCaptioning />
+              <ClosedCaptioning size="1em" />
               <span>Skill captions</span>
             </span>
           </AccordionTrigger>

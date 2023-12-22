@@ -10,7 +10,7 @@ export async function TopArtist() {
   return (
     <Card
       title="Top Artist"
-      icon={<SpotifyLogo weight="duotone" />}
+      icon={<SpotifyLogo size="1em" weight="duotone" />}
       content={
         <a
           href={mostListened.url}
