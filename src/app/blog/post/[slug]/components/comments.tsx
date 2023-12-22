@@ -1,16 +1,15 @@
 'use client'
 
-import Giscus, { GiscusProps, Theme } from '@giscus/react'
-import { useTheme } from 'next-themes'
+import Giscus, { Theme } from '@giscus/react'
+import usePrefersColorScheme from 'use-prefers-color-scheme'
 
 export function Comments() {
+  const prefersColorScheme = usePrefersColorScheme()
+
   const theme: { [key: string]: Theme } = {
-    system: 'preferred_color_scheme',
     dark: 'transparent_dark',
     light: 'light'
   }
-
-  const { theme: currTheme } = useTheme()
 
   return (
     <Giscus
@@ -22,7 +21,7 @@ export function Comments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"
-      theme={theme[currTheme as string]}
+      theme={theme[prefersColorScheme]}
       lang="en"
     />
   )
