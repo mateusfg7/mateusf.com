@@ -1,3 +1,28 @@
+## [8.10.0](https://github.com/mateusfg7/mateusf.com/compare/8.9.1...8.10.0) (2023-12-22)
+
+
+### Features
+
+* **blog/til:** add an anchor for direct go to TIL ([44e8fc5](https://github.com/mateusfg7/mateusf.com/commit/44e8fc513bfb07289184af7f8b8a898b02ca47b6))
+* **kbar:** make TILs searchable ([bdc3fbe](https://github.com/mateusfg7/mateusf.com/commit/bdc3fbe4e20ded1777c569d22fe0fcefbb74009a))
+* **ui:** add blog statistics ([273c690](https://github.com/mateusfg7/mateusf.com/commit/273c6904401efc4e1aac2a1c1fe6d81276dec738))
+* **ui:** make writing-dashboard responsive ([d7cc21c](https://github.com/mateusfg7/mateusf.com/commit/d7cc21c60afd2cee69cd0e6d56dc95ad15ae28c4))
+* **ui:** update tag cloud implementation ([7c49e77](https://github.com/mateusfg7/mateusf.com/commit/7c49e77180b0c7c632ba1972fa8568506c594607))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3 ([88810cd](https://github.com/mateusfg7/mateusf.com/commit/88810cd5172850041b06fa84e211fbf267ecc17b))
+* **deps:** update dependency kbar to v0.1.0-beta.44 ([c232cb6](https://github.com/mateusfg7/mateusf.com/commit/c232cb6dc0a13887ea415fbfcdeb63145f1bcce6))
+* **deps:** update dependency react-icons to v4.12.0 ([1ae2303](https://github.com/mateusfg7/mateusf.com/commit/1ae2303c50c636c123c3db2215a1e5a8488b5a01))
+* **deps:** update dependency sharp to ^0.33.0 ([7df634b](https://github.com/mateusfg7/mateusf.com/commit/7df634bb081499f29ee14f41350413c40bb14c11))
+* update all broken links of `mateusfg7/mfg-b` ([94914c5](https://github.com/mateusfg7/mateusf.com/commit/94914c5cc4359924551fc7c515814d50478eba7c))
+
+
+### Performance Improvements
+
+* **ssr:** import phosphor icons from `@phosphor-icons/react/dist/ssr` on footer component ([caab8a8](https://github.com/mateusfg7/mateusf.com/commit/caab8a82079819e993d42f5a32f58887b572012a))
+
 ## [8.9.1](https://github.com/mateusfg7/mateusf.com/compare/8.9.0...8.9.1) (2023-12-05)
 
 
