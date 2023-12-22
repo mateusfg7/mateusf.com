@@ -1,3 +1,10 @@
+## [8.10.1](https://github.com/mateusfg7/mateusf.com/compare/8.10.0...8.10.1) (2023-12-22)
+
+
+### Bug Fixes
+
+* **ui:** add `size="1em"` property in all phosphor-icons components ([b24b541](https://github.com/mateusfg7/mateusf.com/commit/b24b54159532b7398c93d545be384eff41b17f7d))
+
 ## [8.10.0](https://github.com/mateusfg7/mateusf.com/compare/8.9.1...8.10.0) (2023-12-22)
 
 
