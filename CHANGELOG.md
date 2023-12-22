@@ -1,3 +1,10 @@
+## [8.10.2](https://github.com/mateusfg7/mateusf.com/compare/8.10.1...8.10.2) (2023-12-22)
+
+
+### Bug Fixes
+
+* **ui:** remove preferred_color_scheme from giscus config ([ee70d14](https://github.com/mateusfg7/mateusf.com/commit/ee70d14e34b5396ca79cb0eeb5bc4f3348b98015))
+
 ## [8.10.1](https://github.com/mateusfg7/mateusf.com/compare/8.10.0...8.10.1) (2023-12-22)
 
 
