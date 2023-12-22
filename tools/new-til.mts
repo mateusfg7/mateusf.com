@@ -37,7 +37,7 @@ const TIL_DIR_PATH = 'content/til'
 const SLUGGED_TITLE = slug(title.toString()).replaceAll('-', '_')
 const DATE_STR = `${padZero(currDate.getFullYear())}-${padZero(
   currDate.getMonth() + 1
-)}-${padZero(currDate.getDay())}`
+)}-${padZero(currDate.getDate())}`
 
 const tilPath = `${TIL_DIR_PATH}/${DATE_STR.replaceAll(
   '-',
