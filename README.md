@@ -22,7 +22,7 @@ My personal homepage & portfolio: https://mateusf.com
 - Reading-time prediction like Medium
 - Feed RSS
 - Command bar/Search modal _by [KBar](https://kbar.vercel.app/)_
-- Post comments _by [Utterances](https://utteranc.es)_
+- Post comments _by [Giscus](https://giscus.app)_
 - Sorting posts by tags, categories and author
 - Sitemap
 - SEO Optimized with meta information tags
