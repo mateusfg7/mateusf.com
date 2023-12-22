@@ -8,7 +8,7 @@
     "https://mfg-b-mateusfg7.vercel.app/"
   ],
   "originsRegex": [
-    "https://mateusf-([A-z0-9]|-)*mateusf\\.vercel\\.app",
+    "https://mateusf-([A-z0-9]|-)*mateusfg7\\.vercel\\.app",
     "http://localhost:[0-9]+"
   ]
 }
