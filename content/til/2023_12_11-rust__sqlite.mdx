@@ -1,0 +1,40 @@
+---
+title: 'Rust + SQLite'
+description: 'Connect SQLite in a Rust app'
+date: '2023-12-11'
+tags: [rust,sqlite,db,sql]
+---
+
+For run SQL queries on SQLite database from Rust, we can use the [**sqlite3**](https://docs.rs/sqlite3/latest/sqlite3/) crate:
+
+```rust caption="Open a connection, create a table, and insert some rows."
+let connection = sqlite::open(":memory:").unwrap();
+
+connection
+  .execute(
+    "
+    CREATE TABLE users (name TEXT, age INTEGER);
+    INSERT INTO users (name, age) VALUES ('Alice', 42);
+    INSERT INTO users (name, age) VALUES ('Bob', 69);
+    ",
+  )
+  .unwrap();
+```
+
+<br/>
+
+
+```rust caption="Select some rows and process them one by one as plain text:"
+connection
+  .iterate("SELECT * FROM users WHERE age > 50", |pairs| {
+    for &(column, value) in pairs.iter() {
+      println!("{} = {}", column, value.unwrap());
+    }
+    true
+  })
+  .unwrap();
+```
+
+[_And more..._](https://docs.rs/sqlite3/latest/sqlite3/)
+
+**ref**: https://docs.rs/sqlite3/latest/sqlite3/
