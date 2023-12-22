@@ -1,0 +1,24 @@
+---
+title: 'Random Strings in Rust'
+description: 'How to generate a random fixed size string in Rust'
+date: '2023-12-11'
+tags: [rust,rand,string,generate]
+---
+
+For generate a random string with fixed size in Rust, we can use `Alphanumeric` trait from [rand]() crate:
+
+```rust
+use rand::{distributions::Alphanumeric, Rng}; // 0.8
+
+fn main() {
+  let s: String = rand::thread_rng()
+    .sample_iter(&Alphanumeric)
+    .take(7)
+    .map(char::from)
+    .collect();
+  println!("{}", s);
+}
+
+```
+
+ref: https://stackoverflow.com/questions/54275459/how-do-i-create-a-random-string-by-sampling-from-alphanumeric-characters
