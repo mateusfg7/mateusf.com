@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Copy, Check } from '@/shared/wrappers/phosphor-icons'
+import { Copy, Check } from '@phosphor-icons/react/dist/ssr'
 
 export const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false)

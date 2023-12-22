@@ -6,7 +6,7 @@ import {
   Sun,
   Desktop,
   PaintBrushBroad
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 
 export function ToggleTheme() {
   const { setTheme, theme: currTheme } = useTheme()

@@ -1,6 +1,6 @@
 'use client'
 
-import { CaretUp } from '@/shared/wrappers/phosphor-icons'
+import { CaretUp } from '@phosphor-icons/react/dist/ssr'
 import { useEffect, useState } from 'react'
 
 export function TopButton() {

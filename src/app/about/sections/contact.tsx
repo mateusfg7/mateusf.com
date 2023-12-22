@@ -8,7 +8,7 @@ import {
   InstagramLogo,
   ArrowUpRight,
   CodepenLogo
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 
 export function Contact() {
   return (

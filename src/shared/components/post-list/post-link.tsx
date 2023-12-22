@@ -1,15 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
-
-import { Post } from 'contentlayer/generated'
 import {
   CompassTool,
   ListBullets,
   NoteBlank,
-  TextAlignLeft
-} from '@/shared/wrappers/phosphor-icons'
+  TextAlignLeft,
+  CalendarBlank,
+  Clock
+} from '@phosphor-icons/react/dist/ssr'
+
+import { Post } from 'contentlayer/generated'
 import { Date } from '@/shared/components/date'
-import { CalendarBlank, Clock } from '@/shared/components/icons'
 import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
 interface Props {

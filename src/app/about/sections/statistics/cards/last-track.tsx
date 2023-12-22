@@ -1,6 +1,5 @@
 import Image from 'next/image'
-
-import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
+import { SpotifyLogo } from '@phosphor-icons/react/dist/ssr'
 
 import { getLastFmRecentTracks } from '@/shared/lib/lastFm'
 import { placeholder } from '@/shared/lib/placeholder'

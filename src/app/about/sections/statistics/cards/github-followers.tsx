@@ -1,6 +1,5 @@
 import Image from 'next/image'
-
-import { GithubLogo } from '@/shared/wrappers/phosphor-icons'
+import { GithubLogo } from '@phosphor-icons/react/dist/ssr'
 
 import { getGithubFollowers } from '@/shared/lib/github'
 import { shuffleArray } from '@/shared/lib/shuffleArray'

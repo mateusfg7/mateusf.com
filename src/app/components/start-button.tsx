@@ -1,7 +1,7 @@
 'use client'
 
 import { useKBar } from 'kbar'
-import { ArrowRight } from '@/shared/wrappers/phosphor-icons'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
 export function StartButton() {
   const {

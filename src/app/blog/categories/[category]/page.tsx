@@ -10,7 +10,7 @@ import {
 } from '@/shared/lib/categories'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { slug } from '@/shared/lib/slug'
-import { FolderOpen } from '@/shared/wrappers/phosphor-icons'
+import { FolderOpen } from '@phosphor-icons/react/dist/ssr'
 
 interface Props {
   params: { category: string }

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Link } from '@/shared/wrappers/phosphor-icons'
+import { ArrowUpRight, Link } from '@phosphor-icons/react/dist/ssr'
 import { Title } from '@/shared/components/title'
 import { allRoutes } from '../lib/all-routes'
 

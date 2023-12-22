@@ -2,8 +2,8 @@ import { ComponentProps, useState } from 'react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useKBar } from 'kbar'
+import { Icon as PhosphorIcon } from '@phosphor-icons/react'
 import {
-  Icon as IconType,
   List,
   X,
   House,
@@ -16,19 +16,20 @@ import {
   Note,
   User,
   Briefcase
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
+
 import { ToggleTheme } from './toggle-theme'
 
 import './styles.css'
 
 interface LinkProps extends NextLinkProps {
   title: string
-  icon: IconType
+  icon: PhosphorIcon
 }
 
 interface OutLinkProps extends ComponentProps<'a'> {
   title: string
-  icon: IconType
+  icon: PhosphorIcon
 }
 
 export function MobileMenu() {

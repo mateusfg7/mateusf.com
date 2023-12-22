@@ -1,4 +1,4 @@
-import { Heart } from '@/shared/wrappers/phosphor-icons'
+import { Heart } from '@phosphor-icons/react/dist/ssr'
 
 export const FollowersSkeleton = () => {
   return (

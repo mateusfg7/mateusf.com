@@ -1,5 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
-import { Article } from '@/shared/wrappers/phosphor-icons'
+import { Article } from '@phosphor-icons/react/dist/ssr'
 
 export async function Posts() {
   return (

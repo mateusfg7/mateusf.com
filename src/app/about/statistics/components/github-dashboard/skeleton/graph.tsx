@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { CalendarBlank } from '@/shared/wrappers/phosphor-icons'
+import { CalendarBlank } from '@phosphor-icons/react/dist/ssr'
 import { placeholder } from '@/shared/lib/placeholder'
 
 export function GraphSkeleton() {

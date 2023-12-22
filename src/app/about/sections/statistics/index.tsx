@@ -1,8 +1,7 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
 import { ErrorBoundary } from 'react-error-boundary'
-
-import { ArrowUpRight } from '@/shared/wrappers/phosphor-icons'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
 import { AgeCard } from './cards/age'
 import { GithubFollowers } from './cards/github-followers'

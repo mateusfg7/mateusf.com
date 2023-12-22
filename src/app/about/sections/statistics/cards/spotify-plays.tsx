@@ -1,4 +1,4 @@
-import { SpotifyLogo } from '@/shared/wrappers/phosphor-icons'
+import { SpotifyLogo } from '@phosphor-icons/react/dist/ssr'
 
 import { Card } from '../card'
 import { getLastFmUserInfo } from '@/shared/lib/lastFm'

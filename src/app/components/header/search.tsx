@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from '@/shared/wrappers/phosphor-icons'
+import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr'
 import { useKBar } from 'kbar'
 
 export function Search() {

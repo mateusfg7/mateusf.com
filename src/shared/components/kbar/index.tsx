@@ -8,7 +8,7 @@ import {
   KBarSearch,
   useMatches
 } from 'kbar'
-import { ArrowUpRight } from '@/shared/wrappers/phosphor-icons'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
 const Content = ({ children }: { children: ReactNode }) => {
   const { results } = useMatches()

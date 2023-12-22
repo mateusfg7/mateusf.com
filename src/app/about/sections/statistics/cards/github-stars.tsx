@@ -1,4 +1,4 @@
-import { GithubLogo } from '@/shared/wrappers/phosphor-icons'
+import { GithubLogo } from '@phosphor-icons/react/dist/ssr'
 import { getGithubRepositories } from '@/shared/lib/github'
 
 import { Card } from '../card'

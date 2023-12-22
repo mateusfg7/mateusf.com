@@ -1,5 +1,5 @@
 import { getGithubRepositories } from '@/shared/lib/github'
-import { Code } from '@/shared/wrappers/phosphor-icons'
+import { Code } from '@phosphor-icons/react/dist/ssr'
 
 export async function Languages() {
   const repos = await getGithubRepositories()

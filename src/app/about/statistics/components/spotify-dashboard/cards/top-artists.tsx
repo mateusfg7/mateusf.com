@@ -1,4 +1,4 @@
-import { UserList } from '@/shared/wrappers/phosphor-icons'
+import { UserList } from '@phosphor-icons/react/dist/ssr'
 
 import { Artist, getLastFmTopArtists } from '@/shared/lib/lastFm'
 

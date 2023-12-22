@@ -3,7 +3,7 @@ import {
   GithubLogo,
   PencilLine,
   SpotifyLogo
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 import { Title } from '@/shared/components/title'
 
 import { GithubDashboard } from './components/github-dashboard'

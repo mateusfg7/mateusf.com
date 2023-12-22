@@ -1,4 +1,4 @@
-import { Cube } from '@/shared/wrappers/phosphor-icons'
+import { Cube } from '@phosphor-icons/react/dist/ssr'
 
 export const ReposSkeleton = () => (
   <div className="flex h-full w-full flex-col justify-center gap-3 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">

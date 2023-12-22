@@ -1,4 +1,4 @@
-import { Playlist } from '@/shared/wrappers/phosphor-icons'
+import { Playlist } from '@phosphor-icons/react/dist/ssr'
 
 export function TopTracksSkeleton() {
   return (

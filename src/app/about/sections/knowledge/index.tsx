@@ -2,7 +2,7 @@
 
 import * as Accordion from '@radix-ui/react-accordion'
 import { TbTools } from 'react-icons/tb'
-import { ClosedCaptioning } from '@/shared/wrappers/phosphor-icons'
+import { ClosedCaptioning } from '@phosphor-icons/react/dist/ssr'
 
 import { knowledgeCategories } from './knowledge-categories'
 import {

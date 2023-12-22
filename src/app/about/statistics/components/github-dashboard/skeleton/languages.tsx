@@ -1,4 +1,4 @@
-import { Code } from '@/shared/wrappers/phosphor-icons'
+import { Code } from '@phosphor-icons/react/dist/ssr'
 
 export const LanguagesSkeleton = () => (
   <div className="flex h-full w-full flex-col justify-center gap-3 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Heart } from '@/shared/wrappers/phosphor-icons'
+import { Heart } from '@phosphor-icons/react/dist/ssr'
 import { placeholder } from '@/shared/lib/placeholder'
 import { shuffleArray } from '@/shared/lib/shuffleArray'
 import { getGithubFollowers, getGithubUserData } from '@/shared/lib/github'

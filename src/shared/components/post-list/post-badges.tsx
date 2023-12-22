@@ -4,7 +4,7 @@ import {
   Code,
   FileDashed,
   PencilSimpleLine
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 
 export const DraftBadge = () => (
   <div className="common-badge border-amber-600/20 bg-amber-600/5 text-amber-600">

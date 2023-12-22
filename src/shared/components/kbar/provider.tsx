@@ -30,7 +30,7 @@ import {
   Books,
   ChartPieSlice,
   Notebook
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
 import { slug } from '@/shared/lib/slug'

@@ -1,5 +1,5 @@
 import { getGithubRepositories } from '@/shared/lib/github'
-import { Star } from '@/shared/wrappers/phosphor-icons'
+import { Star } from '@phosphor-icons/react/dist/ssr'
 
 export async function Stars() {
   const repos = await getGithubRepositories()

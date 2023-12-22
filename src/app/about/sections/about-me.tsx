@@ -1,7 +1,7 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import { DownloadSimple } from '@phosphor-icons/react/dist/ssr'
 import { allAbouts } from 'contentlayer/generated'
 
-import { DownloadSimple } from '@/shared/wrappers/phosphor-icons'
 import { Title } from '@/shared/components/title'
 
 import { ImageCard } from '../components/image-card'

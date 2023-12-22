@@ -1,4 +1,4 @@
-import { GitCommit } from '@/shared/wrappers/phosphor-icons'
+import { GitCommit } from '@phosphor-icons/react/dist/ssr'
 import { getGithubCommits } from '@/shared/lib/github'
 
 export async function Commits() {

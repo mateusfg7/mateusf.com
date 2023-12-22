@@ -1,6 +1,6 @@
 import arrayShuffle from 'shuffle-array'
 
-import { Tag } from '@/shared/wrappers/phosphor-icons'
+import { Tag } from '@phosphor-icons/react/dist/ssr'
 import { getTagsAndNumberOfPosts } from '@/shared/lib/tags'
 
 // https://github.com/madox2/react-tagcloud/blob/43a706b36a606ddd8a39c4060510166aebdf445e/src/helpers.js#L4

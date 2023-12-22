@@ -1,4 +1,4 @@
-import { MusicNotes } from '@/shared/wrappers/phosphor-icons'
+import { MusicNotes } from '@phosphor-icons/react/dist/ssr'
 
 export function LastTrackSkeleton() {
   return (

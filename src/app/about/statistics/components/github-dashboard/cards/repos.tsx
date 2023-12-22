@@ -1,5 +1,5 @@
 import { getGithubUserData } from '@/shared/lib/github'
-import { Cube } from '@/shared/wrappers/phosphor-icons'
+import { Cube } from '@phosphor-icons/react/dist/ssr'
 
 export async function Repos() {
   const { public_repos } = await getGithubUserData()

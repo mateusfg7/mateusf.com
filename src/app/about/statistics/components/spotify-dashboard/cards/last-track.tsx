@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { MusicNotes } from '@/shared/wrappers/phosphor-icons'
+import { MusicNotes } from '@phosphor-icons/react/dist/ssr'
 
 import { placeholder } from '@/shared/lib/placeholder'
 import { getLastFmRecentTracks } from '@/shared/lib/lastFm'

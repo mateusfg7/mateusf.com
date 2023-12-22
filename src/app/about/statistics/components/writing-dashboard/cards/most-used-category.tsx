@@ -1,11 +1,11 @@
+import { Icon as PhosphorIcon } from '@phosphor-icons/react'
 import {
-  Icon as PhosphorIcon,
   FolderOpen,
   TextAlignLeft,
   CompassTool,
   NoteBlank,
   ListBullets
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 import { allPosts } from 'contentlayer/generated'
 
 type RowProps = {

@@ -12,7 +12,7 @@ import {
   CalendarBlank,
   Clock,
   Tag
-} from '@/shared/wrappers/phosphor-icons'
+} from '@phosphor-icons/react/dist/ssr'
 import { Date } from '@/shared/components/date'
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'

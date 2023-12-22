@@ -1,14 +1,10 @@
 import React from 'react'
 import { type Metadata } from 'next'
 import Link, { LinkProps } from 'next/link'
+import { Icon as PhosphorIcon } from '@phosphor-icons/react'
+import { FolderOpen, Tag, Notebook } from '@phosphor-icons/react/dist/ssr'
 
 import { allPosts } from 'contentlayer/generated'
-import {
-  FolderOpen,
-  Tag,
-  Notebook,
-  Icon as PhosphorIcon
-} from '@/shared/wrappers/phosphor-icons'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 
 import { PostList } from '@/shared/components/post-list'

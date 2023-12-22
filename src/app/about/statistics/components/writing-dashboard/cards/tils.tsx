@@ -1,5 +1,5 @@
 import { allTILs } from 'contentlayer/generated'
-import { Notebook } from '@/shared/wrappers/phosphor-icons'
+import { Notebook } from '@phosphor-icons/react/dist/ssr'
 
 export async function TILs() {
   return (
