@@ -54,7 +54,7 @@
     "shiki": "^0.14.0",
     "shuffle-array": "^1.0.1",
     "tailwindcss-animated": "^1.0.1",
-    "unified": "^10.1.2",
+    "unified": "^11.0.0",
     "unist-util-visit": "^5.0.0",
     "use-prefers-color-scheme": "^1.1.3"
   },
