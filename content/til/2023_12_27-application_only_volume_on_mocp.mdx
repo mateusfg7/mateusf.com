@@ -1,0 +1,24 @@
+---
+title: 'Application-Only Volume on MOCP'
+description: 'How to use a "application-only" volume on MOCP for change volume on mocp without affect system'
+date: '2023-12-27'
+tags: [mocp,linux,alsa,sound,player]
+---
+
+I was using MOCP on linux for a while to listenning some musics that I have downloaded on my machine, but the only defect of MOCP is the volume controll... until now...
+
+The default volume controll of MOCP controlls the volume from ALSA hardware mixer setting, which change the volume from all system. That is a pain when you want to listennig musics as background music, while listenning another sounds too (like [noisekun.com](https://noisekun.com)).
+
+Today I discovered that there is a way to make mocp volume controll independent from system volume.
+
+You may see that on volume bar (lower left corner) was writen "Master":
+![screenshot of mocp volume bar (https://i.imgur.com/9YpA3DE.png)](https://i.imgur.com/9YpA3GE.png)
+
+This mean that the volume controll reflect the system volume, so we need to change this with the key <kbd>X</kbd>. Now our bar is:
+![screenshot of mocp volume bar (https://i.imgur.com/jaAFNpo.png)](https://i.imgur.com/jaAFNpo.png)
+
+And the volume is independent of system volume.
+
+> If your volume bar is writen "S.Off", you can type <kbd>W</kbd> to change to "Soft"
+
+**ref:** https://moc.daper.net/node/1512
