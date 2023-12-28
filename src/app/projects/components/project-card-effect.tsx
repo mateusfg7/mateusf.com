@@ -13,15 +13,11 @@ export function ProjectCardEffect({
   return (
     <Tilt
       className={className}
-      tiltMaxAngleY={5}
+      tiltEnable={false}
       glarePosition="all"
       glareBorderRadius="1.5rem"
       glareMaxOpacity={0.05}
       glareEnable
-      glareReverse
-      gyroscope
-      tiltReverse
-      tiltAxis="y"
     >
       {children}
     </Tilt>
