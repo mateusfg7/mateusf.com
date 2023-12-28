@@ -1,3 +1,16 @@
+## [8.10.3](https://github.com/mateusfg7/mateusf.com/compare/8.10.2...8.10.3) (2023-12-28)
+
+
+### Features
+
+* **project-card:** remove tilt transform effect ([d9c8ef3](https://github.com/mateusfg7/mateusf.com/commit/d9c8ef37536ec4c10130c8d9d45b54cefad31057))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3.0.6 ([901113f](https://github.com/mateusfg7/mateusf.com/commit/901113f5efa6691f66784d65aecd65ed3ab514ce))
+* **tools:** use `.getDate()` instead of `.getDay()` on "new-til" command ([0e0f826](https://github.com/mateusfg7/mateusf.com/commit/0e0f826815342db8912561227ee731d83fe9eb65))
+
 ## [8.10.2](https://github.com/mateusfg7/mateusf.com/compare/8.10.1...8.10.2) (2023-12-22)
 
 
