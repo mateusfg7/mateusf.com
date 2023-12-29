@@ -1,8 +1,14 @@
-import Image from 'next/image'
+'use client'
+
 import { CalendarBlank } from '@phosphor-icons/react/dist/ssr'
-import { placeholder } from '@/shared/lib/placeholder'
+import GitHubCalendar from 'react-github-calendar'
+import { useTheme } from 'next-themes'
 
 export function Graph() {
+  const { theme } = useTheme()
+
+  const colorScheme = theme !== 'dark' && theme !== 'light' ? undefined : theme
+
   return (
     <div className="flex h-full w-full flex-col justify-center gap-3 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
       <span className="inline-flex items-center gap-2 text-neutral-600">
@@ -10,21 +16,15 @@ export function Graph() {
         <CalendarBlank size="1em" weight="duotone" />
       </span>
       <div className="flex items-center">
-        <Image
-          src="https://contribution.catsjuice.com/_/mateusfg7?chart=calendar&format=png&quality=10&weeks=40&theme=native&widget_size=small"
-          placeholder={placeholder(1992, 408) as `data:image/${string}`}
-          alt="Contribution Graph"
-          className="dark:hidden"
-          width={1992}
-          height={408}
-        />
-        <Image
-          src="https://contribution.catsjuice.com/_/mateusfg7?chart=calendar&format=png&quality=1&weeks=40&theme=native&widget_size=small&dark=true"
-          placeholder={placeholder(1992, 408) as `data:image/${string}`}
-          alt="Contribution Graph"
-          className="hidden dark:block"
-          width={1992}
-          height={408}
+        <GitHubCalendar
+          username="mateusfg7"
+          blockMargin={4}
+          blockRadius={4}
+          blockSize={13}
+          colorScheme={colorScheme}
+          style={{
+            width: '100%'
+          }}
         />
       </div>
     </div>

@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import { CalendarBlank } from '@phosphor-icons/react/dist/ssr'
-import { placeholder } from '@/shared/lib/placeholder'
 
 export function GraphSkeleton() {
   return (
@@ -9,8 +7,12 @@ export function GraphSkeleton() {
         <span>Contribution Graph</span>
         <CalendarBlank size="1em" weight="duotone" />
       </span>
-      <div className="flex items-center">
-        <div className="h-20 w-full animate-pulse rounded-3xl bg-neutral-400 dark:bg-neutral-800" />
+      <div className="flex flex-col gap-2">
+        <div className="h-28 w-full animate-pulse rounded-3xl bg-neutral-400 dark:bg-neutral-800" />
+        <div className="flex w-full justify-between">
+          <div className="h-6 w-52 animate-pulse rounded-3xl bg-neutral-400 dark:bg-neutral-800" />
+          <div className="h-6 w-32 animate-pulse rounded-3xl bg-neutral-400 dark:bg-neutral-800" />
+        </div>
       </div>
     </div>
   )

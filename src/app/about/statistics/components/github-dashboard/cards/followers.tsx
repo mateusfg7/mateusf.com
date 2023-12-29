@@ -5,7 +5,7 @@ import { placeholder } from '@/shared/lib/placeholder'
 import { shuffleArray } from '@/shared/lib/shuffleArray'
 import { getGithubFollowers, getGithubUserData } from '@/shared/lib/github'
 
-const AVATAR_COUNT = 119
+const AVATAR_COUNT = 71
 
 export async function Followers() {
   const { followers: followersNumber } = await getGithubUserData()

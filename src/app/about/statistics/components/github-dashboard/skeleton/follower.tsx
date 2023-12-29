@@ -9,7 +9,7 @@ export const FollowersSkeleton = () => {
       </span>
       <span className="text-xl">
         <div className="grid grid-cols-12 gap-1">
-          {[...Array(119 + 1)].map((e, i) => (
+          {[...Array(71 + 1)].map((e, i) => (
             <div
               key={i}
               className="h-5 w-5 animate-pulse rounded-full border-2 border-neutral-200 bg-neutral-400 dark:border-neutral-950 dark:bg-neutral-800 md:h-7 md:w-7"

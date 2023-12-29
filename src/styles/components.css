@@ -316,4 +316,12 @@
       @apply my-4 border-red-600 last:mb-0 [&:nth-child(2)]:mt-0;
     }
   }
+
+  article {
+    div {
+      svg {
+        @apply w-full;
+      }
+    }
+  }
 }
