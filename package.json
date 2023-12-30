@@ -17,6 +17,7 @@
     "check-unused": "npx depcheck"
   },
   "dependencies": {
+    "@commitlint/types": "^18.4.3",
     "@giscus/react": "^2.3.0",
     "@headlessui/react": "^1.7.15",
     "@phosphor-icons/react": "^2.0.8",
