@@ -9,7 +9,7 @@ import { Languages } from './cards/languages'
 import { Repos } from './cards/repos'
 import { Stars } from './cards/stars'
 import { Commits } from './cards/commits'
-import { Graph } from './cards/graph'
+import { ContributionCalendar } from './cards/contribution-calendar'
 import { LineGraph } from './cards/line-graph'
 
 export function GithubDashboard() {
@@ -27,7 +27,7 @@ export function GithubDashboard() {
           <Commits />
 
           <div className="col-span-4">
-            <Graph />
+            <ContributionCalendar />
           </div>
 
           <div className="col-span-4">
