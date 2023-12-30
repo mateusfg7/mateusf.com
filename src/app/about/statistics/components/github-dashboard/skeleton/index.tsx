@@ -4,6 +4,7 @@ import { LanguagesSkeleton } from './languages'
 import { ReposSkeleton } from './repos'
 import { CommitsSkeleton } from './commits'
 import { GraphSkeleton } from './graph'
+import { LineGraphSkeleton } from '../cards/line-graph/skeleton'
 
 export function GithubStatsSkeleton() {
   return (
@@ -20,6 +21,10 @@ export function GithubStatsSkeleton() {
 
       <div className="col-span-4">
         <GraphSkeleton />
+      </div>
+
+      <div className="col-span-4">
+        <LineGraphSkeleton />
       </div>
     </div>
   )
