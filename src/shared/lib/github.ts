@@ -1,4 +1,5 @@
 import { ApiError } from '@/shared/errors/api-error'
+import { add, sub } from 'date-fns'
 
 type User = {
   followers: number
@@ -113,4 +114,127 @@ export async function getGithubRepositories() {
   }
 
   return repositories
+}
+
+// Function to calculate the productive data by days
+function calculateMostProductiveDayOfWeek(contributionCalendar: {
+  weeks: Week[]
+}): { day: string; count: number }[] {
+  const daysOfWeek = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ]
+  const contributionCountByDayOfWeek: {
+    [day: string]: number
+  } = {
+    Sunday: 0,
+    Monday: 0,
+    Tuesday: 0,
+    Wednesday: 0,
+    Thursday: 0,
+    Friday: 0,
+    Saturday: 0
+  }
+
+  for (const week of contributionCalendar.weeks) {
+    for (const day of week.contributionDays) {
+      const date = new Date(day.date)
+      const dayOfWeek = daysOfWeek[date.getUTCDay()]
+      contributionCountByDayOfWeek[dayOfWeek] += day.contributionCount
+    }
+  }
+
+  const sortedData = Object.entries(contributionCountByDayOfWeek)
+    .sort((a, b) => daysOfWeek.indexOf(a[0]) - daysOfWeek.indexOf(b[0]))
+    .map(([day, count]) => ({ day, count }))
+
+  const sunday = sortedData.shift()
+
+  if (sunday) {
+    sortedData.push(sunday)
+  }
+
+  return sortedData
+}
+
+export type ContributionDay = {
+  contributionCount: number
+  date: string
+  shortDate: string
+}
+
+type Week = {
+  contributionDays: ContributionDay[]
+}
+
+export async function getGithubContribution() {
+  const now = new Date()
+  const from = sub(now, { days: 30 })
+  // also include the next day in case our server is behind in time with respect to GitHub
+  const to = add(now, { days: 1 })
+  const query = {
+    query: `
+      query userInfo($LOGIN: String!, $FROM: DateTime!, $TO: DateTime!) {
+        user(login: $LOGIN) {
+          name
+          contributionsCollection(from: $FROM, to: $TO) {
+            contributionCalendar {
+              weeks {
+                contributionDays {
+                  contributionCount
+                  date
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      LOGIN: 'mateusfg7',
+      FROM: from.toISOString(),
+      TO: to.toISOString()
+    }
+  }
+
+  const headers = new Headers({
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
+  })
+
+  const response = await fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    body: JSON.stringify(query),
+    headers
+  })
+  const apiResponse = await response.json()
+
+  const userData: {
+    contributions: ContributionDay[]
+    name: string
+  } = {
+    contributions: [],
+    name: apiResponse.data.user.name
+  }
+
+  const weeks =
+    apiResponse.data.user.contributionsCollection.contributionCalendar.weeks
+  weeks.map((week: Week) =>
+    week.contributionDays.map((contributionDay: ContributionDay) => {
+      contributionDay.shortDate = new Date(contributionDay.date)
+        .getDate()
+        .toString()
+      userData.contributions.push(contributionDay)
+    })
+  )
+
+  const contributionCountByDayOfWeek = calculateMostProductiveDayOfWeek(
+    apiResponse.data.user.contributionsCollection.contributionCalendar
+  )
+
+  return { ...userData, contributionCountByDayOfWeek }
 }
