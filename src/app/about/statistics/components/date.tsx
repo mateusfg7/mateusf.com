@@ -7,7 +7,7 @@ function padZero(n: number) {
 
 export function RenderDate({ date }: { date: Date }) {
   const calendar = `${padZero(date.getDate())}/${padZero(
-    date.getMonth()
+    date.getMonth() + 1
   )}/${padZero(date.getFullYear())}`
   const timestamp = `${padZero(date.getHours())}:${padZero(
     date.getMinutes()
