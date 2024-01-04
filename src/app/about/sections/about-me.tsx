@@ -16,7 +16,7 @@ export function AboutMe() {
       </div>
       <div className="md:flex-1">
         <Title text="About Me" />
-        <div className="block md:hidden">
+        <div className="flex justify-center md:hidden">
           <ImageCard mobile />
         </div>
         <div className="about-rendered-mdx flex flex-col gap-3 text-xl md:text-left">

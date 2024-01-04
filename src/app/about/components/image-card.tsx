@@ -7,7 +7,7 @@ import { placeholder } from '../../../shared/lib/placeholder'
 export function ImageCard({ mobile = false }) {
   return (
     <Tilt
-      className="overflow-hidden rounded-3xl shadow-2xl dark:shadow-black"
+      className="w-fit overflow-hidden rounded-3xl shadow-2xl dark:shadow-black"
       tiltMaxAngleX={5}
       tiltMaxAngleY={5}
       glarePosition="all"
