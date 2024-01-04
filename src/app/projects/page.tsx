@@ -3,6 +3,7 @@ import { Title } from '@/shared/components/title'
 import { allProjects } from 'contentlayer/generated'
 import { ProjectCard } from './components/project-card'
 import { ProjectInfo } from './components/project-info'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
 export default function Page() {
   const featuredProjects = allProjects
@@ -33,6 +34,16 @@ export default function Page() {
           otherProjectsWithoutImage.map(project => (
             <ProjectInfo data={project} key={project._id} />
           ))}
+      </div>
+      <div className="flex justify-center md:justify-end">
+        <a
+          href="https://github.com/mateusfg7/?tab=repositories#"
+          target="_blank"
+          className="flex items-end gap-px leading-none opacity-70 transition-opacity hover:opacity-100"
+        >
+          <span>more projects</span>
+          <ArrowUpRight className="text-sm" size="1em" />
+        </a>
       </div>
     </div>
   )
