@@ -1,5 +1,5 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { DownloadSimple } from '@phosphor-icons/react/dist/ssr'
+import { DownloadSimple, ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { allAbouts } from 'contentlayer/generated'
 
 import { Title } from '@/shared/components/title'
@@ -22,9 +22,17 @@ export function AboutMe() {
         <div className="about-rendered-mdx flex flex-col gap-3 text-xl md:text-left">
           <MDXAboutContent />
         </div>
-        <div className="mt-12 flex items-center justify-center gap-10 md:mt-6 md:justify-start">
+        <div className="mt-12 flex items-center justify-center gap-3 md:mt-6 md:flex-row-reverse md:justify-end">
           <a
-            className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-300"
+            className="flex items-end justify-center rounded-xl p-2 leading-none underline opacity-70 hover:opacity-100"
+            target="_blank"
+            href="https://read.cv/mateusfelipe"
+          >
+            <span>read.cv</span>
+            <ArrowUpRight className="text-xs" size="1em" />
+          </a>
+          <a
+            className="flex items-center justify-center gap-2 rounded-xl bg-blue-700/10 p-2 leading-none text-blue-700 hover:bg-blue-700 hover:text-white"
             target="_blank"
             href="/assets/cv-mateus-felipe.pdf"
           >
