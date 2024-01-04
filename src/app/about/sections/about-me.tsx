@@ -32,7 +32,7 @@ export function AboutMe() {
             <ArrowUpRight className="text-xs" size="1em" />
           </a>
           <a
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-700/10 p-2 leading-none text-blue-700 hover:bg-blue-700 hover:text-white"
+            className="flex items-center justify-center gap-2 rounded-xl bg-blue-700/10 p-2 leading-none text-blue-700 hover:bg-blue-700 hover:text-white dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500 dark:hover:text-white"
             target="_blank"
             href="/assets/cv-mateus-felipe.pdf"
           >
