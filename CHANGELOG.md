@@ -1,3 +1,22 @@
+## [8.11.0](https://github.com/mateusfg7/mateusf.com/compare/8.10.3...8.11.0) (2024-01-04)
+
+
+### Features
+
+* **assets:** update `cv-mateus-felipe.pdf` ([772ea0b](https://github.com/mateusfg7/mateusf.com/commit/772ea0bb4c9c47ba7cb0825950836634427853ab))
+* **statistics:** update github-contribution-calendar ([78216ec](https://github.com/mateusfg7/mateusf.com/commit/78216ec5f0d0a9755bf1cea5198733729cdf8bdb))
+* **stats:** create `getGithubContribution` function on github lib ([53dbfb5](https://github.com/mateusfg7/mateusf.com/commit/53dbfb5c2fec93da40767cc080beda70f1fab230)), closes [#L79C23-L79C44](https://github.com/mateusfg7/mateusf.com/issues/L79C23-L79C44)
+* **ui:** add "more projects" button on bottom of projects page ([cd5047f](https://github.com/mateusfg7/mateusf.com/commit/cd5047facd90ce13cc9b4c2f77df9ecc6c5b5161))
+* **ui:** add `read.cv` button on about page ([ba287c1](https://github.com/mateusfg7/mateusf.com/commit/ba287c12759148968efd5551d7214118ed528efd)), closes [#714](https://github.com/mateusfg7/mateusf.com/issues/714)
+* **ui:** add contribution graph ([3817811](https://github.com/mateusfg7/mateusf.com/commit/3817811426f6eb68a10ff10be91b84f5ae3ad972))
+* **ui:** add description on contribution graph ([ec0e261](https://github.com/mateusfg7/mateusf.com/commit/ec0e261d656af39b1697137615ef5c589dd10484))
+
+
+### Bug Fixes
+
+* **ui:** increment +1 on month number on render info of statistics page ([a28dc0c](https://github.com/mateusfg7/mateusf.com/commit/a28dc0cc570908954310915f55dab0d55b6abfd0))
+* **ui:** keep profile picture proportion on about page mobile ([4395797](https://github.com/mateusfg7/mateusf.com/commit/439579726dc13a1a9965b2006f63cce630b2d5e2))
+
 ## [8.10.3](https://github.com/mateusfg7/mateusf.com/compare/8.10.2...8.10.3) (2023-12-28)
 
 
