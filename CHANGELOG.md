@@ -1,3 +1,10 @@
+## [8.11.1](https://github.com/mateusfg7/mateusf.com/compare/8.11.0...8.11.1) (2024-01-04)
+
+
+### Bug Fixes
+
+* **ui:** add dark colors for "Download CV" button on about page ([7c07bf6](https://github.com/mateusfg7/mateusf.com/commit/7c07bf67305f6761eaed0bc509f7076e909705ef))
+
 ## [8.11.0](https://github.com/mateusfg7/mateusf.com/compare/8.10.3...8.11.0) (2024-01-04)
 
 
