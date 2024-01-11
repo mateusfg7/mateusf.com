@@ -1,7 +1,5 @@
 'use client'
 
-import { ContributionDay } from '@/shared/lib/github'
-import { useTheme } from 'next-themes'
 import {
   Area,
   AreaChart,
@@ -14,13 +12,12 @@ import {
   NameType,
   ValueType
 } from 'recharts/types/component/DefaultTooltipContent'
-import usePrefersColorScheme from 'use-prefers-color-scheme'
+
+import { useAbsoluteTheme } from '@/shared/hooks/useAbsoluteTheme'
+import { ContributionDay } from '@/shared/lib/github'
 
 export function Chart({ data }: { data: ContributionDay[] }) {
-  const { theme } = useTheme()
-  const colorScheme = usePrefersColorScheme()
-  const isDarkMode =
-    theme === 'system' ? colorScheme === 'dark' : theme == 'dark'
+  const isDarkMode = useAbsoluteTheme() === 'dark'
 
   return (
     <AreaChart

@@ -1,16 +1,10 @@
 'use client'
 
 import Giscus, { Theme } from '@giscus/react'
-import { useTheme } from 'next-themes'
-import usePrefersColorScheme from 'use-prefers-color-scheme'
+import { useAbsoluteTheme } from '@/shared/hooks/useAbsoluteTheme'
 
 export function Comments() {
-  const { theme: nextTheme } = useTheme()
-  const colorScheme = usePrefersColorScheme()
-  const isDarkMode =
-    nextTheme === 'system' ? colorScheme === 'dark' : nextTheme == 'dark'
-
-  const prefersColorScheme = isDarkMode ? 'dark' : 'light'
+  const prefersColorScheme = useAbsoluteTheme()
 
   const theme: { [key: string]: Theme } = {
     dark: 'transparent_dark',
