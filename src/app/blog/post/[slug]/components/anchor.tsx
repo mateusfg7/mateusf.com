@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 
-import { ArrowSquareOut } from '@phosphor-icons/react/dist/ssr'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 
 interface Props
   extends DetailedHTMLProps<
@@ -12,8 +12,9 @@ interface Props
 
 export function Anchor({ children, href, ...props }: Props) {
   return (
-    <a className="inline-flex items-center gap-1" href={href} {...props}>
-      {children} <ArrowSquareOut size="1em" />
+    <a className="inline-flex items-end leading-none" href={href} {...props}>
+      <span>{children}</span>
+      <ArrowUpRight size="1em" className="text-xs" />
     </a>
   )
 }
