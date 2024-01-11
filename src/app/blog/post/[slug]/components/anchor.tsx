@@ -13,7 +13,7 @@ interface Props
 export function Anchor({ children, href, ...props }: Props) {
   return (
     <a className="inline-flex items-center gap-1" href={href} {...props}>
-      {children} <ArrowSquareOut />
+      {children} <ArrowSquareOut size="1em" />
     </a>
   )
 }
