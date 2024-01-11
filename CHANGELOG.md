@@ -1,3 +1,18 @@
+## [8.11.2](https://github.com/mateusfg7/mateusf.com/compare/8.11.1...8.11.2) (2024-01-11)
+
+
+### Features
+
+* **ui:** replace link icon to `ArrowSquareOut` on blog post ([1485a9d](https://github.com/mateusfg7/mateusf.com/commit/1485a9da811c144bedeba915b5c8fc4f816be337))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3.1.0 ([6fddbf2](https://github.com/mateusfg7/mateusf.com/commit/6fddbf251ad0d78deadbe16a1b99bcecc5c22355))
+* **deps:** update dependency kbar to v0.1.0-beta.45 ([db5f495](https://github.com/mateusfg7/mateusf.com/commit/db5f495838532e96077214afe61cf90b3e825a8f))
+* **ui:** add `size="1em"` on link icon from blog post ([35205d9](https://github.com/mateusfg7/mateusf.com/commit/35205d9e6bb6cc8ce6959f6b976515657c9c57f3))
+* **ui:** set correct theme for blog comments section ([f2845b2](https://github.com/mateusfg7/mateusf.com/commit/f2845b270fc53a3e0bf2e1e11c1792e08d9b7ac3))
+
 ## [8.11.1](https://github.com/mateusfg7/mateusf.com/compare/8.11.0...8.11.1) (2024-01-04)
 
 
