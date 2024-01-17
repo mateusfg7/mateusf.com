@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     ...config.metadata,
+    siteName: config.metadata.title,
     type: 'website',
     url: '/',
     emails: [
