@@ -1,0 +1,54 @@
+---
+title: 'Find-And-Replace Vim'
+description: 'How to fast replace all mathing strings on vim'
+date: '2024-01-17'
+tags: [vim,editor,ide,cli]
+---
+
+For base find-and-replace on vim, we can use the `:substituto` (`:s`) command.
+
+The general form of the substitute command is as follow:
+```
+:[range]s/{pattern}/{string}/[flags] [count]
+```
+
+The command search each line in `[range]` for a `{pattern}`, and replaces it with a `{string}`.
+`[count]` is a positive integer that multiplies the command.
+
+If no `[range]` and `[count]` are given, only the pattern found in the current line is replaced.
+The current line is the line where the cursor is placed.
+
+For example, to search for the first occurrences of the string `"foo"` in the current line, and replace it with `"bar"`, you should use:
+```
+:s/foo/bar
+```
+
+To replace all occurrences of the search pattern in the current line, add the `g` flag:
+```
+:s/foo/bar/g
+```
+
+If you want to search and replace the pattern in the intire file, use the percentage character `%` as a range.
+This caracter indicates a range from the first to the last line of the file:
+```
+:%s/foo/bar/g
+```
+
+We can also use `|` as parameter separator:
+```
+:s|foo|bar
+```
+
+To show confirmation for each substituition, use `c` flag:
+```
+:s/foo/bar/gc
+```
+
+To ignore case sensitivity, use `i` flag:
+```
+:s/foo/bar/gi
+```
+
+> There is much more options, look at the **ref** link for more...
+
+**ref**: https://linuxize.com/post/vim-find-replace/
