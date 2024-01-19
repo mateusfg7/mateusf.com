@@ -1,3 +1,18 @@
+## [8.11.3](https://github.com/mateusfg7/mateusf.com/compare/8.11.2...8.11.3) (2024-01-19)
+
+
+### Features
+
+* **analytics:** update umami instance url ([c1ac3ea](https://github.com/mateusfg7/mateusf.com/commit/c1ac3ea591f97ca3b9caa1fcd927324e5dc677e4))
+* **seo:** small seo improvements ([960ef75](https://github.com/mateusfg7/mateusf.com/commit/960ef75bcfcc8c80fcafe25b1c491215ff28d61b))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3.2.0 ([57e7a47](https://github.com/mateusfg7/mateusf.com/commit/57e7a47d35659c661ea29c898b1c48f39ab04e0d))
+* **deps:** update dependency react-icons to v5 ([61d86db](https://github.com/mateusfg7/mateusf.com/commit/61d86db4bc92e8a20d490bb1e34a6a99763f917b))
+* **deps:** update dependency react-icons to v5.0.1 ([962b783](https://github.com/mateusfg7/mateusf.com/commit/962b7832f51d9450e371d4a7c7b5c97df23b85d0))
+
 ## [8.11.2](https://github.com/mateusfg7/mateusf.com/compare/8.11.1...8.11.2) (2024-01-11)
 
 
