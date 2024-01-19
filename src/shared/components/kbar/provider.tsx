@@ -272,7 +272,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       icon: <ChartLine size="1em" weight="duotone" />,
       perform: () =>
         window.open(
-          'https://analytics.umami.is/share/IV950FFonuZg4Rbn/mateusf.com',
+          "https://analytics.mateusf.com/share/YdWCDBOWOyKv5rRe/Mateus%20Felipe's%20Hideout",
           '_blank'
         )
     },
