@@ -9,6 +9,7 @@
   ],
   "originsRegex": [
     "https://mateusf-([A-z0-9]|-)*mateusfg7\\.vercel\\.app",
+    "https://[0-9]+-mateusfg7-mateusfcom-[A-Za-z0-9]+\\.ws-[A-Za-z0-9]+\\.gitpod\\.io",
     "http://localhost:[0-9]+"
   ]
 }
