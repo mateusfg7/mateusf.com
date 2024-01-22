@@ -3,21 +3,22 @@ import type { Metadata } from 'next'
 import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-
-import { allPosts, type Post } from 'contentlayer/generated'
-
-import { slug } from '@/shared/lib/slug'
 import {
   Folder,
   CalendarBlank,
   Clock,
   Tag
 } from '@phosphor-icons/react/dist/ssr'
+
+import { allPosts, type Post } from 'contentlayer/generated'
+
+import { slug } from '@/shared/lib/slug'
 import { Date } from '@/shared/components/date'
+import { GiscusComments } from '@/shared/components/giscus-comments'
+
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'
 import { PrettyCodeElement } from './components/pretty-code-element'
-import { Comments } from './components/comments'
 
 import 'katex/dist/katex.min.css'
 
@@ -147,7 +148,7 @@ export default function Page({ params }: Props) {
         <MDXContent components={mdxComponents} />
       </div>
       <div className="pt-12">
-        <Comments />
+        <GiscusComments />
       </div>
       <TopButton />
     </div>
