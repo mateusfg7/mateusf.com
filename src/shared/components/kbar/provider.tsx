@@ -29,7 +29,8 @@ import {
   Files,
   Books,
   ChartPieSlice,
-  Notebook
+  Notebook,
+  Book
 } from '@phosphor-icons/react/dist/ssr'
 import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
 import { KBar } from '@/shared/components/kbar'
@@ -57,6 +58,14 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       keywords: 'about me user information info',
       icon: <User size="1em" weight="duotone" />,
       perform: () => push('/about')
+    },
+    {
+      id: 'guestbook',
+      name: 'Guestbook',
+      shortcut: ['n', 'g'],
+      keywords: 'presence list',
+      icon: <Book size="1em" weight="duotone" />,
+      perform: () => push('/guestbook')
     },
     {
       id: 'statistics',

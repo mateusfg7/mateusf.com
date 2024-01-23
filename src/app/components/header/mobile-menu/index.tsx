@@ -15,7 +15,8 @@ import {
   MagnifyingGlass,
   Note,
   User,
-  Briefcase
+  Briefcase,
+  Book
 } from '@phosphor-icons/react/dist/ssr'
 
 import { ToggleTheme } from './toggle-theme'
@@ -109,6 +110,7 @@ export function MobileMenu() {
               <Link title="Blog" icon={Note} href="/blog" />
               <Link title="Projects" icon={Briefcase} href="/projects" />
               <Link title="About" icon={User} href="/about" />
+              <Link title="Guestbook" icon={Book} href="/guestbook" />
               <Link title="Sitemap" icon={TreeStructure} href="/sitemap" />
               <Search />
               <OutLink
