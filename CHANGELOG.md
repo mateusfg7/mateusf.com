@@ -1,3 +1,18 @@
+## [8.12.0](https://github.com/mateusfg7/mateusf.com/compare/8.11.3...8.12.0) (2024-01-23)
+
+
+### Features
+
+* add references to `/guestbook` ([43ae5e9](https://github.com/mateusfg7/mateusf.com/commit/43ae5e97f08a5299384592cbb19707b1a9f23260))
+* **assets:** add gitscus theme css ([9647b73](https://github.com/mateusfg7/mateusf.com/commit/9647b7326c123013af8496a36024b3fb2715382c))
+* **giscus-comments:** small improvements ([91d0cec](https://github.com/mateusfg7/mateusf.com/commit/91d0cece69522c3115f170efcf14a8cc1ca1166d))
+* **page:** create `/guestbook` page ([9e170a6](https://github.com/mateusfg7/mateusf.com/commit/9e170a65e318da1f8a98af89cd86f756fa69d8e1))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3.3.0 ([f1606ba](https://github.com/mateusfg7/mateusf.com/commit/f1606bab1528bd6fe6fb08539dea2ceeb0bc1543))
+
 ## [8.11.3](https://github.com/mateusfg7/mateusf.com/compare/8.11.2...8.11.3) (2024-01-19)
 
 
