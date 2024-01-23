@@ -33,6 +33,14 @@ const nextConfig = {
         destination: '/blog/feed'
       }
     ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/assets/:path*',
+        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }]
+      }
+    ]
   }
 }
 
