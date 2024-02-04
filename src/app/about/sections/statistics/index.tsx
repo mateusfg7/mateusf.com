@@ -6,7 +6,7 @@ import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { AgeCard } from './cards/age'
 import { GithubFollowers } from './cards/github-followers'
 import { GithubStars } from './cards/github-stars'
-import { LastTrack } from './cards/last-track'
+import { BlogPosts } from './cards/posts'
 import { SpotifyPlays } from './cards/spotify-plays'
 import { TopArtist } from './cards/top-artist'
 
@@ -21,9 +21,9 @@ export function StatisticsGrid() {
             <AgeCard />
             <GithubStars />
             <GithubFollowers />
+            <BlogPosts />
             <SpotifyPlays />
             <TopArtist />
-            <LastTrack />
           </div>
           <div className="flex justify-center md:justify-end">
             <Link
