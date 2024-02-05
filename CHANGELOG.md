@@ -1,3 +1,12 @@
+## [8.12.1](https://github.com/mateusfg7/mateusf.com/compare/8.12.0...8.12.1) (2024-02-04)
+
+
+### Features
+
+* **lastFm:** create new types and functions ([cc0bcee](https://github.com/mateusfg7/mateusf.com/commit/cc0bcee1a4f1beea928b81b2235e831a595e8d71))
+* **ui:** replace "last track" sectionby "top track" section ([d140981](https://github.com/mateusfg7/mateusf.com/commit/d1409811c8586107a78ce156b70824ca6842fd74))
+* **ui:** replace "last track" sectionby "top track" section ([c70fc38](https://github.com/mateusfg7/mateusf.com/commit/c70fc3878b10beccc2d228f2ce55b73fdc87ee1a))
+
 ## [8.12.0](https://github.com/mateusfg7/mateusf.com/compare/8.11.3...8.12.0) (2024-01-23)
 
 
