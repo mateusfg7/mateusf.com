@@ -1,0 +1,99 @@
+---
+title: 'Subslice Pattern Rust'
+description: 'Use pattern matching on Rust slices/vectors'
+date: '2024-02-05'
+tags: [rust,pattern]
+---
+
+This is a usefull pattern on Rust `match` when you want to match slices of a vector.
+
+**Imagine this problem**: We want to implement a function which takes an vector containing the names of people that like an item. It must return the display text as shown in the examples:
+
+```txt caption="For 4 or more names, the number in 'and 2 others' simply increases."
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+```
+
+We can solve this with:
+
+```rust
+fn likes(names: &[&str]) -> String {
+  match names {
+    [] => format!("no one likes this"),
+    [a] => format!("{} likes this", a),
+    [a, b] => format!("{} and {} like this", a, b),
+    [a, b, c] => format!("{}, {} and {} like this", a, b, c),
+    [a, b, rest @ ..] => format!("{}, {} and {} others like this", a, b, rest.len()),
+  }
+}
+```
+
+Where `rest @ ..` will catch all the rest of the vector items.
+
+---
+
+**Another examples**:
+
+```rust title="Fixed size"
+let arr = [1, 2, 3];
+match arr {
+  [1, _, _] => "starts with one",
+  [a, b, c] => "starts with something else",
+};
+```
+<br/>
+```rust title="Dynamic size"
+let v = vec![1, 2, 3];
+match v[..] {
+  [a, b] => { /* this arm will not apply because the length doesn't match */ }
+  [a, b, c] => { /* this arm will apply */ }
+  _ => { /* this wildcard is required, since the length is not known statically */ }
+};
+```
+<br/>
+```rust
+fn foo(words: &[&str]) {
+  match words {
+    [] => println!("empty slice!"),
+    [one] => println!("one element: {:?}", one),
+    [one, two] => println!("two elements: {:?} {:?}", one, two),
+    _ => println!("I'm not sure how many elements!"),
+  }
+}
+```
+<br/>
+```rust
+fn foo(words: &[&str]) {
+  match words {
+    ["Hello", "World", "!", ..] => println!("Hello World!"),
+    ["Foo", "Bar", ..] => println!("Baz"),
+    rest => println!("{:?}", rest),
+  }
+}
+```
+<br/>
+```rust
+fn foo(words: &[&str]) {
+  match words {
+    // Ignore everything but the last element, which must be "!".
+    [.., "!"] => println!("!!!"),
+
+    // `start` is a slice of everything except the last element, which must be "z".
+    [start @ .., "z"] => println!("starts with: {:?}", start),
+
+    // `end` is a slice of everything but the first element, which must be "a".
+    ["a", end @ ..] => println!("ends with: {:?}", end),
+
+    rest => println!("{:?}", rest),
+  }
+}
+```
+
+**refs:**
+- https://blog.rust-lang.org/2020/03/12/Rust-1.42.html#subslice-patterns
+- https://doc.rust-lang.org/stable/reference/patterns.html#slice-patterns
+- https://www.codewars.com/kata/reviews/610bafaf8ddaed0001adc1bf/groups/610bb3c2c37fc900018b08f1
+
