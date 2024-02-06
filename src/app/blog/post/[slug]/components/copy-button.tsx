@@ -25,7 +25,7 @@ export const CopyButton = ({ text }) => {
           : 'cursor-pointer bg-neutral-300 text-neutral-600 opacity-40 dark:bg-neutral-800 dark:text-neutral-400'
       }`}
     >
-      {isCopied ? <Check /> : <Copy />}
+      {isCopied ? <Check size="1em" /> : <Copy size="1em" />}
     </button>
   )
 }
