@@ -17,7 +17,7 @@ Before all, let's see the difference between the state update methods treated he
 
 ## Normal States Updates
 
-```tsx
+```tsx /count + 1/
 import React, { useState } from 'react'
 
 const Counter = () => {
@@ -40,7 +40,7 @@ export default Counter;
 
 ## Functional State Updates
 
-```tsx
+```tsx /(prevCount) => prevCount + 1/
 import React, { useState } from 'react'
 
 const Counter = () => {
@@ -69,7 +69,7 @@ The need for **functional state updates** arises from the **problem of stale sta
 
 I.e., suppose you have a component that increments the count by 10 three times when a button is clicked:
 
-```tsx
+```tsx {6-10}
 import React, { useState } from 'react'
 
 const Counter = () => {
