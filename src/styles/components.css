@@ -157,13 +157,15 @@
     }
 
     ul {
-      @apply list-inside list-disc text-justify md:text-left;
+      @apply list-inside list-disc overflow-x-auto text-justify md:text-left;
 
       &.contains-task-list {
         @apply list-none;
       }
 
       li {
+        @apply w-max;
+
         ul {
           @apply px-6;
         }
