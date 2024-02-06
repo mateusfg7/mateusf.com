@@ -109,7 +109,7 @@ export async function getLastFmTopArtists() {
   return artist
 }
 
-type TopTrack = {
+export type TopTrack = {
   streamable: { fulltrack: '0' | '1'; '#text': '0' | '1' }
   mbid: string
   name: string

@@ -1,8 +1,8 @@
 import { Playlist } from '@phosphor-icons/react/dist/ssr'
 
-import { Track, getLastFmTopTracks } from '@/shared/lib/lastFm'
+import { TopTrack, getLastFmTopTracks } from '@/shared/lib/lastFm'
 
-const TrackItem = ({ track }: { track: Track }) => (
+const TrackItem = ({ track }: { track: TopTrack }) => (
   <div className="flex items-center justify-between gap-3 py-2">
     <div className="flex flex-1 flex-col overflow-hidden">
       <a
