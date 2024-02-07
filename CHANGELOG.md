@@ -1,3 +1,12 @@
+## [8.12.2](https://github.com/mateusfg7/mateusf.com/compare/8.12.1...8.12.2) (2024-02-06)
+
+
+### Bug Fixes
+
+* **types:** use `TopTrack` type instead of `Track` on statistics page ([dcc4b4b](https://github.com/mateusfg7/mateusf.com/commit/dcc4b4b1602d9e2d08a301da074681ad5e1088b4))
+* **ui:** copy button on code fragments ([07b6488](https://github.com/mateusfg7/mateusf.com/commit/07b64887f7c387906fe3d50df468e41f86ae6b5b))
+* **ui:** long `<li>` lines ([f2749f1](https://github.com/mateusfg7/mateusf.com/commit/f2749f13a4bd0cf7f75d5f9dbc8462a83ddf69f6))
+
 ## [8.12.1](https://github.com/mateusfg7/mateusf.com/compare/8.12.0...8.12.1) (2024-02-04)
 
 
