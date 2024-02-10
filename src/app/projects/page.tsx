@@ -1,4 +1,4 @@
-import { Title } from '@/shared/components/title'
+import { Title } from '~/shared/components/title'
 
 import { allProjects } from 'contentlayer/generated'
 import { ProjectCard } from './components/project-card'

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { MusicNotes } from '@phosphor-icons/react/dist/ssr'
 
-import { placeholder } from '@/shared/lib/placeholder'
-import { getLastFmTopTracks, getTrackInfo } from '@/shared/lib/lastFm'
+import { placeholder } from '~/shared/lib/placeholder'
+import { getLastFmTopTracks, getTrackInfo } from '~/shared/lib/lastFm'
 
 export async function TopTrack() {
   const tracks = await getLastFmTopTracks('1month')

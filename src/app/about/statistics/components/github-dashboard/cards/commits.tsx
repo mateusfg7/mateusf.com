@@ -1,5 +1,5 @@
 import { GitCommit } from '@phosphor-icons/react/dist/ssr'
-import { getGithubCommits } from '@/shared/lib/github'
+import { getGithubCommits } from '~/shared/lib/github'
 
 export async function Commits() {
   const { total_count } = await getGithubCommits()

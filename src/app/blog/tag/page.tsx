@@ -2,8 +2,8 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { slug } from '@/shared/lib/slug'
-import { getTagsAndNumberOfPosts } from '@/shared/lib/tags'
+import { slug } from '~/shared/lib/slug'
+import { getTagsAndNumberOfPosts } from '~/shared/lib/tags'
 import { Tag } from '@phosphor-icons/react/dist/ssr'
 
 export const metadata: Metadata = {

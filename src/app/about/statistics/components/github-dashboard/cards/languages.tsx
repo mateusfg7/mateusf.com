@@ -1,4 +1,4 @@
-import { getGithubRepositories } from '@/shared/lib/github'
+import { getGithubRepositories } from '~/shared/lib/github'
 import { Code } from '@phosphor-icons/react/dist/ssr'
 
 export async function Languages() {

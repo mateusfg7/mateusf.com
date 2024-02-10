@@ -13,8 +13,8 @@ import {
   ValueType
 } from 'recharts/types/component/DefaultTooltipContent'
 
-import { useAbsoluteTheme } from '@/shared/hooks/useAbsoluteTheme'
-import { ContributionDay } from '@/shared/lib/github'
+import { useAbsoluteTheme } from '~/shared/hooks/useAbsoluteTheme'
+import { ContributionDay } from '~/shared/lib/github'
 
 export function Chart({ data }: { data: ContributionDay[] }) {
   const isDarkMode = useAbsoluteTheme() === 'dark'

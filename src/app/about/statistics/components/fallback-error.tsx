@@ -1,4 +1,4 @@
-import { ApiErrorMessage } from '@/shared/components/api-error-message'
+import { ApiErrorMessage } from '~/shared/components/api-error-message'
 
 export function FallbackError() {
   return (

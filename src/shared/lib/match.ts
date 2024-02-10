@@ -1,5 +1,5 @@
 import { Post } from 'contentlayer/generated'
-import { slug } from '@/shared/lib/slug'
+import { slug } from '~/shared/lib/slug'
 
 export function searchMath(post: Post, search: string) {
   const sluggedSearch = slug(search)

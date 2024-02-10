@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
-import { CustomKBarProvider } from '@/shared/components/kbar/provider'
+import { CustomKBarProvider } from '~/shared/components/kbar/provider'
 
 export function Providers({ children }: { children: ReactNode }) {
   return (

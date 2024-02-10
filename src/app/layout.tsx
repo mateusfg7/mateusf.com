@@ -7,7 +7,7 @@ import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { Providers } from './providers'
 
-import '@/styles/main.css'
+import '~/styles/main.css'
 
 export const metadata: Metadata = {
   ...config.metadata,

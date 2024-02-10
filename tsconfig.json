@@ -23,7 +23,7 @@
       "contentlayer/generated": [
         ".contentlayer/generated"
       ],
-      "@/*": [
+      "~/*": [
         "src/*"
       ],
       "global-config": [

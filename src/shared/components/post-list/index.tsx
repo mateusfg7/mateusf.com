@@ -1,5 +1,5 @@
 import { Post } from 'contentlayer/generated'
-import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
+import { getSortedPosts } from '~/shared/lib/get-sorted-posts'
 
 import { separatePostsByStatus } from './separate-posts-by-status'
 import { categorizePostsByYear } from './categorize-posts-by-year'

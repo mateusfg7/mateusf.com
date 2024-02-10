@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 import { Heart } from '@phosphor-icons/react/dist/ssr'
-import { placeholder } from '@/shared/lib/placeholder'
-import { shuffleArray } from '@/shared/lib/shuffleArray'
-import { getGithubFollowers, getGithubUserData } from '@/shared/lib/github'
+import { placeholder } from '~/shared/lib/placeholder'
+import { shuffleArray } from '~/shared/lib/shuffleArray'
+import { getGithubFollowers, getGithubUserData } from '~/shared/lib/github'
 
 const AVATAR_COUNT = 71
 

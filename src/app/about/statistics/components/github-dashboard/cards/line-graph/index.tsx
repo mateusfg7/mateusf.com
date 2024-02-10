@@ -1,5 +1,5 @@
 import { ChartLine } from '@phosphor-icons/react/dist/ssr'
-import { getGithubContribution } from '@/shared/lib/github'
+import { getGithubContribution } from '~/shared/lib/github'
 import { Chart } from './chart'
 
 export async function LineGraph() {

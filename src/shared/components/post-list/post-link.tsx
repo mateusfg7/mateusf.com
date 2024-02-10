@@ -10,7 +10,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 
 import { Post } from 'contentlayer/generated'
-import { Date } from '@/shared/components/date'
+import { Date } from '~/shared/components/date'
 import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
 interface Props {

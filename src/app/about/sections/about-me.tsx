@@ -2,7 +2,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { DownloadSimple, ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { allAbouts } from 'contentlayer/generated'
 
-import { Title } from '@/shared/components/title'
+import { Title } from '~/shared/components/title'
 
 import { ImageCard } from '../components/image-card'
 

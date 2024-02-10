@@ -1,4 +1,4 @@
-import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
+import { getSortedPosts } from '~/shared/lib/get-sorted-posts'
 import { config } from 'global-config'
 import { allPosts } from 'contentlayer/generated'
 import { Feed } from 'feed'

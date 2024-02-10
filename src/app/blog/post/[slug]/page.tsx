@@ -12,9 +12,9 @@ import {
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
-import { slug } from '@/shared/lib/slug'
-import { Date } from '@/shared/components/date'
-import { GiscusComments } from '@/shared/components/giscus-comments'
+import { slug } from '~/shared/lib/slug'
+import { Date } from '~/shared/components/date'
+import { GiscusComments } from '~/shared/components/giscus-comments'
 
 import { TopButton } from './components/top-button'
 import { Anchor } from './components/anchor'

@@ -4,7 +4,7 @@ import {
   PencilLine,
   SpotifyLogo
 } from '@phosphor-icons/react/dist/ssr'
-import { Title } from '@/shared/components/title'
+import { Title } from '~/shared/components/title'
 
 import { GithubDashboard } from './components/github-dashboard'
 import { SpotifyDashboard } from './components/spotify-dashboard'

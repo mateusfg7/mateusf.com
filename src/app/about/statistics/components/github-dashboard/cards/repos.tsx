@@ -1,4 +1,4 @@
-import { getGithubUserData } from '@/shared/lib/github'
+import { getGithubUserData } from '~/shared/lib/github'
 import { Cube } from '@phosphor-icons/react/dist/ssr'
 
 export async function Repos() {

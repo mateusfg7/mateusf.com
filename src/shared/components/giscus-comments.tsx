@@ -1,7 +1,7 @@
 'use client'
 
 import Giscus, { Theme, GiscusProps, Mapping } from '@giscus/react'
-import { useAbsoluteTheme } from '@/shared/hooks/useAbsoluteTheme'
+import { useAbsoluteTheme } from '~/shared/hooks/useAbsoluteTheme'
 
 type Props = Omit<GiscusProps, 'repo' | 'repoId' | 'mapping' | 'theme'> & {
   mapping?: Mapping

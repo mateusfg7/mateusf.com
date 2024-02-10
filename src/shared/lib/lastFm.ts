@@ -1,4 +1,4 @@
-import { ApiError } from '@/shared/errors/api-error'
+import { ApiError } from '~/shared/errors/api-error'
 
 export type Track = {
   name: string

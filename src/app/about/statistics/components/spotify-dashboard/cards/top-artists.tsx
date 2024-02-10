@@ -1,6 +1,6 @@
 import { UserList } from '@phosphor-icons/react/dist/ssr'
 
-import { Artist, getLastFmTopArtists } from '@/shared/lib/lastFm'
+import { Artist, getLastFmTopArtists } from '~/shared/lib/lastFm'
 
 const ArtistItem = ({ artist }: { artist: Artist }) => (
   <div className="flex items-center justify-between gap-3 py-4">

@@ -32,11 +32,11 @@ import {
   Notebook,
   Book
 } from '@phosphor-icons/react/dist/ssr'
-import { getSortedPosts } from '@/shared/lib/get-sorted-posts'
-import { KBar } from '@/shared/components/kbar'
-import { slug } from '@/shared/lib/slug'
-import { getUniqueCategoryList } from '@/shared/lib/categories'
-import { getUniqueTagListFromPosts } from '@/shared/lib/tags'
+import { getSortedPosts } from '~/shared/lib/get-sorted-posts'
+import { KBar } from '~/shared/components/kbar'
+import { slug } from '~/shared/lib/slug'
+import { getUniqueCategoryList } from '~/shared/lib/categories'
+import { getUniqueTagListFromPosts } from '~/shared/lib/tags'
 
 export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const { push } = useRouter()
