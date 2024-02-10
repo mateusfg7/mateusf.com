@@ -1,8 +1,8 @@
+import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+const config: Config = {
+  content: ['./src/**/*.tsx'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -32,31 +32,34 @@ module.exports = {
       keyframes: {
         typing: {
           from: {
-            width: 0
+            width: '1'
           },
           to: {
             width: '22.7rem'
           }
         },
         cursor: {
-          '0%, 40%': { opacity: 1 },
-          '60%, 100%': { opacity: 0 }
+          '0%, 40%': { opacity: '1' },
+          '60%, 100%': { opacity: '0' }
         },
         slideDown: {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' }
         },
         slideUp: {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 }
+          to: { height: '0' }
         },
         overlayShow: {
-          from: { opacity: 0 },
-          to: { opacity: 1 }
+          from: { opacity: '0' },
+          to: { opacity: '1' }
         },
         contentShow: {
-          from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
-          to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' }
+          from: {
+            opacity: '0',
+            transform: 'translate(-50%, -48%) scale(0.96)'
+          },
+          to: { opacity: '1', transform: 'translate(-50%, -50%) scale(1)' }
         },
         shine: {
           '20%, 100%': {
@@ -65,12 +68,12 @@ module.exports = {
         },
         'custom-fade-down': {
           '0%': {
-            opacity: 0,
+            opacity: '0',
             transform:
               'translate(var(--tw-translate-x), -1rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
           },
           '100%': {
-            opacity: 1,
+            opacity: '1',
             transform:
               'translate(var(--tw-translate-x), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
           }
@@ -105,7 +108,7 @@ module.exports = {
         },
         '100%': {
           transform: 'scale(3)',
-          opacity: 0
+          opacity: '0'
         }
       }
     }
@@ -115,3 +118,5 @@ module.exports = {
     require('@tailwindcss/forms')({ strategy: 'class' })
   ]
 }
+
+export default config
