@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { ImageResponse } from 'next/og'
 import { FiFolder, FiCalendar, FiClock } from 'react-icons/fi'
 import { allPosts } from 'contentlayer/generated'
-import { Date as DateFormatter } from '~/shared/components/date'
+import { Date as DateFormatter } from '~/components/date'
 import { config } from 'global-config'
 
 export const runtime = 'edge'

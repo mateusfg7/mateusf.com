@@ -1,6 +1,6 @@
 import { ArrowUpRight, Link } from '@phosphor-icons/react/dist/ssr'
-import { Title } from '~/shared/components/title'
-import { allRoutes } from '../lib/all-routes'
+import { Title } from '~/components/title'
+import { allRoutes } from '../_lib/all-routes'
 
 export default function Page() {
   return (

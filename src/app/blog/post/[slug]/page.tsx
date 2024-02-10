@@ -12,13 +12,13 @@ import {
 
 import { allPosts, type Post } from 'contentlayer/generated'
 
-import { slug } from '~/shared/lib/slug'
-import { Date } from '~/shared/components/date'
-import { GiscusComments } from '~/shared/components/giscus-comments'
+import { slug } from '~/lib/slug'
+import { Date } from '~/components/date'
+import { GiscusComments } from '~/components/giscus-comments'
 
-import { TopButton } from './components/top-button'
-import { Anchor } from './components/anchor'
-import { PrettyCodeElement } from './components/pretty-code-element'
+import { TopButton } from './_components/top-button'
+import { Anchor } from './_components/anchor'
+import { PrettyCodeElement } from './_components/pretty-code-element'
 
 import 'katex/dist/katex.min.css'
 

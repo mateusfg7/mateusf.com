@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+
 import { AboutMe } from './sections/about-me'
 import { Contact } from './sections/contact'
 import { Knowledge } from './sections/knowledge'

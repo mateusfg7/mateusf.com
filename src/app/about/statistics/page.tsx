@@ -4,12 +4,12 @@ import {
   PencilLine,
   SpotifyLogo
 } from '@phosphor-icons/react/dist/ssr'
-import { Title } from '~/shared/components/title'
+import { Title } from '~/components/title'
 
-import { GithubDashboard } from './components/github-dashboard'
-import { SpotifyDashboard } from './components/spotify-dashboard'
-import { WritingDashboard } from './components/writing-dashboard'
-import { RenderDate } from './components/date'
+import { GithubDashboard } from './_components/github-dashboard'
+import { SpotifyDashboard } from './_components/spotify-dashboard'
+import { WritingDashboard } from './_components/writing-dashboard'
+import { RenderDate } from './_components/date'
 
 export const metadata: Metadata = {
   title: 'Statistics',

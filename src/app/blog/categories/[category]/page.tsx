@@ -1,15 +1,15 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '~/shared/components/post-list'
+import { PostList } from '~/components/post-list'
 
 import {
   getUniqueCategoryList,
   getPostListOfCategory,
   getNormalCategoryString
-} from '~/shared/lib/categories'
-import { getSortedPosts } from '~/shared/lib/get-sorted-posts'
-import { slug } from '~/shared/lib/slug'
+} from '~/lib/categories'
+import { getSortedPosts } from '~/lib/get-sorted-posts'
+import { slug } from '~/lib/slug'
 import { FolderOpen } from '@phosphor-icons/react/dist/ssr'
 
 interface Props {

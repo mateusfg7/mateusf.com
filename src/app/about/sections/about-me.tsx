@@ -2,9 +2,9 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { DownloadSimple, ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { allAbouts } from 'contentlayer/generated'
 
-import { Title } from '~/shared/components/title'
+import { Title } from '~/components/title'
 
-import { ImageCard } from '../components/image-card'
+import { ImageCard } from '../_components/image-card'
 
 export function AboutMe() {
   const MDXAboutContent = useMDXComponent(allAbouts[0].body.code)

@@ -1,9 +1,10 @@
-import { Title } from '~/shared/components/title'
-
-import { allProjects } from 'contentlayer/generated'
-import { ProjectCard } from './components/project-card'
-import { ProjectInfo } from './components/project-info'
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
+import { allProjects } from 'contentlayer/generated'
+
+import { Title } from '~/components/title'
+
+import { ProjectCard } from './_components/project-card'
+import { ProjectInfo } from './_components/project-info'
 
 export default function Page() {
   const featuredProjects = allProjects

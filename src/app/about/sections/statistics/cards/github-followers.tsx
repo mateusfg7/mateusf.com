@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { GithubLogo } from '@phosphor-icons/react/dist/ssr'
 
-import { getGithubFollowers } from '~/shared/lib/github'
-import { shuffleArray } from '~/shared/lib/shuffleArray'
-import { placeholder } from '~/shared/lib/placeholder'
+import { getGithubFollowers } from '~/lib/github'
+import { shuffleArray } from '~/lib/shuffleArray'
+import { placeholder } from '~/lib/placeholder'
 
 import { Card } from '../card'
 

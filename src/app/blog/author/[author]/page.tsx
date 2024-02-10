@@ -1,12 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
 
-import { PostList } from '~/shared/components/post-list'
-import {
-  getAuthorByUser,
-  getAuthors,
-  getPostsByAuthor
-} from '~/shared/lib/authors'
+import { PostList } from '~/components/post-list'
+import { getAuthorByUser, getAuthors, getPostsByAuthor } from '~/lib/authors'
 import { Envelope, ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
 interface Props {

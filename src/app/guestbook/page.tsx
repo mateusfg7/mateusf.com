@@ -1,5 +1,5 @@
-import { GiscusComments } from '~/shared/components/giscus-comments'
-import { Title } from '~/shared/components/title'
+import { GiscusComments } from '~/components/giscus-comments'
+import { Title } from '~/components/title'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

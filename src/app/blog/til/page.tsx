@@ -3,9 +3,9 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { allTILs, TIL } from 'contentlayer/generated'
 
-import { Title } from '~/shared/components/title'
-import { Date as DateUI } from '~/shared/components/date'
-import { slug } from '~/shared/lib/slug'
+import { Title } from '~/components/title'
+import { Date as DateUI } from '~/components/date'
+import { slug } from '~/lib/slug'
 
 import 'katex/dist/katex.min.css'
 

@@ -3,8 +3,8 @@ import Script from 'next/script'
 import { Inter } from 'next/font/google'
 
 import { config } from 'global-config'
-import { Header } from './components/header'
-import { Footer } from './components/footer'
+import { Header } from './_components/header'
+import { Footer } from './_components/footer'
 import { Providers } from './providers'
 
 import '~/styles/main.css'

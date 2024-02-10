@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
-import { Typewriter } from './components/typewriter'
-import { StartButton } from './components/start-button'
+import { Typewriter } from './_components/typewriter'
+import { StartButton } from './_components/start-button'
 
-import deconstructedRobotBroLight from './components/deconstructed-robot-bro-light.svg'
-import deconstructedRobotBroDark from './components/deconstructed-robot-bro-dark.svg'
+import deconstructedRobotBroLight from './_components/deconstructed-robot-bro-light.svg'
+import deconstructedRobotBroDark from './_components/deconstructed-robot-bro-dark.svg'
 
 export default function Page() {
   return (

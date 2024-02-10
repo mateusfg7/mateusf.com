@@ -1,5 +1,5 @@
 import { GithubLogo } from '@phosphor-icons/react/dist/ssr'
-import { getGithubRepositories } from '~/shared/lib/github'
+import { getGithubRepositories } from '~/lib/github'
 
 import { Card } from '../card'
 

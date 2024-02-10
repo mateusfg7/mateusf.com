@@ -5,10 +5,10 @@ import { Icon as PhosphorIcon } from '@phosphor-icons/react'
 import { FolderOpen, Tag, Notebook } from '@phosphor-icons/react/dist/ssr'
 
 import { allPosts } from 'contentlayer/generated'
-import { getSortedPosts } from '~/shared/lib/get-sorted-posts'
+import { getSortedPosts } from '~/lib/get-sorted-posts'
 
-import { PostList } from '~/shared/components/post-list'
-import { Title } from '~/shared/components/title'
+import { PostList } from '~/components/post-list'
+import { Title } from '~/components/title'
 
 export const metadata: Metadata = {
   title: 'Blog',

@@ -1,6 +1,6 @@
 import { defineDocumentType, defineNestedType } from 'contentlayer/source-files'
 import readingTime from 'reading-time'
-import { slug } from '../../src/shared/lib/slug'
+import { slug } from '../../src/lib/slug'
 import { authors } from './author-list'
 
 const Author = defineNestedType(() => ({

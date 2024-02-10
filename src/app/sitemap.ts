@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { allRoutes } from './lib/all-routes'
+import { allRoutes } from './_lib/all-routes'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return allRoutes.map(url => ({
