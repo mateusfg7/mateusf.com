@@ -4,19 +4,14 @@ import { removeRepeatedValuesFromArray } from '~/lib/remove-repeated-values-from
 import { getFrequencyOfValue } from '~/lib/get-frequency-of-value'
 
 const getRawTagListFromPosts = (): string[] => {
-  const listOfTagList = allPosts
+  const tagList = allPosts
     .filter(post => !post.test)
-    .map(post => {
+    .flatMap(post => {
       return post.tags.split(',')
     })
+    .map(tag => tag.trim())
 
-  let completeRawTagList: string[] = []
-
-  listOfTagList.forEach(tagList => {
-    tagList.forEach(tag => completeRawTagList.push(tag.trim()))
-  })
-
-  return completeRawTagList
+  return tagList
 }
 
 export const getUniqueTagListFromPosts = () =>
