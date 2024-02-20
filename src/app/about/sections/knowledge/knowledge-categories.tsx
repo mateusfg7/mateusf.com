@@ -47,7 +47,8 @@ import {
   SiCloudflare,
   SiPlanetscale,
   SiHeroku,
-  SiSvelte
+  SiSvelte,
+  SiBun
 } from 'react-icons/si'
 import { FaJava, FaPhoenixFramework } from 'react-icons/fa'
 
@@ -212,6 +213,12 @@ export const knowledgeCategories: {
         status: 'god',
         icon: SiDeno,
         color: '#FFFFFF'
+      },
+      {
+        title: 'Bun',
+        status: 'god',
+        icon: SiBun,
+        color: '#FBF0DF'
       },
       {
         title: 'Prisma',
