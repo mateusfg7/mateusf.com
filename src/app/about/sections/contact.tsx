@@ -15,49 +15,49 @@ export function Contact() {
     <div className="flex justify-between text-lg md:text-2xl">
       <div className="flex-1">
         <div className="contact-line contact-line-title">
-          <span className="rounded bg-neutral-900 bg-opacity-10 p-1 dark:bg-neutral-100 dark:bg-opacity-10">
+          <span className="bg-brand-email/10 rounded p-1">
             <Envelope size="1em" weight="duotone" />
           </span>
           <span>Email</span>
         </div>
-        <div className="contact-line contact-line-title text-[#181717] dark:text-[#E6EDF3]">
-          <span className="rounded bg-[#181717] bg-opacity-10 p-1 dark:bg-[#E6EDF3] dark:bg-opacity-10">
+        <div className="contact-line contact-line-title text-brand-github">
+          <span className="bg-brand-github/10 rounded p-1">
             <GithubLogo size="1em" weight="duotone" />
           </span>
           <span>Github</span>
         </div>
-        <div className="contact-line contact-line-title text-[#0A66C2]">
-          <span className="rounded bg-[#0A66C2] bg-opacity-10 p-1 ">
+        <div className="contact-line contact-line-title text-brand-linkedin">
+          <span className="bg-brand-linkedin/10 rounded p-1 ">
             <LinkedinLogo size="1em" weight="duotone" />
           </span>
           <span>Linkedin</span>
         </div>
-        <div className="contact-line contact-line-title text-[#F58025]">
-          <span className="rounded bg-[#F58025] bg-opacity-10 p-1">
+        <div className="contact-line contact-line-title text-brand-stack-overflow">
+          <span className="bg-brand-stack-overflow/10 rounded p-1">
             <StackOverflowLogo size="1em" weight="duotone" />
           </span>
           <span>Stack Overflow</span>
         </div>
-        <div className="contact-line contact-line-title text-[#181717] dark:text-[#E6EDF3]">
-          <span className="rounded bg-[#181717] bg-opacity-10 p-1 dark:bg-[#E6EDF3] dark:bg-opacity-10">
+        <div className="contact-line contact-line-title text-brand-codepen">
+          <span className="bg-brand-codepen/10 rounded p-1">
             <CodepenLogo size="1em" weight="duotone" />
           </span>
           <span>Codepen</span>
         </div>
-        <div className="contact-line contact-line-title text-[#FF4500]">
-          <span className="rounded bg-[#FF4500] bg-opacity-10 p-1">
+        <div className="contact-line contact-line-title text-brand-reddit">
+          <span className="bg-brand-reddit/10 rounded p-1">
             <RedditLogo size="1em" weight="duotone" />
           </span>
           <span>Reddit</span>
         </div>
-        <div className="contact-line contact-line-title text-[#1D9BF0]">
-          <span className="rounded bg-[#1D9BF0] bg-opacity-10 p-1">
+        <div className="contact-line contact-line-title text-brand-twitter">
+          <span className="bg-brand-twitter/10 rounded p-1">
             <TwitterLogo size="1em" weight="duotone" />
           </span>
           <span>Twitter</span>
         </div>
-        <div className="contact-line contact-line-title text-[#E4405F]">
-          <span className="rounded bg-[#E4405F] bg-opacity-10 p-1">
+        <div className="contact-line contact-line-title text-brand-instagram">
+          <span className="bg-brand-instagram/10 rounded p-1">
             <InstagramLogo size="1em" weight="duotone" />
           </span>
           <span>Instagram</span>

@@ -15,6 +15,16 @@ const config: Config = {
       colors: {
         neutral: {
           1000: 'rgba(6, 6, 6)'
+        },
+        brand: {
+          email: 'hsl(var(--email-color))',
+          github: 'hsl(var(--github-color))',
+          codepen: 'hsl(var(--codepen-color))',
+          linkedin: 'hsl(var(--linkedin-color))',
+          'stack-overflow': 'hsl(var(--stack-overflow-color))',
+          reddit: 'hsl(var(--reddit-color))',
+          twitter: 'hsl(var(--twitter-color))',
+          instagram: 'hsl(var(--instagram-color))'
         }
       },
       animation: {

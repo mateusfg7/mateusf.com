@@ -38,3 +38,22 @@
     }
   }
 }
+
+@layer base {
+  :root {
+    --email-color: 0 0% 9%;
+    --github-color: 0 1% 9%;
+    --codepen-color: 0 1% 9%;
+    --linkedin-color: 213 90% 41%;
+    --stack-overflow-color: 27 91% 56%;
+    --reddit-color: 16 100% 50%;
+    --twitter-color: 206 89% 53%;
+    --instagram-color: 351 75% 57%;
+  }
+
+  .dark {
+    --email-color: 0 0% 96%;
+    --github-color: 210 28% 94%;
+    --codepen-color: 210 28% 94%;
+  }
+}
