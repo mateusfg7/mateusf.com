@@ -1,14 +1,14 @@
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import {
+  CodepenLogo,
   Envelope,
   GithubLogo,
-  LinkedinLogo,
-  StackOverflowLogo,
-  RedditLogo,
-  TwitterLogo,
   InstagramLogo,
-  ArrowUpRight,
-  CodepenLogo
-} from '@phosphor-icons/react/dist/ssr'
+  LinkedinLogo,
+  RedditLogo,
+  StackOverflowLogo,
+  TwitterLogo
+} from './icons'
 
 type Contact = {
   user: string
@@ -19,9 +19,9 @@ const contacts: Contact[] = [
   {
     user: 'contact@mateusf.com',
     title: () => (
-      <div className="contact-line contact-line-title">
-        <span className="rounded bg-brand-email/10 p-1">
-          <Envelope size="1em" weight="duotone" />
+      <div className="contact-line contact-line-title text-brand-email">
+        <span className="rounded bg-brand-email/10 p-1 text-2xl">
+          <Envelope />
         </span>
         <span>Email</span>
       </div>
@@ -45,7 +45,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-github">
         <span className="rounded bg-brand-github/10 p-1">
-          <GithubLogo size="1em" weight="duotone" />
+          <GithubLogo />
         </span>
         <span>Github</span>
       </div>
@@ -69,7 +69,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-linkedin">
         <span className="rounded bg-brand-linkedin/10 p-1 ">
-          <LinkedinLogo size="1em" weight="duotone" />
+          <LinkedinLogo />
         </span>
         <span>Linkedin</span>
       </div>
@@ -93,7 +93,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-stack-overflow">
         <span className="rounded bg-brand-stack-overflow/10 p-1">
-          <StackOverflowLogo size="1em" weight="duotone" />
+          <StackOverflowLogo />
         </span>
         <span>Stack Overflow</span>
       </div>
@@ -117,7 +117,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-codepen">
         <span className="rounded bg-brand-codepen/10 p-1">
-          <CodepenLogo size="1em" weight="duotone" />
+          <CodepenLogo />
         </span>
         <span>Codepen</span>
       </div>
@@ -141,7 +141,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-reddit">
         <span className="rounded bg-brand-reddit/10 p-1">
-          <RedditLogo size="1em" weight="duotone" />
+          <RedditLogo />
         </span>
         <span>Reddit</span>
       </div>
@@ -165,7 +165,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-twitter">
         <span className="rounded bg-brand-twitter/10 p-1">
-          <TwitterLogo size="1em" weight="duotone" />
+          <TwitterLogo />
         </span>
         <span>Twitter</span>
       </div>
@@ -189,7 +189,7 @@ const contacts: Contact[] = [
     title: () => (
       <div className="contact-line contact-line-title text-brand-instagram">
         <span className="rounded bg-brand-instagram/10 p-1">
-          <InstagramLogo size="1em" weight="duotone" />
+          <InstagramLogo />
         </span>
         <span>Instagram</span>
       </div>

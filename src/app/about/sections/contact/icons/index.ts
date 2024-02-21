@@ -1,0 +1,8 @@
+export { Envelope } from './envelope'
+export { GithubLogo } from './github-logo'
+export { CodepenLogo } from './codepen-logo'
+export { InstagramLogo } from './instagram-logo'
+export { LinkedinLogo } from './linkedin-logo'
+export { RedditLogo } from './reddit-logo'
+export { StackOverflowLogo } from './stack-overflow-logo'
+export { TwitterLogo } from './twitter-logo'
