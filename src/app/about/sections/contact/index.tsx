@@ -1,5 +1,6 @@
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import {
+  ArchLinuxLogo,
   CodepenLogo,
   Envelope,
   GithubLogo,
@@ -9,6 +10,7 @@ import {
   StackOverflowLogo,
   TwitterLogo
 } from './icons'
+import { SiArchlinux } from 'react-icons/si'
 
 type Contact = {
   user: string
@@ -199,6 +201,30 @@ const contacts: Contact[] = [
         <a
           className="inline-flex items-end gap-px hover:underline"
           href="https://www.instagram.com/mateusfg7/"
+          target="_blank"
+          rel="external"
+        >
+          <span className="leading-none">Open profile</span>
+          <ArrowUpRight size="1em" className="text-sm" />
+        </a>
+      </div>
+    )
+  },
+  {
+    user: 'mateus',
+    title: () => (
+      <div className="contact-line contact-line-title text-brand-arch">
+        <span className="rounded bg-brand-arch/10 p-1">
+          <ArchLinuxLogo />
+        </span>
+        <span>Arch (AUR)</span>
+      </div>
+    ),
+    link: () => (
+      <div className="contact-line">
+        <a
+          className="inline-flex items-end gap-px hover:underline"
+          href="https://aur.archlinux.org/account/mateus"
           target="_blank"
           rel="external"
         >

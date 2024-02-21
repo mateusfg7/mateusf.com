@@ -24,7 +24,8 @@ const config: Config = {
           'stack-overflow': 'hsl(var(--stack-overflow-color))',
           reddit: 'hsl(var(--reddit-color))',
           twitter: 'hsl(var(--twitter-color))',
-          instagram: 'hsl(var(--instagram-color))'
+          instagram: 'hsl(var(--instagram-color))',
+          arch: 'hsl(var(--arch-color))'
         }
       },
       animation: {
