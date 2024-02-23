@@ -107,7 +107,7 @@ function RenderResults() {
 export function KBar() {
   return (
     <KBarPortal>
-      <KBarPositioner className="z-50 bg-black/20 backdrop-blur-[1px] dark:bg-black/30">
+      <KBarPositioner className="z-50 bg-black/20 dark:bg-black/30">
         <KBarAnimator>
           <Content>
             <Search />
