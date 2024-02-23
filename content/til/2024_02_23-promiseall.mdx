@@ -1,0 +1,33 @@
+---
+title: 'Promise.all'
+description: 'Otimizando chamadas assíncronas no Javascript'
+date: '2024-02-23'
+tags: [javascript,async]
+---
+
+**Dica JavaScript**: Otimize Chamadas Assíncronas com `Promise.all`
+
+Executar `await` em chamadas assíncronas de forma sequencial, como em `getProducts()` seguido por `getOrders()`, faz com que a segunda chamada espere a conclusão da primeira, aumentando o tempo total de execução.
+
+Optar por `Promise.all` nesse caso, permite que as chamadas sejam feitas em paralelo, reduzindo o tempo de espera e melhorando a performance da sua aplicação.
+
+❌ **worse**
+```javascript
+async function getData() {
+  const products = await getProducts()
+  const orders = await getOrders()
+}
+```
+
+✅ **better**
+```javascript
+async function getData() {
+  const [products, orders] = await Promise.all([
+    getProducts(), getOrders()
+  ])
+}
+```
+
+Mas o `Promise.all` deve ser usado com cuidado, porque se uma das requisições falhar, todas vão falhar.
+
+*ref*: https://www.linkedin.com/feed/update/urn:li:activity:7166552833750773760/
