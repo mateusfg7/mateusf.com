@@ -1,7 +1,6 @@
-import { Post } from 'contentlayer/generated'
+import { Post } from '#content'
 import { getSortedPosts } from '~/lib/get-sorted-posts'
 
-import { separatePostsByStatus } from './separate-posts-by-status'
 import { categorizePostsByYear } from './categorize-posts-by-year'
 import { PostLink } from './post-link'
 
@@ -11,13 +10,15 @@ interface Props {
 }
 
 export function PostList({ posts, separateByYear = false }: Props) {
-  const postsByStatus = separatePostsByStatus(posts)
+  const publishedPosts = posts.filter(post => post.status === 'published')
+  const draftPosts = posts.filter(post => post.status === 'draft')
+  const plannedPosts = posts.filter(post => post.status === 'planned')
   const testPosts = posts.filter(post => post.test)
 
   if (separateByYear) {
     const postsByYear = categorizePostsByYear([
-      ...postsByStatus.publishedPosts,
-      ...postsByStatus.draftPosts
+      ...publishedPosts,
+      ...draftPosts
     ])
 
     return (
@@ -39,7 +40,7 @@ export function PostList({ posts, separateByYear = false }: Props) {
             Others
           </h1>
           <div className="flex flex-col gap-3">
-            {postsByStatus.plannedPosts.map((post, key) => (
+            {plannedPosts.map((post, key) => (
               <PostLink key={key} post={post} />
             ))}
             {testPosts.map((post, key) => (
@@ -52,7 +53,7 @@ export function PostList({ posts, separateByYear = false }: Props) {
   } else {
     return (
       <div className="flex flex-col gap-5">
-        {posts.map((post, key) => (
+        {getSortedPosts(posts).map((post, key) => (
           <PostLink key={key} post={post} />
         ))}
       </div>

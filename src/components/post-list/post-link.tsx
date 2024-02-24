@@ -8,8 +8,8 @@ import {
   CalendarBlank,
   Clock
 } from '@phosphor-icons/react/dist/ssr'
+import { Post } from '#content'
 
-import { Post } from 'contentlayer/generated'
 import { Date } from '~/components/date'
 import { DraftBadge, PlannedBadge, TestBadge } from './post-badges'
 
@@ -65,7 +65,7 @@ export function PostLink({ post, hideYear = false }: Props) {
         {showReadingTime && (
           <span className="inline-flex items-center gap-1 md:flex-row-reverse">
             <Clock size="1em" />
-            <span>{Math.ceil(post.reading_time.minutes)} min read</span>
+            <span>{Math.ceil(post.metadata.readingTime)} min read</span>
           </span>
         )}
       </span>
@@ -73,7 +73,7 @@ export function PostLink({ post, hideYear = false }: Props) {
 
     return (
       <Link
-        href={`/blog/post/${post.id}`}
+        href={`/blog/post/${post.slug}`}
         className="group flex flex-col justify-between gap-1 md:flex-row md:gap-3"
       >
         <section>
