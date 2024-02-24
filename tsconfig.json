@@ -26,6 +26,9 @@
       "~/*": [
         "src/*"
       ],
+      "#content": [
+        ".velite"
+      ],
       "global-config": [
         "./website.config.ts"
       ]
