@@ -1,18 +1,10 @@
-import { allPosts } from 'contentlayer/generated'
 import { slug } from '~/lib/slug'
 import { removeRepeatedValuesFromArray } from '~/lib/remove-repeated-values-from-array'
 import { getFrequencyOfValue } from '~/lib/get-frequency-of-value'
+import { Post, posts } from '#content'
 
-const getRawTagListFromPosts = (): string[] => {
-  const tagList = allPosts
-    .filter(post => !post.test)
-    .flatMap(post => {
-      return post.tags.split(',')
-    })
-    .map(tag => tag.trim())
-
-  return tagList
-}
+const getRawTagListFromPosts = () =>
+  posts.filter((post: Post) => !post.test).flatMap(post => post.tags)
 
 export const getUniqueTagListFromPosts = () =>
   removeRepeatedValuesFromArray(getRawTagListFromPosts())
@@ -38,8 +30,8 @@ export function getTagsAndNumberOfPosts(): TagsAndNumberOfPosts[] {
 }
 
 export function getPostListBasedOnTag(tag: string) {
-  const filteredPostList = allPosts.filter(post => {
-    const listOfTags = post.tags.split(',').map(rawTag => slug(rawTag.trim()))
+  const filteredPostList = posts.filter(post => {
+    const listOfTags = post.tags.map(rawTag => slug(rawTag))
     return listOfTags.includes(slug(tag))
   })
 
