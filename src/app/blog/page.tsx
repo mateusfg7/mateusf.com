@@ -4,11 +4,11 @@ import Link, { LinkProps } from 'next/link'
 import { Icon as PhosphorIcon } from '@phosphor-icons/react'
 import { FolderOpen, Tag, Notebook } from '@phosphor-icons/react/dist/ssr'
 
-import { allPosts } from 'contentlayer/generated'
 import { getSortedPosts } from '~/lib/get-sorted-posts'
 
 import { PostList } from '~/components/post-list'
 import { Title } from '~/components/title'
+import { posts } from '#content'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -40,7 +40,7 @@ const TopLink = ({ Icon, title, ...rest }: TopLinkProps) => (
 )
 
 export default function Page() {
-  const posts = getSortedPosts(allPosts)
+  const sortedPosts = getSortedPosts(posts)
 
   return (
     <div className="content-container m-auto">
@@ -50,7 +50,7 @@ export default function Page() {
         <TopLink Icon={Tag} href="/blog/tag" title="Tags" />
         <TopLink Icon={Notebook} href="/blog/til" title="T.I.L" />
       </div>
-      <PostList posts={posts} separateByYear />
+      <PostList posts={sortedPosts} separateByYear />
     </div>
   )
 }

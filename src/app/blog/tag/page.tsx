@@ -1,10 +1,10 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Tag } from '@phosphor-icons/react/dist/ssr'
 
 import { slug } from '~/lib/slug'
 import { getTagsAndNumberOfPosts } from '~/lib/tags'
-import { Tag } from '@phosphor-icons/react/dist/ssr'
 
 export const metadata: Metadata = {
   title: 'Blog Tags',

@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { Tag } from '@phosphor-icons/react/dist/ssr'
 
 import { PostList } from '~/components/post-list'
 
@@ -9,7 +10,6 @@ import {
   getNormalTagString
 } from '~/lib/tags'
 import { getSortedPosts } from '~/lib/get-sorted-posts'
-import { Tag } from '@phosphor-icons/react/dist/ssr'
 import { slug } from '~/lib/slug'
 
 interface Props {
