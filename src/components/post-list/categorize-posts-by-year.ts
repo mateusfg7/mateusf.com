@@ -1,14 +1,10 @@
-import { Post } from 'contentlayer/generated'
+import { Post } from '#content'
 
 export function categorizePostsByYear(posts: Post[]) {
   const filteredPosts = posts.filter(post => !post.test)
-
-  const listOfAllYears = filteredPosts.map(post => {
-    const date = new Date(post.date)
-
-    return date.getFullYear()
-  })
-
+  const listOfAllYears = filteredPosts.map(post =>
+    new Date(post.date).getFullYear()
+  )
   const listOfUniqueYears = [...new Set(listOfAllYears)]
 
   const postsByYear = listOfUniqueYears.map(year => {
