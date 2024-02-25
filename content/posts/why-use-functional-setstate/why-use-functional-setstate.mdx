@@ -102,7 +102,7 @@ Functional state updates solve this problem by **providing the previous state va
 To fix the example above using functional state updates, you can modify the increment function as follows:
 
 ```tsx
-const increment = () =>
+const increment = () => {
   setCount((prevCount) => prevCount + 10);
   setCount((prevCount) => prevCount + 10);
   setCount((prevCount) => prevCount + 10);
