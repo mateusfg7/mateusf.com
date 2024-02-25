@@ -6,16 +6,16 @@ interface Props {
 }
 
 export function PrettyCodeElement({ children, ...props }: Props) {
-  if (!('data-rehype-pretty-code-fragment' in props))
-    return <div {...props}>{children}</div>
-  if (!('raw' in props)) return <div {...props}>{children}</div>
+  if (!('data-rehype-pretty-code-figure' in props))
+    return <figure {...props}>{children}</figure>
+  if (!('raw' in props)) return <figure {...props}>{children}</figure>
 
   const raw = props.raw as string
 
   return (
-    <div {...props} className="relative">
+    <figure {...props} className="relative">
       {children}
       <CopyButton text={raw} />
-    </div>
+    </figure>
   )
 }

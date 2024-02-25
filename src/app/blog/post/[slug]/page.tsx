@@ -1,20 +1,19 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import type { MDXComponents } from 'mdx/types'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import {
   Folder,
   CalendarBlank,
   Clock,
   Tag
 } from '@phosphor-icons/react/dist/ssr'
-
-import { allPosts, type Post } from 'contentlayer/generated'
+import { Post, posts } from '#content'
 
 import { slug } from '~/lib/slug'
 import { Date } from '~/components/date'
 import { GiscusComments } from '~/components/giscus-comments'
+import { MDXContent } from '~/components/mdx-content'
 
 import { TopButton } from './_components/top-button'
 import { Anchor } from './_components/anchor'
@@ -27,23 +26,23 @@ interface Props {
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const post = allPosts.find(post => post.id === params.slug) as Post
+  const post = posts.find(post => post.slug === params.slug) as Post
 
   return {
     title: post.title,
     description: post.description,
-    authors: { name: post.author_info.name, url: post.author_info.url },
-    keywords: post.tags.split(',').map(tag => tag.trim()),
+    // authors: { name: post.author_info.name, url: post.author_info.url },
+    keywords: post.tags,
     publisher: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
     openGraph: {
       title: post.title,
       description: post.description,
-      tags: post.tags.split(',').map(tag => tag.trim()),
+      tags: post.tags,
       authors: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       type: 'article',
       url: `/blog/post/${params.slug}`,
       images: {
-        url: `/blog/post/${post.id}/thumbnail`,
+        url: `/blog/post/${post.slug}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -55,7 +54,7 @@ export function generateMetadata({ params }: Props): Metadata {
       creator: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
       site: '/',
       images: {
-        url: `/blog/post/${post.id}/thumbnail`,
+        url: `/blog/post/${post.slug}/thumbnail`,
         width: 1200,
         height: 630
       }
@@ -63,7 +62,7 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-const mdxComponents: MDXComponents = {
+const mdxComponents = {
   a: ({ children, href, ...props }) =>
     href?.startsWith('http') ? (
       <Anchor href={href} {...props}>
@@ -72,16 +71,13 @@ const mdxComponents: MDXComponents = {
     ) : (
       <a href={href}>{children}</a>
     ),
-  div: PrettyCodeElement
+  figure: PrettyCodeElement
 }
 
 export default function Page({ params }: Props) {
-  const post = allPosts.find(post => post.id === params.slug) as Post
+  const post = posts.find(post => post.slug === params.slug)
 
-  const tags = post.tags.split(',').map(tag => tag.trim())
-  const MDXContent = useMDXComponent(post.body.code)
-
-  const author = post.author_info
+  if (!post) return notFound()
 
   return (
     <div className="content-container m-auto">
@@ -90,15 +86,6 @@ export default function Page({ params }: Props) {
           <h1 className="text-center text-2xl font-bold md:text-left">
             {post.title}
           </h1>
-          <div className="flex justify-center gap-2 text-neutral-600 dark:text-neutral-400 md:justify-start">
-            <span>by</span>
-            <Link
-              href={`/blog/author/${author.user}`}
-              className="cursor-pointer hover:text-black dark:hover:text-white"
-            >
-              {author.name} ({author.user})
-            </Link>
-          </div>
         </div>
         <div className="space-y-3">
           <div>
@@ -128,12 +115,12 @@ export default function Page({ params }: Props) {
               </span>
               <span className="group inline-flex items-center gap-1">
                 <Clock size="1em" />
-                <span>{Math.ceil(post.reading_time.minutes)} min read</span>
+                <span>{post.metadata.readingTime} min read</span>
               </span>
             </div>
           </div>
           <div className="flex flex-wrap gap-3 gap-y-2">
-            {tags.map((tag, index) => (
+            {post.tags.map((tag, index) => (
               <Link href={`/blog/tag/${slug(tag)}`} key={index}>
                 <span className="flex items-center justify-center gap-1 rounded-md bg-neutral-500/5 p-1 leading-none text-neutral-500 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 md:bg-transparent md:p-0">
                   {tag} <Tag size={15} className="hidden md:inline" />
@@ -145,7 +132,7 @@ export default function Page({ params }: Props) {
       </div>
       <div className="my-6 h-px w-full bg-neutral-500/50" />
       <div className="post-content">
-        <MDXContent components={mdxComponents} />
+        <MDXContent code={post.content} components={mdxComponents} />
       </div>
       <div className="pt-12">
         <GiscusComments />
@@ -156,9 +143,9 @@ export default function Page({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return allPosts
+  return posts
     .filter(post => post.status !== 'planned')
     .map(post => ({
-      slug: post.id
+      slug: post.slug
     }))
 }
