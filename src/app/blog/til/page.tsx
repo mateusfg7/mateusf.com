@@ -1,10 +1,9 @@
 import { Metadata } from 'next'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-
-import { allTILs, TIL } from 'contentlayer/generated'
+import { tils, TIL } from '#content'
 
 import { Title } from '~/components/title'
 import { Date as DateUI } from '~/components/date'
+import { MDXContent } from '~/components/mdx-content'
 import { slug } from '~/lib/slug'
 
 import 'katex/dist/katex.min.css'
@@ -16,7 +15,6 @@ export const metadata: Metadata = {
 }
 
 const TILComponent = ({ til }: { til: TIL }) => {
-  const MDXContent = useMDXComponent(til.body.code)
   return (
     <div className="relative flex flex-col gap-6 border-b border-b-neutral-200 py-12 last:border-none dark:border-b-neutral-800 md:flex-row md:gap-1">
       <div className="top-24 h-fit flex-1 space-y-2 md:sticky md:space-y-5">
@@ -40,7 +38,7 @@ const TILComponent = ({ til }: { til: TIL }) => {
       </div>
       <div className="post-content til-content relative md:w-2/3">
         <span className="absolute -top-24" id={slug(til.title)} />
-        <MDXContent />
+        <MDXContent code={til.content} />
       </div>
     </div>
   )
@@ -51,7 +49,7 @@ export default function Page() {
     <div className="content-container m-auto space-y-4">
       <Title text="Today I Learned" />
       <div className="flex flex-col gap-3">
-        {allTILs
+        {tils
           .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
           .map(til => (
             <TILComponent til={til} key={til.date} />
