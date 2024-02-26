@@ -8,13 +8,6 @@ author: 'mateusfg7'
 status: 'published'
 ---
 
-[screenshot_1]: https://i.ibb.co/XYnddkT/screenshot-1.png
-[screenshot_2]: https://i.ibb.co/9Ns0dDn/screenshot-2.png
-[screenshot_3]: https://i.ibb.co/t3125Pm/screenshot-3.png
-[screenshot_4]: https://i.ibb.co/cFTnyVT/screenshot-4.png
-[screenshot_5]: https://i.ibb.co/C9bS2D3/screenshot-5.png
-[screenshot_6]: https://i.ibb.co/7SDzLVC/screenshot-6.png
-
 ## Connection
 
 First, we need to create a connection with database:
@@ -52,11 +45,11 @@ After running this on python3 interactive shell we will receive the version of s
 >>>
 ```
 
-![../assets/sqlite3-with-python/screenshot_1][screenshot_1]
+![../assets/sqlite3-with-python/screenshot_1](assets/screenshot_1.png)
 
 If you pass file name as ':memory:', the database will be saved on the memory of computer:
 
-![/assets/sqlite3-with-python/screenshot_2][screenshot_2]
+![/assets/sqlite3-with-python/screenshot_2](assets/screenshot_2.png)
 
 ## Refactor 1
 
@@ -157,11 +150,11 @@ after, let's create the tables:
 
 If we run `ls` we will see that `database.db` was created:
 
-![/assets/sqlite3-with-python/screenshot_3][screenshot_3]
+![/assets/sqlite3-with-python/screenshot_3](assets/screenshot_3.png)
 
 Now we can use the command `sqlite3` passing our database as a param, then, run the `.tables` command to see the tables that we created:
 
-![/assets/sqlite3-with-python/screenshot_4][screenshot_4]
+![/assets/sqlite3-with-python/screenshot_4](assets/screenshot_4.png)
 
 ## Refactor 2
 
@@ -298,7 +291,7 @@ Use the `SELECT` statement to get data from `projects` table:
 SELECT * FROM projects;
 ```
 
-![/assets/sqlite3-with-python/screenshot_5][screenshot_5]
+![/assets/sqlite3-with-python/screenshot_5](assets/screenshot_5.png)
 
 Use the same statement to get data from `tasks` table:
 
@@ -306,7 +299,7 @@ Use the same statement to get data from `tasks` table:
 SELECT * FROM tasks;
 ```
 
-![/assets/sqlite3-with-python/screenshot_6][screenshot_6]
+![/assets/sqlite3-with-python/screenshot_6](assets/screenshot_6.png)
 
 ---
 

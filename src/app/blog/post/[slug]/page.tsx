@@ -28,6 +28,8 @@ interface Props {
 export function generateMetadata({ params }: Props): Metadata {
   const post = posts.find(post => post.slug === params.slug) as Post
 
+  if (!post) return {}
+
   return {
     title: post.title,
     description: post.description,
