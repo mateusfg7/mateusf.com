@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -6,7 +6,8 @@ import {
   Folder,
   CalendarBlank,
   Clock,
-  Tag
+  Tag,
+  TextAlignLeft
 } from '@phosphor-icons/react/dist/ssr'
 import { Post, posts } from '#content'
 
@@ -76,6 +77,28 @@ const mdxComponents = {
   figure: PrettyCodeElement
 }
 
+const exampleToc = posts[0].toc[0]
+type TocEntry = typeof exampleToc
+const TocItem = ({
+  toc,
+  ...rest
+}: { toc: TocEntry } & ComponentProps<'li'>) => (
+  <li {...rest}>
+    <a href={toc.url}>{toc.title}</a>
+    {toc.items.length > 0 && (
+      <ol className="space-y-2">
+        {toc.items.map(childToc => (
+          <TocItem
+            toc={childToc}
+            key={childToc.url}
+            className="space-y-2 pl-3"
+          />
+        ))}
+      </ol>
+    )}
+  </li>
+)
+
 export default function Page({ params }: Props) {
   const post = posts.find(post => post.slug === params.slug)
 
@@ -134,6 +157,19 @@ export default function Page({ params }: Props) {
       </div>
       <div className="my-6 h-px w-full bg-neutral-500/50" />
       <div className="post-content">
+        {post.toc.length > 0 && (
+          <nav className="toc">
+            <div className="flex items-center justify-between rounded-lg border-b border-neutral-200 bg-neutral-100 p-4 leading-none dark:border-neutral-800 dark:bg-neutral-900">
+              <span>Table of content</span>
+              <TextAlignLeft className="text-2xl" size="1em" />
+            </div>
+            <ol className="space-y-2 p-4">
+              {post.toc.map(toc => (
+                <TocItem toc={toc} key={toc.url} className="space-y-2" />
+              ))}
+            </ol>
+          </nav>
+        )}
         <MDXContent code={post.content} components={mdxComponents} />
       </div>
       <div className="pt-12">

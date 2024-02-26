@@ -3,7 +3,6 @@ import { visit } from 'unist-util-visit'
 import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
 
-import rehypeToc from 'rehype-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeKatex from 'rehype-katex'
 import rehypeAutolinkHeadings from './rehype-autolink-headings'
@@ -49,7 +48,6 @@ export const remarkPlugins = [remarkBreaks, remarkMath]
 export const rehypePlugins = [
   rehypeSlug,
   rehypeKatex,
-  rehypeToc,
   rehypeAutolinkHeadings,
   rehypeShiftHeadings,
   saveCodeTagContentToRaw,

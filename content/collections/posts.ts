@@ -17,6 +17,7 @@ export const posts = defineCollection({
       status: s.enum(['published', 'draft', 'planned']).default('draft'),
       test: s.boolean().default(false),
       metadata: s.metadata(),
+      toc: s.toc(),
       content: s.mdx()
     })
     .transform(data => ({

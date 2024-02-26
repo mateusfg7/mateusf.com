@@ -17,40 +17,17 @@
   .post-content {
     @apply leading-6;
 
-    nav {
-      &.toc {
-        @apply p-4;
-        @apply rounded-lg border border-black/10 dark:border-white/10;
+    nav.toc {
+      @apply my-10 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950;
 
-        ol {
-          @apply list-none;
+      ol {
+        @apply list-none;
 
-          &.toc-level-2 {
-            @apply px-4;
-          }
-          &.toc-level-3 {
-            @apply px-6;
-          }
-          &.toc-level-4 {
-            @apply px-8;
-          }
-
-          a {
-            @apply text-neutral-900 dark:text-neutral-300;
-
-            &.toc-link-h1 {
-              @apply font-medium;
-            }
-            &.toc-link-h2 {
-              @apply font-normal;
-            }
-            &.toc-link-h3 {
-              @apply font-light;
-            }
-            &.toc-link-h4 {
-              @apply font-extralight;
-            }
-          }
+        a {
+          @apply text-neutral-900 hover:no-underline dark:text-neutral-300;
+          @apply rounded-lg;
+          @apply px-2 py-1;
+          @apply hover:bg-neutral-200 dark:hover:bg-neutral-800;
         }
       }
     }
