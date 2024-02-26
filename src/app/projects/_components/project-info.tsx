@@ -1,5 +1,5 @@
-import { Project } from 'contentlayer/generated'
 import { FiGithub } from 'react-icons/fi'
+import { Project } from '#content'
 import { techIcons } from './tech-icons'
 
 interface Props {

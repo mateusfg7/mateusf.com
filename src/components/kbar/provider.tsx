@@ -2,7 +2,6 @@ import { ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { KBarProvider, Action } from 'kbar'
 import { useTheme } from 'next-themes'
-import { allPosts, allProjects, allTILs } from 'contentlayer/generated'
 import {
   Article,
   Briefcase,
@@ -37,6 +36,7 @@ import { KBar } from '~/components/kbar'
 import { slug } from '~/lib/slug'
 import { getUniqueCategoryList } from '~/lib/categories'
 import { getUniqueTagListFromPosts } from '~/lib/tags'
+import { posts, projects, tils } from '#content'
 
 export function CustomKBarProvider({ children }: { children: ReactNode }) {
   const { push } = useRouter()
@@ -77,8 +77,8 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
     }
   ]
 
-  const projectsAsActions: Action[] = allProjects.map(project => ({
-    id: `out-${slug(project.title)}`,
+  const projectsAsActions: Action[] = projects.map(project => ({
+    id: `out-${project.slug}`,
     name: project.title,
     subtitle: project.description,
     keywords: [...project.tags, project.core_techs].toString(),
@@ -142,29 +142,22 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       return <PencilSimpleLine size="1em" weight="duotone" />
   }
   const postsAsAction: Action[] = getSortedPosts(
-    allPosts.filter(post => post.status !== 'planned')
-  ).map(({ id, title, status, test, tags, description }) => ({
-    id,
+    posts.filter(post => post.status !== 'planned')
+  ).map(({ slug, title, status, test, tags, description }) => ({
+    id: slug,
     name: title,
     icon: test ? <Code size="1em" weight="duotone" /> : getIconByStatus(status),
-    keywords: tags
-      .split(',')
-      .map(tag => tag.trim())
-      .toString()
-      .replaceAll(',', ' '),
+    keywords: tags.toString().replaceAll(',', ' '),
     parent: 'search-posts',
     subtitle: description,
     section: 'Blog',
-    perform: () => push(`/blog/post/${id}`)
+    perform: () => push(`/blog/post/${slug}`)
   }))
-  const tilsAsAction: Action[] = allTILs.map(til => ({
-    id: slug(til.title),
+  const tilsAsAction: Action[] = tils.map(til => ({
+    id: til.slug,
     name: til.title,
     icon: <Notebook size="1em" weight="duotone" />,
-    keywords: til.tags
-      .map(tag => tag.trim())
-      .toString()
-      .replaceAll(',', ' '),
+    keywords: til.tags.toString().replaceAll(',', ' '),
     parent: 'search-posts',
     subtitle: til.description,
     section: 'Blog',

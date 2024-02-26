@@ -1,4 +1,3 @@
----
 title: 'Formatch'
 description: 'Aplicativo que conecta você a um profissional da área de construção civil, e ainda te mantém informado sobre novidades do setor.'
 image: 'https://raw.githubusercontent.com/mateusfg7/formatch-app/main/.github/thumbnail.png'
@@ -11,4 +10,3 @@ tags: [
       'phosphor-icons'
     ]
 repository: 'https://github.com/mateusfg7/formatch'
----
