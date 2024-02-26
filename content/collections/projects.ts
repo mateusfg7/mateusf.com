@@ -3,7 +3,7 @@ import { slug } from '~/lib/slug'
 
 export const projects = defineCollection({
   name: 'Project',
-  pattern: 'tmp_projects/*.yml',
+  pattern: 'projects/*.yml',
   schema: s
     .object({
       title: s.string(),

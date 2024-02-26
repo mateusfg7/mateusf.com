@@ -1,14 +1,12 @@
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import { DownloadSimple, ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
-import { allAbouts } from 'contentlayer/generated'
+import { aboutMe } from '#content'
 
 import { Title } from '~/components/title'
+import { MDXContent } from '~/components/mdx-content'
 
 import { ImageCard } from '../_components/image-card'
 
 export function AboutMe() {
-  const MDXAboutContent = useMDXComponent(allAbouts[0].body.code)
-
   return (
     <div className="flex flex-col gap-3 md:flex-row-reverse">
       <div className="hidden md:block">
@@ -20,7 +18,7 @@ export function AboutMe() {
           <ImageCard mobile />
         </div>
         <div className="about-rendered-mdx flex flex-col gap-3 text-xl md:text-left">
-          <MDXAboutContent />
+          <MDXContent code={aboutMe.content} />
         </div>
         <div className="mt-12 flex items-center justify-center gap-3 md:mt-6 md:flex-row-reverse md:justify-end">
           <a
