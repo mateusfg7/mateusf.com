@@ -20,9 +20,6 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": [
-        ".contentlayer/generated"
-      ],
       "~/*": [
         "src/*"
       ],
@@ -45,7 +42,6 @@
     "**/*.ts",
     "**/*.mts",
     "**/*.tsx",
-    ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
   "exclude": [

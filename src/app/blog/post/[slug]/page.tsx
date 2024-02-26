@@ -31,7 +31,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: post.title,
     description: post.description,
-    // authors: { name: post.author_info.name, url: post.author_info.url },
+    authors: { name: 'Mateus Felipe Gonçalves', url: 'https://mateusf.com' },
     keywords: post.tags,
     publisher: 'Mateus Felipe Gonçalves <contact@mateusf.com>',
     openGraph: {

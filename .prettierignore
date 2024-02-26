@@ -38,11 +38,6 @@ yarn-error.log*
 .ztr-directory # Zettlr file
 .vscode
 
-# contentlayer
-.contentlayer
-content/posts
-
-# obsidian
 .obsidian
-
 .env
+.velite

@@ -52,8 +52,8 @@ export function Footer() {
             Tailwindcss
           </Link>{' '}
           and{' '}
-          <Link href="https://www.contentlayer.dev/" rel="external">
-            Contentlayer
+          <Link href="https://velite.js.org/" rel="external">
+            Velite
           </Link>{' '}
           by{' '}
           <Link href="https://github.com/mateusfg7" rel="external">
