@@ -93,6 +93,10 @@
       @apply m-auto max-w-full rounded-lg md:m-0;
     }
 
+    video {
+      @apply m-auto rounded-lg;
+    }
+
     iframe {
       @apply aspect-video w-full max-w-full rounded-lg md:h-[26rem];
     }
