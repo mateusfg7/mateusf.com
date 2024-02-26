@@ -2,9 +2,10 @@
 import { NextResponse } from 'next/server'
 import { ImageResponse } from 'next/og'
 import { FiFolder, FiCalendar, FiClock } from 'react-icons/fi'
-import { allPosts } from 'contentlayer/generated'
-import { Date as DateFormatter } from '~/components/date'
+import { posts } from '#content'
+
 import { config } from 'global-config'
+import { Date as DateFormatter } from '~/components/date'
 
 export const runtime = 'edge'
 
@@ -12,7 +13,7 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  const post = allPosts.find(post => post.id === params.slug)
+  const post = posts.find(post => post.slug === params.slug)
 
   if (!post) {
     return NextResponse.json({ error: 'Post not found' }, { status: 404 })
@@ -81,21 +82,7 @@ export async function GET(
             padding: '4rem'
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-          >
-            <div style={{ display: 'flex', fontSize: '4rem' }}>
-              {post.title}
-            </div>
-            <div style={{ display: 'flex', fontSize: '1.5rem' }}>
-              by {post.author_info.name} {'<'}
-              {post.author_info.email}
-              {'>'}
-            </div>
-          </div>
+          <div style={{ display: 'flex', fontSize: '4rem' }}>{post.title}</div>
           <div style={{ display: 'flex' }}>{post.description}</div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', gap: '2rem' }}>
@@ -112,7 +99,7 @@ export async function GET(
               <span
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
               >
-                <FiClock /> {Math.ceil(post.reading_time.minutes)} min read
+                <FiClock /> {Math.ceil(post.metadata.readingTime)} min read
               </span>
             </div>
             <span style={{ display: 'flex' }}>
