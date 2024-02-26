@@ -1,4 +1,4 @@
-import pluggin, { Options } from 'rehype-pretty-code'
+import plugin, { Options } from 'rehype-pretty-code'
 
 const options: Partial<Options> = {
   theme: {
@@ -15,6 +15,5 @@ const options: Partial<Options> = {
   // Feel free to add classNames that suit your docs
 }
 
-const rehypePrettyCode = { pluggin, options }
-
+const rehypePrettyCode = [plugin, options]
 export default rehypePrettyCode

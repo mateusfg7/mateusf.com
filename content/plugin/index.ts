@@ -1,21 +1,32 @@
 import { visit } from 'unist-util-visit'
 
 import remarkBreaks from 'remark-breaks'
-import remarkGfm from 'remark-gfm'
-import remarkHint from 'remark-hint'
+import remarkGfm from 'remark-gfm' // gfm is enabled by default
+import remarkHint from 'remark-hint' // hint doesn't work with the new version of unified
 import remarkMath from 'remark-math'
+
 import rehypeToc from 'rehype-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeKatex from 'rehype-katex'
-
 import rehypeAutolinkHeadings from './rehype-autolink-headings'
+import rehypeShiftHeadings from './rehype-shift-heading'
 import rehypePrettyCode from './rehype-pretty-code'
-import rehypeShiftHeading from './rehype-shift-heading'
+
+type NodeChildren = {
+  type: string
+  tagName: string
+  properties: { className: string[] }
+  children?: [{ type: string; value: string }]
+  position: {
+    start: { line: number; column: number; offset: number }
+    end: { line: number; column: number; offset: number }
+  }
+}
 
 const saveCodeTagContentToRaw = () => tree => {
   visit(tree, node => {
     if (node?.type === 'element' && node?.tagName === 'pre') {
-      const [codeEl] = node.children
+      const [codeEl] = node.children as NodeChildren[]
 
       if (codeEl.tagName !== 'code') return
 
@@ -26,8 +37,8 @@ const saveCodeTagContentToRaw = () => tree => {
 
 const addRawCodeToPrettyCodeFragment = () => tree => {
   visit(tree, node => {
-    if (node?.type === 'element' && node?.tagName === 'div') {
-      if (!('data-rehype-pretty-code-fragment' in node.properties)) {
+    if (node?.type === 'element' && node?.tagName === 'figure') {
+      if (!('data-rehype-pretty-code-figure' in node.properties)) {
         return
       }
 
@@ -36,14 +47,14 @@ const addRawCodeToPrettyCodeFragment = () => tree => {
   })
 }
 
-export const remarkPlugins = [remarkGfm, remarkMath, remarkBreaks, remarkHint]
+export const remarkPlugins = [remarkBreaks, remarkMath]
 export const rehypePlugins = [
   rehypeSlug,
-  rehypeToc,
   rehypeKatex,
-  [rehypeAutolinkHeadings.pluggin, rehypeAutolinkHeadings.options],
-  [rehypeShiftHeading.pluggin, rehypeShiftHeading.options],
+  rehypeToc,
+  rehypeAutolinkHeadings,
+  rehypeShiftHeadings,
   saveCodeTagContentToRaw,
-  [rehypePrettyCode.pluggin, rehypePrettyCode.options],
+  rehypePrettyCode,
   addRawCodeToPrettyCodeFragment
 ]
