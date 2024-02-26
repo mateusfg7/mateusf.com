@@ -1,8 +1,6 @@
 import { visit } from 'unist-util-visit'
 
 import remarkBreaks from 'remark-breaks'
-import remarkGfm from 'remark-gfm' // gfm is enabled by default
-import remarkHint from 'remark-hint' // hint doesn't work with the new version of unified
 import remarkMath from 'remark-math'
 
 import rehypeToc from 'rehype-toc'

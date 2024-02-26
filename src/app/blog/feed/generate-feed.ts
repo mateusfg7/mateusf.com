@@ -1,13 +1,15 @@
-import { getSortedPosts } from '~/lib/get-sorted-posts'
-import { config } from 'global-config'
-import { allPosts } from 'contentlayer/generated'
 import { Feed } from 'feed'
+import { config } from 'global-config'
+import { posts as contentPosts } from '#content'
+
+import { getSortedPosts } from '~/lib/get-sorted-posts'
+
 import { markdownToHtml } from './markdown-to-html'
 
 export function generateFeed() {
   const date = new Date()
 
-  const posts = getSortedPosts(allPosts).filter(
+  const posts = getSortedPosts(contentPosts).filter(
     post => post.status === 'published'
   )
 
@@ -33,18 +35,23 @@ export function generateFeed() {
   })
 
   posts.forEach(async post => {
-    const { name, email, url: authorLink } = post.author_info
-    const link = `${config.webserver.host}/blog/post/${post.id}`
+    const link = `${config.webserver.host}/blog/post/${post.slug}`
 
     feed.addItem({
       link,
       title: post.title,
-      id: post.id,
+      id: post.slug,
       description: post.description,
-      content: markdownToHtml(`![](${link}/thumbnail) ${post.body.raw}`),
-      author: [{ name, email, link: authorLink }],
+      content: markdownToHtml(`![](${link}/thumbnail) ${post.content}`),
+      author: [
+        {
+          name: 'Mateus Felipe Gonçalves',
+          email: 'contact@mateusf.com',
+          link: 'https://mateusf.com'
+        }
+      ],
       date: new Date(post.date),
-      category: post.tags.split(',').map(tag => ({ name: tag.trim() })),
+      category: post.tags.map(tag => ({ name: tag })),
       image: {
         url: `${link}/thumbnail`,
         type: 'image/png'
