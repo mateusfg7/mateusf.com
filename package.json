@@ -73,7 +73,7 @@
     "@types/semver": "^7.5.0",
     "@types/shuffle-array": "^1.0.5",
     "autoprefixer": "^10.4.13",
-    "esbuild": "^0.19.0",
+    "esbuild": "^0.20.0",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.0.0",
