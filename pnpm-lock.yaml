@@ -141,7 +141,7 @@ devDependencies:
     version: 0.5.6(tailwindcss@3.3.5)
   '@types/mdx':
     specifier: ^2.0.3
-    version: 2.0.9
+    version: 2.0.11
   '@types/node':
     specifier: 20.11.10
     version: 20.11.10
@@ -1640,7 +1640,7 @@ packages:
       '@types/estree': 1.0.3
       '@types/estree-jsx': 1.0.2
       '@types/hast': 3.0.4
-      '@types/mdx': 2.0.9
+      '@types/mdx': 2.0.11
       collapse-white-space: 2.1.0
       devlop: 1.1.0
       estree-util-build-jsx: 3.0.1
@@ -2326,8 +2326,8 @@ packages:
     dependencies:
       '@types/unist': 3.0.1
 
-  /@types/mdx@2.0.9:
-    resolution: {integrity: sha512-OKMdj17y8Cs+k1r0XFyp59ChSOwf8ODGtMQ4mnpfz5eFDk1aO41yN3pSKGuvVzmWAkFp37seubY1tzOVpwfWwg==}
+  /@types/mdx@2.0.11:
+    resolution: {integrity: sha512-HM5bwOaIQJIQbAYfax35HCKxx7a3KrK3nBtIqJgSOitivTD1y3oW9P3rxY9RkXYPUk7y/AjAohfHKmFpGE79zw==}
     dev: true
 
   /@types/minimist@1.2.4:
