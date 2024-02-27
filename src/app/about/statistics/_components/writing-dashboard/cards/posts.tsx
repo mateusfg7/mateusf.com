@@ -1,5 +1,5 @@
-import { allPosts } from 'contentlayer/generated'
 import { Article } from '@phosphor-icons/react/dist/ssr'
+import { posts } from '#content'
 
 export async function Posts() {
   return (
@@ -8,7 +8,7 @@ export async function Posts() {
         <span>Posts</span>
         <Article size="1em" weight="duotone" />
       </span>
-      <div className="flex h-full items-center text-2xl">{allPosts.length}</div>
+      <div className="flex h-full items-center text-2xl">{posts.length}</div>
     </div>
   )
 }

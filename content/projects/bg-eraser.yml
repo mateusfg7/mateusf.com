@@ -1,0 +1,9 @@
+title: 'Background Eraser'
+description: 'Simple tool to erase background of any images .'
+image: 'https://raw.githubusercontent.com/mateusfg7/background-eraser/main/.github/assets/thumbnail.png'
+core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss']
+tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'pwa']
+repository: 'https://github.com/mateusfg7/background-eraser'
+website: 'https://bg-eraser.mateusf.com'
+priority: 2
+featured: true

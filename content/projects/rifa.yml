@@ -1,0 +1,5 @@
+title: 'Rifa'
+description: 'Website de registro de compra de uma nova Rifa em uma planilha do Google Spreadsheets e geração de uma imagem no formato Ticket com informações da rifa.'
+core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss']
+tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'zustand', 'google-cloud-storage', 'google-spreadsheet', 'modern-screenshot', 'lucide-icons']
+repository: 'https://github.com/mateusfg7/rifa'

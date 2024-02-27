@@ -1,0 +1,8 @@
+title: 'CSS Border Generator'
+description: 'A simple web page created with React to get the preview of the border of a component and obtain the relative CSS style code.'
+image: 'https://i.imgur.com/1y4GCFW.png'
+core_techs: ['javascript', 'reactjs']
+tags: ['javascript', 'reactjs', 'css', 'fontawesome']
+repository: 'https://github.com/mateusfg7/Box-CSS-Preview'
+website: 'https://border-css-generator.mateusf.com/'
+featured: true

@@ -1,0 +1,5 @@
+title: 'pyRailFence Cipher'
+description: 'A Python script to encode messages using the Rail Fence algorithm. This script was made to study the many ways to encode a message described in "The Code Book", by Simon Singh.'
+core_techs: ['python']
+tags: ['python', 'cypher']
+repository: 'https://github.com/mateusfg7/pyRailFence_cipher'

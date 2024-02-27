@@ -1,0 +1,9 @@
+title: 'Todo Vue.js'
+description: 'This is a simple to-do app made for learning some Vue.js basic concepts.'
+image: 'https://raw.githubusercontent.com/mateusfg7/todo-vue/main/docs/screenshot.png'
+core_techs: ['vue', 'typescript', 'vite','tailwindcss']
+tags: ['vue', 'typescript', 'vite', 'tailwindcss','todo', 'phosphoricons', 'tailwindcss-form']
+repository: 'https://github.com/mateusfg7/todo-vue'
+website: 'https://todo-vue.mateusf.com'
+priority: 1
+featured: true

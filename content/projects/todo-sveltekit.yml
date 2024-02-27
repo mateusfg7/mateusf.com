@@ -1,0 +1,8 @@
+title: 'To-do on SvelteKit'
+description: 'This is a simple to-do app made for learning some Svelte and SvelteKit basic concepts.'
+core_techs: ['svelte', 'typescript', 'vite','tailwindcss']
+tags: ['svelte', 'sveltekit', 'typescript', 'vite', 'tailwindcss','todo', 'phosphoricons', 'tailwindcss-form']
+repository: 'https://github.com/mateusfg7/todo-sveltekit'
+website: 'https://todo-sveltekit.mateusf.com'
+priority: 2
+featured: false

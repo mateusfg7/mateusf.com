@@ -1,0 +1,5 @@
+title: 'Text Analysis'
+description: 'Programa em python que realisa análise em texto usando recursos da API Algorithmia.'
+core_techs: ['python']
+tags: ['python', 'algorihmia', 'matplotlib']
+repository: 'https://github.com/mateusfg7/textAnalysis'

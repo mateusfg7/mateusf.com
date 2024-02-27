@@ -1,0 +1,14 @@
+title: 'LMJ Automotive'
+description: 'Website da LMJ Automotive, uma oficina mecânica que oferece serviço móvel. Empresa fictícia para o Projeto Final do curso de Aprendizado Industrial em Logística, na instituição SESI SENAI Dr. Celso Charuri - Pará de Minas MG.'
+image: 'https://raw.githubusercontent.com/mateusfg7/lmj-automotive/main/.github/thumbnail.png'
+core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss']
+tags: [
+      'typescript',
+      'reactjs',
+      'nextjs',
+      'tailwindcss',
+      'react-icons',
+      'tailwind-styled-components'
+    ]
+repository: 'https://github.com/mateusfg7/lmj-automotive'
+website: 'https://www.lmjautomotive.com.br/'

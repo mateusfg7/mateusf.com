@@ -1,4 +1,4 @@
-import { Post } from 'contentlayer/generated'
+import { Post } from '#content'
 
 export function getSortedPosts(posts: Post[]) {
   return posts.sort(

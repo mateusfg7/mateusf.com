@@ -1,0 +1,12 @@
+title: 'Formatch'
+description: 'Aplicativo que conecta você a um profissional da área de construção civil, e ainda te mantém informado sobre novidades do setor.'
+image: 'https://raw.githubusercontent.com/mateusfg7/formatch-app/main/.github/thumbnail.png'
+core_techs: ['typescript', 'react-native', 'expo']
+tags: [
+      'typescript',
+      'react-native',
+      'expo',
+      'native-base',
+      'phosphor-icons'
+    ]
+repository: 'https://github.com/mateusfg7/formatch'

@@ -1,0 +1,8 @@
+title: 'AQ-10 Protocol'
+description: 'Autistic screening test questionnaire. AQ-10 Protocol'
+core_techs: ['svelte', 'typescript', 'vite', 'tailwindcss']
+tags: ['svelte', 'sveltekit', 'typescript', 'vite', 'tailwindcss']
+repository: 'https://github.com/mateusfg7/aq-10-protocol'
+website: 'https://aq-10.mateusf.com/'
+priority: 1
+featured: false

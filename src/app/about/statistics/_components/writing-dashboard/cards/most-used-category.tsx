@@ -6,7 +6,7 @@ import {
   NoteBlank,
   ListBullets
 } from '@phosphor-icons/react/dist/ssr'
-import { allPosts } from 'contentlayer/generated'
+import { posts } from '#content'
 
 type RowProps = {
   Icon: PhosphorIcon
@@ -24,7 +24,7 @@ const Row = ({ Icon, quantity, title }: RowProps) => (
 )
 
 function getQuantity(category: string) {
-  return allPosts.filter(post => post.category === category).length
+  return posts.filter(post => post.category === category).length
 }
 
 export async function MostUsedCategories() {

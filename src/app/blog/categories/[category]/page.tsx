@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { FolderOpen } from '@phosphor-icons/react/dist/ssr'
 
 import { PostList } from '~/components/post-list'
 
@@ -8,9 +9,7 @@ import {
   getPostListOfCategory,
   getNormalCategoryString
 } from '~/lib/categories'
-import { getSortedPosts } from '~/lib/get-sorted-posts'
 import { slug } from '~/lib/slug'
-import { FolderOpen } from '@phosphor-icons/react/dist/ssr'
 
 interface Props {
   params: { category: string }
@@ -28,7 +27,7 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function Page({ params }: Props) {
   const { category } = params
 
-  const postList = getSortedPosts(getPostListOfCategory(slug(category)))
+  const postList = getPostListOfCategory(slug(category))
 
   return (
     <div className="content-container m-auto">

@@ -1,8 +1,8 @@
 import { getUniqueCategoryList } from '~/lib/categories'
 import { slug } from '~/lib/slug'
 import { getUniqueTagListFromPosts } from '~/lib/tags'
-import { allPosts } from 'contentlayer/generated'
 import { config } from 'global-config'
+import { posts } from '#content'
 
 const commonPaths = [
   '',
@@ -13,14 +13,13 @@ const commonPaths = [
   'blog/categories',
   'blog/tag',
   'blog/feed',
-  'blog/author',
   'guestbook'
 ]
 const tagPaths = getUniqueTagListFromPosts().map(tag => `blog/tag/${slug(tag)}`)
 const categoryPaths = getUniqueCategoryList().map(
   category => `blog/categories/${slug(category)}`
 )
-const postPaths = allPosts.map(post => `blog/post/${post.id}`)
+const postPaths = posts.map(post => `blog/post/${post.slug}`)
 
 export const allRoutes = [
   ...commonPaths,

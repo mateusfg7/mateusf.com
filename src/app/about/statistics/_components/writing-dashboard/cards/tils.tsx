@@ -1,4 +1,4 @@
-import { allTILs } from 'contentlayer/generated'
+import { tils } from '#content'
 import { Notebook } from '@phosphor-icons/react/dist/ssr'
 
 export async function TILs() {
@@ -8,7 +8,7 @@ export async function TILs() {
         <span>TILs</span>
         <Notebook size="1em" weight="duotone" />
       </span>
-      <div className="flex h-full items-center text-2xl">{allTILs.length}</div>
+      <div className="flex h-full items-center text-2xl">{tils.length}</div>
     </div>
   )
 }

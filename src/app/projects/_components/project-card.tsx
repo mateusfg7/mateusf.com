@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { Project } from 'contentlayer/generated'
 import { FiFolder, FiGithub, FiGlobe } from 'react-icons/fi'
 import { BsDot } from 'react-icons/bs'
 import { techIcons } from './tech-icons'
 import { ProjectCardEffect } from './project-card-effect'
+import { Project } from '#content'
 
 interface Props {
   data: Project

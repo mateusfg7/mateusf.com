@@ -1,0 +1,5 @@
+title: 'Perildo de Ocilação'
+description: 'Calcula o perildo de ocilação de um pêndulo '
+core_techs: ['python']
+tags: ['python', 'physics']
+repository: 'https://github.com/mateusfg7/perildo-de-ocilacao'

@@ -1,9 +1,8 @@
-import pluggin, { Options } from 'rehype-shift-heading'
+import plugin, { Options } from 'rehype-shift-heading'
 
 export const options: Partial<Options> = {
   shift: 1
 }
 
-const rehypeShiftHeading = { pluggin, options }
-
-export default rehypeShiftHeading
+const rehypeShiftHeadings = [plugin, options]
+export default rehypeShiftHeadings

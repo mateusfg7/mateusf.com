@@ -1,4 +1,4 @@
-import pluggin, { Options } from 'rehype-pretty-code'
+import plugin, { Options } from 'rehype-pretty-code'
 
 const options: Partial<Options> = {
   theme: {
@@ -11,16 +11,9 @@ const options: Partial<Options> = {
     if (node.children.length === 0) {
       node.children = [{ type: 'text', value: ' ' }]
     }
-  },
-  // Feel free to add classNames that suit your docs
-  onVisitHighlightedLine(node) {
-    node.properties.className.push('highlighted-line')
-  },
-  onVisitHighlightedWord(node) {
-    node.properties.className = ['highlighted-word']
   }
+  // Feel free to add classNames that suit your docs
 }
 
-const rehypePrettyCode = { pluggin, options }
-
+const rehypePrettyCode = [plugin, options]
 export default rehypePrettyCode

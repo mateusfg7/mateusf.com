@@ -1,0 +1,10 @@
+title: 'Imgur Image Uploader'
+description: 'My personal image uploader using Imgur API. Upload an image (jpg, png, webp or gif) and direct receive a link for it. '
+image: 'https://github.com/mateusfg7/img-uploader/blob/9893f020931d72d9b9b46dfa91d83f6def5107a1/.github/thumbnail.png?raw=true'
+core_techs: ['svelte', 'typescript', 'vite', 'tailwindcss']
+tags:
+  ['svelte', 'sveltekit', 'typescript', 'vite', 'tailwindcss', 'lucide-icons']
+repository: 'https://github.com/mateusfg7/img-uploader'
+website: 'https://img.mateusf.com/'
+priority: 2
+featured: true

@@ -1,0 +1,9 @@
+title: 'Noisekun'
+description: 'Website para ouvir combinações de sons para relaxar e se tornar mais produtivo nas suas tarefas.'
+image: 'https://raw.githubusercontent.com/mateusfg7/Noisekun/main/.github/assets/thumbnail.png'
+core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss']
+tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'zustand', 'pwa']
+repository: 'https://github.com/mateusfg7/Noisekun'
+website: 'https://noisekun.mateusf.com'
+priority: 1
+featured: true

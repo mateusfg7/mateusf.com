@@ -155,60 +155,6 @@ export async function getLastFmTopTracks(period: Period = '6month') {
   return tracks
 }
 
-type TrackInfoBody = {
-  track: {
-    name: string
-    mbid: string
-    url: string
-    duration: string
-    streamable: { '#text': '0' | '1'; fulltrack: '0' | '1' }
-    listeners: string
-    playcount: string
-    artist: {
-      name: string
-      mbid: string
-      url: string
-    }
-    album: {
-      artist: string
-      title: string
-      mbid: string
-      url: string
-      image: {
-        size: ImageSize
-        '#text': string
-      }[]
-      '@attr': { position: string }
-    }
-    toptags: { tag: { name: string; url: string }[] }
-  }
-}
-
-export async function getTrackInfo({
-  trackName,
-  artistName
-}: {
-  trackName: string
-  artistName: string
-}) {
-  const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process.env.LASTFM_API_KEY}&artist=${artistName}&track=${trackName}&format=json`
-  )
-
-  if (!lastFmApiRequest.ok) {
-    console.log(lastFmApiRequest)
-    throw new ApiError({
-      message: lastFmApiRequest.statusText,
-      status: lastFmApiRequest.status,
-      url: lastFmApiRequest.url
-    })
-  }
-
-  const { track }: TrackInfoBody = await lastFmApiRequest.json()
-
-  return track
-}
-
 type User = {
   name: string
   playcount: string

@@ -1,10 +1,10 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-
-import { getCategoriesAndNumberOfPosts } from '~/lib/categories'
-import { slug } from '~/lib/slug'
 import { Folder } from '@phosphor-icons/react/dist/ssr'
+
+import { slug } from '~/lib/slug'
+import { getCategoriesAndNumberOfPosts } from '~/lib/categories'
 
 export const metadata: Metadata = {
   title: 'Blog Categories',

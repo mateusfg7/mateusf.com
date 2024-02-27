@@ -1,5 +1,5 @@
 import { Article } from '@phosphor-icons/react/dist/ssr'
-import { allPosts } from 'contentlayer/generated'
+import { posts } from '#content'
 
 import { Card } from '../card'
 
@@ -8,7 +8,7 @@ export async function BlogPosts() {
     <Card
       title="Blog posts"
       icon={<Article size="1em" weight="duotone" />}
-      content={allPosts.length}
+      content={posts.length}
     />
   )
 }

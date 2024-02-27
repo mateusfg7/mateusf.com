@@ -1,0 +1,5 @@
+title: 'Clothes Store Manager'
+description: 'A simple clothes manager (WMS) with Next.js and Deno.'
+core_techs: ['reactjs', 'nextjs', 'typescript', 'postgresql', 'deno']
+tags: ['reactjs', 'nextjs', 'typescript', 'postgresql', 'deno', 'denodb', 'styled-components', 'polished']
+repository: 'https://github.com/mateusfg7/clothes-store-manager'

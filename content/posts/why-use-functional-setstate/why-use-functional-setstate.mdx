@@ -94,7 +94,7 @@ export default Counter;
 
 In this case, you might expect the count to increase by 30 after three button clicks. However, due to the nature of normal state updates, the value of count will only increase by 10, as each setCount call operates on the stale value of count.
 
-![Screencast on repository: _content/posts/why-use-functional-setstate/assets/screencast1.gif_](https://i.imgur.com/jgV78fk.gif)
+![Screencast on repository: _content/posts/why-use-functional-setstate/assets/screencast1.gif_](assets/screencast1.gif)
 
 ## Solution
 
@@ -102,14 +102,14 @@ Functional state updates solve this problem by **providing the previous state va
 To fix the example above using functional state updates, you can modify the increment function as follows:
 
 ```tsx
-const increment = () =>
+const increment = () => {
   setCount((prevCount) => prevCount + 10);
   setCount((prevCount) => prevCount + 10);
   setCount((prevCount) => prevCount + 10);
 };
 ```
 
-![Screencast on repository: _content/posts/why-use-functional-setstate/assets/screencast2.gif_](https://i.imgur.com/jd1WKa5.gif)
+![Screencast on repository: _content/posts/why-use-functional-setstate/assets/screencast2.gif_](assets/screencast2.gif)
 
 
 # Referencies

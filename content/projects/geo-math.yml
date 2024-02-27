@@ -1,0 +1,5 @@
+title: 'GeoMath'
+description: '🟦 🔷 🔵 Geometric Math for any shapes. project made for study the Rust Lang.'
+core_techs: ['rust']
+tags: ['rust', 'clap', 'cli', 'math', 'geometry']
+repository: 'https://github.com/mateusfg7/GeoMath'

@@ -1,0 +1,594 @@
+---
+title: 'Draft Post'
+date: '0001-01-01'
+lastUpdate: '2022-12-02'
+description: 'Post made for test markdown render'
+category: 'Draft'
+tags: 'title4test, content4test, code4test'
+author: 'mateusfg7'
+test: true
+---
+
+# Title 1
+
+## Title 2
+
+### Title 3
+
+#### Title 4
+
+# HTML Tests
+
+## Common Tags
+
+<h1> Title with HTML </h1>
+
+<p>tag p</p>
+
+<div>content in a simple div</div>
+
+<div align="center">content in a div with align center</div>
+
+## Iframe
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/ms1iTZzAutY"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  allowfullscreen
+></iframe>
+
+## Video
+
+<video src="assets/intentional-hover-screencast.mp4" controls />
+
+## Image
+
+### Width 100px
+
+<img
+  src="assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif"
+  width="100"
+/>
+
+### Width 300px
+
+<img
+  src="assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif"
+  width="300"
+/>
+
+### Width 560px
+
+<img
+  src="assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif"
+  width="560"
+/>
+
+### Width 1000px
+
+<img
+  src="assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif"
+  width="1000"
+/>
+
+### Width 2000px
+
+<img
+  src="assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif"
+  width="2000"
+/>
+
+# Formating
+
+normal
+**negrito**
+_itálico_
+~~riscado~~
+
+# Image
+
+## Alt text
+
+![alt image text](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.steves-digicams.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F10%2FNikon_D850_Sample_13.jpg&f=1&nofb=1)
+
+# Code
+
+## Inline
+
+Withouy hightlight: `inline code`
+
+Inline Rust: `fn factorial(i: u64) -> u64 {:rust}`
+
+&nbsp;
+
+## Block
+
+elixir (hightlight /x = Foo.bar 0/)
+
+```elixir /x = Foo.bar 0/
+defmodule Foo do
+  def bar(x), when x == 0, do: x+1 end
+  def bar(x) do
+    x + 2
+  end
+end
+
+x = Foo.bar 0
+y = Foo.bar 1
+
+^y = x + 1
+```
+
+js with Highlighted Chars By Id (/age/#r /name/#r /setAge/#g /setName/#g /50/#b /"Taylor"/#b)
+
+```js /age/#r /name/#r /setAge/#g /setName/#g /50/#b /"Taylor"/#b
+const [age, setAge] = useState(50);
+const [name, setName] = useState("Taylor");
+```
+
+sql
+
+```sql
+SELECT * FROM my_table;
+```
+
+bash
+
+```bash
+#!/bin/bash
+
+var1=$1
+
+if [ $var1 -gt 5 ]; do
+  echo "Is greather than 5"
+fi
+```
+
+python (hightlight \{1\-3\,5\})
+
+```python {1-3,5}
+def foo(x):
+  return x + 1
+
+def bar(y):
+  return y + 1
+
+x = foo(1)
+y = bar(1)
+```
+
+python (hightlight \{1\-3\,5\} and line-numbers)
+
+```python showLineNumbers {1-3,5}
+def foo(x):
+  return x + 1
+
+def bar(y):
+  return y + 1
+
+x = foo(1)
+y = bar(1)
+```
+
+Javascript
+
+```javascript
+function foo(x) {
+  return x + 1
+}
+
+function bar(y) {
+  return y + 1
+}
+
+const x = foo(1)
+const y = bar(1)
+```
+
+Typescript (show line numbers)
+
+```typescript showLineNumbers
+function foo(x: number): number {
+  return x + 1
+}
+
+const sum: (x: number) => number = foo
+const y: number = sum(1)
+```
+
+Rust
+
+```rust title="Simple Rust code with title"
+fn factorial(i: u64) -> u64 {
+  match i {
+    0 => 1,
+    n => n * factorial(n-1)
+  }
+}
+
+fn main() {
+  println!("Hello World");
+}
+```
+_another_ Rust,_but with caption_
+
+```rust caption="This is a caption with some note about the code"
+fn factorial(i: u64) -> u64 {
+  match i {
+    0 => 1,
+    n => n * factorial(n-1)
+  }
+}
+
+fn main() {
+  println!("Hello World");
+}
+```
+
+Go Lang
+
+```go
+// ZeroBroadcast reports whether addr is 255.255.255.255.
+func (addr ipv4addr) ZeroBroadcast() bool {
+  return addr == 0xFFFFFFFF
+}
+```
+
+Rust complete code features
+
+```rust showLineNumbers title="src/main.rs" caption="the code above return the factorial of an given number" /factorial(n-1)/ {9}
+fn factorial(i: u64) -> u64 {
+  match i {
+    0 => 1,
+    n => n * factorial(n-1)
+  }
+}
+
+fn main() {
+  println!("Hello World");
+}
+```
+
+Long Block Quote
+
+```text
+sdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgf
+sdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgfsdasdaskjdfhsdakjasjkfdfkjghsdfkjhdsgfdshgdshgfhjdsfghdsfgkhsdghjghsdgfhsadgfkhgsfkhgsfhgsajhfgajsfghasdgf
+```
+
+# Mermaid charts
+
+## Flowchart
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+## Sequence diagram
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
+## Gantt diagram
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
+## Class diagram
+```mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+```
+
+## Git graph
+```mermaid
+gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
+
+## Entity Relationship Diagram - ❗ experimental
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
+## User Journey Diagram
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
+## Quadrant Chart
+```mermaid
+quadrantChart
+    title Reach and engagement of campaigns
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 We should expand
+    quadrant-2 Need to promote
+    quadrant-3 Re-evaluate
+    quadrant-4 May be improved
+    Campaign A: [0.3, 0.6]
+    Campaign B: [0.45, 0.23]
+    Campaign C: [0.57, 0.69]
+    Campaign D: [0.78, 0.34]
+    Campaign E: [0.40, 0.34]
+    Campaign F: [0.35, 0.78]
+```
+
+## Timeline
+```mermaid
+timeline
+    title History of Social Media Platform
+    2002 : LinkedIn
+    2004 : Facebook
+         : Google
+    2005 : Youtube
+    2006 : Twitter
+```
+
+## Mindmap
+```mermaid
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        British popular psychology author Tony Buzan
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        Uses
+            Creative techniques
+            Strategic planning
+            Argument mapping
+    Tools
+      Pen and paper
+      Mermaid
+```
+
+# Tables
+
+## Md
+
+### Tipo 1
+
+```markdown
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+```
+
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+
+### Tipo 2
+
+```markdown
+| A | B | C |
+|---|---|---|
+| a1 | b1 | c1 |
+|---|---|---|
+| a2 | b1 | c2 |
+|---|---|---|
+```
+
+| A | B | C |
+|---|---|---|
+| a1 | b1 | c1 |
+|---|---|---|
+| a2 | b1 | c2 |
+|---|---|---|
+
+### Tipo 3
+
+```markdown
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+```
+
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a2  | b1  | c2  |
+
+### Tipo 4
+
+```markdown
+| foo | bar |
+| :-- | :-: |
+| baz | qux |
+```
+
+| foo | bar |
+| :-- | :-: |
+| baz | qux |
+
+## Html
+
+```html
+<table>
+  <tr>
+    <th>Test 1</th>
+    <th>Test 2</th>
+  </tr>
+  <tr>
+    <td>Test 3</td>
+    <td>Test 4</td>
+  </tr>
+  <tr>
+    <td>Test 5</td>
+    <td>Test 6</td>
+  </tr>
+</table>
+```
+
+<table>
+  <tr>
+    <th>Test 1</th>
+    <th>Test 2</th>
+  </tr>
+  <tr>
+    <td>Test 3</td>
+    <td>Test 4</td>
+  </tr>
+  <tr>
+    <td>Test 5</td>
+    <td>Test 6</td>
+  </tr>
+</table>
+
+# Tasks
+
+- [x] task 1
+- [x] task 2
+- [ ] task 3
+- [ ] task 4
+
+# Lists
+
+## Unordered
+
+- item 1
+- item 2
+- item 3
+- `item 4`
+- `item 5`
+- item 6
+  - item 6.1
+  - item 6.2
+    - item 6.2.1
+  - item 6.3
+- item 7
+- **Long item 8:** Ex elit id do ea do voluptate incididunt. Excepteur sit sit veniam in nulla Lorem sunt elit non proident nostrud qui do consectetur. Officia deserunt labore sit amet ad culpa velit magna. Cupidatat culpa pariatur incididunt minim aliquip exercitation officia incididunt mollit nostrud ad. Ea officia nisi laboris Lorem. Lorem incididunt culpa occaecat sint Lorem aliquip nisi.
+- **Long item 9:** Ex elit id do ea do voluptate incididunt. Excepteur sit sit veniam in nulla Lorem sunt elit non proident nostrud qui do consectetur. Officia deserunt labore sit amet ad culpa velit magna. Cupidatat culpa pariatur incididunt minim aliquip exercitation officia incididunt mollit nostrud ad. Ea officia nisi laboris Lorem. Lorem incididunt culpa occaecat sint Lorem aliquip nisi.
+
+## Ordered
+
+1. Mateus
+2. Felipe
+3. Gonçalves
+4. Laboris tempor magna nulla mollit esse mollit cillum commodo ad eu veniam ullamco irure. Nulla non ullamco minim minim eu ad et fugiat aliquip excepteur Lorem labore amet ex. Eu ea in ipsum ullamco dolor excepteur fugiat commodo esse. Ex ad velit do dolore excepteur officia irure. Nisi sunt consectetur minim occaecat culpa enim minim incididunt fugiat aliqua sint. Est ipsum ullamco veniam ut non cillum minim consequat aliquip mollit commodo mollit sunt. Ex velit laboris laboris excepteur irure culpa id Lorem sit occaecat laboris voluptate.
+5. Laboris tempor magna nulla mollit esse mollit cillum commodo ad eu veniam ullamco irure. Nulla non ullamco minim minim eu ad et fugiat aliquip excepteur Lorem labore amet ex. Eu ea in ipsum ullamco dolor excepteur fugiat commodo esse. Ex ad velit do dolore excepteur officia irure. Nisi sunt consectetur minim occaecat culpa enim minim incididunt fugiat aliqua sint. Est ipsum ullamco veniam ut non cillum minim consequat aliquip mollit commodo mollit sunt. Ex velit laboris laboris excepteur irure culpa id Lorem sit occaecat laboris voluptate.
+6. Laboris tempor magna nulla mollit esse mollit cillum commodo ad eu veniam ullamco irure. Nulla non ullamco minim minim eu ad et fugiat aliquip excepteur Lorem labore amet ex. Eu ea in ipsum ullamco dolor excepteur fugiat commodo esse. Ex ad velit do dolore excepteur officia irure. Nisi sunt consectetur minim occaecat culpa enim minim incididunt fugiat aliqua sint. Est ipsum ullamco veniam ut non cillum minim consequat aliquip mollit commodo mollit sunt. Ex velit laboris laboris excepteur irure culpa id Lorem sit occaecat laboris voluptate.
+
+# Hints
+
+!> This is a tip.
+_A cheat for yout life_
+
+?> This is a warning...
+~Be careful.~
+
+x> This is a error!!
+Pay **attention**!
+
+!> **LONG TIP** _Nisi est dolore magna laboris esse quis tempor laborum quis ipsum pariatur amet fugiat ipsum. Ad veniam qui enim nisi ut reprehenderit duis anim eu. Ex proident fugiat non duis consequat et officia et exercitation culpa reprehenderit eiusmod._
+
+# Math
+
+block
+
+$$
+f(x) = \int_{-\infty}^\infty
+    f\hat\xi\,e^{2 \pi i \xi x}
+    \,d\xi
+$$
+
+inline math: $ x+1 = 2 $
+
+# Blockquot
+
+> This is a blockquote
+
+# Separation
+
+---
+
+foo
+
+# Footnote
+
+Sample footnote [^1], sample another footnote [^another]
+
+[^1]: Just a footnote
+[^another]: Just one more footnote
+
+# Variables
+
+## Text
+
+[var]: This text was inside a variable
+
+Text: [var]
+
+## Image
+
+[image]: assets/bem+vindo+ao+mundo+das+gambiarras+sacanas.gif
+
+![image with sample image][image]
+
+# Referencies
+
+Google: [_google.com_](https://google.com)

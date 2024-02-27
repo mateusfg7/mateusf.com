@@ -1,0 +1,9 @@
+title: 'QRCode Generator'
+description: 'QR Code generator with automated forms to generate Plain Text, Wifi or vCard. Project developed with the main objective of studying the Vue.js library. '
+image: 'https://raw.githubusercontent.com/mateusfg7/qrcode-generator/main/.github/thumbnail.png'
+core_techs: ['vue', 'typescript', 'vite','tailwindcss']
+tags: ['vue', 'typescript', 'vite', 'tailwindcss','qrcode', 'lucideicons', 'tailwindcss-form']
+repository: 'https://github.com/mateusfg7/qrcode-generator'
+website: 'https://qrcode.mateusf.com'
+priority: 1
+featured: true

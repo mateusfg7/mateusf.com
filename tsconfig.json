@@ -20,11 +20,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": [
-        ".contentlayer/generated"
-      ],
       "~/*": [
         "src/*"
+      ],
+      "#content": [
+        ".velite"
       ],
       "global-config": [
         "./website.config.ts"
@@ -42,7 +42,6 @@
     "**/*.ts",
     "**/*.mts",
     "**/*.tsx",
-    ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
   "exclude": [
