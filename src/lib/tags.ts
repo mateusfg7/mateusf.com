@@ -1,7 +1,7 @@
 import { slug } from '~/lib/slug'
 import { removeRepeatedValuesFromArray } from '~/lib/remove-repeated-values-from-array'
 import { getFrequencyOfValue } from '~/lib/get-frequency-of-value'
-import { Post, posts } from '#content'
+import { Post, posts, tils } from '#content'
 
 const getRawTagListFromPosts = () =>
   posts.filter((post: Post) => !post.test).flatMap(post => post.tags)
@@ -42,4 +42,17 @@ export function getNormalTagString(tag: string) {
   const allTags = getUniqueTagListFromPosts()
 
   return allTags.find(currTag => slug(currTag) === slug(tag))
+}
+
+export function countAllTags() {
+  const tagList = [
+    ...tils.flatMap(til => til.tags),
+    ...posts.flatMap(post => post.tags)
+  ]
+  const uniqueTagList = removeRepeatedValuesFromArray(tagList)
+
+  return uniqueTagList.map(tag => ({
+    tag,
+    count: getFrequencyOfValue(tagList, tag)
+  }))
 }

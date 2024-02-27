@@ -1,7 +1,6 @@
-import arrayShuffle from 'shuffle-array'
-
 import { Tag } from '@phosphor-icons/react/dist/ssr'
-import { getTagsAndNumberOfPosts } from '~/lib/tags'
+import { shuffleArray } from '~/lib/shuffleArray'
+import { countAllTags } from '~/lib/tags'
 
 // https://github.com/madox2/react-tagcloud/blob/43a706b36a606ddd8a39c4060510166aebdf445e/src/helpers.js#L4
 const fontSizeConverter = (
@@ -23,11 +22,13 @@ const fontSizeConverter = (
 }
 
 export async function TagCloud() {
-  const tags: { value: string; count: number }[] = arrayShuffle(
-    getTagsAndNumberOfPosts().map(value => ({
-      value: value.tag,
-      count: value.numberOfPosts
-    }))
+  const tagsCount = countAllTags().map(({ count, tag }) => ({
+    value: tag,
+    count
+  }))
+
+  const tags: { value: string; count: number }[] = shuffleArray(
+    tagsCount.sort((a, b) => b.count - a.count).slice(0, 100)
   )
 
   return (

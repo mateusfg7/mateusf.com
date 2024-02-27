@@ -110,9 +110,6 @@ dependencies:
   shiki:
     specifier: ^1.1.7
     version: 1.1.7
-  shuffle-array:
-    specifier: ^1.0.1
-    version: 1.0.1
   tailwindcss-animated:
     specifier: ^1.0.1
     version: 1.0.1(tailwindcss@3.3.5)
@@ -7963,10 +7960,6 @@ packages:
     resolution: {integrity: sha512-9kUTMjZtcPH3i7vHunA6EraTPpPOITYTdA5uMrvsJRexktqP0s7P3s9HVK80b4pP42FRVe03D7fT3NmJv2yYhw==}
     dependencies:
       '@shikijs/core': 1.1.7
-    dev: false
-
-  /shuffle-array@1.0.1:
-    resolution: {integrity: sha512-0TFRU8zVQaLatWKr0/czo19VyPNgb/a3sBc1GAjVfivfzEGaS54vueNgtAu/8/pW7EM/VF5fwq9zgpLdGyRmVw==}
     dev: false
 
   /side-channel@1.0.4:
