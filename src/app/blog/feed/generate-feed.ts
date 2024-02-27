@@ -42,7 +42,7 @@ export function generateFeed() {
       title: post.title,
       id: post.slug,
       description: post.description,
-      content: markdownToHtml(`![](${link}/thumbnail) ${post.content}`),
+      content: markdownToHtml(`![](${link}/thumbnail) ${post.raw_content}`),
       author: [
         {
           name: 'Mateus Felipe Gonçalves',

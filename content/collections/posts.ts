@@ -18,7 +18,9 @@ export const posts = defineCollection({
       test: s.boolean().default(false),
       metadata: s.metadata(),
       toc: s.toc(),
-      content: s.mdx()
+      content: s.mdx(),
+      markdown: s.markdown(),
+      raw_content: s.custom().transform((data, { meta }) => meta.content)
     })
     .transform(data => ({
       ...data,
