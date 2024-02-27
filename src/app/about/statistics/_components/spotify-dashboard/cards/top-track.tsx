@@ -2,18 +2,14 @@ import Image from 'next/image'
 import { MusicNotes } from '@phosphor-icons/react/dist/ssr'
 
 import { placeholder } from '~/lib/placeholder'
-import { getLastFmTopTracks, getTrackInfo } from '~/lib/lastFm'
+import { getLastFmTopTracks } from '~/lib/lastFm'
 
 export async function TopTrack() {
-  const tracks = await getLastFmTopTracks('1month')
+  const track = await getLastFmTopTracks('1month').then(tracks => tracks[0])
 
-  const topTrack = await getTrackInfo({
-    artistName: tracks[0].artist.name,
-    trackName: tracks[0].name
-  })
-  const imageUrl = topTrack.album.image.filter(
-    image => image.size === 'extralarge'
-  )[0]['#text']
+  const imageUrl = track.image.find(image => image.size === 'extralarge')?.[
+    '#text'
+  ]
 
   return (
     <div className="flex h-full w-full items-center justify-between gap-2 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
@@ -27,23 +23,25 @@ export async function TopTrack() {
         </span>
         <span className="flex h-full items-center">
           <a
-            href={topTrack.url}
+            href={track.url}
             target="_blank"
-            title={`${topTrack.name} - ${topTrack.artist['#text']}`}
+            title={`${track.name} - ${track.artist['#text']}`}
             className="block w-full overflow-hidden text-ellipsis whitespace-nowrap text-xl hover:underline md:text-3xl"
           >
-            {topTrack.name} - {topTrack.artist.name}
+            {track.name} - {track.artist.name}
           </a>
         </span>
       </div>
-      <Image
-        src={imageUrl}
-        alt="Artist Image"
-        width={300}
-        height={300}
-        placeholder={placeholder(96, 96) as `data:image/${string}`}
-        className="w-11 rounded-xl md:w-24 md:rounded-3xl"
-      />
+      {imageUrl && (
+        <Image
+          src={imageUrl}
+          alt="Artist Image"
+          width={300}
+          height={300}
+          placeholder={placeholder(96, 96) as `data:image/${string}`}
+          className="w-11 rounded-xl md:w-24 md:rounded-3xl"
+        />
+      )}
     </div>
   )
 }
