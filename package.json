@@ -69,7 +69,6 @@
     "@types/mdx": "^2.0.3",
     "@types/node": "20.11.20",
     "@types/react": "18.2.58",
-    "@types/remark-hint": "^1.0.1",
     "@types/semver": "^7.5.0",
     "@types/shuffle-array": "^1.0.5",
     "autoprefixer": "^10.4.13",
