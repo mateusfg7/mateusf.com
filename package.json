@@ -90,7 +90,7 @@
     "tailwindcss": "^3.3.3",
     "tsx": "^4.0.0",
     "typescript": "5.3.3",
-    "velite": "0.1.0-beta.9",
+    "velite": "0.1.0-beta.11",
     "vercel": "^33.0.0"
   }
 }

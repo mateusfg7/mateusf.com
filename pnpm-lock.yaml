@@ -209,8 +209,8 @@ devDependencies:
     specifier: 5.3.3
     version: 5.3.3
   velite:
-    specifier: 0.1.0-beta.9
-    version: 0.1.0-beta.9
+    specifier: 0.1.0-beta.11
+    version: 0.1.0-beta.11
   vercel:
     specifier: ^33.0.0
     version: 33.0.1
@@ -8789,8 +8789,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /velite@0.1.0-beta.9:
-    resolution: {integrity: sha512-gFw3n6PrCw0YAdFdfr/VV6USfa343XRBf7AY92sqlo7wqsQDSMczhf7SOhtPhKTCLfbUOfUnlqEWCk+EX1OCNA==}
+  /velite@0.1.0-beta.11:
+    resolution: {integrity: sha512-NfYIVT0kMrLWyRNhE/wcDjgJ1hX8oP9fdTJm0pNS1M1ODDTBvukw+P3MKzHr2rk1LoT0i+5XauppWvs5WTYESg==}
     engines: {node: ^18.17.0 || >=20.3.0}
     hasBin: true
     dependencies:
