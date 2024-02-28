@@ -193,6 +193,9 @@ devDependencies:
   simple-git:
     specifier: ^3.18.0
     version: 3.20.0
+  tailwind-scrollbar:
+    specifier: ^3.1.0
+    version: 3.1.0(tailwindcss@3.3.5)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.5
@@ -7532,6 +7535,15 @@ packages:
     dependencies:
       '@pkgr/core': 0.1.0
       tslib: 2.6.2
+    dev: true
+
+  /tailwind-scrollbar@3.1.0(tailwindcss@3.3.5):
+    resolution: {integrity: sha512-pmrtDIZeHyu2idTejfV59SbaJyvp1VRjYxAjZBH0jnyrPRo6HL1kD5Glz8VPagasqr6oAx6M05+Tuw429Z8jxg==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 3.x
+    dependencies:
+      tailwindcss: 3.3.5
     dev: true
 
   /tailwindcss-animated@1.0.1(tailwindcss@3.3.5):
