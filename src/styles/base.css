@@ -1,6 +1,14 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply scrollbar-track-transparent scrollbar-thumb-neutral-700 scrollbar-thumb-rounded-lg;
+  }
+
+  * {
+    @apply scrollbar-thin;
+  }
+
   body {
     @apply bg-neutral-50 dark:bg-neutral-1000;
     @apply font-sans text-neutral-900 dark:text-neutral-300;
