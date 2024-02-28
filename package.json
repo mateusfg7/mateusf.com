@@ -17,7 +17,7 @@
     "bump-tag": "tsx tools/bump-tag-version.ts",
     "new:post": "tsx tools/new-post.mts",
     "new:til": "tsx tools/new-til.mts",
-    "prepare": "husky install",
+    "prepare": "husky",
     "check-unused": "npx depcheck"
   },
   "dependencies": {
