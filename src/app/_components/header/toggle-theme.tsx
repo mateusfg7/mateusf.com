@@ -21,7 +21,7 @@ export function ToggleTheme() {
       as="button"
       onClick={() => setTheme(theme)}
       data-isThemeActive={currTheme === theme}
-      className="flex w-full items-center justify-start gap-4 rounded-xl p-2 text-lg leading-none hover:bg-neutral-100 data-[isThemeActive='true']:font-bold hover:dark:bg-neutral-1000"
+      className="flex w-full items-center justify-start gap-4 rounded-xl p-2 text-lg leading-none data-[isThemeActive='true']:font-bold hover:bg-neutral-100 hover:dark:bg-neutral-1000"
       {...props}
     >
       {theme === 'light' && (
