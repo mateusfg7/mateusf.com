@@ -1,4 +1,6 @@
+import { readFileSync } from 'fs'
 import plugin, { Options } from 'rehype-pretty-code'
+import { getHighlighter } from 'shiki'
 
 const options: Partial<Options> = {
   theme: {
@@ -11,8 +13,31 @@ const options: Partial<Options> = {
     if (node.children.length === 0) {
       node.children = [{ type: 'text', value: ' ' }]
     }
-  }
-  // Feel free to add classNames that suit your docs
+  },
+  getHighlighter: options =>
+    getHighlighter({
+      ...options,
+      langs: [
+        () =>
+          JSON.parse(
+            readFileSync(
+              './content/plugin/rehype-pretty-code/visualg.tmLanguage.json',
+              'utf-8'
+            )
+          ),
+        () =>
+          JSON.parse(
+            readFileSync(
+              './content/plugin/rehype-pretty-code/birl.tmLanguage.json',
+              'utf-8'
+            )
+          )
+      ],
+      langAlias: {
+        visualg: 'VisuAlg',
+        birl: 'BIRL'
+      }
+    })
 }
 
 const rehypePrettyCode = [plugin, options]
