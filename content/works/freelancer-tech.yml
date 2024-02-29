@@ -1,0 +1,16 @@
+position: "Computer Technician"
+description: "Assembly and maintenance of hardware and software, and technical support on Windows and Linux systems."
+in: "2018-01-01"
+company:
+  name: "Freelancer"
+  website: "https://mateusf.com/about"
+  logo: "assets/mateusfelipe.png"
+tags:
+  - 'freelance'
+  - 'self-employ'
+  - 'technician'
+  - 'hardware'
+  - 'software'
+  - 'maintenance'
+  - 'windows'
+  - 'linux'

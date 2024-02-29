@@ -1,0 +1,17 @@
+position: "Graphic Design"
+description: "Creation of arts for Instagram, creation of ad banners, basic image and video editing."
+in: "2017-01-01"
+company:
+  name: "Freelancer"
+  website: "https://mateusf.com/about"
+  logo: "assets/mateusfelipe.png"
+tags:
+  - 'instagram'
+  - 'image'
+  - 'edition'
+  - 'design'
+  - 'graphic'
+  - 'video'
+  - 'photoshop'
+  - 'figma'
+  - 'canvas'

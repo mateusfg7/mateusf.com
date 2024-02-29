@@ -1,0 +1,17 @@
+position: "Computer lab monitor"
+description: "Support for students with doubts about the content, individual classes in basic computing and the Microsoft Office package, school IT support and computer maintenance"
+in: "2023-05-01"
+company:
+  name: "Instituto Mix de Profissões"
+  website: "https://www.institutomix.com.br/"
+  logo: 'assets/institutomix.jpg'
+tags:
+  - 'instagram'
+  - 'image'
+  - 'edition'
+  - 'design'
+  - 'graphic'
+  - 'video'
+  - 'photoshop'
+  - 'figma'
+  - 'canvas'

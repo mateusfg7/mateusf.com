@@ -4,6 +4,7 @@ import { AboutMe } from './sections/about-me'
 import { Contact } from './sections/contact'
 import { Knowledge } from './sections/knowledge'
 import { StatisticsGrid } from './sections/statistics'
+import { Experience } from './sections/experience'
 
 import './styles.css'
 
@@ -20,8 +21,9 @@ export default function Page() {
   return (
     <div className="content-container m-auto space-y-32">
       <AboutMe />
-      <Knowledge />
       <StatisticsGrid />
+      <Knowledge />
+      <Experience />
       <Contact />
     </div>
   )
