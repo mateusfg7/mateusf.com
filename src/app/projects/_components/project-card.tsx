@@ -42,7 +42,7 @@ export function ProjectCard({ data }: Props) {
   )
 
   return (
-    <ProjectCardEffect className="overflow-hidden rounded-3xl shadow-2xl shadow-black/30">
+    <ProjectCardEffect className="overflow-hidden rounded-3xl shadow-xl">
       <div className="flex h-full flex-col bg-neutral-100 dark:bg-neutral-950">
         {data.image && (
           <div className="h-56 w-full">
