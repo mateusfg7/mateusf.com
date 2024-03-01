@@ -24,7 +24,7 @@ export function AboutMe() {
           <a
             className="flex items-end justify-center rounded-xl p-2 leading-none underline opacity-70 hover:opacity-100"
             target="_blank"
-            href="https://read.cv/mateusfelipe"
+            href="https://read.cv/mateusfelipe/?ref=https://mateusf.com"
           >
             <span>read.cv</span>
             <ArrowUpRight className="text-xs" size="1em" />

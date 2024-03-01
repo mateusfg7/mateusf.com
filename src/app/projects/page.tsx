@@ -38,7 +38,7 @@ export default function Page() {
       </div>
       <div className="flex justify-center md:justify-end">
         <a
-          href="https://github.com/mateusfg7/?tab=repositories#"
+          href="https://github.com/mateusfg7/?tab=repositories&ref=https://mateusf.com"
           target="_blank"
           className="flex items-end gap-px leading-none opacity-70 transition-opacity hover:opacity-100"
         >

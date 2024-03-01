@@ -41,7 +41,7 @@ export async function GithubFollowers() {
               ))}
             </div>
             <a
-              href="https://github.com/mateusfg7?tab=followers"
+              href="https://github.com/mateusfg7?tab=followers&ref=https://mateusf.com"
               target="_blank"
               className="text-base transition-colors hover:text-black dark:hover:text-white"
             >

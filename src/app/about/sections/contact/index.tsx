@@ -56,7 +56,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://github.com/mateusfg7"
+          href="https://github.com/mateusfg7/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -80,7 +80,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://www.linkedin.com/in/mateusfg/"
+          href="https://www.linkedin.com/in/mateusfg/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -104,7 +104,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://stackoverflow.com/users/15445504/mateusfg7"
+          href="https://stackoverflow.com/users/15445504/mateusfg7/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -128,7 +128,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://codepen.io/mateusfg7"
+          href="https://codepen.io/mateusfg7/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -152,7 +152,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://www.reddit.com/user/mateusfg7/"
+          href="https://www.reddit.com/user/mateusfg7/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -176,7 +176,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://twitter.com/mateusfg77"
+          href="https://twitter.com/mateusfg77/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -200,7 +200,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://www.instagram.com/mateusfg7/"
+          href="https://www.instagram.com/mateusfg7/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >
@@ -224,7 +224,7 @@ const contacts: Contact[] = [
       <div className="contact-line">
         <a
           className="inline-flex items-end gap-px hover:underline"
-          href="https://aur.archlinux.org/account/mateus"
+          href="https://aur.archlinux.org/account/mateus/?ref=https://mateusf.com"
           target="_blank"
           rel="external"
         >

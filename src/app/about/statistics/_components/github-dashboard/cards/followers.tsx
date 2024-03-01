@@ -35,7 +35,7 @@ export async function Followers() {
             </a>
           ))}
           <a
-            href="https://github.com/mateusfg7?tab=followers"
+            href="https://github.com/mateusfg7?tab=followers&ref=https://mateusf.com"
             target="_blank"
             className="flex items-center justify-center text-sm leading-none transition-colors hover:underline"
           >
