@@ -2,7 +2,7 @@
 
 import * as Accordion from '@radix-ui/react-accordion'
 import { TbTools } from 'react-icons/tb'
-import { ClosedCaptioning } from '@phosphor-icons/react/dist/ssr'
+import { Brain, ClosedCaptioning } from '@phosphor-icons/react/dist/ssr'
 
 import { knowledgeCategories } from './knowledge-categories'
 import {
@@ -14,9 +14,17 @@ import {
 
 export function Knowledge() {
   return (
-    <div>
+    <div className="space-y-3">
+      <div className="flex items-center justify-center gap-1 text-xl font-medium md:justify-start">
+        <Brain
+          size="1em"
+          className="text-neutral-600 dark:text-neutral-400"
+          weight="duotone"
+        />
+        <span>Knowledge</span>
+      </div>
       <Accordion.Root
-        className="z-0 w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-200/30 dark:border-neutral-950 dark:bg-neutral-950/30"
+        className="z-0 w-full hover:text-neutral-500 dark:hover:text-neutral-400"
         type="single"
         collapsible
       >

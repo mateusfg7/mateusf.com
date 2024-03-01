@@ -14,7 +14,7 @@ export const AccordionItem = React.forwardRef(
     forwardedRef: React.ForwardedRef<HTMLDivElement>
   ) => (
     <Accordion.Item
-      className="mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10"
+      className="mt-px border-b border-neutral-200 first:mt-0 last:border-none focus-within:relative focus-within:z-10 dark:border-neutral-800"
       {...props}
       ref={forwardedRef}
     >
@@ -33,7 +33,7 @@ export const AccordionTrigger = React.forwardRef(
   ) => (
     <Accordion.Header className="flex">
       <Accordion.Trigger
-        className="group flex flex-1 cursor-default items-center justify-between bg-neutral-200 p-4 py-7 text-lg leading-none shadow-lg shadow-black/5 outline-none duration-300 hover:cursor-pointer hover:bg-neutral-300 dark:bg-neutral-950 hover:dark:bg-neutral-800 md:p-7"
+        className="group flex flex-1 cursor-default items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:cursor-pointer hover:text-neutral-900 hover:underline dark:hover:text-neutral-300"
         {...props}
         ref={forwardedRef}
       >
@@ -57,11 +57,11 @@ export const AccordionContent = React.forwardRef(
     forwardedRef: React.ForwardedRef<HTMLDivElement>
   ) => (
     <Accordion.Content
-      className="overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown"
+      className="overflow-hidden text-neutral-900 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown dark:text-neutral-300"
       {...props}
       ref={forwardedRef}
     >
-      <div className="p-4 py-7 md:p-7">{children}</div>
+      <div className="pb-7">{children}</div>
     </Accordion.Content>
   )
 )
