@@ -17,7 +17,7 @@ export function AboutMe() {
         <div className="flex justify-center md:hidden">
           <ImageCard mobile />
         </div>
-        <div className="about-rendered-mdx flex flex-col gap-3 text-xl md:text-left">
+        <div className="about-rendered-mdx my-5 flex flex-col gap-3 text-xl md:text-left">
           <MDXContent code={aboutMe.content} />
         </div>
         <div className="mt-12 flex items-center justify-center gap-3 md:mt-6 md:flex-row-reverse md:justify-end">
