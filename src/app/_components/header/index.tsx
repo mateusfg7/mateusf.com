@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 import { ToggleTheme } from './toggle-theme'
 import { MobileMenu } from './mobile-menu'
@@ -10,6 +11,22 @@ import { Search } from './search'
 
 import signatureDark from './signature-dark.png'
 import signatureLight from './signature-light.png'
+
+const MenuItem: React.FC<{ name: string; path: string }> = ({ name, path }) => {
+  const pathname = usePathname()
+  const isHome = path === '/'
+  const isActive = isHome ? path === pathname : pathname.startsWith(path)
+
+  return (
+    <Link
+      href={path}
+      data-active={isActive}
+      className="rounded-lg p-2 leading-none text-neutral-500 data-[active='true']:text-neutral-900 hover:bg-neutral-200/50 hover:text-neutral-900 dark:text-neutral-400 data-[active='true']:dark:text-neutral-100 hover:dark:bg-neutral-950 dark:hover:text-neutral-100"
+    >
+      {name}
+    </Link>
+  )
+}
 
 export function Header() {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -41,18 +58,6 @@ export function Header() {
 
   const percentScrollPosition = Math.round(
     (scrollPosition / maxScrollValue) * 100
-  )
-
-  const MenuItem: React.FC<{ name: string; path: string }> = ({
-    name,
-    path
-  }) => (
-    <Link
-      href={path}
-      className="rounded-lg p-2 leading-none text-neutral-700 hover:bg-neutral-200/50 hover:text-neutral-900 dark:text-neutral-300 hover:dark:bg-neutral-950 dark:hover:text-neutral-100"
-    >
-      {name}
-    </Link>
   )
 
   return (
