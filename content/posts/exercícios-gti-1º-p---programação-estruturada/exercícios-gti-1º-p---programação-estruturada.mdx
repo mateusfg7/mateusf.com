@@ -1,0 +1,766 @@
+---
+title: 'Exercícios GTI P1 - Programação Estruturada'
+date: '2024-03-04T12:35:34.795Z'
+description: 'Exercícios das aulas de Programação Estruturada, do curso GTI na FAPAM, 1º Período.'
+category: 'Notes'
+tags: 'fapam,gti,exercícios,curso,faculdade,university,programming,visualg,portugol'
+status: 'published'
+---
+
+Esta é a lista de exercícios da matéria de **Programação Estruturada**, do curso de **Gestão de TI**, feito na [FAPAM - Faculdade de Pará de Minas](https://fapam.edu.br).
+
+# Introdução
+De início estamos usando o Portugol Visualg, você pode baixar a versão 3.06 [aqui](assets/visualg3.06.rar), apenas para Windows.
+> Já existe a versão mais nova, a 3.07, porém ela é um pouco bugada e não permite a troca de temas da IDE (cores e visual)
+
+Todos os códigos também vão estar em um repositório espelho no Github: https://github.com/mateusfg7/atividades-programacao-estruturada-fapam
+
+Pra quem usa VSCode, pode instalar a extensão [Design Líquido - Linguagens em Português](https://marketplace.visualstudio.com/items?itemName=designliquido.designliquido-vscode) para ter _syntax hightlight_ em linguagens em português e outros dialetos de Portugol (Portugol Studio, Postugol VisuAlg, BRIL, êtc.).
+
+# Dicas Visualg
+## Atalhos
+
+Descrição | Atalho
+---|---
+Formatar automaticamente | <kbd>CTRL</kbd> + <kbd>G</kbd>
+Rodar programa |  <kbd>F9</kbd>
+
+
+# Aula 2
+**Data**: 15/02/2024
+## Exercício 1
+> Escreva um algoritmo que leia as três notas do aluno, calcule e imprima no console a média que ele obteve na disciplina.
+```visualg
+algoritmo "MediaNotas"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano Queiroz
+// Descrição   : Algoritmo que lê as três notas do aluno,
+//               calcula e imprima no console a média que
+//               ele obteve na disciplina.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 16/02/2024
+
+var
+   primeira_nota: inteiro
+   segunda_nota:  inteiro
+   terceira_nota: inteiro
+   media: real
+   loop:  caractere
+
+inicio
+   loop <- "sim"
+
+   enquanto (loop = "sim") faca
+      limpatela()
+      escreval("-----| NOTAS |-----")
+      escreval("")
+
+      escreva("Primeira Nota --- ")
+      leia(primeira_nota)
+      escreva("Segunda Nota ---- ")
+      leia(segunda_nota)
+      escreva("Terceira Nota --- ")
+      leia(terceira_nota)
+
+      escreval("")
+
+      media <- (primeira_nota+segunda_nota+terceira_nota)/3
+      escreval("MÉDIA:", media)
+
+      escreval("")
+      escreval("-------------------")
+      escreval("")
+      escreval("Nova consulta? [sim|nao]")
+      escreva("-> ")
+      leia(loop)
+   fimenquanto
+
+fimalgoritmo
+```
+## Exercício 2
+> Sabe-se que o m² de construção custa R$850. Escreva um algoritmo que leia as medidas de um terreno retangular e calcule e imprima quanto custa para construir uma casa que ocupe todo esse terreno.
+```visualg
+Algoritmo "ValorM²"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano Queiroz
+// Descrição   : Algoritmo que lê as medidas de um
+//               terreno retangular e calcule e imprime quanto
+//               custa para construir uma casa que ocupe todo
+//               esse terreno.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 16/02/2024
+Var
+
+   VALOR_METRO_QUADRADO: real
+   escolher_valor:       caractere
+
+   altura_terreno:       real
+   largura_terreno:      real
+
+Inicio
+   VALOR_METRO_QUADRADO <- 850
+
+   escreval("-| FORMULARIO |-------------------------")
+   escreval("")
+
+   escreval("Largura do terreno (m)")
+   escreva("-> ")
+   leia(largura_terreno)
+
+   escreval("")
+
+   escreval("Altura do terreno (m)")
+   escreva("-> ")
+   leia(altura_terreno)
+
+   escreval("")
+
+   escreval("Escolher valor do m²? (Padrão: R$850.00)")
+   escreva("[sim|nao] -> ")
+   leia(escolher_valor)
+
+   escreval("")
+
+   se escolher_valor = "sim" entao
+      escreval("Valor do m² (Ex.: 900.00)")
+      escreva("-> ")
+      leia(VALOR_METRO_QUADRADO)
+
+      escreval("")
+   fimse
+
+   escreval("-| RESULTADOS |-------------------------")
+   escreval("")
+
+   escreval("Tamanho do terreno  =", altura_terreno*largura_terreno, "m²")
+   escreval("Custo de construção = R$", (altura_terreno*largura_terreno)*VALOR_METRO_QUADRADO)
+
+   escreval("")
+   escreval("----------------------------------------")
+Fimalgoritmo
+```
+## Exercício 3
+> Escreva um algoritmo que leia o salário total de uma pessoa e quantas horas ela trabalha por dia, em seguida, calcule e imprima quanto essa pessoa recebe por hora. Considere o mês com 30 dias.
+```visualg caption="O exercício pede pra considerar 30 dias, e o cálculo de salário de uma pessoa considera fim de semanas e feriados, portando o código que calcula dias úteis é errado e desnecessário!"
+Algoritmo "CalcularSalario"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano Queiroz
+// Descrição   : Algoritmo que lê o salário total de
+//               uma pessoa e quantas horas ela trabalha por dia,
+//               e calcula e imprime quanto essa pessoa
+//               recebe por hora.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 16/02/2024
+Var
+   DIAS_NO_MES: inteiro
+   dias_uteis:  inteiro
+
+   salario:       real
+   horas_por_dia: inteiro
+
+   horas_por_mes:    inteiro
+   salario_por_hora: real
+
+Inicio
+   DIAS_NO_MES <- 30
+
+   escreval("-| CALCULAR SALÁRIO |------")
+   escreval("")
+
+   escreval("Seu salário (Ex.: 1400.00)")
+   escreva("-> ")
+   leia(salario)
+
+   escreval("")
+
+   escreval("Horas de trabalho (Ex.: 8)")
+   escreva("-> ")
+   leia(horas_por_dia)
+
+   escreval("")
+
+   // 4 semanas no mês, sábado e domingo não conta, ou seja:
+   // 4*2 = 8 dias não úteis
+   dias_uteis <- DIAS_NO_MES - 8
+   horas_por_mes <-  dias_uteis * horas_por_dia
+
+   salario_por_hora <- salario/horas_por_mes
+
+   escreva("Seu valor /hora = R$", salario_por_hora)
+
+   escreval("")
+Fimalgoritmo
+```
+## Exercício 4
+> Escreva um algoritmo que peça ao usuário para informar o peso e a altura com o comando leia, depois calcule e imprima na tela o IMC dessa pessoa sabendo que a fórmula do IMC é (peso/altura²).
+```visualg
+Algoritmo "CalculaIMC"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano Queiroz
+// Descrição   : Calcula IMC de uma pessoa
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 16/02/2024
+Var
+   preso_em_km:  real
+   altura_em_cm: inteiro
+
+   IMC: inteiro
+
+Inicio
+   escreval("# CALCULADORA IMC ########")
+   escreval("")
+
+   escreval("Seu peso /Kg (Ex.: 59.9)")
+   escreva("-> ")
+   leia(preso_em_km)
+
+   escreval("")
+
+   escreval("Altura /cm (Ex.: 170)")
+   escreva("-> ")
+   leia(altura_em_cm)
+
+   escreval("")
+
+   escreval("# RESULTADOS #############")
+   escreval("")
+
+   escreval("Seu IMC =", preso_em_km/((altura_em_cm/100)^2))
+
+   escreval("")
+   escreval("##########################")
+Fimalgoritmo
+```
+
+# Aula 3
+**Data**: 22/02/2024
+## Exercício 1
+> Desenvolva um software que receba uma idade do usuário e imprima na tela se ele é maior de idade ou menor de idade.
+```visualg
+Algoritmo "Idade"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano
+// Descrição   : Determina se o usuário é maior de idade ou não
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 23/02/2024
+Var
+   idade: inteiro
+
+Inicio
+   escreval("Sua idade")
+   escreva("-> ")
+   leia(idade)
+
+   escreval("")
+
+   se (idade >= 18) entao
+      escreva("Maior de idade")
+   senao
+      escreva("Menor de idade")
+   fimse
+
+   escreval("")
+Fimalgoritmo
+```
+## Exercício 2
+> Desenvolva um software que receba um nome e o sexo do usuário, após imprima na tela uma saudação conforme o sexo do usuário, EX: “Bem Vindo José” ou “Bem Vinda Maria”.
+```visualg
+Algoritmo "Saudação"
+// Disciplina: Programação Estruturada
+// Professor:  Adjenor Cristiano
+// Descrição:  Saudações
+// Autor(a):   Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual: 23/02/2024
+Var
+   nome: caractere
+   sexo: caractere
+
+Inicio
+   escreval("Seu nome")
+   escreva("-> ")
+   leia(nome)
+
+   escreval("")
+
+   escreval("Seu sexo (apenas letra) | Ex.: M")
+   escreval("[M] Masculino")
+   escreval("[F] Feminino")
+   escreva("-> ")
+   leia(sexo)
+
+   escreval("")
+
+   se (sexo = "M") entao
+      escreva("Bem Vindo ", nome, "!")
+   senao
+      escreva("Bem Vinda ", nome, "!")
+   fimse
+
+   escreval("")
+Fimalgoritmo
+```
+## Exercício 3
+> Doar sangue é uma atitude muito importante, entretanto é preciso atender alguns requisitos para poder doar sangue.
+>
+> - Ter entre 19 e 69 anos de idade
+> - Pesar ao menos 50 kg
+> - Não ter feito nenhuma tatuagem no último ano
+> - Não ter ingerido álcool nas últimas 12 horas.
+>
+> Desenvolva um software que pergunte ao usuário se ele atende os requisitos necessários para doar sangue. Faça as perguntas uma por vez, caso a resposta dele o impeça de doar, avise-o e encerre o sistema. Se ele atender todos os requisitos, aviseo que ele pode ser doador.
+```visualg
+Algoritmo "Doacao"
+// Disciplina: Programação Estruturada
+// Professor:  Adjenor Cristiano
+// Descrição:  Verifica disponibilidade de doação
+// Autor(a):   Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual: 23/02/2024
+Var
+   idade:          inteiro
+   peso:           real
+   fez_tatuagem:   caractere
+   ingeriu_alcool: caractere
+
+Inicio
+   escreval("Sua idade")
+   escreva("-> ")
+   leia(idade)
+   escreval("")
+
+   se ((idade < 19) OU (idade > 69)) entao
+      escreval("Você deve ter entre 19 e 69 anos para doar sangue!")
+      Fimalgoritmo
+   fimse
+
+   escreval("Seu peso (Kg)")
+   escreva("-> ")
+   leia(peso)
+   escreval("")
+
+   se (peso < 50.0) entao
+      escreval("Você deve ter pelomenos 50Kg para doar sangue!")
+      Fimalgoritmo
+   fimse
+
+   escreval("Fez tatuagem no último ano")
+   escreva("[sim|nao]-> ")
+   leia(fez_tatuagem)
+   escreval("")
+
+   se (NAO(fez_tatuagem = "nao")) entao
+      escreval("Você não pode doar sangue se tiver feito tatuagem no último ano!")
+      Fimalgoritmo
+   fimse
+
+   escreval("Ingeriu alcool nas últimas 12 horas")
+   escreva("[sim|nao]-> ")
+   leia(ingeriu_alcool)
+   escreval("")
+
+   se (NAO(ingeriu_alcool = "nao")) entao
+      escreval("Você não pode doar sangue se tiver bebido nas últimas 12 horas!")
+      Fimalgoritmo
+   fimse
+
+   escreval("")
+   escreval("Você pode ser um doador!")
+   escreval("")
+Fimalgoritmo
+```
+## Exercício 4
+> Crie um software que ajude a polícia rodoviária federal calcular o valor das multas dos motoristas. O software deve perguntar ao usuário qual a velocidade permitida e qual a velocidade do motorista.
+> Se o motorista estiver acima da velocidade permitida, o software deve informar qual o tipo de infração e qual o valor da multa. Se o motorista estiver dentro do limite permitido, o programa encerra dizendo que ele não precisa pagar multa. Veja abaixo os valores de multas reajustados de infração por excesso de velocidade:
+>
+> - Exceder velocidade em até 20% (infração média) = R$85,00 + 4 pontos
+> - Exceder velocidade de 20 até 50% (infração grave) = R$127,00 + 5 pontos;
+> - Exceder velocidade acima de 50% (infração gravíssima) = R$574,00 + 7 pontos + apreensão da carteira + suspensão do direito de dirigir.
+```visualg
+Algoritmo "CalcularMulta"
+// Disciplina: Programação Estruturada
+// Professor:  Adjenor Cristiano
+// Descrição:  Calcular Multa
+// Autor(a):   Mateus Felipe Gonçalves  <contato@mateusf.com>
+// Data atual: 23/02/2024
+Var
+   velocidade_permitida: inteiro
+   velocidade_motorista: inteiro
+   excedente: real
+
+Inicio
+   escreval("Velocidade máxima permitida (Km/h)")
+   escreva("-> ")
+   leia(velocidade_permitida)
+   escreval("")
+
+   escreval("Velocidade do motorista (Km/h)")
+   escreva("-> ")
+   leia(velocidade_motorista)
+   escreval("")
+
+   escreval("---------------------------------")
+   escreval("")
+
+   se (velocidade_motorista <= velocidade_permitida) entao
+      escreva("Você não precisará pagar multa! ;)")
+   senao
+      excedente <- ((velocidade_motorista-velocidade_permitida)/velocidade_permitida)*100
+      escreval("Você excedeu a velocidade máxima permitida em ", excedente:2:0, "%")
+      escreval("")
+      se (excedente <= 20.0) entao
+         escreval("INFRAÇAO MÉDIA")
+         escreval("")
+
+         escreval("Sua multa é de R$85,00")
+         escreval("+ 4 pontos")
+      senao
+         se (excedente <= 50.0) entao
+            escreval("INFRAÇAO GRAVE")
+            escreval("")
+
+            escreval("Sua multa é de R$127,00")
+            escreval("+ 5 pontos")
+         senao
+            escreval("INFRAÇAO GRAVÍSSIMA")
+            escreval("")
+
+            escreval("Sua multa é de R$574,00")
+            escreval("+ 7 pontos")
+            escreval("Suspensão do direito de dirigir")
+         fimse
+      fimse
+   fimse
+Fimalgoritmo
+```
+## Exercício 5
+> Uma loja de salgadinhos precisa de ajuda para calcular o valor da conta dos clientes. Crie um programa que leia o código do produto que o cliente comprou e a quantidade e informe a ele quanto ele deverá pagar. Faça uso da estrutura ESCOLHA-CASO. A Tabela abaixo apresenta o código, a descrição e o preço de cada salgadinho.
+
+Código | Descrição | Preço unitário
+--|--|--
+1 | Coxinha | 0,50
+2 | Pastel | 0,75
+3 | Pão de queijo | 0,40
+4 | Enroladinho | 0,80
+
+<br />
+
+```visualg
+Algoritmo "CalcularConta"
+// Disciplina: Programação Estruturada
+// Professor:  Adjenor Cristiano
+// Descrição:  Calcula Conta do Cliente
+// Autor(a):   Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual: 23/02/2024
+Var
+   id_do_produto: inteiro
+   quantidade:    real
+   total:         real
+
+   loop: caractere
+
+Inicio
+   loop <- "sim"
+
+   enquanto (loop = "sim") faca
+      loop <- "nao"
+
+      limpatela()
+      escreval("+---------------------------------------+")
+      escreval("|               SALGADOS                |")
+      escreval("|---------------------------------------|")
+      escreval("| Cód. |    Salgado    | Valor unitário |")
+      escreval("|---------------------------------------|")
+      escreval("| [1]  | Coxinha       |     R$0,50     |")
+      escreval("| [2]  | Pastel        |     R$0,75     |")
+      escreval("| [3]  | Pão de Queijo |     R$0,40     |")
+      escreval("| [4]  | Enroladinho   |     R$0,80     |")
+      escreval("+---------------------------------------+")
+      escreval("")
+      escreva("Cód. -> ")
+      leia(id_do_produto)
+      escreva("Qtd. -> ")
+      leia(quantidade)
+
+      escolha id_do_produto
+      caso 1
+         total <-  quantidade*0.50
+      caso 2
+         total <-  quantidade*0.75
+      caso 3
+         total <-  quantidade*0.40
+      caso 4
+         total <-  quantidade*0.80
+      fimescolha
+
+      escreval("")
+      escreval("TOTAL: R$", total:4:2)
+      escreval("")
+
+      escreval("Nova compra?")
+      escreva("[sim|nao]-> ")
+      leia(loop)
+   fimenquanto
+Fimalgoritmo
+```
+
+# Aula 4
+**Data**: 29/02/2024
+## Exercício 1
+> Crie um software que receba do usuário um valor inteiro e imprima na tela o mês do ano correspondente ao valor recebido (ex. recebendo o valor 1, o programa imprime “Janeiro”; recebendo o valor 2, o programa imprime “Fevereiro”...).
+
+```visualg
+Algoritmo "Meses"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano
+// Descrição   : Imprime o mês referente à um ID
+// Autor(a)    : Mateus Felipe Gonçalves
+// Data atual  : 03/03/2024
+Var
+   // Seção de declaração de variáveis
+   id: inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   escreval("Digite o número do mês")
+   escreva("-> ")
+   leia(id)
+
+   escreval("")
+
+   escolha(id)
+   caso 1
+      escreval("Janeiro")
+   caso 2
+      escreval("Fevereiro")
+   caso 3
+      escreval("Março")
+   caso 4
+      escreval("Abril")
+   caso 5
+      escreval("Maio")
+   caso 6
+      escreval("Junho")
+   caso 7
+      escreval("Julho")
+   caso 8
+      escreval("Agosto")
+   caso 9
+      escreval("Setembro")
+   caso 10
+      escreval("Outubro")
+   caso 11
+      escreval("Novembro")
+   caso 12
+      escreval("Dezembro")
+   outrocaso
+      escreval("ID Inválido!")
+   fimescolha
+Fimalgoritmo
+```
+## Exercício 2
+> Crie um software que receba do usuário um valor inteiro de 1 a 10 e imprima na tela o número por extenso. Se o usuário digitar um número maior que 10 ele deve imprimir “Valor Inválido”.
+
+```visualg
+Algoritmo "Numero"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano Queiroz
+// Descrição   : Número por extenso
+// Autor(a)    : Mateus Felipe Gonçalves
+// Data atual  : 03/03/2024
+Var
+   // Seção de declaração de variáveis
+   id: inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   escreval("Digite o número")
+   escreva("-> ")
+   leia(id)
+
+   escreval("")
+
+   escolha(id)
+   caso 1
+      escreval("Um")
+   caso 2
+      escreval("Dois")
+   caso 3
+      escreval("Três")
+   caso 4
+      escreval("Quatro")
+   caso 5
+      escreval("Cinco")
+   caso 6
+      escreval("Seis")
+   caso 7
+      escreval("Sete")
+   caso 8
+      escreval("Oito")
+   caso 9
+      escreval("Nove")
+   caso 10
+      escreval("Dez")
+   outrocaso
+      escreval("Valor inválido!")
+   fimescolha
+
+Fimalgoritmo
+```
+## Exercício 3
+> Desenvolva um software que receba o nome do usuário, o sexo, a cidade e o ano que ele nasceu e depois imprima na tela sua ficha cadastral utilizando “Sr” para homens e “Srª” para mulheres.
+> Considere apenas o ano para cálculo da idade (quem nasceu em 2002 considere que ele tem 22 anos, quem nasceu em 2001 considere 23...)
+> Ex: Ficha Cadastral
+> Sr: Adjenor Cristiano Queiroz
+> Idade: 22 anos
+> Cidade: Pará de Minas
+
+```visualg
+Algoritmo "Ficha"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano
+// Descrição   : Imprime o mês referente à um ID
+// Autor(a)    : Mateus Felipe Gonçalves
+// Data atual  : 03/03/2024
+Var
+   // Seção de declaração de variáveis
+   nome:        caractere
+   sexo:        caractere
+   cidade:      caractere
+   ano_nasc:    inteiro
+   comprimento: caractere
+
+Inicio
+   escreval("Nome")
+   escreva("-> ")
+   leia(nome)
+   escreval("")
+
+   escreval("Sexo [M|F]")
+   escreva("-> ")
+   leia(sexo)
+   escreval("")
+
+   escreval("Cidade")
+   escreva("-> ")
+   leia(cidade)
+   escreval("")
+
+   escreval("Ano de nascimento")
+   escreva("-> ")
+   leia(ano_nasc)
+   escreval("")
+
+   se ano_nasc > 2024 entao
+      escreval("ERRO | O ano de nascimento não pode ser no futuro")
+      interrompa()
+   fimse
+
+   se maiusc(sexo) = "M" entao
+      comprimento <- "Sr."
+   senao
+      comprimento <- "Srª."
+   fimse
+
+   escreval("FICHA CADASTRAL")
+   escreval(comprimento, " -- ", nome)
+   escreval("Idade --", 2024 - ano_nasc)
+   escreval("Cidade - ", cidade)
+Fimalgoritmo
+```
+## Exercício 4
+> (DESAFIO) Desenvolva um Software para um restaurante que irá mostrar para o usuário um cardápio de refeições (com no mínimo 4 opções) para escolha:
+>
+> Ex:
+> 1 – Risotto ----- R\$ 25,00
+> 2 – Espaguete --- R\$ 22,00
+>
+> Depois pergunte a ele se ele deseja alguma bebida. Se ele desejar, mostre a ele um menu com as opções de bebida (ao menos 4).
+>
+> Ex:
+> 1 – Coca Cola -------- R\$ 5,00
+> 2 – Água Mineral ----- R\$ 3,00
+> Ao final mostre a ele qual o seu pedido e o valor da conta.
+>
+> Ex: PEDIDO:
+> Espaguete R\$ 22,00
+> Coca Cola R\$ 5,00
+> TOTAL: R\$ 27,00.
+>
+> Dica: Use uma variável do tipo caractere para armazenar os itens do pedido e uma variável real para armazenar os valores
+
+```visualg
+Algoritmo "Cardápio"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano
+// Descrição   : Imprime o mês referente à um ID
+// Autor(a)    : Mateus Felipe Gonçalves
+// Data atual  : 03/03/2024
+Var
+   prato: inteiro
+   bebida: inteiro
+   quer_bebida: caractere
+   total: real
+Inicio
+   escreval("------------ PRATOS ------------")
+   escreval("[1] Risoto ------------- R$25,00")
+   escreval("[2] Espaguete ---------- R$22,00")
+   escreval("[3] Strogonoff --------- R$30,00")
+   escreval("[4] Macarrão na Chapa -- R$20,00")
+   escreval("")
+   escreva("-> ")
+   leia(prato)
+   escreval("")
+
+   escreval("Aceita uma bebida? [S|N]")
+   escreva("-> ")
+   leia(quer_bebida)
+   escreval("")
+
+   se maiusc(quer_bebida) = "S" entao
+      escreval("--------- BEBIDAS ---------")
+      escreval("[1] Água Mineral -- R$ 3,00")
+      escreval("[2] Coca Cola ----- R$ 5,00")
+      escreval("[3] Limonada ------ R$ 5,00")
+      escreval("[4] Jack&Coffee --- R$25,00")
+      escreval("")
+      escreva("-> ")
+      leia(bebida)
+      escreval("")
+   fimse
+
+   escreval("---------- PEDIDO ----------")
+   escolha(prato)
+   caso 1
+      total <- 25.00
+      escreval("Risoto ------------- R$25,00")
+   caso 2
+      total <- 22.00
+      escreval("Espaguete ---------- R$22,00")
+   caso 3
+      total <- 30.00
+      escreval("Strogonoff --------- R$30,00")
+   caso 4
+      total <- 20.00
+      escreval("Macarrão na Chapa -- R$20,00")
+   fimescolha
+
+   se maiusc(quer_bebida) = "S" entao
+      escolha(bebida)
+      caso 1
+         total <- total + 3.00
+         escreval("Água Mineral ------- R$ 3,00")
+      caso 2
+         total <- total + 5.00
+         escreval("Coca Cola ---------- R$ 5,00")
+      caso 3
+         total <- total + 5.00
+         escreval("Limonada ----------- R$ 5,00")
+      caso 4
+         total <- total + 25.00
+         escreval("Jack&Coffee -------- R$25,00")
+      fimescolha
+   fimse
+
+   escreval("")
+   escreval("TOTAL: R$", total:2:2)
+Fimalgoritmo
+```
