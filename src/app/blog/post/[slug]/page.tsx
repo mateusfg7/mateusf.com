@@ -72,7 +72,9 @@ const mdxComponents = {
         {children}
       </Anchor>
     ) : (
-      <a href={href}>{children}</a>
+      <a href={href} {...props}>
+        {children}
+      </a>
     ),
   figure: PrettyCodeElement
 }
