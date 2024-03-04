@@ -1,7 +1,7 @@
-import { outro, text, select, spinner } from '@clack/prompts'
-import { slug } from 'github-slugger'
 import fs from 'fs'
+import { outro, text, select, spinner } from '@clack/prompts'
 import { confirm } from '@clack/prompts'
+import { slug } from 'github-slugger'
 import c from 'picocolors'
 
 export async function newPost() {
@@ -31,12 +31,6 @@ export async function newPost() {
   const tags = await text({
     message: 'Tags (separated by ",")',
     placeholder: 'javascript, rust, css, life'
-  })
-  const author = await text({
-    message: 'Author username',
-    placeholder: 'mateusfg7',
-    defaultValue: 'mateusfg7',
-    initialValue: 'mateusfg7'
   })
   const status = await select({
     message: 'Initial status',
@@ -84,7 +78,6 @@ export async function newPost() {
   description: '${description.toString()}'
   category: '${category}'
   tags: '${parsedTags}'
-  author: '${author.toString()}'
   status: '${status}'
   ---`,
     () => {}
