@@ -1,9 +1,9 @@
 {
   "name": "mateusf.com",
-  "version": "8.12.2",
+  "version": "9.0.0",
   "homepage": "https://mateusf.com",
   "license": "GPL-3.0",
-  "author": "Mateus Felipe Gonçalves (mateusfg7) <contact@mateusf.com>",
+  "author": "Mateus Felipe Gonçalves <contact@mateusf.com>",
   "private": true,
   "scripts": {
     "dev:content": "velite --watch",
