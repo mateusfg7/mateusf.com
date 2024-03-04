@@ -17,6 +17,20 @@ export default function Page() {
   return (
     <div className="content-vertical-spaces content-container m-auto space-y-10 md:space-y-4">
       <Title text="Guestbook" />
+      <div className="text-neutral-600 dark:text-neutral-400">
+        <p>
+          The guestbook is a place where website visitors can leave their mark
+          on their visit.
+        </p>
+        <p>
+          Leave a message, disclose yourself, leave your social networks, or
+          just say{' '}
+          <span className="font-medium italic">
+            &quot;Brooks was here!&quot;
+          </span>
+          .
+        </p>
+      </div>
       <div>
         <GiscusComments
           category="Show and tell"
