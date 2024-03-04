@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/mateusfg7/mateusf.com/compare/9.0.0...9.0.1) (2024-03-04)
+
+
+### Features
+
+* **header:** replace signature by a styled name ([26e3c3b](https://github.com/mateusfg7/mateusf.com/commit/26e3c3bbda1cd0ad06c54fa8d2eb5d67a5433dc3))
+
 ## [9.0.0](https://github.com/mateusfg7/mateusf.com/compare/8.12.2...9.0.0) (2024-03-04)
 
 
