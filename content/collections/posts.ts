@@ -16,6 +16,7 @@ export const posts = defineCollection({
         .transform(data => data.split(',').map(tag => tag.trim())),
       status: s.enum(['published', 'draft', 'planned']).default('draft'),
       test: s.boolean().default(false),
+      pinned: s.boolean().default(false),
       metadata: s.metadata(),
       toc: s.toc(),
       content: s.mdx(),
