@@ -32,6 +32,10 @@
       }
     }
 
+    kbd {
+      @apply keyboard;
+    }
+
     h1,
     h2,
     h3,
@@ -84,7 +88,7 @@
     }
 
     table {
-      @apply w-full border-collapse overflow-hidden rounded-lg bg-black/[.02] dark:bg-white/[.02];
+      @apply w-full border-collapse overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-950;
 
       th,
       td {
@@ -92,7 +96,7 @@
       }
 
       th {
-        @apply bg-black/10 font-medium dark:bg-white/10;
+        @apply bg-neutral-200 font-medium dark:bg-neutral-900;
 
         strong {
           @apply font-black;
@@ -104,7 +108,7 @@
       }
 
       tbody tr {
-        @apply even:bg-black/[.02] even:dark:bg-white/[.02];
+        @apply even:bg-neutral-200/40 even:dark:bg-neutral-900/40;
       }
     }
 
