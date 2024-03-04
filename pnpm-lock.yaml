@@ -70,7 +70,7 @@ dependencies:
     version: 1.5.0
   recharts:
     specifier: ^2.10.3
-    version: 2.12.1(react-dom@18.2.0)(react@18.2.0)
+    version: 2.12.2(react-dom@18.2.0)(react@18.2.0)
   rehype-autolink-headings:
     specifier: ^7.1.0
     version: 7.1.0
@@ -249,7 +249,7 @@ packages:
     resolution: {integrity: sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.14.0
+      regenerator-runtime: 0.14.1
 
   /@babel/runtime@7.23.9:
     resolution: {integrity: sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==}
@@ -6915,8 +6915,8 @@ packages:
       decimal.js-light: 2.5.1
     dev: false
 
-  /recharts@2.12.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-35vUCEBPf+pM+iVgSgVTn86faKya5pc4JO6cYJL63qOK2zDEyzDn20Tdj+CDI/3z+VcpKyQ8ZBQ9OiQ+vuAbjg==}
+  /recharts@2.12.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9bpxjXSF5g81YsKkTSlaX7mM4b6oYI1mIYck6YkUcWuL3tomADccI51/6thY4LmvhYuRTwpfrOvE80Zc3oBRfQ==}
     engines: {node: '>=14'}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
@@ -6954,12 +6954,8 @@ packages:
       which-builtin-type: 1.1.3
     dev: true
 
-  /regenerator-runtime@0.14.0:
-    resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
-
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-    dev: false
 
   /regexp.prototype.flags@1.5.1:
     resolution: {integrity: sha512-sy6TXMN+hnP/wMy+ISxg3krXx7BAtWVO4UouuCN/ziM9UEne0euamVNafDfvC83bRNr95y0V5iijeDQFUNpvrg==}
