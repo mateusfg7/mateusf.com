@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Inter } from 'next/font/google'
+import { Inter, Caveat } from 'next/font/google'
 
 import { config } from 'global-config'
 import { Header } from './_components/header'
@@ -71,6 +71,13 @@ const inter = Inter({
   display: 'swap'
 })
 
+const dancingScript = Caveat({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-caveat',
+  display: 'swap'
+})
+
 export default function RootLayout({
   children
 }: {
@@ -85,7 +92,9 @@ export default function RootLayout({
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className={`scroll-smooth ${inter.variable}`}>
+      <body
+        className={`scroll-smooth ${inter.variable} ${dancingScript.variable}`}
+      >
         <Providers>
           <Header />
           <div>{children}</div>

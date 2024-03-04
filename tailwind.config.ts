@@ -10,7 +10,8 @@ const config: Config = {
         20: '20deg'
       },
       fontFamily: {
-        sans: 'var(--font-inter)'
+        sans: 'var(--font-inter)',
+        handwrite: 'var(--font-caveat)'
       },
       colors: {
         neutral: {

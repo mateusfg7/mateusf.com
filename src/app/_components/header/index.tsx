@@ -2,15 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 import { ToggleTheme } from './toggle-theme'
 import { MobileMenu } from './mobile-menu'
 import { Search } from './search'
-
-import signatureDark from './signature-dark.png'
-import signatureLight from './signature-light.png'
 
 const MenuItem: React.FC<{ name: string; path: string }> = ({ name, path }) => {
   const pathname = usePathname()
@@ -67,17 +63,11 @@ export function Header() {
     >
       <div className="content-container m-auto flex flex-wrap items-center justify-between">
         <div className="md:hidden" />
-        <Link href="/">
-          <Image
-            src={signatureDark}
-            alt="Mateus Felipe"
-            className="w-16 dark:hidden"
-          />
-          <Image
-            src={signatureLight}
-            alt="Mateus Felipe"
-            className="hidden w-16 dark:block"
-          />
+        <Link
+          href="/"
+          className="font-handwrite text-2xl font-bold drop-shadow-lg"
+        >
+          Mateus F.
         </Link>
         <div className="hidden flex-wrap items-center justify-center gap-8 md:flex">
           <nav className="flex flex-wrap items-center justify-center gap-5">
