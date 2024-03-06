@@ -7,7 +7,10 @@ import {
   CalendarBlank,
   Clock,
   Tag,
-  TextAlignLeft
+  TextAlignLeft,
+  Lightbulb,
+  Warning,
+  WarningOctagon
 } from '@phosphor-icons/react/dist/ssr'
 import { Post, posts } from '#content'
 
@@ -76,7 +79,31 @@ const mdxComponents = {
         {children}
       </a>
     ),
-  figure: PrettyCodeElement
+  figure: PrettyCodeElement,
+  Tip: ({ children, ...rest }: ComponentProps<'div'>) => (
+    <div {...rest} className="hint tip">
+      <span className="icon">
+        <Lightbulb size="1em" />
+      </span>
+      {children}
+    </div>
+  ),
+  Warn: ({ children, ...rest }: ComponentProps<'div'>) => (
+    <div {...rest} className="hint warn">
+      <span className="icon">
+        <Warning size="1em" />
+      </span>
+      {children}
+    </div>
+  ),
+  Error: ({ children, ...rest }: ComponentProps<'div'>) => (
+    <div {...rest} className="hint error">
+      <span className="icon">
+        <WarningOctagon size="1em" />
+      </span>
+      {children}
+    </div>
+  )
 }
 
 const exampleToc = posts[0].toc[0]
