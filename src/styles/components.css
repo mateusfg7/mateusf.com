@@ -117,9 +117,17 @@
     }
 
     blockquote {
-      @apply my-2 px-4;
+      @apply relative my-3 w-max max-w-full overflow-hidden px-4 py-1;
       @apply border-l border-l-neutral-900 dark:border-l-neutral-100;
       @apply italic text-black/80 dark:text-white/70;
+
+      p {
+        @apply m-0;
+      }
+
+      .icon {
+        @apply absolute inset-0 -z-20 flex items-center justify-end rounded-lg px-[5%] text-5xl opacity-10;
+      }
     }
 
     input[type='checkbox'] {

@@ -12,6 +12,7 @@ import {
   Warning,
   WarningOctagon
 } from '@phosphor-icons/react/dist/ssr'
+import { BiSolidQuoteAltRight } from 'react-icons/bi'
 import { Post, posts } from '#content'
 
 import { slug } from '~/lib/slug'
@@ -103,6 +104,14 @@ const mdxComponents = {
       </span>
       {children}
     </div>
+  ),
+  blockquote: ({ children, ...rest }: ComponentProps<'blockquote'>) => (
+    <blockquote {...rest}>
+      <span className="icon">
+        <BiSolidQuoteAltRight size="1em" />
+      </span>
+      {children}
+    </blockquote>
   )
 }
 
