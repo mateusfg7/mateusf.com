@@ -1,0 +1,113 @@
+---
+title: 'MER - Modelo de Entidade-Relacionamento #1'
+date: '2024-03-06T14:12:19.383Z'
+description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 1. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
+category: 'Article'
+tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
+status: 'draft'
+---
+
+<Warn>
+Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, é uma transcrição do slide [Aula 02 - MER parte 1](assets/Aula_02_MER_parte_1.pdf), feito pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de **Gestão de TI - FAPAM**.
+</Warn>
+
+# Introdução
+
+**MER** - **M**odelo **E**ntidade-**R**elacionamento
+
+> Baseia-se na percepção de um universo constituído por um grupo básico de objetos chamados **entidades** e por **relacionamentos** entre estes objetos.
+> \- Peter Chen, 1976
+
+O MER é um modelo de dados conceitual de alto-nível, ou seja, seus conceitos foram projetados para serem compreensíveis a usuários, descartando detalhes de como os dados são armazenados.
+
+## Vantagens
+- Simplicidade
+- Independe do [SGDB](https://pt.wikipedia.org/wiki/Sistema_de_gerenciamento_de_banco_de_dados) a ser utilizado
+- Mundo real a ser mapeado (mini-mundo) pode ser visto como um conjunto de entidades e de relacionamentos entre as mesmas.
+- Desenvolvido para facilitar o projeto de banco de dados
+- Especifica "**quais**" os dados serão representados (O QUE) e não "**como**" os dados serão armazenados.
+- Elementos do modelo:
+  - Entidades
+  - Relacionamentos
+  - Atributos
+
+# Entidade
+
+Qualquer objeto, pessoa, lugar, conceito ou "coisa" no mundo real com uma existência própria/independente e sobre a qual seja necessário armazenar informações ou características.
+
+Pode ter uma **existência física** (_um rio, uma estrada, uma casa, um aluno, um carro, um cantor..._) ou uma **existência conceitual** (_um cargo, um curso, um evento.._).
+
+**SÍMBOLO**: _Utiliza-se um **retângulo** para representar uma entidade, geralmente o nome é escrito no singular._
+
+<img src="assets/exemplo-de-entidades-representacao-interpretacao-light.png" className="on-light" alt="Exemplo de entidades: representação e interpretação" />
+<img src="assets/exemplo-de-entidades-representacao-interpretacao-dark.png" className="on-dark" alt="Exemplo de entidades: representação e interpretação" />
+
+## Entidade Fraca
+
+Caracterizada pela sua dependência da existência de outra entidade.
+Uma entidade fraca não possui características o suficiente para existir "sozinha".
+
+<Tip>
+**Exemplo**
+A entidade **`EMPREGADO`**, possui relacionamento com a entidade **`DEPENDENTE`**, isto é, filhos, cônjugue podem ser dependentes do plano de saúde de um funcionário de uma empresa. E a entidade **`DEPENDENTE`** depende da existência da entidade **`EMPREGADO`** para existir.
+</Tip>
+
+
+**SÍMBOLO**: _Utilizamos um retângulo inscrito em outro retângulo para representarmos uma entidade fraca_
+
+<img src="assets/entidade-fraca-exemplo-light.png" className="on-light" alt="Exemplo de entidade fraca" />
+<img src="assets/entidade-fraca-exemplo-dark.png" className="on-dark" alt="Exemplo de entidade fraca" />
+
+# Relacionamento
+
+Um relacionamento descreve um associação entre suas ou mais entidades **(ação)**
+
+**SÍMBOLO**: _Utilizamos um **lozango** para representarmos um relacionamento_
+
+<img src="assets/relacionamento-representacao-grafica-light.png" className="on-light" alt="Representação gráfica de um relacionamento"/>
+<img src="assets/relacionamento-representacao-grafica-dark.png" className="on-dark" alt="Representação gráfica de um relacionamento"/>
+
+## Relacionamento dependente
+
+O relacionamento dependente é usado quando queremos relacionar uma ENTIDADE com uma [ENTIDADE FRACA](#entidade-fraca).
+
+**SÍMBOLO**: _Utilizamos um losango inscrito a outro losango para representar um relacionamento dependente_
+
+<img src="assets/funcionario-possui-dependente-light.png" className="on-light" alt="Relacionamento: FUNCIONARIO-possui-DEPENDENTE" />
+<img src="assets/funcionario-possui-dependente-dark.png" className="on-dark" alt="Relacionamento: FUNCIONARIO-possui-DEPENDENTE" />
+
+# Atributo
+
+O atributo é cada característica, propriedade ou qualidade específica que descreve e/ou relacionamento.
+
+**Isto é...**
+- A entidade **`EMPREGADO`** poderia ter os atributos: `nome`, `endereço`, `data de nascimento`, `salário` e `profissão`.
+- A entidade **`EMPRESA`** poderia ter os atributos: `nome`, `razão social`, `CNPJ`, `matriz`, `presidente`, `endereço`, `telefone`.
+- A entidade **`CARRO`** poderia ter os atributos: `fabricante`, `modelo`, `ano de fabricação`, `cor`, `número de portas`, `placa`, `chassi`.
+
+**SÍMBOLO**: _Utilizamos uma elípse (círculo ovulado) para representarmos um atributo._
+
+<img src="assets/atributo-representacao-grafica-light.png" className="on-light" alt="Representação gráfica de um Atributo" />
+<img src="assets/atributo-representacao-grafica-dark.png" className="on-dark" alt="Representação gráfica de um Atributo" />
+
+Representação gráfica dos atributos da entidade **`CLIENTE`**:
+<img src="assets/atributos-entidade-cliente-light.png" className="on-light" alt="Atributos da entidade CLIENTE" />
+<img src="assets/atributos-entidade-cliente-dark.png" className="on-dark" alt="Atributos da entidade CLIENTE" />
+
+<Tip>
+[Relacionamentos](#relacionamento) também podem conter atributos que os caracterizem:
+</Tip>
+
+<img src="assets/professor-orienta-aluno-tipo-light.png" className="on-light" alt="Relacionamento PROFESSOR-orienta-ALUNO com atributo 'tipo'" />
+<img src="assets/professor-orienta-aluno-tipo-dark.png" className="on-dark" alt="Relacionamento PROFESSOR-orienta-ALUNO com atributo 'tipo'" />
+
+## ATRIBUTO CHAVE ou CHAVE
+
+São atributos ou conjunto de atributos que identifica **unicamente** e **exclusivamente** uma entidade, ou seja, não há valores repetidos desse atributo na entidade. Sendo assim, o seu valor pode ser usado para identificar cada entidade.
+
+Alguns tipode de entidades podem ter mais que um atributo-chave, exêmplo: CPF, identidade, matrícula, CIU.
+
+O atributo chave deve aparecer <ins>sublinhado</ins> em sua simbologia.
+
+<img src="assets/atributo-chave-exemplo-light.png" className="on-light" alt="Exemplo de atributo chave da entidade CLIENTE: CPF" />
+<img src="assets/atributo-chave-exemplo-dark.png" className="on-dark" alt="Exemplo de atributo chave da entidade CLIENTE: CPF" />
