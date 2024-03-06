@@ -25,12 +25,20 @@
     code[data-theme*=' '] span {
       color: var(--shiki-light);
     }
+
+    .on-dark {
+      @apply hidden;
+    }
   }
 
   html.dark {
     code[data-theme*=' '],
     code[data-theme*=' '] span {
       color: var(--shiki-dark);
+    }
+
+    .on-light {
+      @apply hidden;
     }
   }
 }
