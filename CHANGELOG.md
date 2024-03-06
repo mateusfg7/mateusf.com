@@ -1,3 +1,11 @@
+## [9.1.0](https://github.com/mateusfg7/mateusf.com/compare/9.0.1...9.1.0) (2024-03-06)
+
+
+### Features
+
+* **blog:** add icon on blockquote ([e8ff358](https://github.com/mateusfg7/mateusf.com/commit/e8ff358ee966f25ad90ca9efe2de1a5506d2fb98))
+* **blog:** create "Tip", "Warn", and "Error" components ([f9fd71d](https://github.com/mateusfg7/mateusf.com/commit/f9fd71d0bc8da2ddf00ad1206daf98fb8f244648))
+
 ## [9.0.1](https://github.com/mateusfg7/mateusf.com/compare/9.0.0...9.0.1) (2024-03-04)
 
 
