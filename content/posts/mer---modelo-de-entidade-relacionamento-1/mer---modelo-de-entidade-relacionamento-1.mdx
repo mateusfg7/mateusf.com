@@ -1,10 +1,12 @@
 ---
 title: 'MER - Modelo de Entidade-Relacionamento #1'
 date: '2024-03-06T14:12:19.383Z'
+lastUpdate: '2024-03-07'
 description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 1. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
 status: 'draft'
+pinned: true
 ---
 
 <Warn>
@@ -111,3 +113,161 @@ O atributo chave deve aparecer <ins>sublinhado</ins> em sua simbologia.
 
 <img src="assets/atributo-chave-exemplo-light.png" className="on-light" alt="Exemplo de atributo chave da entidade CLIENTE: CPF" />
 <img src="assets/atributo-chave-exemplo-dark.png" className="on-dark" alt="Exemplo de atributo chave da entidade CLIENTE: CPF" />
+
+### ATRIBUTO CHAVE PARCIAL ou CHAVE PARCICAL
+
+**TL;DR**: chamamos de chave-parcial o atributo chave de uma [entidade-fraca](#entidade-fraca)
+
+Uma [entidade-fraca](#entidade-fraca) tem uma **chave-parcial**, que é um atributo (ou conjunto de atributos) que podem univocadamente identificar entidades-fracas relacionadas à uma entidade (forte).
+
+Um tipo de entidade-fraca pode, algumas vezes, ser representado como atributo composto (endereço).
+
+A escolha de qual representação usar é determinada pelo projetista do banco de dados.
+
+## Atributo simple ou atômico
+
+São atributos que não são divisíveis, representam uma informação exata e direta, e que não são possíveis de serem decompostos em mais atributos.
+
+<img src="assets/atributos-simples-exemplo-light.png" className="on-light" alt="Exemplos de atributos simples: CPF e Nome" />
+<img src="assets/atributos-simples-exemplo-dark.png" className="on-dark" alt="Exemplos de atributos simples: CPF e Nome" />
+
+## Atributo composto
+
+É um atribusto que pode ser composto de outros atributos mais básicos.
+
+<img src="assets/atributos-compostos-exemplo-light.png" className="on-light" alt="Exemplo de atributo composto: Endereço = rua, cep, numero, bairro" />
+<img src="assets/atributos-compostos-exemplo-dark.png" className="on-dark" alt="Exemplo de atributo composto: Endereço = rua, cep, numero, bairro" />
+
+## Atributo multivalorado
+
+São atributos que possuem um ou mais valores **de um mesmo tipo**
+
+**SÍMBOLO**: _Um círculo ovalado dentro de outro círculo ovalado_
+
+<img src="assets/atributo-multivalorado-exemplo-light.png" className="on-light" alt="Representação gráfica de um atributo multivalorado" />
+<img src="assets/atributo-multivalorado-exemplo-dark.png" className="on-dark" alt="Representação gráfica de um atributo multivalorado" />
+
+<Tip>
+**Exemplo 1**
+O atributo `telefone`, de uma entidade **`ALUNO`**, pode receber um ou mais números de telefones (residencial, celular, trabalho).
+
+**Exemplo 2**
+Um atributo `idioma` de uma entidade **`ALUNO`** pode conter os valores inglês e francês. Para um outro aluno poderia conter apenas um valor, como espanhol. Para um terceiro aluno, poderíamos ter 3 valores para esse atributo: inglês, francês e espanhol.
+</Tip>
+
+<img src="assets/exemplo-atributo-multivalordo-cpf-aluno-idioma-light.png" className="on-light" alt="Modelo com atributo multivalorado idioma: cpf-ALUNO-idioma" />
+<img src="assets/exemplo-atributo-multivalordo-cpf-aluno-idioma-dark.png" className="on-dark" alt="Modelo com atributo multivalorado idioma: cpf-ALUNO-idioma" />
+
+<Error>
+**ATENÇAO**: Atributo MULTIVALORADO **é diferente de** atributo COMPOSTO
+</Error>
+
+## Atributo derivado
+
+Este tipo de atributo é derivado de outros atributos.
+
+Não necessitam serem armazenados na base de dados, podendo ser calculados apartir de um consulta através da aplicação.
+
+<Tip>
+**Exemplo**
+
+O atributo `idade` de uma **`PESSOA`**. Para uma pessoa em particular, podemos determinar o valor atual de idade através do atributo `data_nascimento` e da data atual do sistema operacional.
+
+Então a `idade` é chamada atributo derivado, pois pode ser obtida de outros atributos.
+</Tip>
+
+**SÍMBOLO**: _Círculo ovalado com contorno pontilhado._
+
+<img src="assets/exemplo-modelo-com-atributo-derivado-light.png" className="on-light" alt="Exemplo de modelo com atributo derivado idade" />
+<img src="assets/exemplo-modelo-com-atributo-derivado-dark.png" className="on-dark" alt="Exemplo de modelo com atributo derivado idade" />
+
+
+# Boas práticas: Sujestão para nomes
+A literatura não define um padrão, mas algumas práticas são usadas:
+
+## Entidades
+- Nomes breves e objetivos, com letras maiúsculas que identifique facilmente o conteúdo da entidade;
+- No singular, já que a pluralidade decorre, naturalmente, do número de ocorrências, característica própria de toda entidade;
+- Nomes compostos separados por hífen `-`, eliminando-se o uso de preposições ou outros termos de ligação.
+
+## Relacionamentos
+- Palavras escritas com letras minúsculas;
+- Palavras compostas use _underline_ `_`.
+
+## Atributos
+- Primeira letra do nome maiúscula e o restante mínúscula;
+- Palavras compostas use _underline_ `_`;
+- Palavras repetidas em outras entidades, use a inicial da entidade no início e continue com o nome. Ex.: `Empr_Nome` para o nome da **`EMPRESA`**, `Dept_Nome` para o nome do **`DEPARTAMENTO`**.
+
+# Praticando
+
+## Controle de professores FAPAM
+
+A FAPAM precisa ter controle de seus professores e quais turmas eles estão lecionando. Para isso ela precisa saber do professor o nome, CPF e o salário. Já de suas turmas, a faculdade precisa saber a descrição, quantos alunos possui e a carga horária.
+
+<Spoiler>
+<img src="assets/modelo-professor-leciona-turma-light.png" className="on-light" alt="Modelo: PROFESSOR-leciona-TURMA" />
+<img src="assets/modelo-professor-leciona-turma-dark.png" className="on-dark" alt="Modelo: PROFESSOR-leciona-TURMA" />
+</Spoiler>
+
+## Instituição de Ensino
+
+Fomos contratados por uma instituição, e a mesma, precisa ter um sistema para controle de cursos, sabemos que precisamos ter informações dos alunos, dos cursos e de professores. De cada aluno, será necessário armazenar: seu nome, matrícula, data de nascimento e idade. De cada curso será necessário armazenar a descrição e quantidade de alunos inscritos. Do professor, o seu nome e CPF.
+
+<Spoiler>
+<img src="assets/modelo-professor-curso-aluno-light.png" className="on-light" alt="Modelo: PROFESSOR-CURSO-ALUNO" />
+<img src="assets/modelo-professor-curso-aluno-dark.png" className="on-dark" alt="Modelo: PROFESSOR-CURSO-ALUNO" />
+</Spoiler>
+
+# Tipos de relacionamento
+
+<Warn>
+**Em construção...**
+</Warn>
+
+## Relacionamento 1:1
+<Warn>
+**Em construção...**
+</Warn>
+
+## Relacionamento 1:N
+<Warn>
+**Em construção...**
+</Warn>
+
+## Relacionamento N:M
+<Warn>
+**Em construção...**
+</Warn>
+
+## Par de cardinalidades
+<Warn>
+**Em construção...**
+</Warn>
+
+## Atributos em relacionamentos
+<Warn>
+**Em construção...**
+</Warn>
+
+# Praticando
+
+## Projetos de uma empresa
+Numa empresa os funcionários são descritos por um nome, número do CPF, salário, endereço (logradouro, número, bairro, cidade), data de nascimento e sexo. Tanto o número do CPF possui valor exclusivo para cada funcionário.
+
+Os funcionários pertencem a departamentos da empresa. Cada departamento possui um nome, um número, uma localização e uma sigla que o identifica. Esta sigla é exclusiva de cada departamento.
+
+Cada departamento é supervisionado por um funcionário da empresa. É necessário saber a data de início da supervisão, para que a cada dois anos haja substituições.
+
+Os departamentos possuem projetos associados. Cada projeto é identificado por um nome, um código e um número de funcionários alocados. O código do projeto é exclusivo para cada um deles.
+
+Os funcionários da empresa trabalham em projetos, e o número de horas dedicadas a um determinado projeto deve ser armazenado no BD.
+
+<Spoiler>
+<img src="assets/modelo-projeto-funcionario-departamento-light.png" className="on-light" alt="Modelo: PROJETO-FUNCIONARIO-DEPARTAMENTO" />
+</Spoiler>
+
+## Cia de seguros de automóveis
+<Warn>
+**Em construção...**
+</Warn>
