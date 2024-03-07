@@ -23,6 +23,7 @@ import { MDXContent } from '~/components/mdx-content'
 import { TopButton } from './_components/top-button'
 import { Anchor } from './_components/anchor'
 import { PrettyCodeElement } from './_components/pretty-code-element'
+import { Spoiler } from './_components/spoiler'
 
 import 'katex/dist/katex.min.css'
 
@@ -112,7 +113,8 @@ const mdxComponents = {
       </span>
       {children}
     </blockquote>
-  )
+  ),
+  Spoiler
 }
 
 const exampleToc = posts[0].toc[0]
