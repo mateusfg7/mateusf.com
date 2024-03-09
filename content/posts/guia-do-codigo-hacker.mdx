@@ -1,0 +1,66 @@
+---
+title: 'Guia do Código Hacker'
+date: '2024-03-09T14:25:07.235Z'
+description: 'Guia e definições para montar o Código Hacker'
+category: 'Article'
+tags: 'hacker,geek,tradução,cyberpunk'
+status: 'draft'
+---
+
+<Warn>
+Essa é uma tradução da publicação original ["The Hacker Key Guide"](http://files.catwell.info/misc/mirror/hackerkey.html) de [Pierre 'catwell' Chapuis](https://catwell.info/), criador original do Código Hacker (_Hacker Key_).
+</Warn>
+
+# Sobre o Guia do Código Hacker
+
+O Guia do Código Hacker foi inspirado no excelente [Código Geek](https://web.archive.org/web/20000511144513/http://www.geekcode.com/) (_Geek Code_) de Robert Hayden, que é um dos favoritos dos hackers há muito tempo. No entanto, o Código Geek não é atualizado há muito tempo e, embora a comercialização da Internet tenha eliminado grande parte do antigo ambiente hacker (MUDs, BBSes, DOS...), devemos tentar manter vivas as tradições hackers, por reimplementação, se necessário.
+
+Vamos ver um exemplo de um bloco de Código Geek:
+
+```plaintext
+-----BEGIN GEEK CODE BLOCK-----
+Version: 3.12
+GCS d- s+: a- C++ US++++ P++ L+++ E--- W++ N+ o K- w--
+O+ M+ V PS++ PE- Y PGP+ t+ 5 X R tv+ b+ DI+ D+
+G++ e++ h--- r+++ y+
+------END GEEK CODE BLOCK------
+```
+
+O Código Geek faz muitas coisas bem:
+
+- É MUITO geek. Strings de texto curtas com delimitadores `+` ou `-` para mostrar posições relativas em um problema.
+- É único. É muito fácil identificar o código geek e ele vem sendo adotado por outros grupos que buscam formas de se identificar, mostrando sua versatilidade.
+- É muito simples determinar por quais coisas uma pessoa é apaixonada. No exemplo acima, uma rápida olhada mostra que a pessoa parece ser um geek casado, liberal e amante do Unix, que não liga muito para programas de TV.
+
+No entanto, também existem alguns problemas com o GeekCode:
+- Em primeiro lugar, há muito espaço desperdiçado. Embora seja muito fácil determinar se uma pessoa é mestre em algo com 5 sinais de mais, é um desperdício. O local principal (e mais lógico) para exibir o código geek é no arquivo de assinatura. Ainda hoje, a netiqueta ainda favorece arquivos de assinatura curtos, e o Código Geek médio tem 6 linhas sozinho. Os geeks tendem a seguir a netiqueta quando possível, então isso faz com que as próprias pessoas visadas pelo Código Geek não o promovam em suas assinaturas!
+- O código foi projetado para se parecer com um bloco de chave PGP, mas inclui caracteres que não são válidos em uma chave PGP, em particular, o símbolo de menos `-` e parênteses `()` são muito comumente usados. Os caracteres válidos em uma chave PGP são [A-Za-z0-9], mais `+` e barra `/`. Também não há espaços em uma chave normal.
+- Não é enigmático o suficiente ;) Isso é uma brincadeira, mas é quase MUITO fácil determinar rapidamente o Código Geek de uma pessoa, o que meio que tira a diversão do tipo anel decodificador secreto das coisas.
+- O problema mencionado acima é que o Código Geek está desatualizado.
+
+O Guia do Código Hacker espera manter os aspectos bons do Código Geek e melhorar alguns dos ruins.
+Os objetivos de design do Guia do Código Hacker são:
+1. Uma chave normal com algumas opções de categoria extras deve caber em uma linha de texto de 80 colunas. Idealmente, ele deve ter espaço suficiente para que o URL da chave do hacker caiba na mesma linha, para dar às pessoas uma chance de descobrir o que diabos é.
+2. Certifique-se de que os símbolos mais comumente usados também sejam símbolos de chave PGP válidos. Para compatibilidade com o Código Geek, usaremos mais símbolos que não são válidos, mas garantiremos que os mais usados sejam.
+3. Mantenha o Guia atualizado. Só posso prometer que manterei o guia atualizado ou o entregarei a alguém que o faça. O tempo dirá se conseguirei cumprir essa promessa.
+
+# Formato de uma entrada de Código Hacker
+
+Uma Código Hacker é construído da seguinte forma:
+
+- A categoria em questão será listada em letras minúsculas (por exemplo, u é para Unix).
+- O número correspondente à sua resposta à categoria (por exemplo, 7). Em vez de mais ou menos, é atribuída uma pontuação média de 5 para cada categoria. As respostas extremamente positivas são superiores a 5 (o máximo normal é 9), as respostas negativas são inferiores a 5 (o mínimo normal é 0).
+- As opções opcionais de gaiola devem estar no final e em letras maiúsculas (por exemplo, SL para Solaris, Linux).
+- Ao prosseguir para a próxima seção, não pule um espaço!
+
+Então, para nosso exemplo, a categoria Unix seria preenchida como: u7SL
+
+## Modificadores (variáveis)
+
+As "variáveis" do Geek Code mais comumente usadas parecem ser "intervalos" (`@` e `()`) e "aspirante" (`>`). Para seguir o Objetivo de Design nº 2, as seguintes alterações foram feitas na Chave Hackey:
+- `/` - Para indicar uma resposta de "intervalo", use a tecla barra (`/`) em sua resposta. Para a opção (`@`) de variação livre, use um `/` no final da sua resposta numérica, por exemplo. `u5/`. Para indicar um intervalo específico em sua resposta, use a barra entre suas duas respostas, por exemplo. você5/7.
+- `+` - Para indicar sua classificação de "aspirante", use o símbolo de mais (`+`). Sim, parece estranho e (`>`) é um caractere mais intuitivo, mas não usar um caractere-chave PGP válido quando é um dos dois únicos caracteres não alfanuméricos disponíveis seria uma farsa. Por exemplo, se você gosta de Unix, mas gostaria de ser um guru, você usaria u5+8.
+
+<Error>
+A tradução está incompleta, ainda estou a escrevendo!
+</Error>
