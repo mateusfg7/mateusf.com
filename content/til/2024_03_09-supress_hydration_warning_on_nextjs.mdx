@@ -1,0 +1,12 @@
+---
+title: 'Supress hydration warning on Next.js'
+description: 'Supress "Text content does not match server-rendered HTML"'
+date: '2024-03-09'
+tags: [next.js,javascript,workaround,errors]
+---
+
+Just use `suppressHydrationWarning` on the component that is causing the warning:
+
+```tsx
+<time datetime="2016-10-25" suppressHydrationWarning />
+```
