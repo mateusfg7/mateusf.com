@@ -768,3 +768,185 @@ Inicio
    escreval("TOTAL: R$", total:2:2)
 Fimalgoritmo
 ```
+
+# Aula 5
+**Data**: 05/03/2024
+
+## Exercício 1
+> Desenvolva um software em que receberá alguns números fornecidos pelo usuário, enquanto ele quiser continuar digitando números (a cada interação pergunte ao usuário se ele deseja continuar a soma), e ao final, exiba o resultado da soma dos números digitados na tela.
+
+```visualg showLineNumbers
+Algoritmo "SomaNumeros"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristino
+// Descrição   : Soma vários números fornecidos pelo usuário
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 08/03/2024
+Var
+   soma:   inteiro
+   numero: inteiro
+   continuar: caractere
+   primeira_interacao: logico
+
+Inicio
+   continuar <- "SIM"
+   primeira_interacao <- verdadeiro
+   numero <- 0
+   soma <- 0
+
+   enquanto (maiusc(continuar) = "SIM") faca
+      limpatela()
+
+      se(primeira_interacao) entao
+         primeira_interacao <- falso
+
+         escreval("Digite um número")
+         escreva("-> ")
+         leia(numero)
+      senao
+         escreval("Digite mais um número")
+         escreva("-> ")
+         leia(numero)
+      fimse
+
+      soma <- soma + numero
+
+      escreval()
+
+      escreval("Deseja somar mais um número?")
+      escreva("-> ")
+      leia(continuar)
+
+   fimenquanto
+
+   limpatela()
+
+   escreval("Resultado da soma:")
+   escreval()
+   escreval("   [", soma, " ]   ")
+Fimalgoritmo
+```
+
+## Exercício 2
+> Desenvolva um software em que receba uma quantidade do usuário e imprima na tela essa quantidade de vezes “Programação é nossa melhor matéria!”.
+
+```visualg showLineNumbers
+Algoritmo "ProgramacaoMelhorMateria"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristino
+// Descrição   : Imprime uma mensagem N vezes
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 08/03/2024
+Var
+   quantidade: inteiro
+   contador: inteiro
+   certeza: caractere
+
+Inicio
+   certeza   <- "NÃO"
+   quantidade <- 0
+   contador <- 0
+
+   enquanto ((maiusc(certeza) = "NÃO") OU (maiusc(certeza) = "NAO")) faca
+      limpatela()
+
+      escreval("Digite o número de vezes")
+      escreva("-> ")
+      leia(quantidade)
+
+      se (quantidade > 100) entao
+         escreval()
+         escreval("A mensagem será repedita", quantidade, " vezes!")
+         escreval("Você tem certeza que quer continuar?")
+         escreva("-> ")
+         leia(certeza)
+      senao
+         certeza <- "SIM"
+      fimse
+   fimenquanto
+
+   limpatela()
+
+   enquanto (contador <= quantidade) faca
+      contador <- contador + 1
+      escreval("Programação é a melhor matéria!")
+   fimenquanto
+
+Fimalgoritmo
+```
+
+## Exercício 3
+> Atualize o software do exercício da Lanchonete de modo que o usuário possa fazer um pedido de vários itens no mesmo pedido. Quando ele desejar finalizar o pedido o sistema irá imprimir na tela a lista de produtos comprados e o valor da conta.
+> Dicas:
+> - Trabalhe dentro de um laço de repetição enquanto.
+> - Utilize uma variável do tipo caractere para armazenar os dados do pedido e a cada novo item adicionado, concatene a variável com ela mesma.
+> Ex: `produtos <- produtos + " 1 - COXINHA: R$ 6,00 | " {:visualg}`
+
+```visualg showLineNumbers
+Algoritmo "Cardápio"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor Cristiano
+// Descrição   : Cardápio de lanchonete
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 08/03/2024
+Var
+   prato:  inteiro
+   pedido: caractere
+   total:  real
+   encerrar: logico
+   primeira_iteracao: logico
+Inicio
+   encerrar <- falso
+   primeira_iteracao <- verdadeiro
+
+   enquanto (nao(encerrar)) faca
+      limpatela()
+
+      se(primeira_iteracao) entao
+         primeira_iteracao <- falso
+      senao
+         escreval("Quer pedir mais alguma coisa?")
+         escreval("Valor total: R$ ", total:2:2)
+         escreval()
+      fimse
+
+      escreval("------------ PRATOS ------------")
+      escreval("[1] Risoto ------------- R$25,00")
+      escreval("[2] Espaguete ---------- R$22,00")
+      escreval("[3] Strogonoff --------- R$30,00")
+      escreval("[4] Macarrão na Chapa -- R$20,00")
+      escreval("--------------------------------")
+      escreval("[5] ENCERRAR PEDIDO")
+      escreval("--------------------------------")
+      escreval()
+      escreva("-> ")
+      leia(prato)
+
+      escolha(prato)
+      caso 1
+         total <- total + 25.00
+         pedido <- pedido + "Risoto - R$25,00 | "
+      caso 2
+         total <- total + 22.00
+         pedido <- pedido + "Espaguete - R$22,00 | "
+      caso 3
+         total <- total + 30.00
+         pedido <- pedido + "Strogonoff - R$30,00 | "
+      caso 4
+         total <- total + 20.00
+         pedido <- pedido + "Macarrão na Chapa - R$20,00 | "
+      caso 5
+         encerrar <- verdadeiro
+      fimescolha
+   fimenquanto
+
+   limpatela()
+
+   escreval("-- PEDIDO ------------")
+   escreval()
+   escreval("| ", pedido)
+   escreval()
+   escreval("TOTAL: [ R$", total:2:2, " ]")
+   escreval()
+Fimalgoritmo
+```
