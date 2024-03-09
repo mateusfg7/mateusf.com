@@ -19,11 +19,14 @@ export default function Page() {
           <span className="flex items-center text-2xl text-neutral-400 md:text-3xl ">
             <Typewriter
               words={[
-                'Front-end developer',
-                'Back-end developer',
+                'Tech stuff enthusiast',
+                'Passionate about philosophy',
+                'Nature admirer',
+                'Enjoyer of good books',
                 'Full stack developer'
               ]}
               cursor
+              loop
             />
           </span>
         </div>
