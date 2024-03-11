@@ -1,0 +1,51 @@
+{
+    // Build
+    "name": "mateusf.com",
+    "build": {
+        "dockerfile": "./Dockerfile",
+        "context": "."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    // Prepare the container
+    "postCreateCommand": "chmod +x .devcontainer/post-create.sh && .devcontainer/post-create.sh",
+    // IDE Customization
+    "customizations": {
+        "vscode": {
+            // Extensios
+            "extensions": [
+                "ms-vscode-remote.remote-containers", // Dev Containers
+                "dbaeumer.vscode-eslint", // ESLint
+                "esbenp.prettier-vscode", // Prettier (for autoformat)
+                "bradlc.vscode-tailwindcss", // TailwindCSS Autocomplete
+                "streetsidesoftware.code-spell-checker", // Code Spell Checker (gramar)
+                "GitHub.vscode-pull-request-github", // Github Pull Requests and Issues
+                "csstools.postcss", // PostCSS Intellisense and highlight
+                "naumovs.color-highlight", // Color code highlight
+                "editorconfig.editorconfig" // Editor Config
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "zsh"
+                    }
+                }
+            },
+            "remoteUser": "vscode"
+        }
+    }
+}
