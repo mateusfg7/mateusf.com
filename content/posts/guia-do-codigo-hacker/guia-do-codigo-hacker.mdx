@@ -1,14 +1,15 @@
 ---
 title: 'Guia do Código Hacker'
 date: '2024-03-09T14:25:07.235Z'
+lastUpdate: '2024-03-12T10:36:00.235Z'
 description: 'Guia e definições para criar um Código Hacker'
 category: 'Article'
 tags: 'hacker,geek,tradução,cyberpunk'
-status: 'draft'
+status: 'published'
 ---
 
 <Warn>
-Essa é uma tradução da publicação original ["The Hacker Key Guide"](http://files.catwell.info/misc/mirror/hackerkey.html) de [Pierre 'catwell' Chapuis](https://catwell.info/), criador original do Código Hacker (_Hacker Key_).
+Essa é uma tradução da publicação original ["The Hacker Key Guide"](http://files.catwell.info/misc/mirror/hackerkey.html) de [Pierre 'catwell' Chapuis](https://catwell.info/).
 </Warn>
 
 # Sobre o Guia do Código Hacker
@@ -63,7 +64,7 @@ As "variáveis" do Geek Code mais comumente usadas parecem ser "intervalos" (`@`
 
 O restante dos símbolos são compatíveis com o Código Geek. Eles estão listados para compatibilidade com o Código Geek, embora sejam opcionais e sejam caracteres inválidos em uma chave PGP. Para completar, aqui estão eles:
 
-- `$` - Para indicar que você ganha a vida com um certo tipo de hacking de atividade relacionada, adicione um $ no final, ex.: `u9$`
+- `$` - Para indicar que você ganha a vida com um certo tipo de hacking de atividade relacionada, adicione um `$` no final, ex.: `u9$`
 - `?` - Afirma que não sabe nada sobre esta categoria. Se for esse o caso, por que você está criando um Código Hacker?
 - `!` - Recusa veemente em participar da categoria. Isso normalmente deveria ser feito com um 0 para uma categoria, então realmente não deveria ser usado. Para ser consistente com o Código Geek, se você decidir usar este caractere, coloque-o SOMENTE no início de uma categoria e obviamente não insira um valor numérico.
 
@@ -477,13 +478,35 @@ Se você listar apenas um número nesta categoria, será consideradoa a classifi
 Exemplo (ambas as categorias): `p-4,20/-5,10` ou (preferencialmente) `p-4/-5`
 Exemplo (somente social): `p6.10` ou (preferencialmente) `p6`
 
-<Tip>
-Meu Código Hacker _11/03/2024_
+# Exibindo seu Código Hacker
 
-**`v4sw5Uhw6ln5pr7FOck5ma4u7Lw3Vm5l6OManjaro/i2OVscode/e6t5b7ATen6g5RASOCMPaNr2p1/-9`**
+Devido ao seu design, o Código Hacker deve caber discretamente em seu arquivo de assinatura. Como o Guia do Código Hacker não é muito conhecido, se você puder incluir uma referência ao site, isso ajudará a divulgar o Guia. Aqui está um exemplo da versão 4 do Código Hacker:
 
-</Tip>
+```plaintext caption="Meu Código Hacker, em 11/03/2024."
+v4sw5Uhw6ln5pr7FOck5ma4u7Lw3Vm5l6OManjaro/i2OVscode/e6t5b7ATen6g5RASOCMPaNr2p1/-9 hackerkey.com
+```
 
-<Error>
-A tradução está incompleta, ainda estou a escrevendo!
-</Error>
+# Quem é responsável pelo Código Hacker?
+
+O crédito deve ficar com você, _Chris Allegretta_ \<[chrisa@asty.org](mailto:chrisa@asty.org)>. Inspiração adicional, sugestões e feedback foram dados por _Murray Schwalbaum_, \<[loser@e0f.org](mailto:loser@e0f.org)>. Obrigado também a _Charles Mason_, _Jim Ault_, _Eric Tucker_ e _Jason Burks_ pelas sugestões para a **versão 0**.
+
+Para a **versão 2**, gostaria de agradecer: _Daniel Keep_, _Luke-Jr_, _Tony Lainson_ e _Cody Hatch_ pela revisão da seção Política.
+
+Para a **versão 3**, gostaria de agradecer a _Jon Spriggs_, _Stephen E. Mynhier_, _Kyle Goetz_, _Neil Williams_, _Roie Marianer_, _Eric Davis_ e _Joey Harrison_ pelas sugestões de categoria ou organização.
+
+Para a **versão 4**, gostaria de agradecer a _Scott A Gallaher_ (`w`), _Thomas Jollans_ (`ma` e `e`), _Jon Wickes_ (`g`), _Matej Cizek_ e _Fabio Emilio Costa_ (`b`), _Sandy Knight_ por `O` em (`l`) e (`i`), e especialmente a _Carlos Alberto Pinto Peixoto Bastos Santos_ pelas diversas sugestões para (`l`) e por me indicar o site do Political Compass para (`p`).
+
+# Feedback - Por favor!
+O Guia ainda é bem jovem e estou muito interessado em ouvir a opinião de vocês sobre o que você gosta, o que não gosta e acha que o Guia precisa ou não. Por favor, não sugira mudanças radicais na própria estrutura do código, pois esta é a única área com a qual me sinto bastante confortável. Envie suas idéias para [chrisa@asty.org](mailto:chrisa@asty.org).
+
+# Licença
+> Direitos autorais **(c) 2003-2006 Chris Allegretta**
+> É concedida permissão para copiar, distribuir e/ou modificar este documento sob os termos da GNU Free Documentation License, Versão 1.2 ou qualquer versão posterior publicada pela Free Software Foundation; sem seções invariantes, sem textos de capa e sem textos de contracapa. Uma cópia da licença está incluída na seção intitulada "GNU Free Documentation License".
+
+# Histórico
+
+- `v0` - Lançado em **29.11.2003** - lançamento RFC
+- `v1` - Lançado em **08.02.2004** - Adicionadas seções de Programação e Matemática, adicionada categoria Swinger a Sexo, categorias de jogos renovadas
+- `v2` - Lançado em **17.04.2005** - Divida a seção III em 'amigável ao trabalho' e 'hostil ao trabalho'. Reescreveu a categoria política por ser muito centrada na política dos EUA.
+- `v3` - Lançado em **22.02.2006** - Adicionado: PHP e Ruby para `sw`, Dr Who e Battlestar Galactica para `t`, Idle e Anjuta para `i`, Envolvido para `s`, Windows Server 2003 e Vista para `w`. Alterado: duplicar `S` para atiradores para `O` em `g`.
+- `v4` - Lançado em **29.12.2006** - Adicionado: Cygwin para `w`, MMO e RTS para `g`, muitas novas entradas para `b`. Alterado: `m` e `e` retrabalhados para os hackers ainda na escola secundária, `l` completamente renovado (várias letras de distro alteradas e adicionadas) e adicionadas (`O`) outras categorias especificadas pelo usuário a `l` e `i`, descartadas categorias `p` em favor das classificações do site Polical Compass.
