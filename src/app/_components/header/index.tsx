@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -25,62 +25,25 @@ const MenuItem: React.FC<{ name: string; path: string }> = ({ name, path }) => {
 }
 
 export function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [maxScrollValue, setMaxScrollValue] = useState(0)
-
-  function handleScroll() {
-    if (window) {
-      setScrollPosition(window.scrollY)
-    }
-    if (document) {
-      setMaxScrollValue(
-        document.documentElement.scrollHeight -
-          document.documentElement.clientHeight
-      )
-    }
-  }
-
-  useEffect(() => {
-    handleScroll()
-
-    if (window) {
-      window.addEventListener('scroll', handleScroll, { passive: true })
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  const percentScrollPosition = Math.round(
-    (scrollPosition / maxScrollValue) * 100
-  )
-
   return (
-    <header
-      data-on-top={percentScrollPosition === 0}
-      className="fixed left-3 right-3 top-3 z-40 rounded-xl border border-neutral-100 bg-neutral-50/80 py-3 backdrop-blur transition-all dark:border-neutral-900 dark:bg-neutral-1000/80 md:left-0 md:right-0 md:top-0 md:w-full md:rounded-none md:border-x-0 md:border-b md:border-t-0 data-[on-top='false']:md:border-b-neutral-100 data-[on-top='true']:md:border-b-transparent data-[on-top='true']:md:py-6 data-[on-top='false']:md:dark:border-b-neutral-900/80"
-    >
-      <div className="content-container m-auto flex flex-wrap items-center justify-between">
-        <div className="md:hidden" />
+    <header className="fixed top-0 z-40 w-full p-3">
+      <div className="content-container m-auto flex items-center justify-between rounded-xl border border-neutral-200/50 bg-neutral-50/80 p-3 backdrop-blur-3xl transition-all dark:border-neutral-900 dark:bg-neutral-1000/80 md:px-5">
         <Link
           href="/"
           className="font-handwrite text-2xl font-bold drop-shadow-lg"
         >
           Mateus F.
         </Link>
-        <div className="hidden flex-wrap items-center justify-center gap-8 md:flex">
-          <nav className="flex flex-wrap items-center justify-center gap-5">
+        <div className="hidden w-full items-center gap-8 md:flex md:w-auto">
+          <nav className="flex-wrap items-center justify-center gap-5">
             <MenuItem name="Home" path="/" />
             <MenuItem name="Blog" path="/blog" />
             <MenuItem name="Projects" path="/projects" />
             <MenuItem name="About" path="/about" />
             <MenuItem name="Guestbook" path="/guestbook" />
           </nav>
-          <div className="flex w-full items-center gap-8 md:w-auto">
-            <Search />
-            <ToggleTheme />
-          </div>
+          <Search />
+          <ToggleTheme />
         </div>
         <MobileMenu />
       </div>
