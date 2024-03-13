@@ -15,7 +15,7 @@ const ArrowIcon = () => <ArrowUpRight size="1em" className="text-xs" />
 
 export function Footer() {
   return (
-    <div className="border-t border-neutral-300/30 py-11 dark:border-neutral-800/20">
+    <div className="border-t border-neutral-300/30 bg-neutral-50 py-11 dark:border-neutral-900 dark:bg-neutral-1000">
       <div className="content-container m-auto flex items-center leading-none md:justify-between">
         <div className="hidden gap-4 text-neutral-500 dark:text-neutral-400 md:flex">
           <Link
