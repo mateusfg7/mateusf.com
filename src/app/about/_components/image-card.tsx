@@ -4,18 +4,28 @@ import Image from 'next/image'
 import Tilt from 'react-parallax-tilt'
 import { placeholder } from '../../../lib/placeholder'
 
+import lightPic from './light-pic.jpg'
+import darkPic from './dark-pic.png'
+
 export function ImageCard({ mobile = false }) {
   if (mobile) {
     return (
-      <Image
-        src="https://github.com/mateusfg7.png"
-        height={460}
-        width={460}
-        alt="Mateus Felipe's picture"
-        className="my-5 rounded-3xl border border-neutral-800 object-cover dark:border-neutral-500"
-        placeholder={placeholder(460, 460) as `data:image/${string}`}
-        priority
-      />
+      <>
+        <Image
+          src={lightPic}
+          alt="Mateus Felipe's picture"
+          className="my-5 rounded-3xl border border-neutral-800 object-cover dark:hidden"
+          placeholder={placeholder(460, 460) as `data:image/${string}`}
+          priority
+        />
+        <Image
+          src={darkPic}
+          alt="Mateus Felipe's picture"
+          className="my-5 hidden rounded-3xl border border-neutral-500 object-cover dark:block"
+          placeholder={placeholder(460, 460) as `data:image/${string}`}
+          priority
+        />
+      </>
     )
   }
 
@@ -34,11 +44,16 @@ export function ImageCard({ mobile = false }) {
       tiltReverse
     >
       <Image
-        src="https://github.com/mateusfg7.png"
-        height={460}
-        width={460}
+        src={lightPic}
         alt="Mateus Felipe's picture"
-        className="h-[30rem] w-96 object-cover dark:brightness-90"
+        className="h-[30rem] w-96 object-cover dark:hidden"
+        placeholder={placeholder(460, 460) as `data:image/${string}`}
+        priority
+      />
+      <Image
+        src={darkPic}
+        alt="Mateus Felipe's picture"
+        className="hidden h-[30rem] w-96 object-cover brightness-90 dark:block"
         placeholder={placeholder(460, 460) as `data:image/${string}`}
         priority
       />
