@@ -1,3 +1,25 @@
+## [9.2.0](https://github.com/mateusfg7/mateusf.com/compare/9.1.0...9.2.0) (2024-03-15)
+
+
+### Features
+
+* **about-me:** add profile picture relative to color theme ([8b8fa1b](https://github.com/mateusfg7/mateusf.com/commit/8b8fa1ba9404cab31bb752d139fa4febd5788d71))
+* **footer:** update footer background ([04dab3e](https://github.com/mateusfg7/mateusf.com/commit/04dab3e41686be316b839688273c4e9586bca276))
+* **header:** repaginate Header UI ([b860b81](https://github.com/mateusfg7/mateusf.com/commit/b860b8155015864f9ca634e816e91e9d4449de08))
+* **home:** add new phrases to rypewriter ([4ac5b31](https://github.com/mateusfg7/mateusf.com/commit/4ac5b31f5e6aae1e44755d358bd74479db355a7a))
+* **post:** create Spoiler component ([9204f88](https://github.com/mateusfg7/mateusf.com/commit/9204f88a81df1858521b11c2fcc0e648fed1730b))
+* **projects:** update project card styles ([f749168](https://github.com/mateusfg7/mateusf.com/commit/f7491687cb2752d398dc9ba3ccec72b006c6b03c))
+* **ui:** update background and arts on specific pages ([8d55172](https://github.com/mateusfg7/mateusf.com/commit/8d551726149ad1378f46cda144fcb51f4dd0fc39))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3.4.0 ([3d6fa60](https://github.com/mateusfg7/mateusf.com/commit/3d6fa607ae4b287e2e420984480eef79bab9c5f7))
+* **deps:** update dependency react-error-boundary to v4.0.13 ([a5ee4e6](https://github.com/mateusfg7/mateusf.com/commit/a5ee4e63b59ec2c4bdb7f653fc363a2481ddb866))
+* **deps:** update dependency react-parallax-tilt to v1.7.213 ([25bf201](https://github.com/mateusfg7/mateusf.com/commit/25bf201686a4a810dfd87d810a66adc248d42366))
+* **deps:** update dependency react-parallax-tilt to v1.7.214 ([65e937b](https://github.com/mateusfg7/mateusf.com/commit/65e937ba33064ca6a3a5670eae2bc52f91ad6c17))
+* **deps:** update dependency react-parallax-tilt to v1.7.215 ([2efd805](https://github.com/mateusfg7/mateusf.com/commit/2efd805f7bd96fd5be63e6cd960cbeb4a71eef9b))
+
 ## [9.1.0](https://github.com/mateusfg7/mateusf.com/compare/9.0.1...9.1.0) (2024-03-06)
 
 
