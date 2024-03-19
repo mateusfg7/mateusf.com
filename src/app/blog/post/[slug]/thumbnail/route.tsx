@@ -7,7 +7,7 @@ import { posts } from '#content'
 import { config } from 'global-config'
 import { Date as DateFormatter } from '~/components/date'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 export async function GET(
   request: Request,
@@ -109,9 +109,13 @@ export async function GET(
         </div>
       </div>
     ),
+    // {
+    //   width: 1200,
+    //   height: 630
+    // }
     {
-      width: 1200,
-      height: 630
+      width: 1000,
+      height: 525
     }
   )
 }
