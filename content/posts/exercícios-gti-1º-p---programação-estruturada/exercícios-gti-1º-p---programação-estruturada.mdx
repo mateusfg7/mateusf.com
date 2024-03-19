@@ -1,7 +1,7 @@
 ---
 title: 'Exercícios GTI P1 - Programação Estruturada'
 date: '2024-03-04T12:35:34.795Z'
-lastUpdate: '2024-03-09T17:48:00.795Z'
+lastUpdate: '2024-03-19T11:04:00.795Z'
 description: 'Exercícios das aulas de Programação Estruturada, do curso GTI na FAPAM, 1º Período.'
 category: 'Notes'
 tags: 'fapam,gti,exercícios,curso,faculdade,university,programming,visualg,portugol'
@@ -949,5 +949,230 @@ Inicio
    escreval()
    escreval("TOTAL: [ R$", total:2:2, " ]")
    escreval()
+Fimalgoritmo
+```
+
+# Aula 6
+**Data**: 12/03/2024
+
+## Exercício 1
+> Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100. 
+
+```visualg showLineNumbers
+Algoritmo "DezNumerosMaioresQue100"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Imprime os 10 primeiros números inteiros maiores que 100.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+    numero: Inteiro
+Inicio
+    para numero de 100 ate 110 faca
+        escreval(numero)
+    fimpara
+Fimalgoritmo
+```
+
+## Exercício 2
+> Escreva um algoritmo que imprima os números pares de 1 a 100. Utilize o sinal de % para verificar o resto da divisão.
+
+```visualg showLineNumbers
+Algoritmo "NumerosParesAte100"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Imprime os números pares de 1 a 100.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+    numero: Inteiro
+Inicio
+    para numero de 1 ate 100 faca
+        se numero % 2 = 0 entao
+            escreval(numero)
+        fimse
+    fimpara
+Fimalgoritmo
+```
+
+## Exercício 3
+> Escreva um algoritmo que pergunte ao usuário quantos números ele quer imprimir na tela. Se o usuário digitar um número maior que 30, interrompa o laço de repetição e imprima na tela uma mensagem para o usuário.
+
+```visualg showLineNumbers
+Algoritmo "NumerosPersonalizados"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Pergunta ao usuário quantos números ele
+//               quer imprimir e interrompe se for mais que 30.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+    contador, quantidade: Inteiro
+
+Inicio
+    escreval("Quantos números você deseja imprimir?")
+    escreva("-> ")
+    leia(quantidade)
+
+    para contador de 1 ate quantidade faca
+        se quantidade > 30 entao
+            escreval("Número muito grande! O máximo permitido é 30.")
+            interrompa
+        senao
+            escreval(contador)
+        fimse
+    fimpara
+
+Fimalgoritmo
+```
+
+## Exercício 4
+> Escreva um algoritmo receba um número do usuário e imprima na tela os próximos 10 números múltiplos de 5. Utilize o comando INTERROMPA para sair do loop.
+
+```visualg showLineNumbers
+Algoritmo "ProximosMultiplosDe5"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Imprime os próximos 10 números múltiplos de 5 a partir de um Número fornecido pelo usuário.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+    numero, contador: Inteiro
+
+Inicio
+    escreva("Digite um Número: ")
+    leia(numero)
+
+    para contador de 1 ate 10 faca
+        se numero % 5 = 0 entao
+            escreval(numero)
+            numero <- numero + 5
+        senao
+            numero <- numero + 1
+        fimse
+    fimpara
+Fimalgoritmo
+```
+
+## Exercício 5
+> Escreva um algoritmo receba do usuário um número, depois receba do usuário uma opção (P para Par ou I para Ímpar) e imprima na tela todos os números de 0 até o número escolhido respeitando a opção escolhida (par ou ímpar). Ex: se o usuário digitar 6 e escolher ímpar, o sistema deve imprimir: `1 - 3 - 5`
+
+```visualg showLineNumbers
+Algoritmo "ProximosMultiplosDe5"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Imprime os próximos 10 números múltiplos de 5 a partir de um Número fornecido pelo usuário.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+    numero, contador: Inteiro
+
+Inicio
+    escreva("Digite um Número: ")
+    leia(numero)
+
+    para contador de 1 ate 10 faca
+        se numero % 5 = 0 entao
+            escreval(numero)
+            numero <- numero + 5
+        senao
+            numero <- numero + 1
+        fimse
+    fimpara
+Fimalgoritmo
+```
+
+## Exercício 6
+> Reescreva o código do exercício anterior de modo que a impressão dos números seja escrita em ordem decrescente. Ex: se o usuário digitar 6 e escolher ímpar, o sistema deve imprimir: `5 - 3 - 1`.
+
+```visualg showLineNumbers
+Algoritmo "NumerosParImparDecrescente"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Imprime números pares ou ímpares em ordem decrescente até o Número escolhido pelo usuário.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+   numero, contador: inteiro
+   opcao: caractere
+
+Inicio
+   escreva("Digite um Número: ")
+   leia(numero)
+
+   escreva("Escolha uma opção (P para Par ou I para ímpar): ")
+   leia(opcao)
+
+   para contador de numero ate 0 passo -1 faca
+      se (maiusc(opcao) = "P") entao
+         se(contador % 2 = 0) entao
+            escreval(contador)
+         fimse
+      senao se (maiusc(opcao) = "I") entao
+         se(contador % 2 <> 0) entao
+            escreval(contador)
+         fimse
+      fimse
+   fimpara
+
+Fimalgoritmo
+```
+
+## Exercício 7
+> Escreva um algoritmo para pedidos de uma loja de calçados. O algoritmo deve mostrar um menu com ao menos 4 produtos predefinidos e oferecer ao usuário a opção de selecionar mais de um produto ou encerrar o pedido (similar ao exercício do restaurante). Ao final o algoritmo deve mostrar o resumo da compra e o valor total (formatado em reais).
+
+```visualg showLineNumbers
+Algoritmo "PedidoLojaCalcados"
+// Disciplina  : Programação Estruturada
+// Professor   : Adjenor
+// Descrição   : Sistema de pedidos de uma loja de calçados.
+// Autor(a)    : Mateus Felipe Gonçalves <contato@mateusf.com>
+// Data atual  : 19/03/2024
+
+Var
+   opcao: caractere
+   valor_total: real
+Inicio
+   valor_total <- 0
+
+   repita
+      limpatela()
+      escreval("MENU DE PRODUTOS:")
+      escreval("1 - Tênis Adidas: R$ 199.99")
+      escreval("2 - Chinelo Nike: R$ 49.99")
+      escreval("3 - Bota Timberland: R$ 299.99")
+      escreval("4 - Sandália Havaianas: R$ 29.99")
+      escreval("0 - Encerrar pedido")
+
+      escreva("Escolha um produto ou 0 para encerrar: ")
+      leia(opcao)
+
+      escolha opcao
+      caso "1"
+         valor_total <- valor_total + 199.99
+      caso "2"
+         valor_total <- valor_total + 49.99
+      caso "3"
+         valor_total <- valor_total + 299.99
+      caso "4"
+         valor_total <- valor_total + 29.99
+      fimEscolha
+   ate opcao = "0"
+
+   limpatela()
+
+   se valor_total > 0 entao
+      escreval("RESUMO DA COMPRA:")
+      escreval("Valor total: R$", valor_total:0:2)
+   senao
+      escreval("Nenhum produto foi selecionado. Pedido cancelado.")
+   fimse
+
 Fimalgoritmo
 ```
