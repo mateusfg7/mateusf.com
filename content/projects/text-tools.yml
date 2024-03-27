@@ -1,9 +1,19 @@
 title: 'Text Tools'
 description: 'A collection of text transform tools, like change string case, get text statistics, generate hashes, and more!'
 image: 'https://raw.githubusercontent.com/mateusfg7/text-tools/main/.github/assets/thumbnail.png'
-core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss']
-tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'bun', 'shadcn/ui', 'lucide-icons', 'tests']
+core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'bun']
+tags:
+  [
+    'typescript',
+    'reactjs',
+    'nextjs',
+    'tailwindcss',
+    'bun',
+    'shadcn/ui',
+    'lucide-icons',
+    'tests'
+  ]
 repository: 'https://github.com/mateusfg7/text-tools'
 website: 'https://text.mateusf.com'
-priority: 2
+priority: 1
 featured: true

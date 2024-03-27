@@ -6,20 +6,33 @@ import { Project } from '#content'
 
 interface Props {
   data: Project
+  variant?: 'full' | 'compact'
 }
 
-export function ProjectCard({ data }: Props) {
+export function ProjectCard({ data, variant = 'full' }: Props) {
+  const isFull = variant === 'full'
+
   const Title = () => (
-    <div className="mb-10 flex flex-col items-center gap-5 text-2xl dark:text-neutral-50 md:mb-4 md:flex-row">
-      <h2 className="font-bold">{data.title}</h2>
-      <span className="hidden md:inline">
-        <BsDot />
-      </span>
-      <span className="flex items-center gap-3">
+    <div
+      data-variant={variant}
+      className="mb-10 flex flex-col items-center gap-2 data-[variant='full']:gap-5 dark:text-neutral-50 md:mb-4 md:data-[variant='full']:flex-row"
+    >
+      <h2
+        data-variant={variant}
+        className="text-center text-lg font-bold data-[variant='full']:text-2xl data-[variant='full']:md:text-left"
+      >
+        {data.title}
+      </h2>
+      {isFull && (
+        <span className="hidden md:inline">
+          <BsDot />
+        </span>
+      )}
+      <span className="flex gap-3 data-[variant='compact']:text-base">
         {data.core_techs.map(coreTech => {
           const TechIcon = techIcons[coreTech]
           return (
-            <span key={coreTech} className="text-xl hover:cursor-pointer">
+            <span key={coreTech} className="hover:cursor-pointer">
               <TechIcon />
             </span>
           )
@@ -57,16 +70,20 @@ export function ProjectCard({ data }: Props) {
         <div>
           <Title />
           <p className="text-justify md:text-left">{data.description}</p>
-          <Tags />
+          {isFull && <Tags />}
         </div>
-        <div className="mt-9 flex flex-1 items-end justify-center gap-6">
+        <div
+          data-variant={variant}
+          className="mt-9 flex flex-1 items-end justify-center gap-2 data-[variant='full']:gap-6"
+        >
           {data.repository && (
             <>
               <a
                 href={data.repository}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-2xl border border-[#181717] p-4 text-[#181717] hover:bg-[#181717] hover:text-[#F6F8FA] dark:border-[#F6F8FA] dark:text-[#F6F8FA] dark:hover:bg-[#F6F8FA] hover:dark:text-[#181717]"
+                data-variant={variant}
+                className="flex items-center gap-2 rounded-2xl border border-[#181717] p-2 text-[#181717] data-[variant='full']:p-4 hover:bg-[#181717] hover:text-[#F6F8FA] dark:border-[#F6F8FA] dark:text-[#F6F8FA] dark:hover:bg-[#F6F8FA] hover:dark:text-[#181717]"
               >
                 Repository <FiGithub />
               </a>
@@ -78,7 +95,8 @@ export function ProjectCard({ data }: Props) {
                 href={data.files}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-2xl border border-blue-500 p-4 text-blue-500 hover:bg-blue-500 hover:text-neutral-50"
+                data-variant={variant}
+                className="flex items-center gap-2 rounded-2xl border border-blue-500 p-2 text-blue-500 data-[variant='full']:p-4 hover:bg-blue-500 hover:text-neutral-50"
               >
                 Arquivos <FiFolder />
               </a>
@@ -90,7 +108,8 @@ export function ProjectCard({ data }: Props) {
                 href={data.website}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-2xl border border-blue-700 bg-blue-700/10 p-4 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:border-blue-600 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
+                data-variant={variant}
+                className="flex items-center gap-2 rounded-2xl border border-blue-700 bg-blue-700/10 p-2 text-blue-700 data-[variant='full']:p-4 hover:bg-blue-700 hover:text-neutral-50 dark:border-blue-600 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
               >
                 Website <FiGlobe />
               </a>
