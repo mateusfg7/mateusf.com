@@ -61,7 +61,7 @@ dependencies:
     version: 5.0.1(react@18.2.0)
   react-parallax-tilt:
     specifier: ^1.7.154
-    version: 1.7.215(react-dom@18.2.0)(react@18.2.0)
+    version: 1.7.217(react-dom@18.2.0)(react@18.2.0)
   react-simple-typewriter:
     specifier: ^5.0.1
     version: 5.0.1(react-dom@18.2.0)(react@18.2.0)
@@ -6901,8 +6901,8 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  /react-parallax-tilt@1.7.215(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-uIIYccEHyaWjedqaYOETjhHHNej+O85cATUOXtMPgdk4rCYjfpFP9FSPfVc4ezD/qUkBD8bzbFH5BKsrbfLZYA==}
+  /react-parallax-tilt@1.7.217(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-+BVhBAXbW8AXJgM1T7+7+m1UVtHPU6Mi/m/9lyh4+fuPsIvq0VTx6+2fXq28qO8GVpp1WMuzh2hs16MU11NhzQ==}
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
