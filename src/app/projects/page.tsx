@@ -2,9 +2,7 @@ import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { projects } from '#content'
 
 import { Title } from '~/components/title'
-
 import { ProjectCard } from './_components/project-card'
-import { ProjectInfo } from './_components/project-info'
 
 export default function Page() {
   const featuredProjects = projects
@@ -30,10 +28,10 @@ export default function Page() {
             <ProjectCard data={project} key={project.slug} />
           ))}
       </div>
-      <div className="space-y-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
         {otherProjectsWithoutImage.length > 0 &&
           otherProjectsWithoutImage.map(project => (
-            <ProjectInfo data={project} key={project.slug} />
+            <ProjectCard data={project} variant="compact" key={project.slug} />
           ))}
       </div>
       <div className="flex justify-center md:justify-end">
