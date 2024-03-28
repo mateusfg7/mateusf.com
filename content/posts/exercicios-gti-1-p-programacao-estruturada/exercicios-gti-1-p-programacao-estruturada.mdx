@@ -31,7 +31,7 @@ Formatar automaticamente | <kbd>CTRL</kbd> + <kbd>G</kbd>
 Rodar programa |  <kbd>F9</kbd>
 
 
-# Aula 2
+# Aula 2 - VisuAlg
 **Data**: 15/02/2024
 ## Exercício 1
 > Escreva um algoritmo que leia as três notas do aluno, calcule e imprima no console a média que ele obteve na disciplina.
@@ -237,7 +237,7 @@ Inicio
 Fimalgoritmo
 ```
 
-# Aula 3
+# Aula 3 - VisuAlg
 **Data**: 22/02/2024
 ## Exercício 1
 > Desenvolva um software que receba uma idade do usuário e imprima na tela se ele é maior de idade ou menor de idade.
@@ -507,7 +507,7 @@ Inicio
 Fimalgoritmo
 ```
 
-# Aula 4
+# Aula 4 - VisuAlg
 **Data**: 29/02/2024
 ## Exercício 1
 > Crie um software que receba do usuário um valor inteiro e imprima na tela o mês do ano correspondente ao valor recebido (ex. recebendo o valor 1, o programa imprime “Janeiro”; recebendo o valor 2, o programa imprime “Fevereiro”...).
@@ -770,7 +770,7 @@ Inicio
 Fimalgoritmo
 ```
 
-# Aula 5
+# Aula 5 - VisuAlg
 **Data**: 05/03/2024
 
 ## Exercício 1
@@ -952,11 +952,11 @@ Inicio
 Fimalgoritmo
 ```
 
-# Aula 6
+# Aula 6 - VisuAlg
 **Data**: 12/03/2024
 
 ## Exercício 1
-> Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100. 
+> Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100.
 
 ```visualg showLineNumbers
 Algoritmo "DezNumerosMaioresQue100"
@@ -1175,4 +1175,125 @@ Inicio
    fimse
 
 Fimalgoritmo
+```
+
+# Aula 7 - Python
+**Data**: 26/03/2024
+
+## Exercício 1
+> Escreva um programa que leia as três notas do aluno e calcule e imprima no console a média que ele obteve na disciplina.
+
+```python showLineNumbers
+"""
+Lê três notas do aluno, calcula e imprime a média no console.
+
+Aluno:     Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Curso:     Gestão da Tecnologia da Informação
+Matéria:   Programação Estruturada
+Turma:     1º Período - B
+Data:      27/03/2024
+"""
+
+# Lê as notas do aluno
+nota1 = float(input("Digite a primeira nota: "))
+nota2 = float(input("Digite a segunda nota: "))
+nota3 = float(input("Digite a terceira nota: "))
+
+# Calcula a média
+media = (nota1 + nota2 + nota3) / 3
+
+# Imprime a média
+print(f"A média do aluno é {media:.2f}")
+```
+
+## Exercício 2
+> Sabe-se que o m² de construção custa R$850. Escreva um programa que leia as medidas de um terreno retangular e calcula e imprime quanto custa para construir uma casa que ocupe esse terreno.
+
+```python showLineNumbers
+"""
+Programa que lê as medidas de um terreno retangular e calcula e imprime quanto custa
+para construir uma casa que ocupe esse terreno. O m² de construção custa R$ 850,00.
+
+Aluno:     Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Curso:     Gestão da Tecnologia da Informação
+Matéria:   Programação Estruturada
+Turma:     1º Período - B
+Data:      27/03/2024
+"""
+
+# Lê as medidas do terreno
+largura = float(input("Digite a largura do terreno: "))
+comprimento = float(input("Digite o comprimento do terreno: "))
+
+# Calcula a área do terreno
+area = largura * comprimento
+
+# Calcula o custo da construção
+custo = area * 850
+
+# Imprime o custo da construção
+print(f"O custo para construir uma casa nesse terreno é R$ {custo:.2f}")
+```
+
+## Exercício 3
+> Escreva um programa que leia o salário total de uma pessoa e quantas horas ela trabalha por dia. Em seguida, calcule e imprima quanto essa pessoa recebe por hora. Considere o mês com 30 dias.
+
+```python  showLineNumbers
+"""
+Programa que lê o salário total de uma pessoa e quantas horas ela trabalha por dia.
+Em seguida, calcula e imprime quanto essa pessoa recebe por hora.
+
+Aluno:     Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Curso:     Gestão da Tecnologia da Informação
+Matéria:   Programação Estruturada
+Turma:     1º Período - B
+Data:      27/03/2024
+"""
+
+# Lê o salário total
+salario = float(input("Digite o salário total\n-> "))
+
+# Lê a quantidade de horas trabalhadas por dia
+horas_por_dia = float(input("Digite a quantidade de horas trabalhadas por dia\n-> "))
+
+# Calcula horas trabalhadas no mês
+horas_por_mes = horas_por_dia * 30
+
+# Calcula o valor da hora
+valor_hora = salario / horas_por_mes
+
+# Imprime o valor da hora
+print(f"\nO valor da hora é R$ {valor_hora:.2f}")
+```
+
+## Exercício 4
+> Escreva um programa que peça ao usuário para informar o peso e a altura com o comando leia, depois calcule e imprima na tela o IMC dessa pessoa sabendo que a fórmula do IMC é (peso/altura²).
+
+```python showLineNumbers
+"""
+Programa que pede ao usuário para informar o peso e a altura com o comando leia, depois
+calcula e imprime na tela o IMC dessa pessoa sabendo que a fórmula do IMC é (peso/altura²).
+
+Aluno:     Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Curso:     Gestão da Tecnologia da Informação
+Matéria:   Programação Estruturada
+Turma:     1º Período - B
+Data:      27/03/2024
+"""
+
+# Lê o peso
+peso = float(input("Digite o peso (kg)\n-> "))
+
+# Lê a altura
+altura_cm = float(input("Digite a altura (cm)\n-> "))
+
+# Calcula o IMC
+imc = peso / (altura_cm/100) ** 2
+
+# Imprime o IMC
+print(f"\nO IMC é {imc:.2f}")
 ```
