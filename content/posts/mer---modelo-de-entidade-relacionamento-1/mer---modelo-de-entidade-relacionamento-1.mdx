@@ -1,11 +1,11 @@
 ---
 title: 'MER - Modelo de Entidade-Relacionamento #1'
 date: '2024-03-06T14:12:19.383Z'
-lastUpdate: '2024-03-07'
+lastUpdate: '2024-03-29'
 description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 1. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
-status: 'draft'
+status: 'published'
 pinned: true
 ---
 
@@ -221,34 +221,60 @@ Fomos contratados por uma instituição, e a mesma, precisa ter um sistema para 
 
 # Tipos de relacionamento
 
-<Warn>
-**Em construção...**
-</Warn>
+Os tipos de relacionamento estão associados ao conceito denominado **cardinalidade**.
+
+A **cardinalidade** é a quantidade de ocorrências que uma entidade pode ter em relação a outra entidade.
+
+**Cardinalidade nos RELACIONAMENTOS**:
+- Relacionamento **1:1** _Lê se UM PARA UM_
+- Relacionamento **1:N** _Lê se UM PARA MUITOS_
+- Relacionamento **N:M** ou **N:N** _Lê se MUITOS PARA MUITOS_
 
 ## Relacionamento 1:1
-<Warn>
-**Em construção...**
-</Warn>
+
+Um relacionamento 1:1 é um relacionamento onde UMA entidade está associada a UMA outra entidade, e vice-versa.
+
+<Tip>
+**Exemplo**
+O relacionamento entre a entidade **`PRESIDENTE`** e a entidade **`PAÍS`**. Cada país tem UM presidente e cada presidente é de UM país, portanto, é um relacionamento 1:1.
+</Tip>
+
+<img src="assets/presidente-preside-pais-dark.png" className="on-dark" alt="Relacionamento 1:1 | PRESIDENTE-preside-PAIS" />
+<img src="assets/presidente-preside-pais-light.png" className="on-light" alt="Relacionamento 1:1 | PRESIDENTE-preside-PAIS" />
+
 
 ## Relacionamento 1:N
-<Warn>
-**Em construção...**
-</Warn>
+
+Um relacionamento 1:N é um relacionamento onde UMA entidade está associada a MUITAS outras entidades, mas as entidades associadas estão associadas a apenas UMA entidade.
+
+<img src="assets/professor-orienta-aluno-N-1-dark.png" className="on-dark" alt="Relacionamento N:1 | ALUNO-orientado-PROFESSOR" />
+<img src="assets/professor-orienta-aluno-N-1-light.png" className="on-light" alt="Relacionamento N:1 | ALUNO-orientado-PROFESSOR" />
 
 ## Relacionamento N:M
-<Warn>
-**Em construção...**
-</Warn>
+
+Um relacionamento N:M é um ripelacionamento onde MUITAS entidades estão associadas a MUITAS outras entidades.
+
+<img src="assets/aluno-cursa-disciplina-dark.png" className="on-dark" alt="Relacionamento N:N | ALUNO-cursa-DISCIPLINA" />
 
 ## Par de cardinalidades
-<Warn>
-**Em construção...**
-</Warn>
+
+Alguns livros trazem a notação de par de cardinalidade, que de define através da atribuição de um valor mínimo e um valor máximo para os tipos de relacionamentos existentes.
+
+<img src="assets/empregado-lotacao-departamento-light.png" className="on-light" alt="Relacionamento EMPREGADO-lotacao-DEPARTAMENTO" />
+<img src="assets/empregado-lotacao-departamento-dark.png" className="on-dark" alt="Relacionamento EMPREGADO-lotacao-DEPARTAMENTO" />
+
+<Tip>
+Notação de par de cardinalidades: (_mínima, máxima_)
+</Tip>
+
+> Um empregado **obrigatóriamente está** lotado no máximo em 1 departamento. Um departamento **pode ter** até N empregados lotados nele.
 
 ## Atributos em relacionamentos
-<Warn>
-**Em construção...**
-</Warn>
+
+Os relacionamentos também podem ter atributos. Por exemplo: pode haver a necessidade de representar a quantidade de **horas semanais** trabalhadas pode um empregado em um dado projeto. Isto pode ser representado no relacionamento `trabalha_em` na forma do atributo denominado `Horas`
+
+<img src="assets/empregado-trabalha_em-projeto-light.png" className="on-light" alt="EMPREGADO-trabalha_em-PROJETO" />
+<img src="assets/empregado-trabalha_em-projeto-dark.png" className="on-dark" alt="EMPREGADO-trabalha_em-PROJETO" />
 
 # Praticando
 
@@ -264,10 +290,15 @@ Os departamentos possuem projetos associados. Cada projeto é identificado por u
 Os funcionários da empresa trabalham em projetos, e o número de horas dedicadas a um determinado projeto deve ser armazenado no BD.
 
 <Spoiler>
+<img src="assets/modelo-projeto-funcionario-departamento-dark.png" className="on-dark" alt="Modelo: PROJETO-FUNCIONARIO-DEPARTAMENTO" />
 <img src="assets/modelo-projeto-funcionario-departamento-light.png" className="on-light" alt="Modelo: PROJETO-FUNCIONARIO-DEPARTAMENTO" />
 </Spoiler>
 
 ## Cia de seguros de automóveis
+Uma **cia de seguros de automóveis** possui vários cliente (nome, endereço, CPF, e telefone(s)), cada um deles são proprietários de um ou mais veículos (fabricante, modelo, ano, placa, estado).
+
+Cada carro está associado a nenhum ou vários registros de acidentes (data, número do BO). Um acidente pode evolver não apenas um, mas vários carros.
+
 <Warn>
-**Em construção...**
+**Faça você mesmo!**
 </Warn>
