@@ -1,6 +1,7 @@
 ---
 title: 'MER - Modelo de Entidade-Relacionamento #2'
 date: '2024-03-29T20:39:35.028Z'
+lastUpdated: '2024-03-30'
 description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 2. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
@@ -8,20 +9,34 @@ status: 'draft'
 pinned: true
 ---
 
+{/* [slide](assets/Aula_03_MER_parte_2.pdf) */}
+
 <Warn>
-Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, é uma transcrição do slide [Aula 03 - MER parte 2](assets/Aula_03_MER_parte_2.pdf), feito pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de **Gestão de TI - FAPAM**.
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que
+  estou estudando no momento, baseado no slide Aula 03 - MER parte 2, feito pelo
+  professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no
+  curso de **Gestão de TI - FAPAM**.
 </Warn>
 
 <Tip>
-Parte 2 das aulas de Entidade-Relacionamento, continue apenas se já tiver lido a [**Parte 1**](/blog/post/mer---modelo-de-entidade-relacionamento-1).
+  Parte 2 das aulas de Entidade-Relacionamento, continue apenas se já tiver lido
+  a [**Parte 1**](/blog/post/mer---modelo-de-entidade-relacionamento-1).
 </Tip>
 
 # Multi Relacionamentos
 
 Um relacionamento liga duas entidades, porém, é possível que uma entidade se relacione com outra entidade mais de uma vez.
 
-<img src="assets/medico-paciente-light.png" className="on-light" alt="Relacionamentos entre MÉDICO-PACIENTE" />
-<img src="assets/medico-paciente-dark.png" className="on-dark" alt="Relacionamentos entre MÉDICO-PACIENTE" />
+<img
+  src="assets/medico-paciente-light.png"
+  className="on-light"
+  alt="Relacionamentos entre MÉDICO-PACIENTE"
+/>
+<img
+  src="assets/medico-paciente-dark.png"
+  className="on-dark"
+  alt="Relacionamentos entre MÉDICO-PACIENTE"
+/>
 
 # Auto relacionamento
 
@@ -31,8 +46,16 @@ O auto relacionamento, também chamado de **relacionamento recursivo**, ocorre q
 
 O relacionamento `supervisiona` relaciona um empregado com o seu supervisor, onde ambas entidades são membros do mesmo tipo de entidade **`EMPREGADO`**. Assim, o tipo de entidade EMPREGADO participa duas vezes: uma vez no papel de supervisor e outra no papel de supervisionado. Assim, `e1` supervisiona `e2`, `e2` supervisiona `e3` e `e1` supervisiona `e4`.
 
-<img src="assets/auto-relacionamento-1-n-dark.png" className="on-dark" alt="Auto relacionamento 1:N entre EMPREGADOs" />
-<img src="assets/auto-relacionamento-1-n-light.png" className="on-light" alt="Auto relacionamento 1:N entre EMPREGADOs" />
+<img
+  src="assets/auto-relacionamento-1-n-dark.png"
+  className="on-dark"
+  alt="Auto relacionamento 1:N entre EMPREGADOs"
+/>
+<img
+  src="assets/auto-relacionamento-1-n-light.png"
+  className="on-light"
+  alt="Auto relacionamento 1:N entre EMPREGADOs"
+/>
 
 ## Auto relacionamento (N:N) e (1:1)
 
@@ -40,8 +63,16 @@ O relacionamento `supervisiona` relaciona um empregado com o seu supervisor, ond
 
 > Cada pessoa casa com uma pessoa, e cada pessoa é casada com uma pessoa. ~na maioria dos casos~
 
-<img src="assets/ex-auto-relacionamento-light.png" className="on-light" alt="Exemplo de auto relacionamentos" />
-<img src="assets/ex-auto-relacionamento-dark.png" className="on-dark" alt="Exemplo de auto relacionamentos" />
+<img
+  src="assets/ex-auto-relacionamento-light.png"
+  className="on-light"
+  alt="Exemplo de auto relacionamentos"
+/>
+<img
+  src="assets/ex-auto-relacionamento-dark.png"
+  className="on-dark"
+  alt="Exemplo de auto relacionamentos"
+/>
 
 # Generalização e Especialização
 
@@ -49,11 +80,20 @@ Generalização e Especialização são técnicas de modelagem que permitem repr
 
 **SÍMBOLO:** _Um **triângulo** de "cabeça para baixo"_
 
-<img src="assets/simbolo-generalizacao-especializacao-light.png" className="on-light" alt="Símbolo de generalização e especialização" />
-<img src="assets/simbolo-generalizacao-especializacao-dark.png" className="on-dark" alt="Símbolo de generalização e especialização" />
+<img
+  src="assets/simbolo-generalizacao-especializacao-light.png"
+  className="on-light"
+  alt="Símbolo de generalização e especialização"
+/>
+<img
+  src="assets/simbolo-generalizacao-especializacao-dark.png"
+  className="on-dark"
+  alt="Símbolo de generalização e especialização"
+/>
 
 <Tip>
-Generalização e especialização são abstrações inversas e são representadas no esquema ER da mesma forma (mésmo símbolo)
+  Generalização e especialização são abstrações inversas e são representadas no
+  esquema ER da mesma forma (mésmo símbolo)
 </Tip>
 
 ## Especialização
@@ -62,16 +102,29 @@ Usada quando um conjunto de entidades possui subgrupos com características pró
 
 Especificação de subgrupos dentro de um conjunto de entidades que são distintas, isto é, possuem casacterísticas específicas em um vez que possuem atributos ou relacionamentos que não se aplica ao conjunto entidade de nível superior.
 
-<img src="assets/veiculo-terrestre-aquatico-especializacao-dark.png" className="on-dark" alt="Especialização de VEÍCULO para TERRESTRE e AQUÁTICO" />
-<img src="assets/veiculo-terrestre-aquatico-especializacao-light.png" className="on-light" alt="Especialização de VEÍCULO para TERRESTRE e AQUÁTICO" />
+<img
+  src="assets/veiculo-terrestre-aquatico-especializacao-dark.png"
+  className="on-dark"
+  alt="Especialização de VEÍCULO para TERRESTRE e AQUÁTICO"
+/>
+<img
+  src="assets/veiculo-terrestre-aquatico-especializacao-light.png"
+  className="on-light"
+  alt="Especialização de VEÍCULO para TERRESTRE e AQUÁTICO"
+/>
 
-<Tip>
-**Exemplo**
-**`EMPREGADO`** pode ser **`HORISTA`** ou **`DIARÍSTA`**.
-</Tip>
+<Tip>**Exemplo** **`EMPREGADO`** pode ser **`HORISTA`** ou **`DIARÍSTA`**.</Tip>
 
-<img src="assets/empregado-horista-diarista-light.png" className="on-light" alt="Especialização/Generalização de EMPREGADO para HORISTA e DIARÍSTA" />
-<img src="assets/empregado-horista-diarista-dark.png" className="on-dark" alt="Especialização/Generalização de EMPREGADO para HORISTA e DIARÍSTA" />
+<img
+  src="assets/empregado-horista-diarista-light.png"
+  className="on-light"
+  alt="Especialização/Generalização de EMPREGADO para HORISTA e DIARÍSTA"
+/>
+<img
+  src="assets/empregado-horista-diarista-dark.png"
+  className="on-dark"
+  alt="Especialização/Generalização de EMPREGADO para HORISTA e DIARÍSTA"
+/>
 
 ## Generalização
 
@@ -79,20 +132,44 @@ Usada quando entidades distintas possuem características (atributos) em comum, 
 
 Combina conjuntos de entidades, que compartilham as mesmas características (atributos/relacionamentos), em uma entidade de mais alto nível.
 
-<img src="assets/veiculo-terrestre-aquatico-generalizacao-dark.png" className="on-dark" alt="Generalização de VEÍCULO para TERRESTRE e AQUÁTICO" />
-<img src="assets/veiculo-terrestre-aquatico-generalizacao-light.png" className="on-light" alt="Generalização de VEÍCULO para TERRESTRE e AQUÁTICO" />
+<img
+  src="assets/veiculo-terrestre-aquatico-generalizacao-dark.png"
+  className="on-dark"
+  alt="Generalização de VEÍCULO para TERRESTRE e AQUÁTICO"
+/>
+<img
+  src="assets/veiculo-terrestre-aquatico-generalizacao-light.png"
+  className="on-light"
+  alt="Generalização de VEÍCULO para TERRESTRE e AQUÁTICO"
+/>
 
 ## Redundância
 
 A generalização/especialização é muito útil para evitar **redundâncias**, por exemplo:
 
-<img src="assets/relacionamento-redundante-light.png" className="on-light" alt="Relacionamento com entidades redundantes" />
-<img src="assets/relacionamento-redundante-dark.png" className="on-dark" alt="Relacionamento com entidades redundantes" />
+<img
+  src="assets/relacionamento-redundante-light.png"
+  className="on-light"
+  alt="Relacionamento com entidades redundantes"
+/>
+<img
+  src="assets/relacionamento-redundante-dark.png"
+  className="on-dark"
+  alt="Relacionamento com entidades redundantes"
+/>
 
 Poderíamos refazer o modelo ER da seguinte forma:
 
-<img src="assets/relacionamento-redundante-solucao-light.png" className="on-light" alt="Relacionamento com entidades redundantes" />
-<img src="assets/relacionamento-redundante-solucao-dark.png" className="on-dark" alt="Relacionamento com entidades redundantes" />
+<img
+  src="assets/relacionamento-redundante-solucao-light.png"
+  className="on-light"
+  alt="Relacionamento com entidades redundantes"
+/>
+<img
+  src="assets/relacionamento-redundante-solucao-dark.png"
+  className="on-dark"
+  alt="Relacionamento com entidades redundantes"
+/>
 
 ## Conselhos práticos
 
@@ -101,14 +178,37 @@ Poderíamos refazer o modelo ER da seguinte forma:
 **Questão**: modelar um determinado objeto, por exemplo, a categoria funcional de cada empregado de uma empresa.
 
 Como **atributo**?
+
 - Categoria funcional como atributo da entidade **`EMPREGADO`**.
 
 Como **generalização/especialização**?
+
 - Cada categoria funcional corresponderá a uma especialização da entidade **`EMPREGADO`**.
 
-<img src="assets/diff-modelos-dark.png" className="on-dark" alt="Diferença entre os atributo e generalização/especialização" />
-<img src="assets/diff-modelos-light.png" className="on-light" alt="Diferença entre os atributo e generalização/especialização" />
+<img
+  src="assets/diff-modelos-dark.png"
+  className="on-dark"
+  alt="Diferença entre os atributo e generalização/especialização"
+/>
+<img
+  src="assets/diff-modelos-light.png"
+  className="on-light"
+  alt="Diferença entre os atributo e generalização/especialização"
+/>
 
-<Warn>
-Artigo em desenvolvimento...
-</Warn>
+### Atributo opcional
+
+Pode indicar subconjuntos de entidades que são modelados mais corretamente através de especializações. Exemplo:
+
+<img
+  src="assets/atributo-opcional-exemplo-dark.png"
+  className="on-dark"
+  alt="Atributo opcional"
+/>
+<img
+  src="assets/atributo-opcional-exemplo-light.png"
+  className="on-light"
+  alt="Atributo opcional"
+/>
+
+<Warn>Artigo em desenvolvimento...</Warn>
