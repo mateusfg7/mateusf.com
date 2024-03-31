@@ -1,0 +1,52 @@
+---
+title: 'MR - Modelo Relacional'
+date: '2024-03-31T21:39:53.155Z'
+description: 'Modelo Relacional (MR) para definição de relacionamentos de banco de dados. Transcrição do conteúdo passado em aula no curso de GTI 1º período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
+category: 'Article'
+tags: 'mr,fapam,database,definições,gti,modelo,relacionamento,entidade,modelo-relacional,tabelas'
+status: 'draft'
+---
+
+
+<Warn>
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
+</Warn>
+
+
+# Histórico
+
+O Modelo Relacional (MR) foi proposto por **Edgar Frank Codd** em meados da década de **1970**. Se trata de um conceito abstrato que define maneiras de: **armazenar**, **manipular** e **recuperar dados** estruturados.
+
+Fortemente baseada na [teoria dos conjuntos](https://pt.wikipedia.org/wiki/Teoria_dos_conjuntos), oferecendo assim uma representaão simples e natural da informação.
+
+O modelo relacional representa os dados em um banco de dados como uma **coleção de tabela** (relações). Cada tabela terá um **nome**, que será **único**, e um **conjunto de atributos** com seus respectivos nomes e domínios.
+
+Esses astributos são as colunas da tabela, todos os valores da coluna são do mesmo tipo de dados.
+
+# Conceitos
+
+**Relações (tabelas)**: Os SGBDs relacionais representam os dados sob a forma de TABELAS bidimensionais (linhas x colunas), denominadas **RELAÇÕES**. É composto por 2 partes:
+- Cabeçalho: _conjunto fixo de atributos_
+- Corpo: _conjunto variável de tuplas (valor de atributo)_
+
+**Tuplas**: são as linhas da relação (tabela), representam uma instância da relação.
+
+**Atributos**: são as colunas ou campos da relação (tabela), representam as características da relação.
+W
+**Célula**: A interseção de uma linha x coluna, ou seja, um valor de atributo. Cada célula de uma tabela contém um único valor, característica a qual designa-se por ATOMICIDADE (valor atômico).
+
+**Domínio**: Conjunto de valores atômicos, a partir do qual, um ou mais atributos extraem seus valores. Por exemplo: o domínio do atributo `idade` é um número inteiro entre 13 e 70, e o domínio do salário seria um número real entre 953,00 e 5300,00.
+
+Domínio é um conceito semântico, exemplos:
+- Peso, qte, valor - _São números reais (double, float)_
+- Nome, Cidade - _São caracteres (string/varchar)_
+- Data de nascimento - _São datas (date)_
+
+Alguns domínios estão associados a um tipo de dados ou formato. Exemplo:
+- CPF: `ddd.ddd.ddd-dd` onde `d` = $\{0, 1, 2, ...9\}$ (inteiros)
+- Idade Empregado: inteiro entre 18 e 65 ($18 \leq idade \leq 65$)
+- Data: `dd/mm/aaaa`
+
+<Warn>
+**Artigo em desenvlvimento...**
+</Warn>

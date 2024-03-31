@@ -1,0 +1,23 @@
+Conceitos
+Relações (Tabelas): os SGBDs relacionais representam os
+dados sob a forma de TABELAS bidimencionais (linhas x
+colunas), denominadas RELAÇÕES. É composta por 2 partes:
+cabeçalho: conjunto fixo de atributos e corpo: conjunto variável
+de tuplas (valor de atributo).
+Tuplas: são as linhas da relação (tabela).
+Atributos: são as colunas ou campos da relação (tabela).
+
+Conceitos
+Célula: A interseção linha X coluna de uma tabela denomina-se
+CÉLULA. O conteúdo de uma célula denomina-se valor de
+atributo. Cada célula de uma tabela comporta apenas um
+valor de atributo, característica a qual designa-se por
+ATOMICIDADE (valor atômico).
+
+Conceitos
+Célula: A interseção linha X coluna de uma tabela denomina-se
+CÉLULA. O conteúdo de uma célula denomina-se valor de
+atributo. Cada célula de uma tabela comporta apenas um
+valor de atributo, característica a qual designa-se por
+ATOMICIDADE (valor atômico).
+
