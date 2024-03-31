@@ -1,7 +1,7 @@
 ---
 title: 'MER - Modelo de Entidade-Relacionamento #1'
 date: '2024-03-06T14:12:19.383Z'
-lastUpdate: '2024-03-30'
+lastUpdate: '2024-03-31'
 description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 1. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
@@ -9,7 +9,7 @@ status: 'published'
 ---
 
 <Warn>
-Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, baseado no slide Aula 02 - MER parte 1, feito pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de **Gestão de TI - FAPAM**.
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
 </Warn>
 
 # Introdução
@@ -301,3 +301,54 @@ Cada carro está associado a nenhum ou vários registros de acidentes (data, nú
 <Warn>
 **Faça você mesmo!**
 </Warn>
+
+# Multi Relacionamentos
+
+Um relacionamento liga duas entidades, porém, é possível que uma entidade se relacione com outra entidade mais de uma vez.
+
+<img
+  src="assets/medico-paciente-light.png"
+  className="on-light"
+  alt="Relacionamentos entre MÉDICO-PACIENTE"
+/>
+<img
+  src="assets/medico-paciente-dark.png"
+  className="on-dark"
+  alt="Relacionamentos entre MÉDICO-PACIENTE"
+/>
+
+# Auto relacionamento
+
+O auto relacionamento, também chamado de **relacionamento recursivo**, ocorre quando uma entidade se relaciona consigo mesma.
+
+## Auto relacionamento (1:N)
+
+O relacionamento `supervisiona` relaciona um empregado com o seu supervisor, onde ambas entidades são membros do mesmo tipo de entidade **`EMPREGADO`**. Assim, o tipo de entidade EMPREGADO participa duas vezes: uma vez no papel de supervisor e outra no papel de supervisionado. Assim, `e1` supervisiona `e2`, `e2` supervisiona `e3` e `e1` supervisiona `e4`.
+
+<img
+  src="assets/auto-relacionamento-1-n-dark.png"
+  className="on-dark"
+  alt="Auto relacionamento 1:N entre EMPREGADOs"
+/>
+<img
+  src="assets/auto-relacionamento-1-n-light.png"
+  className="on-light"
+  alt="Auto relacionamento 1:N entre EMPREGADOs"
+/>
+
+## Auto relacionamento (N:N) e (1:1)
+
+> Cada disciplina pode ter um ou mais pré-requisitos (disciplinas), e cada disciplina pode ser pré-requisito de uma ou mais disciplinas.
+
+> Cada pessoa casa com uma pessoa, e cada pessoa é casada com uma pessoa. ~na maioria dos casos~
+
+<img
+  src="assets/ex-auto-relacionamento-light.png"
+  className="on-light"
+  alt="Exemplo de auto relacionamentos"
+/>
+<img
+  src="assets/ex-auto-relacionamento-dark.png"
+  className="on-dark"
+  alt="Exemplo de auto relacionamentos"
+/>
