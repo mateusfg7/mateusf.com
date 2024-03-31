@@ -1,78 +1,20 @@
 ---
 title: 'MER - Modelo de Entidade-Relacionamento #2'
 date: '2024-03-29T20:39:35.028Z'
-lastUpdated: '2024-03-30'
+lastUpdated: '2024-03-31'
 description: 'Introdução ao Modelo de Entidade-Relacionamento em banco de dados, parte 2. Transcrição do conteúdo passado em aula no curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mer,fapam,database,diagrama,gti,modelo,entidade-relacionamento'
-status: 'draft'
-pinned: true
+status: 'published'
 ---
 
-{/* [slide](assets/Aula_03_MER_parte_2.pdf) */}
-
 <Warn>
-  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que
-  estou estudando no momento, baseado no slide Aula 03 - MER parte 2, feito pelo
-  professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no
-  curso de **Gestão de TI - FAPAM**.
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
 </Warn>
 
 <Tip>
-  Parte 2 das aulas de Entidade-Relacionamento, continue apenas se já tiver lido
-  a [**Parte 1**](/blog/post/mer---modelo-de-entidade-relacionamento-1).
+  Parte 2 das aulas de Entidade-Relacionamento, continue apenas se já tiver lido a [**Parte 1**](/blog/post/mer---modelo-de-entidade-relacionamento-1).
 </Tip>
-
-# Multi Relacionamentos
-
-Um relacionamento liga duas entidades, porém, é possível que uma entidade se relacione com outra entidade mais de uma vez.
-
-<img
-  src="assets/medico-paciente-light.png"
-  className="on-light"
-  alt="Relacionamentos entre MÉDICO-PACIENTE"
-/>
-<img
-  src="assets/medico-paciente-dark.png"
-  className="on-dark"
-  alt="Relacionamentos entre MÉDICO-PACIENTE"
-/>
-
-# Auto relacionamento
-
-O auto relacionamento, também chamado de **relacionamento recursivo**, ocorre quando uma entidade se relaciona consigo mesma.
-
-## Auto relacionamento (1:N)
-
-O relacionamento `supervisiona` relaciona um empregado com o seu supervisor, onde ambas entidades são membros do mesmo tipo de entidade **`EMPREGADO`**. Assim, o tipo de entidade EMPREGADO participa duas vezes: uma vez no papel de supervisor e outra no papel de supervisionado. Assim, `e1` supervisiona `e2`, `e2` supervisiona `e3` e `e1` supervisiona `e4`.
-
-<img
-  src="assets/auto-relacionamento-1-n-dark.png"
-  className="on-dark"
-  alt="Auto relacionamento 1:N entre EMPREGADOs"
-/>
-<img
-  src="assets/auto-relacionamento-1-n-light.png"
-  className="on-light"
-  alt="Auto relacionamento 1:N entre EMPREGADOs"
-/>
-
-## Auto relacionamento (N:N) e (1:1)
-
-> Cada disciplina pode ter um ou mais pré-requisitos (disciplinas), e cada disciplina pode ser pré-requisito de uma ou mais disciplinas.
-
-> Cada pessoa casa com uma pessoa, e cada pessoa é casada com uma pessoa. ~na maioria dos casos~
-
-<img
-  src="assets/ex-auto-relacionamento-light.png"
-  className="on-light"
-  alt="Exemplo de auto relacionamentos"
-/>
-<img
-  src="assets/ex-auto-relacionamento-dark.png"
-  className="on-dark"
-  alt="Exemplo de auto relacionamentos"
-/>
 
 # Generalização e Especialização
 
@@ -92,8 +34,7 @@ Generalização e Especialização são técnicas de modelagem que permitem repr
 />
 
 <Tip>
-  Generalização e especialização são abstrações inversas e são representadas no
-  esquema ER da mesma forma (mésmo símbolo)
+  Generalização e especialização são abstrações inversas e são representadas no esquema ER da mesma forma (mésmo símbolo)
 </Tip>
 
 ## Especialização
@@ -211,4 +152,105 @@ Pode indicar subconjuntos de entidades que são modelados mais corretamente atra
   alt="Atributo opcional"
 />
 
-<Warn>Artigo em desenvolvimento...</Warn>
+## Tipos de generalização/especialização
+
+### Total
+
+Nesse tipo generalização/especialização, a existência da ocorrência da entidade genérica OBRIGATORIAMENTE implica na existência da ocorrência da entidade especializada.
+
+<img src="assets/exemplo-especializacao-total-light.png" className="on-light" alt="'t' Indica que todo CLIENTE é ou PESSOA FÍSICA ou PESSOA JURÍDICA"/>
+<img src="assets/exemplo-especializacao-total-dark.png" className="on-dark" alt="'t' Indica que todo CLIENTE é ou PESSOA FÍSICA ou PESSOA JURÍDICA"/>
+
+### Parcial
+
+Nesse tipo de generalização/especialização, a existência da ocorrência da entidade genérica NÃO OBRIGA a existência da ocorrência da entidade especializada.
+
+<img src="assets/exemplo-especializacao-parcial-dark.png" className="on-dark" alt="'p' Indica que nem todo FUNCIONÁRIO é MOTORISTA ou SECRETÁRIA" />
+<img src="assets/exemplo-especializacao-parcial-light.png" className="on-light" alt="'p' Indica que nem todo FUNCIONÁRIO é MOTORISTA ou SECRETÁRIA" />
+
+### Exclusiva
+
+Em uma hierarquia de generalização/especialização, uma ocorrência da entidade genérica é especializada no máximo uma vez, nas folhas da árvore de generalização/especialização.
+
+<img src="assets/exemplo-especializacao-exclusiva-dark.png" className="on-dark" alt="Exemplo de especialização exclusiva"/>
+<img src="assets/exemplo-especializacao-exclusiva-light.png" className="on-light" alt="Exemplo de especialização exclusiva"/>
+
+<Tip>
+O tipo exclusivo pode ser entendido como um `XOR` entre as entidades especializadas.
+</Tip>
+
+### Compartilhada
+
+Em uma hierarquia de generalização/especialização, uma ocorrência da entidade genérica aparecer em várias entidades especializadas, nas folhas da árvore de generalização/especialização.
+
+<img src="assets/exemplo-especializacao-compartilhada-dark.png" className="on-dark" alt="Exemplo de especialização compartilhada"/>
+<img src="assets/exemplo-especializacao-compartilhada-light.png" className="on-light" alt="Exemplo de especialização compartilhada"/>
+
+### União de tipos
+
+&nbsp; | Exclusiva | Compartilhada
+--- | --- | ---
+**Total** | `tx` | `tc`
+**Parcial** | `px` | `pc`
+
+
+**Total** + **Exclusiva** (`tx`)
+> Todo cliente DEVE ser ou pessoa física, ou pessoa jurídica, mas NÃO PODE ser ambos ao mesmo tempo.
+
+<img src="assets/exemplo-especializacao-total-exclusiva-dark.png" className="on-dark" alt="Exemplo de especialização total e exclusiva" />
+<img src="assets/exemplo-especializacao-total-exclusiva-light.png" className="on-light" alt="Exemplo de especialização total e exclusiva" />
+
+**Total** + **Compartilhada** (`tc`)
+> Toda nacionalidade DEVE ser ou braileira, ou indiana, ou japonesa, ou mais de uma ao mesmo tempo.
+
+<img src="assets/exemplo-especializacao-total-compartilhada-light.png" className="on-light" alt="Exemplo de especialização total e compartilhada" />
+<img src="assets/exemplo-especializacao-total-compartilhada-dark.png" className="on-dark" alt="Exemplo de especialização total e compartilhada" />
+
+**Parcial** + **Exclusiva** (`px`)
+> Todo Saiyajin PODE estar transformado OU NÂO, mas se estiver, so pode ter UMA transformação por vez.
+
+<img src="assets/exemplo-especializacao-parcial-exclusiva-dark.png" className="on-dark" alt="Exemplo de especialização parcial e exclusiva" />
+<img src="assets/exemplo-especializacao-parcial-exclusiva-light.png" className="on-light" alt="Exemplo de especialização parcial e exclusiva" />
+
+**Parcial** + **Compartilhada** (`pc`)
+> Um médico PODE ser um cardiologista/neurologista OU NÃO, e se for, pode ser MAIS DE UM, ao mesmo tempo.
+
+<img src="assets/exemplo-especializacao-parcial-compartilhada-light.png" className="on-light" alt="Exemplo de especialização parcial e compartilhada" />
+<img src="assets/exemplo-especializacao-parcial-compartilhada-dark.png" className="on-dark" alt="Exemplo de especialização parcial e compartilhada" />
+
+## Níveis de especialização
+
+Não existe um limite para o nível de especialização. A árvore de especialização pode ter mais de uma camada.
+
+<img src="assets/exemplo-multivel-especializacao-light.png" className="on-light" alt="Exemplo de multnível de especialização"/>
+<img src="assets/exemplo-multivel-especializacao-dark.png" className="on-dark" alt="Exemplo de multnível de especialização"/>
+
+## Herança múltipla
+
+Uma herança múltipla ocorre quando uma entidade especializada é a especializada de mais de uma entidade genérica.
+
+<img src="assets/exemplo-heranca-multipla-light.png" className="on-light" alt="Exemplo de herança múltipla" />
+<img src="assets/exemplo-heranca-multipla-dark.png" className="on-dark" alt="Exemplo de herança múltipla" />
+
+# Entidade associativa
+
+Suponhamos a seguinte situação: Considere o relacionamento abaixo, **`MÉDICO`**-`consulta`-**`PACIENTE`**, agora precisamos armazenar informações sobre medicamentos. Para isso vamos criar a entidade **`MEDICAMENTO`**.
+
+<img src="assets/medico-consulta-paciente-light.png" className="on-light" alt="Relacionamento MÉDICO-consulta-PACIENTE" />
+<img src="assets/medico-consulta-paciente-dark.png" className="on-dark" alt="Relacionamento MÉDICO-consulta-PACIENTE" />
+
+Se associarmos a entidade **`MEDICAMENTO`** à entidade **`MÉDICO`**, só saberíamos qual médico receitou o medicamento, e não para qual paciente.
+
+<img src="assets/medicamento-receita-medico-consulta-paciente-light.png" className="on-light" alt="Relacionamento MEDICAMENTO-receita-MEDICO-consulta-PACIENTE"/>
+<img src="assets/medicamento-receita-medico-consulta-paciente-dark.png" className="on-dark" alt="Relacionamento MEDICAMENTO-receita-MEDICO-consulta-PACIENTE"/>
+
+Se associarmos a entidade **`MEDICAMENTO`** à entidade **`PACIENTE`**, só saberíamos qual paciente recebeu a receita, e não quem receitou.
+
+<img src="assets/medico-consulta-paciente-toma-medicamento-light.png" className="on-light" alt="Relacionamento MEDICO-consulta-PACIENTE-toma-MEDICAMENTO"/>
+<img src="assets/medico-consulta-paciente-toma-medicamento-dark.png" className="on-dark" alt="Relacionamento MEDICO-consulta-PACIENTE-toma-MEDICAMENTO"/>
+
+Queremos associar a entidade **`MEDICAMENTO`** à consulta. Porém, isso não está previsto no Modelo Entidade Relacionamento. Para isso foi criado o conceito de Entidade Associativa.
+
+Esse conceito consiste em transformar um relacionamento em uma entidade para que dessa forma seja possível criar um relacionamento entre a entidade **`MEDICAMENTO`** e a entidade **`CONSULTA`**.
+
+<img src="assets/exemplo-entidade-associativa-dark.png" className="on-dark" alt="Exemplo de entidade associativa" />
