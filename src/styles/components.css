@@ -284,6 +284,49 @@
       }
     }
 
+    div.answear {
+      @apply relative my-4 w-max max-w-full overflow-hidden rounded-lg backdrop-blur-lg;
+
+      .content {
+        @apply p-4;
+      }
+
+      .message {
+        @apply block border-t border-dashed border-neutral-400 p-1 px-4 text-sm text-neutral-400 dark:border-neutral-500 dark:text-neutral-500;
+      }
+
+      p {
+        @apply m-0;
+      }
+
+      &.correct {
+        @apply border border-green-800 dark:border-green-500;
+
+        .icon {
+          @apply absolute right-0 top-0;
+          @apply rounded-bl-md border-b border-l border-green-800 p-1 dark:border-green-500;
+          @apply text-xs text-green-800 dark:text-green-500;
+        }
+
+        .message {
+          @apply border-green-700/50 text-green-700;
+        }
+      }
+      &.wrong {
+        @apply border border-red-800 dark:border-red-500;
+
+        .icon {
+          @apply absolute right-0 top-0;
+          @apply rounded-bl-md border-b border-l border-red-800 p-1 dark:border-red-500;
+          @apply text-xs text-red-800 dark:text-red-500;
+        }
+
+        .message {
+          @apply border-red-700/50 text-red-700;
+        }
+      }
+    }
+
     div.math-display {
       @apply m-auto w-fit p-6 md:m-0;
 
