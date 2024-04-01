@@ -8,7 +8,7 @@ status: 'draft'
 pinned: true
 ---
 
-{/*[**[ SLIDE ]**](assets/Aula_04_MR.pdf)*/}
+[**[ SLIDE ]**](assets/Aula_04_MR.pdf)
 
 <Warn>
   Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
@@ -153,16 +153,51 @@ Considere as seguintes relações:
 
 <img src="assets/relacao-atualizacao-exemplo-dark.png" className="on-dark" alt="Tabela de exemplo" />
 <img src="assets/relacao-atualizacao-exemplo-light.png" className="on-light" alt="Tabela de exemplo" />
-{/*
+
+## Inserção
+
 **Inserção (_Insert_)**: Inserir uma nova tupla na relação.
-Inserir \<"102", "Andre", null, "\>
-*/}
+
+<details>
+  <summary>Tabela simplificada</summary>
+
+  <img src="assets/departamento-empregado-exemplo-dark.png" className="on-dark" alt="Tabelas DEPARTAMENTO e EMPREGADO"/>
+  <img src="assets/departamento-empregado-exemplo-light.png" className="on-light" alt="Tabelas DEPARTAMENTO e EMPREGADO"/>
+</details>
 
 
+<Wrong message="Viola a restrição de chave!">
+Inserir `<"100", "Maria", "DBA", null, "2000", "D1">` em EMPREGADO
+</Wrong>
 
+<Wrong message="Viola a restrição de integridade de entidade!">
+Inserir `<null, "Célia", "Estagiária", null, "1950", "D1">` em EMPREGADO
+</Wrong>
 
+<Wrong message="Viola a restrição de integridade referencial!">
+Inserir `<150, "Célia", "Estagiária", null, "1950", "D6">` em EMPREGADO
+</Wrong>
 
+<Wrong message="Viola a restrição de integridade referencial!">
+Inserir `<150, "Célia", "Estagiária", null, "1950", "B6">` em EMPREGADO
+</Wrong>
 
+<Correct >
+Inserir `<"102", "Andre", "UX/UI", null, "1980", "D2">` em EMPREGADO
+</Correct>
+
+**O que fazer quando detectar uma violação de integridade?**
+- Rejeitar a inserção
+- Tentar corrigir a anomalia para depois inserir
+
+## Exclusão (Delete)
+
+<details>
+  <summary>Tabela simplificada</summary>
+
+  <img src="assets/departamento-empregado-exemplo-dark.png" className="on-dark" alt="Tabelas DEPARTAMENTO e EMPREGADO"/>
+  <img src="assets/departamento-empregado-exemplo-light.png" className="on-light" alt="Tabelas DEPARTAMENTO e EMPREGADO"/>
+</details>
 
 
 
