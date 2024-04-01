@@ -10,7 +10,9 @@ import {
   TextAlignLeft,
   Lightbulb,
   Warning,
-  WarningOctagon
+  WarningOctagon,
+  Check,
+  X
 } from '@phosphor-icons/react/dist/ssr'
 import { BiSolidQuoteAltRight } from 'react-icons/bi'
 import { Post, posts } from '#content'
@@ -82,6 +84,32 @@ const mdxComponents = {
       </a>
     ),
   figure: PrettyCodeElement,
+  Correct: ({
+    children,
+    message,
+    ...rest
+  }: ComponentProps<'div'> & { message?: string }) => (
+    <div {...rest} className="answear correct">
+      <span className="icon">
+        <Check size="1em" />
+      </span>
+      <div className="content">{children}</div>
+      {message && <span className="message">{message}</span>}
+    </div>
+  ),
+  Wrong: ({
+    children,
+    message,
+    ...rest
+  }: ComponentProps<'div'> & { message?: string }) => (
+    <div {...rest} className="answear wrong">
+      <span className="icon">
+        <X size="1em" />
+      </span>
+      <div className="content">{children}</div>
+      {message && <span className="message">{message}</span>}
+    </div>
+  ),
   Tip: ({ children, ...rest }: ComponentProps<'div'>) => (
     <div {...rest} className="hint tip">
       <span className="icon">
