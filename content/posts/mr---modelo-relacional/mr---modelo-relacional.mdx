@@ -5,8 +5,10 @@ description: 'Modelo Relacional (MR) para definição de relacionamentos de banc
 category: 'Article'
 tags: 'mr,fapam,database,definições,gti,modelo,relacionamento,entidade,modelo-relacional,tabelas'
 status: 'draft'
+pinned: true
 ---
 
+{/*[**[ SLIDE ]**](assets/Aula_04_MR.pdf)*/}
 
 <Warn>
   Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
@@ -32,7 +34,7 @@ Esses astributos são as colunas da tabela, todos os valores da coluna são do m
 **Tuplas**: são as linhas da relação (tabela), representam uma instância da relação.
 
 **Atributos**: são as colunas ou campos da relação (tabela), representam as características da relação.
-W
+
 **Célula**: A interseção de uma linha x coluna, ou seja, um valor de atributo. Cada célula de uma tabela contém um único valor, característica a qual designa-se por ATOMICIDADE (valor atômico).
 
 **Domínio**: Conjunto de valores atômicos, a partir do qual, um ou mais atributos extraem seus valores. Por exemplo: o domínio do atributo `idade` é um número inteiro entre 13 e 70, e o domínio do salário seria um número real entre 953,00 e 5300,00.
@@ -46,6 +48,143 @@ Alguns domínios estão associados a um tipo de dados ou formato. Exemplo:
 - CPF: `ddd.ddd.ddd-dd` onde `d` = $\{0, 1, 2, ...9\}$ (inteiros)
 - Idade Empregado: inteiro entre 18 e 65 ($18 \leq idade \leq 65$)
 - Data: `dd/mm/aaaa`
+
+<img src="assets/descricao-tabela-dark.png" className="on-dark" alt="Campos da tabela" />
+<img src="assets/descricao-tabela-light.png" className="on-light" alt="Campos da tabela" />
+
+
+
+# Descrição física e semântica
+
+**Descrição física**: serve para identificar o tipo e o formato dos valores que compõem o domínio
+Ex.: `char(14)`, "(dd)ddddd-dddd".
+
+**Descrição semântica**: serve para ajudar na interpretação dos seus valores.
+Ex.: Números de telefones da FAPAM
+
+# Chaves
+
+As tabelas relacionam-se umas comas outras atravez de **chaves**. Uma chave é um conjunto de um ou mais atributos que determinam a unicidade de cada registro. As chaves aparece sublinhadas.
+
+**Chave candidata**: Conjunto de atributos que definem unicamente e minimamente cada tupla em uma relação.
+Ex.: Empregado (Código, nome, CPF). Código e CPF são chaves candidatas.
+
+**Chave Primária (Primary Key - PK)**: É uma chave candidata escolhida para identificar unicamente cada tupla em uma relação. O valor deve ser único em cada linha (tupla) da relação.
+Ex.: Empregado (<span className="underline">Código</span>, nome, CPF). Código foi escolhido como a chave primária.
+
+**Chave alternativa**: São as chaves candidatas não escolhidas para chave primária.
+Ex.: Empregado (Código, nome, CPF). CPF é a chave alternativa.
+
+**Chave estrangeira (Foreing Key - FK)**: É um atributo de uma relação que constitui chave primária de uma outra relação. As chaves estrangeiras funciona como um elo de ligação entre relações (nas operações de consulta/acesso do bando de dados).
+
+A chave estrangeira aparece com o símbolo aterísco após seu nome `*`.
+
+Exemplo:
+- Empregado (<span className="underline">CodEmp</span>, NomeEmp, CodDep*)
+- Departamento (<span className="underline">CodDepto</span>, NomeDep, CodGerente*)
+
+Na relação Empregado, CodEmp é a chave primária e CodDep é a chave estrangeira.
+Na relação Departamento, CodDepto é a chave primária e CodGerente é a chave estrangeira, pois o gerente deve estrar cadastrado na tabela Empregados, ou seja, `CodDep = CodDepto` e `CodGerente = CodEmp`.
+
+<Tip>
+**OBSERVAÇOES**
+
+<br/>
+
+Convenciona-se sublinhar os atributos que compõem a chave primária. Ex.: Empregado (<span className="underline">Matrícula</span>, Nome, Endereço, Função, Salário).
+
+<br/>
+
+Um mesmo atributos pode ter nomes diferentes nas diversas relações em que participa. Exempo:
+- Empregado (<span className="underline">Matrícula</span>, Nome, Endereço, Função, Salário, _NumDep_*).
+- Departamento (<span className="underline">_CodDep_</span>, Nome, Endereço).
+
+<br/>
+
+Atributos que representam diferentes conceitos podem ter o mesmo nome. Ex.: Ver os atributos _Nome_ dos exemplos anteriores.
+</Tip>
+
+
+# Propriedades
+
+No modelo relacional, podem ser observadas as seguintes propriedades:
+
+A - **Uma tabela não deve possuir duas linhas iguais (tuplas duplicadas).** Isso se explica pelo fato de que as linhas são componentes de um conjunto (a tabela) e se faz necessário poder distinguir os elementos de um conjunto. Assim, pelomenos um atributo componente da linha deve possuir um valor que a diferencie das demais.
+
+B - **Cada tabela ou relação deve possuir um nome prórprio, distinto das demais tabelas do mesmo banco de dados (similar às ENTIDADES, no MER).** Ressalta-se que em banco de dados distintos duas tabelas podem ter o mesmo nome.
+
+C - **Cada atributo de uma mesma tabela deve possuir um nome diferente** (valores de atributos são atômicos, sem repetição, ou seja, ocorrência de apenas um valor de atributo para cada célula da tabela). Por outro lado o mesmo atributo pode aparecer em outra tabela com o mesmo nome ou com nome diferente (sinônimo).
+
+D - **Toda tabela de um banco de dados deve possuir chave primária**
+
+E - **A ordem das linhas e colunas na tabela são inrrelevants (não altera o resultado)**
+
+F - **Os SGBD-R deve ser capazes de tratar, de maneira diferenciada, o valor NULO (NULL)**, que indica a ausência de valor para um atributo em determinada linha. Nulo correspode na teoria de conjuntos, o conjunto vazio, e é diferente de zero ou branco. Os atributos podem ter diferentes nulos, sendo que nulo significa inexistência de valor.
+
+<img src="assets/exemplo-tabela-nulo-dark.png" className="on-dark" alt="Tabela de exemplo com valores nulos" />
+<img src="assets/exemplo-tabela-nulo-light.png" className="on-light" alt="Tabela de exemplo com valores nulos" />
+
+# Restrições
+
+Condições restritivas do modelo relacional:
+
+A - **Restrição de integridade de chave**
+Toda tupla tem um atributo (ou uma combinação deles) que a identifica de maneira única na relação -> Chave Primária
+
+B - **Restrição de integridade de entidade**
+Nenhum valor da chave primária poderá ser nulo
+
+C - **Restrição de integridade referencial**
+
+Não são permitidos valores de chave estrangeira em uma relação que não tenham sido cadastrados previamente como chave primária em outra relação.
+
+Em outras palavras, estabelece que um conjunto de atributos de uma relação R1, é uma chave estrangeira se satisfaz as seguintes regras:
+- Os atributos da chave estrangeira tem o mesmo domínio dos atributos da chave primária de outra relação R2.
+- Um valor da chave estrangeira numa tupla de R1 possui o mesmo valor da chave primária para alguma tupla em R2 ou é NULO.
+
+Exemplo: Empregado (<span className="underline">matrícula</span>, nome, salário, m_supervisor*).
+
+<img src="assets/exemplo-integridade-referencial-dark.png" className="on-dark" alt="Tabela ilustrativa para exemplificar a integridade referencial" />
+<img src="assets/exemplo-integridade-referencial-light.png" className="on-light" alt="Tabela ilustrativa para exemplificar a integridade referencial" />
+
+# Operações de atualização em relações
+
+Considere as seguintes relações:
+
+<img src="assets/relacao-atualizacao-exemplo-dark.png" className="on-dark" alt="Tabela de exemplo" />
+<img src="assets/relacao-atualizacao-exemplo-light.png" className="on-light" alt="Tabela de exemplo" />
+{/*
+**Inserção (_Insert_)**: Inserir uma nova tupla na relação.
+Inserir \<"102", "Andre", null, "\>
+*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <Warn>
 **Artigo em desenvlvimento...**
