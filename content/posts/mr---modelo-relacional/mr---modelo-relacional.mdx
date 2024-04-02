@@ -4,11 +4,9 @@ date: '2024-03-31T21:39:53.155Z'
 description: 'Modelo Relacional (MR) para definição de relacionamentos de banco de dados. Transcrição do conteúdo passado em aula no curso de GTI 1º período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mr,fapam,database,definições,gti,modelo,relacionamento,entidade,modelo-relacional,tabelas'
-status: 'draft'
+status: 'published'
 pinned: true
 ---
-
-[**[ SLIDE ]**](assets/Aula_04_MR.pdf)
 
 <Warn>
   Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
@@ -182,7 +180,7 @@ Inserir `<150, "Célia", "Estagiária", null, "1950", "D6">` em EMPREGADO
 Inserir `<150, "Célia", "Estagiária", null, "1950", "B6">` em EMPREGADO
 </Wrong>
 
-<Correct >
+<Correct>
 Inserir `<"102", "Andre", "UX/UI", null, "1980", "D2">` em EMPREGADO
 </Correct>
 
@@ -190,7 +188,9 @@ Inserir `<"102", "Andre", "UX/UI", null, "1980", "D2">` em EMPREGADO
 - Rejeitar a inserção
 - Tentar corrigir a anomalia para depois inserir
 
-## Exclusão (Delete)
+## Exclusão
+
+**Exclusão (_Delete_)**: Remover uma tupla da relação.
 
 <details>
   <summary>Tabela simplificada</summary>
@@ -199,28 +199,51 @@ Inserir `<"102", "Andre", "UX/UI", null, "1980", "D2">` em EMPREGADO
   <img src="assets/departamento-empregado-exemplo-light.png" className="on-light" alt="Tabelas DEPARTAMENTO e EMPREGADO"/>
 </details>
 
+<Wrong message="Viola a restrição de integridade referencial! Pois existem empregados que estão alocados neste departamento.">
+Remover da tabela DEPARTAMENTO a tupla com o `CodDep = 'D1'`
+</Wrong>
 
+<Correct message="Remoção aceita sem problemas.">
+Remover da tabela EMPREGADO a tupla com `matrícula = '100'`.
+</Correct>
 
+**O que fazer quando uma violação ocorrer numa remoção?**
+- Rejeitar a remoção
+- Dar o efeito cascata na remoção, removendo todas as tuplas referenciadas por aquela tupla que está sendo removida.
+- Modificar os atributos referenciados para novos valores ou nulos (caso não façam parte da chave primária).
 
+<Tip>
+**Obs.:** Dos 3 tipos de restrição de integridade discutidas, uma operação de remoção poderá violar apenas a **integridade referencial**.
+</Tip>
 
+## Atualização
 
+**Atualização (_Update_)**: Alterar os dados em uma tupla da relação.
 
+<Correct message="Atualização aceita sem problemas.">
+Modificar o salário do EMPREGADO com `matrícula='250'`.
+</Correct>
 
+<Correct message="Atualização aceita sem problemas.">
+Modificar o número do departamento da tupla de EMPREGADO com `matrícula = '210'` para `'D1'`.
+</Correct>
 
+<Wrong message="Viola integridade referencial.">
+Modificar o número do DEPARTAMENTO de empregado `'108'` para `'D9'`
+</Wrong>
 
+<Wrong message="Viola integridade de chave.">
+Modificar a matrícula do EMPREGADO `'100'` para `'250'`
+</Wrong>
 
+# Notações do modelo relacional
 
+## Notação tabular (tabelas)
 
+<img src="assets/notacao-tabular-exemplo-light.png" className="on-light" alt="Exemplo de notação tabular" />
+<img src="assets/notacao-tabular-exemplo-dark.png" className="on-dark" alt="Exemplo de notação tabular" />
 
+## Notação textual
 
-
-
-
-
-
-
-
-
-<Warn>
-**Artigo em desenvlvimento...**
-</Warn>
+Empregado (<span className="underline">Mat</span>, Nome, Função, Salário, Dep*)
+Departamento (<span className="underline">CodDep</span>, Nome, MatrGerent*)
