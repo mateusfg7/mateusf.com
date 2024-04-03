@@ -5,11 +5,13 @@ lastUpdate: '2024-04-03'
 description: 'Mapeamento e tradução do Modelo de Entidade-Relacionamento para o ModeloRelacional. Transcrição do conteúdo passado em aula no curso de GTI 1º período, na FAPAM,pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'mr,mer,fapam,database,definições,gti,modelo,relacionamento,entidade,modelo-relacionaltabelas,mapeamento'
-status: 'draft'
+status: 'published'
 pinned: true
 ---
 
-[[ SLIDE ]](assets/Aula_08_Mapeamento_MR_vs_MER.pdf)
+<Warn>
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
+</Warn>
 
 # Introdução
 
@@ -202,10 +204,18 @@ Lembrando que nesta segunda maneira, você cadastra uma Pessoa e ela pode ser ta
 <img src="assets/pessoa-pessoa-funcionario-dark.png" className="on-dark" alt="Pessoa, Pessoa, Funcionário"/>
 <img src="assets/pessoa-pessoa-funcionario-light.png" className="on-light" alt="Pessoa, Pessoa, Funcionário"/>
 
+## 3 - Uma tabela para cada entidade especializada
+
+Você tem apenas as tabelas especializadas com os atributos repetidos
+
+<img src="assets/pessoa-aluno-funcioario-professor-dark.png" className="on-dark" alt="Especializações de PESSOA" />
+<img src="assets/pessoa-aluno-funcioario-professor-light.png" className="on-light" alt="Especializações de PESSOA" />
 
 
+# Considerações
 
+O principal ponto a ser considerado em um esquema relacional, quando comparado ao esquema do MER, é que os tipos de relacionamento não são representados explicitamente, mas sim através de atributos incluídos em relações pela chave estrangeira.
 
-<Warn>
-**Artigo em desenvolvimento...***
-</Warn>
+O número final de relações nem sempre corresponde ao número de entidades do modelo ER, pois além de cada entidade (MER) constituir uma tabela (MR), atributos multivalorados e relacionamentos N:M também geram tabelas no MR.
+
+**Sugestão**: Siga as etapas na sequência sugerida para realizar o mapeamento. Em caso de dúvidas, volte às etapas anteriores.
