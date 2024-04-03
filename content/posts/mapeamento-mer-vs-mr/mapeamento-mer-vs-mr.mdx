@@ -1,0 +1,211 @@
+---
+title: 'Mapeamento MER vs MR'
+date: '2024-04-02T13:33:59.980Z'
+lastUpdate: '2024-04-03'
+description: 'Mapeamento e tradução do Modelo de Entidade-Relacionamento para o ModeloRelacional. Transcrição do conteúdo passado em aula no curso de GTI 1º período, na FAPAM,pelo professor Gabriel Ribeiro Diniz.'
+category: 'Article'
+tags: 'mr,mer,fapam,database,definições,gti,modelo,relacionamento,entidade,modelo-relacionaltabelas,mapeamento'
+status: 'draft'
+pinned: true
+---
+
+[[ SLIDE ]](assets/Aula_08_Mapeamento_MR_vs_MER.pdf)
+
+# Introdução
+
+Em projetos de **banco de dados**, a modelagem de dados é feita através de um modelo de dados **conceitual**, geralmente o Modelo Entidade-Relacionamento (MER) que representa o esquema das visões e de toda a base de dados, especificados em diagramas ER.
+
+O passo seguinte à modelagem dos dados é o mapeamento do diagrama da base de dados, obtido na fase anterior, para um modelo de dados **lógico**, o Modelo Relacional (MR), representado por meio de tabelas.
+
+Para isso, considere o esquema ER mostrado a seguir, que será utilizado para ilustrar o procedimento de mapeamento. Este procedimento é apresentado passo-a-passo, a partir do exemplo do MER de uma **empresa**.
+
+<img src="assets/diagrama-er-empresa-dark.png" className="on-dark" alt="Diagrama ER de uma empresa" />
+<img src="assets/diagrama-er-empresa-light.png" className="on-light" alt="Diagrama ER de uma empresa" />
+
+# Regras
+
+## Passo 1: Entidade
+
+Para cada entidade criar uma relação (Tabela) que inclua todos os atributos simples, para atributos compostos, inclua apenas os atributos simples que compõem o atributo composto. Escolha um dos atributos-chave da entidade para constituir a chave primária da relação (se a chave escolhida for composta, então o conjunto de atributos simples que a compõem irão formar a chave primária da relação).
+
+No exemplo, foram criadas as relações EMPREGADO e PROJETO, correspondentes às entidades **`EMPREGADO`** e **`PROJETO`**, presentes no diagrama ER.
+
+Os atributos indicados com chave-estrangeira (`*`) não foram incluídos ainda; eles serão adicionados durante os passo subsequentes.
+
+<img src="assets/empregado-e-projeto-dark.png" className="on-dark" alt="Entidades EMPREGADO e PROJETO" />
+<img src="assets/empregado-e-projeto-light.png" className="on-light" alt="Entidades EMPREGADO e PROJETO" />
+
+<Tip>
+
+**NOTAÇAO TEXTUAL**
+
+<br/>
+
+EMPREGADO (EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário)
+PROJETO (ProjNome, <span className="underline">ProjNúmero</span>, ProjLocalização)
+
+</Tip>
+
+## Passo 2: Atributo multivalorado
+
+Para cada atributo multivalorado, criar uma nova relação que inclua o atributo simples como chave-primária. A relação também deve ter como atributo a chave-primária da relação que representa o atributo multivalorado. A chave-primária da relação será então a combinação das duas chaves.
+
+No exemplo foi criado a relação LOCAL_DEPTO. O atributo "Localização" representa o atributo multivalorado `Localização` de **`DEPARTAMENTO`**, enquanto DeptoNúmero - como chave estrangeira - representa a chave-primária da relação DEPARTAMENTO. A chave primária de LOCAIS_DEPTO é a combinação de \{ DeptoNúmero, Localização \}.
+
+<img src="assets/departamento-localizacao-dark.png" className="on-dark" alt="Entidade DEPARTAMENTO com o atributo multivalorado Localização" />
+<img src="assets/departamento-localizacao-light.png" className="on-light" alt="Entidade DEPARTAMENTO com o atributo multivalorado Localização" />
+
+<Tip>
+
+**NOTAÇAO TEXTUAL**
+
+<br/>
+
+DEPARTAMENTO (DeptoNome, <span className="underline">DeptoNúmero</span>)
+**LOCAL_DEPTO (<span className="underline">DeptoNúmero\*, Localização</span>)**
+
+</Tip>
+
+## Passo 3: Entidade Fraca
+
+Para cada entidade fraca, criar uma relação e incluir todos os atributos simples (ou os componentes simples de atributos compostos) como atributos da relação. Além disso, incluir como chave-estrangeira a chave-primária da relação que corresponde ao tipo de entidade dependente. A chave-primária então é a combinação da chave da entidade "forte" e a chave parcial do tipo de entidade fraca.
+
+No exemplo, foi criada a relação DEPENDENTE correspondente ao tipo de entidade fraca DEPENDENTE. Foi incluída a chave-primária da relação EMPREGADO como atributo de DEPENDENTE (chave estrangeira). A chave-primária da relação DEPENDENTE é a combinação \{ <span className="underline">EmpCPF*, DependNome</span> \}, porque **DependNome** é a chave-parcial da entidade DEPENDENTE.
+
+<img src="assets/empregado-e-dependente-dark.png" className="on-dark" alt="Entidade EMPREGADO e entidade fraca DEPENDENTE" />
+<img src="assets/empregado-e-dependente-light.png" className="on-light" alt="Entidade EMPREGADO e entidade fraca DEPENDENTE" />
+
+
+<Tip>
+
+**NOTAÇAO TEXTUAL**
+
+<br/>
+
+DEPENDENTE (<span className="underline">EmpCPF*, DependNome</span>, DependSexo, DepDTNasc, RelacaoParente)
+
+</Tip>
+
+## Passo 4: Relacionamento 1:1
+
+Para cada tipo de relacionamento 1:1 (um para um), a chave de uma das entidades participantes do relacionamento, vira atributo de outra entidade (como chave estrangeira da relação). Caso o relacionamento tenha atributo(s), este(s) também será(ão) incluídos como atributos na entidade escolhida.
+
+Exemplo: foi mapeado o tipo de relacionamento 1:1 GERENCIA, escolhendo a entidade participante DEPARTAMENTO (**porque sua participação no tipo de relacionamento GERENCIA é total, já que todo o departamento tem um gerente**). Foi incluída a chave-primária da relação EMPREGADO como a chave-estrangeira na relação DEPARTAMENTO, chamada de EmpCPFGerente. Também foi incluído o atributo simples DataInício do tipo de relacionamento GERENCIA na relação DEPARTAMENTO, nomeado como DataInicioGerencia.
+
+<img src="assets/empregado-gerencia-departamento-dark.png" className="on-dark" alt="Relacionamento EMPREGADO-gerencia-DEPARTAMENTO" />
+<img src="assets/empregado-gerencia-departamento-light.png" className="on-light" alt="Relacionamento EMPREGADO-gerencia-DEPARTAMENTO" />
+
+<Tip>
+**NOTAÇAO TEXTUAL**
+<br/>
+
+EMPREGADO (EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário)
+DEPARTAMENTO (DeptoNome, <span className="underline">DeptoNúmero</span>, **EmpCPFGerente\*, DataInicioGerencia**)
+
+</Tip>
+
+## Passo 5: Relacionamento 1:N
+
+Para cada relacionamento 1:N (um para muitos), a chave da entidade participante do relacionamento com cardinalidade "1" vra atributo da entidade com cardinalidade "N". Isto é, incluir como chave-estrangeira da relação N, a chave-primária da relação 1 (isto porque cada instância da entidade do lado 1 está relacionada a mais de uma instância do lado N do relacionamento). Inclua também quaisquer atributos simples do tipo de relacionamento 1:N como atributos da entidade do lado "N".
+
+Exemplo: Foram mapeados os tipos de relacionamento 1:N, CONTROLA, SUPERVISIONA e TRABALHA_PARA.
+Para CONTROLA incluiu-se a chave-primária da relação DEPARTAMENTO como a chave estrangeira na relação PROJETO, e foi chamado **DeptoNum**.
+Para SUPERVISIONA, incluiu-se a chave-primária da relação EMPREGADO como a chave-estrangeira na relação EMPREGADO, e foi denomido **NumCPFSuper**.
+No relacionamento TRABALHA-PARA, foi incluída a chave-primária da relação DEPARTAMENTO como a chave-estrangeira na relação EMPREGADO, e foi denominado **DeptoNum**.
+
+<img src="assets/empregado-departamento-projeto-dark.png" className="on-dark" alt="Relacionamentos de EMPREGADO, DEPARTAMENTO e PROJETO." />
+<img src="assets/empregado-departamento-projeto-light.png" className="on-light" alt="Relacionamentos de EMPREGADO, DEPARTAMENTO e PROJETO." />
+
+<Tip>
+**NOTAÇAO TEXTUAL**
+<br/>
+
+DEPARTAMENTO (DeptoNome, <span className="underline">DeptoNúmero</span>, <span className="underline">EmpCPFGerente</span>, DataInicioGerencia)
+PROJETO (ProjNome, <span className="underline">ProjNúmero</span>, ProjLocalização, **DeptoNum\***)
+EMPREGADO (EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário, **NumCPFSuper\***)
+</Tip>
+
+<img src="assets/empregado-trabalha-para-departamento-dark.png" className="on-dark" alt="EMPREGADO trabalha-para DEPARTAMENTO" />
+<img src="assets/empregado-trabalha-para-departamento-light.png" className="on-light" alt="EMPREGADO trabalha-para DEPARTAMENTO" />
+
+<Tip>
+**NOTAÇAO TEXTUAL**
+<br/>
+
+EMPREGADO (EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário, NumCPFSuper*, **DeptoNum\***)
+DEPARTAMENTO (DeptoNome, <span className="underline">DeptoNúmero</span>, <span className="underline">EmpCPFGerente</span>, DataInicioGerencia)
+</Tip>
+
+## Passo 6: Relacionamento N:M
+
+Para cada tipo de relacionamento M:N (muitos para muitos), criar uma nova relação. Incluir como chave-estrangeira na nova relação as chaves-primárias das relações que representam os tipos de entidade participantes. As chaves-primárias será a combinação das chaves estrangeiras, neste caso. Inclua também qualquer atributo simples do tipo de relacionamento M:N (ou componentes simples dos atributos compostos) como atributo da nova relação. **Relacionamentos N:M sempre geram uma nova relação.
+
+No exemplo foi mapeado o tipo de relacionamento M:N, TRABALHA_EM criando-se a relação TRABALHA_EM. Incluiu-se as chaves-primárias das relações PROJETO e EMPREGADO como chaves-estrangeiras na relação TRABALHA_EM, chamadas de **ProjNúmero** e **EmpCPF**. Também foi incluído o atributo NumHoras para representar o atributo horas do tipo de relacionamento.
+
+A chave-primária da relação TRABALHA_EM é a combinação das chaves-estrangeiras \{ EmpCPF, ProjNúmero \}.
+
+<img src="assets/empregado-trabalha-em-projeto-dark.png" className="on-dark" alt="EMPREGADO-trabalha_em-PROJETO" />
+<img src="assets/empregado-trabalha-em-projeto-light.png" className="on-light" alt="EMPREGADO-trabalha_em-PROJETO" />
+
+<Tip>
+**NOTAÇAO TEXTUAL**
+<br/>
+
+EMPREGADO (EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário, NumCPFSuper*, DeptoNum*)
+PROJETO (ProjNome, <span className="underline">ProjNúmero</span>, ProjLocalização, DeptoNum*)
+**TRABAHA_EM (<span className="underline">EmpCPF\*, ProjNúmero\*</span>, NumHoras)**
+</Tip>
+
+## Modelo Relacional (Resultado)
+
+**EMPREGADO** (_EmpNome, DataNasc, <span className="underline">CPF</span>, Sexo, Rua, Cidade, Estado, Salário, NumCPFSuper*, DepNum*_)
+**PROJETO** (_ProjNome, <span className="underline">ProjNumero</span>, ProjLocalização, DeptoNum*_)
+**TRABALHA_EM** (_<span className="underline">EmpCPF*, ProjNúmero*</span>, NumHoras_)
+**DEPARTAMENTO** (_DeptoNome, <span className="underline">DeptoNumero</span>, EmpCPFGerente*, DataInicioGerencia_)
+**DEPENDENTE** (_<span className="underline">DependNome, EmpCPF*</span>, DependSexo, DependDataNasc, Relação_)
+**LOCAL_DEPTO** (_<span className="underline">DeptoNumero*, Localização</span>_)
+
+<Tip>
+6 tabelas relacionais (no MER haviam 4 entidades)
+</Tip>
+
+# Especialização e Generalização
+
+Vamos agora levar em consideração uma generalização/especialização para converter do MER para MR.
+
+<img src="assets/pessoa-cliente-funcionario-dark.png" className="on-dark" alt="Generalização/especialização" />
+<img src="assets/pessoa-cliente-funcionario-light.png" className="on-light" alt="Generalização/especialização" />
+
+Existem 3 formas de se converter um generalização/especialização de MER para MR:
+- Criar uma única tabela para toda a hierarquia de generalização/especialização.
+- Criar uma tabela para a entidade genérica e uma tabela para cada entidade especializada.
+- Criar uma tabela para cada entidade especializada.
+
+## 1 - Uma tabela para toda a hierarquia
+
+Você tem uma única tabela para todos os atributos iguais e específicos das entidades anteriores.
+
+Quando tempos a especialização abaixo, podemos ter uma única tabela Cliente com todos os atributos possíveis.
+
+<img src="assets/exemplo-especializacao-total-light.png" className="on-light" alt="Exemplo especialização total"/>
+<img src="assets/exemplo-especializacao-total-dark.png" className="on-dark" alt="Exemplo especialização total"/>
+
+## 2 - Uma tabela para cada entidade
+Você tem a tabela genérica no exemplo acima, Pessoa, e as tabelas especializadas no exemplo Cliente e Funcionário.
+
+As tabelas Funcionário e Cliente recebem uma chave estrangeira da tabela Pessoa.
+
+Essa é uma das melhores formas (lembrar que, não se aplica a todos os cenários) de se modelar uma generalização/especialização, pois, ao invés de cadastrar todos iguais em diferentes tabelas, você cadastra na genérica, e apenas informa a FK na tabela especializada que o registro ficará.
+
+Lembrando que nesta segunda maneira, você cadastra uma Pessoa e ela pode ser tanto cliente quanto funcionário, assim, evitando cadastrar as mesmas informações em duas tabelas diferentes.
+
+<img src="assets/pessoa-pessoa-funcionario-dark.png" className="on-dark" alt="Pessoa, Pessoa, Funcionário"/>
+<img src="assets/pessoa-pessoa-funcionario-light.png" className="on-light" alt="Pessoa, Pessoa, Funcionário"/>
+
+
+
+
+
+<Warn>
+**Artigo em desenvolvimento...***
+</Warn>
