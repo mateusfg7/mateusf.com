@@ -1297,3 +1297,89 @@ imc = peso / (altura_cm/100) ** 2
 # Imprime o IMC
 print(f"\nO IMC é {imc:.2f}")
 ```
+# Aula 8 - Python
+**Data**: 02/04/2024
+
+## Exercício 1
+> Desenvolva um software que receba uma string do usuário e depois solicite a ele quantas letras da string ele quer que sejam separadas, depois imprima na tela as duas partes da string.
+> EX: se o usuário digitar “Faculdade” e o número 5, o software deve retornar:
+> Primeira Parte: “Facul”
+> Segunda Parta: “dade”
+
+```python showLineNumbers {12,13,27,29,30}
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+text = input("Texto a ser dividido: ")
+position = input("Posição de divisão da string: ")
+
+if not text or not position:
+    print(f"\n{bcolors.FAIL}Quantidade de parâmetros insuficientes ou inválidos!{bcolors.ENDC}")
+    quit()
+
+position = int(position)
+
+if position > len(text):
+    print(f"\n{bcolors.FAIL}Posição de divisão maior que o tamanho do texto!{bcolors.ENDC}")
+    print(f"Tamanho do texto: {bcolors.BOLD}{len(text)}{bcolors.ENDC}")
+    print(f"Posição de divisão: {bcolors.BOLD}{position}{bcolors.ENDC}")
+    quit()
+
+first_part, second_part = text[:position], text[position:]
+
+print(f"\n{bcolors.OKGREEN}Primeira parte:{bcolors.ENDC} {bcolors.BOLD}{first_part}{bcolors.ENDC}")
+print(f"{bcolors.OKGREEN}Segunda parte:{bcolors.ENDC}  {bcolors.BOLD}{second_part}{bcolors.ENDC}")
+```
+
+## Exercício 2
+> Desenvolva um software que receba do usuário seu nome, seu sobrenome e uma quantidade. Depois solicite a ele quantas vezes ele deseja imprimir o conjunto (nome e sobrenome) e imprima na tela essa quantidade de vezes. Utilize `\n` para quebra de linha.
+
+```python showLineNumbers
+from os import system, name
+
+nome = input("Digite seu nome: ")
+sobrenome = input("Digite seu sobrenome: ")
+n = int(input("Número de repetições: "))
+
+# limpa terminal
+if name == 'nt':
+    # windows
+    system('cls')
+else:
+    # outros unix (linux, mac...)
+    system('clear')
+
+for i in range(n):
+    print(f"{nome} {sobrenome}")
+```
+
+## Exercício 3
+> Desenvolva um software que receba do usuário um valor e imprima na tela este valor formatado para reais (R$) utilizando composição.
+
+```python showLineNumbers
+valor = float(input('Digite o valor: '))
+print("R$ %.2f"%valor)
+```
+
+## Exercício 4
+> Desenvolva um software que receba do usuário um valor de compra, depois receba um valor em dinheiro e calcule o troco e imprima na tela este valor formatado para reais (R$) utilizando composição.
+
+```python showLineNumbers
+valor_compra = float(input('Digite o valor da compra: '))
+valor_pago = float(input('Digite o valor pago: '))
+
+troco = valor_pago - valor_compra
+
+if troco < 0:
+    print('\nValor pago insuficiente, falta R$ %.2f.'%abs(troco))
+else:
+    print('\nTroco: R$ %.2f'%troco)
+```
