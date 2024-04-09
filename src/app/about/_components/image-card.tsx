@@ -14,7 +14,7 @@ export function ImageCard({ mobile = false }) {
         <Image
           src={lightPic}
           alt="Mateus Felipe's picture"
-          className="my-5 rounded-3xl border border-neutral-800 object-cover dark:hidden"
+          className="my-5 size-96 rounded-3xl border border-neutral-800 object-cover dark:hidden"
           placeholder={placeholder(460, 460) as `data:image/${string}`}
           priority
         />
