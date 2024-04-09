@@ -3,7 +3,7 @@ import { ArrowUpRight, Briefcase } from '@phosphor-icons/react/dist/ssr'
 import { formatDistance } from 'date-fns'
 import { Date as DateDisplay } from '~/components/date'
 
-function Work({ work }: { work: Work }) {
+function WorkItem({ work }: { work: Work }) {
   const inDate = new Date(work.in)
   const outDate = work.out ? new Date(work.out) : new Date()
 
@@ -12,7 +12,7 @@ function Work({ work }: { work: Work }) {
   return (
     <div className="space-y-3 py-6 first:pt-0 last:pb-0">
       <div>
-        <div className="flex gap-2 text-lg">
+        <div className="flex flex-wrap gap-2 gap-y-0 text-lg">
           <span className="font-medium">{work.position}</span>
           <span className="text-neutral-600 dark:text-neutral-400">
             {work.company.name === 'Freelancer' ? 'as a' : 'at'}
@@ -78,7 +78,7 @@ export function Experience() {
       </div>
       <div className="flex-1 divide-y divide-neutral-200 dark:divide-neutral-800">
         {sortedWorkList.map(work => (
-          <Work work={work} key={work.position} />
+          <WorkItem work={work} key={work.position} />
         ))}
       </div>
     </div>
