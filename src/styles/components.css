@@ -88,7 +88,7 @@
     }
 
     table {
-      @apply w-full border-collapse overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-950;
+      @apply my-4 w-full border-collapse overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-950;
 
       th,
       td {
@@ -174,7 +174,7 @@
     figure[data-rehype-pretty-code-figure=''] {
       @apply overflow-hidden rounded-lg;
       @apply bg-neutral-100 dark:bg-neutral-950;
-      @apply space-y-1;
+      @apply my-4 space-y-1;
       @apply border border-neutral-200 dark:border-neutral-900;
 
       /* @apply backdrop-blur; */
