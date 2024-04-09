@@ -1,3 +1,38 @@
+## [9.3.0](https://github.com/mateusfg7/mateusf.com/compare/9.2.0...9.3.0) (2024-04-09)
+
+
+### Features
+
+* **about:** add academic history section ([b69078c](https://github.com/mateusfg7/mateusf.com/commit/b69078cade0801407a367eeb6950c41053279e86))
+* **blog:** add new components ([fc0c7d6](https://github.com/mateusfg7/mateusf.com/commit/fc0c7d67d7570be0c2d69d3dd7e02b9a5bb66f08))
+* **blog:** update table UI ([93529c6](https://github.com/mateusfg7/mateusf.com/commit/93529c6be0daa126dea0592037bda4d818d8ceff)), closes [#876](https://github.com/mateusfg7/mateusf.com/issues/876)
+* **post/thumbnail:** use nodejs runtime and decrease image size ([1a9e3f5](https://github.com/mateusfg7/mateusf.com/commit/1a9e3f5aae4fa78720e5a328cca84e5ef1cd8844))
+* **projects:** update project card styles and add compact variant ([0a15d70](https://github.com/mateusfg7/mateusf.com/commit/0a15d7044cf0039f625dd99c3873e9273c853b37))
+* **projects:** update tech-icons colors and add Bun icon ([09506e9](https://github.com/mateusfg7/mateusf.com/commit/09506e9491baacab6e8d4b40860b92fa95462617))
+* **projects:** use project-card for all projects and remove project-info component ([ee93fa7](https://github.com/mateusfg7/mateusf.com/commit/ee93fa7f90f6d9b406ffc4faed39fcb3aaeb3ebf))
+* **ui:** small imrpovements on blog post styles ([a24bfa0](https://github.com/mateusfg7/mateusf.com/commit/a24bfa0bcd23189dbc696ff4366f622f5c9b254c))
+
+
+### Bug Fixes
+
+* **about:** use square image on small screen ([a95dfa9](https://github.com/mateusfg7/mateusf.com/commit/a95dfa923b4ed2357bcfef97cc5f40326884857d))
+* **deps:** update dependency @phosphor-icons/react to v2.1.3 ([f2f8a47](https://github.com/mateusfg7/mateusf.com/commit/f2f8a47b489e8f661124e0381b35f0ac36c0a7c5))
+* **deps:** update dependency @phosphor-icons/react to v2.1.4 ([40e4676](https://github.com/mateusfg7/mateusf.com/commit/40e4676099dfd5bc43716a299cbe3f8c235edb61))
+* **deps:** update dependency date-fns to v3.5.0 ([ea0bf4c](https://github.com/mateusfg7/mateusf.com/commit/ea0bf4c44c6efe102cda90b0d5b6e98c59c440d4))
+* **deps:** update dependency date-fns to v3.6.0 ([8b50308](https://github.com/mateusfg7/mateusf.com/commit/8b50308b5b95967b8250154e42edee977d063b96))
+* **deps:** update dependency katex to v0.16.10 ([2d54db3](https://github.com/mateusfg7/mateusf.com/commit/2d54db372d8dc075f36cf2657cef2cd5ff049b44))
+* **deps:** update dependency next-themes to ^0.3.0 ([9fa1c37](https://github.com/mateusfg7/mateusf.com/commit/9fa1c372f5d7ac50fe70f64b39ef5393ae115668))
+* **deps:** update dependency react-github-calendar to v4.1.3 ([ebaccab](https://github.com/mateusfg7/mateusf.com/commit/ebaccab05074f7cdf373bb9d0a16af16b275e2d8))
+* **deps:** update dependency react-parallax-tilt to v1.7.217 ([14e68e6](https://github.com/mateusfg7/mateusf.com/commit/14e68e67e245100a553a125b377d173b95eb9f9f))
+* **deps:** update dependency react-parallax-tilt to v1.7.218 ([16aff8b](https://github.com/mateusfg7/mateusf.com/commit/16aff8b78558772ac77adf59b499dc853fd06dbe))
+* **deps:** update dependency react-parallax-tilt to v1.7.219 ([6fbaaf3](https://github.com/mateusfg7/mateusf.com/commit/6fbaaf3018620fcfd3fae28408fda248008667d7))
+* **deps:** update dependency recharts to v2.12.3 ([d2d99b8](https://github.com/mateusfg7/mateusf.com/commit/d2d99b8d73906f068f2d8e52b483bd1a04a970cd))
+* **deps:** update dependency recharts to v2.12.4 ([948fd5d](https://github.com/mateusfg7/mateusf.com/commit/948fd5d382738f2456d4b650f299f352f3867bd8))
+* **deps:** update dependency rehype-pretty-code to v0.13.1 ([aec6f66](https://github.com/mateusfg7/mateusf.com/commit/aec6f66e63402b3efcf76dffed4f43141f82abf2))
+* **deps:** update dependency sharp to v0.33.3 ([2380928](https://github.com/mateusfg7/mateusf.com/commit/2380928387260bae6ece29e006335210b5428cbb))
+* **deps:** update dependency shiki to v1.2.1 ([16eba45](https://github.com/mateusfg7/mateusf.com/commit/16eba45be600adbc6b4c9072d5dcbc041b018fb0))
+* **experience:** break title of work item on small devices ([773fa7b](https://github.com/mateusfg7/mateusf.com/commit/773fa7bb2d2be872e5c54e2815b6a2502585cc58))
+
 ## [9.2.0](https://github.com/mateusfg7/mateusf.com/compare/9.1.0...9.2.0) (2024-03-15)
 
 
