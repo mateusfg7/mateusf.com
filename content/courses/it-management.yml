@@ -1,0 +1,15 @@
+title: 'Information Technology Management'
+type: 'Associate degree'
+start: '2024-02-05'
+end: '2026-07-30'
+tags:
+  - 'database'
+  - 'entity-relationship model'
+  - 'programming'
+  - 'python'
+  - 'operational systems'
+  - 'erp'
+institution:
+  name: 'FAPAM - Faculdade de Pará de Minas'
+  website: 'https://fapam.edu.br/'
+  logo: 'assets/fapam.png'

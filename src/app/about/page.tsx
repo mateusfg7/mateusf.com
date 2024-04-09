@@ -5,6 +5,7 @@ import { Contact } from './sections/contact'
 import { Knowledge } from './sections/knowledge'
 import { StatisticsGrid } from './sections/statistics'
 import { Experience } from './sections/experience'
+import { Educational } from './sections/educational'
 
 import './styles.css'
 
@@ -24,6 +25,7 @@ export default function Page() {
       <StatisticsGrid />
       <Knowledge />
       <Experience />
+      <Educational />
       <Contact />
     </div>
   )
