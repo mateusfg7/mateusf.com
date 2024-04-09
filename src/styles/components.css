@@ -88,7 +88,8 @@
     }
 
     table {
-      @apply my-4 w-full border-collapse overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-950;
+      @apply my-4 max-w-full border-separate border-spacing-0 overflow-hidden rounded-lg;
+      /*@apply bg-neutral-100 dark:bg-neutral-950;*/
 
       th,
       td {
@@ -96,7 +97,7 @@
       }
 
       th {
-        @apply bg-neutral-200 font-medium dark:bg-neutral-900;
+        @apply bg-neutral-100 font-medium dark:bg-neutral-900;
 
         strong {
           @apply font-black;
@@ -104,11 +105,20 @@
       }
 
       thead tr:first-of-type th {
-        @apply first:rounded-l-lg last:rounded-r-lg;
+        @apply border-y border-neutral-200 first:rounded-l-lg first:border-l last:rounded-r-lg last:border-r;
       }
 
-      tbody tr {
-        @apply even:bg-neutral-200/40 even:dark:bg-neutral-900/40;
+      tbody {
+        tr {
+          td {
+            /*@apply even:bg-neutral-200/40 even:dark:bg-neutral-900/40;*/
+            @apply border-t border-neutral-200;
+          }
+
+          &:first-of-type td {
+            @apply border-0;
+          }
+        }
       }
     }
 
