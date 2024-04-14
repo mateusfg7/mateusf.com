@@ -1,7 +1,7 @@
 ---
 title: 'Exercícios GTI P1 - Programação Estruturada'
 date: '2024-03-04T12:35:34.795Z'
-lastUpdate: '2024-03-19T11:04:00.795Z'
+lastUpdate: '2024-04-14T19:38:00.795Z'
 description: 'Exercícios das aulas de Programação Estruturada, do curso GTI na FAPAM, 1º Período.'
 category: 'Notes'
 tags: 'fapam,gti,exercícios,curso,faculdade,university,programming,visualg,portugol'
@@ -1382,4 +1382,230 @@ if troco < 0:
     print('\nValor pago insuficiente, falta R$ %.2f.'%abs(troco))
 else:
     print('\nTroco: R$ %.2f'%troco)
+```
+
+# Aula 9 - Python
+**Data**: 09/04/2024
+
+## Exercício 1
+> Desenvolva um software que leia dois números e que pergunte qual operação você deseja realizar. Você deve poder calcular a soma (`+`), subtração (`-`), multiplicação (`*`) e divisão (`/`). Exiba o resultado da operação solicitada.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      10/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+# lê dois números e uma operação
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+operacao = input("Digite a operação [+|-|*|/]: ")
+
+# exiba o resultado da operação solicidada
+if operacao == "+":
+    print(f"O resultado da soma é: {num1 + num2}")
+elif operacao == "-":
+    print(f"O resultado da subtração é: {num1 - num2}")
+elif operacao == "*":
+    print(f"O resultado da multiplicação é: {num1 * num2}")
+elif operacao == "/":
+    # 0 não pode ser dividido
+    if num2 == 0:
+        print("Não é possível dividir por zero.")
+    else:
+        print(f"O resultado da divisão é: {num1 / num2}")
+else:
+    print("Operação inválida.")
+```
+
+## Exercício 2
+> Desenvolva um software para aprovar o empréstimo bancário para compra de uma casa. O programa deve perguntar o valor da casa a comprar, o salário e a quantidade de anos a pagar. O valor da prestação mensal não pode ser superior a 30% do salário. Calcule o valor da prestação como sendo o valor da casa a comprar dividido pelo número de meses a pagar.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      10/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+valor_casa = float(input("Digite o valor da casa: R$ ").strip().replace(",", "."))
+salario = float(input("Digite o salário: R$ ").strip().replace(",", "."))
+anos = int(input("Digite a quantidade de anos a pagar: "))
+
+meses = anos * 12
+
+prestacao = valor_casa / meses
+
+if prestacao > (salario * 0.3):
+    print("Empréstimo negado.")
+else:
+    print(f"Empréstimo aprovado. A prestação será de R$ {prestacao:.2f}.")
+```
+
+## Exercício 3
+> Desenvolva um software de lanchonete que apresente para o cliente um menu com ao menos 4 opções de salgado para que ele escolha, depois apresente ao menos 4 opções de bebidas. Ao final, o software deve mostrar na tela o valor total da compra e os itens comprados.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      10/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+# menu com 4 opções de salgados
+print("+------ MENU SALGADOS -------+")
+print("| [1] Coxinha ------ R$ 3,50 |")
+print("| [2] Pastel ------- R$ 4,00 |")
+print("| [3] Empada ------- R$ 3,00 |")
+print("| [4] Enroladinho -- R$ 2,50 |")
+print("+----------------------------+")
+salgado = int(input("-> "))
+
+if salgado < 1 or salgado > 4:
+    print("Opção inválida.")
+    exit()
+
+# menu com 4 opções de bebidas
+print("\n+------ MENU BEBIDAS --------+")
+print("| [1] Refrigerante - R$ 3,00 |")
+print("| [2] Suco --------- R$ 2,50 |")
+print("| [3] Água --------- R$ 2,00 |")
+print("| [4] Chá ---------- R$ 2,50 |")
+print("+----------------------------+")
+bebida = int(input("-> "))
+
+if bebida < 1 or bebida > 4:
+    print("Opção inválida.")
+    exit()
+
+# cálculo do valor total
+total = 0
+
+if salgado == 1:
+    total += 3.50
+elif salgado == 2:
+    total += 4.00
+elif salgado == 3:
+    total += 3.00
+elif salgado == 4:
+    total += 2.50
+
+if bebida == 1:
+    total += 3.00
+elif bebida == 2:
+    total += 2.50
+elif bebida == 3:
+    total += 2.00
+elif bebida == 4:
+    total += 2.50
+
+print("\nTotal a pagar: R$ %.2f" % total)
+```
+
+## Exercício 4
+> Desenvolva um software para analisar se um aluno foi aprovado. O software deve receber 4 notas (entre 0 e 25) e ao final atestar as seguintes possibilidades:
+> - Se o total for maior ou igual 80 - ALUNO APROVADO - EXCELENTE
+> - Se o total for entre 60 e 79 - ALUNO APROVADO
+> - Se o total for entre 40 e 59 - ALUNO EM RECUPERAÇÃO
+> - Se o total for menor que 40 - ALUNO REPROVADO
+> - Se alguma das notas estiver fora do intervalo (entre 0 e 25) o software deve exibir a mensagem de “Valor inválido” e encerrar.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      11/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+nota1 = float(input("Nota 1: "))
+nota2 = float(input("Nota 2: "))
+nota3 = float(input("Nota 3: "))
+nota4 = float(input("Nota 4: "))
+
+if nota1 < 0 or nota1 > 25:
+    print("Valor inválido.")
+    exit()
+elif nota2 < 0 or nota2 > 25:
+    print("Valor inválido.")
+    exit()
+elif nota3 < 0 or nota3 > 25:
+    print("Valor inválido.")
+    exit()
+elif nota4 < 0 or nota4 > 25:
+    print("Valor inválido.")
+    exit()
+
+total = nota1 + nota2 + nota3 + nota4
+
+if total >= 80:
+    print("ALUNO APROVADO - EXCELENTE")
+elif total >= 60:
+    print("ALUNO APROVADO")
+elif total >= 40:
+    print("ALUNO EM RECUPERAÇÃO")
+else:
+    print("ALUNO REPROVADO")
+```
+
+## Exercício 5
+> Escreva um programa que calcule o preço pelo fornecimento de energia elétrica. Pergunte a quantidade de kWh consumidos e o tipo de instalação: R para residências, I para indústrias e C para comércios. Calcule o preço a pagar de acordo com a tabela a seguir:
+> - Residências:
+>   - Até 500 kWh: R$ 0,40
+>   - Acima de 500 kWh: R$ 0,65
+> - Comércios:
+>   - Até 1000 kWh: R$ 0,55
+>   - Acima de 1000 kWh: R$ 0,60
+> - Indústrias:
+>   - Até 5000 kWh: R$ 0,55
+>   - Acima de 5000 kWh: R$ 0,60
+
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      11/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+kwh = int(input("Quantidade de kWh consumido: "))
+
+print("\n+- TIPO DE INSTALAÇÃO -+")
+print("|  [R] Residencial     |")
+print("|  [C] Comercial       |")
+print("|  [I] Industrial      |")
+print("+----------------------+")
+instalacao = input("-> ").upper()
+
+total = 0
+if instalacao == "R":
+    if kwh <= 500:
+        total = kwh * 0.40
+    else:
+        total = kwh * 0.65
+elif instalacao == "C":
+    if kwh <= 1000:
+        total = kwh * 0.55
+    else:
+        total = kwh * 0.60
+elif instalacao == "I":
+    if kwh <= 5000:
+        total = kwh * 0.55
+    else:
+        total = kwh * 0.60
+else:
+    print("Tipo de instalação inválido.")
+    exit()
+
+print("\nTotal a pagar: R$ %.2f" % total)
 ```
