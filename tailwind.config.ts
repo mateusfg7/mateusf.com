@@ -137,6 +137,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('tailwindcss-animate'),
     require('@tailwindcss/forms')({ strategy: 'class' }),
     require('tailwind-scrollbar')({
       nocompatible: true,
