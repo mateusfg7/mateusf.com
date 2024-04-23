@@ -1,7 +1,7 @@
 ---
 title: 'Exercícios GTI P1 - Programação Estruturada'
 date: '2024-03-04T12:35:34.795Z'
-lastUpdate: '2024-04-14T19:38:00.795Z'
+lastUpdate: '2024-04-23T14:16:00.795Z'
 description: 'Exercícios das aulas de Programação Estruturada, do curso GTI na FAPAM, 1º Período.'
 category: 'Notes'
 tags: 'fapam,gti,exercícios,curso,faculdade,university,programming,visualg,portugol'
@@ -1608,4 +1608,172 @@ else:
     exit()
 
 print("\nTotal a pagar: R$ %.2f" % total)
+```
+
+# Aula 10 - Python
+**Data**: 16/04/2024
+
+## Exercício 1
+> Desenvolva um software que receba do usuário uma quantidade e imprima na tela todos os números pares de 0 até o número digitado.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      21/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+limite = int(input("Digite um número\n-> "))
+
+for n in range(0, limite+1, 2):
+  print(n)
+```
+
+## Exercício 2
+> Altere o software do exercício anterior para que o sistema receba também um tipo (P para Pares e I para Impares) e imprima apenas os números de acordo com a escolha.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      21/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+limite = int(input("Digite um número\n-> "))
+opcao = input("\nOpção | [P]ar ou [I]mpar\n-> ").upper()
+
+print()
+
+if opcao == "P":
+  for i in range(0, limite+1, 2):
+    print(i)
+elif opcao == "I":
+  for i in range(1, limite+1, 2):
+    print(i)
+```
+
+## Exercício 3
+> Valide a opção digitada, caso o usuário digite um valor diferente se P ou I, solicite a ele que digite novamente. DICA: Utilize repetições aninhadas.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      21/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+limite = int(input("Digite um número\n-> "))
+
+opcoes_validas = ["P", "I"]
+opcao = ""
+while opcao not in opcoes_validas:
+  opcao = input("\nOpção | [P]ar ou [I]mpar\n-> ").upper()
+
+  if opcao not in opcoes_validas:
+    print("Opção inválida. Tente novamente.")
+
+print()
+
+if opcao == "P":
+  for i in range(0, limite+1, 2):
+    print(i)
+elif opcao == "I":
+  for i in range(1, limite+1, 2):
+    print(i)
+```
+
+## Exercício 4
+> Escreva um programa que leia um número e verifique se é ou não um número primo. Para fazer essa verificação, calcule o resto da divisão do número por 2 e depois por todos os números ímpares até o número lido. Se o resto de uma dessas divisões for igual a zero, o número não é primo. Observe que 0 e 1 não são primos e que 2 é o único número primo que é par.
+
+```python showLineNumbers
+import sys
+
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      21/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+def e_primo(primo: bool = True):
+  if primo:
+    print(f"{numero} é primo.")
+  else:
+    print(f"{numero} não é primo.")
+
+  sys.exit()
+
+numero = int(input("Digite um número\n-> "))
+
+if numero < 2:
+  e_primo(primo=False)
+
+primo = True
+for i in range(2, numero):
+  if numero % i == 0:
+    primo = False
+    break
+
+e_primo(primo)
+
+
+```
+
+## Exercício 5
+> Desenvolva um software de restaurante que apresente ao menos 4 tipos de produtos e a opção de finalizar o pedido. O software deve perguntar ao usuário se ele deseja adicionar outro produto Ao final ele deve mostrar na tela todos os produtos que o cliente comprou e o total do pedido.
+> **DICA**: Utilize uma variável String para armazenar os produtos escolhidos e uma variável float para armazenar o total do pedido. Apresente o total formatado para Real.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      21/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+total = 0.0
+pedidos = []
+
+while True:
+  print("\n+" + " Cardápio ".center(31, "-") + "+")
+  print("| [1] Hambúrguer ----- R$ 10.00 |")
+  print("| [2] Pizza ---------- R$ 20.00 |")
+  print("| [3] Refrigerante --- R$ 5.00  |")
+  print("| [4] Batata Frita --- R$ 8.00  |")
+  print("| [5] FINALIZAR PEDIDO          |")
+  print("+" + "".center(31, "-") + "+")
+  escolha = int(input("Escolha uma opção\n-> "))
+
+  if escolha == 1:
+    total += 10.00
+    pedidos.append("Hambúrguer")
+  elif escolha == 2:
+    total += 20.00
+    pedidos.append("Pizza")
+  elif escolha == 3:
+    total += 5.00
+    pedidos.append("Refrigerante")
+  elif escolha == 4:
+    total += 8.00
+    pedidos.append("Batata Frita")
+  elif escolha == 5:
+    break
+
+print("\n" + "+" + " Pedido ".center(31, "-") + "+")
+
+for pedido in pedidos:
+  print(f"| {pedido} ".ljust(32, " ") + "|")
+
+print("+" + "".center(31, "-") + "+")
+print(f"| Total: R$ {total:.2f} ".ljust(32, " ") + "|")
+print("+" + "".center(31, "-") + "+")
+
 ```
