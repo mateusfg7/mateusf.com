@@ -1777,3 +1777,190 @@ print(f"| Total: R$ {total:.2f} ".ljust(32, " ") + "|")
 print("+" + "".center(31, "-") + "+")
 
 ```
+
+
+# Aula 11 - Python
+**Data**: 23/04/2024
+
+## Exercício 1
+> Altere o software do Exemplo I de modo que ele agora receba as notas do usuário e calcule a média e mostre na tela um resumo das notas.
+> **DICA**: inicie a lista de notas zerada: `notas=[0,0,0,0,0] {:python}`
+>
+> Utilize duas estruturas `while {:python}`
+
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      29/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+notas = [0,0,0,0,0]
+
+indice = 0
+while indice < 5:
+    notas[indice] = int(input('Nota %d: ' % (indice + 1)))
+    indice += 1
+
+soma = 0
+x = 0
+
+while x < 5:
+    soma += notas[x]
+    x += 1
+
+print()
+
+print("*"*22)
+print("*", "RESUMO DAS NOTAS".center(18), "*")
+print("*"*22)
+
+print()
+
+
+indice = 0
+while indice < 5:
+    print('Nota %d: %d' % (indice + 1, notas[indice]))
+    indice += 1
+
+print('Média: %5.2f' % (soma / x))
+```
+
+## Exercício 2
+> Altere o software do restaurante desenvolvido na semana passada de modo que a cada interação o software mostrará para o cliente todos os produtos comprados e o total da compra. O software deve permitir a ele que ele remova produtos ou adicione mais produtos.
+> **DICA**: Utilize ao menos duas listas, uma para os produtos e outra para os valores.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      29/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+pratos = [
+  "Hambúrguer",
+  "Pizza",
+  "Refrigerante",
+  "Batata Frita"
+]
+
+valores = [
+  10.00,
+  20.00,
+  5.00,
+  8.00
+]
+
+total = 0.0
+pedido = []
+
+while True:
+  print("\n+" + " Menu ".center(22, "-") + "+")
+  print("| [1] Adicionar prato  |")
+  print("| [2] Remover prato    |")
+  print("| [3] FINALIZAR PEDIDO |")
+  print("+" + "-"*22 + "+")
+  escolha = int(input("Escolha uma opção\n-> "))
+
+  if escolha == 1:
+    # ADICIONAR PEDIDO
+
+    print("\n+" + " Cardápio ".center(28, "-") + "+")
+
+    indice = 0
+    while indice < len(pratos):
+      opcao = f"[{indice + 1}] {pratos[indice]} - R$ {valores[indice]:.2f}"
+      print("|", opcao.ljust(26, " "), "|")
+      indice += 1
+
+    print("+" + "".center(28, "-") + "+")
+    prato = int(input("Escolha um prato\n-> ")) - 1
+    total += valores[prato]
+    pedido.append(pratos[prato]) # adiciona um elemeto à lista
+
+  elif escolha == 2:
+    # REMOVER PEDIDO
+
+    print("\n+" + " Pedidos ".center(28, "-") + "+")
+
+    indice = 0
+    while indice < len(pedido):
+      opcao = f"[{indice + 1}] {pedido[indice]}"
+      print("|", opcao.ljust(26, " "), "|")
+      indice += 1
+
+    print("+" + "".center(28, "-") + "+")
+
+    prato = int(input("Escolha um prato para remover\n-> ")) - 1
+    total -= valores[prato]
+    del pedido[prato] # OU pedido.pop(prato) # remove um elemento da lista
+
+  elif escolha == 3:
+    break
+  else:
+    print("Opção inválida")
+
+
+# resulmo do pedido e valor total
+print("\n+" + " Pedido ".center(25, "-") + "+")
+
+indice = 0
+while indice < len(pedido):
+  print(f"| {pedido[indice]} ".ljust(26, " ") + "|")
+  indice += 1
+
+# exibe o valor total antes de encerrar o quadro
+print("+" + "".center(25, "-") + "+")
+print(f"| Total: R$ {total:.2f} ".ljust(26, " ") + "|")
+print("+" + "".center(25, "-") + "+")
+```
+
+## Exercício 3
+> Faça um programa que leia duas listas e que gere uma terceira com os elementos das duas primeiras.
+
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      29/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+L1 = [7,5,3]
+L2 = [4,6,8]
+
+resultado = L1[:] + L2[:]
+
+print(L1) # [7, 5, 3]
+print(L2) # [4, 6, 8]
+print(resultado) # [7, 5, 3, 4, 6, 8]
+```
+
+## Exercício 4
+> Faça um programa que percorra duas listas e gere uma terceira sem elementos repetidos.
+
+```python showLineNumbers
+"""
+Nome:      Mateus Felipe Gonçalves <contato@mateusf.com>
+Professor: Adjenor Cristiano
+Data:      29/04/2024
+Matéria:   Programação Estruturada
+Turma:     1º Perí. B
+"""
+
+L1 = [7,5,3,1,2,9]
+L2 = [1,4,9,8,3,6]
+
+resultado = list(set(L1 + L2))
+
+print(L1) # [7, 5, 3, 1, 2, 9]
+print(L2) # [1, 4, 9, 8, 3, 6]
+print(resultado) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
