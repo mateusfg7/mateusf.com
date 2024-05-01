@@ -9,7 +9,8 @@ const nextConfig = {
       'i.imgur.com',
       'mateusf.com',
       'lastfm.freetls.fastly.net',
-      'contribution.catsjuice.com'
+      'contribution.catsjuice.com',
+      'i.scdn.co'
     ]
   },
   async rewrites() {
