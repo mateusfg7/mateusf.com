@@ -1,0 +1,256 @@
+---
+title: 'SQL - Structured Query Language'
+date: '2024-05-02T14:34:47.275Z'
+description: 'Introdução ao SQL. Anotações feitas a partir dasaulas de Banco de Dados do curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
+category: 'Article'
+tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
+status: 'draft'
+---
+
+[[**SLIDES**]](assets/Aula_08_SQL_DDL.pdf)
+
+<Warn>
+  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
+</Warn>
+
+# Linguagem SQL
+
+**SQL** (**S**tructured **Q**uery **L**anguage) é uma linguagem de consulta estruturada, que é usada para manipular e recuperar dados de um banco de dados relacional. SQL é uma linguagem padrão para acessar e manipular bancos de dados.
+
+Tem como base a **álgebra relacional** e o **cálculo relacional**.
+
+O SQL é dividido em três partes principais:
+
+**DDL** (Data Definition Language) - _Linguagem de Definição de Dados_
+Define esquemas e tabelas, chaves primárias, chaves estrangeiras, exclusão de esquemas, tabelas e colunas, alteração de tabelas.
+Diz respeito à **estrutura** das tabelas e esquemas no DB.
+
+**DML** (Data Manipulation Language) - _Linguagem de Manipulação de Dados_
+Consulta, inserção de dados no DB, exclusão de dados, alteração de dados. Diz respeito aos **dados** das tabelas do BD - CRUD [^crud]
+
+[^crud]: **CRUD** é a abreviatura de **C**reate, **R**ead, **U**pdate e **D**elete. É um acrônimo que se refere às quatro funções básicas de um sistema de banco de dados: Criar, Ler, Atualizar e Excluir.
+
+**DCL** (Data Control Language) - _Linguagem de Controle de Dados_
+Define permissões.
+
+
+<Tip>
+**SQL** = DDL **+** DML **+** DCL
+</Tip>
+
+## Principais comandos
+
+**DDL** - **Definição** de dados:  `CREATE{:sql}`, `DROP{:sql}`, `ALTER{:sql}`.
+**DML** - **Manipulação** de dados: `SELECT{:sql}`, `INSERT{:sql}`, `UPDATE{:sql}`, `DELETE{:sql}`.
+**DCL** - **Controle** de dados: `GRANT{:sql}`, `REVOKE{:sql}`.
+
+## Conceitos
+
+Termo | Descrição
+--- | ---
+Table | Relação (_tabela_)
+Row | Tupla (_linha_)
+Column | Atributo (_coluna_)
+
+# DDL - Data Definition Language
+
+**DDL** - **D**ata **D**efinition **L**anguage (_Linguagem de Definição de Dados_) é usada para definir a estrutura que armazenará os dados. **Define** a estrutura das tabelas, índices, chaves primárias, chaves estrangeiras, etc.
+
+## Propriedades
+
+A **DDL** permite não só a especificação de um conjunto de relações (tabelas), como também informações acerca de cada uma das relações, incluindo:
+
+- O esquema de cada relação (estrutura)
+- O domínio dos valores associados a ada atributo (`int`, `float`, `varchar`, etc)
+- As regras de integridade de cada uma das relações
+  - O conjunto de índice para manutenção de cada uma das relações
+  - Informações sobre segurança e autoridade sobre cada relação
+  - A estrutura de armazenamento físico de cada relação no disco.
+
+## Criar banco de dados/esquema
+
+Antes de qualquer tabela, é necessário criar um _database_ (banco de dados) ou um _schema_ (esquema). Em SQL uma base de dados (ou esquema) é identificada atravez de um **nome**. Os elementos do esquema incluem tabelas, restrições, etc.
+
+**Sintaxe:**
+
+```sql
+CREATE DATABASE nome_do_banco;
+```
+_ou_
+```sql
+CREATE SCHEMA nome_do_esquema;
+```
+
+**Exemplos**:
+
+```sql
+CREATE SCHEMA Empresa;
+CREATE SCHEMA Universidade;
+CREATE DATABASE Hospital;
+```
+
+## Tipos de domínios
+
+### Numéricos
+
+`INTEGER{:sql}`: É um inteiro, originado da palavra **_integer_** (em inglês).
+
+`NUMERIC(p,d){:sql}`: É um número de ponto fixo cuja precisão é definida pelo usuário. O número consiste de $p$ dígitos (mais o sinal), sendo que $d$ dos $p$ dígitos estão à direita do ponto decimal.
+**Ex.** `NUMERIC(4,2){:sql}`: `42,00`
+
+`SERIAL{:sql}`: Números inteiros auto incrementados.
+
+### Caracteres (Strings)
+
+`CHAR(n){:sql}`: É uma cadeia de caracteres de tamanho fixo, com o tamanho $n$ definido pelo DBA[^dba]. Abreviação de **_character_** (em inglês).
+**Ex.** `CHAR(12){:sql}`: `Jack Sparrow`
+
+[^dba]: **DBA** é a abreviatura de _**D**ata**b**ase **A**dministrator_ (Administrador de Banco de Dados.)
+
+`VARCHAR(n){:sql}`: É uma cadeia de caracteres de tamanho variável, com o tamanho $n$ definido pelo DBA. Abreviação de **_character varying_** (em inglês).
+
+### Booleano
+
+`BOOLEAN{:sql}`: É um tipo de dado que pode ter um dos dois valores possíveis: `TRUE` ou `FALSE` (verdadeiro ou falso).
+
+### Data/Tempo
+
+`DATE{:sql}`: É um tipo de dado que contém um ano (com 4 dígitos) mês e dia do mês sendo o formato "**aaaa**/**mm**/**dd**" o padrão do _MySQL Workbench_.
+- **Year (date)** - retorna o ano de uma data
+- **Month (date)** - retorna o mês de uma data
+- **Day (date)** - retorna o dia de uma data
+
+`TIME{:sql}`: Representa um horário, com o formato "**hh**:**mm**:**ss**" (00:00:00).
+
+<Tip>
+Alguns SGBDs oferecem o domínio `TIMESTAMP{:sql}` que contém a data (ano, mês e dia) e o horário (hora, minuto, segundo e milissegundos). Como é o caso do [PostgreSQL](https://www.postgresql.org/docs/current/datatype-datetime.html).
+</Tip>
+
+### Observações
+
+- Uma **chave estrangeira** deve possuir o **mesmo típo de domínio** da **chave primária** correspondente.
+- O valor _nulo_ `NULL{:sql}` é um membro de todos os tipos de domínio, isto é, **qualquer atributo** pode receber o valor `NULL{:sql}` **exceto** aqueles que são **chaves primárias** ([restrição de integridade de entidade](https://mateusf.com/blog/post/mr---modelo-relacional#restri%C3%A7%C3%B5es)).
+- O SQL permite que a declaração de domínio de qualquer atributo inclua a especificação de `NOT NULL{:sql}` (não nulo), proibindo assim, a inserção de um valor nulo para esse tipo de atributo (obrigatório na _PK_).
+
+## Criar tabela
+
+`CREATE TABLE{:sql}` define a estrutura de uma tabela, suas restrições de integridade e cria uma tabela vazia.
+
+**Sintaxe:**
+
+```sql
+CREATE TABLE nome_tabela (...);
+```
+
+**Exemplos:**
+
+```sql
+CREATE TABLE empregado (atributo1 tipo, atributo2 tipo, ...);
+```
+
+```sql showLineNumbers {3-7,9-19} caption="Definição de banco de dados e tabelas"
+CREATE DATABASE EMPRESA;
+
+CREATE TABLE DEPARTAMENTO (
+  CodDep SERIAL NOT NULL,
+  NomeDepVARCHAR(30),
+  PRIMARY KEY (CodDep)
+);
+
+CREATE TABLE FUNCIONARIO (
+  Matricula INTEGER NOT NULL,
+  Nome VARCHAR(30) NOT NULL,
+  Salario NUMERIC(8,2),
+  Cargo VARCHAR(15) DEFAULT 'Analista',
+  Estado CHAR(2),
+  Idade INTEGER, CodDepto INT,
+  PRIMARY KEY (Matricula),
+  FOREIGN KEY (CodDepto) references DEPARTAMENTO (CodDep) ON DELETE
+  NO ACTION ON UPDATE NO ACTION
+);
+```
+
+Criação de um código que gere **códigos automáticos** não e padrão SQL, mas caso seja necessario, pode-se utilizar o `SERIAL{:sql}` na criação do campo. Muito utilizado em relações que possuiem **ID**s.
+
+**Exemplo:**
+
+```sql /SERIAL/
+CREATE TABLE cidade (
+  id_cidade SERIAL NOT NULL,
+  nome_cidade VARCHAR(100) NOT NULL,
+
+  PRIMARY KEY (id_cidade)
+);
+```
+
+
+## Remover tabela
+
+`DROP TABLE{:sql}` remove todos os dados e a própria tabela, estando vazia ou não.
+
+**Sintaxe:**
+
+```sql
+DROP TABLE nome_tabela;
+```
+
+**Exemplo:**
+
+```sql
+DROP TABLE empregado;
+```
+
+## Alterar tabela
+
+`ALTER TABLE{:sql}` usado para alterar o esquema da tabela, permite modificar a estrutura de uma tabela existente.
+
+<Error>
+Para operações de **insersão**, **alteração** e **exclusão**, atenção aos atributos e restrições de integridade.
+
+Atributos chave **não podem** ser removidos!
+</Error>
+
+**Sintaxe:**
+
+```sql
+ALTER TABLE nome_da_tabela;
+```
+
+1. Sintaxe básica para **inclusão de uma coluna**:
+
+```sql /ADD COLUMN/
+ALTER TABLE nome_da_tabel ADD COLUMN nome_coluna tipo_atributo;
+```
+
+Ex.:
+```sql
+ALTER TABLE funcionario ADD COLUMN identidade VARCHAR(10);
+```
+
+2. Sintaxe básica para **exclusão de uma coluna**:
+
+```sql /DROP/
+ALTER TABLE nome_da_tabela DROP nome_coluna;
+```
+
+Ex.:
+```sql
+ALTER TABLE funcionario DROP identidade;
+```
+
+3. Sintaxe básica para **alteração do nome de uma coluna**:
+
+```sql /RENAME COLUMN/ /TO/
+ALTER TABLE nome_da_tabela RENAME COLUMN nome_da_coluna_atual TO novo_nome_da_coluna;
+```
+
+Ex.:
+```sql
+ALTER TABLE empregado RENAME COLUMN sexo TO genero;
+```
+
+<Warn>
+**Artigo em desenvolvimento...**
+</Warn>
+
+
