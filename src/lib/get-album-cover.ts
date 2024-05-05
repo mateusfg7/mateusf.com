@@ -25,10 +25,24 @@ const getAccessToken = async () => {
   return await response.json()
 }
 
-export const getAlbumCover = async (track: string) => {
+type Response = {
+  tracks: {
+    items: {
+      album: {
+        images: {
+          url: string
+          height: 64 | 300 | 640
+          width: 64 | 300 | 640
+        }[]
+      }
+    }[]
+  }
+}
+
+export async function getAlbumCover(track: string) {
   const { access_token } = await getAccessToken()
   const URL = ENDPOINT + encodeURI(track) + '&type=track&market=IN&limit=1'
-  const res = await fetch(URL, {
+  const res: Response = await fetch(URL, {
     headers: {
       Authorization: `Bearer ${access_token}`
     }
@@ -36,13 +50,5 @@ export const getAlbumCover = async (track: string) => {
     return res.json()
   })
 
-  const { name, album, external_urls, preview_url } = await res.tracks.items[0]
-
-  return {
-    name,
-    releaseDate: album.release_date,
-    coverArt: album.images[1],
-    external_urls,
-    preview_url
-  }
+  return res.tracks.items[0].album.images.filter(img => img.height === 640)[0]
 }

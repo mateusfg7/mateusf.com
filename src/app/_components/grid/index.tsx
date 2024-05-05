@@ -1,13 +1,22 @@
+import { Book, Wrench } from '@phosphor-icons/react/dist/ssr'
+import { DiscordStatus } from './cards/discord-status'
 import { GithubLink } from './cards/github-link'
 import { GithubStats } from './cards/github-stats'
 import { LatestPost } from './cards/latest-post'
 import { LetterboxedLink } from './cards/letterboxed-link'
 import { LinksCard } from './cards/links'
+import { MostListenedMusic } from './cards/most-listened-music'
 import { StacksCard } from './cards/stacks-card'
 
-const Example = ({ label = 'Example' }: { label?: string }) => (
-  <div className="flex items-center justify-center rounded-xl bg-neutral-200 p-1 dark:bg-neutral-900">
-    {label}
+const BooksCard = () => (
+  <div className="relative flex items-center justify-center gap-2 rounded-xl border border-black/30 bg-black/5 p-5 dark:border-white/30 dark:bg-white/5">
+    <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 text-5xl font-medium opacity-30 blur-sm">
+      <Book weight="duotone" />
+      <span>Books</span>
+    </div>
+
+    <Wrench />
+    <span>Under construction...</span>
   </div>
 )
 
@@ -21,7 +30,7 @@ export function Grid() {
         <div className="col-span-2">
           <GithubStats />
         </div>
-        <Example label="Music card" />
+        <MostListenedMusic />
       </div>
 
       <div className="mt-3 grid grid-cols-3 md:grid-cols-6">
@@ -30,9 +39,8 @@ export function Grid() {
             <div className="w-24">
               <LetterboxedLink />
             </div>
-            <div className="flex w-full flex-col gap-3 ">
+            <div className="flex w-full flex-col gap-3">
               <LinksCard />
-              <Example label="Wakatime stat" />
             </div>
           </div>
 
@@ -42,12 +50,12 @@ export function Grid() {
         </div>
 
         <div className="col-span-3 space-y-3 md:ml-3">
-          <div className="flex gap-3 ">
-            <Example label="Discord status" />
+          <div className="flex gap-3">
+            <DiscordStatus />
 
             <LatestPost />
           </div>
-          <Example label="Book card" />
+          <BooksCard />
         </div>
       </div>
     </div>

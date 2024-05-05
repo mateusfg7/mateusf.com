@@ -49,7 +49,7 @@ export async function DiscordStatus() {
   ).then(data => data.json())
 
   return (
-    <div className="flex h-36 w-fit items-center justify-center overflow-hidden rounded-lg p-2 text-white">
+    <div className="flex h-36 w-fit items-center justify-center overflow-hidden rounded-xl p-2 text-white">
       <div className="relative flex -rotate-12 items-center justify-center gap-[0.35rem]">
         {/* <DiscordLogoIcon className="w-48 h-48 text-blue-800 absolute top-0" /> */}
         <DiscordLogo

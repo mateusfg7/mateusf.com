@@ -10,7 +10,7 @@ export async function TopTrack() {
 
   const imageUrl = await getAlbumCover(
     `${track.name} - ${track.artist.name}`
-  ).then(data => data.coverArt.url)
+  ).then(data => data.url)
 
   return (
     <div className="flex h-full w-full items-center justify-between gap-2 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
