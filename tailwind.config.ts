@@ -39,7 +39,9 @@ const config: Config = {
         shine: 'shine 4s linear 0s forwards',
         'custom-fade-down': 'custom-fade-down 200ms linear',
         'slide-left': 'slide-left 70ms linear',
-        'slide-right': 'slide-right 70ms linear'
+        'slide-right': 'slide-right 70ms linear',
+        'marquee-left': 'marquee-left var(--duration, 30s) linear infinite',
+        'marquee-up': 'marquee-up var(--duration, 30s) linear infinite'
       },
       keyframes: {
         typing: {
@@ -109,6 +111,14 @@ const config: Config = {
             transform:
               'translate(0, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
           }
+        },
+        'marquee-left': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
+        },
+        'marquee-up': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(calc(-100% - var(--gap)))' }
         }
       }
     },
@@ -127,6 +137,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('tailwindcss-animate'),
     require('@tailwindcss/forms')({ strategy: 'class' }),
     require('tailwind-scrollbar')({
       nocompatible: true,
