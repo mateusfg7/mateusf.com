@@ -1,13 +1,13 @@
 ---
 title: 'SQL - Structured Query Language'
 date: '2024-05-02T14:34:47.275Z'
-description: 'Introdução ao SQL. Anotações feitas a partir dasaulas de Banco de Dados do curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
+description: 'Introdução ao SQL. Anotações feitas a partir das aulas de Banco de Dados do curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
 status: 'draft'
 ---
 
-[[**SLIDES**]](assets/Aula_08_SQL_DDL.pdf)
+
 
 <Warn>
   Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
@@ -61,7 +61,7 @@ Column | Atributo (_coluna_)
 A **DDL** permite não só a especificação de um conjunto de relações (tabelas), como também informações acerca de cada uma das relações, incluindo:
 
 - O esquema de cada relação (estrutura)
-- O domínio dos valores associados a ada atributo (`int`, `float`, `varchar`, etc)
+- O domínio dos valores associados a cada atributo (`int`, `float`, `varchar`, etc)
 - As regras de integridade de cada uma das relações
   - O conjunto de índice para manutenção de cada uma das relações
   - Informações sobre segurança e autoridade sobre cada relação
@@ -248,6 +248,57 @@ Ex.:
 ```sql
 ALTER TABLE empregado RENAME COLUMN sexo TO genero;
 ```
+
+<Tip>
+**Observe que...**
+
+- A instrução `ADD COLUMN{:sql}` **adiciona uma nova coluna com o valor vazio** para todas as linhas, isto é, **sem nenhum valor** armazenado.
+- O mesmo acontece quando há a criação de uma tabela (`CREATE TABLE{:sql}`). A princípio ela não está "povoada" com dados, está vazia, ausente de valores (em outras palavras: **não há linhas/tuplas na tabela**).
+- Os valores para as diversas linhas devem ser adicionadas através de instruções da [DML](#dml---data-manipulation-language) ([`INSERT INTO`](#inserir-dados)).
+</Tip>
+
+## Atributos
+
+**Chave Primária** `PRIMARY KEY{:sql}`: É um atributo ou conjunto de atributos que identifica unicamente uma tupla em uma relação. A **PK** é um atributo ou conjunto de atributos que **não pode** ter valores repetidos.
+
+**Chave Estrangeira** `FOREIGN KEY{:sql}`: É um atributo ou conjunto de atributos que faz referência a uma chave primária ou única em outra tabela. A **FK** é um atributo ou conjunto de atributos que **pode** ter valores repetidos.
+A **FK** pode ser declarada com algumas opções de ação para deleção (`ON DELETE{:sql}`) e atualização (`ON UPDATE{:sql}`) de registros:
+- `CASCADE{:sql}`
+- `SET NULL{:sql}`
+- `SET DEFAULT{:sql}`
+- `RESTRICT{:sql}`
+- `NO ACTION{:sql}`
+
+**Restrição de Atributos** (PostgreSQL):
+- `NOT NULL{:sql}` - **NN** - O valor não pode ser nulo.
+- `DEFAULT <valor>{:sql}` - O valor padrão para o atributo caso não seja passado.
+
+### Cláusulas da FK
+
+#### `ON DELETE`
+
+**Cascata** - `CASCADE{:sql}`
+
+Quando um registro é deletado da tabela referenciada, todos os registros que possuem a chave estrangeira referenciando o registro deletado também são deletados.
+
+Sintaxe:
+```sql /CASCADE/#g /ON DELETE/#r
+FOREING KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE CASCADE
+```
+
+Onde `cpf_cliente` é o atributo da tabela atual e `Cliente(cpf)` é a tabela e atributo referenciado.
+
+**Restrito** - `RESTRICT{:sql}`
+
+Quando um registro é deletado da tabela referenciada, a operação é restringida (da erro), ou seja, não é permitido deletar o registro pai se houver outros registros filhos á referenciando.
+
+Sintaxe:
+```sql /RESTRICT/#g /ON DELETE/#r
+FOREING KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE RESTRICT
+```
+
+
+
 
 <Warn>
 **Artigo em desenvolvimento...**
