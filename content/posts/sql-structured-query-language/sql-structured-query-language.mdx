@@ -388,6 +388,156 @@ DROP DATABASE Universidade;
 </Error>
 
 
+# DML - Data Manipulation Language
+
+**DML** - **D**ata **M**anipulation **L**anguage (_Linguagem de Manipulação de Dados_) é usada para **gerenciar** os dados armazenados em um banco de dados. **Manipula** os dados de uma tabela, como **inserir**, **atualizar**, **excluir** e **selecionar**.
+
+## Propriedades
+
+A linguagem DML é composta por **4 operações** de manipulação de dados:
+- **Inserção** de dados - `INSERT{:sql}`
+- **Exclusão** de dados - `DELETE{:sql}`
+- **Atualização** de dados - `UPDATE{:sql}`
+- **Seleção** de dados (consulta) - `SELECT{:sql}`
+
+## Inserir Dados
+
+`INSERT INTO{:sql}` é usado para inserir novos registros em uma tabela.
+
+**Sintaxe:**
+
+```sql
+INSERT INTO nome_tabela (coluna1, coluna2, ...) VALUES (valor1, valor2, ...);
+```
+
+**Exemplo:**
+
+```sql
+INSERT INTO empregado (nome, salario, cargo) VALUES ('João', 2000.00, 'Analista');
+```
+
+<img src="assets/insert-example-dark.png" className="on-dark" alt="Resultado do comando INSERT de exemplo" />
+<img src="assets/insert-example-light.png" className="on-light" alt="Resultado do comando INSERT de exemplo" />
+
+<Tip>
+Dependendo da ordem em que os atributos são declarados na tabela, é possível omitir a lista de atributos na instrução `INSERT INTO{:sql}`. Nesse caso, os valores devem ser inseridos na ordem em que os atributos foram declarados na tabela.
+
+Por exemplo, se criarmos a tabela seguindo a ordem nome-salario-cargo:
+```sql
+CREATE TABLE empregado (
+  nome VARCHAR(30),
+  salario NUMERIC(8,2),
+  cargo VARCHAR(15)
+);
+```
+
+Poderemos inserir omitindo a lista de atributos, dês de que os valores estejam na ordem correta:
+```sql
+INSERT INTO empregado VALUES ('João', 2000.00, 'Analista');
+```
+</Tip>
+
+<Warn>
+  Para caracteres usamos **aspas simples**!
+</Warn>
+
+<Wrong>
+```
+"Frodo Bolseiro"
+```
+</Wrong>
+<Correct>
+```
+'Frodo Bolseiro'
+```
+</Correct>
+
+## Excluir Dados
+
+`DELETE FROM{:sql}` é usado para excluir registros (tupla/linha) de uma tabela (relação).
+
+<Warn>
+**Atenção** | `DROP{:sql}` **X** `DELETE{:sql}`
+<br/>
+`DROP{:sql}` [_Exclui estrutura_](#remover-base-de-dados-db)
+`DELETE{:sql}` _Exclui dados_
+</Warn>
+
+**Sintaxe:**
+
+```sql
+DELETE FROM nome_tabela WHERE condicao;
+```
+
+**Exemplo:**
+
+```sql caption="Excluir a peça com o código 200 (toda a linha)"
+DELETE FROM peca WHERE cod_peca = 200;
+```
+
+<img src="assets/delete-example-dark.png" className="on-dark" alt="Resultado do comando DELET de exemplo" />
+<img src="assets/delete-example-light.png" className="on-light" alt="Resultado do comando DELET de exemplo" />
+
+## Atualizar dados
+
+`UPDATE{:sql}`/`SET{:sql}` é usado para atualizar registros existentes em uma tabela. _Quando há mudança de endereço, nome, etc..._
+
+**Sintaxe:**
+
+```sql
+UPDATE nome_tabela SET coluna1 = valor1, coluna2 = valor2 WHERE condicao;
+```
+
+**Exemplo:**
+
+```sql caption="Alterar o preço da peça de código 200 para 90.00 (antes era 80.00)"
+UPDATE peca SET preco = 90.00 WHERE cod_peca = 200;
+```
+
+<img src="assets/update-example-dark.png" className="on-dark" alt="Resultado do comando UPDATE de exemplo" />
+<img src="assets/update-example-light.png" className="on-light" alt="Resultado do comando UPDATE de exemplo" />
+
+## Selecionar Dados
+
+`SELECT{:sql}` é usado para selecionar dados de um banco de dados. A instrução `SELECT{:sql}` é usada para recuperar registros de uma ou mais tabelas.
+
+**Sintaxe:**
+
+```sql
+SELECT coluna1, coluna2, ... FROM nome_tabela WHERE condicao;
+```
+
+**Exemplo:**
+
+```sql caption="Selecionar o nome e a quantidade de todas as peças que tenham o preço maior que 50"
+SELECT nome_peca, quantidade FROM peca WHERE preco > 50;
+```
+```sql caption="Selectionar todos os dados da tabela peça"
+SELECT * FROM peca;
+```
+
+<Tip>
+O caractere `*{:sql}` é um [_wildcard_ (coringa)](https://pt.wikipedia.org/wiki/Caractere_curinga) usado para selecionar **todos os atributos** de uma tabela.
+</Tip>
+
+## Cláusula `WHERE` (condição)
+
+A cláusula `WHERE{:sql}` é usada para **filtrar registros**. A cláusula `WHERE{:sql}` é usada para extrair apenas os registros que atendem a uma **condição específica**.
+
+Usa **conectores lógicos**:
+- `AND{:sql}` - E
+- `OR{:sql}` - OU
+- `NOT{:sql}` - NÃO
+
+Usa **operadores de comparação**:
+- `>{:sql}` - Maior
+- `<{:sql}` - Menor
+- `={:sql}` - Igual
+- `<={:sql}` - Menor ou igual
+- `>={:sql}` - Maior ou igual
+- `BETWEEN{:sql}` - Entre um intervalo (incluindo os extremos). _Facilita a especificação de condições númericas que envolvam um intervalo, ao invés de usar os operadores `<={:sql}` e `>={:sql}`._
+
+---
 <Warn>
 **Artigo em desenvolvimento...**
 </Warn>
