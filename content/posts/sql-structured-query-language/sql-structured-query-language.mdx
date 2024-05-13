@@ -1,13 +1,12 @@
 ---
 title: 'SQL - Structured Query Language'
 date: '2024-05-02T14:34:47.275Z'
+lastUpdate: '2024-05-13T11:42:00.275Z'
 description: 'Introdução ao SQL. Anotações feitas a partir das aulas de Banco de Dados do curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
 status: 'draft'
 ---
-
-
 
 <Warn>
   Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
@@ -280,24 +279,113 @@ A **FK** pode ser declarada com algumas opções de ação para deleção (`ON D
 **Cascata** - `CASCADE{:sql}`
 
 Quando um registro é deletado da tabela referenciada, todos os registros que possuem a chave estrangeira referenciando o registro deletado também são deletados.
-
 Sintaxe:
 ```sql /CASCADE/#g /ON DELETE/#r
-FOREING KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE CASCADE
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE CASCADE
 ```
-
 Onde `cpf_cliente` é o atributo da tabela atual e `Cliente(cpf)` é a tabela e atributo referenciado.
+
+<br/>
 
 **Restrito** - `RESTRICT{:sql}`
 
 Quando um registro é deletado da tabela referenciada, a operação é restringida (da erro), ou seja, não é permitido deletar o registro pai se houver outros registros filhos á referenciando.
-
 Sintaxe:
 ```sql /RESTRICT/#g /ON DELETE/#r
-FOREING KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE RESTRICT
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE RESTRICT
 ```
 
+<br/>
 
+**Não faz nada** - `NO ACTION{:sql}` _padrão - default_
+
+Quando um registro é deletado da tabela referenciada, um erro é exibido, e a operação de `DELETE{:sql}` é revertida.
+Sintaxe:
+```sql /NO ACTION/#g /ON DELETE/#r
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE NO ACTION
+```
+
+<br/>
+
+**Define como nulo** - `SET NULL{:sql}`
+
+Quando um registro é deletado da tabela referenciada, a chave estrangeira é definida como `NULL{:sql}`.
+Sintaxe:
+```sql /SET NULL/#g /ON DELETE/#r
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE SET NULL
+```
+
+<br/>
+
+**Valor Padrão** - `SET DEFAULT{:sql}`
+
+Quando um registro é deletado da tabela referenciada, a chave estrangeira é definida como o valor padrão `DEFAULT{:sql}`.
+Sintaxe:
+```sql /SET DEFAULT/#g /ON DELETE/#r
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON DELETE SET DEFAULT
+```
+
+#### `ON UPDATE`
+
+**Restrito** - `RESTRICT{:sql}`
+
+Quando um registro é atualizado na tabela referenciada, a operação é restringida (da erro), ou seja, não é permitido atualizar o registro pai se houver outros registros filhos á referenciando.
+Sinatxe:
+```sql /RESTRICT/#g /ON UPDATE/#b
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE RESTRICT
+```
+
+<br/>
+
+**Define como nulo** - `SET NULL{:sql}`
+
+Quando um registro é atualizado na tabela referenciada de modo que não exista mais a chave primária da tabela alterada, a chave estrangeira é definida como `NULL{:sql}`.
+Sintaxe:
+```sql /SET NULL/#g /ON UPDATE/#b
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE SET NULL
+```
+
+<br/>
+
+**Define como padrão** - `SET DEFAULT{:sql}`
+
+Quando um registro é atualizado na tabela referenciada de modo que não exista mais a chave primária da tabela alterada, a chave estrangeira é definida como o valor padrão `DEFAULT{:sql}`.
+Sintaxe:
+```sql /SET DEFAULT/#g /ON UPDATE/#b
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE SET DEFAULT
+```
+
+<br/>
+
+**Não faz nada** - `NO ACTION{:sql}` _padrão - default_
+
+Quando um registro é atualizado na tabela referenciada, de modo que a chave primária referenciada não exista mais, um erro é exibido, e a operação de `UPDATE{:sql}` é revertida.
+Sintaxe:
+```sql /NO ACTION/#g /ON UPDATE/#b
+FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE NO ACTION
+```
+
+## Remover base de dados (DB)
+
+`DROP` remove toda a base de dados, incluindo todas as tabelas, dados, índices, etc.
+
+**Sintaxe:**
+
+```sql
+DROP DATABASE nome_do_banco;
+```
+
+**Exemplo:**
+
+```sql
+DROP DATABASE Empresa;
+DROP DATABASE Hospital;
+DROP DATABASE Universidade;
+```
+
+<Error>
+**Atenção!** A instrução `DROP DATABASE{:sql}` remove **todos os dados**, **tabelas** e **relacionamentos** na base de dados, e **não é possível** recuperar os dados após a execução dessa instrução!
+</Error>
 
 
 <Warn>
