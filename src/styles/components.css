@@ -105,14 +105,14 @@
       }
 
       thead tr:first-of-type th {
-        @apply border-y border-neutral-200 first:rounded-l-lg first:border-l last:rounded-r-lg last:border-r;
+        @apply border-y border-neutral-200 first:rounded-l-lg first:border-l last:rounded-r-lg last:border-r dark:border-neutral-800;
       }
 
       tbody {
         tr {
           td {
             /*@apply even:bg-neutral-200/40 even:dark:bg-neutral-900/40;*/
-            @apply border-t border-neutral-200;
+            @apply border-t border-neutral-200 dark:border-neutral-800;
           }
 
           &:first-of-type td {
