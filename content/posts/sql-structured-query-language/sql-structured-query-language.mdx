@@ -1,11 +1,11 @@
 ---
 title: 'SQL - Structured Query Language'
 date: '2024-05-02T14:34:47.275Z'
-lastUpdate: '2024-05-13T11:42:00.275Z'
-description: 'Introdução ao SQL. Anotações feitas a partir das aulas de Banco de Dados do curso de GTI 1º Período, na FAPAM, pelo professor Gabriel Ribeiro Diniz.'
+lastUpdate: '2024-05-14T15:14:00.275Z'
+description: 'Introdução à linguagem SQL e seus principais comandos.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
-status: 'draft'
+status: 'published'
 ---
 
 <Warn>
@@ -681,9 +681,325 @@ _Resultado:_
 |----------|-|
 | 3        ||
 
----
+## Valores `NULL` (nulo)
+
+Suponhamos que temos a tabela `Peça` criada anteriormente, estruturada e preenchida da seguinte forma:
+
+Coluna (tupla) | _Data Type_ (Tipo) | _Length/Precision_ (Comprimento) | _Scale_ (Escala) | _Not Null?_ (Não Nulo?) | _Primary Key?_ (Chave Primária?) | _Default_ (Padrão)
+---|---|---|---|---|---|---
+cod_peca | INTEGER | | | Sim | Sim |
+nome_peca | VARCHAR | 30 | | Sim | Não |
+preco | NUMERIC | 6 | 2 | Não | Não |
+qtd | INTEGER | | | Não | Não | 0
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+
+<details>
+<summary>Código SQL</summary>
+
+```sql caption="Criação da tabela" showLineNumbers
+CREATE TABLE peca (
+  cod_peca INTEGER NOT NULL,
+  nome_peca VARCHAR(30) NOT NULL,
+  preco NUMERIC(6,2),
+  qtd INTEGER DEFAULT 0
+);
+```
+
+```sql caption="Inserção de dados" showLineNumbers
+INSERT INTO peca VALUES
+  (1, 'Peça A', 15.00, 10),
+  (2, 'Peça B', 8.00, 20),
+  (3, 'Peça C', 8.00, 30),
+  (4, 'Peça D', 8.00, 10);
+```
+
+</details>
+
+
+### Inserindo valores nulos
+
+Quando realizamos um `INSERT{:sql}` e não passamos o campo, o banco de dados vai automaticamente inserir `NULL{:sql}` no valor da célula.
+
+```sql caption="Repare que omitimos a coluna 'preco'"
+INSERT INTO peca (cod_peca, nome_peca, qtd) VALUES (5, 'Peça E', 15);
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+**5** | **Peça E** | _**`null`**_ | **15**
+
 <Warn>
-**Artigo em desenvolvimento...**
+**Cuidado com o `DEFAULT{:sql}`!**
 </Warn>
 
+Lembre-se que colunas que tem o valor `DEFAULT{:sql}` definido, não serão preenchidas com `NULL{:sql}`, mas sim com o valor `DEFAULT{:sql}` especificado no momento da criação da tabela.
 
+```sql
+INSERT INTO peca (cod_peca, nome_peca, preco) VALUES (6, 'Peça F', 20.00);
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+5 | Peça E | <span className="opacity-50">null</span> | 15
+**6** | **Peça F** | **20.00** | **`0`**
+
+Existe um outra forma de definir um valor como `NULL{:sql}`. Deixando explícito no comando `INSERT{:sql}` que a coluna deve receber o valor `NULL{:sql}`.
+
+```sql
+INSERT INTO peca (cod_peca, nome_peca, preco, qtd) VALUES (7, 'Peça G', 17.00, NULL);
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+5 | Peça E | <span className="opacity-50">null</span> | 15
+6 | Peça F | 20.00 | 0
+**7** | **Peça G** | **17.00** | <span className="opacity-50 font-bold">null</span>
+
+Repare que mesmo o campo `qtd` possuindo um valor `DEFAULT{:sql}`, foi definido de forma explícita no `INSERT{:sql}` que essa coluna deveria possuir um valor `NULL`.
+
+<Error>
+**Atenção!** - Mesmo se você tentar inserir o valor `NULL{:sql}` em uma coluna definida como `NOT NULL{:sql}`, uma exceção (erro) será lançada pelo banco de dados.
+</Error>
+
+```sql
+INSERT INTO peca (cod_peca, nome_peca, preco, qtd) VALUES (7, NULL, 17.00, 12);
+```
+
+_Resultado:_
+
+```output
+ERROR:  null value in column "nome_peca" of relation "peca" violates not-null constraint
+DETAIL:  Failing row contains (7, null, 17.00, 12).
+SQL state: 23502
+```
+
+### Selecionando valores nulos
+
+Caso você queira selecionar somente as linhas com valores nulos em uma determinada célula, a forma correta é utilizar o `IS NULL{:sql}`, e não `... = NULL{:sql}`.
+
+```sql /IS/#g caption="Certo"
+SELECT * FROM peca WHERE preco IS NULL;
+```
+```sql /=/#r caption="Errado"
+SELECT * FROM peca WHERE preco = NULL;
+```
+
+### Selecionando valores não nulos
+
+Caso você queira selecionar apenas as linhas que **não possuem** valores nulos em uma determinada coluna, é só utilizar o c omando `IS NOT NULL{:sql}`.
+
+```sql
+SELECT * FROM peca WHERE preco IS NOT NULL;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+6 | Peça F | 20.00 | 0
+7 | Peça G | 17.00 | <span className="opacity-50">null</span>
+
+_Repare que a peça de código $5$ não foi incluída no resultado, por possuir o valor `null` na coluna `preco`._
+
+### Ordenando colunas com `NULL`
+
+Por _default_, caso você ordene um `SELECT{:sql}` por uma coluna que possui células com valor `NULL{:sql}`, essas células serão as **últimas** a serem retornadas.
+
+```sql
+SELECT * FROM peca ORDER BY preco;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+4 | Peça D | 8.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+1 | Peça A | 15.00 | 10
+6 | Peça F | 20.00 | 0
+7 | Peça G | 17.00 | <span className="opacity-50">null</span>
+5 | Peça E | <span className="opacity-50">null</span> | 15
+
+Caso você deseje que as células com valores `NULL{:sql}` sejam as primeiras a serem retornadas no `SELECT{:sql}`, utilizamos o `ORDER BY ... NULLS FIRST{:sql}`.
+
+```sql
+SELECT * FROM peca ORDER BY preco NULLS FIRST;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+5 | Peça E | <span className="opacity-50">null</span> | 15
+2 | Peça B | 8.00 | 20
+3 | Peça C | 8.00 | 30
+4 | Peça D | 8.00 | 10
+1 | Peça A | 15.00 | 10
+6 | Peça F | 20.00 | 0
+7 | Peça G | 17.00 | <span className="opacity-50">null</span>
+
+## Selecionar Dados II
+
+### Cláusula `DISTINCT` (linhas únicas)
+
+Linhas duplicadas podem aparecer nas relações. No caso de desejarmos a eliminação de duplicidade, devemos inserir a palavra `DISTINCT{:sql}` na cláusula `SELECT{:sql}`.
+
+<Warn>
+**Observações**
+- Funções agregadas normalmente consideram as tuplas duplicadas.
+- Não é permitido o uso do `DISTINCT{:sql}` com o `COUNT(*){:sql}`.
+- É válido usar o `DISTINCT{:sql}` com `MAX{:sql}` ou `MIN{:sql}`, mesmo não alterando o resultado.
+</Warn>
+
+Tabela neste momento:
+```sql
+SELECT * FROM peca;
+```
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça B | 8.00 | 10
+4 | Peça A | 8.00 | 30
+5 | Peça C | 17.00 | 0
+6 | Peça C | 17.00 | <span className="opacity-50">null</span>
+7 | Peça A | <span className="opacity-50">null</span> | 15
+
+**Sinatxe:**
+
+```sql
+SELECT DISTINCT coluna1, coluna2, ... FROM nome_tabela;
+```
+
+**Exemplo:**
+
+_Selecionar o nome de todas as peças, sem o `DISTINCT{:sql}`:_
+```sql
+SELECT nome_peca FROM peca;
+```
+| <span className="underline">nome_peca</span> ||
+|---|-|
+| Peça A |
+| Peça B |
+| Peça B |
+| Peça A |
+| Peça C |
+| Peça C |
+| Peça A |
+
+_Selecionar o nome de todas as peças, com o `DISTINCT{:sql}`:_
+```sql /DISTINCT/
+SELECT DISTINCT nome_peca FROM peca;
+```
+| <span className="underline">nome_peca</span> ||
+|---|-|
+| Peça C |
+| Peça A |
+| Peça B |
+
+### Cláusula `GROUP BY` (agrupar)
+
+A cláusula `GROUP BY{:sql}` é usada para **agrupar linhas** que possuem o mesmo valor em uma ou mais colunas. É normalmente usada em conjunto com funções de agregação para agrupar os resultados de acordo com um ou mais campos. Desta forma, as funções de agregação será aplicada a **cada grupo**, e não a todas as tuplas.
+
+Tabela neste momento:
+```sql
+SELECT * FROM peca ORDER BY nome_peca;
+```
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd | veiculo
+---|---|---|---|---
+1 | Peça A | 15.00 | 10 | CARRO
+2 | Peça B | 8.00 | 20 | MOTO
+3 | Peça C | 8.00 | 30 | CAMINHAO
+4 | Peça D | 8.00 | 10 | CARRO
+5 | Peça E | <span className="opacity-50">null</span> | 15 | CAMINHAO
+6 | Peça F | 17.00 | 0 | MOTO
+7 | Peça G | 17.00 | <span className="opacity-50">null</span> | CARRO
+
+**Sintaxe:**
+
+```sql
+SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ...;
+```
+
+<br/>
+
+**EXEMPLO 1** - Selecionar o nome de todas as peças e agrupar por veículo (_contar por grupo_):
+
+```sql
+SELECT veiculo, COUNT(1) FROM peca GROUP BY veiculo;
+```
+
+_Resultado:_
+
+| veiculo | count |
+|---|---|
+MOTO | 2
+CAMINHAO | 2
+CARRO | 3
+
+<br/>
+
+**EXEMPLO 2** - Obter a soma da quantidade de peças por tipo de veículo
+
+```sql
+SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo;
+```
+
+_Resultado:_
+
+| veiculo | sum |
+|---|---|
+MOTO | 20
+CAMINHAO | 45
+CARRO | 20
+
+### Cláusula `HAVING` (filtro)
+
+A cláusula `HAVING{:sql}` é usada para **filtrar grupos** de registros que resultam de uma operação de `GROUP BY{:sql}`. A cláusula `HAVING{:sql}` é usada em conjunto com a cláusula `GROUP BY{:sql}`.
+
+**Sintaxe:**
+
+```sql
+SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ... HAVING condicao;
+```
+
+**EXEMPLO 2** anterior (_alterado_) - Obter a soma da quantidade de peças por tipo de veículo que sejam maiores que 20
+
+```sql /HAVING/
+SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo HAVING SUM(qtd) > 20;
+```
+
+_Resultado:_
+
+| veiculo | sum |
+|---|---|
+CAMINHAO | 45
