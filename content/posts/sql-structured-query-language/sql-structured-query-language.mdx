@@ -520,7 +520,7 @@ SELECT * FROM peca;
 O caractere `*{:sql}` é um [_wildcard_ (coringa)](https://pt.wikipedia.org/wiki/Caractere_curinga) usado para selecionar **todos os atributos** de uma tabela.
 </Tip>
 
-## Cláusula `WHERE` (condição)
+### Cláusula `WHERE` (condição)
 
 A cláusula `WHERE{:sql}` é usada para **filtrar registros**. A cláusula `WHERE{:sql}` é usada para extrair apenas os registros que atendem a uma **condição específica**.
 
@@ -536,6 +536,150 @@ Usa **operadores de comparação**:
 - `<={:sql}` - Menor ou igual
 - `>={:sql}` - Maior ou igual
 - `BETWEEN{:sql}` - Entre um intervalo (incluindo os extremos). _Facilita a especificação de condições númericas que envolvam um intervalo, ao invés de usar os operadores `<={:sql}` e `>={:sql}`._
+
+#### Exemplos
+
+Iremos fazer algumas operações de **busca** `SELECT{:sql}` usando cláusulas de **condição**/filtro `WHERE{:sql}` na tabela abaixo:
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+56 | Peça X | 23.90 | 10
+99 | Peça Y | 56.99 | 5
+200 | Peça Z | 80.00 | 0
+
+<br/>
+
+**EXEMPLO 1** - Selecionar o código e o nome das peças com o preço menor que $70.00$
+
+```sql
+SELECT cod_peca, nome_peca FROM peca WHERE preco < 70.00;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca
+---|---
+56 | Peça X
+99 | Peça Y
+
+<br/>
+
+**EXEMPLO 2** - Selecionar o nome e o preço das peças com preço maior que $50.00$ e menor do que $70.00$
+
+```sql
+SELECT nome_peca, preco WHERE preco BETWEEN 50.00 AND 70.00
+```
+
+_Resultado:_
+
+nome_peca | preco
+---|---
+Peça Y | 56.99
+
+<br />
+
+**EXEMPLO 3** - Selecionar todas as informações das peças cuja quantidade em estoque seja maior ou igual a $10$.
+
+```sql
+SELECT * FROM peca WHERE qtd >= 10;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+56 | Peça X | 23.90 | 10
+
+<br/>
+
+**EXEMPLO 4** - Selecionar o código, nome, preço e quantidade de peças no estoque cujo código é $200$.
+
+```sql
+SELECT cod_peca, nome_peca, preco, qtd FROM peca WHERE cod_peca = 200;
+```
+
+_Resultado:_
+
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+200 | Peça Z | 80.00 | 0
+
+### Cláusula `ORDER BY` (ordenação)
+
+A cláusula `ORDER BY{:sql}` é usada para **ordenar o resultado** de uma consulta em ordem crescente ou decrescente. Ela é aplicada somente à operações de **consulta** `SELECT{:sql}`, após a cláusula `WHERE{:sql}`.
+
+Para especificar a forma de ordenação, devemos indicar
+- `ASC{:sql}` - Crescente _padrão - default_
+- `DESC{:sql}` - Decrescente
+
+**Sintaxe:**
+
+```sql /ORDER BY/#r /ASC/#g /DESC/#b
+SELECT coluna1, coluna2, ... FROM nome_tabela WHERE condicao ORDER BY coluna ASC|DESC;
+```
+
+**Exemplo:**
+
+```sql /ORDER BY/#r /DESC/#b caption="Selecionar o nome e a quantidade de todas as peças que há no estoque, por ordem descrescente do nome."
+SELECT nome_peca, quantidade FROM peca ORDER BY nome_peca DESC;
+```
+
+_Resultado:_
+
+nome_peca | quantidade
+---|---
+Peça Z | 0
+Peça Y | 5
+Peça X | 10
+
+### Funções de agregação
+
+As funções de agregação são usadas para **calcular** algo a partir de um conjunto de valores. As funções de agregação são usadas com a cláusula `SELECT{:sql}`.
+
+As principais são:
+- `COUNT{:sql}` - Conta o número de linhas (tuplas)
+- `SUM{:sql}` - Soma os valores da coluna - _apenas em dados numéricos_
+- `AVG{:sql}` - Calcula a média dos valores da coluna (_average_[^avg]) - _apenas em dados numéricos_
+- `MIN{:sql}` - Retorna o menor valor da coluna
+- `MAX{:sql}` - Retorna o maior valor da coluna
+
+[^avg]: _**Average**_ é a palavra em inglês para **média**.
+
+<Warn>
+**Atenção** `SUM{:sql}` _é diferente de_ `COUNT{:sql}`
+</Warn>
+
+<br/>
+
+**EXEMPLO 1** - Encontrar a soma dos preços de todas as peças, o maior preço, o menor preço e a média dos preços.
+
+```sql
+SELECT SUM(preco), MAX(preco), MIN(preco), AVG(preco) FROM peca;
+```
+
+_Resultado:_
+
+SUM(preco) | MAX(preco) | MIN(preco) | AVG(preco)
+-----------|------------|------------|-----------
+160.89     | 80.00      | 23.90      | 53.62999999995
+
+<br/>
+
+**EXEMPLO 2** - Contar o número de peças que há no estoque.
+
+```sql
+SELECT COUNT(*) FROM peca;
+```
+_ou_
+```sql
+SELECT COUNT(cod_peca) FROM peca;
+```
+
+_Resultado:_
+
+| COUNT(*) ||
+|----------|-|
+| 3        ||
 
 ---
 <Warn>
