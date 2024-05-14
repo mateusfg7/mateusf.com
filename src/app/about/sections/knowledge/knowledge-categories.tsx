@@ -2,35 +2,17 @@ import { IconType } from 'react-icons'
 import {
   SiAdobephotoshop,
   SiAmazonaws,
-  SiCss3,
   SiDeno,
-  SiDocker,
-  SiExpo,
   SiExpress,
   SiFastify,
-  SiFigma,
   SiGithub,
-  SiGnubash,
-  SiGooglecloud,
   SiGoogleplay,
-  SiHtml5,
   SiJavascript,
-  SiLinux,
   SiMicrosoftoffice,
-  SiNestjs,
-  SiNextdotjs,
   SiNginx,
-  SiNodedotjs,
   SiOnlyoffice,
-  SiPrisma,
-  SiPwa,
-  SiPython,
-  SiReact,
-  SiRust,
   SiStyledcomponents,
-  SiTailwindcss,
   SiThunderbird,
-  SiTypescript,
   SiWindows,
   SiVuedotjs,
   SiElixir,
@@ -43,14 +25,37 @@ import {
   SiArduino,
   SiWordpress,
   SiGoogle,
-  SiVercel,
-  SiCloudflare,
   SiPlanetscale,
-  SiHeroku,
-  SiSvelte,
-  SiBun
+  SiBun,
+  SiPwa,
+  SiPostgresql
 } from 'react-icons/si'
 import { FaJava, FaPhoenixFramework } from 'react-icons/fa'
+import { TbSql } from 'react-icons/tb'
+
+import {
+  BashIcon,
+  CSS3Icon,
+  CloudflareIcon,
+  DockerIcon,
+  ExpoIcon,
+  GoogleCloudIcon,
+  HTML5Icon,
+  HerokuIcon,
+  LinuxIcon,
+  NestIcon,
+  NextIcon,
+  NodeIcon,
+  PrismaIcon,
+  PythonIcon,
+  ReactIcon,
+  RustIcon,
+  SvelteIcon,
+  TailwindcssIcon,
+  TypescriptIcon,
+  VercelIcon,
+  FigmaIcon
+} from '~/components/icons'
 
 export interface Knowledge {
   icon: IconType
@@ -75,19 +80,19 @@ export const knowledgeCategories: {
       {
         title: 'Typescript',
         status: 'god',
-        icon: SiTypescript,
+        icon: TypescriptIcon,
         color: '#3178C6'
       },
       {
         title: 'Python',
         status: 'god',
-        icon: SiPython,
+        icon: PythonIcon,
         color: '#3776AB'
       },
       {
         title: 'Rust',
         status: 'learning',
-        icon: SiRust,
+        icon: RustIcon,
         color: '#F74C00'
       },
       {
@@ -99,7 +104,7 @@ export const knowledgeCategories: {
       {
         title: 'Bash Script',
         status: 'god',
-        icon: SiGnubash,
+        icon: BashIcon,
         color: '#4EAA25'
       },
       {
@@ -119,6 +124,12 @@ export const knowledgeCategories: {
         icon: SiCplusplus,
         color: '#00599C',
         status: 'bad'
+      },
+      {
+        title: 'SQL',
+        icon: TbSql,
+        color: '#003B57',
+        status: 'learning'
       }
     ]
   },
@@ -128,25 +139,25 @@ export const knowledgeCategories: {
       {
         title: 'HTML5',
         status: 'god',
-        icon: SiHtml5,
+        icon: HTML5Icon,
         color: '#E34F26'
       },
       {
         title: 'CSS3',
         status: 'god',
-        icon: SiCss3,
+        icon: CSS3Icon,
         color: '#1572B6'
       },
       {
         title: 'React.js',
         status: 'god',
-        icon: SiReact,
+        icon: ReactIcon,
         color: '#61DAFB'
       },
       {
         title: 'Next.js',
         status: 'god',
-        icon: SiNextdotjs,
+        icon: NextIcon,
         color: '#FFFFFF'
       },
       {
@@ -158,13 +169,13 @@ export const knowledgeCategories: {
       {
         title: 'Svelte',
         status: 'learning',
-        icon: SiSvelte,
+        icon: SvelteIcon,
         color: '#FF3E00'
       },
       {
         title: 'Tailwind CSS',
         status: 'god',
-        icon: SiTailwindcss,
+        icon: TailwindcssIcon,
         color: '#06B6D4'
       },
       {
@@ -205,7 +216,7 @@ export const knowledgeCategories: {
       {
         title: 'Node.js',
         status: 'god',
-        icon: SiNodedotjs,
+        icon: NodeIcon,
         color: '#339933'
       },
       {
@@ -223,7 +234,7 @@ export const knowledgeCategories: {
       {
         title: 'Prisma',
         status: 'god',
-        icon: SiPrisma,
+        icon: PrismaIcon,
         color: '#2D3748'
       },
       {
@@ -241,7 +252,7 @@ export const knowledgeCategories: {
       {
         title: 'Nest.js',
         status: 'god',
-        icon: SiNestjs,
+        icon: NestIcon,
         color: '#E0234E'
       },
       {
@@ -270,13 +281,13 @@ export const knowledgeCategories: {
       {
         title: 'React Native',
         status: 'god',
-        icon: SiReact,
+        icon: ReactIcon,
         color: '#61DAFB'
       },
       {
         title: 'Expo',
         status: 'god',
-        icon: SiExpo,
+        icon: ExpoIcon,
         color: '#000020'
       },
       {
@@ -304,25 +315,25 @@ export const knowledgeCategories: {
       {
         title: 'Heroku',
         status: 'god',
-        icon: SiHeroku,
+        icon: HerokuIcon,
         color: '#430098'
       },
       {
         title: 'Docker',
         status: 'god',
-        icon: SiDocker,
+        icon: DockerIcon,
         color: '#2496ED'
       },
       {
         title: 'Linux',
         status: 'god',
-        icon: SiLinux,
+        icon: LinuxIcon,
         color: '#FCC624'
       },
       {
         title: 'Google Cloud',
         status: 'god',
-        icon: SiGooglecloud,
+        icon: GoogleCloudIcon,
         color: '#4285F4'
       },
       {
@@ -340,7 +351,7 @@ export const knowledgeCategories: {
       {
         title: 'Vercel',
         status: 'god',
-        icon: SiVercel,
+        icon: VercelIcon,
         color: '#000000'
       },
       {
@@ -352,8 +363,14 @@ export const knowledgeCategories: {
       {
         title: 'Cloudflare',
         status: 'god',
-        icon: SiCloudflare,
+        icon: CloudflareIcon,
         color: '#F38020'
+      },
+      {
+        title: 'PostgreSQL',
+        status: 'learning',
+        icon: SiPostgresql,
+        color: '#336791'
       }
     ]
   },
@@ -374,7 +391,7 @@ export const knowledgeCategories: {
       {
         title: 'Figma',
         status: 'god',
-        icon: SiFigma,
+        icon: FigmaIcon,
         color: '#F24E1E'
       },
       {
