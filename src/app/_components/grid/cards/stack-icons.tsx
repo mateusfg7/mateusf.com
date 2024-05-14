@@ -1,26 +1,28 @@
 import { IconType } from 'react-icons'
 
-import { DockerIcon } from './icons/docker'
-import { TypescriptIcon } from './icons/typescript'
-import { HTML5Icon } from './icons/html'
-import { CSS3Icon } from './icons/css'
-import { ReactIcon } from './icons/react'
-import { NextIcon } from './icons/next'
-import { SvelteIcon } from './icons/svelte'
-import { TailwindcssIcon } from './icons/tailwindcss'
-import { ExpoIcon } from './icons/expo'
-import { PythonIcon } from './icons/python'
-import { RustIcon } from './icons/rust'
-import { BashIcon } from './icons/bash'
-import { NodeIcon } from './icons/node'
-import { PrismaIcon } from './icons/prisma'
-import { NestIcon } from './icons/nest'
-import { HerokuIcon } from './icons/heroku'
-import { LinuxIcon } from './icons/linux'
-import { GoogleCloudIcon } from './icons/google-cloud'
-import { VercelIcon } from './icons/vercel'
-import { CloudflareIcon } from './icons/cloudflare'
-import { FigmaIcon } from './icons/figma'
+import {
+  TypescriptIcon,
+  HTML5Icon,
+  CSS3Icon,
+  ReactIcon,
+  NextIcon,
+  SvelteIcon,
+  TailwindcssIcon,
+  ExpoIcon,
+  PythonIcon,
+  RustIcon,
+  BashIcon,
+  NodeIcon,
+  PrismaIcon,
+  NestIcon,
+  HerokuIcon,
+  LinuxIcon,
+  GoogleCloudIcon,
+  VercelIcon,
+  CloudflareIcon,
+  FigmaIcon,
+  DockerIcon
+} from '~/components/icons'
 
 export type IconItem = {
   title: string
