@@ -2,15 +2,28 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'raw.githubusercontent.com',
-      'avatars.githubusercontent.com',
-      'github.com',
-      'i.imgur.com',
-      'mateusf.com',
-      'lastfm.freetls.fastly.net',
-      'contribution.catsjuice.com',
-      'i.scdn.co'
+    remotePatterns: [
+      {
+        hostname: '*.githubusercontent.com'
+      },
+      {
+        hostname: 'github.com'
+      },
+      {
+        hostname: '*.imgur.com'
+      },
+      {
+        hostname: 'mateusf.com'
+      },
+      {
+        hostname: 'lastfm.freetls.fastly.net'
+      },
+      {
+        hostname: '*.catsjuice.com'
+      },
+      {
+        hostname: '*.scdn.co'
+      }
     ]
   },
   async rewrites() {
