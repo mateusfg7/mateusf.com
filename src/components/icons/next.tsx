@@ -3,7 +3,13 @@ import { SVGProps } from 'react'
 export function NextIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
-      <circle cx="64" cy="64" r="64"></circle>
+      <circle
+        cx="64"
+        cy="64"
+        r="64"
+        className="text-black dark:text-white"
+        fill="currentColor"
+      ></circle>
       <path
         fill="url(#a)"
         d="M106.317 112.014 49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64.216 64.216 0 0 0 6.763-5.209z"
@@ -19,8 +25,16 @@ export function NextIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="scale(.71111)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#fff"></stop>
-          <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+          <stop
+            className="text-white dark:text-black"
+            stop-color="currentColor"
+          ></stop>
+          <stop
+            offset="1"
+            className="text-white dark:text-black"
+            stop-color="currentColor"
+            stop-opacity="0"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="b"
@@ -31,8 +45,16 @@ export function NextIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="scale(.71111)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#fff"></stop>
-          <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+          <stop
+            className="text-white dark:text-black"
+            stop-color="currentColor"
+          ></stop>
+          <stop
+            offset="1"
+            className="text-white dark:text-black"
+            stop-color="currentColor"
+            stop-opacity="0"
+          ></stop>
         </linearGradient>
       </defs>
     </svg>

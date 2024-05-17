@@ -1,37 +1,14 @@
 import { IconType } from 'react-icons'
 import {
-  SiAdobephotoshop,
-  SiAmazonaws,
-  SiDeno,
-  SiExpress,
-  SiFastify,
-  SiGithub,
   SiGoogleplay,
-  SiJavascript,
   SiMicrosoftoffice,
-  SiNginx,
   SiOnlyoffice,
   SiStyledcomponents,
   SiThunderbird,
-  SiWindows,
-  SiVuedotjs,
-  SiElixir,
-  SiCplusplus,
-  SiPhp,
-  SiJquery,
-  SiGraphql,
   SiNunjucks,
-  SiElectron,
-  SiArduino,
-  SiWordpress,
-  SiGoogle,
   SiPlanetscale,
-  SiBun,
-  SiPwa,
-  SiPostgresql
+  SiPwa
 } from 'react-icons/si'
-import { FaJava, FaPhoenixFramework } from 'react-icons/fa'
-import { TbSql } from 'react-icons/tb'
 
 import {
   BashIcon,
@@ -54,8 +31,32 @@ import {
   TailwindcssIcon,
   TypescriptIcon,
   VercelIcon,
-  FigmaIcon
+  FigmaIcon,
+  JavascriptIcon,
+  ElixirIcon,
+  PHPIcon,
+  JavaIcon,
+  CPlusPlusIcon,
+  SQLIcon,
+  VueJsIcon,
+  WordPressIcon,
+  JQueryIcon,
+  DenoIcon,
+  BunIcon,
+  ExpressIcon,
+  NginxIcon,
+  GraphQLIcon,
+  ElectronIcon,
+  TauriIcon,
+  AWSIcon,
+  GithubIcon,
+  PostgreSQLIcon,
+  PhotoShopIcon,
+  GoogleWorkspace,
+  WindowsIcon
 } from '~/components/icons'
+
+// type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
 
 export interface Knowledge {
   icon: IconType
@@ -74,7 +75,7 @@ export const knowledgeCategories: {
       {
         title: 'Javascript',
         status: 'god',
-        icon: SiJavascript,
+        icon: JavascriptIcon,
         color: '#F7DF1E'
       },
       {
@@ -97,7 +98,7 @@ export const knowledgeCategories: {
       },
       {
         title: 'Elixir',
-        icon: SiElixir,
+        icon: ElixirIcon,
         color: '#4B275F',
         status: 'bad'
       },
@@ -109,25 +110,25 @@ export const knowledgeCategories: {
       },
       {
         title: 'PHP',
-        icon: SiPhp,
+        icon: PHPIcon,
         color: '#777BB4',
         status: 'bad'
       },
       {
         title: 'Java',
-        icon: FaJava,
+        icon: JavaIcon,
         color: '#f89820',
         status: 'bad'
       },
       {
         title: 'C++',
-        icon: SiCplusplus,
+        icon: CPlusPlusIcon,
         color: '#00599C',
         status: 'bad'
       },
       {
         title: 'SQL',
-        icon: TbSql,
+        icon: SQLIcon,
         color: '#003B57',
         status: 'learning'
       }
@@ -163,7 +164,7 @@ export const knowledgeCategories: {
       {
         title: 'Vue.js',
         status: 'bad',
-        icon: SiVuedotjs,
+        icon: VueJsIcon,
         color: '#4FC08D'
       },
       {
@@ -198,13 +199,13 @@ export const knowledgeCategories: {
       },
       {
         title: 'Wordpress',
-        icon: SiWordpress,
+        icon: WordPressIcon,
         color: '#21759B',
         status: 'god'
       },
       {
         title: 'jQuery',
-        icon: SiJquery,
+        icon: JQueryIcon,
         color: '#0769AD',
         status: 'bad'
       }
@@ -222,13 +223,13 @@ export const knowledgeCategories: {
       {
         title: 'Deno',
         status: 'god',
-        icon: SiDeno,
+        icon: DenoIcon,
         color: '#FFFFFF'
       },
       {
         title: 'Bun',
         status: 'god',
-        icon: SiBun,
+        icon: BunIcon,
         color: '#FBF0DF'
       },
       {
@@ -240,14 +241,8 @@ export const knowledgeCategories: {
       {
         title: 'Express',
         status: 'god',
-        icon: SiExpress,
+        icon: ExpressIcon,
         color: '#FFFFFF'
-      },
-      {
-        title: 'Fastify',
-        status: 'bad',
-        icon: SiFastify,
-        color: '#FFF'
       },
       {
         title: 'Nest.js',
@@ -258,19 +253,13 @@ export const knowledgeCategories: {
       {
         title: 'NGINX',
         status: 'bad',
-        icon: SiNginx,
+        icon: NginxIcon,
         color: '#009639'
       },
       {
         title: 'GraphQL',
-        icon: SiGraphql,
+        icon: GraphQLIcon,
         color: '#E10098',
-        status: 'bad'
-      },
-      {
-        title: 'Phoenix',
-        icon: FaPhoenixFramework,
-        color: '#FD4F00',
         status: 'bad'
       }
     ]
@@ -303,9 +292,15 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Electron',
-        icon: SiElectron,
+        icon: ElectronIcon,
         color: '#47848F',
         status: 'bad'
+      },
+      {
+        title: 'Tauri',
+        icon: TauriIcon,
+        color: '#ffc131',
+        status: 'learning'
       }
     ]
   },
@@ -339,13 +334,13 @@ export const knowledgeCategories: {
       {
         title: 'AWS',
         status: 'bad',
-        icon: SiAmazonaws,
+        icon: AWSIcon,
         color: '#232F3E'
       },
       {
         title: 'Github',
         status: 'god',
-        icon: SiGithub,
+        icon: GithubIcon,
         color: '#181717'
       },
       {
@@ -369,19 +364,8 @@ export const knowledgeCategories: {
       {
         title: 'PostgreSQL',
         status: 'learning',
-        icon: SiPostgresql,
+        icon: PostgreSQLIcon,
         color: '#336791'
-      }
-    ]
-  },
-  {
-    title: 'Electrical',
-    knowledgeList: [
-      {
-        title: 'Arduino',
-        icon: SiArduino,
-        color: '#00878F',
-        status: 'bad'
       }
     ]
   },
@@ -397,7 +381,7 @@ export const knowledgeCategories: {
       {
         title: 'Photoshop',
         status: 'god',
-        icon: SiAdobephotoshop,
+        icon: PhotoShopIcon,
         color: '#31A8FF'
       }
     ]
@@ -408,7 +392,7 @@ export const knowledgeCategories: {
       {
         title: 'Google Workspace',
         status: 'god',
-        icon: SiGoogle,
+        icon: GoogleWorkspace,
         color: '#4285F4'
       },
       {
@@ -432,7 +416,7 @@ export const knowledgeCategories: {
       {
         title: 'Windows',
         status: 'god',
-        icon: SiWindows,
+        icon: WindowsIcon,
         color: '#0078D6'
       }
     ]
