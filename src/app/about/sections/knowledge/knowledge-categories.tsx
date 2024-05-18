@@ -1,15 +1,4 @@
-import { IconType } from 'react-icons'
-import {
-  SiGoogleplay,
-  SiMicrosoftoffice,
-  SiOnlyoffice,
-  SiStyledcomponents,
-  SiThunderbird,
-  SiNunjucks,
-  SiPlanetscale,
-  SiPwa
-} from 'react-icons/si'
-
+import { SVGProps } from 'react'
 import {
   BashIcon,
   CSS3Icon,
@@ -53,10 +42,17 @@ import {
   PostgreSQLIcon,
   PhotoShopIcon,
   GoogleWorkspace,
-  WindowsIcon
+  WindowsIcon,
+  PlanetScaleIcon,
+  StyledComponentIcon,
+  PWAIcon,
+  GooglePlayStore,
+  MicrosoftOfficeIcon,
+  OnlyOfficeIcon,
+  ThunderbirdIcon
 } from '~/components/icons'
 
-// type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
+type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
 
 export interface Knowledge {
   icon: IconType
@@ -182,20 +178,14 @@ export const knowledgeCategories: {
       {
         title: 'Styled Component',
         status: 'god',
-        icon: SiStyledcomponents,
+        icon: StyledComponentIcon,
         color: '#DB7093'
       },
       {
         title: 'PWA',
         status: 'god',
-        icon: SiPwa,
+        icon: PWAIcon,
         color: '#5A0FC8'
-      },
-      {
-        title: 'Nunjucks',
-        icon: SiNunjucks,
-        color: '#1C4913',
-        status: 'bad'
       },
       {
         title: 'Wordpress',
@@ -282,7 +272,7 @@ export const knowledgeCategories: {
       {
         title: 'Google Play',
         status: 'god',
-        icon: SiGoogleplay,
+        icon: GooglePlayStore,
         color: '#414141'
       }
     ]
@@ -352,7 +342,7 @@ export const knowledgeCategories: {
       {
         title: 'PlanetScale',
         status: 'god',
-        icon: SiPlanetscale,
+        icon: PlanetScaleIcon,
         color: '#000000'
       },
       {
@@ -398,19 +388,19 @@ export const knowledgeCategories: {
       {
         title: 'Microsoft Office',
         status: 'god',
-        icon: SiMicrosoftoffice,
-        color: '#217346'
+        icon: MicrosoftOfficeIcon,
+        color: '#c72127'
       },
       {
         title: 'Onlyoffice',
         status: 'god',
-        icon: SiOnlyoffice,
-        color: '#444444'
+        icon: OnlyOfficeIcon,
+        color: '#FF6F3D'
       },
       {
         title: 'Thunderbird',
         status: 'bad',
-        icon: SiThunderbird,
+        icon: ThunderbirdIcon,
         color: '#0A84FF'
       },
       {
