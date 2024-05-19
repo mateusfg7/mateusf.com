@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons'
+import { SVGProps } from 'react'
 
 import {
   TypescriptIcon,
@@ -26,7 +26,7 @@ import {
 
 export type IconItem = {
   title: string
-  icon: IconType
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
   color: string
 }
 

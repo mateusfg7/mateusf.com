@@ -21,12 +21,12 @@ export const revalidate = 3600 // 1h
 export default function Page() {
   return (
     <div className="content-container m-auto space-y-32">
-      <AboutMe />
-      <StatisticsGrid />
+      {/* <AboutMe /> */}
+      {/* <StatisticsGrid /> */}
       <Knowledge />
-      <Experience />
-      <Educational />
-      <Contact />
+      {/* <Experience /> */}
+      {/* <Educational /> */}
+      {/* <Contact /> */}
     </div>
   )
 }

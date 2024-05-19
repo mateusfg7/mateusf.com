@@ -10,7 +10,6 @@ import {
   StackOverflowLogo,
   TwitterLogo
 } from './icons'
-import { SiArchlinux } from 'react-icons/si'
 
 type Contact = {
   user: string

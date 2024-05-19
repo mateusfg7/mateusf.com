@@ -1,7 +1,6 @@
 'use client'
 
 import * as Accordion from '@radix-ui/react-accordion'
-import { TbTools } from 'react-icons/tb'
 import { Brain, ClosedCaptioning } from '@phosphor-icons/react/dist/ssr'
 
 import { knowledgeCategories } from './knowledge-categories'
@@ -11,6 +10,7 @@ import {
   AccordionTrigger,
   KnowledgeInfo
 } from './accordion'
+import { ToolsIcon } from './tools-icon'
 
 export function Knowledge() {
   return (
@@ -43,7 +43,7 @@ export function Knowledge() {
                     title: 'Skill',
                     color: '#fff',
                     status: 'god',
-                    icon: TbTools
+                    icon: ToolsIcon
                   }}
                 />
                 <span className="text-lg">
@@ -57,7 +57,7 @@ export function Knowledge() {
                     title: 'Skill',
                     color: '#fff',
                     status: 'learning',
-                    icon: TbTools
+                    icon: ToolsIcon
                   }}
                 />
                 <span className="text-lg">
@@ -71,7 +71,7 @@ export function Knowledge() {
                     title: 'Skill',
                     color: '#fff',
                     status: 'bad',
-                    icon: TbTools
+                    icon: ToolsIcon
                   }}
                 />
                 <span className="text-lg">
