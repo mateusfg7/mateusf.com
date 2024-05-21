@@ -18,8 +18,8 @@ export function MicrosoftOfficeIcon(props: SVGProps<SVGSVGElement>) {
         y1="83.36"
         y2="89.583"
       >
-        <stop offset="0" stop-color="#f32b44" />
-        <stop offset=".6" stop-color="#a4070a" />
+        <stop offset="0" stopColor="#f32b44" />
+        <stop offset=".6" stopColor="#a4070a" />
       </linearGradient>
       <linearGradient id="b">
         <stop offset="0" stop-opacity=".4" />
@@ -42,12 +42,12 @@ export function MicrosoftOfficeIcon(props: SVGProps<SVGSVGElement>) {
         y1="-3.312"
         y2="71.527"
       >
-        <stop offset="0" stop-color="#800600" />
-        <stop offset=".6" stop-color="#c72127" />
-        <stop offset=".728" stop-color="#c13959" />
-        <stop offset=".847" stop-color="#bc4b81" />
-        <stop offset=".942" stop-color="#b95799" />
-        <stop offset="1" stop-color="#b85ba2" />
+        <stop offset="0" stopColor="#800600" />
+        <stop offset=".6" stopColor="#c72127" />
+        <stop offset=".728" stopColor="#c13959" />
+        <stop offset=".847" stopColor="#bc4b81" />
+        <stop offset=".942" stopColor="#b95799" />
+        <stop offset="1" stopColor="#b85ba2" />
       </linearGradient>
       <linearGradient
         id="e"
@@ -66,11 +66,11 @@ export function MicrosoftOfficeIcon(props: SVGProps<SVGSVGElement>) {
         y1="-4.887"
         y2="88.781"
       >
-        <stop offset="0" stop-color="#ffb900" />
-        <stop offset=".166" stop-color="#ef8400" />
-        <stop offset=".313" stop-color="#e25c01" />
-        <stop offset=".429" stop-color="#db4401" />
-        <stop offset=".5" stop-color="#d83b01" />
+        <stop offset="0" stopColor="#ffb900" />
+        <stop offset=".166" stopColor="#ef8400" />
+        <stop offset=".313" stopColor="#e25c01" />
+        <stop offset=".429" stopColor="#db4401" />
+        <stop offset=".5" stopColor="#d83b01" />
       </linearGradient>
       <path
         d="m19.143 75.558c-2.724 0-4.945 2.121-4.945 4.753 0 1.789 1.031 3.322 2.565 4.14l19.118 10.246a10.11 10.11 0 0 0 4.969 1.303c1.164 0 2.275-.204 3.306-.562l6.531-1.814v-18.091c.027.025-31.519.025-31.545.025z"

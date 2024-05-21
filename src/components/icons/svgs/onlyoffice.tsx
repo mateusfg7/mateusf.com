@@ -43,8 +43,8 @@ export function OnlyOfficeIcon(props: SVGProps<SVGSVGElement>) {
           y2="21.7699"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DEEDC9" />
-          <stop offset="0.6606" stop-color="#8BBA25" />
+          <stop stopColor="#DEEDC9" />
+          <stop offset="0.6606" stopColor="#8BBA25" />
         </linearGradient>
       </defs>
     </svg>

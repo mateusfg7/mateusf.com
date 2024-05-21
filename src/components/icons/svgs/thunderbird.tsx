@@ -122,8 +122,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="767.42"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1B91F3" />
-          <stop offset="1" stop-color="#0B68CB" />
+          <stop stopColor="#1B91F3" />
+          <stop offset="1" stopColor="#0B68CB" />
         </linearGradient>
         <radialGradient
           id="paint1_radial_1_4"
@@ -133,8 +133,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(282.57 465.55) rotate(66.5177) scale(295.96 283.519)"
         >
-          <stop offset="0.53" stop-color="#0B4186" stop-opacity="0" />
-          <stop offset="1" stop-color="#0B4186" stop-opacity="0.45" />
+          <stop offset="0.53" stopColor="#0B4186" stop-opacity="0" />
+          <stop offset="1" stopColor="#0B4186" stop-opacity="0.45" />
         </radialGradient>
         <radialGradient
           id="paint2_radial_1_4"
@@ -144,8 +144,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(521 344) rotate(-127.997) scale(63.2702 104.698)"
         >
-          <stop stop-color="#EF3ACC" stop-opacity="0" />
-          <stop offset="1" stop-color="#EF3ACC" stop-opacity="0.64" />
+          <stop stopColor="#EF3ACC" stop-opacity="0" />
+          <stop offset="1" stopColor="#EF3ACC" stop-opacity="0.64" />
         </radialGradient>
         <linearGradient
           id="paint3_linear_1_4"
@@ -155,8 +155,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="227.37"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0F5DB0" />
-          <stop offset="1" stop-color="#0F5DB0" stop-opacity="0" />
+          <stop stopColor="#0F5DB0" />
+          <stop offset="1" stopColor="#0F5DB0" stop-opacity="0" />
         </linearGradient>
         <radialGradient
           id="paint4_radial_1_4"
@@ -166,8 +166,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(380 702.7) rotate(-64.2624) scale(461.716 570.355)"
         >
-          <stop offset="0.02" stop-color="#094188" />
-          <stop offset="0.97" stop-color="#0B4186" stop-opacity="0" />
+          <stop offset="0.02" stopColor="#094188" />
+          <stop offset="0.97" stopColor="#0B4186" stop-opacity="0" />
         </radialGradient>
         <linearGradient
           id="paint5_linear_1_4"
@@ -177,8 +177,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="770.8"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E247C4" stop-opacity="0" />
-          <stop offset="1" stop-color="#E247C4" stop-opacity="0.64" />
+          <stop stopColor="#E247C4" stop-opacity="0" />
+          <stop offset="1" stopColor="#E247C4" stop-opacity="0.64" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_1_4"
@@ -188,8 +188,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="679.06"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.1" stop-color="#EF3ACC" />
-          <stop offset="1" stop-color="#EF3ACC" stop-opacity="0" />
+          <stop offset="0.1" stopColor="#EF3ACC" />
+          <stop offset="1" stopColor="#EF3ACC" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_1_4"
@@ -199,9 +199,9 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="721.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.91" stop-color="#BEE1FE" />
-          <stop offset="1" stop-color="#96CEFD" />
+          <stop stopColor="white" />
+          <stop offset="0.91" stopColor="#BEE1FE" />
+          <stop offset="1" stopColor="#96CEFD" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_1_4"
@@ -211,8 +211,8 @@ export function ThunderbirdIcon(props: SVGProps<SVGSVGElement>) {
           y2="717"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#BCE0FD" />
-          <stop offset="1" stop-color="#88CCFC" />
+          <stop stopColor="#BCE0FD" />
+          <stop offset="1" stopColor="#88CCFC" />
         </linearGradient>
       </defs>
     </svg>

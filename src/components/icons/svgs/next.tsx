@@ -27,12 +27,12 @@ export function NextIcon(props: SVGProps<SVGSVGElement>) {
         >
           <stop
             className="text-white dark:text-black"
-            stop-color="currentColor"
+            stopColor="currentColor"
           ></stop>
           <stop
             offset="1"
             className="text-white dark:text-black"
-            stop-color="currentColor"
+            stopColor="currentColor"
             stop-opacity="0"
           ></stop>
         </linearGradient>
@@ -47,12 +47,12 @@ export function NextIcon(props: SVGProps<SVGSVGElement>) {
         >
           <stop
             className="text-white dark:text-black"
-            stop-color="currentColor"
+            stopColor="currentColor"
           ></stop>
           <stop
             offset="1"
             className="text-white dark:text-black"
-            stop-color="currentColor"
+            stopColor="currentColor"
             stop-opacity="0"
           ></stop>
         </linearGradient>

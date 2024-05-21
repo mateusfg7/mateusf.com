@@ -60,8 +60,8 @@ export function StyledComponentIcon(props: SVGProps<SVGSVGElement>) {
             y2="0"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#db7093" />
-            <stop offset="1" stop-color="#f3b661" />
+            <stop stopColor="#db7093" />
+            <stop offset="1" stopColor="#f3b661" />
           </linearGradient>
         </defs> */}
       </g>

@@ -12,8 +12,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="553.414"
         gradientTransform="matrix(.1297 0 0 .2 -46.03 17.198)"
       >
-        <stop offset="0" stop-color="#d9d8dc"></stop>
-        <stop offset="1" stop-color="#fff" stop-opacity=".385"></stop>
+        <stop offset="0" stopColor="#d9d8dc"></stop>
+        <stop offset="1" stopColor="#fff" stop-opacity=".385"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -30,8 +30,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="472.243"
         gradientTransform="matrix(.1142 0 0 .2271 -47.053 17.229)"
       >
-        <stop offset="0" stop-color="#8d67af" stop-opacity=".672"></stop>
-        <stop offset="1" stop-color="#9f8daf"></stop>
+        <stop offset="0" stopColor="#8d67af" stop-opacity=".672"></stop>
+        <stop offset="1" stopColor="#9f8daf"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -48,8 +48,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="505.851"
         gradientTransform="matrix(.1227 0 0 .2115 -46.493 17.206)"
       >
-        <stop offset="0" stop-color="#26053d" stop-opacity=".762"></stop>
-        <stop offset="1" stop-color="#b7b4b4" stop-opacity=".278"></stop>
+        <stop offset="0" stopColor="#26053d" stop-opacity=".762"></stop>
+        <stop offset="1" stopColor="#b7b4b4" stop-opacity=".278"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -66,8 +66,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="559.255"
         gradientTransform="matrix(.1848 0 0 .1404 -42.394 17.138)"
       >
-        <stop offset="0" stop-color="#91739f" stop-opacity=".46"></stop>
-        <stop offset="1" stop-color="#32054f" stop-opacity=".54"></stop>
+        <stop offset="0" stopColor="#91739f" stop-opacity=".46"></stop>
+        <stop offset="1" stopColor="#32054f" stop-opacity=".54"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -84,8 +84,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="201.281"
         gradientTransform="matrix(.1418 0 0 .1829 -45.23 17.18)"
       >
-        <stop offset="0" stop-color="#463d49" stop-opacity=".331"></stop>
-        <stop offset="1" stop-color="#340a50" stop-opacity=".821"></stop>
+        <stop offset="0" stopColor="#463d49" stop-opacity=".331"></stop>
+        <stop offset="1" stopColor="#340a50" stop-opacity=".821"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -102,8 +102,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="431.648"
         gradientTransform="matrix(.106 0 0 .2448 -47.595 17.242)"
       >
-        <stop offset="0" stop-color="#715383" stop-opacity=".145"></stop>
-        <stop offset="1" stop-color="#f4f4f4" stop-opacity=".234"></stop>
+        <stop offset="0" stopColor="#715383" stop-opacity=".145"></stop>
+        <stop offset="1" stopColor="#f4f4f4" stop-opacity=".234"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"
@@ -120,8 +120,8 @@ export function ElixirIcon(props: SVGProps<SVGSVGElement>) {
         y2="84.466"
         gradientTransform="matrix(.09173 0 0 .2828 -48.536 17.28)"
       >
-        <stop offset="0" stop-color="#a5a1a8" stop-opacity=".356"></stop>
-        <stop offset="1" stop-color="#370c50" stop-opacity=".582"></stop>
+        <stop offset="0" stopColor="#a5a1a8" stop-opacity=".356"></stop>
+        <stop offset="1" stopColor="#370c50" stop-opacity=".582"></stop>
       </linearGradient>
       <path
         fill-rule="evenodd"

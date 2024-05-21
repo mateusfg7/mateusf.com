@@ -33,11 +33,11 @@ export function NodeIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(0 24.664) scale(1.51263)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3F873F"></stop>
-          <stop offset=".33" stop-color="#3F8B3D"></stop>
-          <stop offset=".637" stop-color="#3E9638"></stop>
-          <stop offset=".934" stop-color="#3DA92E"></stop>
-          <stop offset="1" stop-color="#3DAE2B"></stop>
+          <stop stopColor="#3F873F"></stop>
+          <stop offset=".33" stopColor="#3F8B3D"></stop>
+          <stop offset=".637" stopColor="#3E9638"></stop>
+          <stop offset=".934" stopColor="#3DA92E"></stop>
+          <stop offset="1" stopColor="#3DAE2B"></stop>
         </linearGradient>
         <linearGradient
           id="b"
@@ -48,10 +48,10 @@ export function NodeIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(0 24.664) scale(1.51263)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".138" stop-color="#3F873F"></stop>
-          <stop offset=".402" stop-color="#52A044"></stop>
-          <stop offset=".713" stop-color="#64B749"></stop>
-          <stop offset=".908" stop-color="#6ABF4B"></stop>
+          <stop offset=".138" stopColor="#3F873F"></stop>
+          <stop offset=".402" stopColor="#52A044"></stop>
+          <stop offset=".713" stopColor="#64B749"></stop>
+          <stop offset=".908" stopColor="#6ABF4B"></stop>
         </linearGradient>
         <linearGradient
           id="c"
@@ -62,10 +62,10 @@ export function NodeIcon(props: SVGProps<SVGSVGElement>) {
           gradientTransform="translate(0 24.664) scale(1.51263)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".092" stop-color="#6ABF4B"></stop>
-          <stop offset=".287" stop-color="#64B749"></stop>
-          <stop offset=".598" stop-color="#52A044"></stop>
-          <stop offset=".862" stop-color="#3F873F"></stop>
+          <stop offset=".092" stopColor="#6ABF4B"></stop>
+          <stop offset=".287" stopColor="#64B749"></stop>
+          <stop offset=".598" stopColor="#52A044"></stop>
+          <stop offset=".862" stopColor="#3F873F"></stop>
         </linearGradient>
       </defs>
     </svg>
