@@ -4,28 +4,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')()
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        hostname: '*.githubusercontent.com'
-      },
-      {
-        hostname: 'github.com'
-      },
-      {
-        hostname: '*.imgur.com'
-      },
-      {
-        hostname: 'mateusf.com'
-      },
-      {
-        hostname: 'lastfm.freetls.fastly.net'
-      },
-      {
-        hostname: '*.catsjuice.com'
-      },
-      {
-        hostname: '*.scdn.co'
-      }
+    domains: [
+      'raw.githubusercontent.com',
+      'avatars.githubusercontent.com',
+      'github.com',
+      'i.imgur.com',
+      'mateusf.com',
+      'lastfm.freetls.fastly.net',
+      'contribution.catsjuice.com'
     ]
   },
   async rewrites() {
