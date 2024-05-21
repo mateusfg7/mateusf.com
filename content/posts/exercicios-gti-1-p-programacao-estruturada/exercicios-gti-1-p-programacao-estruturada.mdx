@@ -1964,3 +1964,188 @@ print(L1) # [7, 5, 3, 1, 2, 9]
 print(L2) # [1, 4, 9, 8, 3, 6]
 print(resultado) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
+
+# Aula 12 - Python
+
+<Error>
+Não foi feita
+</Error>
+
+# Aula 13 - Python
+**Data**: 14/05/2024
+
+## Exercício 1
+> Altere o programa anterior de modo que ele receba os valores para preencher a lista, a cada valor digitado o sistema ofereça ao usuário a opção de imprimir a lista com seus índices ([0] - 4). O programa também deve oferecer ao usuário a opção de adicionar mais um valor ou excluir um valor. Ao finalizar o sistema deve apresentar na tela todos os números digitados, o maior, menor e a média.
+
+```python showLineNumbers
+# verificação do maior valor
+lista = []
+
+
+while True:
+    novo_valor = int(input("Digite um valor: "))
+    lista.append(novo_valor)
+    print("")
+
+    exibir = input("Deseja exibir a lista? (s/n)")
+
+    if exibir == "s":
+        print(f"(I) N")
+        for cont, item in enumerate(lista):
+            print(f"({cont}) {item}")
+
+    print("Escolha uma opção:")
+    print("[1]> Adicionar novo valor")
+    print("[2]> Excluir valor")
+    print("[3]> Finalizar")
+    escolha = int(input("-> "))
+
+    print("")
+    if escolha == 1:
+        continue
+    elif escolha == 2:
+        print(f"(I) N")
+        for cont, item in enumerate(lista):
+            print(f"({cont}) {item}")
+        excluir = int(input("Digite o índice do valor que deseja excluir: "))
+        del lista[excluir]
+    elif escolha == 3:
+        break
+
+
+maior = 0
+menor = 0
+soma = 0
+
+for cont, item in enumerate(lista):
+    if (item > maior) or cont == 0:
+        maior = item
+
+for cont, item in enumerate(lista):
+    if (item < menor) or cont == 0:
+        menor = item
+
+for item in lista:
+    soma += item
+
+
+for cont, item in enumerate(lista):
+    print(f"({cont}) {item}")
+
+print(f"O maior valor é: {maior}")
+print(f"O menor valor é: {menor}")
+print(f"A média dos valores é: {soma / len(lista)}")
+```
+
+## Exercício 2
+>  Desenvolva um programa para separar os valores da lista [9,8,7,12,0,13,21,35,6,11,1] em duas listas, uma com os pares e outra com os ímpares.
+
+```python showLineNumbers
+lista = [9,8,7,12,0,13,21,35,6,11,1]
+
+pares = []
+impares = []
+
+for item in lista:
+    if item % 2 == 0:
+        pares.append(item)
+    else:
+        impares.append(item)
+
+print(f"Pares: {pares}")
+print(f"Ímpares: {impares}")
+```
+
+## Exercício 3
+> Altere o software do exercício anterior de forma que ele receba os dados do usuário para criar na lista de compras. O sistema deve oferecer ao usuário a possibilidade de exibir a lista de compras, adicionar e remover itens, além de mostrar os totais (valor total da compra e quantidade total de ítens).
+
+```python showLineNumbers
+import os
+from time import sleep
+
+limpar = lambda: os.system("clear")
+
+itens = []
+
+while True:
+    limpar()
+    print("+-- MENU PRINCIPAL --+")
+    print("| [1] Adicionar item |")
+    print("| [2] Remover item   |")
+    print("| [3] Listar itens   |")
+    print("| [4] Sair           |")
+    print("+--------------------+")
+    opcao = input("-> ")
+
+    if not opcao.isdigit():
+        print("\nOpção inválida!")
+        sleep(2)
+        continue
+
+    opcao = int(opcao)
+
+    if opcao == 1:
+        limpar()
+
+        print("[ ADICIONAR ITEM ]\n")
+
+        nome = input("Nome do item: ")
+        quantidade = int(input("Quantidade: "))
+        valor_unitario = float(input("Valor unitário: ").replace(",", "."))
+
+        itens.append([nome, quantidade, valor_unitario])
+
+        print("\nItem adicionado com sucesso!")
+        sleep(2)
+    elif opcao == 2:
+        limpar()
+
+        if len(itens) == 0:
+            print("Nenhum item para remover!")
+            sleep(2)
+            continue
+
+        print("[ REMOVER ITEM ]\n")
+
+        print("[ID] Nome\n")
+        for indice, item in enumerate(itens):
+            print("[%d] %s" % (indice, item[0]))
+
+        print("\nID do ítem que deseja remover")
+        id_item = int(input("-> "))
+
+        if id_item < 0 or id_item >= len(itens):
+            print("\nID inválido!")
+            sleep(2)
+            continue
+        else:
+            del itens[id_item]
+            print("\nItem removido com sucesso!")
+            sleep(2)
+    elif opcao == 3:
+        limpar()
+
+        print("[ ITENS ]\n")
+
+        quantidade_total = 0
+        valor_total = 0
+
+        print("ID | Nome - Quantidade - Valor unitário (Valor total)")
+        print("---|-----------------------------------------------")
+        for indice, item in enumerate(itens):
+            print("%d  | %s - %d unidade(s) - R$ %.2f (R$ %.2f)" % (indice, item[0], item[1], item[2], item[1] * item[2]))
+            quantidade_total += item[1]
+            valor_total += item[1] * item[2]
+
+        print("\nQuantidade unitária de itens -- %d" % len(itens))
+        print("Quantidade total de itens ----- %d" % quantidade_total)
+        print("Valor total da compra --------- R$ %.2f" % valor_total)
+
+        input("\nPressione enter para continuar...")
+    elif opcao == 4:
+        limpar()
+        break
+    else:
+        print("\nOpção inválida!")
+        sleep(2)
+```
