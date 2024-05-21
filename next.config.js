@@ -9,6 +9,7 @@ const nextConfig = {
       'avatars.githubusercontent.com',
       'github.com',
       'i.imgur.com',
+      'i.scdn.co',
       'mateusf.com',
       'lastfm.freetls.fastly.net',
       'contribution.catsjuice.com'
