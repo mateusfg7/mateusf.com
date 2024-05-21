@@ -1,10 +1,10 @@
-import { SiVite, SiMdx } from 'react-icons/si'
 import {
   BunIcon,
   DenoIcon,
   ExpoIcon,
   JavaIcon,
   JavascriptIcon,
+  MarkdownIcon,
   NextIcon,
   NodeIcon,
   PostgreSQLIcon,
@@ -15,6 +15,7 @@ import {
   SvelteIcon,
   TailwindcssIcon,
   TypescriptIcon,
+  ViteIcon,
   VueJsIcon
 } from '~/components/icons'
 
@@ -26,14 +27,12 @@ export const techIcons = {
   reactjs: () => <ReactIcon />,
   nextjs: () => <NextIcon />,
   tailwindcss: () => <TailwindcssIcon />,
-  vite: () => <SiVite className="text-[#FFC119]" title="Vite" />,
+  vite: () => <ViteIcon />,
   nodejs: () => <NodeIcon />,
   prisma: () => <PrismaIcon />,
   vue: () => <VueJsIcon />,
   svelte: () => <SvelteIcon />,
-  mdx: () => (
-    <SiMdx className="text-[#1B1F24] dark:text-[rgb(77,81,86)]" title="MDX" />
-  ),
+  mdx: () => <MarkdownIcon />,
   deno: () => <DenoIcon />,
   postgresql: () => <PostgreSQLIcon />,
   java: () => <JavaIcon />,
