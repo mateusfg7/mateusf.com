@@ -82,7 +82,7 @@ dependencies:
     version: 7.0.0
   rehype-pretty-code:
     specifier: ^0.13.0
-    version: 0.13.1(shiki@1.5.1)
+    version: 0.13.1(shiki@1.6.0)
   rehype-shift-heading:
     specifier: ^2.0.0
     version: 2.0.0
@@ -112,7 +112,7 @@ dependencies:
     version: 0.33.3
   shiki:
     specifier: ^1.1.7
-    version: 1.5.1
+    version: 1.6.0
   tailwindcss-animated:
     specifier: ^1.0.1
     version: 1.0.1(tailwindcss@3.4.3)
@@ -1814,8 +1814,8 @@ packages:
     resolution: {integrity: sha512-6i/8UoL0P5y4leBIGzvkZdS85RDMG9y1ihZzmTZQ5LdHUYmZ7pKFoj8X0236s3lusPs1Fa5HTQUpwI+UfTcmeA==}
     dev: true
 
-  /@shikijs/core@1.5.1:
-    resolution: {integrity: sha512-xjV63pRUBvxA1LsxOUhRKLPh0uUjwBLzAKLdEuYSLIylo71sYuwDcttqNP01Ib1TZlLfO840CXHPlgUUsYFjzg==}
+  /@shikijs/core@1.6.0:
+    resolution: {integrity: sha512-NIEAi5U5R7BLkbW1pG/ZKu3eb1lzc3/+jD0lFsuxMT7zjaf9bbNwdNyMr7zh/Zl8EXQtQ+MYBAt5G+JLu+5DlA==}
     dev: false
 
   /@sinclair/typebox@0.25.24:
@@ -6924,7 +6924,7 @@ packages:
       unified: 11.0.4
     dev: false
 
-  /rehype-pretty-code@0.13.1(shiki@1.5.1):
+  /rehype-pretty-code@0.13.1(shiki@1.6.0):
     resolution: {integrity: sha512-Lw3cZohiw5J2NMMD0M11W9HlIKrZ7JjxfJmY0nxVa/HG5oMT+kkhcrUEFB5ajaEk/E9uR8+n9AmQbGJci9/TqA==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -6934,7 +6934,7 @@ packages:
       hast-util-to-string: 3.0.0
       parse-numeric-range: 1.3.0
       rehype-parse: 9.0.0
-      shiki: 1.5.1
+      shiki: 1.6.0
       unified: 11.0.4
       unist-util-visit: 5.0.0
     dev: false
@@ -7213,10 +7213,10 @@ packages:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
     dev: true
 
-  /shiki@1.5.1:
-    resolution: {integrity: sha512-vx4Ds3M3B9ZEmLeSXqBAB85osBWV8ErZfP69kuFQZozPgHc33m7spLTCUkcjwEjFm3gk3F9IdXMv8kX+v9xDHA==}
+  /shiki@1.6.0:
+    resolution: {integrity: sha512-P31ROeXcVgW/k3Z+vUUErcxoTah7ZRaimctOpzGuqAntqnnSmx1HOsvnbAB8Z2qfXPRhw61yptAzCsuKOhTHwQ==}
     dependencies:
-      '@shikijs/core': 1.5.1
+      '@shikijs/core': 1.6.0
     dev: false
 
   /side-channel@1.0.4:
