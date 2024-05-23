@@ -129,6 +129,9 @@ const config: Config = {
           '75%': { background: colors.red['600'] },
           '100%': { background: colors.blue['600'] }
         }
+      },
+      scale: {
+        flip: '-1'
       }
     },
     keyframes: {

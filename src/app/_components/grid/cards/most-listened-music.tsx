@@ -22,13 +22,15 @@ export async function MostListenedMusic() {
         size="1em"
         className="absolute left-0 top-0 text-[50px] text-red-800"
       />
-      <div className="relative z-0 mb-10 ml-8 mt-11 -rotate-90 font-extrabold leading-none text-white">
-        <span className="absolute left-0 top-1 truncate text-xl opacity-20">
-          {artist.name}
-        </span>
-        <div className="truncate">{title}</div>
-        <div className="absolute truncate text-xs font-normal">
-          Top listened this month
+      <div className="absolute bottom-0 right-5 top-0">
+        <div className="side-text relative z-0 h-full font-extrabold leading-none text-white">
+          <span className="absolute h-fit max-h-full truncate text-xl opacity-30">
+            {artist.name}
+          </span>
+          <div className="truncate">{title}</div>
+          <div className="truncate text-xs font-normal">
+            Top listened this month
+          </div>
         </div>
       </div>
       <Image
@@ -41,7 +43,7 @@ export async function MostListenedMusic() {
       <Image
         src={cover.url}
         alt={title!}
-        className="absolute -bottom-12 -left-16 overflow-hidden rounded-full"
+        className="absolute -bottom-12 -left-16 animate-spin overflow-hidden rounded-full animate-duration-[120s]"
         placeholder="empty"
         width={200}
         height={200}
