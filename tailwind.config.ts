@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
 
 const config: Config = {
   content: ['./src/**/*.tsx'],
@@ -41,7 +42,8 @@ const config: Config = {
         'slide-left': 'slide-left 70ms linear',
         'slide-right': 'slide-right 70ms linear',
         'marquee-left': 'marquee-left var(--duration, 30s) linear infinite',
-        'marquee-up': 'marquee-up var(--duration, 30s) linear infinite'
+        'marquee-up': 'marquee-up var(--duration, 30s) linear infinite',
+        'background-fade': 'background-fade 20s linear infinite'
       },
       keyframes: {
         typing: {
@@ -119,6 +121,13 @@ const config: Config = {
         'marquee-up': {
           from: { transform: 'translateY(0)' },
           to: { transform: 'translateY(calc(-100% - var(--gap)))' }
+        },
+        'background-fade': {
+          '0%': { background: colors.blue['600'] },
+          '25%': { background: colors.yellow['600'] },
+          '50%': { background: colors.green['600'] },
+          '75%': { background: colors.red['600'] },
+          '100%': { background: colors.blue['600'] }
         }
       }
     },
