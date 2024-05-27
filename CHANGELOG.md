@@ -1,5 +1,48 @@
-## [9.3.0](https://github.com/mateusfg7/mateusf.com/compare/9.2.0...9.3.0) (2024-04-09)
+## [9.4.0](https://github.com/mateusfg7/mateusf.com/compare/9.3.0...9.4.0) (2024-05-27)
 
+### Features
+
+* **about:** update knowledge section UI ([bd75824](https://github.com/mateusfg7/mateusf.com/commit/bd758245c9b795a7c2e0263059299ef4e66b0452))
+* **about:** update knowledge section UI ([257e81c](https://github.com/mateusfg7/mateusf.com/commit/257e81c5e71bb3cc0054e103e44f992e80527005))
+* **home/grid:** add github link ([ed94f80](https://github.com/mateusfg7/mateusf.com/commit/ed94f8019dbeb4f81e1d7300c5693bb23746a337))
+* **home/grid:** create "latest post" card ([2cb806a](https://github.com/mateusfg7/mateusf.com/commit/2cb806a56e63d23089df6d1dc426949700aba6ac))
+* **home/grid:** create github stats ([6911b6d](https://github.com/mateusfg7/mateusf.com/commit/6911b6d60bb03c28f26e48c8f1393ded3d2fd83d))
+* **home/grid:** create initial stacks card ([b20cc06](https://github.com/mateusfg7/mateusf.com/commit/b20cc06c2aad8b6cf69df3f0aff2ab28f385ec4e))
+* **home/grid:** create letterboxed link card ([d83f670](https://github.com/mateusfg7/mateusf.com/commit/d83f670d62deb59dc797b38a1e757e4967b58371))
+* **home/grid:** create links card ([04474b0](https://github.com/mateusfg7/mateusf.com/commit/04474b07b2213705fc026a30cc92eb3ab406d1c0))
+* **home/grid:** update links card ([f5ee52a](https://github.com/mateusfg7/mateusf.com/commit/f5ee52a66d75d4f054c31fdd6492544e742763b3))
+* **home:** add grid links and statistics ([c9a5d81](https://github.com/mateusfg7/mateusf.com/commit/c9a5d8176015c3fe822879dfa0b3f3b83d196c1b))
+* **home:** create about-me section ([abe2895](https://github.com/mateusfg7/mateusf.com/commit/abe28950613c04b97b652bbba2fc614ca000153a))
+* **home:** create initial grid ([19f4a31](https://github.com/mateusfg7/mateusf.com/commit/19f4a3195a7d8095d2fa53f56404f6e39142c6f4))
+* **home:** dark mode on latest-post card ([f8baef8](https://github.com/mateusfg7/mateusf.com/commit/f8baef821bbaa844ffc6db0b69b190ae118acb93))
+* **home:** update "latest-post" card UI in home grid ([909caa9](https://github.com/mateusfg7/mateusf.com/commit/909caa9d6e6b314e7f5a9c3679708da536f3d078))
+* **icon:** add Vite and Markdown icons ([886752d](https://github.com/mateusfg7/mateusf.com/commit/886752db5d9f6d4d27f43cbb760053c70a09c970))
+* **icons:** add new icons ([ee3510c](https://github.com/mateusfg7/mateusf.com/commit/ee3510c6d155e0e394d695ecc7ff20cec16f183f))
+* **icons:** update some icons ([2facd1d](https://github.com/mateusfg7/mateusf.com/commit/2facd1d40bef9eec1afbad8a1ec139186d975ef2))
+* **lib:** create `getAlbumCover` function for get music cover from Spotify database ([455a49d](https://github.com/mateusfg7/mateusf.com/commit/455a49d30142cf11e7acfde1adb94304fbe5d984))
+* **projects:** use local icons instead of react-icons ([6398ad6](https://github.com/mateusfg7/mateusf.com/commit/6398ad6c453de6ff9282c345108e38bde819ca19))
+* **tailwindcss:** create background-fade animation ([04c4d23](https://github.com/mateusfg7/mateusf.com/commit/04c4d2350ff61da7f5a508bf38ae8707f99358b2))
+* **ui:** update blog post ui ([1ac69e1](https://github.com/mateusfg7/mateusf.com/commit/1ac69e12de55a819b4ca9e7450a025fe5f96c828))
+
+### Bug Fixes
+
+* **about/statistics:** show album cover on top track card ([94266ba](https://github.com/mateusfg7/mateusf.com/commit/94266ba71782b78ebbf73e405cf2f2e099e84730))
+* **deps:** update dependency @headlessui/react to v1.7.19 ([fe21dc1](https://github.com/mateusfg7/mateusf.com/commit/fe21dc19c1bacec785a0df97c7b0cd5562be9b46))
+* **deps:** update dependency @phosphor-icons/react to v2.1.5 ([2fc08d2](https://github.com/mateusfg7/mateusf.com/commit/2fc08d2287d808dbe6c17c7afdb51bfedfebac0d))
+* **deps:** update dependency react-icons to v5.2.1 ([8fd5835](https://github.com/mateusfg7/mateusf.com/commit/8fd5835a16e1f6cb7626ef51af389aac7c3fc68d))
+* **deps:** update dependency react-parallax-tilt to v1.7.220 ([e43090f](https://github.com/mateusfg7/mateusf.com/commit/e43090f6c230ca51912d6b52d775e6473d6e49bb))
+* **deps:** update dependency react-parallax-tilt to v1.7.226 ([cf45250](https://github.com/mateusfg7/mateusf.com/commit/cf452504b65370bfacb279db1d6a96571bdd6cb0))
+* **deps:** update dependency recharts to v2.12.7 ([2a7b4ab](https://github.com/mateusfg7/mateusf.com/commit/2a7b4ab5ed9df3cd49355b10656aebad6627fc4e))
+* **deps:** update dependency rehype-pretty-code to v0.13.2 ([dba6819](https://github.com/mateusfg7/mateusf.com/commit/dba6819a1398c92bd91116e8d19e944eb84eae16))
+* **deps:** update dependency sharp to v0.33.4 ([376e763](https://github.com/mateusfg7/mateusf.com/commit/376e76345b7b4922cb4e8b27f33d6fb1d34e55a9))
+* **deps:** update dependency shiki to v1.2.4 ([4e3603c](https://github.com/mateusfg7/mateusf.com/commit/4e3603c5f708a942e9311592e4eab4a414810e0f))
+* **deps:** update dependency shiki to v1.5.1 ([1f13320](https://github.com/mateusfg7/mateusf.com/commit/1f133205087979b537309ecc77aa9c5223691faf))
+* **deps:** update dependency shiki to v1.6.0 ([e0a3308](https://github.com/mateusfg7/mateusf.com/commit/e0a3308017098b7bcb9f7d51cbb63e351e720fd7))
+* **home:** fit text of spotify card on grid ([2a91848](https://github.com/mateusfg7/mateusf.com/commit/2a918485ebf8123a6f0874cc68f5336448df1db1))
+* **images:** use old image hostname pattern on next config ([cb524b0](https://github.com/mateusfg7/mateusf.com/commit/cb524b07e8bca85855cb040afa68483fd266f98d))
+* **post:** specify custom colors for dark mode on tables ([804ef62](https://github.com/mateusfg7/mateusf.com/commit/804ef6264f77902c0c2086b4d2230e05ee90cfd5))
+* **svg:** replace all "stop-color" to "stopColor" ([f618f72](https://github.com/mateusfg7/mateusf.com/commit/f618f723155626592ad7eaca67a5b4966b423e13))
+## [9.3.0](https://github.com/mateusfg7/mateusf.com/compare/9.2.0...9.3.0) (2024-04-09)
 
 ### Features
 
@@ -11,7 +54,6 @@
 * **projects:** update tech-icons colors and add Bun icon ([09506e9](https://github.com/mateusfg7/mateusf.com/commit/09506e9491baacab6e8d4b40860b92fa95462617))
 * **projects:** use project-card for all projects and remove project-info component ([ee93fa7](https://github.com/mateusfg7/mateusf.com/commit/ee93fa7f90f6d9b406ffc4faed39fcb3aaeb3ebf))
 * **ui:** small imrpovements on blog post styles ([a24bfa0](https://github.com/mateusfg7/mateusf.com/commit/a24bfa0bcd23189dbc696ff4366f622f5c9b254c))
-
 
 ### Bug Fixes
 
@@ -32,9 +74,7 @@
 * **deps:** update dependency sharp to v0.33.3 ([2380928](https://github.com/mateusfg7/mateusf.com/commit/2380928387260bae6ece29e006335210b5428cbb))
 * **deps:** update dependency shiki to v1.2.1 ([16eba45](https://github.com/mateusfg7/mateusf.com/commit/16eba45be600adbc6b4c9072d5dcbc041b018fb0))
 * **experience:** break title of work item on small devices ([773fa7b](https://github.com/mateusfg7/mateusf.com/commit/773fa7bb2d2be872e5c54e2815b6a2502585cc58))
-
 ## [9.2.0](https://github.com/mateusfg7/mateusf.com/compare/9.1.0...9.2.0) (2024-03-15)
-
 
 ### Features
 
@@ -46,7 +86,6 @@
 * **projects:** update project card styles ([f749168](https://github.com/mateusfg7/mateusf.com/commit/f7491687cb2752d398dc9ba3ccec72b006c6b03c))
 * **ui:** update background and arts on specific pages ([8d55172](https://github.com/mateusfg7/mateusf.com/commit/8d551726149ad1378f46cda144fcb51f4dd0fc39))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency date-fns to v3.4.0 ([3d6fa60](https://github.com/mateusfg7/mateusf.com/commit/3d6fa607ae4b287e2e420984480eef79bab9c5f7))
@@ -54,24 +93,18 @@
 * **deps:** update dependency react-parallax-tilt to v1.7.213 ([25bf201](https://github.com/mateusfg7/mateusf.com/commit/25bf201686a4a810dfd87d810a66adc248d42366))
 * **deps:** update dependency react-parallax-tilt to v1.7.214 ([65e937b](https://github.com/mateusfg7/mateusf.com/commit/65e937ba33064ca6a3a5670eae2bc52f91ad6c17))
 * **deps:** update dependency react-parallax-tilt to v1.7.215 ([2efd805](https://github.com/mateusfg7/mateusf.com/commit/2efd805f7bd96fd5be63e6cd960cbeb4a71eef9b))
-
 ## [9.1.0](https://github.com/mateusfg7/mateusf.com/compare/9.0.1...9.1.0) (2024-03-06)
-
 
 ### Features
 
 * **blog:** add icon on blockquote ([e8ff358](https://github.com/mateusfg7/mateusf.com/commit/e8ff358ee966f25ad90ca9efe2de1a5506d2fb98))
 * **blog:** create "Tip", "Warn", and "Error" components ([f9fd71d](https://github.com/mateusfg7/mateusf.com/commit/f9fd71d0bc8da2ddf00ad1206daf98fb8f244648))
-
 ## [9.0.1](https://github.com/mateusfg7/mateusf.com/compare/9.0.0...9.0.1) (2024-03-04)
-
 
 ### Features
 
 * **header:** replace signature by a styled name ([26e3c3b](https://github.com/mateusfg7/mateusf.com/commit/26e3c3bbda1cd0ad06c54fa8d2eb5d67a5433dc3))
-
 ## [9.0.0](https://github.com/mateusfg7/mateusf.com/compare/8.12.2...9.0.0) (2024-03-04)
-
 
 ### Features
 
@@ -112,7 +145,6 @@
 * **velite:** create Posts collection ([ae2a317](https://github.com/mateusfg7/mateusf.com/commit/ae2a3177af8b5c51c0546b77b378029083481c30))
 * **velite:** include rehype/remark plugins for MDX content ([9083b52](https://github.com/mateusfg7/mateusf.com/commit/9083b52ddf0b3a010fc2e219d84535c12408abe4))
 
-
 ### Bug Fixes
 
 * **about:** add spacing between description content and title ([2cde60b](https://github.com/mateusfg7/mateusf.com/commit/2cde60b0e7e1ad960113a3a3c70263a8d5ba63f5))
@@ -131,27 +163,21 @@
 * **feed:** get raw content for markdown generation ([1ba29ee](https://github.com/mateusfg7/mateusf.com/commit/1ba29ee5e343500acdc2dadea7f427ffb98580e7))
 * **mdx-components:** add `taget="_blank"` on Anchore component ([6e6c5bf](https://github.com/mateusfg7/mateusf.com/commit/6e6c5bf746f7967539761cd67c4c384d6ab29f21))
 * **statistics:** resolve spotify top track bug ([57fe0aa](https://github.com/mateusfg7/mateusf.com/commit/57fe0aa0c1897ee943fafd95720139f596f2baa7))
-
 ## [8.12.2](https://github.com/mateusfg7/mateusf.com/compare/8.12.1...8.12.2) (2024-02-06)
-
 
 ### Bug Fixes
 
 * **types:** use `TopTrack` type instead of `Track` on statistics page ([dcc4b4b](https://github.com/mateusfg7/mateusf.com/commit/dcc4b4b1602d9e2d08a301da074681ad5e1088b4))
 * **ui:** copy button on code fragments ([07b6488](https://github.com/mateusfg7/mateusf.com/commit/07b64887f7c387906fe3d50df468e41f86ae6b5b))
 * **ui:** long `<li>` lines ([f2749f1](https://github.com/mateusfg7/mateusf.com/commit/f2749f13a4bd0cf7f75d5f9dbc8462a83ddf69f6))
-
 ## [8.12.1](https://github.com/mateusfg7/mateusf.com/compare/8.12.0...8.12.1) (2024-02-04)
-
 
 ### Features
 
 * **lastFm:** create new types and functions ([cc0bcee](https://github.com/mateusfg7/mateusf.com/commit/cc0bcee1a4f1beea928b81b2235e831a595e8d71))
 * **ui:** replace "last track" sectionby "top track" section ([d140981](https://github.com/mateusfg7/mateusf.com/commit/d1409811c8586107a78ce156b70824ca6842fd74))
 * **ui:** replace "last track" sectionby "top track" section ([c70fc38](https://github.com/mateusfg7/mateusf.com/commit/c70fc3878b10beccc2d228f2ce55b73fdc87ee1a))
-
 ## [8.12.0](https://github.com/mateusfg7/mateusf.com/compare/8.11.3...8.12.0) (2024-01-23)
-
 
 ### Features
 
@@ -160,33 +186,26 @@
 * **giscus-comments:** small improvements ([91d0cec](https://github.com/mateusfg7/mateusf.com/commit/91d0cece69522c3115f170efcf14a8cc1ca1166d))
 * **page:** create `/guestbook` page ([9e170a6](https://github.com/mateusfg7/mateusf.com/commit/9e170a65e318da1f8a98af89cd86f756fa69d8e1))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency date-fns to v3.3.0 ([f1606ba](https://github.com/mateusfg7/mateusf.com/commit/f1606bab1528bd6fe6fb08539dea2ceeb0bc1543))
-
 ## [8.11.3](https://github.com/mateusfg7/mateusf.com/compare/8.11.2...8.11.3) (2024-01-19)
-
 
 ### Features
 
 * **analytics:** update umami instance url ([c1ac3ea](https://github.com/mateusfg7/mateusf.com/commit/c1ac3ea591f97ca3b9caa1fcd927324e5dc677e4))
 * **seo:** small seo improvements ([960ef75](https://github.com/mateusfg7/mateusf.com/commit/960ef75bcfcc8c80fcafe25b1c491215ff28d61b))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency date-fns to v3.2.0 ([57e7a47](https://github.com/mateusfg7/mateusf.com/commit/57e7a47d35659c661ea29c898b1c48f39ab04e0d))
 * **deps:** update dependency react-icons to v5 ([61d86db](https://github.com/mateusfg7/mateusf.com/commit/61d86db4bc92e8a20d490bb1e34a6a99763f917b))
 * **deps:** update dependency react-icons to v5.0.1 ([962b783](https://github.com/mateusfg7/mateusf.com/commit/962b7832f51d9450e371d4a7c7b5c97df23b85d0))
-
 ## [8.11.2](https://github.com/mateusfg7/mateusf.com/compare/8.11.1...8.11.2) (2024-01-11)
-
 
 ### Features
 
 * **ui:** replace link icon to `ArrowSquareOut` on blog post ([1485a9d](https://github.com/mateusfg7/mateusf.com/commit/1485a9da811c144bedeba915b5c8fc4f816be337))
-
 
 ### Bug Fixes
 
@@ -194,16 +213,12 @@
 * **deps:** update dependency kbar to v0.1.0-beta.45 ([db5f495](https://github.com/mateusfg7/mateusf.com/commit/db5f495838532e96077214afe61cf90b3e825a8f))
 * **ui:** add `size="1em"` on link icon from blog post ([35205d9](https://github.com/mateusfg7/mateusf.com/commit/35205d9e6bb6cc8ce6959f6b976515657c9c57f3))
 * **ui:** set correct theme for blog comments section ([f2845b2](https://github.com/mateusfg7/mateusf.com/commit/f2845b270fc53a3e0bf2e1e11c1792e08d9b7ac3))
-
 ## [8.11.1](https://github.com/mateusfg7/mateusf.com/compare/8.11.0...8.11.1) (2024-01-04)
-
 
 ### Bug Fixes
 
 * **ui:** add dark colors for "Download CV" button on about page ([7c07bf6](https://github.com/mateusfg7/mateusf.com/commit/7c07bf67305f6761eaed0bc509f7076e909705ef))
-
 ## [8.11.0](https://github.com/mateusfg7/mateusf.com/compare/8.10.3...8.11.0) (2024-01-04)
-
 
 ### Features
 
@@ -215,41 +230,31 @@
 * **ui:** add contribution graph ([3817811](https://github.com/mateusfg7/mateusf.com/commit/3817811426f6eb68a10ff10be91b84f5ae3ad972))
 * **ui:** add description on contribution graph ([ec0e261](https://github.com/mateusfg7/mateusf.com/commit/ec0e261d656af39b1697137615ef5c589dd10484))
 
-
 ### Bug Fixes
 
 * **ui:** increment +1 on month number on render info of statistics page ([a28dc0c](https://github.com/mateusfg7/mateusf.com/commit/a28dc0cc570908954310915f55dab0d55b6abfd0))
 * **ui:** keep profile picture proportion on about page mobile ([4395797](https://github.com/mateusfg7/mateusf.com/commit/439579726dc13a1a9965b2006f63cce630b2d5e2))
-
 ## [8.10.3](https://github.com/mateusfg7/mateusf.com/compare/8.10.2...8.10.3) (2023-12-28)
-
 
 ### Features
 
 * **project-card:** remove tilt transform effect ([d9c8ef3](https://github.com/mateusfg7/mateusf.com/commit/d9c8ef37536ec4c10130c8d9d45b54cefad31057))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency date-fns to v3.0.6 ([901113f](https://github.com/mateusfg7/mateusf.com/commit/901113f5efa6691f66784d65aecd65ed3ab514ce))
 * **tools:** use `.getDate()` instead of `.getDay()` on "new-til" command ([0e0f826](https://github.com/mateusfg7/mateusf.com/commit/0e0f826815342db8912561227ee731d83fe9eb65))
-
 ## [8.10.2](https://github.com/mateusfg7/mateusf.com/compare/8.10.1...8.10.2) (2023-12-22)
-
 
 ### Bug Fixes
 
 * **ui:** remove preferred_color_scheme from giscus config ([ee70d14](https://github.com/mateusfg7/mateusf.com/commit/ee70d14e34b5396ca79cb0eeb5bc4f3348b98015))
-
 ## [8.10.1](https://github.com/mateusfg7/mateusf.com/compare/8.10.0...8.10.1) (2023-12-22)
-
 
 ### Bug Fixes
 
 * **ui:** add `size="1em"` property in all phosphor-icons components ([b24b541](https://github.com/mateusfg7/mateusf.com/commit/b24b54159532b7398c93d545be384eff41b17f7d))
-
 ## [8.10.0](https://github.com/mateusfg7/mateusf.com/compare/8.9.1...8.10.0) (2023-12-22)
-
 
 ### Features
 
@@ -259,7 +264,6 @@
 * **ui:** make writing-dashboard responsive ([d7cc21c](https://github.com/mateusfg7/mateusf.com/commit/d7cc21c60afd2cee69cd0e6d56dc95ad15ae28c4))
 * **ui:** update tag cloud implementation ([7c49e77](https://github.com/mateusfg7/mateusf.com/commit/7c49e77180b0c7c632ba1972fa8568506c594607))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency date-fns to v3 ([88810cd](https://github.com/mateusfg7/mateusf.com/commit/88810cd5172850041b06fa84e211fbf267ecc17b))
@@ -268,20 +272,15 @@
 * **deps:** update dependency sharp to ^0.33.0 ([7df634b](https://github.com/mateusfg7/mateusf.com/commit/7df634bb081499f29ee14f41350413c40bb14c11))
 * update all broken links of `mateusfg7/mfg-b` ([94914c5](https://github.com/mateusfg7/mateusf.com/commit/94914c5cc4359924551fc7c515814d50478eba7c))
 
-
 ### Performance Improvements
 
 * **ssr:** import phosphor icons from `@phosphor-icons/react/dist/ssr` on footer component ([caab8a8](https://github.com/mateusfg7/mateusf.com/commit/caab8a82079819e993d42f5a32f58887b572012a))
-
 ## [8.9.1](https://github.com/mateusfg7/mateusf.com/compare/8.9.0...8.9.1) (2023-12-05)
-
 
 ### Features
 
 * **ui:** improve blog/til content style ([70edbd9](https://github.com/mateusfg7/mateusf.com/commit/70edbd9b99c96b326b2c54a379076a454d94d73b))
-
 ## [8.9.0](https://github.com/mateusfg7/mateusf.com/compare/8.8.5...8.9.0) (2023-11-29)
-
 
 ### Features
 
@@ -295,50 +294,37 @@
 * **ui:** create `/blog/til` page ([ef0f4a5](https://github.com/mateusfg7/mateusf.com/commit/ef0f4a563b4286482010479d600bf30e509dc28a))
 * **ui:** replace "|" with "•" separator on page title ([c6edf29](https://github.com/mateusfg7/mateusf.com/commit/c6edf29a1b8326dd15483f9ee1a9a3c3741a3b01)), closes [#705](https://github.com/mateusfg7/mateusf.com/issues/705)
 
-
 ### Bug Fixes
 
 * **seo:** define `/blog` metadata on `page.tsx` instead of `layout.tsx` ([a8c2626](https://github.com/mateusfg7/mateusf.com/commit/a8c2626bd1f2469df2be3dd289b2991f6d935e78))
 * **ui:** sort T.I.Ls by date and fix content width ([930b649](https://github.com/mateusfg7/mateusf.com/commit/930b649a5da8b68cf9e8df29f7ddec780f636844))
-
 ## [8.8.5](https://github.com/mateusfg7/mateusf.com/compare/8.8.4...8.8.5) (2023-11-23)
-
 
 ### Features
 
 * **ui:** add rust core tech on projects page ([1c98597](https://github.com/mateusfg7/mateusf.com/commit/1c98597992005861707c6d6e2f58c862ba998455))
 * **ui:** small improvements on blog styles ([a1ec23d](https://github.com/mateusfg7/mateusf.com/commit/a1ec23d50a19cb7e00587e1cb1a81eb7b40c4817))
-
 ## [8.8.4](https://github.com/mateusfg7/mateusf.com/compare/8.8.3...8.8.4) (2023-11-20)
-
 
 ### Features
 
 * **ui:** render statistics timestamp on client ([3c6d109](https://github.com/mateusfg7/mateusf.com/commit/3c6d109d815ccebb1ee36f13262298ded84191df))
-
 ## [8.8.3](https://github.com/mateusfg7/mateusf.com/compare/8.8.2...8.8.3) (2023-11-16)
-
 
 ### Performance Improvements
 
 * add `revalidate` config on `/about` page ([188ae02](https://github.com/mateusfg7/mateusf.com/commit/188ae025732a6cbf26b2ba68f799a4b58b198465))
-
 ## [8.8.2](https://github.com/mateusfg7/mateusf.com/compare/8.8.1...8.8.2) (2023-11-15)
-
 
 ### Features
 
 * **ui:** remove `initOptions` from API fetch functions ([8ab3e49](https://github.com/mateusfg7/mateusf.com/commit/8ab3e4928a30ff40a20b1cca6c924af4efffb9ff))
-
 ## [8.8.1](https://github.com/mateusfg7/mateusf.com/compare/8.8.0...8.8.1) (2023-11-14)
-
 
 ### Features
 
 * **api:** increase period of spotify quest data ([f2e7db2](https://github.com/mateusfg7/mateusf.com/commit/f2e7db2646134aa96fe4868c1ec77744904223ed))
-
 ## [8.8.0](https://github.com/mateusfg7/mateusf.com/compare/8.7.2...8.8.0) (2023-11-09)
-
 
 ### Features
 
@@ -362,7 +348,6 @@
 * **ui:** use `Title` component on sitemap page ([4ec0365](https://github.com/mateusfg7/mateusf.com/commit/4ec03657b92d2003942479547044b1a58167e80c))
 * wrap statistics cards in an `<ErrorBoundary>` on `about` page ([a597ed5](https://github.com/mateusfg7/mateusf.com/commit/a597ed51ec184f490e62791cd097daddd498e8d1))
 
-
 ### Performance Improvements
 
 * add `revalidate` config on `/about` page layout ([7f96b27](https://github.com/mateusfg7/mateusf.com/commit/7f96b27221d93ce2e9e42d90c200a05e3fd6b04f))
@@ -371,21 +356,16 @@
 * optimize main image on `/about` page ([a45101f](https://github.com/mateusfg7/mateusf.com/commit/a45101f950c46a21ae758b035751579c0d5ae14a))
 * **ssr:** wrap statistics cards from `about` page with `<Suspense />` tag ([e2bacd9](https://github.com/mateusfg7/mateusf.com/commit/e2bacd952b96873ced5ee1bed26cf7052f00bdae))
 * wrap all statistics cards with `<Suspense />` ([137988e](https://github.com/mateusfg7/mateusf.com/commit/137988eeb24bf0d45f117cf1a6fb52d481233afa))
-
 ## [8.7.2](https://github.com/mateusfg7/mateusf.com/compare/8.7.1...8.7.2) (2023-10-30)
-
 
 ### Bug Fixes
 
 * **deps:** rollback unified related updates ([8333384](https://github.com/mateusfg7/mateusf.com/commit/8333384cdca0b8d932167f4615dc1452a1e7304e))
-
 ## [8.7.1](https://github.com/mateusfg7/mateusf.com/compare/8.7.0...8.7.1) (2023-10-30)
-
 
 ### Features
 
 * **ui:** add watermark to og image ([0288881](https://github.com/mateusfg7/mateusf.com/commit/0288881433a44d38c0eaeed8c8c7e2097b85afcc)), closes [#685](https://github.com/mateusfg7/mateusf.com/issues/685)
-
 
 ### Bug Fixes
 
@@ -396,55 +376,42 @@
 * **deps:** update dependency unified to v11 ([cfc774a](https://github.com/mateusfg7/mateusf.com/commit/cfc774a3020ea9815694f129951ef3f286701b13))
 * **feed:** remove broken remark-hint from plugin list ([dd63e1f](https://github.com/mateusfg7/mateusf.com/commit/dd63e1f2605425d4b1b03454d487e3de93997fe5))
 * **og:** import `ImageResponse` from "next/og" instead of "next/server" ([fbf813b](https://github.com/mateusfg7/mateusf.com/commit/fbf813b379e56dcaa8015e7caf4de956c58d4f37))
-
 ## [8.7.0](https://github.com/mateusfg7/mateusf.com/compare/8.6.2...8.7.0) (2023-10-28)
-
 
 ### Features
 
 * **ui:** add bottom-right illustrantion on all pages ([078774f](https://github.com/mateusfg7/mateusf.com/commit/078774f3aa699e0ffcd5887184b5e13874dc4acf))
 * **ui:** add top-left illustrantion on all pages ([ae5e2d3](https://github.com/mateusfg7/mateusf.com/commit/ae5e2d31da0ff6b15f82380ed186cdd0b32325a1))
 * **ui:** update homepage illustration ([0cd691a](https://github.com/mateusfg7/mateusf.com/commit/0cd691a8f6b68a7e3763bececdcff90db8b9dd93)), closes [#679](https://github.com/mateusfg7/mateusf.com/issues/679)
-
 ## [8.6.2](https://github.com/mateusfg7/mateusf.com/compare/8.6.1...8.6.2) (2023-10-24)
-
 
 ### Features
 
 * **ui:** add svelte on knowledge list ([e3e0a24](https://github.com/mateusfg7/mateusf.com/commit/e3e0a248672338d321bd4ed4c82e5cd564987815))
-
 ## [8.6.1](https://github.com/mateusfg7/mateusf.com/compare/8.6.0...8.6.1) (2023-10-24)
-
 ## [8.6.0](https://github.com/mateusfg7/mateusf.com/compare/8.5.0...8.6.0) (2023-10-01)
-
 
 ### Features
 
 * **ui:** create Comments component with giscus ([843c07f](https://github.com/mateusfg7/mateusf.com/commit/843c07fd939799383ee17123fa5ea669babdea69))
-
 
 ### Bug Fixes
 
 * **deps:** update dependency rehype-katex to v7 ([961d294](https://github.com/mateusfg7/mateusf.com/commit/961d294fdf91e71181f28734d536934ab153f344))
 * **deps:** update dependency remark-breaks to v4 ([3cf75d9](https://github.com/mateusfg7/mateusf.com/commit/3cf75d96e2389deaa6f630394a943e25d66337f2))
 * **deps:** update dependency remark-rehype to v11 ([3a327f0](https://github.com/mateusfg7/mateusf.com/commit/3a327f0285591a68de678844752bcae71d8213f5))
-
 ## [8.5.0](https://github.com/mateusfg7/mateusf.com/compare/8.4.1...8.5.0) (2023-09-17)
-
 
 ### Features
 
 * **ui:** create `KnowledgeInfo` component ([5807dc2](https://github.com/mateusfg7/mateusf.com/commit/5807dc28bba6eeeda56991865041b50e709f53d3))
 * **ui:** overwrite tailwind ping animation keyframes ([b77fc00](https://github.com/mateusfg7/mateusf.com/commit/b77fc00c4d7e2320592f2323fb85df9ea558ac93))
 * **ui:** update knowledge accordion layout ([43d64d2](https://github.com/mateusfg7/mateusf.com/commit/43d64d22ab1d9e0bead09d27ce80357482793007))
-
 ## [8.4.1](https://github.com/mateusfg7/mateusf.com/compare/8.4.0...8.4.1) (2023-09-13)
-
 
 ### Features
 
 * **ui:** add codepen to contact links ([48961b3](https://github.com/mateusfg7/mateusf.com/commit/48961b3eee3e0a383dcc198ced9596b821f0c0e1)), closes [#625](https://github.com/mateusfg7/mateusf.com/issues/625)
-
 
 ### Bug Fixes
 
@@ -453,51 +420,38 @@
 * **deps:** update dependency rehype-shift-heading to v2 ([c159118](https://github.com/mateusfg7/mateusf.com/commit/c159118a4abae2400474eed664e16b43f344c790))
 * **deps:** update dependency rehype-slug to v6 ([3c52ef2](https://github.com/mateusfg7/mateusf.com/commit/3c52ef237bdfd8c2adcd012ab0f3310e5fce679d))
 * **ui:** change portuguese button title ([12d5180](https://github.com/mateusfg7/mateusf.com/commit/12d5180b3329e22d0ad12d1255222e54981bb11f))
-
 ## [8.4.0](https://github.com/mateusfg7/mateusf.com/compare/8.3.1...8.4.0) (2023-08-29)
-
 
 ### Features
 
 * **ui:** change color pallete ([83f2bba](https://github.com/mateusfg7/mateusf.com/commit/83f2bbaa18113381cabba6e89aa89d7d4336bc71))
-
 ## [8.3.1](https://github.com/mateusfg7/mateusf.com/compare/8.3.0...8.3.1) (2023-08-28)
-
 
 ### Bug Fixes
 
 * **deps:** update dependency kbar to v0.1.0-beta.43 ([180e58a](https://github.com/mateusfg7/mateusf.com/commit/180e58a44f3268f87aae7cedfc667b680e520063))
-
 ## [8.3.0](https://github.com/mateusfg7/mateusf.com/compare/8.2.1...8.3.0) (2023-08-03)
-
 
 ### Features
 
 * **ui:** update mobile-menu items order and use `Link` on Sitemap item instead of `OutLink` ([b50f5da](https://github.com/mateusfg7/mateusf.com/commit/b50f5dade262717bc12383a6a94191ab0b6163a5))
 * **ui:** use signature as logo ([e17656a](https://github.com/mateusfg7/mateusf.com/commit/e17656a1c2804f7206784eef5175798b91ae5fab))
 
-
 ### Bug Fixes
 
 * **ui:** rollback mobile spaces of header ([f4caf81](https://github.com/mateusfg7/mateusf.com/commit/f4caf81115767180fe03aae31fb29346b20989bd))
-
 ## [8.2.1](https://github.com/mateusfg7/mateusf.com/compare/8.2.0...8.2.1) (2023-08-02)
-
 
 ### Features
 
 * **ui:** small header style improvements ([452d657](https://github.com/mateusfg7/mateusf.com/commit/452d6572b9a8661259c2978fa73ee94a404b12a5))
-
 ## [8.2.0](https://github.com/mateusfg7/mateusf.com/compare/8.1.0...8.2.0) (2023-08-01)
-
 
 ### Features
 
 * **ui:** add "project-info" effect when hover ([077a36f](https://github.com/mateusfg7/mateusf.com/commit/077a36fa6716a0124721faa92082cf3ab688a85d))
 * **ui:** add non-featured projects ([840185c](https://github.com/mateusfg7/mateusf.com/commit/840185c2630ff854b64947c2ec96401e3d096396))
-
 ## [8.1.0](https://github.com/mateusfg7/mateusf.com/compare/8.0.3...8.1.0) (2023-07-31)
-
 
 ### Features
 
@@ -505,25 +459,18 @@
 * **ui:** create `/sitemap` page ([492eb43](https://github.com/mateusfg7/mateusf.com/commit/492eb434699131db1ef6d00fc7b8cc8d0f81a7c2))
 * **ui:** remove mount delay of "toggle-theme" component ([cf1bcd6](https://github.com/mateusfg7/mateusf.com/commit/cf1bcd6aed1ee04771e3038bf63e34bf4f422e6f)), closes [#596](https://github.com/mateusfg7/mateusf.com/issues/596)
 * update sitemap page links ([b75320c](https://github.com/mateusfg7/mateusf.com/commit/b75320c111e3e2cb3b0be2bcabe5b3b82d06b08c))
-
 ## [8.0.3](https://github.com/mateusfg7/mateusf.com/compare/8.0.2...8.0.3) (2023-07-30)
-
 ## [8.0.2](https://github.com/mateusfg7/mateusf.com/compare/8.0.1...8.0.2) (2023-07-30)
-
 ## [8.0.1](https://github.com/mateusfg7/mateusf.com/compare/8.0.0...8.0.1) (2023-07-30)
-
 
 ### Features
 
 * **content/projects:** add bg-eraser project ([0272f2a](https://github.com/mateusfg7/mateusf.com/commit/0272f2ae8c3c2880d935c6777adfd0d0844fbb47))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency kbar to v0.1.0-beta.41 ([2f49e85](https://github.com/mateusfg7/mateusf.com/commit/2f49e85346ab8fb137246548bef8acae143fa071))
-
 ## [8.0.0](https://github.com/mateusfg7/mateusf.com/compare/7.4.1...8.0.0) (2023-07-22)
-
 
 ### Features
 
@@ -560,27 +507,21 @@
 * **ui:** style improvements ([68d0df3](https://github.com/mateusfg7/mateusf.com/commit/68d0df374c54d62d587f3d97563ce67a46e08ccb))
 * **ui:** update some contact-section styles and remove "use client" directive ([34906c4](https://github.com/mateusfg7/mateusf.com/commit/34906c4783b254cb4a1177a056f94e587d390241))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency unist-util-visit to v5 ([dfadcd9](https://github.com/mateusfg7/mateusf.com/commit/dfadcd9b13106ff424379925caeea2fb5dc93996))
 * **rendering:** add "use client" directive to knowledge-section component ([37f8f10](https://github.com/mateusfg7/mateusf.com/commit/37f8f10d052a4a6843a4f1f0cf837368021b6afa))
 * **ui:** use `getSortedPosts` to correct post-list-by-year sorting ([73f36ad](https://github.com/mateusfg7/mateusf.com/commit/73f36ad7f434dd40910d6d7169f282852e308f4a))
 
-
 ### Performance Improvements
 
 * **ui:** use fonts from `next/font/google` ([2ba632b](https://github.com/mateusfg7/mateusf.com/commit/2ba632ba480f48761e8d5fcd0b504bbf7ecabf05)), closes [#589](https://github.com/mateusfg7/mateusf.com/issues/589)
-
 ## [7.4.1](https://github.com/mateusfg7/mateusf.com/compare/7.4.0...7.4.1) (2023-07-14)
-
 
 ### Bug Fixes
 
 * **config:** use manual setted HOST env variable instead of use VERCEL_URL ([ff1703e](https://github.com/mateusfg7/mateusf.com/commit/ff1703ef855f86af044f84af8adef22294072cb2))
-
 ## [7.4.0](https://github.com/mateusfg7/mateusf.com/compare/7.3.0...7.4.0) (2023-07-14)
-
 
 ### Features
 
@@ -589,20 +530,16 @@
 * **ui:** create kbar component and provider ([6414509](https://github.com/mateusfg7/mateusf.com/commit/64145095aad4051bf65be9a3db05965ae7000317))
 * **ui:** create kbar search trigger component and add it on Header ([581753f](https://github.com/mateusfg7/mateusf.com/commit/581753f97104fb057a2c1d0eb1985a0d92999e38))
 
-
 ### Bug Fixes
 
 * **deps:** downgrade prettier to v2.8.8 ([686f60c](https://github.com/mateusfg7/mateusf.com/commit/686f60c649adc932fca81202b754e61d7b8cdb41))
 * **deps:** update dependency next to v13.4.9 ([2f7565f](https://github.com/mateusfg7/mateusf.com/commit/2f7565f9be09d71baa416ac78233d5fb0375aba8))
 * update old website url to `https://mateusf.com` ([93cc661](https://github.com/mateusfg7/mateusf.com/commit/93cc6610cf6f6fab2604603cb8025422684ec384))
 
-
 ### Performance Improvements
 
 * **ui:** use `<Image />` component from `next/image` instead of common `<img />` ([664eea2](https://github.com/mateusfg7/mateusf.com/commit/664eea2232ec1eb082eb9caa62addb1160d8b3e0))
-
 ## [7.3.0](https://github.com/mateusfg7/mateusf.com/compare/7.2.1...7.3.0) (2023-07-04)
-
 
 ### Features
 
@@ -612,22 +549,17 @@
 * **seo:** add post thumbnail path to robots.txt ([2d1e04c](https://github.com/mateusfg7/mateusf.com/commit/2d1e04c9519b84b132e985cfe58037c8f11c88e4))
 * **seo:** add twitter and other metadatas to post ([a20e4c7](https://github.com/mateusfg7/mateusf.com/commit/a20e4c7188d238f8a66ec87f4b5734e9ff32df4c))
 * **seo:** create og image generator for posts ([7057a15](https://github.com/mateusfg7/mateusf.com/commit/7057a155f607428c1bb3ed36d6c578abadc9d792))
-
 ## [7.2.1](https://github.com/mateusfg7/mateusf.com/compare/7.2.0...7.2.1) (2023-07-04)
-
 
 ### Features
 
 * **ui:** justify post text to left on all devices ([562d504](https://github.com/mateusfg7/mateusf.com/commit/562d50414662b97a50eb57d84788efa146ad75ab))
-
 ## [7.2.0](https://github.com/mateusfg7/mateusf.com/compare/7.1.8...7.2.0) (2023-07-03)
-
 
 ### Features
 
 * **ui:** add utterances component to post page ([a887085](https://github.com/mateusfg7/mateusf.com/commit/a88708523f153f9189f990d70ee383d6bab31a69))
 * **ui:** create utterances comments component ([8a8c2d3](https://github.com/mateusfg7/mateusf.com/commit/8a8c2d358e502f0e1203cf306db28cc6ebf4c9bc))
-
 
 ### Bug Fixes
 
@@ -637,25 +569,15 @@
 * **deps:** update dependency react-icons to v4.10.1 ([afa2219](https://github.com/mateusfg7/mateusf.com/commit/afa2219f386ed9e4be1e677abd15781232fac4ee))
 * **deps:** update dependency rehype-pretty-code to v0.9.11 ([1e9bb33](https://github.com/mateusfg7/mateusf.com/commit/1e9bb335f29f103b991beec7fbfd08ccfb38d408))
 * **deps:** update dependency rehype-pretty-code to v0.9.9 ([1b3307f](https://github.com/mateusfg7/mateusf.com/commit/1b3307f522e4c9d3bb1cebe0d27186400b8beffc))
-
 ## [7.1.8](https://github.com/mateusfg7/mateusf.com/compare/7.1.7...7.1.8) (2023-06-22)
-
 ## [7.1.7](https://github.com/mateusfg7/mateusf.com/compare/7.1.6...7.1.7) (2023-06-21)
-
 ## [7.1.6](https://github.com/mateusfg7/mateusf.com/compare/7.1.5...7.1.6) (2023-06-21)
-
 ## [7.1.5](https://github.com/mateusfg7/mateusf.com/compare/7.1.4...7.1.5) (2023-06-21)
-
 ## [7.1.4](https://github.com/mateusfg7/mateusf.com/compare/7.1.3...7.1.4) (2023-06-21)
-
 ## [7.1.3](https://github.com/mateusfg7/mateusf.com/compare/7.1.2...7.1.3) (2023-06-21)
-
 ## [7.1.2](https://github.com/mateusfg7/mateusf.com/compare/7.1.1...7.1.2) (2023-06-21)
-
 ## [7.1.1](https://github.com/mateusfg7/mateusf.com/compare/7.1.0...7.1.1) (2023-06-21)
-
 ## [7.1.0](https://github.com/mateusfg7/mateusf.com/compare/7.0.0...7.1.0) (2023-06-21)
-
 
 ### Features
 
@@ -670,14 +592,11 @@
 * **ux:** adapt post page to small devices ([5492a99](https://github.com/mateusfg7/mateusf.com/commit/5492a992ac85f78ed78e71b37b60db249fac2b51))
 * **ux:** adapt tags and categories pages to small devices ([b2b8faa](https://github.com/mateusfg7/mateusf.com/commit/b2b8faaf6e59aa2886b3f48547da30ea044bcf3b))
 
-
 ### Bug Fixes
 
 * **ui:** reset just horizontal padding instead all padding on `portifolio-content-w` and `blog-content-w` utilities ([152ed28](https://github.com/mateusfg7/mateusf.com/commit/152ed2897392fc0b2ebb1312e5ba2223cd315c1b))
 * **ui:** set z-index of tag post number to 0 ([392bb80](https://github.com/mateusfg7/mateusf.com/commit/392bb80d48ce3c4cb6a637bdabaa6568d81b4ba0))
-
 ## [7.0.0](https://github.com/mateusfg7/mateusf.com/compare/6.4.0...7.0.0) (2023-06-19)
-
 
 ### Features
 
@@ -694,14 +613,11 @@
 * **ui:** improve post matadata spaces on post page ([3ed0a5f](https://github.com/mateusfg7/mateusf.com/commit/3ed0a5f355432feb0ffb19f8bd92e1f0002135e7))
 * **ui:** small updates on post style ([bf22a03](https://github.com/mateusfg7/mateusf.com/commit/bf22a030974b1f27044b067d7333afbd073938c6))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.4.6 ([cb5b817](https://github.com/mateusfg7/mateusf.com/commit/cb5b8176c8ec6531a817266987167b266c29008c))
 * **seo:** use slug version of tag/category link on sitemap ([9b13834](https://github.com/mateusfg7/mateusf.com/commit/9b13834c9ec6ac18905f301b296821e9ca212adb))
-
 ## [6.4.0](https://github.com/mateusfg7/mateusf.com/compare/6.3.0...6.4.0) (2023-06-13)
-
 
 ### Features
 
@@ -713,14 +629,11 @@
 * **ui:** update `glitchTimeSpan` on glitch effect ([66e7ef0](https://github.com/mateusfg7/mateusf.com/commit/66e7ef0b28b77864de04ca6dbe0eb99ef664745f))
 * **ui:** update some tailwind styles of post page ([16f28cc](https://github.com/mateusfg7/mateusf.com/commit/16f28cc941348074fffd003fb6375893795534d0))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.4.5 ([ef4489c](https://github.com/mateusfg7/mateusf.com/commit/ef4489cd247c532001bd83398ec7c29e57e5897e))
 * **ui:** return toggle theme component just when mounted ([9dbe8f7](https://github.com/mateusfg7/mateusf.com/commit/9dbe8f7139feb41504afb985c708b17bf784058e))
-
 ## [6.3.0](https://github.com/mateusfg7/mateusf.com/compare/6.2.0...6.3.0) (2023-06-09)
-
 
 ### Features
 
@@ -730,22 +643,17 @@
 * **ui:** remove leading on header menu items ([1c30440](https://github.com/mateusfg7/mateusf.com/commit/1c304408ee6f9b8c40c5277e6fa7fa5fae9545f4))
 * **ui:** update anchor style on hints ([97ba3d0](https://github.com/mateusfg7/mateusf.com/commit/97ba3d037b4be14cd9671ed2e6165561f4d1d5fa))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency next-contentlayer to v0.3.3 ([9e6345a](https://github.com/mateusfg7/mateusf.com/commit/9e6345a7acfba7935632d783dcae0e3606d755a1))
 * **deps:** update dependency react-icons to v4.9.0 ([904a0a3](https://github.com/mateusfg7/mateusf.com/commit/904a0a328f8617dbf465706ecb17e1908ad8e3d5))
-
 ## [6.2.0](https://github.com/mateusfg7/mateusf.com/compare/6.1.0...6.2.0) (2023-06-06)
-
 
 ### Features
 
 * **lib:** use weight on search function ([e1976e8](https://github.com/mateusfg7/mateusf.com/commit/e1976e80b6acf2ea6fc8f70f0d14ae56523dc970)), closes [#521](https://github.com/mateusfg7/mateusf.com/issues/521)
 * **ui:** move metadata to right on post link component ([6b69cf6](https://github.com/mateusfg7/mateusf.com/commit/6b69cf6d3c3c86bc6e9d5c91158a306864f297fb))
-
 ## [6.1.0](https://github.com/mateusfg7/mateusf.com/compare/6.0.2...6.1.0) (2023-05-30)
-
 
 ### Features
 
@@ -759,7 +667,6 @@
 * **ui:** add reading time on post page ([e90fdf0](https://github.com/mateusfg7/mateusf.com/commit/e90fdf0b81e8ac0f06f3140f7b48a86c12efdc5f))
 * **ui:** add shine effect on planned badge ([d69daf6](https://github.com/mateusfg7/mateusf.com/commit/d69daf6ff12d9080b2d7df7c02108d80ba3cc34e))
 
-
 ### Bug Fixes
 
 * **contentlayer:** use relative imports instead of ts paths on `Post` definition ([ceb8f68](https://github.com/mateusfg7/mateusf.com/commit/ceb8f688cfa035e1862c80d995272340dc4ef5fc))
@@ -767,24 +674,18 @@
 * **route:** use `user` instead of `username` on author page ([4f362da](https://github.com/mateusfg7/mateusf.com/commit/4f362da6bd359614fea75ffa8405fe2fe62bf4cb))
 * **ui:** add a batter background contrast on post-link dark mode ([17281c0](https://github.com/mateusfg7/mateusf.com/commit/17281c0bb7c423b6a4df3ebe7f1b554d4075b100))
 * **ui:** add better contrast on shine effect color ([1947d4d](https://github.com/mateusfg7/mateusf.com/commit/1947d4d48fe6678059445858d60d89d99ce46583)), closes [#523](https://github.com/mateusfg7/mateusf.com/issues/523)
-
 ## [6.0.2](https://github.com/mateusfg7/mateusf.com/compare/6.0.1...6.0.2) (2023-05-25)
-
 
 ### Bug Fixes
 
 * **ui:** breake longer strings on inline code blocks ([2e4513b](https://github.com/mateusfg7/mateusf.com/commit/2e4513b8227b5f134e6627f39a63df4c9ab66f57)), closes [#430](https://github.com/mateusfg7/mateusf.com/issues/430)
 * **ui:** shows code block scroll bar only when necessary ([41d699e](https://github.com/mateusfg7/mateusf.com/commit/41d699efad8fc74dace6e081930898b0c9adb66c))
-
 ## [6.0.1](https://github.com/mateusfg7/mateusf.com/compare/6.0.0...6.0.1) (2023-05-25)
-
 
 ### Bug Fixes
 
 * category link on post page was redirecting to a non existing route `/category/slug` ([9ce8229](https://github.com/mateusfg7/mateusf.com/commit/9ce822977223a75ec23bf37fcf45faff6b679182))
-
 ## [6.0.0](https://github.com/mateusfg7/mateusf.com/compare/5.2.0...6.0.0) (2023-05-25)
-
 
 ### Features
 
@@ -806,22 +707,17 @@
 * **ui:** increase blog vertical padding on small screens ([d846ba3](https://github.com/mateusfg7/mateusf.com/commit/d846ba3a2e669c980399146c4482cb8d71b5a461))
 * **ui:** separate posts by status on post list ([fd24132](https://github.com/mateusfg7/mateusf.com/commit/fd241323e5e5678be8beaeb1de8ba6223b35e5d7))
 
-
 ### Bug Fixes
 
 * **deps:** regenerate lock file ([a3d6112](https://github.com/mateusfg7/mateusf.com/commit/a3d611270821345577033d0aaba8d0ef101c52ca))
 * **deps:** update dependency next to v13.4.3 ([4828322](https://github.com/mateusfg7/mateusf.com/commit/4828322b762e24138a1829c201178e948eab2519))
 * **deps:** update dependency remark to v14.0.3 ([e1f257a](https://github.com/mateusfg7/mateusf.com/commit/e1f257a1df36d9b5e83fd6b1a81f6346bd356440))
-
 ## [5.2.0](https://github.com/mateusfg7/mateusf.com/compare/5.1.0...5.2.0) (2023-05-19)
-
 
 ### Features
 
 * **ui:** add "go to top" button on post pages ([9ce884b](https://github.com/mateusfg7/mateusf.com/commit/9ce884b499da519b9615226ad366996402e17145)), closes [#29](https://github.com/mateusfg7/mateusf.com/issues/29)
-
 ## [5.1.0](https://github.com/mateusfg7/mateusf.com/compare/5.0.6...5.1.0) (2023-05-18)
-
 
 ### Features
 
@@ -829,11 +725,8 @@
 * **ui:** update article style ([0249822](https://github.com/mateusfg7/mateusf.com/commit/02498229f18e9fbc24462a20099bf593ea100c08))
 * **utils:** complement slug function with github-slug package ([fd84d93](https://github.com/mateusfg7/mateusf.com/commit/fd84d93bac66ed55e7dfcf3ae3d6b9fa65eb9a3e)), closes [#497](https://github.com/mateusfg7/mateusf.com/issues/497)
 * **utils:** increment `slug` function ([361e731](https://github.com/mateusfg7/mateusf.com/commit/361e731582e8f3a4f3b22eecf3e08ab0bd7845b5))
-
 ## [5.0.6](https://github.com/mateusfg7/mateusf.com/compare/5.0.5...5.0.6) (2023-05-16)
-
 ## [5.0.5](https://github.com/mateusfg7/mateusf.com/compare/5.0.0...5.0.5) (2023-05-16)
-
 
 ### Features
 
@@ -843,7 +736,6 @@
 * **contentlayer:** get repositories from a list of repositories ([7481968](https://github.com/mateusfg7/mateusf.com/commit/748196876fb1752bd90f82498737f4c5bc5ea0ca))
 * **ui:** show url paths of category and tags in slug format ([db56f2c](https://github.com/mateusfg7/mateusf.com/commit/db56f2c613dc30502e0a7742be94600e37605348)), closes [#489](https://github.com/mateusfg7/mateusf.com/issues/489)
 
-
 ### Bug Fixes
 
 * **deps:** downgrade "contentlayer" and "next-contentlayer" to v0.2.9 ([53185de](https://github.com/mateusfg7/mateusf.com/commit/53185de9667284f63ad2fcef51e4c0a42c7bf61f))
@@ -851,19 +743,14 @@
 * **deps:** update dependency next to v13.4.1 ([266e966](https://github.com/mateusfg7/mateusf.com/commit/266e96693c1747dc5a306f20d4663685ef914c9e))
 * **deps:** update dependency next to v13.4.2 ([9f3095d](https://github.com/mateusfg7/mateusf.com/commit/9f3095dfc264b30d2e35ab2fc87b20faf3e0946c))
 * **deps:** update dependency next-contentlayer to ^0.3.0 ([797ebf6](https://github.com/mateusfg7/mateusf.com/commit/797ebf68ae1f01f140818e45d4ad1deb16a5257d))
-
 ## [4.1.0](https://github.com/mateusfg7/mateusf.com/compare/4.0.1...4.1.0) (2023-05-10)
-
 
 ### Features
 
 * **ui:** add icon next to category and tag title ([a7b1420](https://github.com/mateusfg7/mateusf.com/commit/a7b14203e9aaf6cc439d91f151163b592ca762bf)), closes [#488](https://github.com/mateusfg7/mateusf.com/issues/488)
 * **ui:** show test message instead of "1" on year section ([9d16c5e](https://github.com/mateusfg7/mateusf.com/commit/9d16c5ece058f7f71217e96a5c78a1ee27cca096)), closes [#487](https://github.com/mateusfg7/mateusf.com/issues/487)
-
 ## [4.0.1](https://github.com/mateusfg7/mateusf.com/compare/4.0.0...4.0.1) (2023-05-10)
-
 ## [4.0.0](https://github.com/mateusfg7/mateusf.com/compare/3.3.4...4.0.0) (2023-05-10)
-
 
 ### Features
 
@@ -879,38 +766,28 @@
 * **ui:** update `KnowledgeLink` component props ([f63a6a3](https://github.com/mateusfg7/mateusf.com/commit/f63a6a3117c71d96ed104b77e1a796a289c41823))
 * **utils:** create `transformToSlug` function ([190afc7](https://github.com/mateusfg7/mateusf.com/commit/190afc7ac35e8c0256c2e154e31d8b94ca8b18ec))
 
-
 ### Bug Fixes
 
 * **`Post`:** use relative import on `Post` definition ([3d00d37](https://github.com/mateusfg7/mateusf.com/commit/3d00d375dae1137e791ef22e02b4dab1f8c3002b))
-
 ## [3.3.4](https://github.com/mateusfg7/mateusf.com/compare/3.3.3...3.3.4) (2023-05-05)
-
 
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.3.4 ([e1a5675](https://github.com/mateusfg7/mateusf.com/commit/e1a5675e3d643e6f23f8ef6d936be5c72f273962))
-
 ## [3.3.3](https://github.com/mateusfg7/mateusf.com/compare/3.3.2...3.3.3) (2023-05-05)
-
 
 ### Bug Fixes
 
 * **app/layout:** use `crossOrigin` as "anonymous" ([6c7711a](https://github.com/mateusfg7/mateusf.com/commit/6c7711a7f0d6259022203172a3c889d48a7b53b4))
 * **deps:** update dependency date-fns to v2.30.0 ([6c4ffab](https://github.com/mateusfg7/mateusf.com/commit/6c4ffab51abe767e66bf98e4308b7ac4a9eb573a))
 * **deps:** update dependency rehype-katex to v6.0.3 ([674ef21](https://github.com/mateusfg7/mateusf.com/commit/674ef21d9095616b27307dc6f9e1cf359f71baab))
-
 ## [3.3.2](https://github.com/mateusfg7/mateusf.com/compare/3.3.1...3.3.2) (2023-05-05)
-
 ## [3.3.1](https://github.com/mateusfg7/mateusf.com/compare/3.3.0...3.3.1) (2023-04-28)
-
 
 ### Features
 
 * **ui/ux:** made Header responseive ([fdb0f56](https://github.com/mateusfg7/mateusf.com/commit/fdb0f5666400121208abdc34dc3899c8362cba1e))
-
 ## [3.3.0](https://github.com/mateusfg7/mateusf.com/compare/3.2.1...3.3.0) (2023-04-28)
-
 
 ### Features
 
@@ -922,18 +799,13 @@
 * **ui/ux:** use `.portifolio-content-w` css class on portifolio page ([d5dbc39](https://github.com/mateusfg7/mateusf.com/commit/d5dbc3978ac8ad2d777cada583eb971ed9ad9246))
 * **ui:** create `.portifolio-content-w` and `.blog-content-w` css classes ([c71a000](https://github.com/mateusfg7/mateusf.com/commit/c71a00038c800fafee1810870ac7d1964bc5a46a))
 * **ui:** use `bg-neutral-1000` as default website background ([17943ea](https://github.com/mateusfg7/mateusf.com/commit/17943eaf68dbf8bbabb09a0396431d7fcf75a41d))
-
 ## [3.2.1](https://github.com/mateusfg7/mateusf.com/compare/3.2.0...3.2.1) (2023-04-27)
-
 ## [3.2.0](https://github.com/mateusfg7/mateusf.com/compare/3.1.0...3.2.0) (2023-04-25)
-
 
 ### Features
 
 * **ui/ux:** update knowledge section ([852e112](https://github.com/mateusfg7/mateusf.com/commit/852e11230582c4b03d0f194697fb8f820bf35a05))
-
 ## [3.1.0](https://github.com/mateusfg7/mateusf.com/compare/3.0.1...3.1.0) (2023-04-25)
-
 
 ### Features
 
@@ -942,16 +814,12 @@
 * **ui:** update `AboutSection` on portifolio page ([6e3163a](https://github.com/mateusfg7/mateusf.com/commit/6e3163af47f93ac8558b1f59c971122e51f39515))
 * **ui:** update `ContactSection` on portifolio page ([479a6be](https://github.com/mateusfg7/mateusf.com/commit/479a6bef794de9c11346414c0adc9152adef41b9))
 * **ui:** update `ProjectCard` on portifolio page ([d03e2d7](https://github.com/mateusfg7/mateusf.com/commit/d03e2d712fd0dcbd457daf822cc03f483e961e0e))
-
 ## [3.0.1](https://github.com/mateusfg7/mateusf.com/compare/3.0.0...3.0.1) (2023-04-24)
-
 
 ### Bug Fixes
 
 * **ui:** remove  global anchor style ([5c41de2](https://github.com/mateusfg7/mateusf.com/commit/5c41de2c405554ed89a3f8fe2d3f1df411a2d529))
-
 ## [3.0.0](https://github.com/mateusfg7/mateusf.com/compare/2.5.8...3.0.0) (2023-03-28)
-
 
 ### Features
 
@@ -959,53 +827,38 @@
 * **ux/ui:** create toggle theme button component ([1813f47](https://github.com/mateusfg7/mateusf.com/commit/1813f47b42f05714390eeeab424d9988a5591ea7))
 * **ux/ui:** update Header component ([c7c704f](https://github.com/mateusfg7/mateusf.com/commit/c7c704f85e57b2c58243fbe9ffea6366b31ce34a))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency react-icons to v4.8.0 ([47b76cb](https://github.com/mateusfg7/mateusf.com/commit/47b76cbd47c9f0426734c9eabf7bb5605c6f4e67))
-
 ## [2.5.8](https://github.com/mateusfg7/mateusf.com/compare/2.5.7...2.5.8) (2023-03-21)
-
 ## [2.5.7](https://github.com/mateusfg7/mateusf.com/compare/2.5.6...2.5.7) (2023-03-20)
-
 
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.2.4 ([bac75a6](https://github.com/mateusfg7/mateusf.com/commit/bac75a66ca71ae712b263da17df571cd5ce03181))
 * **deps:** update dependency shiki to ^0.14.0 ([560a877](https://github.com/mateusfg7/mateusf.com/commit/560a877513a5a2906c10dc0a8bf3a3f97eae5e1b))
-
 ## [2.5.6](https://github.com/mateusfg7/mateusf.com/compare/2.5.5...2.5.6) (2023-03-20)
-
 ## [2.5.5](https://github.com/mateusfg7/mateusf.com/compare/2.5.4...2.5.5) (2023-01-26)
-
 
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.1.4 ([2c66622](https://github.com/mateusfg7/mateusf.com/commit/2c66622c9e3b590666b27dd40cf05c79f83d6a74))
-
 ## [2.5.4](https://github.com/mateusfg7/mateusf.com/compare/2.5.3...2.5.4) (2023-01-26)
-
 
 ### Bug Fixes
 
 * **deps:** update dependency rehype-pretty-code to ^0.9.0 ([862420b](https://github.com/mateusfg7/mateusf.com/commit/862420bd12d12a560dc80ef24f5a90357906223e))
-
 ## [2.5.3](https://github.com/mateusfg7/mateusf.com/compare/2.5.2...2.5.3) (2022-12-26)
-
 
 ### Features
 
 * **seo:** add title on Portifolio page ([ea012aa](https://github.com/mateusfg7/mateusf.com/commit/ea012aacf01bb08ca415eed4e86b8a3dcc365b7a))
-
 ## [2.5.2](https://github.com/mateusfg7/mateusf.com/compare/2.5.1...2.5.2) (2022-12-26)
-
 
 ### Bug Fixes
 
 * **ui:** fixes spelling errors in portfolio ([ddfc89a](https://github.com/mateusfg7/mateusf.com/commit/ddfc89a93ae22b94f32828c74d872daa14521504))
-
 ## [2.5.1](https://github.com/mateusfg7/mateusf.com/compare/2.5.0...2.5.1) (2022-12-26)
-
 
 ### Features
 
@@ -1016,20 +869,15 @@
 * make portifolio/ProjectCard responsive ([448e8b1](https://github.com/mateusfg7/mateusf.com/commit/448e8b14b8eb06da3e5ee7598216ef0dd590683c))
 * **ui:** update `.content-w` class to match responsive rules ([00e6d8b](https://github.com/mateusfg7/mateusf.com/commit/00e6d8b3196badabfadd343822766c4029884558))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency next to v13.1.0 ([954c5e6](https://github.com/mateusfg7/mateusf.com/commit/954c5e6daa4c5294f01f60771a4f4ab14e03bb40))
-
 ## [2.4.2](https://github.com/mateusfg7/mateusf.com/compare/2.4.1...2.4.2) (2022-12-23)
-
 
 ### Bug Fixes
 
 * scroll behavior on portifolio' ([020d031](https://github.com/mateusfg7/mateusf.com/commit/020d031c10090425588ebd1f8719a292f16e529e))
-
 ## [2.4.1](https://github.com/mateusfg7/mateusf.com/compare/2.4.0...2.4.1) (2022-12-23)
-
 
 ### Features
 
@@ -1039,9 +887,7 @@
 * translate projects description ([f473665](https://github.com/mateusfg7/mateusf.com/commit/f47366546db18c19cac4e1be017eb1904dafc43a))
 * **ui:** update Header nav behavior ([96d7650](https://github.com/mateusfg7/mateusf.com/commit/96d7650e7a436559ea046f9f9a71730c050fffa1))
 * update smooth scroll rules ([456030f](https://github.com/mateusfg7/mateusf.com/commit/456030f5fd1d7e3347c28a7fe725b348bf5642f6))
-
 ## [2.3.1](https://github.com/mateusfg7/mateusf.com/compare/2.3.0...2.3.1) (2022-12-22)
-
 
 ### Features
 
@@ -1058,22 +904,16 @@
 * update cv ([9ffdc16](https://github.com/mateusfg7/mateusf.com/commit/9ffdc168331cb9c5135d873bcc8ebcab3d49e3ae))
 * update cv ([7165f13](https://github.com/mateusfg7/mateusf.com/commit/7165f134911d6193c9aa924fc5ff2de684cc0ae4))
 
-
 ### Bug Fixes
 
 * **deps:** update dependency shiki to ^0.12.0 ([f741cf0](https://github.com/mateusfg7/mateusf.com/commit/f741cf000db6a226c6020d57037462728a542fae))
-
 ## [2.2.4](https://github.com/mateusfg7/mateusf.com/compare/2.2.3...2.2.4) (2022-12-20)
-
 ## [2.2.3](https://github.com/mateusfg7/mateusf.com/compare/2.2.2...2.2.3) (2022-12-20)
-
 
 ### Bug Fixes
 
 * next using tools folder ([ee1f14a](https://github.com/mateusfg7/mateusf.com/commit/ee1f14ac712427da3709ce634222f90fd518b5a7))
-
 ## [2.2.2](https://github.com/mateusfg7/mateusf.com/compare/98988ae237e25b6e987d170c71d349db4e59dc0e...2.2.2) (2022-12-19)
-
 
 ### Features
 
@@ -1137,7 +977,6 @@
 * use static image url on Header component ([1432d9d](https://github.com/mateusfg7/mateusf.com/commit/1432d9d16e708b995deb6e5958b7d82027a67ae2))
 * **ux:** add footnotes styles ([5033478](https://github.com/mateusfg7/mateusf.com/commit/503347886fc84c68ddfa8c32b0c0c9555f03e8fd))
 
-
 ### Bug Fixes
 
 * **#406:** remove `<a>` child on `<Link>` components ([d0404d8](https://github.com/mateusfg7/mateusf.com/commit/d0404d88a498cef5f36a3991e0e5ae38b1fd3db6)), closes [#406](https://github.com/mateusfg7/mateusf.com/issues/406)
@@ -1163,4 +1002,3 @@
 * type error on `Container` component ([fbec0c3](https://github.com/mateusfg7/mateusf.com/commit/fbec0c323ea0d950c9236b22ff00cd287858560c)), closes [#414](https://github.com/mateusfg7/mateusf.com/issues/414)
 * **ui:** use .knowledge-content before title tags ([976aa9e](https://github.com/mateusfg7/mateusf.com/commit/976aa9edb1874b93c1770c4e9c5e7e664fec23cd))
 * **ui:** use background on `pre` tag ([0e0674d](https://github.com/mateusfg7/mateusf.com/commit/0e0674dfe7dfa0496afc0a335f750dff2b466432))
-
