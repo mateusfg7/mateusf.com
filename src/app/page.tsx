@@ -1,3 +1,4 @@
+import { AboutMe } from './_components/about-me'
 import { Grid } from './_components/grid'
 import { MainTitle } from './_components/main-title'
 import { StartButton } from './_components/start-button'
@@ -10,6 +11,7 @@ export default function Page() {
         <StartButton />
       </div>
       <Grid />
+      <AboutMe />
     </div>
   )
 }
