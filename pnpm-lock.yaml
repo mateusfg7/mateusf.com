@@ -115,7 +115,7 @@ dependencies:
     version: 1.6.0
   tailwindcss-animated:
     specifier: ^1.0.1
-    version: 1.0.1(tailwindcss@3.4.3)
+    version: 1.1.0(tailwindcss@3.4.3)
   unified:
     specifier: ^11.0.4
     version: 11.0.4
@@ -7922,8 +7922,8 @@ packages:
       tailwindcss: 3.4.3
     dev: true
 
-  /tailwindcss-animated@1.0.1(tailwindcss@3.4.3):
-    resolution: {integrity: sha512-u5wusj89ZwP8I+s8WZlaAd7aZTWBN/XEG6QgMKpkIKmAf3xP1A6WYf7oYIKmGaB10UAQaSqWopi/i1ozzZEs8Q==}
+  /tailwindcss-animated@1.1.0(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-2j2MHdlypqaqz5ymcGFAiLjYdyy/9M3aMqa4SKSQqyQnMyUIUDx/3orLyuUop5i2FucdzYXVwexSSU7Q1b0VCw==}
     peerDependencies:
       tailwindcss: '>=3.1.0'
     dependencies:
