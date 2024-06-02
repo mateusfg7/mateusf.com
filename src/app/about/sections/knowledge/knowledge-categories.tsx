@@ -49,7 +49,8 @@ import {
   GooglePlayStore,
   MicrosoftOfficeIcon,
   OnlyOfficeIcon,
-  ThunderbirdIcon
+  ThunderbirdIcon,
+  FastApiIcon
 } from '~/components/icons'
 
 type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -251,6 +252,12 @@ export const knowledgeCategories: {
         icon: GraphQLIcon,
         color: '#E10098',
         status: 'bad'
+      },
+      {
+        title: 'FastAPI',
+        icon: FastApiIcon,
+        color: '#049688',
+        status: 'learning'
       }
     ]
   },

@@ -21,7 +21,8 @@ import {
   VercelIcon,
   CloudflareIcon,
   FigmaIcon,
-  DockerIcon
+  DockerIcon,
+  FastApiIcon
 } from '~/components/icons'
 
 export type IconItem = {
@@ -60,6 +61,7 @@ export const stackLines: StackLine = {
     { title: 'Linux', icon: LinuxIcon, color: '#FCC624' },
     { title: 'Google Cloud', icon: GoogleCloudIcon, color: '#4285F4' },
     { title: 'Vercel', icon: VercelIcon, color: '#000000' },
-    { title: 'Cloudflare', icon: CloudflareIcon, color: '#F38020' }
+    { title: 'Cloudflare', icon: CloudflareIcon, color: '#F38020' },
+    { title: 'FastAPI', icon: FastApiIcon, color: '#009688' }
   ]
 }
