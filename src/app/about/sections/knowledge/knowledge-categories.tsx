@@ -50,7 +50,14 @@ import {
   MicrosoftOfficeIcon,
   OnlyOfficeIcon,
   ThunderbirdIcon,
-  FastApiIcon
+  FastApiIcon,
+  GitIcon,
+  GithubActionsIcon,
+  VSCodeIcon,
+  CodespacesIcon,
+  GitpodIcon,
+  VimIcon,
+  GlpiIcon
 } from '~/components/icons'
 
 type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -302,7 +309,7 @@ export const knowledgeCategories: {
     ]
   },
   {
-    title: 'Infrastructure and DevOps',
+    title: 'Infrastructure and cloud',
     knowledgeList: [
       {
         title: 'Heroku',
@@ -335,12 +342,6 @@ export const knowledgeCategories: {
         color: '#232F3E'
       },
       {
-        title: 'Github',
-        status: 'god',
-        icon: GithubIcon,
-        color: '#181717'
-      },
-      {
         title: 'Vercel',
         status: 'god',
         icon: VercelIcon,
@@ -367,25 +368,56 @@ export const knowledgeCategories: {
     ]
   },
   {
-    title: 'Design',
+    title: 'Misc Tools',
     knowledgeList: [
       {
-        title: 'Figma',
+        title: 'GIT',
         status: 'god',
-        icon: FigmaIcon,
-        color: '#F24E1E'
+        icon: GitIcon,
+        color: '#F34F29'
       },
       {
-        title: 'Photoshop',
+        title: 'Github',
         status: 'god',
-        icon: PhotoShopIcon,
-        color: '#31A8FF'
-      }
-    ]
-  },
-  {
-    title: 'Office',
-    knowledgeList: [
+        icon: GithubIcon,
+        color: '#181717'
+      },
+      {
+        title: 'Github Actions',
+        status: 'god',
+        icon: GithubActionsIcon,
+        color: '#2088ff'
+      },
+      {
+        title: 'VSCode',
+        status: 'god',
+        icon: VSCodeIcon,
+        color: '#0065A9'
+      },
+      {
+        title: 'Codespaces',
+        status: 'god',
+        icon: CodespacesIcon,
+        color: '#181717'
+      },
+      {
+        title: 'GitPod',
+        status: 'god',
+        icon: GitpodIcon,
+        color: '#ff8a00'
+      },
+      {
+        title: 'Vim',
+        status: 'god',
+        icon: VimIcon,
+        color: '#019833'
+      },
+      {
+        title: 'GLPI',
+        status: 'bad',
+        icon: GlpiIcon,
+        color: '#01A4F7'
+      },
       {
         title: 'Google Workspace',
         status: 'god',
@@ -415,6 +447,18 @@ export const knowledgeCategories: {
         status: 'god',
         icon: WindowsIcon,
         color: '#0078D6'
+      },
+      {
+        title: 'Figma',
+        status: 'god',
+        icon: FigmaIcon,
+        color: '#F24E1E'
+      },
+      {
+        title: 'Photoshop',
+        status: 'god',
+        icon: PhotoShopIcon,
+        color: '#31A8FF'
       }
     ]
   }
