@@ -4,7 +4,7 @@ export function OnlyOfficeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
-      height="0.9rem"
+      height="0.9em"
       viewBox="0 0 66 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
