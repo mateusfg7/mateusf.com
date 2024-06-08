@@ -58,7 +58,7 @@ dependencies:
     version: 4.0.13(react@18.3.1)
   react-github-calendar:
     specifier: ^4.0.8
-    version: 4.1.3(react-dom@18.3.1)(react@18.3.1)
+    version: 4.1.5(react-dom@18.3.1)(react@18.3.1)
   react-icons:
     specifier: 5.2.1
     version: 5.2.1(react@18.3.1)
@@ -494,7 +494,7 @@ packages:
     resolution: {integrity: sha512-bV21/9LQmcQeCPEg3BDFtvwL6cwiTMksYNWQQ4KOxCZikEGalWtenoZ0wCiukJINlGCIi2KXx01g4FoH/LxpzQ==}
     requiresBuild: true
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
     optional: true
 
   /@esbuild/aix-ppc64@0.20.2:
@@ -7116,8 +7116,8 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /react-activity-calendar@2.2.8(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-+Zr6UlPC4zLMSkXyg/+bQ0Fd10E8V+nT+AU0FHfCIQi6/dLJe73cR+CkFFf8zPE59XhGO24U7FfUyFgbWqV0Bg==}
+  /react-activity-calendar@2.2.10(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-6UsPmw6jD5TM5DHAVCIKkOhqdcJ1reOrFsMd3pDnQ5Yo8WfkFoDLjYQRYUkH6BWhishVpZ3JTn39Tf+3JyVY6w==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -7148,14 +7148,14 @@ packages:
       react: 18.3.1
     dev: false
 
-  /react-github-calendar@4.1.3(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Rs23t8dryIwKLIHk0Gm1ufCN5tZ17OxHrKu2on/Tm6IIytxtLB359KtLE02e6/f8bnjA1ZQjP2qWlxQlBsHLKw==}
+  /react-github-calendar@4.1.5(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-l3Uzt2TnDdFGeKSpqpbX1rwIYydQLmVk4kjS6lpBhtbKAG1ejVRLbqM1TJhLgRIzORlouzGz94sis3trCiTi7A==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.3.1
-      react-activity-calendar: 2.2.8(react-dom@18.3.1)(react@18.3.1)
+      react-activity-calendar: 2.2.10(react-dom@18.3.1)(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
       react-error-boundary: 4.0.13(react@18.3.1)
     dev: false
@@ -8246,6 +8246,11 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  /tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+    requiresBuild: true
+    optional: true
 
   /tsx@4.11.0:
     resolution: {integrity: sha512-vzGGELOgAupsNVssAmZjbUDfdm/pWP4R+Kg8TVdsonxbXk0bEpE1qh0yV6/QxUVXaVlNemgcPajGdJJ82n3stg==}
