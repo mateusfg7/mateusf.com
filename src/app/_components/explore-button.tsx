@@ -3,7 +3,7 @@
 import { useKBar } from 'kbar'
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
-export function StartButton() {
+export function ExploreButton() {
   const {
     query: { toggle }
   } = useKBar()
@@ -18,7 +18,7 @@ export function StartButton() {
         Ctrl K
       </kbd>
       <span className="inline md:hidden">Click</span>
-      <span>to start</span>
+      <span>to explore</span>
 
       <ArrowRight
         size="1em"
