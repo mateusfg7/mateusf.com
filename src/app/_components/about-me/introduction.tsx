@@ -80,12 +80,12 @@ const Link = ({ label, ...props }: { label: string } & LinkProps) => (
 
 export function Introduction() {
   return (
-    <div className="flex-1 space-y-4 text-balance">
+    <div className="flex-1 space-y-4">
       <h2 className="text-xs opacity-70">Full-Stack Developer</h2>
 
-      <p className="align-baseline">
+      <p>
         <HandIcon />
-        Hello, welcome to my little corner on the web!
+        <span>Hello, welcome to my little corner on the web!</span>
       </p>
 
       <p>
