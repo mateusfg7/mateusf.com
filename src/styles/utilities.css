@@ -1,13 +1,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .content-container {
-    @apply w-full px-4 md:max-w-4xl lg:px-0;
-  }
-  .content-vertical-spaces {
-    @apply pb-28 pt-24 md:pt-36;
-  }
-
   .limits {
     @apply border border-red-600;
     @apply bg-blue-500;
