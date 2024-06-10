@@ -5,11 +5,15 @@ lastUpdate: '2024-05-14T15:14:00.275Z'
 description: 'Introdução à linguagem SQL e seus principais comandos.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
-status: 'published'
+status: 'draft'
 ---
+{/*
+[Aula 11](assets/Aula_11_SQL_DML_Parte_3.pdf)
+[Comandos Avançados](assets/SQL_Comandos_Avancados.pdf)
+*/}
 
 <Warn>
-  Esse artigo foi feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
+  Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
 </Warn>
 
 # Linguagem SQL
@@ -681,6 +685,295 @@ _Resultado:_
 |----------|-|
 | 3        ||
 
+### Cláusula `DISTINCT` (linhas únicas)
+
+Linhas duplicadas podem aparecer nas relações. No caso de desejarmos a eliminação de duplicidade, devemos inserir a palavra `DISTINCT{:sql}` na cláusula `SELECT{:sql}`.
+
+<Warn>
+**Observações**
+- Funções agregadas normalmente consideram as tuplas duplicadas.
+- Não é permitido o uso do `DISTINCT{:sql}` com o `COUNT(*){:sql}`.
+- É válido usar o `DISTINCT{:sql}` com `MAX{:sql}` ou `MIN{:sql}`, mesmo não alterando o resultado.
+</Warn>
+
+Tabela neste momento:
+```sql
+SELECT * FROM peca;
+```
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd
+---|---|---|---
+1 | Peça A | 15.00 | 10
+2 | Peça B | 8.00 | 20
+3 | Peça B | 8.00 | 10
+4 | Peça A | 8.00 | 30
+5 | Peça C | 17.00 | 0
+6 | Peça C | 17.00 | <span className="opacity-50">null</span>
+7 | Peça A | <span className="opacity-50">null</span> | 15
+
+**Sinatxe:**
+
+```sql
+SELECT DISTINCT coluna1, coluna2, ... FROM nome_tabela;
+```
+
+**Exemplo:**
+
+_Selecionar o nome de todas as peças, sem o `DISTINCT{:sql}`:_
+```sql
+SELECT nome_peca FROM peca;
+```
+| <span className="underline">nome_peca</span> ||
+|---|-|
+| Peça A |
+| Peça B |
+| Peça B |
+| Peça A |
+| Peça C |
+| Peça C |
+| Peça A |
+
+_Selecionar o nome de todas as peças, com o `DISTINCT{:sql}`:_
+```sql /DISTINCT/
+SELECT DISTINCT nome_peca FROM peca;
+```
+| <span className="underline">nome_peca</span> ||
+|---|-|
+| Peça C |
+| Peça A |
+| Peça B |
+
+### Cláusula `GROUP BY` (agrupar)
+
+A cláusula `GROUP BY{:sql}` é usada para **agrupar linhas** que possuem o mesmo valor em uma ou mais colunas. É normalmente usada em conjunto com funções de agregação para agrupar os resultados de acordo com um ou mais campos. Desta forma, as funções de agregação será aplicada a **cada grupo**, e não a todas as tuplas.
+
+Tabela neste momento:
+```sql
+SELECT * FROM peca ORDER BY nome_peca;
+```
+<span className="underline">cod_peca</span> | nome_peca | preco | qtd | veiculo
+---|---|---|---|---
+1 | Peça A | 15.00 | 10 | CARRO
+2 | Peça B | 8.00 | 20 | MOTO
+3 | Peça C | 8.00 | 30 | CAMINHAO
+4 | Peça D | 8.00 | 10 | CARRO
+5 | Peça E | <span className="opacity-50">null</span> | 15 | CAMINHAO
+6 | Peça F | 17.00 | 0 | MOTO
+7 | Peça G | 17.00 | <span className="opacity-50">null</span> | CARRO
+
+**Sintaxe:**
+
+```sql
+SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ...;
+```
+
+<br/>
+
+**EXEMPLO 1** - Selecionar o nome de todas as peças e agrupar por veículo (_contar por grupo_):
+
+```sql
+SELECT veiculo, COUNT(1) FROM peca GROUP BY veiculo;
+```
+
+_Resultado:_
+
+| veiculo | count |
+|---|---|
+MOTO | 2
+CAMINHAO | 2
+CARRO | 3
+
+<br/>
+
+**EXEMPLO 2** - Obter a soma da quantidade de peças por tipo de veículo
+
+```sql
+SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo;
+```
+
+_Resultado:_
+
+| veiculo | sum |
+|---|---|
+MOTO | 20
+CAMINHAO | 45
+CARRO | 20
+
+### Cláusula `HAVING` (filtro)
+
+A cláusula `HAVING{:sql}` é usada para **filtrar grupos** de registros que resultam de uma operação de `GROUP BY{:sql}`. A cláusula `HAVING{:sql}` é usada em conjunto com a cláusula `GROUP BY{:sql}`.
+
+**Sintaxe:**
+
+```sql
+SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ... HAVING condicao;
+```
+
+**EXEMPLO 2** anterior (_alterado_) - Obter a soma da quantidade de peças por tipo de veículo que sejam maiores que 20
+
+```sql /HAVING/
+SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo HAVING SUM(qtd) > 20;
+```
+
+_Resultado:_
+
+| veiculo | sum |
+|---|---|
+CAMINHAO | 45
+
+### Seleção com Junção
+
+As vezes queremos retornar dados de mais de uma tabela, relacionando os dados de uma tabela com os dados de outra.
+
+Para fazer a junção das tabelas, precisamos definir uma **condição de junção**, na qual os atributos **chave primária** (_primary key_) e **chave estrangeira** (_foreign key_) das relações devem ser relacionados.
+
+**Tabelas de exemplo**
+
+<div className="flex gap-5 flex-wrap">
+
+<u>num_tec</u> | nome | cargo
+---|---|---
+297 | Marco | Trainee
+553 | Hélio | Sênior
+062 | Tião | Sênior
+718 | Sílvio | Estagiário
+
+
+<u>num_tecnico</u> | tipo | anos_exp
+---|---|---
+553 | Secadora | 15
+062 | Lavadora | 18
+297 | Torradeira | 1
+297 | Secadora | 1
+718 | Lavadora | 5
+062 | Congelador | 10
+062 | Secadora | 12
+
+
+tipo | categoria | taxa
+---|---|---
+Lavadora | 1 | 20,00
+Secadora | 1 | 20,00
+Torradeira | 2 | 10,00
+Congelador | 1 | 8,00
+Batedeira | 2 | 25,00
+
+</div>
+
+**Exemplo 1:** Obter os nomes dos técnicos com experiência em secadora.
+
+_Query_
+```sql
+SELECT nome FROM tecnicos, experiencia
+WHERE num_tec = num_tecnico AND tipo = 'Secadora';
+```
+
+_Resultado_
+```console
+| Nome  |
+|-------|
+| Hélio |
+| Tião  |
+```
+
+**Exemplo 2:** Listar o nome dos técnicos e sua experiência em aparelhos da categoria 1
+
+_Query_
+```sql
+SELECT tecnicos.nome, experiencia.anos_exp, tipos.tipo
+FROM tecnicos, tipos, experiencia
+WHERE
+  tipos.tipo = experiencia.tipo
+AND
+  experiencia.num_tecnico = tecnicos.num_tec
+AND
+  tipos.categoria = 1
+```
+
+<Tip>
+Repare que podemos utilizar a sintaxe `tabela.atributo{:sql}` para especificar de qual tabela estamos selecionando o atributo.
+
+```sql /tecnicos/#b /experiencia/#b /tipos/#b /nome/#g /tipo/#g /categoria/#g /anos_exp/#g /num_tecnico/#g /num_tec/#g caption="Em azul as tabelas e em verde os atributos"
+SELECT tecnicos.nome, experiencia.anos_exp, tipos.tipo
+FROM tecnicos, tipos, experiencia
+WHERE
+  tipos.tipo = experiencia.tipo
+AND
+  experiencia.num_tecnico = tecnicos.num_tec
+AND
+  tipos.categoria = 1
+```
+</Tip>
+
+_Resultado_
+
+```console
+|  nome  | anos_exp |   tipo    |
+|--------|----------|-----------|
+| Hélio  |    15    | Secadora  |
+| Tião	 |    18    | Lavadora  |
+| Marco	 |    1     | Secadora  |
+| Sílvio |    5     | Lavadora  |
+| Tião	 |    12    | Secadora  |
+```
+
+### Uso de aliases (apelido)
+
+_Alias_ são **apelidos** que podemos dar aos atributos na hora de retornar valores no `SELECT{:sql}`, permite associar um "nome de variável" para cada relação, a fim de simplificar comandos SQL, e torna o retorno mais legível.
+
+Para criarmos um _alias_ podemos usar a palavra reservada `AS{:sql}`. Criando um `SELECT{:sql}` com _alias_ temos:
+
+_Alias para tabelas_
+```sql /AS/
+SELECT T.nome, E.anos_exp, TP.tipo
+FROM
+  tecnicos AS T,
+  tipos AS TP,
+  experiencia AS E
+WHERE TP.tipo = E.tipo
+  AND E.num_tecnico = T.num_tec
+  AND TP.categoria = 1;
+```
+
+_Alias para atributos_
+```sql /AS/
+SELECT
+  tecnicos.nome AS Tecnico,
+  experiencia.anos_exp AS Experiencia,
+  tipos.tipo AS Tipo
+FROM tecnicos, tipos, experiencia
+WHERE tipos.tipo = experiencia.tipo
+  AND experiencia.num_tecnico = tecnicos.num_tec
+  AND tipos.categoria = 1;
+```
+```txt
+nome | anos_exp | tipo         Tecnico | Experiencia | Tipo
+-----|----------|------        --------|-------------|------
+ ... |   ...    |  ...           ...   |     ...     |  ...
+ ... |   ...    |  ...    ->     ...   |     ...     |  ...
+ ... |   ...    |  ...           ...   |     ...     |  ...
+ ... |   ...    |  ...           ...   |     ...     |  ...
+```
+
+### Resumo
+
+Uma consulta em SQL pode consistir em até seis cláusulas:
+
+```sql
+SELECT [*] [DISTINCT] <lista de atributos> <funções de agregação>
+FROM <lista de tabelas>
+[WHERE <condição>]
+[GROUP BY <lista de atributos para agrupamento>]
+[HAVING <condição para agrupamento, aceita funções de agregação>]
+[ORDER BY <lista de atributos para ordenação>] [ASC] [DESC]
+```
+
+**OBSERVAÇÕES**
+- Apenas as cláusulas `SELECT{:sql}` e `FROM{:sql}` são obrigatórias
+- Quando existentes, as cláusulas devem aparecer na ordem específica acima.
+- O `ORDER BY{:sql}` só pode ser ultilizado após o último `SELECT{:sql}` (se a linguagem permitir)
+- As cláusulas `GROUP BY{:sql}` e `HAVING{:sql}` só podem ser usadas nos comandos `SELECT{:sql}` individuais
+
+
 ## Valores `NULL` (nulo)
 
 Suponhamos que temos a tabela `Peça` criada anteriormente, estruturada e preenchida da seguinte forma:
@@ -867,139 +1160,36 @@ _Resultado:_
 6 | Peça F | 20.00 | 0
 7 | Peça G | 17.00 | <span className="opacity-50">null</span>
 
-## Selecionar Dados II
-
-### Cláusula `DISTINCT` (linhas únicas)
-
-Linhas duplicadas podem aparecer nas relações. No caso de desejarmos a eliminação de duplicidade, devemos inserir a palavra `DISTINCT{:sql}` na cláusula `SELECT{:sql}`.
-
 <Warn>
-**Observações**
-- Funções agregadas normalmente consideram as tuplas duplicadas.
-- Não é permitido o uso do `DISTINCT{:sql}` com o `COUNT(*){:sql}`.
-- É válido usar o `DISTINCT{:sql}` com `MAX{:sql}` ou `MIN{:sql}`, mesmo não alterando o resultado.
+**Artigo em construção...**
 </Warn>
 
-Tabela neste momento:
-```sql
-SELECT * FROM peca;
-```
-<span className="underline">cod_peca</span> | nome_peca | preco | qtd
----|---|---|---
-1 | Peça A | 15.00 | 10
-2 | Peça B | 8.00 | 20
-3 | Peça B | 8.00 | 10
-4 | Peça A | 8.00 | 30
-5 | Peça C | 17.00 | 0
-6 | Peça C | 17.00 | <span className="opacity-50">null</span>
-7 | Peça A | <span className="opacity-50">null</span> | 15
+{/*
 
-**Sinatxe:**
+## Junções (Comando `JOIN`)
 
-```sql
-SELECT DISTINCT coluna1, coluna2, ... FROM nome_tabela;
-```
+Junção é a possibilidade de se criar relacionamentos entre tabelas, de forma a poder recuperar dados de mais de uma tabela em uma única consulta. Um jeito melhor e nativo de se juntar mais de uma tabela, diferente do método apresentado no capítulo [Seleção com Junção](#seleção-com-junção).
 
-**Exemplo:**
+Isso é possível atravez do comando `JOIN{:sql}` (_junção_), que é usado para combinar linhas de duas ou mais tabelas com base em uma relação entre elas, e recuperando esses dados usando apenas um `SELECT{:sql}`.
 
-_Selecionar o nome de todas as peças, sem o `DISTINCT{:sql}`:_
-```sql
-SELECT nome_peca FROM peca;
-```
-| <span className="underline">nome_peca</span> ||
-|---|-|
-| Peça A |
-| Peça B |
-| Peça B |
-| Peça A |
-| Peça C |
-| Peça C |
-| Peça A |
+É importante utilizá-lo, porque tira da cláusula `WHERE{:sql}` condições que são estritamente das junções (chave primária igual a chave estrangeira, por exemplo).
 
-_Selecionar o nome de todas as peças, com o `DISTINCT{:sql}`:_
-```sql /DISTINCT/
-SELECT DISTINCT nome_peca FROM peca;
-```
-| <span className="underline">nome_peca</span> ||
-|---|-|
-| Peça C |
-| Peça A |
-| Peça B |
+Existem as variações de junções **internas** e **externas**.
 
-### Cláusula `GROUP BY` (agrupar)
+**Internas**: `INNER JOIN{:sql}` e `NATURAL JOIN{:sql}`
 
-A cláusula `GROUP BY{:sql}` é usada para **agrupar linhas** que possuem o mesmo valor em uma ou mais colunas. É normalmente usada em conjunto com funções de agregação para agrupar os resultados de acordo com um ou mais campos. Desta forma, as funções de agregação será aplicada a **cada grupo**, e não a todas as tuplas.
+<Tip>
+A palavra `INNER{:sql}` pode ser omitida
+</Tip>
 
-Tabela neste momento:
-```sql
-SELECT * FROM peca ORDER BY nome_peca;
-```
-<span className="underline">cod_peca</span> | nome_peca | preco | qtd | veiculo
----|---|---|---|---
-1 | Peça A | 15.00 | 10 | CARRO
-2 | Peça B | 8.00 | 20 | MOTO
-3 | Peça C | 8.00 | 30 | CAMINHAO
-4 | Peça D | 8.00 | 10 | CARRO
-5 | Peça E | <span className="opacity-50">null</span> | 15 | CAMINHAO
-6 | Peça F | 17.00 | 0 | MOTO
-7 | Peça G | 17.00 | <span className="opacity-50">null</span> | CARRO
+**Como funciona o comando `JOIN{:sql}`?**
 
-**Sintaxe:**
+Quando um comando `SELECT{:sql}` especifica campos de duas tabelas **sem nenhumas restrição ou filtro**, o resultado será um número de linhas iguais à multiplicação do total de linhas da primeira tabela ($N$) pela segunda tabela ($M$), ou seja $M\times N$.
 
-```sql
-SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ...;
-```
+Isso ocorre devido ao fato de que, para cada linha da primeira tabela, todas as linhas da segunda são processadas. Operações de junção toma duas relações, e têm como resultado uma outra relação.
 
-<br/>
+**Funcionamento do comando `JOIN{:sql}`
 
-**EXEMPLO 1** - Selecionar o nome de todas as peças e agrupar por veículo (_contar por grupo_):
+_Pág. 11_
 
-```sql
-SELECT veiculo, COUNT(1) FROM peca GROUP BY veiculo;
-```
-
-_Resultado:_
-
-| veiculo | count |
-|---|---|
-MOTO | 2
-CAMINHAO | 2
-CARRO | 3
-
-<br/>
-
-**EXEMPLO 2** - Obter a soma da quantidade de peças por tipo de veículo
-
-```sql
-SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo;
-```
-
-_Resultado:_
-
-| veiculo | sum |
-|---|---|
-MOTO | 20
-CAMINHAO | 45
-CARRO | 20
-
-### Cláusula `HAVING` (filtro)
-
-A cláusula `HAVING{:sql}` é usada para **filtrar grupos** de registros que resultam de uma operação de `GROUP BY{:sql}`. A cláusula `HAVING{:sql}` é usada em conjunto com a cláusula `GROUP BY{:sql}`.
-
-**Sintaxe:**
-
-```sql
-SELECT coluna1, coluna2, ... FROM nome_tabela GROUP BY coluna1, coluna2, ... HAVING condicao;
-```
-
-**EXEMPLO 2** anterior (_alterado_) - Obter a soma da quantidade de peças por tipo de veículo que sejam maiores que 20
-
-```sql /HAVING/
-SELECT veiculo, SUM(qtd) FROM peca GROUP BY veiculo HAVING SUM(qtd) > 20;
-```
-
-_Resultado:_
-
-| veiculo | sum |
-|---|---|
-CAMINHAO | 45
+*/}
