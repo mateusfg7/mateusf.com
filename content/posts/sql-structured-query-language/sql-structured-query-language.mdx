@@ -1,19 +1,18 @@
 ---
 title: 'SQL - Structured Query Language'
 date: '2024-05-02T14:34:47.275Z'
-lastUpdate: '2024-05-14T15:14:00.275Z'
+lastUpdate: '2024-06-11T16:40:00.275Z'
 description: 'Introdução à linguagem SQL e seus principais comandos.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
 status: 'draft'
 ---
-{/*
-[Aula 11](assets/Aula_11_SQL_DML_Parte_3.pdf)
-[Comandos Avançados](assets/SQL_Comandos_Avancados.pdf)
-*/}
+
+{/* [Comandos Avançados](assets/SQL_Comandos_Avancados.pdf) */}
+
 
 <Warn>
-  Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos que estou estudando no momento, ministrado pelo professor **Gabriel Ribeiro Diniz** para as aulas de **Banco de Dados** no curso de [**Gestão de TI - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/).
+  Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos da matéria de **Banco de Dados**, no curso de [**Gestão da T.I - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/) 1º Período. Aulas ministradas pelo professor [**Gabriel Ribeiro Diniz**](https://www.linkedin.com/in/gabriel-r-diniz/).
 </Warn>
 
 # Linguagem SQL
@@ -275,6 +274,7 @@ A **FK** pode ser declarada com algumas opções de ação para deleção (`ON D
 **Restrição de Atributos** (PostgreSQL):
 - `NOT NULL{:sql}` - **NN** - O valor não pode ser nulo.
 - `DEFAULT <valor>{:sql}` - O valor padrão para o atributo caso não seja passado.
+- `UNIQUE{:sql}` - O valor não pode ser repetido, deve ser único.
 
 ### Cláusulas da FK
 
@@ -368,6 +368,10 @@ Sintaxe:
 ```sql /NO ACTION/#g /ON UPDATE/#b
 FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE NO ACTION
 ```
+
+## Constraits
+
+_Constraits_ são todas as restrições que uma coluna pode ter (`PRIMARY KEY{:sql}`, `FOREIGN KEY{:sql}`, `NOT NULL{:sql}`, `UNIQUE{:sql}`, etc).
 
 ## Remover base de dados (DB)
 
@@ -1160,12 +1164,6 @@ _Resultado:_
 6 | Peça F | 20.00 | 0
 7 | Peça G | 17.00 | <span className="opacity-50">null</span>
 
-<Warn>
-**Artigo em construção...**
-</Warn>
-
-{/*
-
 ## Junções (Comando `JOIN`)
 
 Junção é a possibilidade de se criar relacionamentos entre tabelas, de forma a poder recuperar dados de mais de uma tabela em uma única consulta. Um jeito melhor e nativo de se juntar mais de uma tabela, diferente do método apresentado no capítulo [Seleção com Junção](#seleção-com-junção).
@@ -1177,10 +1175,8 @@ Isso é possível atravez do comando `JOIN{:sql}` (_junção_), que é usado par
 Existem as variações de junções **internas** e **externas**.
 
 **Internas**: `INNER JOIN{:sql}` e `NATURAL JOIN{:sql}`
+**Externas**: `OUTER JOIN{:sql}` (_`LEFT{:sql}`, `RIGHT{:sql}`, `FULL{:sql}`_)
 
-<Tip>
-A palavra `INNER{:sql}` pode ser omitida
-</Tip>
 
 **Como funciona o comando `JOIN{:sql}`?**
 
@@ -1188,8 +1184,216 @@ Quando um comando `SELECT{:sql}` especifica campos de duas tabelas **sem nenhuma
 
 Isso ocorre devido ao fato de que, para cada linha da primeira tabela, todas as linhas da segunda são processadas. Operações de junção toma duas relações, e têm como resultado uma outra relação.
 
-**Funcionamento do comando `JOIN{:sql}`
+<img src="assets/join-example-1-dark.png" alt="Exemplo de junção de tabelas" className="on-dark" />
+<img src="assets/join-example-1-light.png" alt="Exemplo de junção de tabelas" className="on-light" />
 
-_Pág. 11_
+<img src="assets/join-example-1-result-dark.png" alt="Resultado do exemplo de junção de tabelas" className="on-dark" />
+<img src="assets/join-example-1-result-light.png" alt="Resultado do exemplo de junção de tabelas" className="on-light" />
 
-*/}
+
+Porém, o benefício do `JOIN{:sql}` só será sentido quando as chaves $PK$ e $FK$ forem equivalentes, ou seja, $id = id\_curso$, usando a palavra reservada `ON{:sql}` (_será explicado mais a frente_).
+
+<img src="assets/join-example-1-fixed-result-dark.png" alt="Resultado correto do exemplo de junção de tabelas" className="on-dark" />
+<img src="assets/join-example-1-fixed-result-light.png" alt="Resultado correto do exemplo de junção de tabelas" className="on-light" />
+
+A operção de junção tem algumas variantes, e cada uma dessas variações consiste em um _tipo de junção_ e uma _condição de junção_.
+
+**Sintaxe**
+
+```sql
+SELECT coluna1, coluna2, ...
+FROM tabela1 <tipo> JOIN tabela2
+ON <condição>;
+```
+
+_Exemplo_
+```sql
+SELECT nome, nasc, experiencia
+FROM tecnicos INNER JOIN experiencia
+ON tecnicos.num_tec = experiencia.num_tecnico;
+```
+
+**TIPO DE JUNÇÃO** (`INNER{:sql}` ou `OUTER{:sql}`)
+Define como as tuplas em cada relação que não possuam nenhuma conrrespondência com as tuplas da outra relação deve ser tratadas.
+
+**CONDIÇAO DE JUNÇAO** (`ON{:sql}`)
+Definem quais tuplas das duas relações apresentam correspondência e quais atributos são apresentados de uma junção.
+
+### `INNER JOIN`
+
+O `INNER JOIN{:sql}` (Ou somente `JOIN{:sql}`) é uma **junção interna**, que junta os registros de uma tabela que tiver um **correspondente** na outra tabela, através da chave primária e estrangeira.
+
+Por exemplo, a tabela abaixo é resultado de um `JOIN{:sql}` de 2 outras tabelas. A segunda tabela possui chaves estrangeiras apontando para valores nulos, e a primeira possui tuplas sem conrrespondência na segunda tabela. O resultado do `INNER JOIN{:sql}` será apenas as linhas que possuem corrêspondência nas duas tabelas:
+
+<img src="assets/result-inner-join-example-dark.png" alt="Exemplo de resultado do INNER JOIN" className="on-dark" />
+<img src="assets/result-inner-join-example-light.png" alt="Exemplo de resultado do INNER JOIN" className="on-light" />
+
+**Sintaxe**
+```sql
+SELECT coluna1, coluna2, ...
+FROM (tabela1 INNER JOIN tabela2
+      ON tabela1.chave_primaria = tabela2.chave_estrangeira);
+```
+
+<Tip>
+A palavra `INNER{:sql}` pode ser omitida
+
+```sql
+SELECT coluna1, coluna2, ...
+FROM (tabela1 JOIN tabela2
+      ON tabela1.chave_primaria = tabela2.chave_estrangeira);
+```
+</Tip>
+
+#### Usando o `INNER JOIN` com 2 tabelas
+
+**Exemplo**: Liste o nome dos técnicos que possuem experiência em Lavadora
+
+_Tabelas_
+
+<img src="assets/tables-tecnico-experiencia-dark.png" alt="Tabelas TÉCNICO e EXPERIÊNCIA" className="on-dark" />
+<img src="assets/tables-tecnico-experiencia-light.png" alt="Tabelas TÉCNICO e EXPERIÊNCIA" className="on-light" />
+
+_Query_
+```sql
+SELECT nome
+FROM (tecnicos INNER JOIN experiencia
+      ON tecnicos.num_tec = experiencia.num_tecnico)
+WHERE experiencia.tipo = 'Lavadora';
+```
+
+_Resultado_
+<img src="assets/result-inner-join-query-1-dark.png" alt="Nomes dos funcionários com experiência em Lavadora" className="on-dark" />
+<img src="assets/result-inner-join-query-1-light.png" alt="Nomes dos funcionários com experiência em Lavadora" className="on-light" />
+
+
+#### Usando o `INNER JOIN` com 3 tabelas
+
+**Exemplo**: Liste o nome dos técnicos e sua experiência em aparelhos da categoria 1
+
+_Tabelas_
+<img src="assets/tables-tecnico-experiencia-tipos-dark.png" alt="Tabelas TÉCNICO, EXPERIÊNCIA e TIPOS" className="on-dark" />
+<img src="assets/tables-tecnico-experiencia-tipos-light.png" alt="Tabelas TÉCNICO, EXPERIÊNCIA e TIPOS" className="on-light" />
+
+_Query_
+```sql
+SELECT nome, anos_exp
+FROM ((tecnicos INNER JOIN experiencia
+       ON num_tec = num_tecnico) INNER JOIN Tipos
+       ON tipo = tipo)
+WHERE categoria = 1;
+```
+
+_Resultado_
+<img src="assets/result-inner-join-query-2-dark.png" alt="Nome e experiência dos técnicos com experiência em aparelhos do tipo 1" className="on-dark" />
+<img src="assets/result-inner-join-query-2-light.png" alt="Nome e experiência dos técnicos com experiência em aparelhos do tipo 1" className="on-light" />
+
+
+### `NATURAL JOIN`
+
+Com ele você não precisa identificar quais colunas serão comparadas, pois ele fará a comparação entre **campos com o mesmo nome**.
+
+**Sintaxe**
+
+```sql
+SELECT coluna1, coluna2...
+FROM tabela1 NATURAL JOIN tabela2;
+```
+
+_Exemplo_
+
+```sql
+SELECT * FROM (tecnicos NATURAL JOIN experiencia);
+```
+
+Repare que não precisamos passar a condição de junção com `ON{:sql}`, já que ambas as tabelas possuem a coluna `tipo`.
+
+
+<img src="assets/natural-join-reference-dark.png" alt="Destaque das colunas com o mesmo nome" className="on-dark" />
+<img src="assets/natural-join-reference-light.png" alt="Destaque das colunas com o mesmo nome" className="on-light" />
+
+O mesmo não da pra ser feito entre as tabelas `tecnicos` e `tipos`, pois **não possuem** colunas com o mesmo nome.
+
+<img src="assets/wrong-natural-join-reference-dark.png" alt="Destaque das colunas com nomes diferentes" className="on-dark" />
+<img src="assets/wrong-natural-join-reference-light.png" alt="Destaque das colunas com nomes diferentes" className="on-light" />
+
+### `OUTER JOIN`
+
+O `OUTER JOIN{:sql}` é a variação de junção **externa**, e é composto por 3 tipos:
+- `LEFT OUTER JOIN{:sql}`
+- `RIGHT OUTER JOIN{:sql}`
+- `FULL OUTER JOIN{:sql}`
+
+<Tip>
+A palavra `OUTER{:sql}` pode ser omitida em todos os 3 tipos
+</Tip>
+
+Diferente das junções **internas**, como o `INNER JOIN{:sql}`, as junções **externas** podem retornar valores mesmo quando não há conrrespondência entre as tabelas (valores `NULL{:sql}`).
+
+#### `LEFT OUTER JOIN`
+
+No `LEFT OUTER JOIN{:sql}` (ou simplesmente `LEFT JOIN{:sql}`), a prioridade é da tabela da **esquerda**, isto é, todos os registros da primeira tabela serão mostrados independente se houver correspondente nas outra tabela, após a equivalência das chaves usando o `ON{:sql}`.
+
+<img src="assets/result-left-join-example-light.png" alt="Exemplo de resultado do LEFT OUTER JOIN" className="on-light" />
+<img src="assets/result-left-join-example-dark.png" alt="Exemplo de resultado do LEFT OUTER JOIN" className="on-dark" />
+
+**Sintaxe**
+
+```sql
+SELECT coluna1, coluna2...
+FROM tabela1 LEFT OUTER JOIN tabela2;
+```
+
+_Exemplo_
+
+```sql
+SELECT * FROM (tecnicos LEFT OUTER JOIN experiencia);
+```
+
+#### `RIGHT OUTER JOIN`
+
+No `RIGHT OUTER JOIN{:sql}` (ou simplesmente `RIGHT JOIN{:sql}`), a prioridade é da tabela da **direita**, isto é, todos os registros da segunda tabela serão mostrados independente se houver correspondente na outra tabela.
+
+Pega todos os atributos da relação que está à direita, verifica se existe algum correspondente à esquerda, caso afirmativo, retorna os atributos da esquerda, e caso negativo, coloca o valor nulo nos atributos.
+
+<img src="assets/result-right-join-example-light.png" alt="Exemplo de resultado do RIGHT OUTER JOIN" className="on-light" />
+<img src="assets/result-right-join-example-dark.png" alt="Exemplo de resultado do RIGHT OUTER JOIN" className="on-dark" />
+
+**Sintaxe**
+
+```sql
+SELECT coluna1, coluna2...
+FROM tabela1 RIGHT OUTER JOIN tabela2;
+```
+
+_Exemplo_
+
+```sql
+SELECT * FROM (tecnicos RIGHT OUTER JOIN experiencia);
+```
+
+#### `FULL OUTER JOIN`
+
+Faz o `RIGHT{:sql}` e o `LEFT{:sql}` ao mesmo tempo, ou seja, vai retornar dados que não tem em comum nas duas tabelas, e não só na tabela da direita ou da esquerda.
+
+<img src="assets/result-full-join-example-light.png" alt="Exemplo de resultado do FULL OUTER JOIN" className="on-light" />
+<img src="assets/result-full-join-example-dark.png" alt="Exemplo de resultado do FULL OUTER JOIN" className="on-dark" />
+
+**Sintaxe**
+
+```sql
+SELECT coluna1, coluna2...
+FROM tabela1 FULL OUTER JOIN tabela2;
+```
+
+_Exemplo_
+
+```sql
+SELECT * FROM (tecnicos FULL OUTER JOIN experiencia);
+```
+
+---
+
+<Warn>
+**Artigo em construção...**
+</Warn>
