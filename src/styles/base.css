@@ -46,7 +46,7 @@
     @apply w-full px-4 md:max-w-4xl lg:px-0;
   }
   .content-vertical-spaces {
-    @apply pb-28 pt-24 md:pt-36;
+    @apply pb-28 pt-36;
   }
 }
 
