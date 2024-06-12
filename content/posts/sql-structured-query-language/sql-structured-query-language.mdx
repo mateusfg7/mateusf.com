@@ -1,19 +1,21 @@
 ---
 title: 'SQL - Structured Query Language'
 date: '2024-05-02T14:34:47.275Z'
-lastUpdate: '2024-06-11T16:40:00.275Z'
+lastUpdate: '2024-06-12T14:37:00.275Z'
 description: 'Introdução à linguagem SQL e seus principais comandos.'
 category: 'Article'
 tags: 'sql,ddl,dml,dcl,database,fapam,gti,postgresql'
-status: 'draft'
+status: 'published'
 ---
 
-{/* [Comandos Avançados](assets/SQL_Comandos_Avancados.pdf) */}
+# Introdução
 
+Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos da matéria de **Banco de Dados**, no curso de [**Gestão da T.I - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/) 1º Período.
 
-<Warn>
-  Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos da matéria de **Banco de Dados**, no curso de [**Gestão da T.I - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/) 1º Período. Aulas ministradas pelo professor [**Gabriel Ribeiro Diniz**](https://www.linkedin.com/in/gabriel-r-diniz/).
-</Warn>
+_Aulas ministradas pelo professor [**Gabriel Ribeiro Diniz**](https://www.linkedin.com/in/gabriel-r-diniz/)._
+
+Os comandos SQL serão em sua grande maioria voltados ao SGBD **PostgreSQL**, já que é o SGBD estudado no curso.
+
 
 # Linguagem SQL
 
@@ -118,7 +120,7 @@ CREATE DATABASE Hospital;
 ### Data/Tempo
 
 `DATE{:sql}`: É um tipo de dado que contém um ano (com 4 dígitos) mês e dia do mês sendo o formato "**aaaa**/**mm**/**dd**" o padrão do _MySQL Workbench_.
-- **Year (date)** - retorna o ano de uma data
+- **ano (date)** - retorna o ano de uma data
 - **Month (date)** - retorna o mês de uma data
 - **Day (date)** - retorna o dia de uma data
 
@@ -218,37 +220,24 @@ Atributos chave **não podem** ser removidos!
 ALTER TABLE nome_da_tabela;
 ```
 
-1. Sintaxe básica para **inclusão de uma coluna**:
+1. Sintaxe básica para **renomear tabela**:
 
-```sql /ADD COLUMN/
-ALTER TABLE nome_da_tabel ADD COLUMN nome_coluna tipo_atributo;
+```sql /RENAME TO/
+ALTER TABLE <nome da tabela> RENAME TO <novo nome da tabela>;
+```
+Ex.:
+```sql
+ALTER TABLE empregado RENAME TO colaborador;
 ```
 
+2. Sintaxe básica para **inclusão de uma coluna**:
+
+```sql /ADD COLUMN/
+ALTER TABLE <nome da tabela> ADD COLUMN <nome da coluna> <domínio e atributos>;
+```
 Ex.:
 ```sql
 ALTER TABLE funcionario ADD COLUMN identidade VARCHAR(10);
-```
-
-2. Sintaxe básica para **exclusão de uma coluna**:
-
-```sql /DROP/
-ALTER TABLE nome_da_tabela DROP nome_coluna;
-```
-
-Ex.:
-```sql
-ALTER TABLE funcionario DROP identidade;
-```
-
-3. Sintaxe básica para **alteração do nome de uma coluna**:
-
-```sql /RENAME COLUMN/ /TO/
-ALTER TABLE nome_da_tabela RENAME COLUMN nome_da_coluna_atual TO novo_nome_da_coluna;
-```
-
-Ex.:
-```sql
-ALTER TABLE empregado RENAME COLUMN sexo TO genero;
 ```
 
 <Tip>
@@ -258,6 +247,44 @@ ALTER TABLE empregado RENAME COLUMN sexo TO genero;
 - O mesmo acontece quando há a criação de uma tabela (`CREATE TABLE{:sql}`). A princípio ela não está "povoada" com dados, está vazia, ausente de valores (em outras palavras: **não há linhas/tuplas na tabela**).
 - Os valores para as diversas linhas devem ser adicionadas através de instruções da [DML](#dml---data-manipulation-language) ([`INSERT INTO`](#inserir-dados)).
 </Tip>
+
+3. Sintaxe básica para **exclusão de uma coluna**:
+
+```sql /DROP/
+ALTER TABLE <nome da tabela> DROP <nome da coluna>;
+```
+
+Ex.:
+```sql
+ALTER TABLE funcionario DROP identidade;
+```
+
+4. Sintaxe básica para **alteração do nome de uma coluna**:
+
+```sql /RENAME COLUMN/ /TO/
+ALTER TABLE <nom da tabela> RENAME COLUMN <nome da coluna> TO <novo nome da coluna>;
+```
+
+Ex.:
+```sql
+ALTER TABLE empregado RENAME COLUMN sexo TO genero;
+```
+
+5. Sintaxe básica para **alteração do tipo de uma coluna**:
+
+```sql /ALTER COLUMN/ /TYPE/
+ALTER TABLE <nome da tabela> ALTER COLUMN <nome da coluna> TYPE <novo tipo>;
+```
+Ex.:
+```sql
+ALTER TABLE funcionario ALTER COLUMN salario TYPE NUMERIC(10,2);
+```
+
+<Warn>
+**Cuidado!**
+- Se já existir dados na tabela que não correspondem ao novo tipo, não será possível fazer a alteração de tipo.
+- Se a coluna modificada for chave estrangeira em outra tabela, é preciso primeiro mudar na tabela que possui chave estrangeira.
+</Warn>
 
 ## Atributos
 
@@ -373,6 +400,108 @@ FOREIGN KEY cpf_cliente REFERENCES Cliente(cpf) ON UPDATE NO ACTION
 
 _Constraits_ são todas as restrições que uma coluna pode ter (`PRIMARY KEY{:sql}`, `FOREIGN KEY{:sql}`, `NOT NULL{:sql}`, `UNIQUE{:sql}`, etc).
 
+### Adicionar constrait
+
+Quando preciso adicionar uma _constrait_ em uma coluna de uma tabela **já criada**.
+
+**Sintaxe**
+
+```sql title="Tornando uma coluna única"
+ALTER TABLE <nome da tabela> ADD CONSTRAINT <nome da restrição> UNIQUE;
+```
+```sql caption="Exemplo: Tornando o email único na tabela usuário"
+ALTER TABLE usuario ADD CONSTRAINT email_unico UNIQUE (email);
+```
+
+<Tip>
+`email_unico` é um nome arbitrário, ou seja, pode ser qualquer nome que você desejar. Esse nome será usado posteriormente para remover a restrição.
+</Tip>
+
+```sql title="Tornando uma coluna obrigatória"
+ALTER TABLE <nome da tabela> ALTER COLUMN <nome da coluna> SET NOT NULL;
+```
+```sql caption="Exemplo: Tornando o campo email obrigatório na tabela usuário"
+ALTER TABLE usuario ALTER COLUMN email SET NOT NULL;
+```
+
+```sql title="Modificando o valor padrão"
+ALTER TABLE <nome da tabela> ALTER COLUMN <nome da coluna> SET DEFAULT <valor padrão>;
+```
+```sql caption="Exemplo: Modificando o valor padrão do campo email na tabela usuário"
+ALTER TABLE usuario ALTER COLUMN email SET DEFAULT '--';
+```
+
+
+### Removendo uma constrait
+
+Quando é necessário remover uma restrição de uma coluna.
+
+**Sintaxe**
+```sql title="Removendo uma restrição nomeada"
+ALTER TABLE <nome da tabela> DROP CONSTRAINT <nome da restrição>;
+```
+```sql caption="Exemplo: Removendo a restrição de email único na tabela usuário"
+ALTER TABLE usuario DROP CONSTRAINT email_unico;
+```
+
+```sql title="Removendo a obrigatoriedade de um campo"
+ALTER TABLE <nome da tabela> ALTER COLUMN <nome da coluna> DROP NOT NULL;
+```
+```sql caption="Exemplo: Removendo a obrigatoriedade do campo email na tabela usuário"
+ALTER TABLE usuario ALTER COLUMN email DROP NOT NULL;
+```
+
+```sql title="Removendo o valor padrão"
+ALTER TABLE <nome da tabela> ALTER COLUMN <nome da coluna> DROP DEFAULT;
+```
+```sql caption="Exemplo: Removendo o valor padrão do campo email na tabela usuário"
+ALTER TABLE usuario ALTER COLUMN email DROP DEFAULT;
+```
+
+
+## Schemas
+
+_Schemas_ são conjuntos de tabelas dentro do banco de dados. Por padrão, o PostgreSQL cria um _schema_ chamado `public`, onde todas as tabelas são armazenadas inicialmente. Porém é possível criar _schemas_ personalizados para organizar melhor as tabelas.
+
+**Criar _schemas_**
+```sql
+CREATE SCHEMA <nome_do_schema>;
+```
+_Exemplo:_
+```sql
+CREATE SCHEMA empresa;
+```
+
+**Criar tabela em um _schema_**
+```sql
+CREATE TABLE <nome_do_schema>.<nome_da_tabela> (...);
+```
+_Exemplo:_
+```sql
+CREATE TABLE empresa.departamento (cod_dep SERIAL, nome_dep VARCHAR(30));
+```
+
+<Tip>
+Repare que para criarmos uma tabela em um _schema_ específico, devemos informar o nome do _schema_ seguido de um **ponto** `.{:sql}` antes do nome da tabela.
+
+<br/>
+
+Toda vez que for necessário referenciar uma tabela em um _schema_ específico, **deve-se informar o nome do _schema_ seguido de um ponto** `.{:sql}` antes do nome da tabela.
+
+<br/>
+
+Isso **não ocorre quando a tabela está no _schema_ padrão `public`**. Se não passarmos o nome do _schema_, o PostgreSQL entende que a tabela está no _schema_ `public`.
+</Tip>
+
+**Remover _schemas_**
+```sql
+DROP SCHEMA <nome_do_schema>;
+```
+_Exemplo:_
+```sql
+DROP SCHEMA empresa;
+```
+
 ## Remover base de dados (DB)
 
 `DROP` remove toda a base de dados, incluindo todas as tabelas, dados, índices, etc.
@@ -415,7 +544,7 @@ A linguagem DML é composta por **4 operações** de manipulação de dados:
 **Sintaxe:**
 
 ```sql
-INSERT INTO nome_tabela (coluna1, coluna2, ...) VALUES (valor1, valor2, ...);
+INSERT INTO <nome da tabela> (coluna1, coluna2, ...) VALUES (valor1, valor2, ...);
 ```
 
 **Exemplo:**
@@ -442,6 +571,14 @@ CREATE TABLE empregado (
 Poderemos inserir omitindo a lista de atributos, dês de que os valores estejam na ordem correta:
 ```sql
 INSERT INTO empregado VALUES ('João', 2000.00, 'Analista');
+```
+</Tip>
+
+<Tip>
+Mesmo exemplo, porém com uma tabela dentro de um Schema
+
+```sql
+INSERT INTO empresa.empregado VALUES ('João', 2000.00, 'Analista');
 ```
 </Tip>
 
@@ -505,7 +642,7 @@ UPDATE peca SET preco = 90.00 WHERE cod_peca = 200;
 <img src="assets/update-example-dark.png" className="on-dark" alt="Resultado do comando UPDATE de exemplo" />
 <img src="assets/update-example-light.png" className="on-light" alt="Resultado do comando UPDATE de exemplo" />
 
-## Selecionar Dados
+## Selecionar dados
 
 `SELECT{:sql}` é usado para selecionar dados de um banco de dados. A instrução `SELECT{:sql}` é usada para recuperar registros de uma ou mais tabelas.
 
@@ -543,6 +680,7 @@ Usa **operadores de comparação**:
 - `={:sql}` - Igual
 - `<={:sql}` - Menor ou igual
 - `>={:sql}` - Maior ou igual
+- `!={:sql}` - Diferente (_ou `<>{:sql}`_)
 - `BETWEEN{:sql}` - Entre um intervalo (incluindo os extremos). _Facilita a especificação de condições númericas que envolvam um intervalo, ao invés de usar os operadores `<={:sql}` e `>={:sql}`._
 
 #### Exemplos
@@ -611,6 +749,24 @@ _Resultado:_
 <span className="underline">cod_peca</span> | nome_peca | preco | qtd
 ---|---|---|---
 200 | Peça Z | 80.00 | 0
+
+**EXEMPLO 5** - Selecionar o nome e a quantidade de todas as peças que há no estoque.
+
+```sql
+SELECT nome_peca, quantidade FROM peca WHERE qtd != 0;
+```
+_ou..._
+```sql
+SELECT nome_peca, quantidade FROM peca WHERE qtd <> 0;
+```
+
+_Resultado:_
+
+nome_peca | quantidade
+---|---
+Peça X | 10
+Peça Y | 5
+
 
 ### Cláusula `ORDER BY` (ordenação)
 
@@ -958,7 +1114,116 @@ nome | anos_exp | tipo         Tecnico | Experiencia | Tipo
  ... |   ...    |  ...           ...   |     ...     |  ...
 ```
 
-### Resumo
+
+
+### Limitando o número de linhas
+
+Em alguns casos, é necessário limitar o número de linhas retornadas em uma consulta. Para isso, podemos usar a cláusula `LIMIT{:sql}`.
+
+**Sintaxe:**
+```sql
+SELECT coluna1, coluna2, ... FROM <tabela> LIMIT <número de linhas>;
+```
+_Exemplo:_
+```sql caption="Selecionar as 5 primeiras peças"
+SELECT * FROM peca LIMIT 5;
+```
+
+### Pulando linhas
+
+Podemos também pular um número de linhas no início da consulta, usando a cláusula `OFFSET{:sql}`.
+
+**Sintaxe:**
+```sql /OFFSET/
+SELECT coluna1, coluna2, ... FROM <tabela> OFFSET <número de linhas>;
+```
+_Exemplo:_
+```sql caption="Selecionar as peças, pulando as 3 primeiras"
+SELECT * FROM peca ORDER BY nome OFFSET 3;
+```
+
+### Comando `LIKE`
+
+Quando desejamos pesquisar uma _substring_ de um texto, podemos usar o comando `LIKE{:sql}` ou `NOT LIKE{:sql}`. Ele é usado para **comparar** um valor de texto com um **padrão**.
+
+Utilizamos o sinal `%{:sql}` para representar **zero ou mais caracteres** e o sinal de `_{:sql}` para representar **um único caractere**.
+
+**Sintaxe:**
+```sql
+SELECT coluna1, coluna2, ... FROM <tabela> WHERE coluna LIKE <padrão>;
+```
+
+**Exemplo**
+
+Imagine que temos a seguinte tabela no banco de dados:
+
+<span className="underline">cod_pessoa</span> | nome | data_nasc | profissao
+---|---|---|---
+1 | Capitão Jack Sparrow | 1710-01-01 | Comerciante de rum
+2 | Anakin Skywalker | 41 ABY | Mestre Jedi
+3 | Legolas | 87 - 3ª era | Arqueiro
+4 | Elliot Alderson | 1985-09-17 | Engenheiro de segurança
+5 | Harvy Specter | 1972-03-12 | Advogado
+6 | Anthony Edward Stark | 1970-05-29 | Bilionário, playboy, filantropo
+7 | Gustavo Fring | 1958-04-26 | Distribuidor farmacêutico
+8 | Batman | 1972-02-19 | Bruce Wayne
+
+E queremos retornar todoas as pessoas que possuem a letra `e` no nome.
+```sql
+SELECT * FROM pessoa WHERE nome LIKE '%e%';
+```
+
+_Resultado:_
+```txt
+cod_pessoa | nome            | data_nasc    | profissao
+-----------|-----------------|--------------|-----------
+3          | Legolas         | 87 - 3ª era  | Arqueiro
+4          | Elliot          | 1985-09-17   | Engenheiro de segurança
+5          | Harvy Specter   | 1972-03-12   | Advogado
+```
+
+
+### Valores condicionais (`CASE`)
+
+O comando `CASE{:sql}` é uma expressão condicional que retorna um valor único com base em uma ou mais condições. Ele é usado para **substituir** valores de uma coluna por outro valor, com base em uma **condição**.
+
+**Sintaxe:**
+```sql
+SELECT coluna1, coluna2, ...,
+  CASE
+    WHEN condicao1 THEN valor1
+    WHEN condicao2 THEN valor2
+    ELSE valor_padrao
+  END
+FROM <tabela>;
+```
+
+_Exemplo_
+
+```sql caption="Selecionar o nome e a idade das pessoas, e classificar a idade em 'Jovem', 'Adulto' ou 'Idoso'"
+SELECT
+  nome,
+  idade,
+  CASE
+    WHEN idade < 30 THEN 'Jovem'
+    WHEN idade < 60 THEN 'Adulto'
+    WHEN idade < 200 THEN 'Idoso'
+    ELSE 'Imortal'
+  END AS faixa_etaria
+FROM pessoa;
+```
+```txt
+nome           | idade | faixa_etaria
+---------------|-------|-------------
+Elliot         | 36    | Adulto
+Tony Stark     | 51    | Adulto
+Legolas        | 300   | Imortal
+Gustavo Fring  | 64    | Idoso
+Robbin         | 25    | Jovem
+```
+
+
+### Observações
 
 Uma consulta em SQL pode consistir em até seis cláusulas:
 
@@ -971,12 +1236,36 @@ FROM <lista de tabelas>
 [ORDER BY <lista de atributos para ordenação>] [ASC] [DESC]
 ```
 
-**OBSERVAÇÕES**
 - Apenas as cláusulas `SELECT{:sql}` e `FROM{:sql}` são obrigatórias
 - Quando existentes, as cláusulas devem aparecer na ordem específica acima.
 - O `ORDER BY{:sql}` só pode ser ultilizado após o último `SELECT{:sql}` (se a linguagem permitir)
 - As cláusulas `GROUP BY{:sql}` e `HAVING{:sql}` só podem ser usadas nos comandos `SELECT{:sql}` individuais
 
+
+## Retornando dados alterados
+
+Em alguns caso, é necessário retornar dados que foram alterados (inseridos, atualizados, deletados). Para isso podemos usar a cláusula `RETURNING{:sql}` ao final da nossa query de alteração.
+
+**Sintaxe:**
+```sql /RETURNING/
+INSERT INTO <nome da tabela> (...) VALUES (...) RETURNING coluna1, coluna2, ...;
+```
+_Exemplo:_
+```sql caption="Inserir uma nova peça e retornar o código da peça inserida"
+INSERT INTO peca (nome_peca, preco, qtd)
+VALUES ('Peça H', 10.00, 5)
+RETURNING cod_peca;
+```
+```sql caption="Atualizar o preço da peça de código 200 para 90.00 e retornar o nome da peça"
+UPDATE peca SET preco = 90.00
+WHERE cod_peca = 200
+RETURNING nome_peca;
+```
+```sql caption="Deletar a peça de código 200 e retornar o nome da peça deletada"
+DELETE FROM peca WHERE cod_peca = 200 RETURNING nome_peca;
+```
+
+A sintaxe do `RETURNING{:sql}` é a mesma que a do `SELECT{:sql}`, ou seja, podemos retornar qualquer coluna da tabela que foi alterada.
 
 ## Valores `NULL` (nulo)
 
@@ -1163,6 +1452,37 @@ _Resultado:_
 1 | Peça A | 15.00 | 10
 6 | Peça F | 20.00 | 0
 7 | Peça G | 17.00 | <span className="opacity-50">null</span>
+
+### Substituindo valores nulos
+
+Em alguns casos é necessário substituir os valores `NULL{:sql}` por outro valor, quando usarmos o `SELECT{:sql}` ou o `RETURNIG{:sql}`. Para isso, podemos usar a função `COALESCE{:sql}`.
+
+**Sintaxe**
+```sql
+SELECT COALESCE(<coluna>, <valor substituido>) FROM <tabela>;
+```
+
+_Exemplo:_
+```sql title="Sem substituição"
+SELECT codigo, telefone FROM professor;
+```
+```txt caption="Saída do código anterior"
+| codigo | telefone |
+|--------|----------|
+|   1    | 37999999 |
+|   2    | [null]   |
+```
+
+```sql title="Com substituição"
+SELECT codigo, COALESCE(telefone, 'NÃO CADASTRADO') FROM professor;
+```
+```txt caption="Saída do código anterior"
+| codigo | telefone       |
+|--------|----------------|
+|   1    | 37999999       |
+|   2    | NÃO CADASTRADO |
+
+```
 
 ## Junções (Comando `JOIN`)
 
@@ -1397,3 +1717,117 @@ SELECT * FROM (tecnicos FULL OUTER JOIN experiencia);
 <Warn>
 **Artigo em construção...**
 </Warn>
+
+## Funções Matemáticas
+
+Função | Descrição | Exemplo
+---|---|---
+`ABS(x){:sql}` | Retorna o valor absoluto de $x$ | `ABS(-5)` retorna `5`
+`ROUND(x){:sql}` | Retorna $x$ arredondado | `ROUND(5.5)` retorna `6`
+`ROUND(x, d){:sql}` | Retorna $x$ arredondado para $d$ casas decimais | `ROUND(5.3, 0)` retorna `5`
+`CEIL(x){:sql}` | Retorna o menor número inteiro maior ou igual a $x$ | `CEIL(5.3)` retorna `6`
+`FLOOR(x){:sql}` | Retorna o maior número inteiro menor ou igual a $x$ | `FLOOR(5.3)` retorna `5`
+`FACTORIAL(x){:sql}` | Retorna o fatorial de $x$ | `FACTORIAL(5)` retorna `120`
+`TRUNC(x, d){:sql}` | Retorna $x$ truncado para $d$ casas decimais | `TRUNC(5.3, 0)` retorna `5`
+`MOD(x, y){:sql}` | Retorna o resto da divisão de $x$ por $y$ | `MOD(5, 2)` retorna `1`
+`PI(){:sql}` | Retorna o valor de $\pi$ | `PI()` retorna `3.141592653589793`
+`LOG(x){:sql}` | Retorna o logaritmo natural de $x$ | `LOG(10)` retorna `2.302585092994046`
+`RANDOM(){:sql}` | Retorna um número aleatório entre 0 e 1 | `RANDOM()` retornar algo como `0.123456789`
+
+<Tip>
+_Consulte a [documentação oficial](https://www.postgresql.org/docs/8.1/functions-math.html) do PostgreSQL para mais funções._
+</Tip>
+
+## Funções de String
+
+Função | Descrição | Exemplo
+---|---|---
+`CHARACTER_LENGTH(string){:sql}` ou `CHAR_LENGHT(string){:sql}` | Retorna o número de caracteres em `string{:sql}` | `CHARACTER_LENGTH('Hello'){:sql}` retorna `5`
+`LOWER(string){:sql}` | Retorna `string` em minúsculo | `LOWER('Hello'){:sql}` retorna `hello`
+`UPPER(string){:sql}` | Retorna `string` em maiúsculo | `UPPER('Hello'){:sql}` retorna `HELLO`
+`POSITION(substring IN string){:sql}` | Retorna a posição da primeira ocorrência de `substring` em `string` | `POSITION('l' IN 'Hello'){:sql}` retorna `3`
+`SUBSTRING(string FROM start FOR length){:sql}` | Retorna uma parte de `string`, onde `start` determina a posicão do primeiro caractere e `length` determina quantos caracteres serão usados apartir de `start` | `SUBSTRING('Hello' FROM 2 FOR 3){:sql}` retorna `ell`
+`CONCAT(string1, string2, ...){:sql}` | Concatena `string1`, `string2` e outras _strings_ posteriores | `CONCAT('Hello', ' ', 'World'){:sql}` retorna `Hello World`
+
+<Tip>
+_Consulte a [documentação oficial](https://www.postgresql.org/docs/9.1/functions-string.html) do PostgreSQL para mais funções._
+</Tip>
+
+## Conversão de dados
+
+Existem alguns métodos para se converter um tipo de um dado em outro. O mais comum é utilizando a função `CAST{:sql}`, que converte um valor de um tipo de dado para outro.
+
+**Sinatxe**
+```sql
+CAST(valor AS tipo_de_dado);
+```
+
+Onde `valor` é o valor que será convertido e `tipo_de_dado` é o tipo para o qual o valor será convertido. Exemplo:
+
+```sql
+CAST('5' AS NUMERIC);
+```
+
+_Repare que no exemplo acima, `'5'` está como string por causa das aspas simples `'`, e queremos converter para um inteiro._
+
+O mesmo pode ser feito utilizando a sintaxe `valor::tipo{:sql}`, onde `valor` é o valor que será convertido e `tipo` é o tipo para o qual o valor será convertido. Exemplo:
+
+```sql
+5::TEXT;
+```
+
+_Aqui, `5` está como inteiro, e estamos convertendo para o formato texto (string)._
+
+### Formato de dados
+
+```txt caption="Converte um timestamp para string de acordo com um formato"
+to_char ( timestamp, formato ) → texto
+to_char ( timestamp com fuzo horário, formato ) → texto
+
+to_char(timestamp '2002-04-20 17:31:12.66', 'HH12:MI:SS') → 05:31:12
+```
+
+```txt caption="Converte um intervalo para string de acordo com um formato"
+to_char ( intervalor, formato ) → texto
+
+to_char(interval '15h 2m 12s', 'HH24:MI:SS') → 15:02:12
+```
+
+```txt caption="Converte um número para string de acordo com um formato, disponível pra inteiros, bigint, numeric, real e double precision."
+to_char ( numeric_type, text ) → text
+
+to_char(125, '999') → 125
+to_char(125.8::real, '999D9') → 125.8
+to_char(-125.8, '999D99S') → 125.80-
+```
+
+```txt caption="Converte um número para string de acordo com um formato, disponível pra inteiros, bigint, numeric, real e double precision."
+to_char ( numeric_type, text ) → text
+
+to_char(125, '999') → 125
+to_char(125.8::real, '999D9') → 125.8
+to_char(-125.8, '999D99S') → 125.80-
+```
+
+```txt caption="Converte um texto para data de acordo com um formato"
+to_date ( texto, data ) → data
+
+to_date('05 Dec 2000', 'DD Mon YYYY') → 2000-12-05
+```
+
+```txt caption="Converte um texto para numero de acordo com um formato"
+to_number ( texto, formato ) → numero
+
+to_number('12,454.8-', '99G999D9S') → -12454.8
+```
+
+```txt caption="Converte um texto em um timestamp de acordo com um formato"
+to_timestamp ( texto, formato ) → timestamp com fuso horário
+
+to_timestamp('05 Dec 2000', 'DD Mon YYYY') → 2000-12-05 00:00:00-05
+```
+
+
+<Tip>
+_Consulte a [documentação oficial](https://www.postgresql.org/docs/current/functions-formatting.html) do PostgreSQL para ver a tabela de template de formatos._
+</Tip>
