@@ -78,9 +78,11 @@ export function PostLink({ post, hideYear = false }: Props) {
       >
         <section>
           <div className="flex items-center justify-between gap-2 md:justify-start">
-            <h2 className="flex items-center gap-1 text-xl font-bold text-neutral-700 group-hover:text-blue-700 group-active:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500 group-active:dark:text-blue-500">
-              <TitleIcon category={post.category} />
-              <span>{post.title}</span>
+            <h2 className="flex items-center gap-1 text-lg font-bold text-neutral-700 group-hover:text-blue-700 group-active:text-blue-700 dark:text-neutral-500 dark:group-hover:text-blue-500 group-active:dark:text-blue-500 md:text-xl">
+              <span className="text-xl">
+                <TitleIcon category={post.category} />
+              </span>
+              {post.title}
             </h2>
             {post.test && <TestBadge />}
             {post.status === 'draft' && !post.test && <DraftBadge />}
