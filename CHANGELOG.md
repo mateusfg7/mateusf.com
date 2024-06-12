@@ -1,3 +1,23 @@
+## [9.4.1](https://github.com/mateusfg7/mateusf.com/compare/9.4.0...9.4.1) (2024-06-12)
+
+### Features
+
+* **about:** add new knowledge icons ([0567011](https://github.com/mateusfg7/mateusf.com/commit/05670110688ef99bff43057283d8254f34d88f67))
+* **blog:** update post table styles ([0aa72dd](https://github.com/mateusfg7/mateusf.com/commit/0aa72dd980245d4d100204512f6a765c285943d4))
+* **css:** increase pading top of small devices on "content-vertical-spaces" class ([af3ed33](https://github.com/mateusfg7/mateusf.com/commit/af3ed33253bb3af2486a1d448ba4a197b0d18ca8))
+* **icons:** add fastapi icon and knowledge ([c5567fa](https://github.com/mateusfg7/mateusf.com/commit/c5567fa8e70cff0351d5558051010f88e39e7e4e))
+
+### Bug Fixes
+
+* **blog:** use fixed size for icon on post link ([a29d329](https://github.com/mateusfg7/mateusf.com/commit/a29d329f5fca0771fff90f723c1656fdbe7fe2fe))
+* **css:** move ".content-container" and ".content-vertical-spaces" classes to `[@base](https://github.com/base)` layer ([f8c11c5](https://github.com/mateusfg7/mateusf.com/commit/f8c11c579fc0fe5deb6b81cde5c5860f178c0da9))
+* **deps:** update dependency @headlessui/react to v2 ([d614a76](https://github.com/mateusfg7/mateusf.com/commit/d614a76fe869299d31bcf13db626886a8eae331d))
+* **deps:** update dependency react-parallax-tilt to v1.7.227 ([5fa8d31](https://github.com/mateusfg7/mateusf.com/commit/5fa8d312f94e0adeee5d5d3fbb4dd5b28ddc872c))
+* **deps:** update dependency shiki to v1.6.1 ([354f4b3](https://github.com/mateusfg7/mateusf.com/commit/354f4b38e1ba5cdc88990b88dc859279972c2f9a))
+* **deps:** update dependency tailwindcss-animated to v1.1.0 ([c4cc96f](https://github.com/mateusfg7/mateusf.com/commit/c4cc96fe42feff951b599669c1a4620af5e0fb10))
+* **header:** reponsiveness adjustments ([7f98b40](https://github.com/mateusfg7/mateusf.com/commit/7f98b40c19bfb3c6971144d04d66896e23b18c0d))
+* **header:** use dynamic virtual height on mobile menu drawer ([e38ad78](https://github.com/mateusfg7/mateusf.com/commit/e38ad781e2b38cde428e9f330fd747063aebba9d))
+* **home:** reponsiveness adjustments ([7310160](https://github.com/mateusfg7/mateusf.com/commit/731016010289bbf2d3d0c8772b9d3ba2c708b4ba))
 ## [9.4.0](https://github.com/mateusfg7/mateusf.com/compare/9.3.0...9.4.0) (2024-05-27)
 
 ### Features
