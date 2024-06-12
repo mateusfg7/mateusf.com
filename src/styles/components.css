@@ -93,11 +93,12 @@
 
       th,
       td {
-        @apply p-2 text-center first:text-left last:text-right;
+        @apply p-2;
       }
 
       th {
         @apply bg-neutral-100 font-medium dark:bg-neutral-900;
+        @apply text-center;
 
         strong {
           @apply font-black;
