@@ -19,7 +19,7 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
     >
       <h2
         data-variant={variant}
-        className="text-center text-lg font-bold data-[variant='full']:text-2xl data-[variant='full']:md:text-left"
+        className="text-center text-lg font-bold data-[variant='full']:md:text-left"
       >
         {data.title}
       </h2>
@@ -40,12 +40,13 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
       </span>
     </div>
   )
+
   const Tags = () => (
     <div className="mt-4 hidden flex-wrap items-center gap-2 md:flex">
       {data.tags.map(tag => (
         <span
           key={tag}
-          className="rounded-xl bg-neutral-700/10 px-2 py-1 text-sm text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200"
+          className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200"
         >
           {tag}
         </span>
@@ -56,7 +57,7 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg dark:border-neutral-900 dark:bg-neutral-1000">
       {data.image && (
-        <div className="h-56 w-full">
+        <div className="h-48 w-full">
           <Image
             src={data.image}
             width={2700}
@@ -69,7 +70,9 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
       <div className="flex flex-1 flex-col p-5">
         <div>
           <Title />
-          <p className="text-justify md:text-left">{data.description}</p>
+          <p className="text-justify text-sm md:text-left">
+            {data.description}
+          </p>
           {isFull && <Tags />}
         </div>
         <div
@@ -83,22 +86,9 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
                 target="_blank"
                 rel="noreferrer"
                 data-variant={variant}
-                className="flex items-center gap-2 rounded-2xl border border-[#181717] p-2 text-[#181717] data-[variant='full']:p-4 hover:bg-[#181717] hover:text-[#F6F8FA] dark:border-[#F6F8FA] dark:text-[#F6F8FA] dark:hover:bg-[#F6F8FA] hover:dark:text-[#181717]"
+                className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] data-[variant='full']:p-4 hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
               >
-                Repository <FiGithub />
-              </a>
-            </>
-          )}
-          {data.files && (
-            <>
-              <a
-                href={data.files}
-                target="_blank"
-                rel="noreferrer"
-                data-variant={variant}
-                className="flex items-center gap-2 rounded-2xl border border-blue-500 p-2 text-blue-500 data-[variant='full']:p-4 hover:bg-blue-500 hover:text-neutral-50"
-              >
-                Arquivos <FiFolder />
+                Source <FiGithub />
               </a>
             </>
           )}
@@ -109,7 +99,7 @@ export function ProjectCard({ data, variant = 'full' }: Props) {
                 target="_blank"
                 rel="noreferrer"
                 data-variant={variant}
-                className="flex items-center gap-2 rounded-2xl border border-blue-700 bg-blue-700/10 p-2 text-blue-700 data-[variant='full']:p-4 hover:bg-blue-700 hover:text-neutral-50 dark:border-blue-600 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
+                className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 data-[variant='full']:p-4 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
               >
                 Website <FiGlobe />
               </a>
