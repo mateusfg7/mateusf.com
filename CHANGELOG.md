@@ -1,3 +1,13 @@
+## [9.4.2](https://github.com/mateusfg7/mateusf.com/compare/9.4.1...9.4.2) (2024-06-14)
+
+### Features
+
+* **projects:** improve project card styles ([23e91c9](https://github.com/mateusfg7/mateusf.com/commit/23e91c98ddeb5d7e9445ed64213c0c3ec4a31c9e))
+
+### Bug Fixes
+
+* **header:** remove padding-x of title when in middle screens ([8555606](https://github.com/mateusfg7/mateusf.com/commit/8555606241f6a4128ec29853d8d96e6688a272e0))
+* **post:** make table scrollable on small screens ([84eb36b](https://github.com/mateusfg7/mateusf.com/commit/84eb36bce6ddc34aae087d2960687138226f09c1))
 ## [9.4.1](https://github.com/mateusfg7/mateusf.com/compare/9.4.0...9.4.1) (2024-06-12)
 
 ### Features
