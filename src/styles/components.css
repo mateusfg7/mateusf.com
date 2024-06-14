@@ -88,7 +88,7 @@
     }
 
     table {
-      @apply my-4 max-w-full border-separate border-spacing-0 overflow-hidden rounded-lg;
+      @apply my-1 w-max border-separate border-spacing-0 overflow-hidden rounded-lg md:max-w-full;
       /*@apply bg-neutral-100 dark:bg-neutral-950;*/
 
       th,

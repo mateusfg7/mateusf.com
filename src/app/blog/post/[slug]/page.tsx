@@ -142,7 +142,12 @@ const mdxComponents = {
       {children}
     </blockquote>
   ),
-  Spoiler
+  Spoiler,
+  table: ({ children, ...rest }: ComponentProps<'table'>) => (
+    <div className="my-3 overflow-x-auto">
+      <table {...rest}>{children}</table>
+    </div>
+  )
 }
 
 const exampleToc = posts[0].toc[0]
