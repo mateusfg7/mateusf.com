@@ -30,7 +30,7 @@ export function Header() {
       <div className="content-container m-auto flex items-center justify-between rounded-xl border border-neutral-200/50 bg-neutral-50/80 p-0 backdrop-blur-3xl transition-all dark:border-neutral-900 dark:bg-neutral-1000/80 md:px-5">
         <Link
           href="/"
-          className="px-4 py-3 font-handwrite text-2xl font-bold drop-shadow-lg"
+          className="px-4 py-3 font-handwrite text-2xl font-bold drop-shadow-lg md:px-0"
         >
           Mateus F.
         </Link>
