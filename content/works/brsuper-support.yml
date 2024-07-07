@@ -1,0 +1,14 @@
+position: "Internet Technical Support"
+description: "Technical support for clients with internet problems, remote support, and internal projects development."
+in: "2024-06-24"
+company:
+  name: "BrSuper Internet"
+  website: "https://brsuper.com.br/"
+  logo: 'assets/brsuper.png'
+tags:
+  - 'internet'
+  - 'support'
+  - 'callcenter'
+  - 'server'
+  - 'linux'
+  - 'docker'
