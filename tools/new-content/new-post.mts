@@ -73,13 +73,13 @@ export async function newPost() {
   fs.writeFile(
     postPath,
     `---
-  title: '${title.toString()}'
-  date: '${new Date().toISOString()}'
-  description: '${description.toString()}'
-  category: '${category}'
-  tags: '${parsedTags}'
-  status: '${status}'
-  ---`,
+title: '${title.toString()}'
+date: '${new Date().toISOString()}'
+description: '${description.toString()}'
+category: '${category}'
+tags: '${parsedTags}'
+status: '${status}'
+---`,
     () => {}
   )
 
