@@ -1,0 +1,32 @@
+---
+title: 'Relearning Java'
+description: 'How we start a Java file'
+date: '2024-08-01'
+tags: [java,fapam,poo]
+---
+
+Java is a 100% POO language, so to starts a Java software, our `main` function need to be a class method.
+
+The filename need to be the same of the class that was declared in this file.
+
+So the basic structure of Java file is:
+
+```java
+class Program {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+```
+
+Where `Program` is the class name of this file and `main` the method name, i.e., the main function that will be executed.
+- `public{:java}` means that our `main()` method can be used by all files that imports `Program`
+- `static{:java}` means that our `main()` method can be called without instantiate the class `Program`
+- `void{:java}` means that our `main()` method doesn't return anything
+- `args` is the argument that our `main()` method receives. In this case, an array of `String` objects. This is the way that Java receives the arguments passed by the command line.
+- `System.out.println()` is the way that Java print something in the console.
+  - `System` is a class that Java provides to us native methods to interact with the system
+  - `out` is a static object of `System` class that represents the output stream
+  - `println()` is a method of `out` object that prints a string and a new line (Alternative: `print()`, that prints only the string without a new line)
+
+And, the filename need to be `Program.java` because our class is named `Program{:java}`.
