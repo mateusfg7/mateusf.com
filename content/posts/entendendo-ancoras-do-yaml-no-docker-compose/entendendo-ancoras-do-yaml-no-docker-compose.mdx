@@ -1,0 +1,76 @@
+---
+title: 'Entendendo ancoras do YAML no Docker Compose'
+date: '2024-08-09T14:27:49.136Z'
+description: 'Tradução do post "Understanding YAML Anchors and Aliases in Docker Compose"'
+category: 'How To'
+tags: 'yaml,docker,docker-compose,syntax'
+status: 'published'
+---
+
+# Introdução
+
+Docker Compose é uma ferramenta popular para definir regras e rodar múltiplos containers Docker de ume vez. Um arquivo Docker Compose é escrito em YAML, um padrão de serialização de dados legível para humanos. Um dos recursos menos conhecidos do YAML — _e por tabela do Docker Compose_ — é a habilidade de usar âncoras e alias para reusar partes de um documento YAML. Esse post vai se aprofundar na compreesão desses conceitos.
+
+# O básico: Âncoras `&` e Alias `*` no YAML
+
+O YAML permite um truque bacana chamado “anchoring” que, em essência, permite que você crie uma referência ou “âncora” para qualquer valor ou sequência. Uma vez ancorado, esse valor pode ser referenciado em outro lugar no documento YAML usando o que é chamado de “alias”.
+
+**Ancoragem (`&`)**: Este é o ato de marcar uma chave, valor ou sequência com um identificador, efetivamente criando uma “referência nomeada”.
+
+**Aliasing (`*`)**: Depois de criar uma âncora, você pode se referir a ela usando um alias.
+
+```yaml
+defaults: &default_config
+  timeout: 10
+  retries: 3
+
+connection1:
+  <<: *default_config
+  url: http://example.com
+
+connection2:
+  <<: *default_config
+  url: http://another.example.com
+```
+
+No YAML acima, `connection1` e `connection2` usam as configurações definidas na chave `defaults`.
+
+# Aplicando âncoras e aliases no Docker Compose
+
+O poder real desse recurso YAML se torna evidente quando o aplicamos aos arquivos do Docker Compose, onde frequentemente encontramos blocos repetidos de configuração.
+
+Suponha que temos dois serviços que compartilham algumas configurações comuns, mas têm mapeamentos de porta exclusivos:
+
+```yaml
+x-shared-configuration: &shared-config
+  image: my-app-image
+  environment:
+    - MY_ENV=VALUE
+
+services:
+  service1:
+    <<: *shared-config
+    ports:
+      - "8080:8080"
+  
+  service2:
+    <<: *shared-config
+    ports:
+      - "8081:8081"
+```
+
+Ao usar a chave merge `<<`, dizemos ao YAML para pegar todos os pares de chave-valor do nosso mapeamento ancorado e adicioná-los ao mapeamento atual. Isso pode reduzir significativamente a redundância em nossos arquivos Docker Compose, tornando-os mais concisos e legíveis.
+
+# Quando usar âncoras e aliases
+
+Aqui estão alguns casos ao considerar esse recurso no Docker Compose:
+
+**Configuração compartilhada**: conforme demonstrado, quando vários serviços compartilham configurações comuns, a ancoragem ajuda a evitar repetições.
+
+**Serviços de modelo**: se você tem uma configuração de serviço base e deseja criar variações desse serviço com pequenas diferenças.
+
+**Legibilidade**: em arquivos maiores do Docker Compose, blocos repetidos de configurações podem tornar o arquivo mais difícil de navegar. As âncoras podem ajudar a simplificar a estrutura.
+
+# Conclusão
+
+As âncoras e aliases do YAML oferecem uma maneira eficiente de reutilizar partes de um documento, tornando os arquivos do Docker Compose mais fáceis de manter e legíveis. Esse recurso, embora às vezes esquecido, pode mudar o jogo para aqueles que buscam otimizar seus fluxos de trabalho do Docker. Boa conteinerização!
