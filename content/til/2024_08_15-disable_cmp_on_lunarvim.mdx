@@ -1,0 +1,12 @@
+---
+title: 'Disable CMP on LunarVim'
+description: 'How to disable completitions on specific LunarVim session'
+date: '2024-08-15'
+tags: [vim,lunarvim,cmp,ide,completitions]
+---
+
+You can disable `cmp` with inline Lua command, invoked by `:lua` command.
+
+```lua
+:lua require('cmp').setup({ enabled = false })
+```
