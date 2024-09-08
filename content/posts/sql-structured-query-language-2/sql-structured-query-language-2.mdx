@@ -284,9 +284,122 @@ WHERE tarifa >= 500.00;
 
 # Procedimentos (`PROCEDURES`)
 
-<Warn>
-**Em desenvolvimento...**
-</Warn>
+As _Stored Procedures_ são rotinas definidas no banco de dados, indentificadas pelo por um nome pelo qual podem ser invocadas. Um procedimento pode executar uma série de de instruções e receber parâmetros.
+
+**Para que usar _stored procedures_?**
+
+Muitas vezes é requerido várias consultas e atualizações no DB, o que acarreta um maior consumo de recursos pela aplicação (desempenho, memória, etc.). No caso de aplicações web, isso se torna mais visível, devido a maior quantidade de informações que precisam trafegar pela rede e de requisições ao servidor.
+
+<img src="assets/fluxo-api-light.png" className="on-light" alt="Fluxo de dados entre Aplicação, API e Banco de dados." />
+<img src="assets/fluxo-api-dark.png" className="on-dark" alt="Fluxo de dados entre Aplicação, API e Banco de dados." />
+
+Uma boa forma de contornar e atenuar esses consumo de recurso diretamente pela aplicação, é transferir parte do processamento para o DB. Assim, considerando que as máquinas servidoras geralmente têm configurações de hardware mais robustas (e nada se pode garantir com relação às máquinas clientes), essa pode ser uma "saída" a se considerar.
+
+**Usar ou não usar procedures?**
+
+Como exemplo para o funcionamento dos _Stored Procedures_, iremos comparar a execução de uma rotina utilizando e outra não utilizando essa técnica.
+
+Considere o seguinte contexto de uma aplicação comercial:
+- O cliente fez um pedido no qual são inseridos itens
+- O pedido (bem como os itens) permanecem com status "PENDENTE" até ser confirmado.
+- O operador confirma o pedido e faz o registro no livro caixa.
+
+Até o pedido ser confirmado, nenhum lançamento é feito no livro caixa, então é preciso ter uma rotina de confirmação de pedido, que deve executar as seguintes ações:
+
+1. **`UPDATE{:sql}`** Atualizar o _status_ do pedido (**fechado, pendente**)
+2. **`UPDATE{:sql}`** Atualizar o _status_ dos itens do pedido (**vendido, pendente**)
+3. **`INSERT{:sql}`** Lançar o valor do pedido no caixa (**preço**)
+
+Temos então pelo menos 3 instruções de atualiação e/ou inserção. Poderíamos representar essa sitação graficamente pela figura:
+
+<img src="assets/cliente-banco-light.png" className="on-light" alt="Gráfico da rotina de inserção cliente-database" />
+<img src="assets/cliente-banco-dark.png" className="on-dark" alt="Gráfico da rotina de inserção cliente-database" />
+
+Por outro lado, poderíamos agrupar essas três instrulções no corpo de um procedimento e chamá-lo a partir da aplicação uma única vez.
+
+As ações de `UPDATE{:sql}`/`INSERT{:sql}`/`DELETE{:sql}`, apartir daí, ficariam por conta do servidor. A representação gráfica desse modelo é mostrada a seguir (Através do procedimento chamado "CONFIRMAR PEDIDO"):
+
+<img src="assets/confirmar-pedido-light.png" className="on-light" alt="Gráfico da pricedure 'CONFIRMAR PEDIDO'" />
+<img src="assets/confirmar-pedido-dark.png" className="on-dark" alt="Gráfico da pricedure 'CONFIRMAR PEDIDO'" />
+
+<Correct>
+**Vantagens**:
+- Simplificação da execução de instruções SQL pela aplicação.
+- Transferência de parte da responsabilidade de processamento para o servidor.
+- Facilidade na manutenção, reduzindo a quantidade de alterações na aplicação.
+</Correct>
+
+<Wrong>
+**Desvantagens**:
+- Necessidade de maior conhecimento da sintaxe do banco de dados para escrita de rotinas em SQL (nível avançado).
+- As rotinas ficam mais facilmente acessíveis. Alguém que tenha acesso ao banco de dados poderá visualizar e alterar o código.
+</Wrong>
+
+## Criando uma PROCEDURE
+
+**Sintaxe**
+
+```sql
+CREATE PROCEDURE nome_da_procedure(parametro1 tipo, parametro2 tipo, ...)
+LANGUAGE SQL AS
+$$
+  <corpo da procedure>
+$$;
+```
+
+Onde, `parametro1`, `parametro2`, ... são os parâmetros que a procedure pode receber (opcionais, caso não ouver, deve se passar parênteses vazios `nome_da_procedure()`), `LANGUAGE SQL` indica que a procedure será escrita em SQL, `$$` é um delimitador de bloco de código e `<corpo da procedure>` é o código SQL que será executado.
+
+**Exemplo**
+
+```sql
+CREATE PROCEDURE insert_cliente(nome VARCHAR(39), cpf VARCHAR(11), celular VARCHAR(11))
+LANGUAGE SQL AS
+$$
+  INSERT INTO CLIENTE (nome, cpf, celular)
+  VALUES ((SELECT MAX(codigo_cliente) + 1 FROM cliente), nome, cpf, celular);
+$$;
+```
+
+Tendo criado a _procedure_, chamá-lo é bastante simples. Para fazer isso fazemos o uso da palavra reservada CALL, como mostra o código a seguir:
+
+```sql
+CALL <nome procedimento>(<parâmetros>);
+```
+
+**Exemplo**
+
+```sql
+CALL insert_cliente('Mateus Felipe', '00000000000', '37999999999');
+```
+
+## Atualizando PROCEDURES
+
+Para atualiza o código de uma procedure, basta usar o comando `CREATE OR REPLACE PROCEDURE{:sql}`.
+
+```sql /OR REPLACE/
+CREATE OR REPLACE PROCEDURE update_preco(novo_preco NUMERIC, codigo_produto INTEGER)
+LANGUAGE SQL AS
+$$
+  UPDATE PRODUTO SET preco = novo_preco WHERE codigo_produto = codigo_produto;
+$$;
+```
+
+## Excluindo PROCEDURES
+
+Assim como outras estruturas no banco de dados, para exclusão de procedures basta fazer:
+
+**Sintaxe**
+
+```sql
+DROP PROCEDURE nome_da_procedure;
+```
+
+**Exemplo**
+
+```sql
+DROP PROCEDURE insert_cliente;
+DROP PROCEDURE update_preco;
+```
 
 # Funções (`FUNCTIONS`)
 
