@@ -1,0 +1,295 @@
+---
+title: 'SQL - Structured Query Language #2'
+date: '2024-09-07T14:33:27.313Z'
+description: 'O próximo nível: Visão, procedures e functions.'
+category: 'Article'
+tags: 'sql,dml,database,fapam,gti,postgres,visao,procedures,functions'
+status: 'draft'
+---
+
+# Introdução
+
+Esse artigo é um resumo feito no intuito de servir como fixação dos conteúdos da matéria de **Banco de Dados**, no curso de [**Gestão da T.I - FAPAM**](https://www.fapam.edu.br/graduacao/project/gestao-de-t-i/) 2º Período.
+
+_Aulas ministradas pelo professor [**Gabriel Ribeiro Diniz**](https://www.linkedin.com/in/gabriel-r-diniz/)._
+
+Os comandos SQL serão em sua grande maioria voltados ao SGBD **PostgreSQL**, já que é o SGBD estudado no curso.
+
+<Tip>
+Esse artigo assume que você já tenha domínio do conteúdo passado anteriormente, caso não tenha, recomendo que leia o artigo [SQL - Structured Query Language #1](/posts/sql---structured-query-language-1) e seus antecessores.
+</Tip>
+
+# Visão (`VIEW`)
+
+A "Visão" é uma tabela virtual, na qual os dados não estão fisicamente armazenados. É uma forma de visualizar os dados de uma ou mais tabelas, sem a necessidade de armazenar esses dados em uma tabela física, ela usa dados de tabelas físicas para criar uma tabela virtual, como se fosse um "atalho" para uma consulta complexa nas tabelas físicas.
+
+**TABELAS BASE X TABELAS VIRTUAL**
+
+- **Tabela Base**: Tuplas (linhas) estão fisicamente armazenadas no banco de dados.
+- **Tabela Virtual**: Somente a estrutura (esquema) da tabela é armazenada no banco de dados, e não as tuplas.
+
+## Para que usar visão?
+
+Deve-se usar visões quando for frequente consultas com junção de várias relações (tabelas), bastando definir estas junções como uma visão e posteriormente consulta-la, na claáusula FROM.
+
+Desse modo, o objetivo principal de uma visão é simplificar as consultas frequentes de dados, ocultando a complexidade dessas consultas SQL.
+
+<img src="assets/visao-tabelas-light.png" className="on-light" alt="Ilustração da relação entre tabelas e visões"/>
+<img src="assets/visao-tabelas-dark.png" className="on-dark" alt="Ilustração da relação entre tabelas e visões"/>
+
+## Criando uma visão
+
+Podemos usar o comando `CREATE VIEW{:sql}` antes de uma consulta convenvional no banco.
+
+```sql caption="<consulta> se refere a uma consulta SQL no formato convencional: SELECT/FROM/WHERE por exemplo." /CREATE VIEW nome_da_visao AS/#r /<consulta>/#b
+CREATE VIEW nome_da_visao AS <consulta>;
+```
+
+Exemplo:
+
+```sql /CREATE VIEW vw_contato_cliente AS/#r /SELECT id, nome, email, telefone FROM Cliente/#b
+CREATE VIEW vw_contato_cliente AS SELECT id, nome, email, telefone FROM Cliente;
+```
+
+<img src="assets/tabela-cliente-dark.png" className="on-dark" alt="Tabela Cliente" />
+<img src="assets/tabela-cliente-light.png" className="on-light" alt="Tabela Cliente" />
+
+<div className="w-full flex justify-center">
+<img src="assets/vw_contato_cliente-dark.png" className="on-dark" alt="View vw_contato_cliente" />
+<img src="assets/vw_contato_cliente-light.png" className="on-light" alt="View vw_contato_cliente" />
+</div>
+
+Fisicamente, os dados em `vw_contato_cliente` são os mesmos que em `Cliente`, mas a visão `vw_contato_cliente` é uma forma mais simples de acessar esses dados.
+
+Após ser criada, uma visão pode ser consultada normalmente, com a cláusula `FROM`, como se fosse uma tabela base.
+
+```sql /SELECT * FROM vw_contato_cliente/#r /SELECT * FROM vw_contato_cliente/#b
+SELECT nome, email FROM vw_contato_cliente;
+```
+<div className="w-full flex justify-center">
+<img src="assets/vw_contato_cliente-nome-email-light.png" className="on-light" alt="Colunas 'nome' e 'email' da view vw_contato_cliente" />
+<img src="assets/vw_contato_cliente-nome-email-dark.png" className="on-dark" alt="Colunas 'nome' e 'email' da view vw_contato_cliente" />
+</div>
+
+Sendo assim, se você atualizar os dados da tabela `Cliente`, a visão `vw_contato_cliente` também será atualizada, pois ela é uma "referência" para a tabela `Cliente`.
+
+Outras visões podem ser criadas a partir de visões existentes, e assim por diante (visões sobre visões).
+
+Podemos criar também visões apartir do resultado de múltiplas tabelas. Considere as seguintes tabelas:
+
+**`CIA_AEREA`**
+<span className="underline">Codigo_Cia</span> | Nome | Sede | Presidente
+--- | --- | --- | ---
+1 | Varig | Vitória | Raul Sidnei
+2 | Air France | Paris | Etoile Arns
+3 | Tam | São Paulo | Cida Faria
+4 | Gol | Rio de Janeiro | Bia Falcão
+
+**`VOO`**
+<span className="underline">Num_Voo</span> | Tarifa | Partida | Destino | Codigo_Cia*
+--- | --- | --- | --- | ---
+AF234 | 726.20 | Brasília | Paris | 2
+VG893 | 254.30 | BH | RS | 1
+AF875 | 541.00 | São Paulo | Paris | 2
+VG487 | 189.40 | Brasília | Curitiba | 1
+GO142 | 349.00 | RJ | Recife | 4
+TA961 | 99.00 | BH | Brasília | 3
+
+
+**Exemplo 1** - Recuperar o nome da companhia aérea, e os voos que cada um oferece.
+
+```sql
+SELECT CA.NOME, V.NUM_VOO FROM VOO V INNER JOIN CIA_AEREA CA
+ON V.CODIGO_CIA = CA.CODIGO_CIA;
+```
+
+Isso vai nos dar o seguinte retorno:
+
+_resultado da consulta_
+Nome | Num_Voo
+--- | ---
+Varig | VG487
+Varig | VG893
+Air France | AF234
+Air France | AF875
+Tam | TA961
+Gol | GO142
+
+Podemos facilitar essa consulta criando uma "tabela virtual" apartir desse retorno, ou seja, uma visão!
+
+```sql /CREATE VIEW vw_voos_por_cia AS/#r
+CREATE VIEW vw_voos_por_cia AS
+SELECT CA.NOME, V.NUM_VOO FROM VOO V INNER JOIN CIA_AEREA CA
+ON V.CODIGO_CIA = CA.CODIGO_CIA;
+```
+
+<img src="assets/vw_voos_por_cia-light.png" className="on-light" alt="View vw_voos_por_cia" />
+<img src="assets/vw_voos_por_cia-dark.png" className="on-dark" alt="View vw_voos_por_cia" />
+
+Agora é só consultar a visão `vw_voos_por_cia` que vamos obter o mesmo resultado da nossa primeira consulta:
+
+```sql /vw_voos_por_cia/#r
+SELECT * FROM vw_voos_por_cia;
+```
+
+**`vw_voos_por_cia`**
+Nome | Num_Voo
+--- | ---
+Varig | VG487
+Varig | VG893
+Air France | AF234
+Air France | AF875
+Tam | TA961
+Gol | GO142
+
+Podemos também criar visões renomeandos as colunas da tabela base na _view_, por exemplo:
+
+**Sintaxe**
+```sql /(coluna1, coluna2, coluna3, ...)/#r /<consulta>/#b
+CREATE VIEW nome_da_visao (coluna1, coluna2, coluna3, ...) AS <consulta>
+```
+
+**Exemplo** - Recuperar o nome da companhia aérea e o número de voos que cada uma oferece. Seguindo o exemplo dos voos, considere as seguintes tabelas:
+
+<img src="assets/cia_aerea-voo-light.png" className="on-light" alt="Tabelas CIA_AEREA e VOO" />
+<img src="assets/cia_aerea-voo-dark.png" className="on-dark" alt="Tabelas CIA_AEREA e VOO" />
+
+```sql caption="numero_voos é o nome da coluna COUNT(num_voo) renomeada!" /(cia_aerea, numero_voos)/#r /nome, COUNT(num_voo)/#b
+CREATE VIEW total_voos (cia_aerea, numero_voos) AS
+SELECT nome, COUNT(num_voo)
+  FROM VOO V INNER JOIN CIA_AEREA CA
+  ON V.CODIGO_CIA = CA.CODIGO_CIA
+GROUP BY nome;
+```
+
+<img src="assets/total_voos-light.png" className="on-light" alt="View total_voos" />
+<img src="assets/total_voos-dark.png" className="on-dark" alt="View total_voos" />
+
+```sql
+SELECT * FROM total_voos;
+```
+
+cia_aerea | numero_voos
+--- | ---
+Air France | 2
+Gol | 1
+Tam | 1
+Varig | 2
+
+```sql
+SELECT * FROM total_voos WHERE numero_voos >= 2;
+```
+
+cia_aerea | numero_voos
+--- | ---
+Air France | 2
+Varig | 2
+
+
+## Vantagens
+
+As _views_ sãi uma simplificação das **consultas que são frequente na aplicaçao**, e auxilia no processo de **autorização/segurança**.
+
+<Tip>
+**Exemplo**: a empresa poderia não querer que o público tivesse acesso às tarifas dos voos (devido a uma promoção), na qual vários voos teriam o mesmo preço anunciado separadamente.
+<br />
+**Solução**: para "esconder" a coluna `Tarifa`, eu poderia criar uma visão da tabela **`VOO`** que contém todos os dados, esceto `Tarifa`.
+</Tip>
+
+Assim, o acesso não será mais à tabela base VOO e sim, à visão criada a partir da tabela VOO.
+
+## Atualização de uma VIEW
+
+O SGBD não garante que uma visão sempre atualizará. Uma _view_ com uma única tabela de definição é atualizável.
+
+```sql
+UPDATE <nome da visão> SET <valores> WHERE <condição>;
+```
+
+As _views_ definidas sobre **múltiplas tabelas** usando junções, **geralemnte não são atualizáveis**.
+
+As _views_ definidas com funções de agrupamente (`GROUP BY{:sql}`) e agregação (`SUM{:sql}`, `AVG{:sql}`, `COUNT{:sql}`, `MAX{:sql}`, `MIN{:sql}`) **não são atualizáveis**.
+
+**Considerações**:
+
+A visão **não é montada** no instante de sua **definição**, mas sim no momento em que alguma **consulta** for realizada sobre ela (pois é uma tarefa custosa, em termos de desempenho, manter todas as tuplas se elas não estão sendo usadas em nenhuma consulta).
+
+Em outras palavras, **apenas o esquema da visão é armazenado** no banco de dados. Todas as vezes que a visão é consultada, o SGBD calcula quais tuplas seriam retornadas por aquela consulta e exibe na tela.
+
+**Exemplo** - Considerando a seguinte visão:
+
+```sql
+CREATE VIEW vw_voos_sem_tarifa AS
+SELECT NUM_VOO, PARTIDA, DESTINO FROM VOO;
+```
+
+num_voo | partida | destino
+--- | --- | ---
+AF234 | Brasília | Paris
+AF875 | São Paulo | Paris
+GO142 | RJ | Recife
+GO542 | Brasília | Belém
+TA961 | BH | Brasília
+VG487 | Brasília | Curitiba
+VG893 | BH | RS
+
+Se tentarmos atualizar essa _view_ diretamente, a tabela base **`VOO`** será atualizada, porém o campo `Tarifa` da tabela **`VOO`** terá o valor `NULL` pois ela não esta sendo referenciada na _view_.
+
+## Exclusão de uma VIEW
+
+Podemos usar o comando `DROP VIEW{:sql}` para excluir uma visão.
+
+```sql
+DROP VIEW <nome_da_visao>;
+```
+
+Ela ficará disponível até que seja executado o comando para deletá-la. É possível excluir visões quando elas não forem mais necessárias, desta forma elas não farão parte do SGBD.
+
+**Exemplo**
+
+```sql
+DROP VIEW vw_voos_por_cia;
+DROP VIEW vw_voos_sem_tarifa
+```
+
+## Alterar o nome da VIEW
+
+Comando para renomear uma visão:
+
+```sql
+ALTER VIEW <nome_da_visao> RENAME TO <novo_nome_da_visao>;
+```
+
+**Exemplo**
+
+```sql
+ALTER VIEW vw_voos_por_cia RENAME TO vw_voos_por_companhia;
+```
+
+## Mudar o código (consulta) da VIEW
+
+Comando para alterar o código de uma visão:
+
+```sql
+CREATE OR REPLACE VIEW <nome_da_visao> AS <nova_consulta>;
+```
+
+**Exemplo**
+
+```sql
+CREATE OR REPLACE VIEW vw_teste AS
+SELECT * FROM VOO
+WHERE tarifa >= 500.00;
+```
+
+# Procedimentos (`PROCEDURES`)
+
+<Warn>
+**Em desenvolvimento...**
+</Warn>
+
+# Funções (`FUNCTIONS`)
+
+<Warn>
+**Em desenvolvimento...**
+</Warn>
