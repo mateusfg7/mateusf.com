@@ -1,10 +1,11 @@
 ---
 title: 'SQL - Structured Query Language #2'
 date: '2024-09-07T14:33:27.313Z'
+lastUpdate: '2024-09-08T18:06:00.313Z'
 description: 'O próximo nível: Visão, procedures e functions.'
 category: 'Article'
 tags: 'sql,dml,database,fapam,gti,postgres,visao,procedures,functions'
-status: 'draft'
+status: 'published'
 ---
 
 # Introdução
@@ -403,6 +404,93 @@ DROP PROCEDURE update_preco;
 
 # Funções (`FUNCTIONS`)
 
-<Warn>
-**Em desenvolvimento...**
-</Warn>
+Funções (_Function_) são rotinas definidas no banco de dados, identificadas por um nome, pelo qual podem ser invocadas, parecidos com uma _procedure_, recebendo parâmetros, executando instruções, mas com o diferencial de que uma função **sempre retorna um valor**.
+
+Outro diferencial das funções em relação aos procedimentos, é que ela não precisa da palavra resrvada `CALL` para ser invocada, basta chamar a função no meio de uma consulta SQL.
+
+**Sintaxe**
+
+```sql
+CREATE FUNCTION nome_da_funcao(parametro1 tipo, parametro2 tipo, ...)
+RETURNS tipo_retorno
+LANGUAGE plpgsql AS
+$$
+  DECLARE
+    -- declaração de variáveis
+  BEGIN
+    -- lógica
+  END;
+$$;
+```
+
+**Exemplo**
+
+```sql
+CREATE FUNCTION getNumeroFilmes(dataInicial DATE, dataFinal DATE)
+RETURNS INTEGER
+LANGUAGE plpgsql AS
+$$
+  DECLARE
+    contadorFilmes INTEGER;
+  BEGIN
+    SELECT COUNT(*) INTO contadorFilmes FROM FILME
+    WHERE data_lancamento BETWEEN dataInicial AND dataFinal;
+
+    RETURN contadorFilmes;
+  END;
+$$;
+```
+
+<Tip>
+`plpgsql` **PL/pgSQL** é a abreviatura de **Procedural Language/PostgreSQL Structured Query Language**. É uma linguagem procedural suportada pelo PostgreSQL, usado para escrever lógicas complexas e controle de fluxo, como loops, condicionais, etc. Adicionando poderes extras às funcionalidades do SQL.
+<br />
+**Mais referências**:
+- Chapter 43. PL/pgSQL — SQL Procedural Language: [**EN**] https://www.postgresql.org/docs/current/plpgsql.html
+- PLPGSQL: [**PT**] https://pt.wikipedia.org/wiki/PLPGSQL
+- PostgreSQL PL/pgSQL: [**EN**] https://www.postgresqltutorial.com/postgresql-plpgsql/
+Capítulo 43. PL/pgSQL - Linguagem procedural SQL: [**PT**] https://halleyoliv.gitlab.io/pgdocptbr/plpgsql.html
+- PostgreSQL Prático/Funções Definidas pelo Usuário e Triggers/PlpgSQL: [**PT**] https://pt.wikibooks.org/wiki/PostgreSQL_Pr%C3%A1tico/Fun%C3%A7%C3%B5es_Definidas_pelo_Usu%C3%A1rio_e_Triggers/PlpgSQL
+</Tip>
+
+**Observações**
+
+A declaração de novas variáveis pode ser necessária no corpo da função!
+
+Tendo criado a funcion, como executa-la? Como na maioria das vezes haverá um tipo de retorno, a chamada da mesma poderá ser feita **após o `SELECT{:sql}`**, ou **após a cláusula `WHERE{:sql}`**, sendo, para este último caso, o valor retornado deve ser comparado a alguma condição.
+
+**Exemplo**
+
+```sql /contar_filmes('AÇÃO')/
+SELECT contar_filmes('AÇÃO') FROM Filmes;
+```
+
+```sql /pegar_tipo_com_mais_filmes()/
+SELECT * FROM Filmes
+WHERE tipo = pegar_tipo_com_mais_filmes();
+```
+
+## Atualizando FUNÇÕES
+
+Para atualizar o código de uma função, basta usar o comando `CREATE OR REPLACE FUNCTION{:sql}`.
+
+```sql /OR REPLACE/
+CREATE OR REPLACE FUNCTION getNumeroFilmes(dataInicial DATE, dataFinal DATE)
+RETURNS INTEGER
+LANGUAGE plpgsql AS...
+```
+
+## Excluindo FUNÇÕES
+
+Para exclusão de funções, basta fazer:
+
+**Sintaxe**
+
+```sql
+DROP FUNCTION nome_da_funcao;
+```
+
+**Exemplo**
+
+```sql
+DROP FUNCTION getNumeroFilmes;
+```
