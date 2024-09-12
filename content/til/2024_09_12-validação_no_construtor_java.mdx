@@ -1,0 +1,103 @@
+---
+title: 'Validação no construtor Java'
+description: 'Mantendo a validação dos setters no construtor de uma classe Java'
+date: '2024-09-12'
+tags: [java,tip,validation,class,poo,fapam]
+---
+
+Uma boa prática na hora de criar os construtores de uma classe, é reaproveitar os _setters_ dos atributos para manter a validação.
+
+Imagine que temos a classe `Carro`, com seus respectivos _setters_:
+
+
+```java
+public class Carro {
+	private String marca;
+	private String modelo;
+	private int ano;
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public void setAno(int ano) {
+		if (ano > 0 && ano <= 2025) {
+			this.ano = ano;
+		}
+	}
+}
+```
+
+Perceba que temos uma validação no método `setAno(int ano){:java}`, que impede que o usuário defina um ano menor que 0 (negativo) e maior que 2025.
+
+Agora vamos criar o construtor para a classe:
+
+```java {6-10}
+public class Carro {
+	private String marca;
+	private String modelo;
+	private int ano;
+
+	public Carro(String marca, String modelo, int ano) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public void setAno(int ano) {
+		if (ano > 0 && ano <= 2025) {
+			this.ano = ano;
+		}
+	}
+}
+```
+
+Criando o construtor desse jeito, podemos instanciar a classe passando os seguintes parâmetros:
+
+```java /-2024/
+Carro carro = new Carro("Ferrari", "HB20", -2024);
+```
+
+Perceba que podemos passar o valor negativo como parâmetro do construtor, e isso é válido, já que o construtor não possui validação, apenas o _setter_ do ano `setAno(int ano){:java}`.
+
+Parra corrigir isso, é só chamarmos os _setters_ no construtor, para manter a validação:
+
+```java {7-9}
+public class Carro {
+	private String marca;
+	private String modelo;
+	private int ano;
+
+	public Carro(String marca, String modelo, int ano) {
+		setMarca(marca);
+		setModelo(modelo);
+		setAno(ano);
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public void setAno(int ano) {
+		if (ano > 0 && ano <= 2025) {
+			this.ano = ano;
+		}
+	}
+}
+```
