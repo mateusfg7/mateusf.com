@@ -90,7 +90,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.0.0",
     "typescript": "5.4.5",
-    "velite": "0.1.0-rc.3",
+    "velite": "0.1.1",
     "vercel": "^34.0.0"
   }
 }
