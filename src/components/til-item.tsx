@@ -8,7 +8,7 @@ import { MDXContent } from './mdx-content'
 
 export function TilItem({ til }: { til: TIL }) {
   return (
-    <div className="relative flex flex-col gap-6 border-b border-b-neutral-200 py-12 last:border-none dark:border-b-neutral-800 md:flex-row md:gap-3">
+    <div className="relative flex flex-col gap-6 border-b border-b-neutral-200 py-12 first:pt-0 last:border-none dark:border-b-neutral-800 md:flex-row md:gap-3">
       <div className="top-24 h-fit flex-1 space-y-2 md:sticky md:space-y-5">
         <div className="space-y-3">
           <h2 className="text-xl font-bold">{til.title}</h2>
