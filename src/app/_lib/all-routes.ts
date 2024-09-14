@@ -1,6 +1,6 @@
 import { getUniqueCategoryList } from '~/lib/categories'
 import { slug } from '~/lib/slug'
-import { getUniqueTagListFromPosts } from '~/lib/tags'
+import { getUniqueTagList } from '~/lib/tags'
 import { config } from 'global-config'
 import { posts } from '#content'
 
@@ -15,7 +15,7 @@ const commonPaths = [
   'blog/feed',
   'guestbook'
 ]
-const tagPaths = getUniqueTagListFromPosts().map(tag => `blog/tag/${slug(tag)}`)
+const tagPaths = getUniqueTagList().map(tag => `blog/tag/${slug(tag)}`)
 const categoryPaths = getUniqueCategoryList().map(
   category => `blog/categories/${slug(category)}`
 )

@@ -35,7 +35,7 @@ import { getSortedPosts } from '~/lib/get-sorted-posts'
 import { KBar } from '~/components/kbar'
 import { slug } from '~/lib/slug'
 import { getUniqueCategoryList } from '~/lib/categories'
-import { getUniqueTagListFromPosts } from '~/lib/tags'
+import { getUniqueTagList } from '~/lib/tags'
 import { posts, projects, tils } from '#content'
 
 export function CustomKBarProvider({ children }: { children: ReactNode }) {
@@ -124,7 +124,7 @@ export function CustomKBarProvider({ children }: { children: ReactNode }) {
       section: 'Blog',
       perform: () => push(`/blog/categories/${slug(category)}`)
     }))
-  const tagsAsAction: Action[] = getUniqueTagListFromPosts()
+  const tagsAsAction: Action[] = getUniqueTagList()
     .sort()
     .map(tag => ({
       id: slug(tag),

@@ -3,19 +3,21 @@ import { removeRepeatedValuesFromArray } from '~/lib/remove-repeated-values-from
 import { getFrequencyOfValue } from '~/lib/get-frequency-of-value'
 import { Post, posts, tils } from '#content'
 
-const getRawTagListFromPosts = () =>
-  posts.filter((post: Post) => !post.test).flatMap(post => post.tags)
+const getRawTagList = () => [
+  ...posts.filter((post: Post) => !post.test).flatMap(post => post.tags),
+  ...tils.flatMap(til => til.tags)
+]
 
-export const getUniqueTagListFromPosts = () =>
-  removeRepeatedValuesFromArray(getRawTagListFromPosts())
+export const getUniqueTagList = () =>
+  removeRepeatedValuesFromArray(getRawTagList())
 
 export interface TagsAndNumberOfPosts {
   tag: string
   numberOfPosts: number
 }
 export function getTagsAndNumberOfPosts(): TagsAndNumberOfPosts[] {
-  const rawTagList = getRawTagListFromPosts()
-  const uniqueTagList = getUniqueTagListFromPosts()
+  const rawTagList = getRawTagList()
+  const uniqueTagList = getUniqueTagList()
 
   const tagsAndNumberOfPosts = uniqueTagList.map(tag => {
     const numberOfPosts = getFrequencyOfValue(rawTagList, tag)
@@ -39,7 +41,7 @@ export function getPostListBasedOnTag(tag: string) {
 }
 
 export function getNormalTagString(tag: string) {
-  const allTags = getUniqueTagListFromPosts()
+  const allTags = getUniqueTagList()
 
   return allTags.find(currTag => slug(currTag) === slug(tag))
 }
