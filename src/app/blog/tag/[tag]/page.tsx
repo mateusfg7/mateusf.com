@@ -5,7 +5,7 @@ import { Tag } from '@phosphor-icons/react/dist/ssr'
 import { PostList } from '~/components/post-list'
 
 import {
-  getUniqueTagListFromPosts,
+  getUniqueTagList,
   getPostListBasedOnTag,
   getNormalTagString
 } from '~/lib/tags'
@@ -25,6 +25,7 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function Page({ params }: Props) {
   const { tag } = params
+
   const postList = getSortedPosts(getPostListBasedOnTag(slug(tag)))
 
   return (
@@ -41,7 +42,7 @@ export default function Page({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const tagList = getUniqueTagListFromPosts()
+  const tagList = getUniqueTagList()
 
   return tagList.map(tag => ({ tag: slug(tag) }))
 }
