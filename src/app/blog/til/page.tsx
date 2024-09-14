@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { tils } from '#content'
 
 import { Title } from '~/components/title'
-import { TilItem } from '~/components/til-item'
+import { TilList } from '~/components/til-list'
 
 import 'katex/dist/katex.min.css'
 
@@ -17,11 +17,7 @@ export default function Page() {
     <div className="content-container m-auto space-y-4">
       <Title text="Today I Learned" />
       <div className="flex flex-col gap-3">
-        {tils
-          .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
-          .map(til => (
-            <TilItem til={til} key={til.date} />
-          ))}
+        <TilList tils={tils} />
       </div>
     </div>
   )
