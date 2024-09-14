@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { TIL } from '#content'
 
 import { slug } from '~/lib/slug'
@@ -18,12 +19,13 @@ export function TilItem({ til }: { til: TIL }) {
         </div>
         <div className="flex flex-wrap gap-1">
           {til.tags.map(tag => (
-            <span
-              className="rounded-lg bg-neutral-400/10 p-1 text-sm leading-none"
+            <Link
+              href={`/blog/tag/${slug(tag)}`}
+              className="rounded-lg bg-neutral-400/10 p-1 text-sm leading-none transition-colors hover:bg-neutral-400/20"
               key={tag}
             >
               {tag}
-            </span>
+            </Link>
           ))}
         </div>
       </div>
