@@ -1,3 +1,20 @@
+## [9.5.0](https://github.com/mateusfg7/mateusf.com/compare/9.4.2...9.5.0) (2024-09-14)
+
+### Features
+
+* **tags:** include T.I.L. tags on tags list ([b4f802e](https://github.com/mateusfg7/mateusf.com/commit/b4f802eec434cb2730c8446eebe0ae6edfbbd6bd))
+* **tags:** include TILs on tag pages ([3f84cf9](https://github.com/mateusfg7/mateusf.com/commit/3f84cf987f5e1047c1addd06168f06513007ece5))
+* **TIL:** link T.I.Ls tags to global blog tag page ([86b9569](https://github.com/mateusfg7/mateusf.com/commit/86b9569337fbb5f0c213505003f2b7c7ead61413))
+* **til:** update TIL item padding ([0d190fc](https://github.com/mateusfg7/mateusf.com/commit/0d190fc436fb16f0f383356c259b7d61eab44606))
+
+### Bug Fixes
+
+* **deps:** update dependency @phosphor-icons/react to v2.1.7 ([479988c](https://github.com/mateusfg7/mateusf.com/commit/479988c649716942f4cc499dccb905642ac0aa81))
+* **deps:** update dependency react-github-calendar to v4.1.5 ([ab19d0a](https://github.com/mateusfg7/mateusf.com/commit/ab19d0a2ab985427bbeb3891fce515bdabce95ac))
+* **deps:** update dependency rehype-katex to v7.0.1 ([a70c070](https://github.com/mateusfg7/mateusf.com/commit/a70c070dfeb78b2181c3fb5a60c0260014682a0b))
+* **deps:** update dependency shiki to v1.6.2 ([699997f](https://github.com/mateusfg7/mateusf.com/commit/699997f6c4da211fd4256d9ba5966129727980ac))
+* **deps:** update nextjs monorepo to v14.2.4 ([346d4d4](https://github.com/mateusfg7/mateusf.com/commit/346d4d455d9f57ea3d348f9e54ad8aec66092ee1))
+* **deps:** update nextjs monorepo to v14.2.8 ([2e2acb2](https://github.com/mateusfg7/mateusf.com/commit/2e2acb204d7fc3864a277a37314ecaec998e71cd))
 ## [9.4.2](https://github.com/mateusfg7/mateusf.com/compare/9.4.1...9.4.2) (2024-06-14)
 
 ### Features
