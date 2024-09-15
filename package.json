@@ -25,7 +25,7 @@
     "@headlessui/react": "^2.0.0",
     "@next/bundle-analyzer": "^14.2.3",
     "@phosphor-icons/react": "^2.0.8",
-    "@radix-ui/react-accordion": "^1.1.1",
+    "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-dialog": "^1.0.3",
     "date-fns": "3.6.0",
     "feed": "^4.2.2",
