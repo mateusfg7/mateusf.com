@@ -1,3 +1,9 @@
+## [9.5.2](https://github.com/mateusfg7/mateusf.com/compare/9.5.1...9.5.2) (2024-09-15)
+
+### Features
+
+* **blog:** create middleware for rewrite post slug on runtime ([3f684a1](https://github.com/mateusfg7/mateusf.com/commit/3f684a13a54deef2497f42435aa95148a96442ce))
+* **lib:** improve `slug` parser ([2fb7c29](https://github.com/mateusfg7/mateusf.com/commit/2fb7c2967d7848be9d156a9897af728aad898eef))
 ## [9.5.1](https://github.com/mateusfg7/mateusf.com/compare/9.5.0...9.5.1) (2024-09-15)
 
 ### Features
