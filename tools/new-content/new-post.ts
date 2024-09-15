@@ -1,7 +1,6 @@
 import fs from 'fs'
 import c from 'picocolors'
 import { outro, text, select, spinner } from '@clack/prompts'
-import { confirm } from '@clack/prompts'
 
 import { slug } from '~/lib/slug'
 
@@ -41,10 +40,6 @@ export async function newPost() {
     ]
   })
 
-  const haveAssets = await confirm({
-    message: 'Your posts will have assets?'
-  })
-
   const s = spinner()
 
   s.start(c.italic('Creating post'))
@@ -54,14 +49,10 @@ export async function newPost() {
 
   let postPath: string
 
-  if (haveAssets) {
-    fs.mkdirSync(`${CONTENT_DIR_PATH}/${SLUGGED_TITLE}/assets`, {
-      recursive: true
-    })
-    postPath = `${CONTENT_DIR_PATH}/${SLUGGED_TITLE}/${SLUGGED_TITLE}.mdx`
-  } else {
-    postPath = `${CONTENT_DIR_PATH}/${SLUGGED_TITLE}.mdx`
-  }
+  fs.mkdirSync(`${CONTENT_DIR_PATH}/${SLUGGED_TITLE}/assets`, {
+    recursive: true
+  })
+  postPath = `${CONTENT_DIR_PATH}/${SLUGGED_TITLE}/${SLUGGED_TITLE}.mdx`
 
   const parsedTags = tags
     ? tags
