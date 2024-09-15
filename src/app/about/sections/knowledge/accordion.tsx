@@ -78,13 +78,14 @@ export function KnowledgeInfo({ knowledge }: { knowledge: Knowledge }) {
   return (
     <div
       key={knowledge.title}
+      data-is-learning={knowledge.status === 'learning'}
       data-is-bad={knowledge.status === 'bad'}
-      className="relative flex items-center justify-center gap-1 rounded-2xl bg-neutral-900/5 p-4 leading-none data-[is-bad='true']:opacity-50 dark:bg-neutral-300/5"
+      className="relative flex items-center justify-center gap-1 overflow-hidden rounded-2xl bg-neutral-900/5 p-4 leading-none data-[is-learning='true']:animate-pulse data-[is-bad='true']:opacity-50 dark:bg-neutral-300/5"
     >
       <span>{knowledge.icon({})}</span>
       <span>{knowledge.title}</span>
 
-      {knowledge.status === 'learning' && <Dot />}
+      {knowledge.status === 'stack' && <Dot />}
     </div>
   )
 }
