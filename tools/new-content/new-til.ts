@@ -1,7 +1,8 @@
-import { intro, outro, text, spinner } from '@clack/prompts'
-import { slug } from 'github-slugger'
 import fs from 'fs'
 import c from 'picocolors'
+import { outro, text, spinner } from '@clack/prompts'
+
+import { slug } from '~/lib/slug'
 
 export async function newTil() {
   const title = await text({

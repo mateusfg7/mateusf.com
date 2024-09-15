@@ -1,8 +1,9 @@
 import fs from 'fs'
+import c from 'picocolors'
 import { outro, text, select, spinner } from '@clack/prompts'
 import { confirm } from '@clack/prompts'
-import { slug } from 'github-slugger'
-import c from 'picocolors'
+
+import { slug } from '~/lib/slug'
 
 export async function newPost() {
   const title = await text({
