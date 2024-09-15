@@ -54,12 +54,7 @@ export async function newTil() {
 
   fs.writeFile(
     tilPath,
-    `---
-  title: '${title.toString()}'
-  description: '${description.toString()}'
-  date: '${DATE_STR}'
-  tags: [${parsedTags}]
-  ---`,
+    `---\ntitle: '${title.toString()}'\ndescription: '${description.toString()}'\ndate: '${DATE_STR}'\ntags: [${parsedTags}]\n---`,
     () => {}
   )
 
