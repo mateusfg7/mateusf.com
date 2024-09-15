@@ -1,3 +1,17 @@
+## [9.5.1](https://github.com/mateusfg7/mateusf.com/compare/9.5.0...9.5.1) (2024-09-15)
+
+### Features
+
+* **about:** separate knowledge from stack UI on knowledge list ([e7e5b6d](https://github.com/mateusfg7/mateusf.com/commit/e7e5b6d2fcfd177968852172bc6137d76a29fd05))
+* **assets:** add angular icon ([7de2e83](https://github.com/mateusfg7/mateusf.com/commit/7de2e83638a542c31019aa6adc04c72141d5bc4e))
+
+### Bug Fixes
+
+* **deps:** update dependency katex to v0.16.11 ([b3964ad](https://github.com/mateusfg7/mateusf.com/commit/b3964ade7b21d13ce6e8e2ce66bd76152cb281b5))
+* **deps:** update dependency react-parallax-tilt to v1.7.238 ([c0af458](https://github.com/mateusfg7/mateusf.com/commit/c0af45852231c909c0f645e87dee915ef6dbbce5))
+* **deps:** update dependency sharp to v0.33.5 ([32d8bf5](https://github.com/mateusfg7/mateusf.com/commit/32d8bf56269dd26335d1512045a62d63a800ea8e))
+* **deps:** update dependency tailwindcss-animated to v1.1.2 ([69d4f9b](https://github.com/mateusfg7/mateusf.com/commit/69d4f9bd1ed8f4d181a06b16ce0f7b4dd127e460))
+* **deps:** update dependency unified to v11.0.5 ([1d74842](https://github.com/mateusfg7/mateusf.com/commit/1d74842b6b00bbab7eefc7c1ee794d71371ce219))
 ## [9.5.0](https://github.com/mateusfg7/mateusf.com/compare/9.4.2...9.5.0) (2024-09-14)
 
 ### Features
