@@ -118,7 +118,7 @@ importers:
         version: 1.6.2
       tailwindcss-animated:
         specifier: ^1.0.1
-        version: 1.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
+        version: 1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
       unified:
         specifier: ^11.0.4
         version: 11.0.5
@@ -4260,8 +4260,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss-animated@1.1.0:
-    resolution: {integrity: sha512-2j2MHdlypqaqz5ymcGFAiLjYdyy/9M3aMqa4SKSQqyQnMyUIUDx/3orLyuUop5i2FucdzYXVwexSSU7Q1b0VCw==}
+  tailwindcss-animated@1.1.2:
+    resolution: {integrity: sha512-SI4owS5ojserhgEYIZA/uFVdNjU2GMB2P3sjtjmFA52VxoUi+Hht6oR5+RdT+CxrX9cNNYEa+vbTWHvN9zbj3w==}
     peerDependencies:
       tailwindcss: '>=3.1.0'
 
@@ -9228,7 +9228,7 @@ snapshots:
     dependencies:
       tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
 
-  tailwindcss-animated@1.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))):
+  tailwindcss-animated@1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))):
     dependencies:
       tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
 
