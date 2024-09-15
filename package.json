@@ -15,7 +15,7 @@
     "start": "next start",
     "lint": "next lint",
     "bump-tag": "tsx tools/bump-tag-version.ts",
-    "new": "tsx tools/new-content.mts",
+    "new": "tsx tools/new-content.ts",
     "prepare": "husky",
     "check-unused": "npx depcheck"
   },
