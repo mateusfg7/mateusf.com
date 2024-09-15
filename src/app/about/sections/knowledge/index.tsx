@@ -42,6 +42,19 @@ export function Knowledge() {
                   knowledge={{
                     title: 'Skill',
                     color: '#fff',
+                    status: 'stack',
+                    icon: ToolsIcon
+                  }}
+                />
+                <span className="text-lg">
+                  My main stack, the skills that I am most comfortable with.
+                </span>
+              </div>
+              <div className="flex items-center gap-6">
+                <KnowledgeInfo
+                  knowledge={{
+                    title: 'Skill',
+                    color: '#fff',
                     status: 'god',
                     icon: ToolsIcon
                   }}
@@ -92,20 +105,26 @@ export function Knowledge() {
           const badSkills = category.knowledgeList.filter(
             skill => skill.status === 'bad'
           )
+          const stackSkills = category.knowledgeList.filter(
+            skill => skill.status === 'stack'
+          )
 
           return (
             <AccordionItem key={category.title} value={category.title}>
               <AccordionTrigger>{category.title}</AccordionTrigger>
               <AccordionContent>
                 <div className="flex flex-wrap gap-3">
-                  {[...learningSkills, ...godSkills, ...badSkills].map(
-                    knowledge => (
-                      <KnowledgeInfo
-                        knowledge={knowledge}
-                        key={knowledge.title}
-                      />
-                    )
-                  )}
+                  {[
+                    ...stackSkills,
+                    ...godSkills,
+                    ...learningSkills,
+                    ...badSkills
+                  ].map(knowledge => (
+                    <KnowledgeInfo
+                      knowledge={knowledge}
+                      key={knowledge.title}
+                    />
+                  ))}
                 </div>
               </AccordionContent>
             </AccordionItem>

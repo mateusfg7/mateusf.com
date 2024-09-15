@@ -57,7 +57,8 @@ import {
   CodespacesIcon,
   GitpodIcon,
   VimIcon,
-  GlpiIcon
+  GlpiIcon,
+  AngularIcon
 } from '~/components/icons'
 
 type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -66,7 +67,7 @@ export interface Knowledge {
   icon: IconType
   title: string
   color: string
-  status: 'god' | 'bad' | 'learning'
+  status: 'god' | 'bad' | 'learning' | 'stack'
 }
 
 export const knowledgeCategories: {
@@ -84,19 +85,19 @@ export const knowledgeCategories: {
       },
       {
         title: 'Typescript',
-        status: 'god',
+        status: 'stack',
         icon: TypescriptIcon,
         color: '#3178C6'
       },
       {
         title: 'Python',
-        status: 'god',
+        status: 'stack',
         icon: PythonIcon,
         color: '#3776AB'
       },
       {
         title: 'Rust',
-        status: 'learning',
+        status: 'god',
         icon: RustIcon,
         color: '#F74C00'
       },
@@ -122,7 +123,7 @@ export const knowledgeCategories: {
         title: 'Java',
         icon: JavaIcon,
         color: '#f89820',
-        status: 'bad'
+        status: 'learning'
       },
       {
         title: 'C++',
@@ -143,25 +144,25 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'HTML5',
-        status: 'god',
+        status: 'stack',
         icon: HTML5Icon,
         color: '#E34F26'
       },
       {
         title: 'CSS3',
-        status: 'god',
+        status: 'stack',
         icon: CSS3Icon,
         color: '#1572B6'
       },
       {
         title: 'React.js',
-        status: 'god',
+        status: 'stack',
         icon: ReactIcon,
         color: '#61DAFB'
       },
       {
         title: 'Next.js',
-        status: 'god',
+        status: 'stack',
         icon: NextIcon,
         color: '#FFFFFF'
       },
@@ -173,13 +174,19 @@ export const knowledgeCategories: {
       },
       {
         title: 'Svelte',
-        status: 'learning',
+        status: 'god',
         icon: SvelteIcon,
         color: '#FF3E00'
       },
       {
+        title: 'Angular',
+        status: 'learning',
+        icon: AngularIcon,
+        color: '#c3002f'
+      },
+      {
         title: 'Tailwind CSS',
-        status: 'god',
+        status: 'stack',
         icon: TailwindcssIcon,
         color: '#06B6D4'
       },
@@ -214,7 +221,7 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'Node.js',
-        status: 'god',
+        status: 'stack',
         icon: NodeIcon,
         color: '#339933'
       },
@@ -319,13 +326,13 @@ export const knowledgeCategories: {
       },
       {
         title: 'Docker',
-        status: 'god',
+        status: 'stack',
         icon: DockerIcon,
         color: '#2496ED'
       },
       {
         title: 'Linux',
-        status: 'god',
+        status: 'stack',
         icon: LinuxIcon,
         color: '#FCC624'
       },
@@ -372,13 +379,13 @@ export const knowledgeCategories: {
     knowledgeList: [
       {
         title: 'GIT',
-        status: 'god',
+        status: 'stack',
         icon: GitIcon,
         color: '#F34F29'
       },
       {
         title: 'Github',
-        status: 'god',
+        status: 'stack',
         icon: GithubIcon,
         color: '#181717'
       },
@@ -390,7 +397,7 @@ export const knowledgeCategories: {
       },
       {
         title: 'VSCode',
-        status: 'god',
+        status: 'stack',
         icon: VSCodeIcon,
         color: '#0065A9'
       },
