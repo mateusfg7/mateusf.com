@@ -111,4 +111,33 @@ Se tudo estiver correto, você verá a mensagem "Olá Mundo!" impressa no termin
 
 Note que na hora de rodar o comando `java OlaMundo{:bash}`, não é necessário colocar a extensão `.class`, isso porque o Java já sabe que o arquivo a ser executado é um arquivo `.class`.
 
+# Estrutura de um código Java
+
+O Java é uma linguagem fortemente tipada, ou seja, você precisa declarar o tipo de dado de cada variável. Além disso, o Java é uma linguagem orientada a objetos, então tudo em Java é um objeto.
+
+Para criarmos uma classe no Java, usamos a palavra-chave `class`, seguida do nome da classe. Por convençao nome de classes seguem o padrão [**CamelCase**](https://pt.wikipedia.org/wiki/CamelCase), mas não é uma regra.
+
+```java /class PrimeiroPrograma/
+public class PrimeiroPrograma {
+    // Corpo da classe
+}
+```
+
+Se criarmos a classe `PrimeiroPrograma` em um arquivo `.java`, o nome do arquivo deve ser igual ao nome da classe. Sendo assim o arquivo que escrevermos a classe `PrimeiroPrograma` deve se chamar `PrimeiroPrograma.java`. Isso é uma **regra obrigatória** do Java.
+
+Para iniciarmos o nosso programa, precisamos de um método `main`. Esse método é o ponto de entrada do programa e é onde a execução começa.
+
+```java /main/
+public class PrimeiroPrograma {
+    public static void main(String[] args) {
+        // Corpo do método
+    }
+}
+```
+
+O método `main` recebe um argumento do tipo `String[]{:java}`, que é um array de strings. Esse argumento é uma lista de argumentos que podem ser passados para o programa na hora da execução.
+
+Dentro do método `main`, é onde escrevemos o código que queremos executar, é o primeiro método a ser executado, e é nele que vamos chamar todo o resto do programa. Sendo assim, todo programa Java **precisa ter um método `main`**.
+
+
 
