@@ -4,10 +4,13 @@ import { formatDistance } from 'date-fns'
 import { Date as DateDisplay } from '~/components/date'
 
 function WorkItem({ work }: { work: Work }) {
-  const inDate = new Date(work.in)
-  const outDate = work.out ? new Date(work.out) : new Date()
+  let inDate = new Date(work.in)
+  let outDate = work.out ? new Date(work.out) : new Date()
 
   const time = formatDistance(inDate, outDate)
+
+  inDate.setMonth(inDate.getMonth() + 1)
+  if (work.out) outDate.setMonth(outDate.getMonth() + 1)
 
   return (
     <div className="space-y-3 py-6 first:pt-0 last:pb-0">

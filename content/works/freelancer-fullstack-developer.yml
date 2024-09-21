@@ -1,0 +1,19 @@
+position: "Full-Stack Developer"
+description: "Development of websites, web applications and tools, using technologies such as TypeScript, React, Node.js, Next.js, Python, Django, PostgreSQL, Docker, among others."
+in: "2024-08-01"
+company:
+  name: "Freelancer"
+  website: "https://mateusf.com/about"
+  logo: "assets/mateusfelipe.png"
+tags:
+  - 'typescript'
+  - 'react'
+  - 'nodejs'
+  - 'nextjs'
+  - 'python'
+  - 'django'
+  - 'postgresql'
+  - 'docker'
+  - 'tailwindcss'
+  - 'shadcn/ui'
+
