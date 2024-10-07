@@ -494,3 +494,72 @@ DROP FUNCTION nome_da_funcao;
 ```sql
 DROP FUNCTION getNumeroFilmes;
 ```
+
+# Gatilhos (`TRIGGER`)
+
+_Triggers_ são objetos do banco de dados que, relacionados a certa tabela, permitem a realização de processamentos em consequência de uma dererminada ação sobre a tabela.
+
+As _triggers_ são uma forma de automatizar certas ações com base em eventos ocorridos. Podem ser executadas **antes** `BEFORE{:sql}` ou **depois** `AFTER{:sql}` de uma operação de **inserção** `INSERT{:sql}`, **atualização** `UPDATE{:sql}` ou **exclusão** `DELETE{:sql}` de registros.
+
+Em aplicações que utilizam banco de dados, que ações sejam disparadas em resposta como consequência de outras, realizando operações de cálculo, validação e, em geral, surtindo alterações na base de dados **automaticamente**.
+
+**VANTAGENS**:
+- Parte do processo que seria executado pela aplicação (sistema/software) passa para o banco de dados, poupando recursos da máquina cliente.
+- Facilita a manutenção, sem que seja necessário alterar o código da aplicação.
+
+**SINTAXE**:
+
+```sql
+CREATE TRIGGER <Nome do gatilho>
+<Momento> <Evento> ON nome_da_tabela
+FOR EACH ROW EXECUTE FUNCTION <Funcao>;
+```
+
+**Momento** aqui se refere a quando a trigger será executada, podendo ser `BEFORE{:sql}` (antes) ou `AFTER{:sql}` (depois) de um evento. O **evento** é a operação que dispara a trigger, podendo ser `INSERT{:sql}` (inserção), `UPDATE{:sql}` (atualização) ou `DELETE{:sql}` (deleção).
+
+Mas antes de criarmos a _trigger_ de fato, precisamos criar a função que será executada pela _trigger_. Aqui, reaproveitaremos o conteúdo passado no tópico anterior sobre [Funções](#funções-functions), introduzindo alguns conceitos novos.
+
+Primeiro vamos pegar uma função a ser executada pela _trigger_ em um `UPDATE{:sql}`, e explicar os elementos que a compõem.
+
+Exemplo de uma function que possui os elementos OLD e NEW:
+
+```sql /atualizar_preco()/
+CREATE OR REPLACE FUNCTION atualizar_preco()
+RETURNS TRIGGER
+LANGUAGE plpgsql AS
+$$
+BEGIN
+  IF NEW.preco <> OLD.preco THEN
+    INSERT INTO HISTORICO_PRECO (codigo_produto, preco_antigo, preco_novo)
+    VALUES (NEW.codigo_produto, OLD.preco, NEW.preco);
+  END IF;
+  RETURN NEW;
+END;
+$$;
+
+CREATE TRIGGER trigger_atualizar_preco
+BEFORE UPDATE ON PRODUTO
+FOR EACH ROW EXECUTE FUNCTION atualizar_preco();
+```
+
+Essa é uma função que será executada antes de uma atualização na tabela **`PRODUTO`**. O que ela faz é verificar se o preço novo é diferente do preço antigo, e se for, insere um registro no histórico de preços.
+
+**Elementos**:
+- **`OLD`**: refere-se ao valor antigo da linha que está sendo atualizada.
+- **`NEW`**: refere-se ao valor novo da linha que está sendo atualizada.
+- **`RETURN NEW`**: é necessário para que a atualização seja efetivada.
+- **`IF NEW.preco <> OLD.preco THEN`**: é uma condição que verifica se o preço novo é diferente do preço antigo. Se for, é feito um registro no histórico de preços.
+- **`INSERT INTO HISTORICO_PRECO`**: é a instrução que insere o registro no histórico de preços.
+
+## Excluindo TRIGGERS
+
+Para exclusão de _triggers_, basta fazer:
+```sql
+DROP TRIGGER nome_da_trigger;
+```
+
+
+# Fontes
+
+- Slides das aulas do professor Gabriel Ribeiro Diniz.
+- [Trigger.md](https://github.com/GuiLhermeoliveiraf/GTI-FAPAM/blob/main/2%C2%B0%20Per%C3%ADodo/Banco%20de%20Dados%202/Trigger.md) por [Guilherme Guimarães Oliveira](https://github.com/GuiLhermeoliveiraf)
