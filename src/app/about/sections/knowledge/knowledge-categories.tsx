@@ -58,7 +58,8 @@ import {
   GitpodIcon,
   VimIcon,
   GlpiIcon,
-  AngularIcon
+  AngularIcon,
+  DjangoIcon
 } from '~/components/icons'
 
 type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -135,7 +136,7 @@ export const knowledgeCategories: {
         title: 'SQL',
         icon: SQLIcon,
         color: '#003B57',
-        status: 'learning'
+        status: 'god'
       }
     ]
   },
@@ -180,7 +181,7 @@ export const knowledgeCategories: {
       },
       {
         title: 'Angular',
-        status: 'learning',
+        status: 'bad',
         icon: AngularIcon,
         color: '#c3002f'
       },
@@ -268,10 +269,16 @@ export const knowledgeCategories: {
         status: 'bad'
       },
       {
+        title: 'Django',
+        icon: DjangoIcon,
+        color: '#092E20',
+        status: 'god'
+      },
+      {
         title: 'FastAPI',
         icon: FastApiIcon,
         color: '#049688',
-        status: 'learning'
+        status: 'bad'
       }
     ]
   },
@@ -368,7 +375,7 @@ export const knowledgeCategories: {
       },
       {
         title: 'PostgreSQL',
-        status: 'learning',
+        status: 'god',
         icon: PostgreSQLIcon,
         color: '#336791'
       }
@@ -415,7 +422,7 @@ export const knowledgeCategories: {
       },
       {
         title: 'Vim',
-        status: 'god',
+        status: 'stack',
         icon: VimIcon,
         color: '#019833'
       },
