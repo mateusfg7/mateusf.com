@@ -59,7 +59,8 @@ import {
   VimIcon,
   GlpiIcon,
   AngularIcon,
-  DjangoIcon
+  DjangoIcon,
+  SpringIcon
 } from '~/components/icons'
 
 type IconType = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -124,7 +125,7 @@ export const knowledgeCategories: {
         title: 'Java',
         icon: JavaIcon,
         color: '#f89820',
-        status: 'learning'
+        status: 'god'
       },
       {
         title: 'C++',
@@ -279,6 +280,12 @@ export const knowledgeCategories: {
         icon: FastApiIcon,
         color: '#049688',
         status: 'bad'
+      },
+      {
+        title: 'Spring Boot',
+        icon: SpringIcon,
+        color: '#77bc1f',
+        status: 'learning'
       }
     ]
   },
