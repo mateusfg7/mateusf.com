@@ -11,7 +11,8 @@ const config: Config = {
         20: '20deg'
       },
       fontFamily: {
-        sans: 'var(--font-inter)',
+        sens: 'var(--font-inter)',
+        serif: 'var(--font-crimson-text)',
         handwrite: 'var(--font-caveat)'
       },
       colors: {
