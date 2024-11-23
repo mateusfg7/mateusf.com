@@ -129,11 +129,12 @@
 
     blockquote {
       @apply relative my-3 w-max max-w-full overflow-hidden px-4 py-1;
-      @apply border-l border-l-neutral-900 dark:border-l-neutral-100;
-      @apply italic text-black/80 dark:text-white/70;
+      @apply border-l border-l-neutral-900/50 dark:border-l-neutral-100/50;
+      @apply font-serif text-lg leading-tight text-black/80 dark:text-white/70;
+      @apply bg-neutral-50 dark:bg-neutral-1000;
 
       p {
-        @apply m-0;
+        @apply m-0 mb-3 last:mb-0;
       }
 
       .icon {

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Inter, Caveat } from 'next/font/google'
+import { Inter, Caveat, Crimson_Text } from 'next/font/google'
 
 import { config } from 'global-config'
 import { Header } from './_components/header'
@@ -78,6 +78,13 @@ const dancingScript = Caveat({
   display: 'swap'
 })
 
+const crimsonText = Crimson_Text({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-crimson-text',
+  display: 'block'
+})
+
 export default function RootLayout({
   children
 }: {
@@ -93,7 +100,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`scroll-smooth ${inter.variable} ${dancingScript.variable}`}
+        className={`scroll-smooth ${inter.variable} ${dancingScript.variable} ${crimsonText.variable}`}
       >
         <Providers>
           <div className="relative">
