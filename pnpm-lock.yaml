@@ -118,7 +118,7 @@ importers:
         version: 1.6.2
       tailwindcss-animated:
         specifier: ^1.0.1
-        version: 1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
+        version: 1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)))
       unified:
         specifier: ^11.0.4
         version: 11.0.5
@@ -134,19 +134,19 @@ importers:
         version: 0.7.0
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.5.0(@types/node@20.14.2)(typescript@5.6.2)
+        version: 19.5.0(@types/node@20.17.9)(typescript@5.6.2)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.5.0
       '@tailwindcss/forms':
         specifier: ^0.5.3
-        version: 0.5.9(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
+        version: 0.5.9(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)))
       '@types/mdx':
         specifier: ^2.0.3
         version: 2.0.13
       '@types/node':
-        specifier: 20.14.2
-        version: 20.14.2
+        specifier: 20.17.9
+        version: 20.17.9
       '@types/react':
         specifier: 18.3.5
         version: 18.3.5
@@ -200,13 +200,13 @@ importers:
         version: 3.24.0
       tailwind-scrollbar:
         specifier: ^3.1.0
-        version: 3.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
+        version: 3.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)))
       tailwindcss:
         specifier: ^3.3.3
-        version: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+        version: 3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))
+        version: 1.0.7(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)))
       tsx:
         specifier: ^4.0.0
         version: 4.11.0
@@ -1329,8 +1329,8 @@ packages:
   '@types/node@16.18.11':
     resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
 
-  '@types/node@20.14.2':
-    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
+  '@types/node@20.17.9':
+    resolution: {integrity: sha512-0JOXkRyLanfGPE2QRCwgxhzlBAvaRdCNMcvbd7jFfpmD4eEXll7LRwy5ymJmyeZqk7Nh7eD2LeUyQ68BbndmXw==}
 
   '@types/prop-types@15.7.9':
     resolution: {integrity: sha512-n1yyPsugYNSmHgxDFjicaI2+gCNjsBck8UX9kuofAKlc0h1bL+20oSF72KeNaW2DUlesbEVCFgyV2dPGTiY42g==}
@@ -2364,6 +2364,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -4419,8 +4420,8 @@ packages:
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   undici@5.26.5:
     resolution: {integrity: sha512-cSb4bPFd5qgR7qr2jYAi0hlX9n5YKK2ONKkLFkxl+v/9BvC0sOpZjBHDBSXc5lWAf5ty9oZdRXytBIHzgUcerw==}
@@ -4706,11 +4707,11 @@ snapshots:
       picocolors: 1.0.1
       sisteransi: 1.0.5
 
-  '@commitlint/cli@19.5.0(@types/node@20.14.2)(typescript@5.6.2)':
+  '@commitlint/cli@19.5.0(@types/node@20.17.9)(typescript@5.6.2)':
     dependencies:
       '@commitlint/format': 19.5.0
       '@commitlint/lint': 19.5.0
-      '@commitlint/load': 19.5.0(@types/node@20.14.2)(typescript@5.6.2)
+      '@commitlint/load': 19.5.0(@types/node@20.17.9)(typescript@5.6.2)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
       tinyexec: 0.3.0
@@ -4757,7 +4758,7 @@ snapshots:
       '@commitlint/rules': 19.5.0
       '@commitlint/types': 19.5.0
 
-  '@commitlint/load@19.5.0(@types/node@20.14.2)(typescript@5.6.2)':
+  '@commitlint/load@19.5.0(@types/node@20.17.9)(typescript@5.6.2)':
     dependencies:
       '@commitlint/config-validator': 19.5.0
       '@commitlint/execute-rule': 19.5.0
@@ -4765,7 +4766,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.6.2)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.14.2)(cosmiconfig@9.0.0(typescript@5.6.2))(typescript@5.6.2)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.17.9)(cosmiconfig@9.0.0(typescript@5.6.2))(typescript@5.6.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -5546,10 +5547,10 @@ snapshots:
       '@swc/counter': 0.1.3
       tslib: 2.6.3
 
-  '@tailwindcss/forms@0.5.9(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)))':
+  '@tailwindcss/forms@0.5.9(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)))':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
 
   '@tanstack/react-virtual@3.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -5584,7 +5585,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.14.2
+      '@types/node': 20.17.9
 
   '@types/d3-array@3.2.1': {}
 
@@ -5648,9 +5649,9 @@ snapshots:
 
   '@types/node@16.18.11': {}
 
-  '@types/node@20.14.2':
+  '@types/node@20.17.9':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.19.8
 
   '@types/prop-types@15.7.9': {}
 
@@ -6304,9 +6305,9 @@ snapshots:
 
   convert-hrtime@3.0.0: {}
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@20.14.2)(cosmiconfig@9.0.0(typescript@5.6.2))(typescript@5.6.2):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@20.17.9)(cosmiconfig@9.0.0(typescript@5.6.2))(typescript@5.6.2):
     dependencies:
-      '@types/node': 20.14.2
+      '@types/node': 20.17.9
       cosmiconfig: 9.0.0(typescript@5.6.2)
       jiti: 1.21.6
       typescript: 5.6.2
@@ -6755,7 +6756,7 @@ snapshots:
       debug: 4.3.5
       enhanced-resolve: 5.15.0
       eslint: 8.57.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.0)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-import: 2.29.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.5
@@ -6767,7 +6768,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.0)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -6788,7 +6789,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.0)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.9.1(eslint@8.57.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.15.1
       is-glob: 4.0.3
@@ -8586,13 +8587,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.45
 
-  postcss-load-config@4.0.2(postcss@8.4.45)(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)):
+  postcss-load-config@4.0.2(postcss@8.4.45)(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.1
     optionalDependencies:
       postcss: 8.4.45
-      ts-node: 10.9.1(@types/node@20.14.2)(typescript@5.6.2)
+      ts-node: 10.9.1(@types/node@20.17.9)(typescript@5.6.2)
 
   postcss-nested@6.2.0(postcss@8.4.45):
     dependencies:
@@ -9215,19 +9216,19 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwind-scrollbar@3.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))):
+  tailwind-scrollbar@3.1.0(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))):
     dependencies:
-      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))):
     dependencies:
-      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
 
-  tailwindcss-animated@1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))):
+  tailwindcss-animated@1.1.2(tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))):
     dependencies:
-      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+      tailwindcss: 3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
 
-  tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2)):
+  tailwindcss@3.4.11(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -9246,7 +9247,7 @@ snapshots:
       postcss: 8.4.45
       postcss-import: 15.1.0(postcss@8.4.45)
       postcss-js: 4.0.1(postcss@8.4.45)
-      postcss-load-config: 4.0.2(postcss@8.4.45)(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2))
+      postcss-load-config: 4.0.2(postcss@8.4.45)(ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2))
       postcss-nested: 6.2.0(postcss@8.4.45)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
@@ -9351,14 +9352,14 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.1(@types/node@20.14.2)(typescript@5.6.2):
+  ts-node@10.9.1(@types/node@20.17.9)(typescript@5.6.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.2
+      '@types/node': 20.17.9
       acorn: 8.12.1
       acorn-walk: 8.3.3
       arg: 4.1.3
@@ -9439,7 +9440,7 @@ snapshots:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
 
-  undici-types@5.26.5: {}
+  undici-types@6.19.8: {}
 
   undici@5.26.5:
     dependencies:
