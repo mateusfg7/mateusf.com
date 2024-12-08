@@ -7,7 +7,7 @@ on:
 jobs:
   sync-tag:
     name: Sync Tag with Package version
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       isReleaseNew: ${{ steps.bump_tag.outputs.isNew }}
     steps:
