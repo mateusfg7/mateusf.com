@@ -25,15 +25,15 @@ export function StatisticsGrid() {
             <SpotifyPlays />
             <TopArtist />
           </div>
-          <div className="flex justify-center md:justify-end">
-            <Link
-              href="/about/statistics"
-              className="inline-flex items-end leading-none text-neutral-500 transition-colors hover:text-black dark:text-neutral-600 dark:hover:text-white"
-            >
-              <span>See more</span>
-              <ArrowUpRight size="1em" className="text-xs" />
-            </Link>
-          </div>
+          {/* <div className="flex justify-center md:justify-end"> */}
+          {/*   <Link */}
+          {/*     href="/about/statistics" */}
+          {/*     className="inline-flex items-end leading-none text-neutral-500 transition-colors hover:text-black dark:text-neutral-600 dark:hover:text-white" */}
+          {/*   > */}
+          {/*     <span>See more</span> */}
+          {/*     <ArrowUpRight size="1em" className="text-xs" /> */}
+          {/*   </Link> */}
+          {/* </div> */}
         </div>
       </Suspense>
     </ErrorBoundary>
