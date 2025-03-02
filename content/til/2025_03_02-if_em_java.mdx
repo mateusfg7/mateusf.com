@@ -1,0 +1,62 @@
+---
+title: 'IF em Java'
+description: 'O uso correto do IF em Java'
+date: '2025-03-02'
+tags: [java,conditions,clean code,good pratices,tricks,linkedin]
+---
+
+[Post original](https://www.linkedin.com/posts/devsjava_uso-correto-do-if-em-java-activity-7301560448833740800-c4Nx?utm_source=share) no LinkedIn. O conteúdo abaixo é um registro do que aprendi com o post. Nada aqui foi autoria minha.
+
+### O uso correto do If em Java
+_...e como evita-lo!_
+
+O `if{:java}` deve ser usado quando é necessário tomar decisões **diretas** e **locais** no código. No entanto, o uso excessivo pode indicar que a lógica não está bem estruturada.
+
+✅ Para decisões simples e pontuais
+```java
+if (idade >= 18) {
+  System.out.println("Você pode dirigir!");
+}
+```
+
+✅ Para validar entradas e lançar exceções
+```java
+if (valor <= 0) {
+  throw new IllegalArgumentException("O valor deve ser positivo!");
+}
+```
+
+✅ Para fluxos simples dentro de loops
+```java
+for (Produto produto : listaProdutos) {
+  if (produto.getPreco() > 100) {
+    System.out.println(produto.getNome() + " é caro!");
+  }
+}
+```
+
+### Quando **evitar** o `if{:java}`
+
+❌ Muitos `if-else{:java}` aninhados.
+➡️ Prefira polimorfismo ou o padrão _Strategy_
+
+❌ Controle de muitos estados
+➡️ O padrão _State_ é mais eficiente
+
+❌ Escolha entre várias opções fixas
+➡️ Use um `Map{:java}` ao invés de `if-else{:java}` gigante
+
+### Exemplo de substituição do `if-else{:java}` por um `Map{:java}`
+
+```java
+Map<String, Runnable> operacoes = Map.of(
+  "PIX", this::processaPix,
+  "BOLETO", this::processaBoleto
+);
+
+operacoes.getOrDefault(tipo, () -> {
+  throw new IllegalArgumentException("Tipo inválido");
+}).run();
+```
+
+O `if{:java}` não é o vilão, mas se espalhar pelo código pode ser um sinal de alerta. Prefira abstrações inteligentes para evitar a complexidade desnecessária.
